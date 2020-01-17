@@ -68,25 +68,26 @@
     Docs  LICENSE  README.md
     ```
 
-4. Make a new folder XXXXXXXXXXXXXXx
+4. Make a new folder `Labs/01-gates` and create an empty file `README.md`.
+
+    ```bash
+    $ mkdir Labs
+    $ cd Labs/
+    $ mkdir 01-gates
+    $ cd 01-gates
+    $ touch README.md
+    $ ls
+    LICENSE  README.md
+    ```
 
 
 ## Online simulator
 
 XXXXXXXXXXXXXXXXXX
+https://circuitverse.org/
 
 
 1. Run Visual Studio Code source code editor, open `Digital-electronics-2` folder, run internal terminal in menu **Terminal > New Terminal**, and change path to `firmware/01-demo`. What is the meaning of each part of source file `main.c`? What is the meaning of the following commands?
-
-    ```bash
-    $ cd firmware/01-demo/
-    $ make all
-    $ make size
-    $ make flash
-    $ make clean
-    ```
-
-3. What is the meaning of `|`, `&`, `^`, `~`, `<<`, `_BV()` operations in C source file? See [AVR Libc Reference Manual](https://www.microchip.com/webdoc/AVRLibcReferenceManual/) for answer.
 
 
 ## Clean project and synchronize git
