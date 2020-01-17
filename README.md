@@ -30,6 +30,7 @@ In folder `Docs` all manuals are stored. Folder `Hw` contains KiCad schematic of
 | ... | Lab 7: ... |
 | ... | Lab 8: ... |
 | ... | Lab 9: ... |
+| ... | Lab 10--13: Project |
 
 
 ## Hardware components
