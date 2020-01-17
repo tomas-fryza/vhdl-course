@@ -135,4 +135,4 @@
 
 ## Ideas for other tasks
 
-1. Try other online simulators, such as [Logicly](https://logic.ly/), [LogicEmu](https://lodev.org/logicemu/), etc. and compare them.
+1. Try different online simulators, such as [Logicly](https://logic.ly/), [LogicEmu](https://lodev.org/logicemu/), try to find others and compare them.
