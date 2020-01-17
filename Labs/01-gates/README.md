@@ -88,7 +88,6 @@
 
 2. Run any editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` file and create tables for simulated results.
 
-    **AND gate:**
     | **A** | **B** | **AND** | **NAND** |
     | :-: | :-: | :-: | :-: |
     | 0 | 0 | 0 | 1 |
@@ -96,7 +95,6 @@
     | 1 | 0 |  |  |
     | 1 | 1 |  |  |
 
-    **OR gate:**
     | **A** | **B** | **OR** | **NOR** |
     | :-: | :-: | :-: | :-: |
     | 0 | 0 | 0 | 1 |
@@ -104,7 +102,6 @@
     | 1 | 0 |  |  |
     | 1 | 1 |  |  |
 
-    **XOR gate:**
     | **A** | **B** | **XOR** | **XNOR** |
     | :-: | :-: | :-: | :-: |
     | 0 | 0 | 0 | 1 |
