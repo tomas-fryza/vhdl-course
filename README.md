@@ -22,7 +22,14 @@ In folder `Docs` all manuals are stored. Folder `Hw` contains KiCad schematic of
 | **Lab exercise** | **Description** |
 | :-- | :-- |
 | [01-gates](Labs/01-gates) | Lab 1: Git version-control system, Online simulator |
-| ... | ... |
+| ... | Lab 2: ... |
+| ... | Lab 3: ... |
+| ... | Lab 4: ... |
+| ... | Lab 5: ... |
+| ... | Lab 6: ... |
+| ... | Lab 7: ... |
+| ... | Lab 8: ... |
+| ... | Lab 9: ... |
 
 
 ## Hardware components
