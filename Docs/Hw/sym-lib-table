@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "basic_elements")(type "Legacy")(uri "${KIPRJMOD}/basic_elements.lib")(options "")(descr ""))
+)

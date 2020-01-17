@@ -1,0 +1,25 @@
+# ----- REMOVE LINES ABOVE HERE --------------------------
+#
+# This license is valid from Tue Mar 05 22:34:16 UTC 2019.
+#
+# This is license NODELOCKED to HOSTID=ANY;
+# there is no need to run lmgrd for this license.
+#
+#
+# This is a permanent license generated on Tue Mar 05 22:34:16 UTC 2019
+INCREMENT Web_Package xilinxd 2020.03 permanent uncounted \
+C0FF7CEA288D \
+VENDOR_STRING=fryza@feec.vutbr.cz,Web_Package,software,permanent,_178773717_0_0_653 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=05-Mar-2019 TS_OK
+#
+#
+# ----------------------------------------------------------------------
+#  The following PACKAGE definition is a REQUIRED part of this license:
+#
+PACKAGE Web_Package xilinxd 2020.03 5477ECBB47B7 \
+COMPONENTS="PlanAhead WebPACK XC7Z010 XC7Z020 XC7Z030 \
+V_WebPACK xps_tdp" OPTIONS=SUITE
+#
+# ------------------------------------------------------------------------------
+#
+# ----- REMOVE LINES BELOW HERE --------------------------

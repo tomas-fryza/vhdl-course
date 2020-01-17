@@ -1,0 +1,24 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# push_button
+#
+DEF push_button BTN 0 40 Y Y 1 F N
+F0 "BTN" 0 130 50 H V C CNN
+F1 "push_button" 10 -160 50 H V C CNN
+F2 "basic_elements:SW_PUSH_6mm_H7.3mm" 0 110 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C -100 0 14 0 1 0 F
+C 100 0 14 0 1 0 F
+P 2 0 1 0 -100 -100 -100 0 N
+P 2 0 1 0 -100 0 80 70 N
+P 2 0 1 0 100 0 100 -100 N
+X ~ 1 -200 0 100 R 50 50 1 1 P
+X ~ 2 -200 -100 100 R 50 50 1 1 P
+X ~ 3 200 0 100 L 50 50 1 1 P
+X ~ 4 200 -100 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library

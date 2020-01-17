@@ -75,20 +75,39 @@
     $ mkdir Labs
     $ cd Labs/
     $ mkdir 01-gates
-    $ cd 01-gates
+    $ cd 01-gates/
     $ touch README.md
     $ ls
-    LICENSE  README.md
+    README.md
     ```
 
 
 ## Online simulator
 
-XXXXXXXXXXXXXXXXXX
-https://circuitverse.org/
+1. Use online digital circuit simulator [CircuitVerse](https://circuitverse.org/), launch the simulator, draw and verify basic two-input logic gates.
 
+2. Run any editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` file and create tables for simulated results.
 
-1. Run Visual Studio Code source code editor, open `Digital-electronics-2` folder, run internal terminal in menu **Terminal > New Terminal**, and change path to `firmware/01-demo`. What is the meaning of each part of source file `main.c`? What is the meaning of the following commands?
+| **A** | **B** | **AND** | **NAND** |
+| :-: | :-: | :-: | :-: |
+| 0 | 0 | 0 | 1 |
+| 0 | 1 |  |  |
+| 1 | 0 |  |  |
+| 1 | 1 |  |  |
+
+| **A** | **B** | **OR** | **NOR** |
+| :-: | :-: | :-: | :-: |
+| 0 | 0 | 0 | 1 |
+| 0 | 1 |  |  |
+| 1 | 0 |  |  |
+| 1 | 1 |  |  |
+
+| **A** | **B** | **XOR** | **XNOR** |
+| :-: | :-: | :-: | :-: |
+| 0 | 0 | 0 | 1 |
+| 0 | 1 |  |  |
+| 1 | 0 |  |  |
+| 1 | 1 |  |  |
 
 
 ## Clean project and synchronize git
@@ -113,4 +132,4 @@ https://circuitverse.org/
 
 ## Ideas for other tasks
 
-1. xxx
+1. Try other online simulators, such as [Logicly](https://logic.ly/), [LogicEmu](https://lodev.org/logicemu/), etc. and compare them.
