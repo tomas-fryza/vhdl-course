@@ -125,7 +125,9 @@
 
     $ git status
     $ git add <your-modified-files>
-    $ git commit -m "[LABS] Adding 01-gates project"
+    $ git status
+    $ git commit -m "[LAB] Adding 01-gates lab"
+    $ git status
     $ git push
     ```
 
