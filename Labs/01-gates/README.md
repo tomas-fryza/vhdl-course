@@ -31,16 +31,17 @@
 1. Try basic commands in the Linux terminal:
 
 | **Command** | **Description** |
-| :-: | --------------- |
-| `Ctrl+Alt+T` | Open Linux terminal in Ubuntu based distributions
-| `Tab` | Automatic completion what you are typing or suggest options to you
-| `Up/Down` | Browse command history
-| `ls` | List directory contents
-| `cd` | Change the current directory (change to parent directory: `cd ..`)
-| `mkdir` | Make directories
-| `cp` | Copy files and directories
-| `pwd` | Print name of current/working directory
-| `mc` | GNU Midnight Commander (file manager)
+| :-: | :-- |
+| `Ctrl+Alt+T` | Open Linux terminal in Ubuntu based distributions |
+| `Tab` | Automatic completion what you are typing or suggest options to you |
+| `Up/Down` | Browse command history |
+| `ls` | List directory contents |
+| `cd` | Change the current directory (change to parent directory: `cd ..`) |
+| `mkdir` | Make directories |
+| `cp` | Copy files and directories |
+| `pwd` | Print name of current/working directory |
+| `touch` | Create an empty file (if it does not exist) |
+| `mc` | GNU Midnight Commander (file manager) |
 
 2. In the lab, make your own home folder within `Documents`, and with help of `git` command create a local copy of your public repository:
 
