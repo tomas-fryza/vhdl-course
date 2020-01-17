@@ -3,7 +3,7 @@
 [![GitHub](https://img.shields.io/github/license/tomas-fryza/Digital-electronics-1)](https://choosealicense.com/licenses/mit/)
 [![activity](https://img.shields.io/github/last-commit/tomas-fryza/Digital-electronics-1)](https://github.com/tomas-fryza/Digital-electronics-1/commits/master)
 
-# Digital-electronics-1
+# Digital electronics 1
 
 #### Table of contents
 
