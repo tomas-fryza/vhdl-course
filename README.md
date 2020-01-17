@@ -1,3 +1,8 @@
+[![university](https://img.shields.io/badge/university-Brno%20University%20of%20Technology-red.svg)](https://www.vutbr.cz/en/)
+[![department](https://img.shields.io/badge/department-Dept.%20of%20Radio%20Electronics-blue)](https://www.facebook.com/URELBrno)
+[![GitHub](https://img.shields.io/github/license/tomas-fryza/Digital-electronics-1)](https://choosealicense.com/licenses/mit/)
+[![activity](https://img.shields.io/github/last-commit/tomas-fryza/Digital-electronics-1)](https://github.com/tomas-fryza/Digital-electronics-1/commits/master)
+
 # Digital-electronics-1
 
 #### Table of contents
@@ -45,8 +50,8 @@ The following hardware components are mainly used in the lab.
 ## References
 
 1. [Git, free and open source distributed version control system](https://git-scm.com/)
-2. [VHDL cheat sheet](docs/README.md)
-3. KALLSTROM, P. [A Fairly Small VHDL Guide](docs/VHDL_guide.pdf). Version 2.1.
+2. [VHDL cheat sheet](Docs/README.md)
+3. KALLSTROM, P. [A Fairly Small VHDL Guide](Docs/VHDL_guide.pdf). Version 2.1.
 
 
 ## License
