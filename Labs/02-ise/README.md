@@ -71,7 +71,7 @@
 
 1. Follow instructions from Wiki and [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE).
 
-2. Using VHDL operators, define the architecture for digital comparator. Most common VHDL operators are shown in the table.
+2. Using VHDL operators, define the architecture for 1-bit digital comparator. Most common VHDL operators are shown in the table.
 
     | **Operator** | **Description** |
     | :-: | :-- |
