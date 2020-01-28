@@ -117,4 +117,4 @@
 
 ## Ideas for other tasks
 
-1. Accordin to [Binary Decoders](https://www.electronics-tutorials.ws/combination/comb_5.html), create and simulate VHDL architecture of 2-to-4 binary decoder.
+1. According to [Binary Decoders](https://www.electronics-tutorials.ws/combination/comb_5.html) description, create and simulate VHDL architecture of 2-to-4 binary decoder.
