@@ -12,7 +12,7 @@
 
 ## Lab prerequisites
 
-1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce an outputs depending upon the condition of those inputs. Complete a truth table for 1-bit *Identity comparator* (A=B), and two *Magnitude comparators* (A>B, A<B). Note `1` represents true, `0` false.
+1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs. Complete a truth table for 1-bit *Identity comparator* (A=B), and two *Magnitude comparators* (A>B, A<B). Note `1` represents true, `0` false.
 
     | **B** | **A** | **A>B** | **A=B** | **A<B** |
     | :-: | :-: | :-: | :-: | :-: |
@@ -21,7 +21,7 @@
     | `1` | `0` |  |   |   |
     | `1` | `1` |  |   |   |
 
-    For outputs create a canonical SoP (Sum of Product) or PoS (Product of Sum) forms as follows:
+    According to the truth table, create canonical SoP (Sum of Product) or PoS (Product of Sum) output forms as follows:
 
     &nbsp;
 
