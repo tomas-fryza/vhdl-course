@@ -12,14 +12,14 @@
 
 ## Lab prerequisites
 
-1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs. Complete a truth table for 1-bit *Identity comparator* (A=B), and two *Magnitude comparators* (A>B, A<B). Note `1` represents true, `0` false.
+1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs. Complete a truth table for 1-bit *Identity comparator* (A=B), and two *Magnitude comparators* (A>B, A<B). Note 1 represents true, 0 false.
 
     | **A** | **B** | **A>B** | **A=B** | **A<B** |
     | :-: | :-: | :-: | :-: | :-: |
-    | `0` | `0` | `0` | `1` | `0` |
-    | `0` | `1` |  |   |   |
-    | `1` | `0` |  |   |   |
-    | `1` | `1` |  |   |   |
+    | 0 | 0 | 0 | 1 | 0 |
+    | 0 | 1 |  |   |   |
+    | 1 | 0 |  |   |   |
+    | 1 | 1 |  |   |   |
 
     According to the truth table, create canonical SoP (Sum of Product) or PoS (Product of Sum) output forms as follows:
 
@@ -118,3 +118,7 @@
 ## Ideas for other tasks
 
 1. Follow the [Linux](https://github.com/tomas-fryza/Digital-electronics-1/wiki) or [Windows](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive-ise.html) instructions and install ISE 14.7 on your computer.
+
+2. Create a new project, define, and simulate a 2-to-4 decoder in VHDL.
+
+3. Complete your `README.md` file file with a screenshot from the simulation.
