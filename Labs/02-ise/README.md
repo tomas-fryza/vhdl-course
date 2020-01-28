@@ -11,9 +11,16 @@
 
 ## Lab prerequisites
 
-1. xxxdigital comparator: truth table, canonical forms for all outputs, SoP forms, PoS formsxxx
+1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce an outputs depending upon the condition of those inputs. Complete a truth table for 1-bit *Identity comparator* (A=B), and two *Magnitude comparators* (A>B, A<B).
 
-2. xxxzapojeni LEDs, Push buttons na CoolRunneruxxx
+    | **B** | **A** | **A>B** | **A=B** | **A<B** |
+    | :-: | :-: | :-: | :-: | :-: |
+    | `0` | `0` | `0` | `1` | `0` |
+    | `0` | `1` |  |   |   |
+    | `1` | `0` |  |   |   |
+    | `1` | `1` |  |   |   |
+
+    For all outputs (i.e. A>B, A=B, A<B) create a canonical SoP (Sum of Product) and PoS (Product of Sum) forms.
 
 
 ## Synchronize Git and create a new folder
@@ -57,7 +64,7 @@
 
 3. Follow instructions from Wiki, create a test bench, and [simulate your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Simulate-Your-Design-in-ISE) in ISim simulator.
 
-4. Follow instructions from Wiki, create a constraints file, and implement your design to CoolRunner-II CPLD starter board.
+4. Follow instructions from Wiki, create a constraints file, and implement your design to CoolRunner-II CPLD starter board. See schematic of [CoolRunner-II CPLD starter board](../../Docs/coolrunner-ii_sch.pdf) and find out the connection of LD1, LD2, LD3, LD4 LEDs and BTN1, BTN2 push buttons. Modify the internal architecture of your design so that the pressed button represents a log. 1 and LED is turn off for log. 0.
 
 
 ## Clean project and synchronize git
