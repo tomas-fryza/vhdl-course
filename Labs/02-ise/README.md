@@ -64,7 +64,7 @@
 
 3. Follow instructions from Wiki, create a test bench, and [simulate your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Simulate-Your-Design-in-ISE) in ISim simulator.
 
-4. Follow instructions from Wiki, create a constraints file, and implement your design to CoolRunner-II CPLD starter board. See schematic of [CoolRunner-II CPLD starter board](../../Docs/coolrunner-ii_sch.pdf) and find out the connection of LD1, LD2, LD3, LD4 LEDs and BTN1, BTN2 push buttons. Modify the internal architecture of your design so that the pressed button represents a log. 1 and LED is turn off for log. 0.
+4. Follow instructions from Wiki, create a constraints file, and [implement your design](XXXX) to CoolRunner-II CPLD starter board. See schematic of [CoolRunner-II CPLD starter board](../../Docs/coolrunner-ii_sch.pdf) and find out the connection of LD1, LD2, LD3, LD4 LEDs and BTN1, BTN2 push buttons. Modify the internal architecture of your design so that the pressed button represents log. 1 and LED is turn off for log. 0.
 
 
 ## Clean project and synchronize git
