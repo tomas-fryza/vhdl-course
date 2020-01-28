@@ -48,7 +48,7 @@ The following hardware components are mainly used in the lab.
 
 | **Component** | **Description** | **Manual** |
 | :-: | :-- | :-: |
-| [ISE Design](https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) | ISE WebPACK Design Software, ver 14.7 | [Installation](https://gitlab.com/tomas.fryza/vhdl-examples/wikis/)
+| [ISE Design](https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) | ISE WebPACK Design Software, ver 14.7 | [Installation](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
 | [Linux Mint](https://linuxmint.com/download_all.php) | Linux Mint 18.2 "Sonya" - Xfce (64-bit) |
 
 ![ise](Images/ise_synthesize_org.png)
