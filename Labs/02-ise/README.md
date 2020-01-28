@@ -18,7 +18,7 @@
 
 ## Synchronize Git and create a new folder
 
-1. Open a Linux terminal, use `cd` commands, within your Digital-electronics-1 working directory, [synchronize the contents](https://github.com/joshnh/Git-Commands) with GitHub.
+1. Open a Linux terminal, use `cd` commands to change path to your Digital-electronics-1 working directory, and [synchronize the contents](https://github.com/joshnh/Git-Commands) with GitHub.
 
     ```bash
     $ pwd
