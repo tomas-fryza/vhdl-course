@@ -6,7 +6,7 @@
 2. [GitHub](#GitHub)
 3. [Linux terminal](#Linux-terminal)
 4. [Online simulator](#Online-simulator)
-5. [Clean project and synchronize git](#Clean-project-and-synchronize-git)
+5. [Synchronize git](#Synchronize-git)
 6. [Ideas for other tasks](#Ideas-for-other-tasks)
 
 
@@ -117,7 +117,7 @@
     | 1 | 1 |  |  |
 
 
-## Clean project and synchronize git
+## Synchronize git
 
 1. Use `cd ..` command in Linux terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
