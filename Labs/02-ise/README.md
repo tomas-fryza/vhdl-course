@@ -3,20 +3,61 @@
 #### Table of contents
 
 1. [Lab prerequisites](#Lab-prerequisites)
-2. [xxx](#xxx)
-2. [xxx](#xxx)
-5. [Clean project and synchronize git](#Clean-project-and-synchronize-git)
-6. [Ideas for other tasks](#Ideas-for-other-tasks)
+2. [Synchronize Git and create a new folder](#Synchronize-Git-and-create-a-new-folder)
+3. [Digital circuits in VHDL language](#Digital-circuits-in-VHDL-language)
+4. [Clean project and synchronize git](#Clean-project-and-synchronize-git)
+5. [Ideas for other tasks](#Ideas-for-other-tasks)
 
 
 ## Lab prerequisites
 
-1. xxx
+1. xxxdigital comparator: truth table, canonical forms for all outputs, SoP forms, PoS formsxxx
+
+2. xxxzapojeni LEDs, Push buttons na CoolRunneruxxx
 
 
-## Xxx
+## Synchronize Git and create a new folder
 
-1. xxx
+1. Open a Linux terminal, use `cd` commands, within your Digital-electronics-1 working directory, [synchronize the contents](https://github.com/joshnh/Git-Commands) with GitHub.
+
+    ```bash
+    $ pwd
+    /home/lab661
+    $ cd Documents/your-name/Digital-electronics-1/
+    $ pwd
+    /home/lab661/Documents/your-name/Digital-electronics-1
+    $ git pull
+    ```
+
+2. Create a new folder `Labs/02-ise`.
+
+    ```bash
+    $ cd Labs/
+    $ mkdir 02-ise
+    ```
+
+
+## Digital circuits in VHDL language
+
+1. Follow instructions from [Wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki/) webpage and create a new project in ISE.
+
+2. Using VHDL operators, define the architecture for digital comparator. Most common VHDL operators are shown in the table.
+
+| **Operator** | **Description** |
+| :-: | :-- |
+| `<=` | Value assignment |
+| `and` | Logical AND |
+| `nand` | Logical AND with negation |
+| `or` | Logical OR |
+| `nor` | Logical OR with negation |
+| `not` | Nagation |
+| `xor` | Exclusive OR |
+| `xnor` | Exclusive OR with negation |
+| `-- comment` | Comments |
+
+3. Follow instructions from [Wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki/) webpage and simulate your design.
+
+4. Follow instructions from [Wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki/) webpage and implement your design to CPLD target device.
 
 
 ## Clean project and synchronize git
@@ -46,4 +87,4 @@
 
 ## Ideas for other tasks
 
-1. xxx
+1. Accordin to [Binary Decoders](https://www.electronics-tutorials.ws/combination/comb_5.html), create and simulate VHDL architecture of 2-to-4 binary decoder.
