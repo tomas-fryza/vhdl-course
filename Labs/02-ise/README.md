@@ -77,12 +77,12 @@
     | :-: | :-- |
     | `<=` | Value assignment |
     | `and` | Logical AND |
-    | `nand` | Logical AND with negation |
+    | `nand` | Logical AND with negated output |
     | `or` | Logical OR |
-    | `nor` | Logical OR with negation |
+    | `nor` | Logical OR with negated output |
     | `not` | Nagation |
     | `xor` | Exclusive OR |
-    | `xnor` | Exclusive OR with negation |
+    | `xnor` | Exclusive OR with negated output |
     | `-- comment` | Comments |
 
 3. Follow instructions from wiki, create a test bench with all input combinations, and [simulate your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) in ISim simulator.
