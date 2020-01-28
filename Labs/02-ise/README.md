@@ -117,4 +117,4 @@
 
 ## Ideas for other tasks
 
-1. Follow the [TBDLinuxTBD](TBD) or [Windows](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive-ise.html) instructions and install ISE 14.7 on your computer.
+1. Follow the [Linux](https://github.com/tomas-fryza/Digital-electronics-1/wiki) or [Windows](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive-ise.html) instructions and install ISE 14.7 on your computer.
