@@ -59,6 +59,7 @@ The following hardware components are mainly used in the lab.
 1. [Git, free and open source distributed version control system](https://git-scm.com/)
 2. [VHDL cheat sheet](Docs/README.md)
 3. KALLSTROM, P. [A Fairly Small VHDL Guide](Docs/VHDL_guide.pdf). Version 2.1.
+4. [Wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki) of Digital electronics 1
 
 
 ## License
