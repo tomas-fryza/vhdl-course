@@ -39,7 +39,7 @@
 
 ## Digital circuits in VHDL language
 
-1. Follow instructions from [Wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki/) webpage and create a new project in ISE.
+1. Follow instructions from Wiki and [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE).
 
 2. Using VHDL operators, define the architecture for digital comparator. Most common VHDL operators are shown in the table.
 
@@ -55,9 +55,9 @@
     | `xnor` | Exclusive OR with negation |
     | `-- comment` | Comments |
 
-3. Follow instructions from [Wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki/) webpage and simulate your design.
+3. Follow instructions from Wiki, create a test bench, and [simulate your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Simulate-Your-Design-in-ISE) in ISim simulator.
 
-4. Follow instructions from [Wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki/) webpage and implement your design to CPLD target device.
+4. Follow instructions from Wiki, create a constraints file, and implement your design to CoolRunner-II CPLD starter board.
 
 
 ## Clean project and synchronize git
