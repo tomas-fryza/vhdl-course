@@ -117,4 +117,4 @@
 
 ## Ideas for other tasks
 
-1. According to [Binary Decoders](https://www.electronics-tutorials.ws/combination/comb_5.html) description, create and simulate VHDL architecture of 2-to-4 binary decoder.
+1. Follow the [Linux](xxx) or [Windows](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive-ise.html) instructions and install ISE 14.7 on your computer.
