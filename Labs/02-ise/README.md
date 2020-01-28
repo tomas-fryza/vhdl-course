@@ -94,7 +94,7 @@
 
 1. Clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
-2. Use `cd ..` command in Linux terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
+2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
     ```bash
     $ pwd
@@ -121,4 +121,4 @@
 
 2. Create a new project, define, and simulate a 2-to-4 decoder in VHDL.
 
-3. Complete your `README.md` file file with a screenshot from the simulation.
+3. Complete your `README.md` file with screenshot from the simulation.
