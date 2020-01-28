@@ -142,4 +142,15 @@
 
 ## Ideas for other tasks
 
-1. Try different online simulators, such as [Logicly](https://logic.ly/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), try to find others, and compare them.
+1. Use online digital circuit simulator, draw the logic diagram according to figure, complete the truth table, and determine the circuit function.
+
+    ![logic](../../Images/combination_24.png)
+
+    | **A** | **B** | **Q3** | **Q2** | **Q1** | **Q0** |
+    | :-: | :-: | :-: | :-: | :-: | :-: |
+    | 0 | 0 |  |  |
+    | 0 | 1 |  |  |
+    | 1 | 0 |  |  |
+    | 1 | 1 |  |  |
+
+2. Try different online simulators, such as [Logicly](https://logic.ly/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), or find others, and compare them.
