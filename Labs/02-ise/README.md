@@ -43,17 +43,17 @@
 
 2. Using VHDL operators, define the architecture for digital comparator. Most common VHDL operators are shown in the table.
 
-| **Operator** | **Description** |
-| :-: | :-- |
-| `<=` | Value assignment |
-| `and` | Logical AND |
-| `nand` | Logical AND with negation |
-| `or` | Logical OR |
-| `nor` | Logical OR with negation |
-| `not` | Nagation |
-| `xor` | Exclusive OR |
-| `xnor` | Exclusive OR with negation |
-| `-- comment` | Comments |
+    | **Operator** | **Description** |
+    | :-: | :-- |
+    | `<=` | Value assignment |
+    | `and` | Logical AND |
+    | `nand` | Logical AND with negation |
+    | `or` | Logical OR |
+    | `nor` | Logical OR with negation |
+    | `not` | Nagation |
+    | `xor` | Exclusive OR |
+    | `xnor` | Exclusive OR with negation |
+    | `-- comment` | Comments |
 
 3. Follow instructions from [Wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki/) webpage and simulate your design.
 
