@@ -64,6 +64,10 @@
     ```bash
     $ cd Labs/
     $ mkdir 02-ise
+    $ cd 02-ise/
+    $ touch README.md
+    $ ls
+    README.md
     ```
 
 
