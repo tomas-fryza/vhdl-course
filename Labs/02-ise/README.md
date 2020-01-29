@@ -125,4 +125,4 @@
 
 2. Create a new project, define, and simulate a 2-to-4 decoder in VHDL.
 
-3. Complete your `README.md` file with screenshot from the simulation.
+3. Complete your `README.md` file with screenshot from the simulation(s).
