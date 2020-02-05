@@ -181,4 +181,7 @@
     | 1 | 0 |  |  |
     | 1 | 1 |  |  |
 
+    > Figure was created in online [draw.io](https://www.draw.io/) diagram editor.
+    >
+
 2. Try different online simulators, such as [Logicly](https://logic.ly/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), or find others, and compare them.
