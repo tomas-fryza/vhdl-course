@@ -172,7 +172,7 @@
 
 1. Use online digital circuit simulator, draw the logic diagram according to figure, complete the truth table, and determine the circuit function.
 
-    ![logic](../../Images/combination_24.png)
+    ![logic](../../Images/gates_2-4.png)
 
     | **A** | **B** | **Q3** | **Q2** | **Q1** | **Q0** |
     | :-: | :-: | :-: | :-: | :-: | :-: |
