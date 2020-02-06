@@ -7,10 +7,11 @@
 
 #### Table of contents
 
-1. [Introduction](#introduction)
-2. [Hardware components](#hardware-components)
-3. [Software components](#software-components)
-4. [References](#references)
+1. [Introduction](#Introduction)
+2. [Hardware components](#Hardware-components)
+3. [Software components](#Software-components)
+4. [References](#References)
+5. [License](#License)
 
 
 ## Introduction
