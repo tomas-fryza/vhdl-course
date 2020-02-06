@@ -98,7 +98,7 @@
 
     ![and_gates](../../Images/simulator_basic_gates.png)
 
-2. Run any text editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` file, create/complete tables with logical values, and add a screenshot from the simulator.
+2. Run any text editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` local file, create/complete tables with logical values, and add a screenshot from the simulator. DO NOT modify `README.md` file at GitHub.
 
     | **A** | **NOT** |
     | :-: | :-: |
