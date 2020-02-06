@@ -4,7 +4,7 @@
 
 1. [Introduction](#Introduction)
 2. [Hardware description](#Hardware-description)
-3. [Firmwave description](#Firmware-description)
+3. [Code description](#Code-description)
 4. [Video](#Video)
 5. [References](#References)
 
@@ -19,7 +19,7 @@ TBD
 TBD
 
 
-## Software description
+## Code description
 
 TBD
 
