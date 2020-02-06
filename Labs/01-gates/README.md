@@ -38,9 +38,10 @@
 | `ls` | List directory contents |
 | `cd` | Change the current directory (change to parent directory: `cd ..`) |
 | `mkdir` | Make directories |
-| `cp` | Copy files and directories |
 | `pwd` | Print name of current/working directory |
+| `clear` | Clear the terminal screen |
 | `touch` | Create an empty file (if it does not exist) |
+| `cp` | Copy files and directories |
 | `mc` | GNU Midnight Commander (file manager) |
 
 2. In the lab, make your own home folder within `Documents`, and with help of `git` command create a local copy of your public repository:
