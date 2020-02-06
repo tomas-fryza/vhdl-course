@@ -71,7 +71,15 @@
     Docs  LICENSE  README.md
     ```
 
-4. Make a new folder `Labs/01-gates` and create an empty file `README.md`.
+4. Make a new folder `Images`.
+
+    ```bash
+    $ mkdir Images
+    $ ls
+    Docs  Images  LICENSE  README.md
+    ```
+
+5. Make a new folder `Labs/01-gates` and create an empty file `README.md`.
 
     ```bash
     $ mkdir Labs
