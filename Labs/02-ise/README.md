@@ -3,7 +3,7 @@
 #### Table of contents
 
 1. [Lab prerequisites](#Lab-prerequisites)
-2. [Hardware components](#Hardware-components)
+2. [Used hardware components](#Used-hardware-components)
 3. [Synchronize Git and create a new folder](#Synchronize-Git-and-create-a-new-folder)
 4. [Digital circuits in VHDL language](#Digital-circuits-in-VHDL-language)
 5. [Clean project and synchronize git](#Clean-project-and-synchronize-git)
@@ -41,7 +41,7 @@
     >
 
 
-## Hardware components
+## Used hardware components
 
 1. CoolRunner-II CPLD starter board: [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf)
 
