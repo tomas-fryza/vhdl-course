@@ -5,7 +5,7 @@
 
 # Digital electronics 1
 
-#### Table of contents
+#### Contents
 
 1. [Introduction](#Introduction)
 2. [Hardware components](#Hardware-components)
