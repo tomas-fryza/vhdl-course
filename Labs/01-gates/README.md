@@ -1,4 +1,4 @@
-# Lab 1: Git version-control system, Online simulator
+# Lab 1: Git version-control system, Online digital circuit simulator
 
 #### Contents
 
