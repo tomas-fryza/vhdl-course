@@ -1,4 +1,4 @@
-# Lab 2: Xilinx ISE Design Suite
+# Lab 2: Introduction to Xilinx ISE
 
 #### Contents
 
@@ -117,7 +117,7 @@
 
 ## Clean project and synchronize git
 
-1. In Xilinx ISE Design Suite clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
+1. In Xilinx ISE clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
 2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
