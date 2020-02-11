@@ -112,7 +112,7 @@
 
 3. Follow instructions from wiki, create a test bench with all input combinations, and [simulate your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) in ISim simulator.
 
-4. See [schematic](../../Docs/coolrunner-ii_sch.pdf) or [reference manual](../../Docs/coolrunner-ii_rm.pdf) of the board and find out the connection of LD0, LD1, LD2, LD3 LEDs and BTN0, BTN1 push buttons. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) to CoolRunner-II CPLD starter board. Modify the internal architecture of your design so that a pressed button represents log. 1 and a LED is turn off for log. 0.
+4. See [schematic](../../Docs/coolrunner-ii_sch.pdf) or [reference manual](../../Docs/coolrunner-ii_rm.pdf) of the board and find out the connection of LD0, LD1, LD2 LEDs and BTN0, BTN1 push buttons. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) to CoolRunner-II CPLD starter board. Modify the internal architecture of your design so that a pressed button represents log. 1 and a LED is turn off for log. 0.
 
 
 ## Clean project and synchronize git
