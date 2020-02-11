@@ -1,6 +1,6 @@
 # Lab 10-13: Project title
 
-#### Table of contents
+#### Contents
 
 1. [Introduction](#Introduction)
 2. [Hardware description](#Hardware-description)
