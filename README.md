@@ -29,7 +29,7 @@ The repository contains VHDL examples for bachelor course [*Digital Electronics 
 | ... | Lab 7: ... |
 | ... | Lab 8: ... |
 | ... | Lab 9: ... |
-| [project](Labs/project) | Lab 10-13: Project |
+| [project](Labs/project) | Lab 10-13: Final project |
 
 
 ## Hardware components
