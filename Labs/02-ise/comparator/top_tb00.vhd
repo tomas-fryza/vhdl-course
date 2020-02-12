@@ -93,10 +93,17 @@ BEGIN
 --      wait for <clock>_period*10;
 
       -- insert stimulus here 
-    BTN1 <= '0'; BTN0 <= '0'; wait for 100 ns;
-    BTN1 <= '0'; BTN0 <= '1'; wait for 100 ns;
-    BTN1 <= '1'; BTN0 <= '0'; wait for 100 ns;
-    BTN1 <= '1'; BTN0 <= '1'; wait for 100 ns;
+    BTN1 <= '0';
+    BTN0 <= '0'; wait for 100 ns;
+    
+    BTN1 <= '0';
+    BTN0 <= '1'; wait for 100 ns;
+    
+    BTN1 <= '1';
+    BTN0 <= '0'; wait for 100 ns;
+    
+    BTN1 <= '1';
+    BTN0 <= '1'; wait for 100 ns;
       wait;
    end process;
 
