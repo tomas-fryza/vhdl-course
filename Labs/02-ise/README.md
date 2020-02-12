@@ -66,7 +66,7 @@
 
 1. CoolRunner-II CPLD starter board: [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
 
-![cpld_leds](Images/coolrunner_leds.jpg)
+![cpld_leds](../../Images/coolrunner_leds.jpg)
 
 
 ## Synchronize Git and create a new folder
