@@ -38,7 +38,7 @@ The following hardware components are mainly used in the lab.
 
 | **Component** | **Description** | **Manual** |
 | :-: | :-- | :-: |
-| [CoolRunner-II](https://store.digilentinc.com/coolrunner-ii-cpld-starter-board-limited-time/) | CoolRunner-II CPLD starter board | [Manual](docs/coolrunner-ii_rm.pdf), [Schematic](docs/coolrunner-ii_sch.pdf)
+| [CoolRunner-II](https://store.digilentinc.com/coolrunner-ii-cpld-starter-board-limited-time/) | CoolRunner-II CPLD starter board ([XC2C256-TQ144](Docs/xc2c256_cpld.pdf)) | [Manual](Docs/coolrunner-ii_rm.pdf), [Schematic](Docs/coolrunner-ii_sch.pdf)
 | [Platform Cable USB II](https://www.xilinx.com/products/boards-and-kits/hw-usb-ii-g.html) | USB tool for in-circuit configuration and programming of all Xilinx devices |
 | CPLD board | CPLD expansion board by Michal Kubicek | [Schematic](Docs/cpld_expansion.pdf)
 
