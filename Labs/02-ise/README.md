@@ -64,7 +64,7 @@
 
 ## Used hardware components
 
-1. CoolRunner-II CPLD starter board: [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
+1. CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf)): [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
 
 ![cpld_leds](../../Images/coolrunner_leds.jpg)
 
