@@ -27,5 +27,5 @@ architecture Behavioral of top is
 begin
     LD2 <= '1';
     LD1 <= '0';
-    LD0 <= not(not(BTN1) and not(BTN0));
+    LD0 <= BTN1 and BTN0;
 end architecture Behavioral;
