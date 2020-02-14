@@ -82,7 +82,7 @@
     $ git pull
     ```
 
-2. Create a new folder `Labs/02-ise`.
+2. Create a new folder `Labs/02-ise`
 
     ```bash
     $ cd Labs/
