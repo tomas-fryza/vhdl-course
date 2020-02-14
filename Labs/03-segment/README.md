@@ -168,7 +168,7 @@ end entity top;
 -- Architecture declaration for top level
 ------------------------------------------------------------------------
 architecture Behavioral of top is
-    signal s_hex: std_logic_vector(4-1 downto 0);   -- Internal signal
+    signal s_hex: std_logic_vector(4-1 downto 0);   -- Internal signals
 begin
 
     -- Combine inputs [SW1, SW0, BTN1, BTN0] into internal vector
@@ -184,8 +184,7 @@ begin
         port map (-- <entity port_name> => <signal_name>,
                   -- <entity port_name> => <signal_name>,
                   -- ...
-                  -- <entity port_name> => <signal_name>
-                  -- WRITE YOUR CODE HERE
+                  -- <entity port_name> => <signal_name>);
                   hex_i => s_hex,
                   seg_o => disp_seg_o);
 
