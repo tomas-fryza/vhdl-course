@@ -118,6 +118,9 @@
 
 5. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
+![ise_schema](../../Images/ise_template_top.png)
+![ise_schema](../../Images/ise_template_gates.png)
+
 6. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions.
 
 
