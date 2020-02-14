@@ -58,7 +58,7 @@
     $ git pull
     ```
 
-2. Create a new folder `Labs/03-segment`.
+2. Create a new folder `Labs/03-segment`
 
     ```bash
     $ cd Labs/
