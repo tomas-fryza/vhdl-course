@@ -72,11 +72,11 @@
 
 ## Hex to seven-segment VHDL code
 
-![hex_to_7seg](../../Images/hex_to_7seg.svg)
-
 1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki) titled `hex_to_segment` for XC2C256-TQ144 CPLD device.
 
 2. Create a new source file **Project > New Source... > VHDL Module**, name it `hex_to_7seg` and copy + paste the following code template.
+
+![hex_to_7seg](../../Images/hex_to_7seg.svg)
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -134,9 +134,9 @@ end architecture Behavioral;
 
 ## Top level VHDL code
 
-![top](../../Images/top___hex_to_7seg.svg)
-
 1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy + paste the following code template.
+
+![top](../../Images/top___hex_to_7seg.svg)
 
 ```vhdl
 ------------------------------------------------------------------------
