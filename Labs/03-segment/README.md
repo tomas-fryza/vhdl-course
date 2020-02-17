@@ -2,7 +2,7 @@
 
 #### Contents
 
-1. [Lab prerequisites](#Lab-prerequisites)
+1. [Prerequisites](#Prerequisites)
 2. [Used hardware components](#Used-hardware-components)
 3. [Synchronize Git and create a new folder](#Synchronize-Git-and-create-a-new-folder)
 4. [Hex to seven-segment VHDL code](#Hex-to-seven-segment-VHDL-code)
@@ -11,13 +11,13 @@
 6. [Ideas for other tasks](#Ideas-for-other-tasks)
 
 
-## Lab prerequisites
+## Prerequisites
 
 1. See [schematic](../../Docs/coolrunner-ii_sch.pdf) or [reference manual](../../Docs/coolrunner-ii_rm.pdf) of the board and find out the connection of 7-segment display. How can you change the position of the character on the display?
 
-2. Construct the decoder conversion table for 7-segment display with common anode.
+2. Complete the decoder conversion table for common anode display. Sketch the symbols to be displayed.
 
-    | **Digit** | **Input** | **a** | **b** | **c** | **d** | **e** | **f** | **g** |
+    | **Hex** | **Input** | **a** | **b** | **c** | **d** | **e** | **f** | **g** |
     | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
     | 0 | 0000 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
     | 1 | 0001 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
@@ -193,8 +193,7 @@ begin
 
 
     -- Turn on LD3 if the input value is equal to "0000"
-    LD3 <= '0' when (s_hex = "0000") else
-           '1';
+    -- WRITE YOUR CODE HERE
 
     -- Turn on LD2 if the input value is A, B, C, D, E, or F
     -- WRITE YOUR CODE HERE
@@ -210,9 +209,9 @@ end architecture Behavioral;
 
 2. How is the sub-block of hex to 7-segment decoder connected to the top module?
 
-3. Write combination functions for LEDs.
+3. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) to CoolRunner-II CPLD starter board.
 
-4. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) to CoolRunner-II CPLD starter board.
+4. Write combination functions for LEDs.
 
 5. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
@@ -223,7 +222,7 @@ end architecture Behavioral;
 
 1. In Xilinx ISE clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
-    > **Note:** In the file manager, make sure there is no large file in the project folder.
+    > **Note:** In the file manager, make sure there is no large files in the project folder.
     >
 
 2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
