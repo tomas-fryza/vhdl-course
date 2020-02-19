@@ -1,6 +1,6 @@
 # Lab 3: Hex to seven-segment decoder
 
-The purpose of this exercise is to create a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
+The purpose of this exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components. We will use push buttons and slide switches on the CoolRunner board as inputs and light emitting diodes (LEDs) and 7-segment disaply as output devices.
 
 
 #### Contents
