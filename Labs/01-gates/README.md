@@ -195,4 +195,7 @@ The purpose of this exercise is to learn how to use the git versioning system, t
     > Figure was created in online [draw.io](https://www.draw.io/) diagram editor.
     >
 
-2. Try different online simulators, such as [Logicly](https://logic.ly/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), or find others, and compare them.
+2. Use digital circuit simulator and verify basic Boolean postulates ![equation](https://latex.codecogs.com/gif.latex?x%5Ccdot%20%5Coverline%7Bx%7D%20%3D%200), ![equation](https://latex.codecogs.com/gif.latex?x&plus;%20%5Coverline%7Bx%7D%20%3D%201), ![equation](https://latex.codecogs.com/gif.latex?x&plus;x&plus;x%3Dx), ![equation](https://latex.codecogs.com/gif.latex?x%5Ccdot%20x%5Ccdot%20x%3Dx) and Distributive laws ![equation](https://latex.codecogs.com/gif.latex?x%5Ccdot%20y%20&plus;%20x%5Ccdot%20z%20%3D%20x%28y&plus;z%29), ![equation](https://latex.codecogs.com/gif.latex?%28x&plus;y%29%5Ccdot%20%28x&plus;z%29%20%3D%20x&plus;%28y%5Ccdot%20z%29)
+
+
+3. Try different online simulators, such as [Logicly](https://logic.ly/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), or find others, and compare them.
