@@ -2,16 +2,14 @@
 
 #### Contents
 
-1. [Prerequisites](#Prerequisites)
-2. [Used hardware components](#Used-hardware-components)
-3. [Synchronize Git and create a new folder](#Synchronize-Git-and-create-a-new-folder)
-4. [Hex to seven-segment VHDL code](#Hex-to-seven-segment-VHDL-code)
-5. [Top level VHDL code](#Top-level-VHDL-code)
+1. [Used hardware components](#Used-hardware-components)
+2. [Synchronize Git and create a new folder](#Synchronize-Git-and-create-a-new-folder)
+3. [Hex to seven-segment VHDL code](#Hex-to-seven-segment-VHDL-code)
+4. [Top level VHDL code](#Top-level-VHDL-code)
 5. [Clean project and synchronize git](#Clean-project-and-synchronize-git)
-6. [Ideas for other tasks](#Ideas-for-other-tasks)
 
 
-## Prerequisites
+## Preparation tasks (done before the lab at home)
 
 1. See [schematic](../../Docs/coolrunner-ii_sch.pdf) or [reference manual](../../Docs/coolrunner-ii_rm.pdf) of the board and find out the connection of 7-segment display. How can you change the position of the character on the display?
 
@@ -246,8 +244,8 @@ end architecture Behavioral;
     ```
 
 
-## Ideas for other tasks
+## Experiments on your own
 
-1. TBD
+1. Program and simulate a 4-to-1 multiplexer consists of four data input lines A, B, C, D, two select lines SEL0 and SEL1 and a single output line Y.
 
 2. Complete your `README.md` file with notes and screenshots from the implementation.
