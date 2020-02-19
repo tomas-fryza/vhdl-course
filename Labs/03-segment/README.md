@@ -75,7 +75,7 @@ The purpose of this exercise is to create a 7-segment display decoder and to bec
 
 1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki) titled `hex_to_segment` for XC2C256-TQ144 CPLD device.
 
-    > **Warning:** Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-segment`, ie. in **your** local folder.
+    > **Warning:** Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-segment`, ie in **your** local folder.
     >
 
 2. Create a new source file **Project > New Source... > VHDL Module**, name it `hex_to_7seg` and copy + paste the following code template.
@@ -215,7 +215,7 @@ end architecture Behavioral;
 
 2. How is the sub-block of hex to 7-segment decoder connected to the top module?
 
-3. What coding style is used to name the inputs, outputs and internal signals in VHDL?
+3. What coding style is used to name the input, output, and internal signals in VHDL?
 
 4. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) to CoolRunner-II CPLD starter board.
 
@@ -228,9 +228,9 @@ end architecture Behavioral;
 
 ## 5 Clean project and synchronize git
 
-1. In Xilinx ISE clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
+1. In Xilinx ISE, clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
-    > **Warning:** In the file manager, make sure there is no **large** files in the project folder.
+    > **Warning:** In any file manager, make sure there is no **large** files in the project folder.
     >
 
 2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
