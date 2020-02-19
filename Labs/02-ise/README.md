@@ -1,6 +1,6 @@
 # Lab 2: Introduction to VHDL and Xilinx ISE
 
-The purpose of this exercise is to become familiar with the Xilinx ISE development environment, basic VHDL syntax, and LED and button control.
+The purpose of this exercise is to become familiar with the Xilinx ISE development environment, basic VHDL syntax, and input/output devices. We will use push buttons on the CoolRunner board as inputs and light emitting diodes (LEDs) as output devices.
 
 
 #### Contents
@@ -13,7 +13,7 @@ The purpose of this exercise is to become familiar with the Xilinx ISE developme
 
 ## Preparation tasks (done before the lab at home)
 
-1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs. Complete the truth table for 1-bit *Identity comparator* (A=B), and two *Magnitude comparators* (A>B, A<B). Note 1 represents true, 0 false.
+1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs. Complete the truth table for 1-bit *Identity comparator* (A=B), and two *Magnitude comparators* (A>B, A<B). Note, '1' represents true, '0' represents false.
 
     | **A** | **B** | **A>B** | **A=B** | **A<B** |
     | :-: | :-: | :-: | :-: | :-: |
@@ -22,7 +22,7 @@ The purpose of this exercise is to become familiar with the Xilinx ISE developme
     | 1 | 0 |  |   |   |
     | 1 | 1 |  |   |   |
 
-    According to the truth table, create canonical SoP (Sum of Product) or PoS (Product of Sum) forms as follows:
+    According to the truth table, create canonical SoP (Sum of Products) or PoS (Product of Sums) forms as follows:
 
     &nbsp;
 
@@ -99,7 +99,7 @@ The purpose of this exercise is to become familiar with the Xilinx ISE developme
 
 1. Follow instructions from wiki and [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki).
 
-    > **Warning:** Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/02-ise`, ie. in **your** local folder.
+    > **Warning:** Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/02-ise`, ie in **your** local folder.
     >
 
 2. Using VHDL operators, define the architecture for 1-bit digital comparator. Most common VHDL operators are shown in the table.
@@ -130,9 +130,9 @@ The purpose of this exercise is to become familiar with the Xilinx ISE developme
 
 ## 4 Clean project and synchronize git
 
-1. In Xilinx ISE clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
+1. In Xilinx ISE, clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
-    > **Warning:** In the file manager, make sure there is no **large** files in the project folder.
+    > **Warning:** In any file manager, make sure there are no **large** files in the project folder.
     >
 
 2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
@@ -160,6 +160,6 @@ The purpose of this exercise is to become familiar with the Xilinx ISE developme
 
 1. Follow the [Linux](https://github.com/tomas-fryza/Digital-electronics-1/wiki) or [Windows](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive-ise.html) instructions and install ISE 14.7 on your computer.
 
-2. Create a new project, define, and simulate a 2-to-4 decoder in VHDL.
+2. Create a new project, define, and simulate a 2-to-4 decoder in VHDL (its structure was mentioned in Lab 1).
 
 3. Complete your `README.md` file with screenshot from the simulation(s).
