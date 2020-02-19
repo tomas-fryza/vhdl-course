@@ -129,6 +129,10 @@ end architecture Behavioral;
 
 3. Complete the decoding table for all input combinations and define the output signals to display hexadecimal symbols (0, 1, ..., 9, A, b, C, d, E, F). Use VHDL construction `when`-`else`. Save all files in menu **File > Save All**.
 
+4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
+
+5. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions.
+
 
 ## Top level VHDL code
 
