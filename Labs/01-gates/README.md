@@ -1,5 +1,5 @@
-# Laboratory excercise 1
-## Git version-control system, Online digital circuit simulator
+# Laboratory excercise 1: 
+Git version-control system, Online digital circuit simulator
 
 #### Contents
 
