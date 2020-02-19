@@ -122,7 +122,7 @@ The purpose of this exercise is to become familiar with the Xilinx ISE developme
 ![ise_schema](../../Images/ise_template_top.png)
 ![ise_schema](../../Images/ise_template_gates.png)
 
-6. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions.
+6. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
 
 
 ## 4 Clean project and synchronize git
