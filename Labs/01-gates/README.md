@@ -1,6 +1,6 @@
 # Lab 1: Introduction to digital circuits
 
-The purpose of this exercise is to learn how to use the git versioning system, the Linux console to work in the lab, and verify basic logic functions using an online simulator.
+The purpose of this laboratory exercise is to learn how to use the git versioning system, the Linux console to work in the lab, and verify basic logic functions using an online simulator.
 
 
 #### Contents
