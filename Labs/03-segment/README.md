@@ -70,7 +70,10 @@
 
 ## Hex to seven-segment VHDL code
 
-1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki) titled `hex_to_segment` for XC2C256-TQ144 CPLD device. Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-segment`, ie. in YOUR local folder.
+1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki) titled `hex_to_segment` for XC2C256-TQ144 CPLD device.
+
+    > **Warning:** Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-segment`, ie. in **your** local folder.
+    >
 
 2. Create a new source file **Project > New Source... > VHDL Module**, name it `hex_to_7seg` and copy + paste the following code template.
 
@@ -187,7 +190,7 @@ begin
                   -- <entity port_name> => <signal_name>);
                   hex_i => s_hex,
                   seg_o => disp_seg_o);
-
+/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment
     -- Select display position
     disp_dig_o <= "1110";
 
@@ -210,7 +213,7 @@ end architecture Behavioral;
 2. How is the sub-block of hex to 7-segment decoder connected to the top module?
 
 3. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) to CoolRunner-II CPLD starter board.
-
+/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment
 4. Write logic functions for LEDs. Let two functions are defined using VHDL construction `when`-`else` and two functions using low-level gates `and`, `or`, `not`, etc.
 
 5. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
@@ -241,7 +244,7 @@ end architecture Behavioral;
     $ git status
     $ git commit -m "[LAB] Adding 03-segment lab"
     $ git status
-    $ git push
+    $ git push/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment
     $ git status
     ```
 
