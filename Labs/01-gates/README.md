@@ -99,12 +99,12 @@ The purpose of this laboratory exercise is to learn how to use the git versionin
 
     ![and_gates](../../Images/simulator_basic_gates.png)
 
-2. Run any text editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` local file, create/complete tables with logical values, and add a screenshot from the simulator. DO NOT modify `README.md` file at GitHub.
+2. Run any text editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` **local** file (not on GitHub), create/complete tables with logical values, and add a screenshot from the simulator.
 
     | **A** | **NOT** |
     | :-: | :-: |
-    | 0 | 1 |
-    | 1 | 0 |
+    | 0 |  |
+    | 1 |  |
 
     | **A** | **B** | **AND** | **NAND** | **OR** | **NOR** | **XOR** | **XNOR** |
     | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
