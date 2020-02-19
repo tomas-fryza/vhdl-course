@@ -8,7 +8,7 @@
 4. [Synchronize git](#4-Synchronize-git)
 
 
-### Preparation tasks (done before the lab at home)
+## Preparation tasks (done before the lab at home)
 
 1. Create an account on [GitHub](https://github.com/) server.
 
@@ -176,7 +176,7 @@
     ```
 
 
-### Experiment on your own
+## Experiment on your own
 
 1. Use online digital circuit simulator, draw the logic diagram according to figure, complete the truth table, and determine the circuit function.
 
