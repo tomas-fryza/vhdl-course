@@ -1,8 +1,11 @@
 # Lab 3: Hex to seven-segment decoder
 
+The purpose of this exercise is to create a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
+
+
 #### Contents
 
-1. [Used hardware components](#Used-hardware-components)
+1. [Materials](#Materials)
 2. [Synchronize Git and create a new folder](#Synchronize-Git-and-create-a-new-folder)
 3. [Hex to seven-segment VHDL code](#Hex-to-seven-segment-VHDL-code)
 4. [Top level VHDL code](#Top-level-VHDL-code)
@@ -36,14 +39,14 @@
 
 
 
-## Used hardware components
+## 1 Materials
 
 1. CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf)): [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
 
 ![cpld_leds](../../Images/coolrunner_leds.jpg)
 
 
-## Synchronize Git and create a new folder
+## 2 Synchronize Git and create a new folder
 
 1. Open a Linux terminal, use `cd` commands to change path to your Digital-electronics-1 working directory, and [synchronize the contents](https://github.com/joshnh/Git-Commands) with GitHub.
 
@@ -68,7 +71,7 @@
     ```
 
 
-## Hex to seven-segment VHDL code
+## 3 Hex to seven-segment VHDL code
 
 1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki) titled `hex_to_segment` for XC2C256-TQ144 CPLD device.
 
@@ -135,7 +138,7 @@ end architecture Behavioral;
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
 
-## Top level VHDL code
+## 4 Top level VHDL code
 
 1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy + paste the following code template.
 
@@ -184,13 +187,13 @@ begin
     --------------------------------------------------------------------
     -- Sub-block of hex_to_7seg entity
     HEX2SSEG: entity work.hex_to_7seg
-        port map (-- <entity port_name> => <signal_name>,
-                  -- <entity port_name> => <signal_name>,
+        port map (-- <component_signal> => actual_signal,
+                  -- <component_signal> => actual_signal,
                   -- ...
-                  -- <entity port_name> => <signal_name>);
+                  -- <component_signal> => actual_signal);
                   hex_i => s_hex,
                   seg_o => disp_seg_o);
-/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment
+
     -- Select display position
     disp_dig_o <= "1110";
 
@@ -213,7 +216,7 @@ end architecture Behavioral;
 2. How is the sub-block of hex to 7-segment decoder connected to the top module?
 
 3. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) to CoolRunner-II CPLD starter board.
-/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment
+
 4. Write logic functions for LEDs. Let two functions are defined using VHDL construction `when`-`else` and two functions using low-level gates `and`, `or`, `not`, etc.
 
 5. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
@@ -221,7 +224,7 @@ end architecture Behavioral;
 6. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
 
 
-## Clean project and synchronize git
+## 5 Clean project and synchronize git
 
 1. In Xilinx ISE clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
