@@ -179,7 +179,7 @@ The purpose of this exercise is to learn how to use the git versioning system, t
     ```
 
 
-## Experiment on your own
+## Experiments on your own
 
 1. Use digital circuit [simulator](https://circuitverse.org/) and verify basic Boolean postulates
 
