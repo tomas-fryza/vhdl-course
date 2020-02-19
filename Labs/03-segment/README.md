@@ -5,11 +5,11 @@ The purpose of this exercise is to create a 7-segment display decoder and to bec
 
 #### Contents
 
-1. [Materials](#Materials)
-2. [Synchronize Git and create a new folder](#Synchronize-Git-and-create-a-new-folder)
-3. [Hex to seven-segment VHDL code](#Hex-to-seven-segment-VHDL-code)
-4. [Top level VHDL code](#Top-level-VHDL-code)
-5. [Clean project and synchronize git](#Clean-project-and-synchronize-git)
+1. [Materials](#1-Materials)
+2. [Synchronize Git and create a new folder](#2-Synchronize-Git-and-create-a-new-folder)
+3. [Hex to seven-segment VHDL code](#3-Hex-to-seven-segment-VHDL-code)
+4. [Top level VHDL code](#4-Top-level-VHDL-code)
+5. [Clean project and synchronize git](#5-Clean-project-and-synchronize-git)
 
 
 ## Preparation tasks (done before the lab at home)
