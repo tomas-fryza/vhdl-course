@@ -75,7 +75,7 @@
 2. Create a new source file **Project > New Source... > VHDL Module**, name it `hex_to_7seg` and copy + paste the following code template.
 
 ![hex_to_7seg](../../Images/hex_to_7seg.svg)
-
+nation functions for LE
 ```vhdl
 ------------------------------------------------------------------------
 --
@@ -211,7 +211,7 @@ end architecture Behavioral;
 
 3. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) to CoolRunner-II CPLD starter board.
 
-4. Write combination functions for LEDs.
+4. Write logic functions for LEDs. Let two functions are defined using VHDL construction `when`-`else` and two functions using low-level gates `and`, `or`, `not`, etc.
 
 5. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
