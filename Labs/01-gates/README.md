@@ -2,15 +2,13 @@
 
 #### Contents
 
-   [Preparation tasks](#Preparation-tasks-(done-before-the-lab-at-home))
 1. [GitHub](#1-GitHub)
-2. [Linux terminal](#Linux-terminal)
-3. [Online simulator](#Online-simulator)
-4. [Synchronize git](#Synchronize-git)
-   [Ideas for other tasks](#Ideas-for-other-tasks)
+2. [Linux terminal](#2-Linux-terminal)
+3. [Online simulator](#3-Online-simulator)
+4. [Synchronize git](#4-Synchronize-git)
 
 
-## Preparation tasks (done before the lab at home)
+### Preparation tasks (done before the lab at home)
 
 1. Create an account on [GitHub](https://github.com/) server.
 
@@ -27,7 +25,7 @@
     * Table
 
 
-## Activity 2: Linux terminal
+## 2 Linux terminal
 
 1. Try basic commands in the Linux terminal:
 
@@ -92,7 +90,7 @@
     ```
 
 
-## Activity 3: Online simulator
+## 3 Online simulator
 
 1. Use online digital circuit simulator [CircuitVerse](https://circuitverse.org/), launch the simulator, draw and verify basic two-input logic gates.
 
@@ -155,7 +153,7 @@
     >
 
 
-## Activity 4: Synchronize git
+## 4 Synchronize git
 
 1. Use `cd ..` command in Linux terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
@@ -178,7 +176,7 @@
     ```
 
 
-## Experiment on your own
+### Experiment on your own
 
 1. Use online digital circuit simulator, draw the logic diagram according to figure, complete the truth table, and determine the circuit function.
 
