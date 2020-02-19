@@ -2,12 +2,12 @@
 
 #### Contents
 
-1. [Preparation tasks](#Preparation-tasks-(done-before-the-lab-at-home))
-2. [Activity 1 GitHub](#Activity-1-GitHub)
-3. [Linux terminal](#Linux-terminal)
-4. [Online simulator](#Online-simulator)
-5. [Synchronize git](#Synchronize-git)
-6. [Ideas for other tasks](#Ideas-for-other-tasks)
+   [Preparation tasks](#Preparation-tasks-(done-before-the-lab-at-home))
+1. [GitHub](#1-GitHub)
+2. [Linux terminal](#Linux-terminal)
+3. [Online simulator](#Online-simulator)
+4. [Synchronize git](#Synchronize-git)
+   [Ideas for other tasks](#Ideas-for-other-tasks)
 
 
 ## Preparation tasks (done before the lab at home)
@@ -15,7 +15,7 @@
 1. Create an account on [GitHub](https://github.com/) server.
 
 
-## Activity 1: GitHub
+## 1 GitHub
 
 1. In GitHub, create a new public repository titled **Digital-electronics-1**. Initialize a README and [MIT license](https://choosealicense.com/licenses/mit/).
 
