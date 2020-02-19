@@ -113,17 +113,17 @@ The purpose of this laboratory exercise is to learn how to use the git versionin
     | 1 | 0 |  |  |  |  |  |  |
     | 1 | 1 |  |  |  |  |  |  |
 
-3. Use online simulator and verify De Morgan's laws.
+3. Use De Morgan's law and modify logic function to form with (N)AND and (N)OR gates only. Verify all three functions in online simulator.
 
-   ![equation](https://latex.codecogs.com/gif.latex?f%20%3D%20a%5Ccdot%20%5Coverline%7Bb%7D%20&plus;%20%5Coverline%7Bb%7D%5Ccdot%20%5Coverline%7Bc%7D)
+   ![equation](https://latex.codecogs.com/gif.latex?f%28c%2Cb%2Ca%29%20%3D%20%28%5Coverline%7Bb%7Da%29%20&plus;%20%28%5Coverline%7Bc%7D%5Coverline%7Bb%7D%29)
 
     &nbsp;
 
-    ![equation](https://latex.codecogs.com/gif.latex?f_%7BAND%7D%20%3D)
+    ![equation](https://latex.codecogs.com/gif.latex?f%28c%2Cb%2Ca%29_%7BAND%7D%20%3D)
     
     &nbsp;
     
-    ![equation](https://latex.codecogs.com/gif.latex?f_%7BOR%7D%20%3D)
+    ![equation](https://latex.codecogs.com/gif.latex?f%28c%2Cb%2Ca%29_%7BOR%7D%20%3D)
     
     &nbsp;
 
