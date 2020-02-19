@@ -43,7 +43,7 @@ The purpose of this exercise is to create a 7-segment display decoder and to bec
 
 1. CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf)): [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
 
-![cpld_leds](../../Images/coolrunner_leds.jpg)
+![cpld_segments](../../Images/coolrunner_segments.jpg)
 
 
 ## 2 Synchronize Git and create a new folder
