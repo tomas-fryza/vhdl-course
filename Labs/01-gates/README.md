@@ -199,7 +199,7 @@ The purpose of this laboratory exercise is to learn how to use the git versionin
 
 2. Use online digital circuit [simulator](https://circuitverse.org/), draw the logic diagram according to figure, complete the truth table, and determine the circuit function.
 
-    ![logic](../../Images/gates_2-4.png)
+    ![logic](../../Images/simulator_gates_2-4.png)
 
     | **A** | **B** | **Q3** | **Q2** | **Q1** | **Q0** |
     | :-: | :-: | :-: | :-: | :-: | :-: |
