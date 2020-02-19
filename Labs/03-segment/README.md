@@ -72,10 +72,13 @@
 
 1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki) titled `hex_to_segment` for XC2C256-TQ144 CPLD device.
 
+    > **Warning:** Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-segment`, ie. in **your** local folder.
+    >
+
 2. Create a new source file **Project > New Source... > VHDL Module**, name it `hex_to_7seg` and copy + paste the following code template.
 
 ![hex_to_7seg](../../Images/hex_to_7seg.svg)
-
+nation functions for LE
 ```vhdl
 ------------------------------------------------------------------------
 --
@@ -128,6 +131,8 @@ end architecture Behavioral;
 ```
 
 3. Complete the decoding table for all input combinations and define the output signals to display hexadecimal symbols (0, 1, ..., 9, A, b, C, d, E, F). Use VHDL construction `when`-`else`. Save all files in menu **File > Save All**.
+
+4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
 
 ## Top level VHDL code
@@ -185,7 +190,7 @@ begin
                   -- <entity port_name> => <signal_name>);
                   hex_i => s_hex,
                   seg_o => disp_seg_o);
-
+/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment
     -- Select display position
     disp_dig_o <= "1110";
 
@@ -208,19 +213,19 @@ end architecture Behavioral;
 2. How is the sub-block of hex to 7-segment decoder connected to the top module?
 
 3. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) to CoolRunner-II CPLD starter board.
-
-4. Write combination functions for LEDs.
+/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment
+4. Write logic functions for LEDs. Let two functions are defined using VHDL construction `when`-`else` and two functions using low-level gates `and`, `or`, `not`, etc.
 
 5. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
-6. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions.
+6. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
 
 
 ## Clean project and synchronize git
 
 1. In Xilinx ISE clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
-    > **Note:** In the file manager, make sure there is no large files in the project folder.
+    > **Warning:** In the file manager, make sure there is no **large files** in the project folder.
     >
 
 2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
@@ -239,13 +244,13 @@ end architecture Behavioral;
     $ git status
     $ git commit -m "[LAB] Adding 03-segment lab"
     $ git status
-    $ git push
+    $ git push/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment
     $ git status
     ```
 
 
 ## Experiments on your own
 
-1. Program and simulate a 4-to-1 multiplexer consists of four data input lines A, B, C, D, two select lines SEL0 and SEL1 and a single output line Y.
+1. Program and simulate a 4-to-1 multiplexer consists of four data input lines `data_i` two select lines `sel_i` and a single output line `y_o`.
 
 2. Complete your `README.md` file with notes and screenshots from the implementation.
