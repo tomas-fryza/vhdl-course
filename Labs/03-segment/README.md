@@ -215,7 +215,7 @@ end architecture Behavioral;
 
 5. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
-6. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions.
+6. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
 
 
 ## Clean project and synchronize git
