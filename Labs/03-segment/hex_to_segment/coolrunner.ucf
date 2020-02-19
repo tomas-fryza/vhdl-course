@@ -1,0 +1,55 @@
+#-----------------------------------------------------------------------
+#
+# Constraints file with pin assignments.
+# CoolRunner-II CPLD starter board, ISE Design Suite 14.7
+#
+# Copyright (c) 2017-2020 Tomas Fryza
+# Dept. of Radio Electronics, Brno University of Technology, Czechia
+# This work is licensed under the terms of the MIT license.
+#
+#-----------------------------------------------------------------------
+
+#-----------------------------------------------------------------------
+# Buttons & switches
+#-----------------------------------------------------------------------
+# Two push buttons
+NET BTN1        LOC = P94;
+NET BTN0        LOC = P143;
+
+# Two slide switches
+NET SW1         LOC = P124;
+NET SW0         LOC = P39;
+
+#-----------------------------------------------------------------------
+# Four discrete LEDs
+#-----------------------------------------------------------------------
+NET LD3         LOC = P64;
+NET LD2         LOC = P66;
+NET LD1         LOC = P68;
+NET LD0         LOC = P69;
+
+#-----------------------------------------------------------------------
+# Four-digit time-multiplexed seven-segment LED display
+#-----------------------------------------------------------------------
+# LED segments
+NET disp_seg_o<6>   LOC = P56;  # segment a
+NET disp_seg_o<5>   LOC = P53;  # segment b
+NET disp_seg_o<4>   LOC = P60;  # segment c
+NET disp_seg_o<3>   LOC = P58;  # segment d
+NET disp_seg_o<2>   LOC = P57;  # segment e
+NET disp_seg_o<1>   LOC = P54;  # segment f
+NET disp_seg_o<0>   LOC = P61;  # segment g
+
+# Digits
+NET disp_dig_o<3>   LOC = P130;
+NET disp_dig_o<2>   LOC = P129;
+NET disp_dig_o<1>   LOC = P128;
+NET disp_dig_o<0>   LOC = P126;
+
+# Decimal point
+#NET disp_dp         LOC = P59;
+
+#-----------------------------------------------------------------------
+# Clock
+#-----------------------------------------------------------------------
+#NET clk_i           LOC = P38;
