@@ -2,8 +2,8 @@
 
 #### Contents
 
-1. [Preparation tasks](#Preparation-tasks)
-2. [GitHub](#GitHub)
+1. [Preparation tasks](#Preparation-tasks-(done-before-the-lab-at-home))
+2. [Activity 1: GitHub](#Activity-1:-GitHub)
 3. [Linux terminal](#Linux-terminal)
 4. [Online simulator](#Online-simulator)
 5. [Synchronize git](#Synchronize-git)
