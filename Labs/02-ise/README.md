@@ -153,7 +153,7 @@ The purpose of this exercise is to become familiar with the Xilinx ISE developme
     ```
 
 
-## Ideas for other tasks
+## Experiments on your own
 
 1. Follow the [Linux](https://github.com/tomas-fryza/Digital-electronics-1/wiki) or [Windows](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive-ise.html) instructions and install ISE 14.7 on your computer.
 
