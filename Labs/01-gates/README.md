@@ -167,7 +167,7 @@ The purpose of this laboratory exercise is to learn how to use the git versionin
 
 ## Experiments on your own
 
-1. Use digital circuit [simulator](https://circuitverse.org/) and verify basic Boolean postulates
+1. Use digital circuit [simulator](https://circuitverse.org/) and verify basic Boolean postulates:
 
     ![equation](https://latex.codecogs.com/gif.latex?x%5Ccdot%20%5Coverline%7Bx%7D%20%3D%200)
 
@@ -177,7 +177,7 @@ The purpose of this laboratory exercise is to learn how to use the git versionin
 
     ![equation](https://latex.codecogs.com/gif.latex?x%5Ccdot%20x%5Ccdot%20x%3Dx)
 
-    and Distributive laws
+    and Distributive laws:
 
     ![equation](https://latex.codecogs.com/gif.latex?x%5Ccdot%20y%20&plus;%20x%5Ccdot%20z%20%3D%20x%28y&plus;z%29)
 
