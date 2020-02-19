@@ -181,21 +181,7 @@ The purpose of this exercise is to learn how to use the git versioning system, t
 
 ## Experiment on your own
 
-1. Use online digital circuit simulator, draw the logic diagram according to figure, complete the truth table, and determine the circuit function.
-
-    ![logic](../../Images/gates_2-4.png)
-
-    | **A** | **B** | **Q3** | **Q2** | **Q1** | **Q0** |
-    | :-: | :-: | :-: | :-: | :-: | :-: |
-    | 0 | 0 |  |  |
-    | 0 | 1 |  |  |
-    | 1 | 0 |  |  |
-    | 1 | 1 |  |  |
-
-    > Figure was created in online [draw.io](https://www.draw.io/) diagram editor.
-    >
-
-2. Use digital circuit simulator and verify basic Boolean postulates
+1. Use digital circuit [simulator](https://circuitverse.org/) and verify basic Boolean postulates
 
     ![equation](https://latex.codecogs.com/gif.latex?x%5Ccdot%20%5Coverline%7Bx%7D%20%3D%200)
 
@@ -211,5 +197,18 @@ The purpose of this exercise is to learn how to use the git versioning system, t
 
     ![equation](https://latex.codecogs.com/gif.latex?%28x&plus;y%29%5Ccdot%20%28x&plus;z%29%20%3D%20x&plus;%28y%5Ccdot%20z%29)
 
+2. Use online digital circuit [simulator](https://circuitverse.org/), draw the logic diagram according to figure, complete the truth table, and determine the circuit function.
+
+    ![logic](../../Images/gates_2-4.png)
+
+    | **A** | **B** | **Q3** | **Q2** | **Q1** | **Q0** |
+    | :-: | :-: | :-: | :-: | :-: | :-: |
+    | 0 | 0 |  |  |
+    | 0 | 1 |  |  |
+    | 1 | 0 |  |  |
+    | 1 | 1 |  |  |
+
+    > Figure was created in online [draw.io](https://www.draw.io/) diagram editor.
+    >
 
 3. Try different online simulators, such as [Logicly](https://logic.ly/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), or find others, and compare them.
