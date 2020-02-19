@@ -1,4 +1,4 @@
-# Lab 3: Hex to seven-segment decoder
+# Laboratory excercise 3: Hex to seven-segment decoder
 
 #### Contents
 
