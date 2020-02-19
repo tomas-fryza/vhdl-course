@@ -17,7 +17,7 @@
 
 The repository contains VHDL examples for bachelor course [*Digital Electronics 1*](https://www.vutbr.cz/en/students/courses/detail/210628) at Brno University of Technology, Czechia. In folder `Docs` all manuals are stored. Folder `Docs/Hw` contains KiCad schematic of CPLD expansion board used in the course. All computer lab exercises are located within `Labs` folder and all screenshots and images are located in `Images` folder.
 
-| **Computer lab exercise** | **Description** |
+| **Laboratory exercise** | **Description** |
 | :-- | :-- |
 | [01-gates](Labs/01-gates) | Lab 1: Introduction to digital circuits |
 | [02-ise](Labs/02-ise) | Lab 2: Introduction to VHDL and Xilinx ISE |
