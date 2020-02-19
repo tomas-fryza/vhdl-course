@@ -225,7 +225,7 @@ end architecture Behavioral;
 
 1. In Xilinx ISE clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
-    > **Note:** In the file manager, make sure there is no large files in the project folder.
+    > **Warning:** In the file manager, make sure there is no **large files** in the project folder.
     >
 
 2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
