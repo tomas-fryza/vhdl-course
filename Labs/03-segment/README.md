@@ -251,6 +251,6 @@ end architecture Behavioral;
 
 ## Experiments on your own
 
-1. Program and simulate a 4-to-1 multiplexer consists of four data input lines A, B, C, D, two select lines SEL0 and SEL1 and a single output line Y.
+1. Program and simulate a 4-to-1 multiplexer consists of four data input lines `data_i` two select lines `sel_i` and a single output line `y_o`.
 
 2. Complete your `README.md` file with notes and screenshots from the implementation.
