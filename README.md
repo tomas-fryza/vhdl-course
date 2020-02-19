@@ -8,10 +8,9 @@
 #### Contents
 
 1. [Introduction](#Introduction)
-2. [Hardware components](#Hardware-components)
-3. [Software components](#Software-components)
-4. [References](#References)
-5. [License](#License)
+2. [Materials](#Materials)
+3. [References](#References)
+4. [License](#License)
 
 
 ## Introduction
@@ -32,9 +31,11 @@ The repository contains VHDL examples for bachelor course [*Digital Electronics 
 | [project](Labs/project) | Lab 10-13: Final project |
 
 
-## Hardware components
+## Materials
 
-The following hardware components are mainly used in the lab.
+The following hardware and software components are mainly used in the lab.
+
+### Hardware
 
 | **Component** | **Description** | **Manual** |
 | :-: | :-- | :-: |
@@ -45,7 +46,7 @@ The following hardware components are mainly used in the lab.
 ![cpld](Images/coolrunner_board.jpg)
 
 
-## Software components
+## Software
 
 | **Component** | **Description** | **Manual** |
 | :-: | :-- | :-: |
