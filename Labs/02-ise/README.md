@@ -1,4 +1,4 @@
-# Lab 2: Introduction to VHDL and Xilinx ISE
+# Laboratory excercise 2: Introduction to VHDL and Xilinx ISE
 
 #### Contents
 
