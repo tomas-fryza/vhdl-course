@@ -99,6 +99,9 @@ The purpose of this exercise is to become familiar with the Xilinx ISE developme
 
 1. Follow instructions from wiki and [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki).
 
+    > **Warning:** Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/02-ise`, ie. in **your** local folder.
+    >
+
 2. Using VHDL operators, define the architecture for 1-bit digital comparator. Most common VHDL operators are shown in the table.
 
     | **Operator** | **Description** |
