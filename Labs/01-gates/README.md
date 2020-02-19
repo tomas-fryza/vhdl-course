@@ -12,14 +12,14 @@
 
 ## Preparation tasks (done before the lab at home)
 
-P.1: Create an account on [GitHub](https://github.com/) server.
+1. Create an account on [GitHub](https://github.com/) server.
 
 
 ## Activity 1: GitHub
 
-1.1. In GitHub, create a new public repository titled **Digital-electronics-1**. Initialize a README and [MIT license](https://choosealicense.com/licenses/mit/).
+1. In GitHub, create a new public repository titled **Digital-electronics-1**. Initialize a README and [MIT license](https://choosealicense.com/licenses/mit/).
 
-1.2. Use [How to make the perfect Readme.md on GitHub](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061), [Basic writing and formatting syntax](https://help.github.com/en/articles/basic-writing-and-formatting-syntax) or [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) articles and add the following parts in your README file.
+2. Use [How to make the perfect Readme.md on GitHub](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061), [Basic writing and formatting syntax](https://help.github.com/en/articles/basic-writing-and-formatting-syntax) or [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) articles and add the following parts in your README file.
     * Headers
     * Emphasis
     * List
@@ -29,7 +29,7 @@ P.1: Create an account on [GitHub](https://github.com/) server.
 
 ## Activity 2: Linux terminal
 
-2.1: Try basic commands in the Linux terminal:
+1. Try basic commands in the Linux terminal:
 
 | **Command** | **Description** |
 | :-: | :-- |
@@ -45,7 +45,7 @@ P.1: Create an account on [GitHub](https://github.com/) server.
 | `cp` | Copy files and directories |
 | `mc` | GNU Midnight Commander (file manager) |
 
-2.2: In the lab, make your own home folder within `Documents`, and with help of `git` command create a local copy of your public repository:
+2. In the lab, make your own home folder within `Documents`, and with help of `git` command create a local copy of your public repository:
 
     ```bash
     $ cd
@@ -64,14 +64,14 @@ P.1: Create an account on [GitHub](https://github.com/) server.
     LICENSE  README.md
     ```
 
-2.3: Download `Docs` folder from [teacher's repository](https://github.com/tomas-fryza/Digital-electronics-1) and copy it to your `Digital-electronics-1` local repository.
+3. Download `Docs` folder from [teacher's repository](https://github.com/tomas-fryza/Digital-electronics-1) and copy it to your `Digital-electronics-1` local repository.
 
     ```bash
     $ ls
     Docs  LICENSE  README.md
     ```
 
-2.4: Make a new folder `Images`.
+4. Make a new folder `Images`.
 
     ```bash
     $ mkdir Images
@@ -79,7 +79,7 @@ P.1: Create an account on [GitHub](https://github.com/) server.
     Docs  Images  LICENSE  README.md
     ```
 
-2.5: Make a new folder `Labs/01-gates` and create an empty file `README.md`.
+5. Make a new folder `Labs/01-gates` and create an empty file `README.md`.
 
     ```bash
     $ mkdir Labs
@@ -94,11 +94,11 @@ P.1: Create an account on [GitHub](https://github.com/) server.
 
 ## Activity 3: Online simulator
 
-3.1: Use online digital circuit simulator [CircuitVerse](https://circuitverse.org/), launch the simulator, draw and verify basic two-input logic gates.
+1. Use online digital circuit simulator [CircuitVerse](https://circuitverse.org/), launch the simulator, draw and verify basic two-input logic gates.
 
     ![and_gates](../../Images/simulator_basic_gates.png)
 
-3.2: Run any text editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` local file, create/complete tables with logical values, and add a screenshot from the simulator. DO NOT modify `README.md` file at GitHub.
+2. Run any text editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` local file, create/complete tables with logical values, and add a screenshot from the simulator. DO NOT modify `README.md` file at GitHub.
 
     | **A** | **NOT** |
     | :-: | :-: |
@@ -126,7 +126,7 @@ P.1: Create an account on [GitHub](https://github.com/) server.
     | 1 | 0 |  |  |
     | 1 | 1 |  |  |
 
-3.3: Use online simulator and verify De Morgan's laws.
+3. Use online simulator and verify De Morgan's laws.
 
    ![equation](https://latex.codecogs.com/gif.latex?f%20%3D%20a%5Ccdot%20%5Coverline%7Bb%7D%20&plus;%20%5Coverline%7Bb%7D%5Ccdot%20%5Coverline%7Bc%7D)
 
@@ -157,7 +157,7 @@ P.1: Create an account on [GitHub](https://github.com/) server.
 
 ## Activity 4: Synchronize git
 
-4.1: Use `cd ..` command in Linux terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
+1. Use `cd ..` command in Linux terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
     ```bash
     $ pwd
@@ -180,7 +180,7 @@ P.1: Create an account on [GitHub](https://github.com/) server.
 
 ## Experiment on your own
 
-E.1: Use online digital circuit simulator, draw the logic diagram according to figure, complete the truth table, and determine the circuit function.
+1. Use online digital circuit simulator, draw the logic diagram according to figure, complete the truth table, and determine the circuit function.
 
     ![logic](../../Images/gates_2-4.png)
 
@@ -194,4 +194,4 @@ E.1: Use online digital circuit simulator, draw the logic diagram according to f
     > Figure was created in online [draw.io](https://www.draw.io/) diagram editor.
     >
 
-E.2: Try different online simulators, such as [Logicly](https://logic.ly/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), or find others, and compare them.
+2. Try different online simulators, such as [Logicly](https://logic.ly/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), or find others, and compare them.
