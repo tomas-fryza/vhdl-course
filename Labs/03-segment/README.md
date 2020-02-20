@@ -204,10 +204,10 @@ begin
     -- Turn on LD2 if the input value is A, B, C, D, E, or F
     -- WRITE YOUR CODE HERE
 
-    -- Turn on LD1 if the input value is odd, ie 1, 2, 3, etc.
+    -- Turn on LD1 if the input value is odd, ie 1, 3, ..., F
     -- WRITE YOUR CODE HERE
 
-    -- Turn on LD0 if the input value is a power of two, ie 1, 2, 4, or 8.
+    -- Turn on LD0 if the input value is a power of two, ie 1, 2, 4, or 8
     -- WRITE YOUR CODE HERE
 
 end architecture Behavioral;
