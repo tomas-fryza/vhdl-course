@@ -81,7 +81,7 @@ The purpose of this exercise is to design a 7-segment display decoder and to bec
 2. Create a new source file **Project > New Source... > VHDL Module**, name it `hex_to_7seg` and copy + paste the following code template.
 
 ![hex_to_7seg](../../Images/hex_to_7seg.svg)
-nation functions for LE
+
 ```vhdl
 ------------------------------------------------------------------------
 --
