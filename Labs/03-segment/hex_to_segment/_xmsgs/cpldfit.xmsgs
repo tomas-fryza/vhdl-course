@@ -14,10 +14,7 @@
 <msg type="warning" file="Cpld" num="936" delta="old" >The output buffer &apos;<arg fmt="%s" index="1">LD2_OBUF</arg>&apos; is missing an input and will be deleted.
 </msg>
 
-<msg type="warning" file="Cpld" num="936" delta="old" >The output buffer &apos;<arg fmt="%s" index="1">LD1_OBUF</arg>&apos; is missing an input and will be deleted.
-</msg>
-
-<msg type="warning" file="Cpld" num="936" delta="new" >The output buffer &apos;<arg fmt="%s" index="1">LD0_OBUF</arg>&apos; is missing an input and will be deleted.
+<msg type="warning" file="Cpld" num="936" delta="old" >The output buffer &apos;<arg fmt="%s" index="1">LD0_OBUF</arg>&apos; is missing an input and will be deleted.
 </msg>
 
 </messages>

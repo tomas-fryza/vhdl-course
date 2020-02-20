@@ -39,7 +39,14 @@ begin
     --------------------------------------------------------------------
     seg_o <= "0000001" when (hex_i = "0000") else   -- 0
              "1001111" when (hex_i = "0001") else   -- 1
+             "0010010" when (hex_i = "0010") else   -- 2
+             "0000110" when (hex_i = "0011") else   -- 3
              "1001100" when (hex_i = "0100") else   -- 4
+             "0100100" when (hex_i = "0101") else   -- 5
+             "0100000" when (hex_i = "0110") else   -- 6
+             "0001111" when (hex_i = "0111") else   -- 7
+             "0000000" when (hex_i = "1000") else   -- 8
+             "0001100" when (hex_i = "1001") else   -- 9
 
              -- WRITE YOUR CODE HERE
 

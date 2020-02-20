@@ -44,7 +44,7 @@ begin
                   seg_o => disp_seg_o);
 
     -- Select display position
-    disp_dig_o <= "1110";
+    disp_dig_o <= "1101";
 
 
     -- Turn on LD3 if the input value is equal to "0000"
@@ -53,10 +53,10 @@ begin
     -- Turn on LD2 if the input value is A, B, C, D, E, or F
     -- WRITE YOUR CODE HERE
 
-    -- Turn on LD1 if the input value is odd, ie 1, 2, 3, etc.
-    -- WRITE YOUR CODE HERE
+    -- Turn on LD1 if the input value is odd, ie 1, 3, 5, ..., F
+    LD1 <= not(s_hex(0));
 
-    -- Turn on LD0 if the input value is a power of two, ie 1, 2, 4, or 8.
+    -- Turn on LD0 if the input value is a power of two, ie 1, 2, 4, or 8
     -- WRITE YOUR CODE HERE
 
 end architecture Behavioral;

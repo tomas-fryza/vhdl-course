@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2020-02-19T10:09:04</DateModified>
+  <DateModified>2020-02-20T13:35:20</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>2020-02-19T10:03:28</SummaryTimeStamp>
   <SavedFilePath>/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment/hex_to_segment/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment/hex_to_segment</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment/hex_to_segment/</ImplementationReportsDirectory>
   <DateInitialized>2020-02-19T10:02:49</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
