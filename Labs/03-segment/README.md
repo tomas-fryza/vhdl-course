@@ -1,6 +1,6 @@
 # Lab 3: Hex to seven-segment decoder
 
-The purpose of this exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components. We will use push buttons and slide switches on the CoolRunner board as inputs and light emitting diodes (LEDs) and 7-segment display as output devices.
+The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components. We will use push buttons and slide switches on the CoolRunner board as inputs and light emitting diodes (LEDs) and 7-segment display as output devices.
 
 
 #### Contents
@@ -230,7 +230,7 @@ end architecture Behavioral;
 
 1. In Xilinx ISE, clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
-    > **Warning:** In any file manager, make sure there is no **large** files in the project folder.
+    > **Warning:** In any file manager, make sure the project folder does not contain any **large** (gigabyte) files. These can be caused by incorrect simulation in ISim. Delete such files.
     >
 
 2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
@@ -249,7 +249,7 @@ end architecture Behavioral;
     $ git status
     $ git commit -m "[LAB] Adding 03-segment lab"
     $ git status
-    $ git push/home/lab661/Documents/fryza/Digital-electronics-1/Labs/03-segment
+    $ git push
     $ git status
     ```
 

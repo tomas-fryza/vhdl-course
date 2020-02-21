@@ -1,6 +1,6 @@
 # Lab 2: Introduction to VHDL and Xilinx ISE
 
-The purpose of this exercise is to become familiar with the Xilinx ISE development environment, basic VHDL syntax, and input/output devices. We will use push buttons on the CoolRunner board as inputs and light emitting diodes (LEDs) as output devices.
+The purpose of this laboratory exercise is to become familiar with the Xilinx ISE development environment, basic VHDL syntax, and input/output devices. We will use push buttons on the CoolRunner board as inputs and light emitting diodes (LEDs) as output devices.
 
 
 #### Contents
@@ -132,7 +132,7 @@ The purpose of this exercise is to become familiar with the Xilinx ISE developme
 
 1. In Xilinx ISE, clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
-    > **Warning:** In any file manager, make sure there are no **large** files in the project folder.
+    > **Warning:** In any file manager, make sure the project folder does not contain any **large** (gigabyte) files. These can be caused by incorrect simulation in ISim. Delete such files.
     >
 
 2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
