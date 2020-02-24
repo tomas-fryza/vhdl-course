@@ -1,6 +1,6 @@
 # Lab 4: Binary adder
 
-The purpose of this laboratory exercise is to design an adder. It is a type of digital circuit that performs the operation of additions of two numbers. XXXXXXXXXXXXXXXXXXXXX
+The purpose of this laboratory exercise is to design an adder. It is a type of digital circuit that performs the operation of additions of two numbers.
 
 
 #### Contents
@@ -291,36 +291,17 @@ begin
 end architecture Behavioral;
 ```
 
-
-
-
-
-TODO:
---pospojovat 3x FA
---zapojit 7-seg display
---vytvořit UCF pro expansion board
---implementovat (nesimulovat)
-
-
-
-
-
-
 2. Copy `hex_to_7seg.vhd` and `coolrunner.ucf` files from previous lab to current working folder and add them to the project: **Project > Add Source...**. In constraints file comment/uncomment all inputs/outputs you need in this top level design.
 
-Create a new constraints file with file name `cpld_board` and copy/paste code from [this file](cpld_board.ucf). The file contains pin assignments of input/output devices at CPLD expansion board. Keep all signals uncommented.
+Create a new constraints file with file name `cpld_board` and copy/paste the following code. The file contains pin assignments of input/output devices at CPLD expansion board.
+
+
 
 3. Use sub-blocks of hexadecimal to seven segment decoder, three sub-blocks of 1-bit full adders, interconnect all blocks, use slide switches/LEDs at CPLD expansion boards, Seven segment display at CoolRunner board, implement, and test three-bit adder.
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
 5. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
-
-
-
-
-
-
 
 
 ## 6 Clean project and synchronize git
@@ -353,7 +334,6 @@ Create a new constraints file with file name `cpld_board` and copy/paste code fr
 
 ## Experiments on your own
 
-1. XXXpřidání dvojkového doplňku a simulace binary subtractoruXXX
+1. TBD
 
 2. Complete your `README.md` file with notes and screenshots from simulatin and implementation.
-
