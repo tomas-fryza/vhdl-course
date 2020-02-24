@@ -411,6 +411,6 @@ Create a new constraints file with file name `cpld_board` and copy/paste the fol
 
 ## Experiments on your own
 
-1. Add one control signal `opperation` and create a combined 3-bit adder/subtractor model. Let the circuit works as an adder if `opperation = 0` and as a subtracter if `opperation = 1`. Use the two's complement to create the opposite number.
+1. Add one control signal `opperation` and create a combined 3-bit adder/subtractor. Let the circuit works as an adder if `opperation = 0` and as a subtracter if `opperation = 1`. Use the two's complement to create the opposite number.
 
 2. Complete your `README.md` file with notes and screenshots from simulatin and implementation.
