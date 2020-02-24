@@ -39,6 +39,8 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 
 3. Find the relationship between half adder and full adder logic diagrams.
 
+4. See schematic of the [CPLD expansion board](../../Docs/cpld_expansion.pdf) and find out the connection of LEDs, push buttons, and slide switches.
+
 
 ## 1 Materials
 
@@ -46,7 +48,7 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 
 2. CPLD expansion board: [Schematic](../../Docs/cpld_expansion.pdf).
 
-![cpld_segments](../../Images/coolrunner_segments.jpg)
+    ![cpld_segments](../../Images/coolrunner_segments.jpg)
 
 
 ## 2 Synchronize Git and create a new folder
