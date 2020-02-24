@@ -46,9 +46,11 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 
 1. CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf)): [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
 
+    ![cpld_segments](../../Images/coolrunner_segments.jpg)
+
 2. CPLD expansion board: [Schematic](../../Docs/cpld_expansion.pdf).
 
-    ![cpld_segments](../../Images/coolrunner_segments.jpg)
+    ![cpld_expansion](../../Images/expansion_board.jpg)
 
 
 ## 2 Synchronize Git and create a new folder
