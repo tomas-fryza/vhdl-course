@@ -131,7 +131,7 @@ end architecture Behavioral;
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
 
-## Full adder VHDL code
+## 4 Full adder VHDL code
 
 1.  Create a new source file **Project > New Source... > VHDL Module**, name it `full_adder` and copy + paste the following code.
 
@@ -200,7 +200,7 @@ end architecture Behavioral;
 3. In Xilinx ISE make full adder module as a top: right click to **full_adder - Behavioral (full_adder.vhd)** line and select **Set as Top Module**. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://gitlab.com/tomas.fryza/vhdl-examples/wikis).
 
 
-## Top level implementation of 3-bit adder
+## 5 Top level implementation of 3-bit adder
 
 1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy + paste the following code template. If top level module in Xilinx ISE has not changed automatically, do it manually.
 
