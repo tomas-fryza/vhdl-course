@@ -195,7 +195,7 @@ begin
 end architecture Behavioral;
 ```
 
-2. A full adder can be implemented by two half adders and one OR gate. Follow full adder logic diagram from preparation tasks and connect sub-blocks of two half adders. Do not forget to define output carry.
+2. A full adder can be implemented by two half adders and one OR gate. Follow full adder logic diagram of [Satvik Ramaprasad](https://circuitverse.org/users/3/projects/247), connect sub-blocks of two half adders, and define output carry.
 
 3. In Xilinx ISE make full adder module as a top: right click to **full_adder - Behavioral (full_adder.vhd)** line and select **Set as Top Module**. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://gitlab.com/tomas.fryza/vhdl-examples/wikis).
 
