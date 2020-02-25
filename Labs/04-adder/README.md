@@ -297,7 +297,7 @@ end architecture Behavioral;
 
 2. Copy `hex_to_7seg.vhd` and `coolrunner.ucf` files from previous lab to current working folder and add them to the project: **Project > Add Source...**. In constraints file comment/uncomment all inputs/outputs you need in this top level design.
 
-Create a new constraints file with file name `cpld_board` and copy/paste the following code. The file contains pin assignments of input/output devices at CPLD expansion board.
+    Create a new constraints file with file name `cpld_board` and copy/paste the following code. The file contains pin assignments of input/output devices at CPLD expansion board.
 
 
 ```bash
@@ -374,7 +374,7 @@ Create a new constraints file with file name `cpld_board` and copy/paste the fol
 #NET LD0_CPLD            LOC = P97;
 ```
 
-3. Use sub-blocks of hexadecimal to seven segment decoder, three sub-blocks of 1-bit full adders, interconnect all blocks, use slide switches/LEDs at CPLD expansion boards, Seven segment display at CoolRunner board, implement, and test three-bit adder.
+3. Use sub-blocks of hexadecimal to seven segment decoder, three sub-blocks of 1-bit full adders, interconnect all blocks, use slide switches/LEDs at CPLD expansion boards, Seven segment display at CoolRunner board, and [implement 3-bit adder](https://circuitverse.org/users/15916/projects/55095).
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
