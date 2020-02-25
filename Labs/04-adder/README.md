@@ -411,6 +411,8 @@ Create a new constraints file with file name `cpld_board` and copy/paste the fol
 
 ## Experiments on your own
 
-1. Add one control signal `opperation` and create a combined 3-bit adder/subtractor. Let the circuit works as an adder if `opperation = 0` and as a subtracter if `opperation = 1`. Use the two's complement to create the opposite number.
+1. Add one control line `K` and create a combined 3-bit adder-subtractor. The control line `K` holds a binary value of either 0 or 1 which determines that the operation being carried out is addition or subtraction. Note, two's complement form is used to create an opposite number.
+
+    ![adder-subtractor](../../Images/adder-subtractor_4bit.png)
 
 2. Complete your `README.md` file with notes and screenshots from simulatin and implementation.
