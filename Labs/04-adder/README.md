@@ -9,7 +9,7 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 2. [Synchronize Git and create a new folder](#2-Synchronize-Git-and-create-a-new-folder)
 3. [Half adder VHDL code](#3-Half-adder-VHDL-code)
 4. [Full adder VHDL code](#4-Full-adder-VHDL-code)
-5. [Top level implementation of 3-bit adder](#5-Top-level-implementation-of-3-bit-adder)
+5. [Top level implementation of 4-bit adder](#5-Top-level-implementation-of-4-bit-adder)
 6. [Clean project and synchronize git](#6-Clean-project-and-synchronize-git)
 
 
@@ -200,16 +200,14 @@ end architecture Behavioral;
 3. In Xilinx ISE make full adder module as a top: right click to **full_adder - Behavioral (full_adder.vhd)** line and select **Set as Top Module**. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://gitlab.com/tomas.fryza/vhdl-examples/wikis).
 
 
-## 5 Top level implementation of 3-bit adder
+## 5 Top level implementation of 4-bit adder
 
 1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy + paste the following code template. If top level module in Xilinx ISE has not changed automatically, do it manually.
-
-![top](../../Images/top___binary_adder.svg)
 
 ```vhdl
 ------------------------------------------------------------------------
 --
--- Implementation of 3-bit adder.
+-- Implementation of 4-bit adder.
 -- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
 --
 -- Copyright (c) 2019-2020 Tomas Fryza
@@ -228,9 +226,11 @@ entity top is
     port (SW0_CPLD:   in  std_logic;
           SW1_CPLD:   in  std_logic;
           SW2_CPLD:   in  std_logic;
+          SW3_CPLD:   in  std_logic;
           SW8_CPLD:   in  std_logic;
           SW9_CPLD:   in  std_logic;
           SW10_CPLD:  in  std_logic;
+          SW11_CPLD:  in  std_logic;
           disp_seg_o: out std_logic_vector(7-1 downto 0);
           disp_dig_o: out std_logic_vector(4-1 downto 0));
 end entity top;
@@ -239,17 +239,18 @@ end entity top;
 -- Architecture declaration for top level
 ------------------------------------------------------------------------
 architecture Behavioral of top is
-    signal s_data0, s_data1: std_logic_vector(3-1 downto 0);
-    signal s_carry0, s_carry1: std_logic;
+    signal s_dataA, s_dataB: std_logic_vector(4-1 downto 0);
+    signal s_carry0, s_carry1, s_carry2: std_logic;
     signal s_result: std_logic_vector(4-1 downto 0);
+    signal s_carryOut: std_logic;
 begin
 
-    -- Combine two 3-bit inputs to internal signals s_data1 and s_data0
+    -- Combine two 4-bit inputs to internal signals s_dataB and s_dataA
     -- WRITE YOUR CODE HERE
 
 
     --------------------------------------------------------------------
-    -- Sub-blocks of three full_adders
+    -- Sub-blocks of four full_adders
     FULLADDER0: entity work.full_adder
         port map (-- <component_signal> => actual_signal,
                   -- <component_signal> => actual_signal,
@@ -274,6 +275,14 @@ begin
                   -- WRITE YOUR CODE HERE
                  );
 
+    FULLADDER3: entity work.full_adder
+        port map (-- <component_signal> => actual_signal,
+                  -- <component_signal> => actual_signal,
+                  -- ...
+                  -- <component_signal> => actual_signal);
+                  -- WRITE YOUR CODE HERE
+                 );
+
 
     --------------------------------------------------------------------
     -- Sub-block of hex_to_7seg entity
@@ -289,7 +298,10 @@ begin
     disp_dig_o <= "1110";
 
 
-    -- Show two 3-bit inputs on CPLD expansion LEDs
+    -- Show carry output bit on Coolrunner-II LED
+    -- WRITE YOUR CODE HERE
+
+    -- Show two 4-bit inputs on CPLD expansion LEDs
     -- WRITE YOUR CODE HERE
 
 end architecture Behavioral;
@@ -374,7 +386,7 @@ end architecture Behavioral;
 #NET LD0_CPLD            LOC = P97;
 ```
 
-3. Use sub-blocks of hexadecimal to seven segment decoder, three sub-blocks of 1-bit full adders, interconnect all blocks, use slide switches/LEDs at CPLD expansion boards, Seven segment display at CoolRunner board, and [implement 3-bit adder](https://circuitverse.org/users/15916/projects/55095).
+3. Use sub-blocks of hexadecimal to seven segment decoder, four sub-blocks of 1-bit full adders, interconnect all blocks, use slide switches/LEDs on CPLD expansion boards, seven-segment display on CoolRunner board, and [implement 4-bit adder](https://circuitverse.org/users/15916/projects/55095).
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
@@ -411,7 +423,7 @@ end architecture Behavioral;
 
 ## Experiments on your own
 
-1. Add one control line `K` and create a combined 3-bit adder-subtractor. The control line `K` holds a binary value of either 0 or 1 which determines that the operation being carried out is addition or subtraction. Note, two's complement form is used to create an opposite number.
+1. Add one control line `Subtract` and create a combined 4-bit adder-subtractor. The control line `Subtract` holds a binary value of either 0 or 1 which determines that the operation being carried out is addition or subtraction. Note, two's complement form is used to create an opposite number.
 
     ![adder-subtractor](../../Images/adder-subtractor_4bit.png)
 
