@@ -87,8 +87,6 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 
 2. Create a new source file **Project > New Source... > VHDL Module**, name it `half_adder` and copy + paste the following code template.
 
-![half_adder](../../Images/half_adder.svg)
-
 ```vhdl
 ------------------------------------------------------------------------
 --
@@ -134,8 +132,6 @@ end architecture Behavioral;
 ## 4 Full adder VHDL code
 
 1.  Create a new source file **Project > New Source... > VHDL Module**, name it `full_adder` and copy + paste the following code.
-
-![full_adder](../../Images/full_adder.svg)
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -423,8 +419,6 @@ end architecture Behavioral;
 
 ## Experiments on your own
 
-1. Add one control line `Subtract` and create a combined 4-bit adder-subtractor. The control line `Subtract` holds a binary value of either 0 or 1 which determines that the operation being carried out is addition or subtraction. Note, two's complement form is used to create an opposite number.
-
-    ![adder-subtractor](../../Images/adder-subtractor_4bit.png)
+1. Add one control line `Subtract` and create a combined [4-bit adder-subtractor](https://circuitverse.org/users/15916/projects/55119). The control line `Subtract` holds a binary value of either 0 or 1 which determines that the operation being carried out is addition or subtraction. Note, two's complement form is used to create an opposite number.
 
 2. Complete your `README.md` file with notes and screenshots from simulatin and implementation.
