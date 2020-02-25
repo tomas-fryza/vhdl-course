@@ -241,7 +241,7 @@ architecture Behavioral of top is
     signal s_carryOut: std_logic;
 begin
 
-    -- Combine two 4-bit inputs to internal signals s_dataB and s_dataA
+    -- Combine two 4-bit inputs to internal signals s_dataA and s_dataB
     -- WRITE YOUR CODE HERE
 
 
