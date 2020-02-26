@@ -367,7 +367,7 @@ end architecture Behavioral;
 #NET LD0_CPLD            LOC = P97;
 ```
 
-3. Use sub-blocks of hexadecimal to seven segment decoder, [four sub-blocks of 1-bit full adders]((https://circuitverse.org/users/15916/projects/55095)), interconnect all blocks, use slide switches/LEDs on CPLD expansion boards, seven-segment display on CoolRunner board, and implement 4-bit adder.
+3. Use sub-blocks of hexadecimal to seven segment decoder, [four sub-blocks of 1-bit full adders](https://circuitverse.org/users/15916/projects/55095), interconnect all blocks, use slide switches/LEDs on CPLD expansion boards, seven-segment display on CoolRunner board, and implement 4-bit adder.
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
