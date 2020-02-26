@@ -16,8 +16,10 @@ use ieee.std_logic_1164.all;
 -- Entity declaration for hex to seven-segment decoder
 ------------------------------------------------------------------------
 entity hex_to_7seg is
-    port (hex_i: in  std_logic_vector(4-1 downto 0);
-          seg_o: out std_logic_vector(7-1 downto 0));
+port (
+    hex_i : in  std_logic_vector(4-1 downto 0);
+    seg_o : out std_logic_vector(7-1 downto 0)
+);
 end entity hex_to_7seg;
 
 ------------------------------------------------------------------------

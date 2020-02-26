@@ -16,10 +16,12 @@ use ieee.std_logic_1164.all;
 -- Entity declaration for half adder
 ------------------------------------------------------------------------
 entity half_adder is
-    port (b_i:     in  std_logic;
-          a_i:     in  std_logic;
-          carry_o: out std_logic;
-          sum_o:   out std_logic);
+port (
+    b_i :     in  std_logic;
+    a_i :     in  std_logic;
+    carry_o : out std_logic;
+    sum_o :   out std_logic
+);
 end entity half_adder;
 
 ------------------------------------------------------------------------
@@ -27,9 +29,8 @@ end entity half_adder;
 ------------------------------------------------------------------------
 architecture Behavioral of half_adder is
 begin
-
     -- Logic functions for carry and sum outputs
+    -- WRITE YOUR CODE HERE
     carry_o <= b_i and a_i;
-    sum_o <= b_i xor a_i;
-
+    sum_o   <= b_i xor a_i;
 end architecture Behavioral;
