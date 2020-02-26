@@ -16,8 +16,10 @@ use ieee.std_logic_1164.all;
 -- Entity declaration for top level
 ------------------------------------------------------------------------
 entity top is
-    port (BTN1, BTN0:    in  std_logic;
-          LD2, LD1, LD0: out std_logic);
+port (
+    BTN1, BTN0 :    in  std_logic;
+    LD2, LD1, LD0 : out std_logic
+);
 end entity top;
 
 ------------------------------------------------------------------------

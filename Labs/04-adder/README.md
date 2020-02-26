@@ -1,6 +1,6 @@
 # Lab 4: Binary adder
 
-The purpose of this laboratory exercise is to design an adder. It is a type of digital circuit that performs the operation of additions of two numbers.
+The purpose of this laboratory exercise is to design an adder. It is a type of digital circuit that performs the operation of additions of two numbers. We will use slide switches on the CPLD expansion board as inputs and 7-segment display on the Coolrunner-II board as output device.
 
 
 #### Contents
@@ -9,7 +9,7 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 2. [Synchronize Git and create a new folder](#2-Synchronize-Git-and-create-a-new-folder)
 3. [Half adder VHDL code](#3-Half-adder-VHDL-code)
 4. [Full adder VHDL code](#4-Full-adder-VHDL-code)
-5. [Top level implementation of 3-bit adder](#5-Top-level-implementation-of-3-bit-adder)
+5. [Top level implementation of 4-bit adder](#5-Top-level-implementation-of-4-bit-adder)
 6. [Clean project and synchronize git](#6-Clean-project-and-synchronize-git)
 
 
@@ -46,11 +46,9 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 
 1. CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf)): [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
 
-    ![cpld_segments](../../Images/coolrunner_segments.jpg)
-
 2. CPLD expansion board: [Schematic](../../Docs/cpld_expansion.pdf).
 
-    ![cpld_expansion](../../Images/expansion_board.jpg)
+    ![coolrunner_expansion](../../Images/coolrunner_expansion_board.jpg)
 
 
 ## 2 Synchronize Git and create a new folder
@@ -87,8 +85,6 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 
 2. Create a new source file **Project > New Source... > VHDL Module**, name it `half_adder` and copy + paste the following code template.
 
-![half_adder](../../Images/half_adder.svg)
-
 ```vhdl
 ------------------------------------------------------------------------
 --
@@ -108,10 +104,12 @@ use ieee.std_logic_1164.all;
 -- Entity declaration for half adder
 ------------------------------------------------------------------------
 entity half_adder is
-    port (b_i:     in  std_logic;
-          a_i:     in  std_logic;
-          carry_o: out std_logic;
-          sum_o:   out std_logic);
+port (
+    b_i :     in  std_logic;
+    a_i :     in  std_logic;
+    carry_o : out std_logic;
+    sum_o :   out std_logic
+);
 end entity half_adder;
 
 ------------------------------------------------------------------------
@@ -119,23 +117,17 @@ end entity half_adder;
 ------------------------------------------------------------------------
 architecture Behavioral of half_adder is
 begin
-
     -- Logic functions for carry and sum outputs
     -- WRITE YOUR CODE HERE
-
 end architecture Behavioral;
 ```
 
 3. Use low-level gates `and`, `or`, `not`, etc. and write logic functions for Carry and Sum. Save all files in menu **File > Save All**.
 
-4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
-
-## Full adder VHDL code
+## 4 Full adder VHDL code
 
 1.  Create a new source file **Project > New Source... > VHDL Module**, name it `full_adder` and copy + paste the following code.
-
-![full_adder](../../Images/full_adder.svg)
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -156,11 +148,13 @@ use ieee.std_logic_1164.all;
 -- Entity declaration for full adder
 ------------------------------------------------------------------------
 entity full_adder is
-    port (carry_i: in  std_logic;
-          b_i:     in  std_logic;
-          a_i:     in  std_logic;
-          carry_o: out std_logic;
-          sum_o  : out std_logic);
+port (
+    carry_i : in  std_logic;
+    b_i :     in  std_logic;
+    a_i :     in  std_logic;
+    carry_o : out std_logic;
+    sum_o   : out std_logic
+);
 end entity full_adder;
 
 ------------------------------------------------------------------------
@@ -168,26 +162,23 @@ end entity full_adder;
 ------------------------------------------------------------------------
 architecture Behavioral of full_adder is
     -- Internal signals between two half adders
-    signal s_carry0, s_carry1, s_sum0: std_logic;
+    signal s_carry0, s_carry1, s_sum0 : std_logic;
 begin
 
     --------------------------------------------------------------------
     -- Sub-blocks of two half_adder entities
-    HALFADDER0: entity work.half_adder
-        port map (-- <component_signal> => actual_signal,
-                  -- <component_signal> => actual_signal,
-                  -- ...
-                  -- <component_signal> => actual_signal);
-                  -- WRITE YOUR CODE HERE
-                 );
+    HALF_ADDER_0 : entity work.half_adder
+    port map (
+        -- <component_signal> => <actual_signal>,
+        -- <component_signal> => <actual_signal>,
+        -- <other signals>...
+        -- WRITE YOUR CODE HERE
+    );
 
-    HALFADDER1: entity work.half_adder
-        port map (-- <component_signal> => actual_signal,
-                  -- <component_signal> => actual_signal,
-                  -- ...
-                  -- <component_signal> => actual_signal);
-                  -- WRITE YOUR CODE HERE
-                 );
+    HALF_ADDER_1 : entity work.half_adder
+    port map (
+        -- WRITE YOUR CODE HERE
+    );
 
     -- Output carry
     -- WRITE YOUR CODE HERE
@@ -195,21 +186,27 @@ begin
 end architecture Behavioral;
 ```
 
-2. A full adder can be implemented by two half adders and one OR gate. Follow full adder logic diagram from preparation tasks and connect sub-blocks of two half adders. Do not forget to define output carry.
+2. A full adder can be implemented by two half adders and one OR gate. Follow the logic diagram of [Satvik Ramaprasad](https://circuitverse.org/users/3/projects/247) and design a full adder.
 
-3. In Xilinx ISE make full adder module as a top: right click to **full_adder - Behavioral (full_adder.vhd)** line and select **Set as Top Module**. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://gitlab.com/tomas.fryza/vhdl-examples/wikis).
+    > If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **full_adder - Behavioral (full_adder.vhd)** line and select **Set as Top Module**.
+    >
+
+3. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://github.com/tomas-fryza/Digital-electronics-1/wiki).
+
+4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
 
-## Top level implementation of 3-bit adder
+## 5 Top level implementation of 4-bit adder
 
-1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy + paste the following code template. If top level module in Xilinx ISE has not changed automatically, do it manually.
+1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy + paste the following code template.
 
-![top](../../Images/top___binary_adder.svg)
+    > If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **top - Behavioral (top.vhd)** line and select **Set as Top Module**.
+    >
 
 ```vhdl
 ------------------------------------------------------------------------
 --
--- Implementation of 3-bit adder.
+-- Implementation of 4-bit adder.
 -- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
 --
 -- Copyright (c) 2019-2020 Tomas Fryza
@@ -225,71 +222,75 @@ use ieee.std_logic_1164.all;
 -- Entity declaration for top level
 ------------------------------------------------------------------------
 entity top is
-    port (SW0_CPLD:   in  std_logic;
-          SW1_CPLD:   in  std_logic;
-          SW2_CPLD:   in  std_logic;
-          SW8_CPLD:   in  std_logic;
-          SW9_CPLD:   in  std_logic;
-          SW10_CPLD:  in  std_logic;
-          disp_seg_o: out std_logic_vector(7-1 downto 0);
-          disp_dig_o: out std_logic_vector(4-1 downto 0));
+port (
+    SW0_CPLD :   in  std_logic;       -- Input A
+    SW1_CPLD :   in  std_logic;
+    SW2_CPLD :   in  std_logic;
+    SW3_CPLD :   in  std_logic;
+    SW8_CPLD :   in  std_logic;       -- Input B
+    SW9_CPLD :   in  std_logic;
+    SW10_CPLD :  in  std_logic;
+    SW11_CPLD :  in  std_logic;
+    disp_seg_o : out std_logic_vector(7-1 downto 0);
+    disp_dig_o : out std_logic_vector(4-1 downto 0)
+);
 end entity top;
 
 ------------------------------------------------------------------------
 -- Architecture declaration for top level
 ------------------------------------------------------------------------
 architecture Behavioral of top is
-    signal s_data0, s_data1: std_logic_vector(3-1 downto 0);
-    signal s_carry0, s_carry1: std_logic;
-    signal s_result: std_logic_vector(4-1 downto 0);
+    signal s_dataA, s_dataB : std_logic_vector(4-1 downto 0);
+    signal s_carry0, s_carry1, s_carry2 : std_logic;
+    signal s_result : std_logic_vector(4-1 downto 0);
+    signal s_carryOut : std_logic;
 begin
 
-    -- Combine two 3-bit inputs to internal signals s_data1 and s_data0
+    -- Combine two 4-bit inputs to internal signals s_dataA and s_dataB
     -- WRITE YOUR CODE HERE
 
 
     --------------------------------------------------------------------
-    -- Sub-blocks of three full_adders
-    FULLADDER0: entity work.full_adder
-        port map (-- <component_signal> => actual_signal,
-                  -- <component_signal> => actual_signal,
-                  -- ...
-                  -- <component_signal> => actual_signal);
-                  -- WRITE YOUR CODE HERE
-                 );
+    -- Sub-blocks of four full_adders
+    FULL_ADDER_0 : entity work.full_adder
+    port map (
+        -- <component_signal> => <actual_signal>,
+        -- <component_signal> => <actual_signal>,
+        -- <other signals>...
+        -- WRITE YOUR CODE HERE
+    );
 
-    FULLADDER1: entity work.full_adder
-        port map (-- <component_signal> => actual_signal,
-                  -- <component_signal> => actual_signal,
-                  -- ...
-                  -- <component_signal> => actual_signal);
-                  -- WRITE YOUR CODE HERE
-                 );
+    FULL_ADDER_1 : entity work.full_adder
+    port map (
+        -- WRITE YOUR CODE HERE
+    );
 
-    FULLADDER2: entity work.full_adder
-        port map (-- <component_signal> => actual_signal,
-                  -- <component_signal> => actual_signal,
-                  -- ...
-                  -- <component_signal> => actual_signal);
-                  -- WRITE YOUR CODE HERE
-                 );
+    FULL_ADDER_2 : entity work.full_adder
+    port map (
+        -- WRITE YOUR CODE HERE
+    );
+
+    FULL_ADDER_3 : entity work.full_adder
+    port map (
+        -- WRITE YOUR CODE HERE
+    );
 
 
     --------------------------------------------------------------------
     -- Sub-block of hex_to_7seg entity
-    HEX2SSEG: entity work.hex_to_7seg
-        port map (-- <component_signal> => actual_signal,
-                  -- <component_signal> => actual_signal,
-                  -- ...
-                  -- <component_signal> => actual_signal);
-                  -- WRITE YOUR CODE HERE
-                  );
+    HEX2SSEG : entity work.hex_to_7seg
+    port map (
+        -- WRITE YOUR CODE HERE
+    );
 
     -- Select display position
     disp_dig_o <= "1110";
 
 
-    -- Show two 3-bit inputs on CPLD expansion LEDs
+    -- Show carry output bit on Coolrunner-II LED
+    -- WRITE YOUR CODE HERE
+
+    -- Show two 4-bit inputs on CPLD expansion LEDs
     -- WRITE YOUR CODE HERE
 
 end architecture Behavioral;
@@ -297,7 +298,7 @@ end architecture Behavioral;
 
 2. Copy `hex_to_7seg.vhd` and `coolrunner.ucf` files from previous lab to current working folder and add them to the project: **Project > Add Source...**. In constraints file comment/uncomment all inputs/outputs you need in this top level design.
 
-Create a new constraints file with file name `cpld_board` and copy/paste the following code. The file contains pin assignments of input/output devices at CPLD expansion board.
+    Create a new constraints file with file name `cpld_board` and copy/paste the following code. The file contains pin assignments of input/output devices on CPLD expansion board. Again, comment/uncomment all inputs/outputs you need in this top level design.
 
 
 ```bash
@@ -374,7 +375,7 @@ Create a new constraints file with file name `cpld_board` and copy/paste the fol
 #NET LD0_CPLD            LOC = P97;
 ```
 
-3. Use sub-blocks of hexadecimal to seven segment decoder, three sub-blocks of 1-bit full adders, interconnect all blocks, use slide switches/LEDs at CPLD expansion boards, Seven segment display at CoolRunner board, implement, and test three-bit adder.
+3. Use sub-blocks of hexadecimal to seven segment decoder, [four sub-blocks of 1-bit full adders](https://circuitverse.org/users/15916/projects/55095), interconnect all blocks, use slide switches/LEDs on CPLD expansion boards, seven-segment display on CoolRunner board, and implement 4-bit adder.
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
@@ -411,6 +412,6 @@ Create a new constraints file with file name `cpld_board` and copy/paste the fol
 
 ## Experiments on your own
 
-1. Add one control signal `opperation` and create a combined 3-bit adder/subtractor. Let the circuit works as an adder if `opperation = 0` and as a subtracter if `opperation = 1`. Use the two's complement to create the opposite number.
+1. Add one control line `Subtract` and create a combined [4-bit adder-subtractor](https://circuitverse.org/users/15916/projects/55119). The control line `Subtract` holds a binary value of either 0 or 1 which determines that the operation being carried out is addition or subtraction. Note, two's complement form is used to create an opposite number.
 
 2. Complete your `README.md` file with notes and screenshots from simulatin and implementation.

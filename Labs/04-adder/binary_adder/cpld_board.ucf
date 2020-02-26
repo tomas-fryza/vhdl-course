@@ -1,0 +1,71 @@
+#-----------------------------------------------------------------------
+#
+# Constraints file with pin assignments.
+# CPLD expansion board, ISE Design Suite 14.7
+#
+# Copyright (c) 2019-2020 Tomas Fryza
+# Dept. of Radio Electronics, Brno University of Technology, Czechia
+# This work is licensed under the terms of the MIT license.
+#
+#-----------------------------------------------------------------------
+
+#-----------------------------------------------------------------------
+# Buttons & switches
+# 16 shared push buttons and slide switches
+#-----------------------------------------------------------------------
+#
+# 15  ...  8       7  ...  0
+# +-+     +-+     +-+     +-+
+# | | ... | |     | | ... | | H
+# |.|     |.|     |.|     |.| L
+# +-+     +-+     +-+     +-+
+#
+#  15  11  7   3
+#  o   o   o   o   H: pressed
+#  o   o   o   o   L: released
+#  o   o   o   o
+#  o   o   o   o
+#  12  8   4   0
+#
+#NET SW15_CPLD           LOC = P9;
+#NET SW14_CPLD           LOC = P10;
+#NET SW13_CPLD           LOC = P6;
+#NET SW12_CPLD           LOC = P7;
+NET SW11_CPLD           LOC = P4;
+NET SW10_CPLD           LOC = P5;
+NET SW9_CPLD            LOC = P2;
+NET SW8_CPLD            LOC = P3;
+#NET SW7_CPLD            LOC = P140;
+#NET SW6_CPLD            LOC = P142;
+#NET SW5_CPLD            LOC = P138;
+#NET SW4_CPLD            LOC = P139;
+NET SW3_CPLD            LOC = P135;
+NET SW2_CPLD            LOC = P136;
+NET SW1_CPLD            LOC = P133;
+NET SW0_CPLD            LOC = P134;
+
+#-----------------------------------------------------------------------
+# 16 discrete LEDs
+#-----------------------------------------------------------------------
+#
+# 15 ... 12 11 ... 8
+#  * * * *   * * * *   H: turn LED on
+#  * * * *   * * * *   L: turn LED off
+#  7 ... 4   3 ... 0
+#
+#NET LD15_CPLD           LOC = P118;
+#NET LD14_CPLD           LOC = P119;
+#NET LD13_CPLD           LOC = P116;
+#NET LD12_CPLD           LOC = P117;
+#NET LD11_CPLD           LOC = P114;
+#NET LD10_CPLD           LOC = P115;
+#NET LD9_CPLD            LOC = P112;
+#NET LD8_CPLD            LOC = P113;
+#NET LD7_CPLD            LOC = P103;
+#NET LD6_CPLD            LOC = P104;
+#NET LD5_CPLD            LOC = P101;
+#NET LD4_CPLD            LOC = P102;
+#NET LD3_CPLD            LOC = P98;
+#NET LD2_CPLD            LOC = P100;
+#NET LD1_CPLD            LOC = P96;
+#NET LD0_CPLD            LOC = P97;
