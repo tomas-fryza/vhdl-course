@@ -162,7 +162,7 @@ end entity full_adder;
 ------------------------------------------------------------------------
 architecture Behavioral of full_adder is
     -- Internal signals between two half adders
-    signal s_carry0, s_carry1, s_sum0: std_logic;
+    signal s_carry0, s_carry1, s_sum0 : std_logic;
 begin
 
     --------------------------------------------------------------------
