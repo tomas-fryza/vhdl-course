@@ -190,7 +190,7 @@ begin
 
     --------------------------------------------------------------------
     -- Sub-block of hex_to_7seg entity
-    HEX2SSEG: entity work.hex_to_7seg
+    HEX2SSEG : entity work.hex_to_7seg
     port map (
         -- <component_signal> => <actual_signal>,
         -- <component_signal> => <actual_signal>,
