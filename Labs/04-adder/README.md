@@ -126,8 +126,6 @@ end architecture Behavioral;
 
 3. Use low-level gates `and`, `or`, `not`, etc. and write logic functions for Carry and Sum. Save all files in menu **File > Save All**.
 
-4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
-
 
 ## 4 Full adder VHDL code
 
@@ -188,14 +186,16 @@ begin
 end architecture Behavioral;
 ```
 
-2. A full adder can be implemented by two half adders and one OR gate. Follow full adder logic diagram of [Satvik Ramaprasad](https://circuitverse.org/users/3/projects/247), connect sub-blocks of two half adders, and define output carry.
+2. A full adder can be implemented by two half adders and one OR gate. Follow the logic diagram of [Satvik Ramaprasad](https://circuitverse.org/users/3/projects/247) and design a full adder.
 
 3. In Xilinx ISE make full adder module as a top: right click to **full_adder - Behavioral (full_adder.vhd)** line and select **Set as Top Module**. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://gitlab.com/tomas.fryza/vhdl-examples/wikis).
+
+4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
 
 ## 5 Top level implementation of 4-bit adder
 
-1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy + paste the following code template. If top level module in Xilinx ISE has not changed automatically, do it manually.
+1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy + paste the following code template. If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **top - Behavioral (top.vhd)** line and select **Set as Top Module**.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -216,11 +216,11 @@ use ieee.std_logic_1164.all;
 -- Entity declaration for top level
 ------------------------------------------------------------------------
 entity top is
-    port (SW0_CPLD:   in  std_logic;
+    port (SW0_CPLD:   in  std_logic;        -- Input A
           SW1_CPLD:   in  std_logic;
           SW2_CPLD:   in  std_logic;
           SW3_CPLD:   in  std_logic;
-          SW8_CPLD:   in  std_logic;
+          SW8_CPLD:   in  std_logic;        -- Input B
           SW9_CPLD:   in  std_logic;
           SW10_CPLD:  in  std_logic;
           SW11_CPLD:  in  std_logic;
@@ -290,7 +290,7 @@ end architecture Behavioral;
 
 2. Copy `hex_to_7seg.vhd` and `coolrunner.ucf` files from previous lab to current working folder and add them to the project: **Project > Add Source...**. In constraints file comment/uncomment all inputs/outputs you need in this top level design.
 
-    Create a new constraints file with file name `cpld_board` and copy/paste the following code. The file contains pin assignments of input/output devices at CPLD expansion board.
+    Create a new constraints file with file name `cpld_board` and copy/paste the following code. The file contains pin assignments of input/output devices on CPLD expansion board. Again, comment/uncomment all inputs/outputs you need in this top level design.
 
 
 ```bash
@@ -367,7 +367,7 @@ end architecture Behavioral;
 #NET LD0_CPLD            LOC = P97;
 ```
 
-3. Use sub-blocks of hexadecimal to seven segment decoder, four sub-blocks of 1-bit full adders, interconnect all blocks, use slide switches/LEDs on CPLD expansion boards, seven-segment display on CoolRunner board, and [implement 4-bit adder](https://circuitverse.org/users/15916/projects/55095).
+3. Use sub-blocks of hexadecimal to seven segment decoder, [four sub-blocks of 1-bit full adders]((https://circuitverse.org/users/15916/projects/55095)), interconnect all blocks, use slide switches/LEDs on CPLD expansion boards, seven-segment display on CoolRunner board, and implement 4-bit adder.
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
