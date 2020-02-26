@@ -46,11 +46,9 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 
 1. CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf)): [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
 
-    ![cpld_segments](../../Images/coolrunner_segments.jpg)
-
 2. CPLD expansion board: [Schematic](../../Docs/cpld_expansion.pdf).
 
-    ![cpld_expansion](../../Images/expansion_board.jpg)
+    ![coolrunner_expansion](../../Images/coolrunner_expansion_board.jpg)
 
 
 ## 2 Synchronize Git and create a new folder
@@ -106,10 +104,12 @@ use ieee.std_logic_1164.all;
 -- Entity declaration for half adder
 ------------------------------------------------------------------------
 entity half_adder is
-    port (b_i:     in  std_logic;
-          a_i:     in  std_logic;
-          carry_o: out std_logic;
-          sum_o:   out std_logic);
+port (
+    b_i :     in  std_logic;
+    a_i :     in  std_logic;
+    carry_o : out std_logic;
+    sum_o :   out std_logic
+);
 end entity half_adder;
 
 ------------------------------------------------------------------------
@@ -117,10 +117,8 @@ end entity half_adder;
 ------------------------------------------------------------------------
 architecture Behavioral of half_adder is
 begin
-
     -- Logic functions for carry and sum outputs
     -- WRITE YOUR CODE HERE
-
 end architecture Behavioral;
 ```
 
@@ -150,11 +148,13 @@ use ieee.std_logic_1164.all;
 -- Entity declaration for full adder
 ------------------------------------------------------------------------
 entity full_adder is
-    port (carry_i: in  std_logic;
-          b_i:     in  std_logic;
-          a_i:     in  std_logic;
-          carry_o: out std_logic;
-          sum_o  : out std_logic);
+port (
+    carry_i : in  std_logic;
+    b_i :     in  std_logic;
+    a_i :     in  std_logic;
+    carry_o : out std_logic;
+    sum_o   : out std_logic
+);
 end entity full_adder;
 
 ------------------------------------------------------------------------
@@ -167,18 +167,18 @@ begin
 
     --------------------------------------------------------------------
     -- Sub-blocks of two half_adder entities
-    HALFADDER0: entity work.half_adder
-        port map (-- <component_signal> => actual_signal,
-                  -- <component_signal> => actual_signal,
-                  -- ...
-                  -- <component_signal> => actual_signal);
-                  -- WRITE YOUR CODE HERE
-                 );
+    HALF_ADDER_0 : entity work.half_adder
+    port map (
+        -- <component_signal> => <actual_signal>,
+        -- <component_signal> => <actual_signal>,
+        -- <other_signals>...
+        -- WRITE YOUR CODE HERE
+    );
 
-    HALFADDER1: entity work.half_adder
-        port map (
-                  -- WRITE YOUR CODE HERE
-                 );
+    HALF_ADDER_1 : entity work.half_adder
+    port map (
+        -- WRITE YOUR CODE HERE
+    );
 
     -- Output carry
     -- WRITE YOUR CODE HERE
@@ -222,26 +222,28 @@ use ieee.std_logic_1164.all;
 -- Entity declaration for top level
 ------------------------------------------------------------------------
 entity top is
-    port (SW0_CPLD:   in  std_logic;        -- Input A
-          SW1_CPLD:   in  std_logic;
-          SW2_CPLD:   in  std_logic;
-          SW3_CPLD:   in  std_logic;
-          SW8_CPLD:   in  std_logic;        -- Input B
-          SW9_CPLD:   in  std_logic;
-          SW10_CPLD:  in  std_logic;
-          SW11_CPLD:  in  std_logic;
-          disp_seg_o: out std_logic_vector(7-1 downto 0);
-          disp_dig_o: out std_logic_vector(4-1 downto 0));
+port (
+    SW0_CPLD:   in  std_logic;        -- Input A
+    SW1_CPLD:   in  std_logic;
+    SW2_CPLD:   in  std_logic;
+    SW3_CPLD:   in  std_logic;
+    SW8_CPLD:   in  std_logic;        -- Input B
+    SW9_CPLD:   in  std_logic;
+    SW10_CPLD:  in  std_logic;
+    SW11_CPLD:  in  std_logic;
+    disp_seg_o: out std_logic_vector(7-1 downto 0);
+    disp_dig_o: out std_logic_vector(4-1 downto 0)
+);
 end entity top;
 
 ------------------------------------------------------------------------
 -- Architecture declaration for top level
 ------------------------------------------------------------------------
 architecture Behavioral of top is
-    signal s_dataA, s_dataB: std_logic_vector(4-1 downto 0);
-    signal s_carry0, s_carry1, s_carry2: std_logic;
-    signal s_result: std_logic_vector(4-1 downto 0);
-    signal s_carryOut: std_logic;
+    signal s_dataA, s_dataB : std_logic_vector(4-1 downto 0);
+    signal s_carry0, s_carry1, s_carry2 : std_logic;
+    signal s_result : std_logic_vector(4-1 downto 0);
+    signal s_carryOut : std_logic;
 begin
 
     -- Combine two 4-bit inputs to internal signals s_dataA and s_dataB
@@ -250,36 +252,36 @@ begin
 
     --------------------------------------------------------------------
     -- Sub-blocks of four full_adders
-    FULLADDER0: entity work.full_adder
-        port map (-- <component_signal> => actual_signal,
-                  -- <component_signal> => actual_signal,
-                  -- ...
-                  -- <component_signal> => actual_signal);
-                  -- WRITE YOUR CODE HERE
-                 );
+    FULL_ADDER_0 : entity work.full_adder
+    port map (
+        -- <component_signal> => <actual_signal>,
+        -- <component_signal> => <actual_signal>,
+        -- <other_signals>...
+        -- WRITE YOUR CODE HERE
+    );
 
-    FULLADDER1: entity work.full_adder
-        port map (
-                  -- WRITE YOUR CODE HERE
-                 );
+    FULL_ADDER_1 : entity work.full_adder
+    port map (
+        -- WRITE YOUR CODE HERE
+    );
 
-    FULLADDER2: entity work.full_adder
-        port map (
-                  -- WRITE YOUR CODE HERE
-                 );
+    FULL_ADDER_2 : entity work.full_adder
+    port map (
+        -- WRITE YOUR CODE HERE
+    );
 
-    FULLADDER3: entity work.full_adder
-        port map (
-                  -- WRITE YOUR CODE HERE
-                 );
+    FULL_ADDER_3 : entity work.full_adder
+    port map (
+        -- WRITE YOUR CODE HERE
+    );
 
 
     --------------------------------------------------------------------
     -- Sub-block of hex_to_7seg entity
-    HEX2SSEG: entity work.hex_to_7seg
-        port map (
-                  -- WRITE YOUR CODE HERE
-                  );
+    HEX2SSEG : entity work.hex_to_7seg
+    port map (
+        -- WRITE YOUR CODE HERE
+    );
 
     -- Select display position
     disp_dig_o <= "1110";
