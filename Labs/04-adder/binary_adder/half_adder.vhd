@@ -29,6 +29,7 @@ architecture Behavioral of half_adder is
 begin
 
     -- Logic functions for carry and sum outputs
-    -- WRITE YOUR CODE HERE
+    carry_o <= b_i and a_i;
+    sum_o <= b_i xor a_i;
 
 end architecture Behavioral;
