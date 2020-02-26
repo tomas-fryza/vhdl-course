@@ -171,7 +171,7 @@ begin
     port map (
         -- <component_signal> => <actual_signal>,
         -- <component_signal> => <actual_signal>,
-        -- <other_signals>...
+        -- <other signals>...
         -- WRITE YOUR CODE HERE
     );
 
@@ -223,16 +223,16 @@ use ieee.std_logic_1164.all;
 ------------------------------------------------------------------------
 entity top is
 port (
-    SW0_CPLD:   in  std_logic;        -- Input A
-    SW1_CPLD:   in  std_logic;
-    SW2_CPLD:   in  std_logic;
-    SW3_CPLD:   in  std_logic;
-    SW8_CPLD:   in  std_logic;        -- Input B
-    SW9_CPLD:   in  std_logic;
-    SW10_CPLD:  in  std_logic;
-    SW11_CPLD:  in  std_logic;
-    disp_seg_o: out std_logic_vector(7-1 downto 0);
-    disp_dig_o: out std_logic_vector(4-1 downto 0)
+    SW0_CPLD :   in  std_logic;       -- Input A
+    SW1_CPLD :   in  std_logic;
+    SW2_CPLD :   in  std_logic;
+    SW3_CPLD :   in  std_logic;
+    SW8_CPLD :   in  std_logic;       -- Input B
+    SW9_CPLD :   in  std_logic;
+    SW10_CPLD :  in  std_logic;
+    SW11_CPLD :  in  std_logic;
+    disp_seg_o : out std_logic_vector(7-1 downto 0);
+    disp_dig_o : out std_logic_vector(4-1 downto 0)
 );
 end entity top;
 
@@ -256,7 +256,7 @@ begin
     port map (
         -- <component_signal> => <actual_signal>,
         -- <component_signal> => <actual_signal>,
-        -- <other_signals>...
+        -- <other signals>...
         -- WRITE YOUR CODE HERE
     );
 
