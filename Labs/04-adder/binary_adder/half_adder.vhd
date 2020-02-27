@@ -17,10 +17,10 @@ use ieee.std_logic_1164.all;
 ------------------------------------------------------------------------
 entity half_adder is
 port (
-    b_i :     in  std_logic;
-    a_i :     in  std_logic;
+    b_i     : in  std_logic;
+    a_i     : in  std_logic;
     carry_o : out std_logic;
-    sum_o :   out std_logic
+    sum_o   : out std_logic
 );
 end entity half_adder;
 

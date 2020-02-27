@@ -18,8 +18,8 @@ use ieee.std_logic_1164.all;
 entity full_adder is
 port (
     carry_i : in  std_logic;
-    b_i :     in  std_logic;
-    a_i :     in  std_logic;
+    b_i     : in  std_logic;
+    a_i     : in  std_logic;
     carry_o : out std_logic;
     sum_o   : out std_logic
 );
