@@ -105,10 +105,10 @@ use ieee.std_logic_1164.all;
 ------------------------------------------------------------------------
 entity half_adder is
 port (
-    b_i :     in  std_logic;
-    a_i :     in  std_logic;
+    b_i     : in  std_logic;
+    a_i     : in  std_logic;
     carry_o : out std_logic;
-    sum_o :   out std_logic
+    sum_o   : out std_logic
 );
 end entity half_adder;
 
@@ -150,8 +150,8 @@ use ieee.std_logic_1164.all;
 entity full_adder is
 port (
     carry_i : in  std_logic;
-    b_i :     in  std_logic;
-    a_i :     in  std_logic;
+    b_i     : in  std_logic;
+    a_i     : in  std_logic;
     carry_o : out std_logic;
     sum_o   : out std_logic
 );
@@ -223,14 +223,14 @@ use ieee.std_logic_1164.all;
 ------------------------------------------------------------------------
 entity top is
 port (
-    SW0_CPLD :   in  std_logic;       -- Input A
-    SW1_CPLD :   in  std_logic;
-    SW2_CPLD :   in  std_logic;
-    SW3_CPLD :   in  std_logic;
-    SW8_CPLD :   in  std_logic;       -- Input B
-    SW9_CPLD :   in  std_logic;
-    SW10_CPLD :  in  std_logic;
-    SW11_CPLD :  in  std_logic;
+    SW0_CPLD   : in  std_logic;       -- Input A
+    SW1_CPLD   : in  std_logic;
+    SW2_CPLD   : in  std_logic;
+    SW3_CPLD   : in  std_logic;
+    SW8_CPLD   : in  std_logic;       -- Input B
+    SW9_CPLD   : in  std_logic;
+    SW10_CPLD  : in  std_logic;
+    SW11_CPLD  : in  std_logic;
     disp_seg_o : out std_logic_vector(7-1 downto 0);
     disp_dig_o : out std_logic_vector(4-1 downto 0)
 );
