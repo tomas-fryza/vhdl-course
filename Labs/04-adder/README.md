@@ -414,4 +414,4 @@ end architecture Behavioral;
 
 1. Add one control line `Subtract` and create a combined [4-bit adder-subtractor](https://circuitverse.org/users/15916/projects/55119). The control line `Subtract` holds a binary value of either 0 or 1 which determines that the operation being carried out is addition or subtraction. Note, two's complement form is used to create an opposite number.
 
-2. Complete your `README.md` file with notes and screenshots from simulatin and implementation.
+2. Complete your `README.md` file with notes and screenshots from simulation and implementation.
