@@ -7,7 +7,7 @@ The purpose of this laboratory exercise is to design a counter.
 
 1. [Materials](#1-Materials)
 2. [Synchronize Git and create a new folder](#2-Synchronize-Git-and-create-a-new-folder)
-3. [Clock enable VHDL code](#3-Clock-enable-VHDL-code)
+3. [Clock divider VHDL code](#3-Clock-divider-VHDL-code)
 4. [Binary counter VHDL code](#4-Binary-counter-VHDL-code)
 5. [Top level implementation of 4-bit counter](#5-Top-level-implementation-of-4-bit-counter)
 6. [Clean project and synchronize git](#6-Clean-project-and-synchronize-git)
@@ -45,16 +45,16 @@ The purpose of this laboratory exercise is to design a counter.
 2. Create a new folder `Labs/05-counter_binary`
 
 
-## 3 Clock enable VHDL code
+## 3 Clock divider VHDL code
 
 1. Create a new project in ISE titled `binary_counter` for XC2C256-TQ144 CPLD device in location `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/05-counter_binary`
 
-2. Create a new source file `clock_enable` and copy + paste the following code template.
+2. Create a new VHDL source file `clock_divider` and copy + paste the following code template.
 
 ```vhdl
 ------------------------------------------------------------------------
 --
--- Clock enable.
+-- Clock divider.
 -- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
 --
 -- Copyright (c) 2019-2020 Tomas Fryza
