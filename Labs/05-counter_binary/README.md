@@ -24,7 +24,7 @@ The purpose of this laboratory exercise is to design a counter.
     &nbsp;
 
     | **Time** | **Number of periods** | **Number of periods in binary** | **Number of periods in hexa** |
-    | --: | :-: | :-: | :-: |
+    | :-: | :-: | :-: | :-: |
     | 10&nbsp;ms |  |  |  |
     | 250&nbsp;ms |  |  |  |
     | 500&nbsp;ms |  |  |  |
