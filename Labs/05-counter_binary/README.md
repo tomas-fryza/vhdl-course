@@ -30,6 +30,8 @@ The purpose of this laboratory exercise is to design a counter.
     | 500&nbsp;ms |  |  |  |
     | 1&nbsp;sec |  |  |  |
 
+2. See how to create a [synchronous operation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/VHDL-cheat-sheet#processes) in the VHDL.
+
 
 ## 1 Materials
 
