@@ -119,8 +119,8 @@ begin
 end architecture Behavioral;
 ```
 
-    > **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
-    >
+   > **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
+   >
 
 3. Simulate the module for different `g_NPERIOD` values and verify that the reset works correctly.
 
@@ -201,8 +201,8 @@ begin
 end architecture Behavioral;
 ```
 
-    > Note that an internal `s_cnt` signal is used to implement the counter. This is because the **output** port `cnt_o` cannot be read and therefore the operation cnt_o <cnt_o + 1 cannot be performed.
-    >
+   > Note that an internal `s_cnt` signal is used to implement the counter. This is because the **output** port `cnt_o` cannot be read and therefore the operation cnt_o <cnt_o + 1 cannot be performed.
+   >
 
 2. Simulate the module for different `g_NBIT` values and verify that the clock enable signal works correctly.
 
@@ -274,7 +274,7 @@ Use all values for `clock_enable` module from preparation task table.
 
 ## Experiments on your own
 
-1. Display 4-bit counter values with LED.
+1. Display 4-bit counter value with LEDs.
 
 2. Modify the structure of the N-bit counter and add the option of synchronously loading the default value.
 
