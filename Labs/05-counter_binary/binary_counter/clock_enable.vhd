@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------
 --
--- N-bit binary counter.
+-- Generates clock enable signal.
 -- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
 --
 -- Copyright (c) 2019-2020 Tomas Fryza
@@ -14,43 +14,48 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
 
 ------------------------------------------------------------------------
--- Entity declaration for N-bit binary counter
+-- Entity declaration for clock enable
 ------------------------------------------------------------------------
-entity binary_cnt is
+entity clock_enable is
 generic(
-    g_NBIT : positive := 5          -- Number of bits
+    g_NPERIOD : std_logic_vector(16-1 downto 0) := x"0004"
 );
 port(
     clk_i          : in  std_logic;
     srst_n_i       : in  std_logic; -- Synchronous reset (active low)
-    clock_enable_i : in  std_logic;
-    cnt_o          : out std_logic_vector(g_NBIT-1 downto 0)
+    clock_enable_o : out std_logic
 );
-end entity binary_cnt;
+end entity clock_enable;
 
 ------------------------------------------------------------------------
--- Architecture declaration for N-bit binary counter
+-- Architecture declaration for clock enable
 ------------------------------------------------------------------------
-architecture Behavioral of binary_cnt is
-    signal s_cnt : std_logic_vector(g_NBIT-1 downto 0);
+architecture Behavioral of clock_enable is
+    signal s_cnt : std_logic_vector(16-1 downto 0) := x"0000";
 begin
 
     --------------------------------------------------------------------
-    -- p_binary_cnt:
-    -- Sequential process with synchronous reset and clock enable,
-    -- which implements a one-way binary counter.
+    -- p_clk_enable:
+    -- Generate clock enable signal instead of creating another clock 
+    -- domain. By default enable signal is low and generated pulse is 
+    -- always one clock long.
     --------------------------------------------------------------------
-    p_binary_cnt : process(clk_i)
+    p_clk_enable : process(clk_i)
     begin
         if rising_edge(clk_i) then  -- Rising clock edge
             if srst_n_i = '0' then  -- Synchronous reset (active low)
                 s_cnt <= (others => '0');   -- Clear all bits
-            elsif clock_enable_i = '1' then
-                s_cnt <= s_cnt + 1; -- Normal operation
+                clock_enable_o <= '0';
+            else
+                if s_cnt >= g_NPERIOD-1 then
+                    s_cnt <= (others => '0');
+                    clock_enable_o <= '1';
+                else
+                    s_cnt <= s_cnt + x"0001";
+                    clock_enable_o <= '0';
+                end if;
             end if;
         end if;
-    end process p_binary_cnt;
-
-    cnt_o <= s_cnt;
+    end process p_clk_enable;
 
 end architecture Behavioral;

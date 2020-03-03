@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   23:15:48 03/01/2020
+-- Create Date:   10:15:00 03/03/2020
 -- Design Name:   
--- Module Name:   /home/fryza/GIT/Digital-electronics-1/Labs/05-counter_binary/binary_counter/clock_divider_tb00.vhd
+-- Module Name:   /home/fryza/GIT/Digital-electronics-1/Labs/05-counter_binary/binary_counter/clock_enable_tb00.vhd
 -- Project Name:  binary_counter
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: clock_divider
+-- VHDL Test Bench Created by ISE for module: clock_enable
 -- 
 -- Dependencies:
 -- 
@@ -32,18 +32,18 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY clock_divider_tb00 IS
-END clock_divider_tb00;
+ENTITY clock_enable_tb00 IS
+END clock_enable_tb00;
  
-ARCHITECTURE behavior OF clock_divider_tb00 IS 
+ARCHITECTURE behavior OF clock_enable_tb00 IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT clock_divider
+    COMPONENT clock_enable
     PORT(
          clk_i : IN  std_logic;
          srst_n_i : IN  std_logic;
-         ce_o : OUT  std_logic
+         clock_enable_o : OUT  std_logic
         );
     END COMPONENT;
     
@@ -53,7 +53,7 @@ ARCHITECTURE behavior OF clock_divider_tb00 IS
    signal srst_n_i : std_logic := '0';
 
  	--Outputs
-   signal ce_o : std_logic;
+   signal clock_enable_o : std_logic;
 
    -- Clock period definitions
    constant clk_i_period : time := 10 ns;
@@ -61,10 +61,10 @@ ARCHITECTURE behavior OF clock_divider_tb00 IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: clock_divider PORT MAP (
+   uut: clock_enable PORT MAP (
           clk_i => clk_i,
           srst_n_i => srst_n_i,
-          ce_o => ce_o
+          clock_enable_o => clock_enable_o
         );
 
    -- Clock process definitions
@@ -79,11 +79,10 @@ BEGIN
 
     -- Stimulus process
     stim_proc: process
-    begin		
+    begin
         srst_n_i <= '1'; wait for clk_i_period*1;
         srst_n_i <= '0'; wait for clk_i_period*1;
-        srst_n_i <= '1'; wait for clk_i_period*50;
+        srst_n_i <= '1'; wait for clk_i_period*150;
         wait;
     end process;
-
 END;
