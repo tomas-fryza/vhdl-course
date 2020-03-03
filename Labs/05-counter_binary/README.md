@@ -1,6 +1,6 @@
 # Lab 5: Binary counters
 
-The purpose of this laboratory exercise is to design a counter.
+The purpose of this laboratory exercise is to become familiar with the creation of sequential processes in VHDL, to implement clock enable signal to drive another logic with slower clock, and to design a binary counter. We will use a push button on the CoolRunner board as reset device, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and 7-segment display as output device.
 
 
 #### Contents
