@@ -201,7 +201,7 @@ begin
 end architecture Behavioral;
 ```
 
-   > Note that an internal `s_cnt` signal is used to implement the counter. This is because the **output** port `cnt_o` cannot be read and therefore the operation cnt_o <cnt_o + 1 cannot be performed.
+   > Note that an internal `s_cnt` signal is used to implement the counter. This is because the **output** port `cnt_o` cannot be read and therefore the operation `cnt_o + 1` cannot be performed.
    >
 
 2. Simulate the module for different `g_NBIT` values and verify that the clock enable signal works correctly.
@@ -274,8 +274,10 @@ Use all values for `clock_enable` module from preparation task table.
 
 ## Experiments on your own
 
-1. Display 4-bit counter value with LEDs.
+1. Display 4-bit counter value with onboard LEDs.
 
-2. Modify the structure of the N-bit counter and add the option of synchronously loading the default value.
+2. Implement a second 8-bit counter with a different time base (ie. different clock enable value) and display its value using LEDs on the CPLD expansion board.
 
-3. Complete your `README.md` file with notes and screenshots from simulation and implementation.
+3. Modify the structure of the N-bit counter and add the option of synchronously loading the default value.
+
+4. Complete your `README.md` file with notes and screenshots from simulation and implementation.
