@@ -119,7 +119,7 @@ begin
 end architecture Behavioral;
 ```
 
-   > **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
+> **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
    >
 
 3. Simulate the module for different `g_NPERIOD` values and verify that the reset works correctly.
