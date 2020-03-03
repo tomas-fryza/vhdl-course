@@ -75,10 +75,10 @@ use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
 -- Entity declaration for clock enable
 ------------------------------------------------------------------------
 entity clock_enable is
-generic(
+generic (
     g_NPERIOD : std_logic_vector(16-1 downto 0) := x"0004"
 );
-port(
+port (
     clk_i          : in  std_logic;
     srst_n_i       : in  std_logic; -- Synchronous reset (active low)
     clock_enable_o : out std_logic
@@ -162,10 +162,10 @@ use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
 -- Entity declaration for N-bit binary counter
 ------------------------------------------------------------------------
 entity binary_cnt is
-generic(
+generic (
     g_NBIT : positive := 5          -- Number of bits
 );
-port(
+port (
     clk_i          : in  std_logic;
     srst_n_i       : in  std_logic; -- Synchronous reset (active low)
     clock_enable_i : in  std_logic;
