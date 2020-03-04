@@ -206,6 +206,18 @@ end architecture Behavioral;
 
 2. Simulate the module for different `g_NBIT` values and verify that the clock enable signal works correctly.
 
+    > In simulation you can use test bench loops.
+    >
+
+```vhdl
+for i in 0 to 50 loop
+    en_i <= '1';
+    wait for clk_i_period*1;
+    en_i <= '0';
+    wait for clk_i_period*3;
+end loop;
+```
+
 
 ## 5 Top level implementation of 4-bit counter
 
