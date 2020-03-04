@@ -60,7 +60,7 @@ begin
     port map (
         clk_i    => clk_i,  -- 10 kHz
         srst_n_i => BTN0,   -- Synchronous reset
-        en_i     => s_en,
+        en_i     => s_en,   -- Enable
         cnt_o    => s_hex   -- Output bits
     );
 
@@ -73,7 +73,7 @@ begin
     --------------------------------------------------------------------
     -- Sub-block of hex_to_7seg entity
     --- WRITE YOUR CODE HERE
-    HEX2SSEG : entity work.hex_to_7seg
+    HEX_TO_SEG : entity work.hex_to_7seg
     port map (
         -- WRITE YOUR CODE HERE
         hex_i => s_hex,
