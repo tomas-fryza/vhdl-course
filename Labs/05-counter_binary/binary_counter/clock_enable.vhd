@@ -17,10 +17,10 @@ use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
 -- Entity declaration for clock enable
 ------------------------------------------------------------------------
 entity clock_enable is
-generic(
-    g_NPERIOD : std_logic_vector(16-1 downto 0) := x"0004"
+generic (
+    g_NPERIOD : std_logic_vector(16-1 downto 0) := x"0006"
 );
-port(
+port (
     clk_i          : in  std_logic;
     srst_n_i       : in  std_logic; -- Synchronous reset (active low)
     clock_enable_o : out std_logic

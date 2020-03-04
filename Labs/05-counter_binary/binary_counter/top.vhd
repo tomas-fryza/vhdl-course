@@ -19,6 +19,8 @@ entity top is
 port (
     clk_i      : in  std_logic;     -- 10 kHz clock signal
     BTN0       : in  std_logic;     -- Synchronous reset
+--    LD3, LD2   : out std_logic;     -- Onboard LEDs
+--    LD1, LD0   : out std_logic;
     disp_seg_o : out std_logic_vector(7-1 downto 0);
     disp_dig_o : out std_logic_vector(4-1 downto 0)
 );
@@ -30,21 +32,53 @@ end entity top;
 architecture Behavioral of top is
     constant c_NBIT0 : positive := 4;   -- Number of bits for Counter0
     --- WRITE YOUR CODE HERE
+    signal s_hex : std_logic_vector(4-1 downto 0);
+    signal s_en  : std_logic;
 begin
 
     --------------------------------------------------------------------
     -- Sub-block of clock_enable entity
     --- WRITE YOUR CODE HERE
+    CLK_EN_0 : entity work.clock_enable
+    generic map (
+        g_NPERIOD => x"09c4"        -- @ 250 ms if fclk = 10 kHz
+    )
+    port map (
+        clk_i          => clk_i,    -- 10 kHz
+        srst_n_i       => BTN0,     -- Synchronous reset
+        clock_enable_o => s_en
+    );
 
 
     --------------------------------------------------------------------
     -- Sub-block of binary_cnt entity
     --- WRITE YOUR CODE HERE
+    BIN_CNT_0 : entity work.binary_cnt
+    generic map (
+        g_NBIT => 4
+    )
+    port map (
+        clk_i    => clk_i,  -- 10 kHz
+        srst_n_i => BTN0,   -- Synchronous reset
+        en_i     => s_en,
+        cnt_o    => s_hex   -- Output bits
+    );
 
+    -- Display counter value on LEDs
+--    LD3 <= not s_hex(3);
+--    LD2 <= not s_hex(2);
+--    LD1 <= not s_hex(1);
+--    LD0 <= not s_hex(0);
 
     --------------------------------------------------------------------
     -- Sub-block of hex_to_7seg entity
     --- WRITE YOUR CODE HERE
+    HEX2SSEG : entity work.hex_to_7seg
+    port map (
+        -- WRITE YOUR CODE HERE
+        hex_i => s_hex,
+        seg_o => disp_seg_o
+    );
 
     -- Select display position
     disp_dig_o <= "1110";
