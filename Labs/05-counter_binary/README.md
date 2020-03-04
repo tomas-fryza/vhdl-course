@@ -204,10 +204,7 @@ end architecture Behavioral;
    > Note that an internal `s_cnt` signal is used to implement the counter. This is because the **output** port `cnt_o` cannot be read and therefore the operation `cnt_o + 1` cannot be performed.
    >
 
-2. Simulate the module for different `g_NBIT` values and verify that the clock enable signal works correctly.
-
-    > In simulation you can use test bench loops.
-    >
+2. Simulate the module for different `g_NBIT` values and verify that the clock enable signal works correctly. In simulation you can use test bench loops.
 
 ```vhdl
 for i in 0 to 50 loop
