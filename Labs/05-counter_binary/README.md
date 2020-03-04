@@ -168,7 +168,7 @@ generic (
 port (
     clk_i    : in  std_logic;
     srst_n_i : in  std_logic;   -- Synchronous reset (active low)
-    en_i     : in  std_logic;
+    en_i     : in  std_logic;   -- Enable
     cnt_o    : out std_logic_vector(g_NBIT-1 downto 0)
 );
 end entity binary_cnt;
