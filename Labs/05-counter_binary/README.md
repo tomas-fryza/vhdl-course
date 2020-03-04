@@ -163,13 +163,13 @@ use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
 ------------------------------------------------------------------------
 entity binary_cnt is
 generic (
-    g_NBIT : positive := 5          -- Number of bits
+    g_NBIT : positive := 5      -- Number of bits
 );
 port (
-    clk_i          : in  std_logic;
-    srst_n_i       : in  std_logic; -- Synchronous reset (active low)
-    clock_enable_i : in  std_logic;
-    cnt_o          : out std_logic_vector(g_NBIT-1 downto 0)
+    clk_i    : in  std_logic;
+    srst_n_i : in  std_logic;   -- Synchronous reset (active low)
+    en_i     : in  std_logic;
+    cnt_o    : out std_logic_vector(g_NBIT-1 downto 0)
 );
 end entity binary_cnt;
 
@@ -190,7 +190,7 @@ begin
         if rising_edge(clk_i) then  -- Rising clock edge
             if srst_n_i = '0' then  -- Synchronous reset (active low)
                 s_cnt <= (others => '0');   -- Clear all bits
-            elsif clock_enable_i = '1' then
+            elsif en_i = '1' then
                 s_cnt <= s_cnt + 1; -- Normal operation
             end if;
         end if;
@@ -245,11 +245,23 @@ end entity top;
 -- Architecture declaration for top level
 ------------------------------------------------------------------------
 architecture Behavioral of top is
-    constant c_NBIT : positive := 4;    -- Number of bits
+    constant c_NBIT0 : positive := 4;   -- Number of bits for Counter0
     --- WRITE YOUR CODE HERE
 begin
+
+    --------------------------------------------------------------------
+    -- Sub-block of clock_enable entity
     --- WRITE YOUR CODE HERE
 
+
+    --------------------------------------------------------------------
+    -- Sub-block of binary_cnt entity
+    --- WRITE YOUR CODE HERE
+
+
+    --------------------------------------------------------------------
+    -- Sub-block of hex_to_7seg entity
+    --- WRITE YOUR CODE HERE
 
     -- Select display position
     disp_dig_o <= "1110";
@@ -257,9 +269,9 @@ begin
 end architecture Behavioral;
 ```
 
-2. Implement a four-bit binary counter on the Coolrunner-II board. Display the values on the 7-segment display, connect the reset to the BTN0 push button and make sure the 10kHz clock frequency is selected.
+2. Implement a four-bit binary counter on the Coolrunner-II board. Display its value on the 7-segment display, connect the reset to BTN0 push button and make sure the 10kHz clock frequency is selected.
 
-Use all values for `clock_enable` module from preparation task table.
+Test all period values for `clock_enable` module from preparation task table.
 
 
 ## 6 Clean project and synchronize git
