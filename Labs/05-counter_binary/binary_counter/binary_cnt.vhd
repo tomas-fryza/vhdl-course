@@ -18,13 +18,13 @@ use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
 ------------------------------------------------------------------------
 entity binary_cnt is
 generic(
-    g_NBIT : positive := 5          -- Number of bits
+    g_NBIT : positive := 5      -- Number of bits
 );
 port(
-    clk_i          : in  std_logic;
-    srst_n_i       : in  std_logic; -- Synchronous reset (active low)
-    clock_enable_i : in  std_logic;
-    cnt_o          : out std_logic_vector(g_NBIT-1 downto 0)
+    clk_i    : in  std_logic;
+    srst_n_i : in  std_logic;   -- Synchronous reset (active low)
+    en_i     : in  std_logic;   -- Enable
+    cnt_o    : out std_logic_vector(g_NBIT-1 downto 0)
 );
 end entity binary_cnt;
 
@@ -45,7 +45,7 @@ begin
         if rising_edge(clk_i) then  -- Rising clock edge
             if srst_n_i = '0' then  -- Synchronous reset (active low)
                 s_cnt <= (others => '0');   -- Clear all bits
-            elsif clock_enable_i = '1' then
+            elsif en_i = '1' then
                 s_cnt <= s_cnt + 1; -- Normal operation
             end if;
         end if;

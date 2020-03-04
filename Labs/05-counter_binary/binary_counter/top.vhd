@@ -28,11 +28,23 @@ end entity top;
 -- Architecture declaration for top level
 ------------------------------------------------------------------------
 architecture Behavioral of top is
-    constant c_NBIT : positive := 4;    -- Number of bits
+    constant c_NBIT0 : positive := 4;   -- Number of bits for Counter0
     --- WRITE YOUR CODE HERE
 begin
+
+    --------------------------------------------------------------------
+    -- Sub-block of clock_enable entity
     --- WRITE YOUR CODE HERE
 
+
+    --------------------------------------------------------------------
+    -- Sub-block of binary_cnt entity
+    --- WRITE YOUR CODE HERE
+
+
+    --------------------------------------------------------------------
+    -- Sub-block of hex_to_7seg entity
+    --- WRITE YOUR CODE HERE
 
     -- Select display position
     disp_dig_o <= "1110";

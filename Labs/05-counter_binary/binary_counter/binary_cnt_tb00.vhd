@@ -43,8 +43,8 @@ ARCHITECTURE behavior OF binary_cnt_tb00 IS
     PORT(
          clk_i : IN  std_logic;
          srst_n_i : IN  std_logic;
-         clock_enable_i : IN  std_logic;
-         cnt_o : OUT  std_logic_vector(3 downto 0)
+         en_i : IN  std_logic;
+         cnt_o : OUT  std_logic_vector(4 downto 0)
         );
     END COMPONENT;
     
@@ -52,14 +52,13 @@ ARCHITECTURE behavior OF binary_cnt_tb00 IS
    --Inputs
    signal clk_i : std_logic := '0';
    signal srst_n_i : std_logic := '0';
-   signal clock_enable_i : std_logic := '0';
+   signal en_i : std_logic := '0';
 
  	--Outputs
-   signal cnt_o : std_logic_vector(3 downto 0);
+   signal cnt_o : std_logic_vector(4 downto 0);
 
    -- Clock period definitions
    constant clk_i_period : time := 10 ns;
-   constant clock_enable_i_period : time := 10 ns;
  
 BEGIN
  
@@ -67,7 +66,7 @@ BEGIN
    uut: binary_cnt PORT MAP (
           clk_i => clk_i,
           srst_n_i => srst_n_i,
-          clock_enable_i => clock_enable_i,
+          en_i => en_i,
           cnt_o => cnt_o
         );
 
@@ -80,56 +79,28 @@ BEGIN
 		wait for clk_i_period/2;
    end process;
  
---   clock_enable_i_process :process
---   begin
---		clock_enable_i <= '0';
---		wait for clock_enable_i_period/2;
---		clock_enable_i <= '1';
---		wait for clock_enable_i_period/2;
---   end process;
- 
-
     -- Stimulus process
     stim_proc: process
     begin
-        clock_enable_i <= '0';
-        srst_n_i <= '1'; wait for clk_i_period*1;
-        srst_n_i <= '0'; wait for clk_i_period*1;
-        srst_n_i <= '1'; wait for clk_i_period*5;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*5;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*5;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*5;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*5;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*4;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*4;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*4;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*4;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*4;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*3;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*3;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*3;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*3;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*10;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*3;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*3;
-        clock_enable_i <= '1'; wait for clk_i_period*1;
-        clock_enable_i <= '0'; wait for clk_i_period*3;
+        en_i <= '0';
+        srst_n_i <= '1'; wait for clk_i_period;
+        srst_n_i <= '0'; wait for clk_i_period;
+        srst_n_i <= '1';
+        for i in 0 to 10 loop
+            en_i <= '1';
+            wait for clk_i_period*1;
+            en_i <= '0';
+            wait for clk_i_period*3;
+        end loop;
+        srst_n_i <= '0'; wait for clk_i_period;
+        srst_n_i <= '1';
+        for i in 0 to 100 loop
+            en_i <= '1';
+            wait for clk_i_period*1;
+            en_i <= '0';
+            wait for clk_i_period*3;
+        end loop;
+
         wait;
     end process;
 END;
