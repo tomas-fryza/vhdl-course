@@ -194,4 +194,4 @@ The purpose of this laboratory exercise is to learn how to use the git versionin
     | 1 | 0 |  |  |
     | 1 | 1 |  |  |
 
-3. Try different online simulators, such as [Logicly](https://logic.ly/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), or find others, and compare them.
+3. Try different online simulators, such as [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), or find others, and compare them.
