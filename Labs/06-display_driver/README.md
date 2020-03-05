@@ -82,7 +82,7 @@ begin
     -- which implements an internal 2-bit counter for multiplexer 
     -- selection bits.
     --------------------------------------------------------------------
-    p_select_cnt : process(clk_i)
+    p_select_cnt : process (clk_i)
     begin
         if rising_edge(clk_i) then  -- Rising clock edge
             -- WRITE YOUR CODE HERE
@@ -93,7 +93,7 @@ begin
     -- p_mux:
     -- Combinational process which implements a 4-to-1 mux.
     --------------------------------------------------------------------
-    p_mux : process(s_cnt, data0_i, data1_i, data2_i, data3_i, dp_i)
+    p_mux : process (s_cnt, data0_i, data1_i, data2_i, data3_i, dp_i)
     begin
         case s_cnt is
         when "00" =>
