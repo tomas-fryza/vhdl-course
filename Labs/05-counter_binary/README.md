@@ -30,7 +30,7 @@ The purpose of this laboratory exercise is to become familiar with the creation 
     | 2&nbsp;Hz | 500&nbsp;ms |  |  |  |
     | 1&nbsp;Hz | 1&nbsp;sec |  |  |  |
 
-2. See how to create a [sequential process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/VHDL-cheat-sheet#processes) in VHDL.
+2. See how to create a [sequential process](https://github.com/tomas-fryza/Digital-electronics-1/wiki) in VHDL.
 
 
 ## 1 Materials
