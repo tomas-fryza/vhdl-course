@@ -40,7 +40,7 @@ begin
     -- domain. By default enable signal is low and generated pulse is 
     -- always one clock long.
     --------------------------------------------------------------------
-    p_clk_enable : process(clk_i)
+    p_clk_enable : process (clk_i)
     begin
         if rising_edge(clk_i) then  -- Rising clock edge
             if srst_n_i = '0' then  -- Synchronous reset (active low)
