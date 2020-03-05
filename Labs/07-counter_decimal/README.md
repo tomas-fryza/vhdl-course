@@ -77,7 +77,7 @@ begin
     -- Sequential process with synchronous reset and clock enable,
     -- which implements a two-way decimal counter.
     --------------------------------------------------------------------
-    p_decimal_cnt : process(clk_i)
+    p_decimal_cnt : process (clk_i)
     begin
         if rising_edge(clk_i) then  -- Rising clock edge
             if srst_n_i = '0' then  -- Synchronous reset (active low)
