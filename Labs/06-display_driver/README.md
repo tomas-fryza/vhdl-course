@@ -95,6 +95,7 @@ port (
     data2_i  : in  std_logic_vector(4-1 downto 0);
     data3_i  : in  std_logic_vector(4-1 downto 0);
     dp_i     : in  std_logic_vector(4-1 downto 0);  -- Decimal points
+    
     data_o   : out std_logic_vector(4-1 downto 0);  -- Output value
     dp_o     : out std_logic;                       -- Decimal point
     dig_o    : out std_logic_vector(4-1 downto 0)   -- Digit position
