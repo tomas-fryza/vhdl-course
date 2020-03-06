@@ -3,17 +3,8 @@
 [![GitHub](https://img.shields.io/github/license/tomas-fryza/Digital-electronics-1)](https://choosealicense.com/licenses/mit/)
 [![activity](https://img.shields.io/github/last-commit/tomas-fryza/Digital-electronics-1)](https://github.com/tomas-fryza/Digital-electronics-1/commits/master)
 
+
 # Digital electronics 1
-
-#### Contents
-
-1. [Introduction](#Introduction)
-2. [Materials](#Materials)
-3. [References](#References)
-4. [License](#License)
-
-
-## Introduction
 
 The repository contains VHDL examples for bachelor course [*Digital Electronics 1*](https://www.vutbr.cz/en/students/courses/detail/210628) at Brno University of Technology, Czechia. In folder `Docs` all manuals are stored. Folder `Docs/Hw` contains KiCad schematic of CPLD expansion board used in the course. All computer lab exercises are located within `Labs` folder and all screenshots and images are located in `Images` folder.
 
