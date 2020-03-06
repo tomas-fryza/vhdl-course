@@ -1,21 +1,20 @@
 # Lab 5: Binary counters
 
-The purpose of this laboratory exercise is to become familiar with the creation of sequential processes in VHDL, to implement clock enable signal to drive another logic with slower clock, and to design a binary counter. We will use a push button on the CoolRunner board as reset device, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and 7-segment display as output device.
+#### Objectives
+
+The purpose of this laboratory exercise is to become familiar with the creation of sequential processes in VHDL, next to implement clock enable signal to drive another logic with slower clock, and to design a binary counter.
 
 
-#### Contents
+#### Materials
 
-1. [Materials](#1-Materials)
-2. [Synchronize Git and create a new folder](#2-Synchronize-Git-and-create-a-new-folder)
-3. [Clock enable VHDL code](#3-Clock-enable-VHDL-code)
-4. [Binary counter VHDL code](#4-Binary-counter-VHDL-code)
-5. [Top level implementation of 4-bit counter](#5-Top-level-implementation-of-4-bit-counter)
-6. [Clean project and synchronize git](#6-Clean-project-and-synchronize-git)
+You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as reset device, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and 7-segment display as output device.
+
+![coolrunner_bin_cnt](../../Images/coolrunner_binary_cnt.jpg)
 
 
-## Preparation tasks (done before the lab at home)
+## 1 Preparation tasks (done before the lab at home)
 
-1. Calculate how many periods of clock signal with ![equation](https://latex.codecogs.com/gif.latex?f_%7Bclk%7D%20%3D%2010%5C%2C%5Ctext%7BkHz%7D) contain time intervals 10&nbsp;ms, 250&nbsp;ms, 500&nbsp;ms, and 1&nbsp;s. Write values in decimal, binary, and hexadecimal forms.
+1. Calculate how many periods of clock signal with ![equation](https://latex.codecogs.com/gif.latex?f_%7Bclk%7D%20%3D%2010%5C%2C%5Ctext%7BkHz%7D) contain time intervals 4&nbsp;ms, 10&nbsp;ms, 250&nbsp;ms, 500&nbsp;ms, and 1&nbsp;s. Write values in decimal, binary, and hexadecimal forms.
 
     &nbsp;
     
@@ -25,19 +24,13 @@ The purpose of this laboratory exercise is to become familiar with the creation 
 
     | **Freq** | **Time** | **Number of periods** | **Number of periods in binary** | **Number of periods in hexa** |
     | :-: | :-: | :-: | :-: | :-: |
+    | 250&nbsp;Hz | 4&nbsp;ms |  |  |  |
     | 100&nbsp;Hz | 10&nbsp;ms |  |  |  |
     | 4&nbsp;Hz | 250&nbsp;ms |  |  |  |
     | 2&nbsp;Hz | 500&nbsp;ms |  |  |  |
     | 1&nbsp;Hz | 1&nbsp;sec |  |  |  |
 
-2. See how to create a [sequential process](https://github.com/tomas-fryza/Digital-electronics-1/wiki) in VHDL.
-
-
-## 1 Materials
-
-1. CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf)): [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
-
-    ![coolrunner_bin_cnt](../../Images/coolrunner_binary_cnt.jpg)
+2. See how to create a [sequential process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) in VHDL.
 
 
 ## 2 Synchronize Git and create a new folder
@@ -49,11 +42,11 @@ The purpose of this laboratory exercise is to become familiar with the creation 
 
 ## 3 Clock enable VHDL code
 
-*To drive another logic in the design (with slower clock), it is better to generate a clock enable signal instead of creating another clock domain (using clock dividers) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.*
+To drive another logic in the design (with slower clock), it is better to generate a **clock enable signal** instead of creating another clock domain (using **clock dividers**) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.
 
 1. Create a new project in ISE titled `binary_counter` for XC2C256-TQ144 CPLD device in location `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/05-counter_binary`
 
-2. Create a new VHDL module `clock_enable` and copy + paste the following code template.
+2. Create a new VHDL module `clock_enable`, copy/paste the following code template, and run the synthesis (**Implement Design > Synthesize - XST**).
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -76,7 +69,7 @@ use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
 ------------------------------------------------------------------------
 entity clock_enable is
 generic (
-    g_NPERIOD : std_logic_vector(16-1 downto 0) := x"0004"
+    g_NPERIOD : std_logic_vector(16-1 downto 0) := x"0006"
 );
 port (
     clk_i          : in  std_logic;
@@ -104,14 +97,12 @@ begin
             if srst_n_i = '0' then  -- Synchronous reset (active low)
                 s_cnt <= (others => '0');   -- Clear all bits
                 clock_enable_o <= '0';
+            elsif s_cnt >= g_NPERIOD-1 then -- Enable pulse
+                s_cnt <= (others => '0');
+                clock_enable_o <= '1';
             else
-                if s_cnt >= g_NPERIOD-1 then
-                    s_cnt <= (others => '0');
-                    clock_enable_o <= '1';
-                else
-                    s_cnt <= s_cnt + x"0001";
-                    clock_enable_o <= '0';
-                end if;
+                s_cnt <= s_cnt + x"0001";
+                clock_enable_o <= '0';
             end if;
         end if;
     end process p_clk_enable;
@@ -119,10 +110,9 @@ begin
 end architecture Behavioral;
 ```
 
-> **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
-   >
+**Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
 
-3. Simulate the module for different `g_NPERIOD` values and verify that the reset works correctly.
+3. Create a new VHDL test bench, simulate the module for different `g_NPERIOD` values, and verify that the reset works correctly.
 
     > **Warning:** Comment or remove lines in generated test bench that contain `clock_enable_o_process` process definition. The clock enable signal is generated by the VHDL module.
     >
@@ -130,17 +120,17 @@ end architecture Behavioral;
    ```vhdl
    --   clock_enable_o_process :process
    --   begin
-   --		clock_enable_o <= '0';
-   --		wait for clock_enable_o_period/2;
-   --		clock_enable_o <= '1';
-   --		wait for clock_enable_o_period/2;
+   --       clock_enable_o <= '0';
+   --       wait for clock_enable_o_period/2;
+   --       clock_enable_o <= '1';
+   --       wait for clock_enable_o_period/2;
    --   end process;
    ```
 
 
 ## 4 Binary counter VHDL code
 
-1. Create a new VHDL module `binary_cnt` and copy + paste the following code template.
+1. Create a new VHDL module `binary_cnt`, copy/paste the following code template, and run the synthesis.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -183,7 +173,7 @@ begin
     --------------------------------------------------------------------
     -- p_binary_cnt:
     -- Sequential process with synchronous reset and clock enable,
-    -- which implements a one-way binary counter.
+    -- which implements an one-way binary counter.
     --------------------------------------------------------------------
     p_binary_cnt : process (clk_i)
     begin
@@ -196,34 +186,37 @@ begin
         end if;
     end process p_binary_cnt;
 
-    cnt_o <= s_cnt;
+    cnt_o <= s_cnt;                 -- Entity output
 
 end architecture Behavioral;
 ```
 
-   > Note that an internal `s_cnt` signal is used to implement the counter. This is because the **output** port `cnt_o` cannot be read and therefore the operation `cnt_o + 1` cannot be performed.
-   >
+Note that an internal `s_cnt` signal is used to implement the counter. This is because the **output** port `cnt_o` cannot be read and therefore the operation `cnt_o + 1` cannot be performed.
 
-2. Simulate the module for different `g_NBIT` values and verify that the clock enable signal works correctly. In simulation you can use test bench loops.
+2. Create a new VHDL test bench, simulate the module for different `g_NBIT` values and verify that the clock enable signal works correctly. Activate the reset signal at the beginning of the simulation for one clock period. In simulation you can use test bench loops as follows.
 
    ```vhdl
-   for i in 0 to 50 loop
-       en_i <= '1';
-       wait for clk_i_period*1;
-       en_i <= '0';
-       wait for clk_i_period*3;
+   en_i <= '0';
+   srst_n_i <= '1'; wait for clk_i_period;
+   
+   -- Reset activation
+   srst_n_i <= '0'; wait for clk_i_period;
+   srst_n_i <= '1';
+
+   -- Clock enable pulses
+   for i in 0 to 10 loop
+       en_i <= '1'; wait for clk_i_period;
+       en_i <= '0'; wait for clk_i_period*3;
    end loop;
    ```
 
     ![isim_binary_cnt](../../Images/isim_binary_cnt.png)
 
+   For `std_logic_vector` data type signals it is possible to change the numeric system in the simulation which represents the current state of the vector. Right-click the vector name (here `cnt_o[4:0]`) and select **Radix > Unsigned Decimal** from the context menu. You can change the vector color by **Signal Color** as well.
 
 ## 5 Top level implementation of 4-bit counter
 
-1. Create a new VHDL module `top` and copy + paste the following code template.
-
-    > If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **top - Behavioral (top.vhd)** line and select **Set as Top Module**.
-    >
+1. Create a new VHDL module `top` and copy/paste the following code template.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -256,7 +249,6 @@ end entity top;
 -- Architecture declaration for top level
 ------------------------------------------------------------------------
 architecture Behavioral of top is
-    constant c_NBIT0 : positive := 4;   -- Number of bits for Counter0
     --- WRITE YOUR CODE HERE
 begin
 
@@ -280,12 +272,15 @@ begin
 end architecture Behavioral;
 ```
 
-2. Implement a four-bit binary counter on the Coolrunner-II board. Display its value on the 7-segment display, connect the reset to BTN0 push button and make sure the 10kHz clock frequency is selected.
-
-   Test all period values for `clock_enable` module from preparation task table.
+2. Connect clock enable, binary counter, and hex to seven-segment decoder sub-blocks. Map `g_NPERIOD` generic to a hexadecimal value from preparation tasks table, map `g_NBIT` to 4, and copy VHDL file of seven-segment decoder and Coolrunner UCF file to the working folder. Display 4-bit binary counter value on the 7-segment display, connect the reset to BTN0 push button and make sure the 10kHz clock frequency is selected by JP1 jumper.
 
    ![ise_binary_cnt_top](../../Images/ise_binary_cnt_top.png)
    ![ise_binary_cnt_gates](../../Images/ise_binary_cnt_gates.png)
+
+    > If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **top - Behavioral (top.vhd)** line and select **Set as Top Module**.
+    >
+
+3. Implement a four-bit binary counter to the Coolrunner-II board. Test all `g_NPERIOD` period values from preparation task table.
 
 
 ## 6 Clean project and synchronize git

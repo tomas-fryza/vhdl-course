@@ -30,7 +30,6 @@ end entity top;
 -- Architecture declaration for top level
 ------------------------------------------------------------------------
 architecture Behavioral of top is
-    constant c_NBIT0 : positive := 4;   -- Number of bits for Counter0
     --- WRITE YOUR CODE HERE
     signal s_hex : std_logic_vector(4-1 downto 0);
     signal s_en  : std_logic;
@@ -75,7 +74,6 @@ begin
     --- WRITE YOUR CODE HERE
     HEX_TO_SEG : entity work.hex_to_7seg
     port map (
-        -- WRITE YOUR CODE HERE
         hex_i => s_hex,
         seg_o => disp_seg_o
     );

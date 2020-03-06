@@ -46,14 +46,12 @@ begin
             if srst_n_i = '0' then  -- Synchronous reset (active low)
                 s_cnt <= (others => '0');   -- Clear all bits
                 clock_enable_o <= '0';
+            elsif s_cnt >= g_NPERIOD-1 then -- Enable pulse
+                s_cnt <= (others => '0');
+                clock_enable_o <= '1';
             else
-                if s_cnt >= g_NPERIOD-1 then
-                    s_cnt <= (others => '0');
-                    clock_enable_o <= '1';
-                else
-                    s_cnt <= s_cnt + x"0001";
-                    clock_enable_o <= '0';
-                end if;
+                s_cnt <= s_cnt + x"0001";
+                clock_enable_o <= '0';
             end if;
         end if;
     end process p_clk_enable;

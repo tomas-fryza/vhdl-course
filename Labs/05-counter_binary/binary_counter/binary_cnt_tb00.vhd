@@ -84,21 +84,25 @@ BEGIN
     begin
         en_i <= '0';
         srst_n_i <= '1'; wait for clk_i_period;
+   
+        -- Reset activation
         srst_n_i <= '0'; wait for clk_i_period;
         srst_n_i <= '1';
+
+        -- Clock enable pulses
         for i in 0 to 10 loop
-            en_i <= '1';
-            wait for clk_i_period*1;
-            en_i <= '0';
-            wait for clk_i_period*3;
+            en_i <= '1'; wait for clk_i_period;
+            en_i <= '0'; wait for clk_i_period*3;
         end loop;
+
+        -- Reset activation
         srst_n_i <= '0'; wait for clk_i_period;
         srst_n_i <= '1';
+
+        -- Clock enable pulses
         for i in 0 to 100 loop
-            en_i <= '1';
-            wait for clk_i_period*1;
-            en_i <= '0';
-            wait for clk_i_period*3;
+            en_i <= '1'; wait for clk_i_period;
+            en_i <= '0'; wait for clk_i_period*3;
         end loop;
 
         wait;

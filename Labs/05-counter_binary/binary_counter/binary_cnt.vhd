@@ -38,7 +38,7 @@ begin
     --------------------------------------------------------------------
     -- p_binary_cnt:
     -- Sequential process with synchronous reset and clock enable,
-    -- which implements a one-way binary counter.
+    -- which implements an one-way binary counter.
     --------------------------------------------------------------------
     p_binary_cnt : process (clk_i)
     begin
@@ -51,6 +51,6 @@ begin
         end if;
     end process p_binary_cnt;
 
-    cnt_o <= s_cnt;
+    cnt_o <= s_cnt;                 -- Entity output
 
 end architecture Behavioral;
