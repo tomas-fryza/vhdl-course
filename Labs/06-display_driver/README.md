@@ -177,6 +177,7 @@ port (
     data2_i  : in  std_logic_vector(4-1 downto 0);
     data3_i  : in  std_logic_vector(4-1 downto 0);
     dp_i     : in  std_logic_vector(4-1 downto 0);  -- Decimal points
+    
     dp_o     : out std_logic;                       -- Decimal point
     seg_o    : out std_logic_vector(7-1 downto 0);
     dig_o    : out std_logic_vector(4-1 downto 0)
@@ -254,6 +255,7 @@ port (
     SW13_CPLD  : in  std_logic;
     SW14_CPLD  : in  std_logic;
     SW15_CPLD  : in  std_logic;
+    
     disp_dp    : out std_logic;     -- Decimal point
     disp_seg_o : out std_logic_vector(7-1 downto 0);
     disp_dig_o : out std_logic_vector(4-1 downto 0)
@@ -279,7 +281,7 @@ begin
 end architecture Behavioral;
 ```
 
-2. Connect seven-segment driver and implement it on the Coolrunner-II board. Use slide switches on the CPLD expansion board as data inputs and display the values on the 7-segment display. Connect the reset to BTN0 push button and make sure the 10kHz clock frequency is selected. Copy Coolrunner and Expansion UCF files to the working folder. Add these files to the project.
+2. Connect seven-segment driver and implement it on the Coolrunner-II board. Use slide switches on the CPLD expansion board as data inputs and display the values on the 7-segment display. Connect the reset to BTN0 push button and make sure the 10kHz clock frequency is selected by JP1 jumper. Copy Coolrunner and Expansion UCF files to the working folder. Add these files to the project.
 
 
 ## 5 Clean project and synchronize git
@@ -294,7 +296,7 @@ end architecture Behavioral;
 
 ## Experiments on your own
 
-1. On your smartphone, set slow motion video recording and observe the seven-segment display behavior:)
+1. On your smartphone, set slow motion video recording and observe the seven-segment display behavior. :)
 
 2. Display 4-bit input values with green and red LEDs on the CPLD expansion board.
 
