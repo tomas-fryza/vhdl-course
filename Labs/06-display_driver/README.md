@@ -17,7 +17,6 @@ You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ1
 1. Complete the signal timing to display `03.14` on the 7-segment display. Note that the duration of one symbol is 4&nbsp;ms.
 
     &nbsp;
-
     ![segment_timing](../../Images/wavedrom_7-segment.png)
     &nbsp;
 
