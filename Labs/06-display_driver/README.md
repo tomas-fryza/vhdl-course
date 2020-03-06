@@ -48,7 +48,7 @@ You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ1
 }
 ```
 
-2. See how to make [signal assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/VHDL-cheat-sheet#signal-assignments) outside and inside a process. What is the difference between combinational and sequential processes?
+2. See how to make [signal assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) outside and inside a process. What is the difference between combinational and sequential processes?
 
 
 ## 2 Synchronize Git and create a new folder
