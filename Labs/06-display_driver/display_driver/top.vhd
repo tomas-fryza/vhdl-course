@@ -51,25 +51,25 @@ begin
 
     -- Combine 4-bit inputs to internal signals
     -- WRITE YOUR CODE HERE
-    s_data0(3) <= SW15_CPLD;
-    s_data0(2) <= SW14_CPLD;
-    s_data0(1) <= SW13_CPLD;
-    s_data0(0) <= SW12_CPLD;
+    s_data3(3) <= SW15_CPLD;
+    s_data3(2) <= SW14_CPLD;
+    s_data3(1) <= SW13_CPLD;
+    s_data3(0) <= SW12_CPLD;
 
-    s_data1(3) <= SW11_CPLD;
-    s_data1(2) <= SW10_CPLD;
-    s_data1(1) <= SW9_CPLD;
-    s_data1(0) <= SW8_CPLD;
+    s_data2(3) <= SW11_CPLD;
+    s_data2(2) <= SW10_CPLD;
+    s_data2(1) <= SW9_CPLD;
+    s_data2(0) <= SW8_CPLD;
 
-    s_data2(3) <= SW7_CPLD;
-    s_data2(2) <= SW6_CPLD;
-    s_data2(1) <= SW5_CPLD;
-    s_data2(0) <= SW4_CPLD;
+    s_data1(3) <= SW7_CPLD;
+    s_data1(2) <= SW6_CPLD;
+    s_data1(1) <= SW5_CPLD;
+    s_data1(0) <= SW4_CPLD;
 
-    s_data3(3) <= SW3_CPLD;
-    s_data3(2) <= SW2_CPLD;
-    s_data3(1) <= SW1_CPLD;
-    s_data3(0) <= SW0_CPLD;
+    s_data0(3) <= SW3_CPLD;
+    s_data0(2) <= SW2_CPLD;
+    s_data0(1) <= SW1_CPLD;
+    s_data0(0) <= SW0_CPLD;
 
 
     --------------------------------------------------------------------
