@@ -22,7 +22,7 @@ You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ1
     
     &nbsp;
 
-    | **Freq** | **Time** | **Number of periods** | **Number of periods in binary** | **Number of periods in hexa** |
+    | **Freq** | **Time** | **Number of periods** | **Number of periods in binary** | **Number of periods in hex** |
     | :-: | :-: | :-: | :-: | :-: |
     | 250&nbsp;Hz | 4&nbsp;ms |  |  |  |
     | 100&nbsp;Hz | 10&nbsp;ms |  |  |  |
