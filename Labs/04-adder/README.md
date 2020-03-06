@@ -1,21 +1,20 @@
 # Lab 4: Binary adder
 
-The purpose of this laboratory exercise is to design an adder. It is a type of digital circuit that performs the operation of additions of two numbers. We will use slide switches on the CPLD expansion board as inputs and 7-segment display on the Coolrunner-II board as output device.
+#### Objectives
+
+The purpose of this laboratory exercise is to design an adder. It is a type of digital circuit that performs the operation of additions of two numbers.
 
 
-#### Contents
+#### Materials
 
-1. [Materials](#1-Materials)
-2. [Synchronize Git and create a new folder](#2-Synchronize-Git-and-create-a-new-folder)
-3. [Half adder VHDL code](#3-Half-adder-VHDL-code)
-4. [Full adder VHDL code](#4-Full-adder-VHDL-code)
-5. [Top level implementation of 4-bit adder](#5-Top-level-implementation-of-4-bit-adder)
-6. [Clean project and synchronize git](#6-Clean-project-and-synchronize-git)
+You will use slide switches on the CPLD expansion board ([schematic](../../Docs/cpld_expansion.pdf)) as inputs and 7-segment display on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as output device.
+
+![coolrunner_expansion](../../Images/coolrunner_expansion_board.jpg)
 
 
-## Preparation tasks (done before the lab at home)
+## 1 Preparation tasks (done before the lab at home)
 
-1. A half adder has two inputs A and B and two outputs Carry and Sum. Comlpete the half adder truth table. Draw a logic diagram of both output functions.
+1. A half adder has two inputs A and B and two outputs Carry and Sum. Complete the half adder truth table. Draw a logic diagram of both output functions.
 
     | **B** | **A** | **Carry** | **Sum** |
     | :-: | :-: | :-: | :-: |
@@ -24,7 +23,7 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
     | 1 | 0 |  |  |
     | 1 | 1 |  |  |
 
-2. A full adder has three inputs and two outputs. The two inputs are A, B, and Carry input. The outputs are Carry output and Sum. Comlpete the full adder truth table and draw a logic diagram of both output functions.
+2. A full adder has three inputs and two outputs. The two inputs are A, B, and Carry input. The outputs are Carry output and Sum. Complete the full adder truth table and draw a logic diagram of both output functions.
 
     | **Cin** | **B** | **A** | **Cout** | **Sum** |
     | :-: | :-: | :-: | :-: | :-: |
@@ -40,15 +39,6 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 3. Find the relationship between half adder and full adder logic diagrams.
 
 4. See schematic of the [CPLD expansion board](../../Docs/cpld_expansion.pdf) and find out the connection of LEDs, push buttons, and slide switches.
-
-
-## 1 Materials
-
-1. CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf)): [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
-
-2. CPLD expansion board: [Schematic](../../Docs/cpld_expansion.pdf).
-
-    ![coolrunner_expansion](../../Images/coolrunner_expansion_board.jpg)
 
 
 ## 2 Synchronize Git and create a new folder
@@ -78,12 +68,9 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 
 ## 3 Half adder VHDL code
 
-1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki) titled `binary_adder` for XC2C256-TQ144 CPLD device.
+1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE) titled `binary_adder` for XC2C256-TQ144 CPLD device. Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/04-adder`, ie in **your** local folder.
 
-    > **Warning:** Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/04-adder`, ie in **your** local folder.
-    >
-
-2. Create a new source file **Project > New Source... > VHDL Module**, name it `half_adder` and copy + paste the following code template.
+2. Create a new source file **Project > New Source... > VHDL Module**, name it `half_adder` and copy/paste the following code template.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -127,7 +114,7 @@ end architecture Behavioral;
 
 ## 4 Full adder VHDL code
 
-1.  Create a new source file **Project > New Source... > VHDL Module**, name it `full_adder` and copy + paste the following code.
+1.  Create a new source file **Project > New Source... > VHDL Module**, name it `full_adder` and copy/paste the following code.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -191,14 +178,14 @@ end architecture Behavioral;
     > If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **full_adder - Behavioral (full_adder.vhd)** line and select **Set as Top Module**.
     >
 
-3. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://github.com/tomas-fryza/Digital-electronics-1/wiki).
+3. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Simulate-Your-Design-in-ISE).
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
 
 ## 5 Top level implementation of 4-bit adder
 
-1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy + paste the following code template.
+1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy/paste the following code template.
 
     > If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **top - Behavioral (top.vhd)** line and select **Set as Top Module**.
     >
