@@ -2,7 +2,7 @@
 
 #### Objectives
 
-In this laboratory exercise you will study create a sequential circuit to multiplex the 7-segment display. This allows you to display 4-digit values including the decimal point on the display.
+In this laboratory exercise, you will study the creation of a sequential circuit for multiplexing a 7-segment display. This allows you to display 4-digit values including the decimal point on the display.
 
 
 #### Materials
