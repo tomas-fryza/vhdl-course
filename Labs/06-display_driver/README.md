@@ -25,9 +25,9 @@ You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ1
 ```javascript
 {signal: [
   ['Digit position',
-    {name: 'disp_dig_o(3)', wave: 'xx01..01..xx',   },
-    {name: 'disp_dig_o(2)', wave: 'xx1',   },
-    {name: 'disp_dig_o(1)', wave: 'xx1',  },
+    {name: 'disp_dig_o(3)', wave: 'xx01..01..xx', },
+    {name: 'disp_dig_o(2)', wave: 'xx1', },
+    {name: 'disp_dig_o(1)', wave: 'xx1', },
     {name: 'disp_dig_o(0)', wave: 'xx1', },
   ],
   ['Seven-segment data',
