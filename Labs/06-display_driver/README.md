@@ -2,19 +2,51 @@
 
 #### Objectives
 
-In this laboratory exercise you will study XXXX.
+In this laboratory exercise you will study create a sequential circuit to multiplex the 7-segment display. This allows you to display 4-digit values including the decimal point on the display.
 
 
 #### Materials
 
-You will use CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) and CPLD expansion board ([schematic](../../Docs/cpld_expansion.pdf)).
+You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as reset device, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and 7-segment display as output device. You will also use slide switches on the CPLD expansion board ([schematic](../../Docs/cpld_expansion.pdf)) as inputs.
 
 ![coolrunner_bin_cnt](../../Images/coolrunner_binary_cnt.jpg)
 
 
 ## 1 Preparation tasks (done before the lab at home)
 
-1. TBD
+1. Complete signals timing to display `03.14` value on the 7-segment display. Note that the duration of one symbol is 4&nbsp;ms.
+
+    &nbsp;
+    ![segment_timing](../../Images/wavedrom_7-segment.png)
+    &nbsp;
+
+> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The source of the figure is as follows:
+>
+```javascript
+{signal: [
+  ['Digit position',
+    {name: 'disp_dig_o(3)', wave: 'xx01..01..xx',   },
+    {name: 'disp_dig_o(2)', wave: 'xx1',   },
+    {name: 'disp_dig_o(1)', wave: 'xx1',  },
+    {name: 'disp_dig_o(0)', wave: 'xx1', },
+  ],
+  ['Seven-segment data',
+    {name: 'disp_seg_o',       wave: 'xx34523452xx', data: ['0','3','1','4','0','3','1','4'], },  
+    {name: 'A: disp_seg_o(6)', wave: 'xx0.1.0.1.x.', },
+    {name: 'B: disp_seg_o(5)', wave: 'xx',           },
+    {name: 'C: disp_seg_o(4)', wave: 'xx',           },
+    {name: 'D: disp_seg_o(3)', wave: 'xx',           },
+    {name: 'E: disp_seg_o(2)', wave: 'xx',           },
+    {name: 'F: disp_seg_o(1)', wave: 'xx',           },
+    {name: 'G: disp_seg_o(0)', wave: 'xx',           },
+  ],
+  {name: 'Decimal point', wave: 'xx101..01.xx', },
+],
+  head: {
+    text: '4ms   4ms   4ms   4ms   4ms   4ms   4ms   4ms',
+  },
+}
+```
 
 2. See how to make [signal assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/VHDL-cheat-sheet#signal-assignments) outside and inside a process. What is the difference between combinational and sequential processes?
 
@@ -28,11 +60,11 @@ You will use CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c25
 
 ## 3 Display multiplexer VHDL code
 
-*Multiplexer or MUX is a digital switch. It allows to route binary information from several input lines or sources to one output line or channel.*
+Multiplexer or MUX is a digital switch. It allows to route binary information from several input lines or sources to one output line or channel.
 
 1. Create a new project in ISE titled `display_driver` for XC2C256-TQ144 CPLD device in location `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/06-display_driver`
 
-2. Create a new VHDL module `mux_7seg` and copy + paste the following code template.
+2. Create a new VHDL module `mux_7seg` and copy/paste the following code template.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -110,12 +142,12 @@ begin
 end architecture Behavioral;
 ```
 
-2. Implement an internal 2-bit binary counter and use the value in a combinational process to perform 4-to-1 mux. Define output value, decimal point, and digit position.
+2. Implement an internal 2-bit binary counter and use the value in a combinational process to perform 4-to-1 mux. For each selection, define output value, decimal point, and digit position.
 
 
 ## 4 Display multiplexer VHDL code
 
-1. Create a new VHDL module `driver_7seg` and copy + paste the following code template.
+1. Create a new VHDL module `driver_7seg` and copy/paste the following code template.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -153,7 +185,7 @@ end entity driver_7seg;
 ------------------------------------------------------------------------
 -- Architecture declaration for display driver
 ------------------------------------------------------------------------
-architecture Behavioral of display_7seg is
+architecture Behavioral of driver_7seg is
     -- WRITE YOUR CODE HERE
 begin
 
@@ -174,15 +206,14 @@ begin
 end architecture Behavioral;
 ```
 
-2. Use sub-blocks of clock enable (period of 4ms), display multiplexer, hex to seven-segment decoder, and implement the display driver.
+2. Connect clock enable (period of 4 ms), display multiplexer, and hex to seven-segment decoder sub-blocks. Define internal signals if needed. Copy VHDL file of clock enable and seven-segment decoder to the working folder. Add these files to the project.
+
+![ise_driver_7seg](../../Images/ise_driver_7seg_rtl.png)
 
 
 ## 5 Top level implementation of display driver
 
-1. Create a new VHDL module `top` and copy + paste the following code template.
-
-    > If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **top - Behavioral (top.vhd)** line and select **Set as Top Module**.
-    >
+1. Create a new VHDL module `top` and copy/paste the following code template.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -232,7 +263,13 @@ end entity top;
 -- Architecture declaration for top level
 ------------------------------------------------------------------------
 architecture Behavioral of top is
+    signal s_data0, s_data1 : std_logic_vector(4-1 downto 0);
+    signal s_data2, s_data3 : std_logic_vector(4-1 downto 0);
 begin
+
+    -- Combine 4-bit inputs to internal signals
+    -- WRITE YOUR CODE HERE
+
 
     --------------------------------------------------------------------
     -- Sub-block of driver_7seg entity
@@ -241,7 +278,7 @@ begin
 end architecture Behavioral;
 ```
 
-2. Implement a display driver on the Coolrunner-II board with CPLD expansion board. Use slide switches on the CPLD expansion board as data inputs and display the values on the 7-segment displays. Connect the reset to BTN0 push button and make sure the 10kHz clock frequency is selected.
+2. Connect seven-segment driver and implement it on the Coolrunner-II board. Use slide switches on the CPLD expansion board as data inputs and display the values on the 7-segment display. Connect the reset to BTN0 push button and make sure the 10kHz clock frequency is selected. Copy Coolrunner and Expansion UCF files to the working folder. Add these files to the project.
 
 
 ## 5 Clean project and synchronize git
