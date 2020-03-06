@@ -1,22 +1,22 @@
 # Lab 3: Hex to seven-segment decoder
 
-The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components. We will use push buttons and slide switches on the CoolRunner board as inputs and light emitting diodes (LEDs) and 7-segment display as output devices.
+#### Objectives
+
+The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
 
 
-#### Contents
+#### Materials
 
-1. [Materials](#1-Materials)
-2. [Synchronize Git and create a new folder](#2-Synchronize-Git-and-create-a-new-folder)
-3. [Hex to seven-segment VHDL code](#3-Hex-to-seven-segment-VHDL-code)
-4. [Top level VHDL code](#4-Top-level-VHDL-code)
-5. [Clean project and synchronize git](#5-Clean-project-and-synchronize-git)
+You will use push buttons and slide switches on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as inputs and light emitting diodes (LEDs) and 7-segment display as output devices.
+
+![cpld_segments](../../Images/coolrunner_segments.jpg)
 
 
-## Preparation tasks (done before the lab at home)
+## 1 Preparation tasks (done before the lab at home)
 
 1. See [schematic](../../Docs/coolrunner-ii_sch.pdf) or [reference manual](../../Docs/coolrunner-ii_rm.pdf) of the board and find out the connection of 7-segment display. How can you change the position of the character on the display?
 
-2. Complete the decoder conversion table for common anode display. Sketch the symbols to be displayed.
+2. Draw the patterns for hexadecimal digits and complete the decoder conversion table for **common anode** display.
 
     | **Hex** | **Input** | **a** | **b** | **c** | **d** | **e** | **f** | **g** |
     | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -36,14 +36,6 @@ The purpose of this laboratory exercise is to design a 7-segment display decoder
     | d |      |   |   |   |   |   |   |   |
     | E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
     | F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
-
-
-
-## 1 Materials
-
-1. CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf)): [Manual](../../Docs/coolrunner-ii_rm.pdf), [Schematic](../../Docs/coolrunner-ii_sch.pdf).
-
-![cpld_segments](../../Images/coolrunner_segments.jpg)
 
 
 ## 2 Synchronize Git and create a new folder
@@ -73,12 +65,9 @@ The purpose of this laboratory exercise is to design a 7-segment display decoder
 
 ## 3 Hex to seven-segment VHDL code
 
-1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki) titled `hex_to_segment` for XC2C256-TQ144 CPLD device.
+1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE) titled `hex_to_segment` for XC2C256-TQ144 CPLD device. Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-segment`, ie in **your** local folder.
 
-    > **Warning:** Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-segment`, ie in **your** local folder.
-    >
-
-2. Create a new source file **Project > New Source... > VHDL Module**, name it `hex_to_7seg` and copy + paste the following code template.
+2. Create a new source file **Project > New Source... > VHDL Module**, name it `hex_to_7seg` and copy/paste the following code template.
 
 ![hex_to_7seg](../../Images/hex_to_7seg.svg)
 
@@ -135,14 +124,14 @@ begin
 end architecture Behavioral;
 ```
 
-3. Complete the decoding table for all input combinations and define the output signals to display hexadecimal symbols (0, 1, ..., 9, A, b, C, d, E, F). Use VHDL construction `when`-`else`. Save all files in menu **File > Save All**.
+3. See how signals can be [assigned outside the process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments), complete the decoding table for all input combinations, and define the output signals to display hexadecimal symbols (0, 1, ..., 9, A, b, C, d, E, F). Save all files in menu **File > Save All**.
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
 
 ## 4 Top level VHDL code
 
-1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy + paste the following code template.
+1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy/paste the following code template.
 
 ![top](../../Images/top___hex_to_7seg.svg)
 
@@ -217,11 +206,11 @@ begin
 end architecture Behavioral;
 ```
 
-2. How is the sub-block of hex to 7-segment decoder connected to the top module?
+2. Use onboard push buttons and slide switches as 4-bit input. How is the sub-block of hex to 7-segment decoder connected to the top module?
 
 3. What coding style is used to name the input, output, and internal signals in VHDL?
 
-4. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki) to CoolRunner-II CPLD starter board.
+4. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-implement-your-design-to-target-device-in-ISE) to CoolRunner-II CPLD starter board.
 
 5. Write logic functions for LEDs. Let two functions are defined using VHDL construction `when`-`else` and two functions using low-level gates `and`, `or`, `not`, etc.
 
