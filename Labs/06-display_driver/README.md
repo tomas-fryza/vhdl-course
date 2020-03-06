@@ -9,7 +9,7 @@ In this laboratory exercise you will study create a sequential circuit to multip
 
 You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as reset device, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and 7-segment display as output device. You will also use slide switches on the CPLD expansion board ([schematic](../../Docs/cpld_expansion.pdf)) as inputs.
 
-![coolrunner_bin_cnt](../../Images/coolrunner_binary_cnt.jpg)
+![coolrunner_bin_cnt](../../Images/coolrunner_disp_driver.jpg)
 
 
 ## 1 Preparation tasks (done before the lab at home)
@@ -293,6 +293,12 @@ end architecture Behavioral;
 
 ## Experiments on your own
 
-1. TBD
+1. On your smartphone, set slow motion video recording and observe the seven-segment display behavior:)
 
-2. Complete your `README.md` file with notes and screenshots from simulation and implementation.
+2. Display 4-bit input values with green and red LEDs on the CPLD expansion board.
+
+3. Display digit position value with LEDs on the Coolrunner board.
+
+4. Extend the duration of one symbol on the 7-segment display (ie. generic `g_NPERIOD` in `driver_7seg.vhd` file) and experimentally determine the maximum value at which switching by the human eye is not yet observable.
+
+5. Complete your `README.md` file with notes and screenshots from simulation and implementation.
