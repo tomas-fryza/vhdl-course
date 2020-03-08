@@ -187,14 +187,14 @@ use ieee.std_logic_1164.all;
 ------------------------------------------------------------------------
 entity top is
 port (
-    clk_i      : in  std_logic;     -- 10 kHz clock signal
-    BTN0       : in  std_logic;     -- Synchronous reset
-    SW0_CPLD, SW1_CPLD, SW2_CPLD, SW3_CPLD  : in  std_logic; -- Input 0
-    SW4_CPLD, SW5_CPLD, SW6_CPLD, SW7_CPLD  : in  std_logic; -- Input 1
-    SW8_CPLD, SW9_CPLD, SW10_CPLD,SW11_CPLD : in  std_logic; -- Input 2
-    SW12_CPLD,SW13_CPLD,SW14_CPLD,SW15_CPLD : in  std_logic; -- Input 3
+    clk_i : in std_logic;       -- 10 kHz clock signal
+    BTN0  : in std_logic;       -- Synchronous reset
+    SW0_CPLD,  SW1_CPLD,  SW2_CPLD,  SW3_CPLD  : in std_logic; -- Input 0
+    SW4_CPLD,  SW5_CPLD,  SW6_CPLD,  SW7_CPLD  : in std_logic; -- Input 1
+    SW8_CPLD,  SW9_CPLD,  SW10_CPLD, SW11_CPLD : in std_logic; -- Input 2
+    SW12_CPLD, SW13_CPLD, SW14_CPLD, SW15_CPLD : in std_logic; -- Input 3
 
-    disp_dp    : out std_logic;     -- Decimal point
+    disp_dp    : out std_logic; -- Decimal point
     disp_seg_o : out std_logic_vector(7-1 downto 0);
     disp_dig_o : out std_logic_vector(4-1 downto 0)
 );
