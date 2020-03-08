@@ -1,0 +1,1098 @@
+assert111.........
+name = ddddddd..
+assert333.........
+NDEBUG is defined
+__STDC__ is defined
+__MSVC__ is NOT defined
+XPLA_BORLANDC is NOT defined
+
+---------------------
+|  D E F A U L T S  |
+---------------------
+max_pt=28, min_pt=3
+max_fi=32, min_fi=4
+
+-----------------
+|  H E A D E R  |
+-----------------
+#$ MODULE top
+#$ PINS 4 "BTN0":143 "clk_i":38 "disp_seg_o<3>":58 "disp_seg_o<6>":56 
+#$ PINS 4 "disp_dp":59 "SW12_CPLD":7 "SW8_CPLD":3 "SW4_CPLD":139 
+#$ PINS 4 "SW0_CPLD":134 "SW13_CPLD":6 "SW9_CPLD":2 "SW5_CPLD":138 
+#$ PINS 4 "SW1_CPLD":133 "SW14_CPLD":10 "SW10_CPLD":5 "SW6_CPLD":142 
+#$ PINS 4 "SW2_CPLD":136 "SW15_CPLD":9 "SW11_CPLD":4 "SW7_CPLD":140 
+#$ PINS 3 "SW3_CPLD":135 "disp_dig_o<0>":126 "disp_dig_o<1>":128 
+#$ PINS 3 "disp_dig_o<3>":130 "disp_seg_o<2>":57 "disp_seg_o<4>":60 
+#$ PINS 3 "disp_seg_o<5>":53 "disp_seg_o<0>":61 "disp_seg_o<1>":54 
+#$ PINS 1 "disp_dig_o<2>":129 
+#$ NODES 2 "DRIVER_7SEG/CLK_EN_0/s_cnt<13>" "DRIVER_7SEG/CLK_EN_0/s_cnt<14>" 
+#$ NODES 2 "DRIVER_7SEG/CLK_EN_0/s_cnt<7>" "DRIVER_7SEG/CLK_EN_0/s_cnt<15>" 
+#$ NODES 2 "DRIVER_7SEG/CLK_EN_0/s_cnt<12>" "DRIVER_7SEG/CLK_EN_0/s_cnt<6>" 
+#$ NODES 2 "DRIVER_7SEG/CLK_EN_0/s_cnt<8>" "DRIVER_7SEG/CLK_EN_0/s_cnt<9>" 
+#$ NODES 2 "DRIVER_7SEG/s_cnt<1>" "DRIVER_7SEG/s_cnt<0>" 
+#$ NODES 2 "DRIVER_7SEG/CLK_EN_0/s_cnt<0>" "DRIVER_7SEG/CLK_EN_0/s_cnt<1>" 
+#$ NODES 2 "DRIVER_7SEG/CLK_EN_0/s_cnt<2>" "DRIVER_7SEG/CLK_EN_0/s_cnt<3>" 
+#$ NODES 2 "DRIVER_7SEG/CLK_EN_0/s_cnt<4>" "DRIVER_7SEG/CLK_EN_0/s_cnt<11>" 
+#$ NODES 2 "DRIVER_7SEG/CLK_EN_0/s_cnt<10>" "DRIVER_7SEG/CLK_EN_0/s_cnt<5>" 
+#$ NODES 4 "DRIVER_7SEG/s_en" "N_PZ_140"'co' "N_PZ_141"'co' "N_PZ_142"'co' 
+#$ NODES 4 "N_PZ_143"'co' "N_PZ_144"'co' "N_PZ_145"'co' "N_PZ_146"'co' 
+#$ NODES 4 "N_PZ_147"'co' "N_PZ_148"'co' "N_PZ_149"'co' "N_PZ_150"'co' 
+#$ NODES 4 "N_PZ_151"'co' "N_PZ_152"'co' "N_PZ_153"'co' "N_PZ_154"'co' 
+#$ NODES 4 "N_PZ_155"'co' "N_PZ_156"'co' "N_PZ_157"'co' "N_PZ_158"'co' 
+#$ NODES 4 "N_PZ_159"'co' "N_PZ_160"'co' "N_PZ_161"'co' "N_PZ_162"'co' 
+#$ NODES 4 "N_PZ_163"'co' "N_PZ_164"'co' "N_PZ_165"'co' "N_PZ_166"'co' 
+#$ NODES 4 "N_PZ_167"'co' "N_PZ_168"'co' "N_PZ_169"'co' "N_PZ_170"'co' 
+#$ NODES 4 "N_PZ_171"'co' "N_PZ_172"'co' "N_PZ_173"'co' "N_PZ_174"'co' 
+#$ NODES 4 "N_PZ_175"'co' "N_PZ_176"'co' "N_PZ_177"'co' "N_PZ_178"'co' 
+#$ NODES 4 "N_PZ_179"'co' "N_PZ_180"'co' "N_PZ_181"'co' "N_PZ_182"'co' 
+#$ NODES 4 "N_PZ_183"'co' "N_PZ_184"'co' "N_PZ_185"'co' "N_PZ_186"'co' 
+#$ NODES 3 "N_PZ_187"'co' "N_PZ_188"'co' "N_PZ_189"'co' 
+
+--------------------------------------
+|  P I N    T a b l e    [count=99]  |
+--------------------------------------
+ N_PZ_184 SW6_CPLD N_PZ_183 N_PZ_182 disp_seg_o<2> disp_dig_o<1> N_PZ_181 disp_dp 
+ N_PZ_180 N_PZ_179 SW4_CPLD SW8_CPLD N_PZ_178 DRIVER_7SEG/CLK_EN_0/s_cnt<12> 
+ DRIVER_7SEG/CLK_EN_0/s_cnt<4> N_PZ_177 N_PZ_176 N_PZ_175 BTN0 
+ DRIVER_7SEG/CLK_EN_0/s_cnt<9> disp_seg_o<6> N_PZ_174 SW2_CPLD N_PZ_173 N_PZ_172 
+ disp_seg_o<1> disp_dig_o<0> N_PZ_171 DRIVER_7SEG/CLK_EN_0/s_cnt<0> N_PZ_170 SW10_CPLD 
+ N_PZ_169 N_PZ_168 DRIVER_7SEG/CLK_EN_0/s_cnt<5> DRIVER_7SEG/s_en 
+ DRIVER_7SEG/CLK_EN_0/s_cnt<13> N_PZ_167 N_PZ_166 SW14_CPLD N_PZ_165 disp_seg_o<5> 
+ SW12_CPLD N_PZ_164 N_PZ_163 N_PZ_162 disp_seg_o<0> N_PZ_161 
+ DRIVER_7SEG/CLK_EN_0/s_cnt<1> N_PZ_160 N_PZ_159 N_PZ_158 SW7_CPLD SW5_CPLD 
+ DRIVER_7SEG/CLK_EN_0/s_cnt<14> DRIVER_7SEG/CLK_EN_0/s_cnt<6> N_PZ_157 SW0_CPLD 
+ N_PZ_156 DRIVER_7SEG/s_cnt<0> N_PZ_155 disp_seg_o<4> disp_dig_o<3> N_PZ_154 N_PZ_153 
+ SW3_CPLD SW9_CPLD clk_i N_PZ_152 N_PZ_151 DRIVER_7SEG/CLK_EN_0/s_cnt<2> 
+ DRIVER_7SEG/CLK_EN_0/s_cnt<10> N_PZ_150 N_PZ_149 N_PZ_148 SW1_CPLD 
+ DRIVER_7SEG/CLK_EN_0/s_cnt<15> DRIVER_7SEG/CLK_EN_0/s_cnt<7> N_PZ_147 N_PZ_146 
+ DRIVER_7SEG/s_cnt<1> N_PZ_145 disp_dig_o<2> SW15_CPLD disp_seg_o<3> N_PZ_144 SW11_CPLD 
+ N_PZ_143 N_PZ_189 N_PZ_142 N_PZ_188 N_PZ_141 DRIVER_7SEG/CLK_EN_0/s_cnt<11> 
+ DRIVER_7SEG/CLK_EN_0/s_cnt<3> N_PZ_187 N_PZ_140 N_PZ_186 SW13_CPLD N_PZ_185 
+ DRIVER_7SEG/CLK_EN_0/s_cnt<8>
+
+------------------------------------------
+|  P I N    E q n l i s t    [count=30]  |
+------------------------------------------
+BTN0 (fi=0): 
+clk_i (fi=0): 
+disp_seg_o<3> (fi=22): (disp_seg_o<3>/N_PZ_6, net=top) 
+disp_seg_o<6> (fi=20): (disp_seg_o<6>/N_PZ_7, net=top) 
+disp_dp (fi=1): (disp_dp/N_PZ_8, net=top) 
+SW12_CPLD (fi=0): 
+SW8_CPLD (fi=0): 
+SW4_CPLD (fi=0): 
+SW0_CPLD (fi=0): 
+SW13_CPLD (fi=0): 
+SW9_CPLD (fi=0): 
+SW5_CPLD (fi=0): 
+SW1_CPLD (fi=0): 
+SW14_CPLD (fi=0): 
+SW10_CPLD (fi=0): 
+SW6_CPLD (fi=0): 
+SW2_CPLD (fi=0): 
+SW15_CPLD (fi=0): 
+SW11_CPLD (fi=0): 
+SW7_CPLD (fi=0): 
+SW3_CPLD (fi=0): 
+disp_dig_o<0> (fi=1): (disp_dig_o<0>/N_PZ_43, net=top) 
+disp_dig_o<1> (fi=1): (disp_dig_o<1>/N_PZ_44, net=top) 
+disp_dig_o<3> (fi=1): (disp_dig_o<3>/N_PZ_45, net=top) 
+disp_seg_o<2> (fi=24): (disp_seg_o<2>/N_PZ_46, net=top) 
+disp_seg_o<4> (fi=14): (disp_seg_o<4>/N_PZ_47, net=top) 
+disp_seg_o<5> (fi=22): (disp_seg_o<5>/N_PZ_48, net=top) 
+disp_seg_o<0> (fi=20): (disp_seg_o<0>/N_PZ_49, net=top) 
+disp_seg_o<1> (fi=10): (disp_seg_o<1>/N_PZ_50, net=top) 
+disp_dig_o<2> (fi=1): (disp_dig_o<2>/N_PZ_51, net=top) 
+
+--------------------------------------------
+|  N O D E    E q n l i s t    [count=69]  |
+--------------------------------------------
+DRIVER_7SEG/CLK_EN_0/s_cnt<13> (fi=1): DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D/N_PZ_17 DRIVER_7SEG/CLK_EN_0/s_cnt<13>.CLK/N_PZ_18 
+DRIVER_7SEG/CLK_EN_0/s_cnt<14> (fi=1): DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D/N_PZ_19 DRIVER_7SEG/CLK_EN_0/s_cnt<14>.CLK/N_PZ_20 
+DRIVER_7SEG/CLK_EN_0/s_cnt<7> (fi=1): DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D/N_PZ_33 DRIVER_7SEG/CLK_EN_0/s_cnt<7>.CLK/N_PZ_34 
+DRIVER_7SEG/CLK_EN_0/s_cnt<15> (fi=1): DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D/N_PZ_39 DRIVER_7SEG/CLK_EN_0/s_cnt<15>.CLK/N_PZ_40 
+DRIVER_7SEG/CLK_EN_0/s_cnt<12> (fi=1): DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D/N_PZ_15 DRIVER_7SEG/CLK_EN_0/s_cnt<12>.CLK/N_PZ_16 
+DRIVER_7SEG/CLK_EN_0/s_cnt<6> (fi=1): DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D/N_PZ_31 DRIVER_7SEG/CLK_EN_0/s_cnt<6>.CLK/N_PZ_32 
+DRIVER_7SEG/CLK_EN_0/s_cnt<8> (fi=1): DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D/N_PZ_35 DRIVER_7SEG/CLK_EN_0/s_cnt<8>.CLK/N_PZ_36 
+DRIVER_7SEG/CLK_EN_0/s_cnt<9> (fi=1): DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D/N_PZ_37 DRIVER_7SEG/CLK_EN_0/s_cnt<9>.CLK/N_PZ_38 
+DRIVER_7SEG/s_cnt<1> (fi=5): DRIVER_7SEG/s_cnt<1>.CLK/N_PZ_1 DRIVER_7SEG/s_cnt<1>.T/N_PZ_71 
+DRIVER_7SEG/s_cnt<0> (fi=4): DRIVER_7SEG/s_cnt<0>.CLK/N_PZ_4 DRIVER_7SEG/s_cnt<0>.D/N_PZ_89 
+DRIVER_7SEG/CLK_EN_0/s_cnt<0> (fi=3): DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D/N_PZ_9 DRIVER_7SEG/CLK_EN_0/s_cnt<0>.CLK/N_PZ_10 
+DRIVER_7SEG/CLK_EN_0/s_cnt<1> (fi=3): DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D/N_PZ_21 DRIVER_7SEG/CLK_EN_0/s_cnt<1>.CLK/N_PZ_22 
+DRIVER_7SEG/CLK_EN_0/s_cnt<2> (fi=3): DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D/N_PZ_23 DRIVER_7SEG/CLK_EN_0/s_cnt<2>.CLK/N_PZ_24 
+DRIVER_7SEG/CLK_EN_0/s_cnt<3> (fi=4): DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D/N_PZ_25 DRIVER_7SEG/CLK_EN_0/s_cnt<3>.CLK/N_PZ_26 
+DRIVER_7SEG/CLK_EN_0/s_cnt<4> (fi=4): DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D/N_PZ_27 DRIVER_7SEG/CLK_EN_0/s_cnt<4>.CLK/N_PZ_28 
+DRIVER_7SEG/CLK_EN_0/s_cnt<11> (fi=1): DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D/N_PZ_13 DRIVER_7SEG/CLK_EN_0/s_cnt<11>.CLK/N_PZ_14 
+DRIVER_7SEG/CLK_EN_0/s_cnt<10> (fi=1): DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D/N_PZ_11 DRIVER_7SEG/CLK_EN_0/s_cnt<10>.CLK/N_PZ_12 
+DRIVER_7SEG/CLK_EN_0/s_cnt<5> (fi=3): DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D/N_PZ_29 DRIVER_7SEG/CLK_EN_0/s_cnt<5>.CLK/N_PZ_30 
+DRIVER_7SEG/s_en (fi=4): DRIVER_7SEG/s_en.D/N_PZ_41 DRIVER_7SEG/s_en.CLK/N_PZ_42 
+N_PZ_140 (fi=2): N_PZ_140 
+N_PZ_141 (fi=2): N_PZ_141 
+N_PZ_142 (fi=2): N_PZ_142 
+N_PZ_143 (fi=2): N_PZ_143 
+N_PZ_144 (fi=2): N_PZ_144 
+N_PZ_145 (fi=2): N_PZ_145 
+N_PZ_146 (fi=2): N_PZ_146 
+N_PZ_147 (fi=2): N_PZ_147 
+N_PZ_148 (fi=2): N_PZ_148 
+N_PZ_149 (fi=2): N_PZ_149 
+N_PZ_150 (fi=2): N_PZ_150 
+N_PZ_151 (fi=2): N_PZ_151 
+N_PZ_152 (fi=2): N_PZ_152 
+N_PZ_153 (fi=2): N_PZ_153 
+N_PZ_154 (fi=2): N_PZ_154 
+N_PZ_155 (fi=2): N_PZ_155 
+N_PZ_156 (fi=5): N_PZ_156 
+N_PZ_157 (fi=3): N_PZ_157 
+N_PZ_158 (fi=2): N_PZ_158 
+N_PZ_159 (fi=2): N_PZ_159 
+N_PZ_160 (fi=2): N_PZ_160 
+N_PZ_161 (fi=2): N_PZ_161 
+N_PZ_162 (fi=2): N_PZ_162 
+N_PZ_163 (fi=2): N_PZ_163 
+N_PZ_164 (fi=2): N_PZ_164 
+N_PZ_165 (fi=2): N_PZ_165 
+N_PZ_166 (fi=2): N_PZ_166 
+N_PZ_167 (fi=2): N_PZ_167 
+N_PZ_168 (fi=2): N_PZ_168 
+N_PZ_169 (fi=2): N_PZ_169 
+N_PZ_170 (fi=2): N_PZ_170 
+N_PZ_171 (fi=6): N_PZ_171 
+N_PZ_172 (fi=6): N_PZ_172 
+N_PZ_173 (fi=4): N_PZ_173 
+N_PZ_174 (fi=4): N_PZ_174 
+N_PZ_175 (fi=2): N_PZ_175 
+N_PZ_176 (fi=2): N_PZ_176 
+N_PZ_177 (fi=2): N_PZ_177 
+N_PZ_178 (fi=2): N_PZ_178 
+N_PZ_179 (fi=2): N_PZ_179 
+N_PZ_180 (fi=2): N_PZ_180 
+N_PZ_181 (fi=2): N_PZ_181 
+N_PZ_182 (fi=2): N_PZ_182 
+N_PZ_183 (fi=2): N_PZ_183 
+N_PZ_184 (fi=3): N_PZ_184 
+N_PZ_185 (fi=3): N_PZ_185 
+N_PZ_186 (fi=3): N_PZ_186 
+N_PZ_187 (fi=3): N_PZ_187 
+N_PZ_188 (fi=2): N_PZ_188 
+N_PZ_189 (fi=2): N_PZ_189 
+
+---------------------------------
+|  D a t a   S t r u c t u r e  |
+---------------------------------
+PI ( 37) =  BTN0 clk_i SW12_CPLD SW8_CPLD SW4_CPLD SW0_CPLD SW13_CPLD SW9_CPLD SW5_CPLD 
+            SW1_CPLD SW14_CPLD SW10_CPLD SW6_CPLD SW2_CPLD SW15_CPLD SW11_CPLD SW7_CPLD 
+            SW3_CPLD DRIVER_7SEG/s_cnt<1>.Q DRIVER_7SEG/s_cnt<0>.Q 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q 
+            DRIVER_7SEG/s_en.Q
+
+PO ( 50) =  DRIVER_7SEG/s_cnt<1>.CLK DRIVER_7SEG/s_cnt<0>.CLK disp_seg_o<3> 
+            disp_seg_o<6> disp_dp DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<0>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<10>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<11>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<12>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<13>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<14>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<1>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<2>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<3>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<4>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<5>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<6>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<7>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<8>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<9>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 
+            DRIVER_7SEG/CLK_EN_0/s_cnt<15>.CLK DRIVER_7SEG/s_en.D DRIVER_7SEG/s_en.CLK 
+            disp_dig_o<0> disp_dig_o<1> disp_dig_o<3> disp_seg_o<2> disp_seg_o<4> 
+            disp_seg_o<5> disp_seg_o<0> disp_seg_o<1> disp_dig_o<2> 
+            DRIVER_7SEG/s_cnt<1>.T DRIVER_7SEG/s_cnt<0>.D
+
+INT = (100) N_PZ_1 N_PZ_4 N_PZ_6 N_PZ_7 N_PZ_8 N_PZ_9 N_PZ_10 N_PZ_11 N_PZ_12 N_PZ_13 
+            N_PZ_14 N_PZ_15 N_PZ_16 N_PZ_17 N_PZ_18 N_PZ_19 N_PZ_20 N_PZ_21 N_PZ_22 
+            N_PZ_23 N_PZ_24 N_PZ_25 N_PZ_26 N_PZ_27 N_PZ_28 N_PZ_29 N_PZ_30 N_PZ_31 
+            N_PZ_32 N_PZ_33 N_PZ_34 N_PZ_35 N_PZ_36 N_PZ_37 N_PZ_38 N_PZ_39 N_PZ_40 
+            N_PZ_41 N_PZ_42 N_PZ_43 N_PZ_44 N_PZ_45 N_PZ_46 N_PZ_47 N_PZ_48 N_PZ_49 
+            N_PZ_50 N_PZ_51 N_PZ_71 N_PZ_89 N_PZ_140 N_PZ_141 N_PZ_142 N_PZ_143 
+            N_PZ_144 N_PZ_145 N_PZ_146 N_PZ_147 N_PZ_148 N_PZ_149 N_PZ_150 N_PZ_151 
+            N_PZ_152 N_PZ_153 N_PZ_154 N_PZ_155 N_PZ_156 N_PZ_157 N_PZ_158 N_PZ_159 
+            N_PZ_160 N_PZ_161 N_PZ_162 N_PZ_163 N_PZ_164 N_PZ_165 N_PZ_166 N_PZ_167 
+            N_PZ_168 N_PZ_169 N_PZ_170 N_PZ_171 N_PZ_172 N_PZ_173 N_PZ_174 N_PZ_175 
+            N_PZ_176 N_PZ_177 N_PZ_178 N_PZ_179 N_PZ_180 N_PZ_181 N_PZ_182 N_PZ_183 
+            N_PZ_184 N_PZ_185 N_PZ_186 N_PZ_187 N_PZ_188 N_PZ_189
+
+PINT= ( 50) N_PZ_140 N_PZ_141 N_PZ_142 N_PZ_143 N_PZ_144 N_PZ_145 N_PZ_146 N_PZ_147 
+            N_PZ_148 N_PZ_149 N_PZ_150 N_PZ_151 N_PZ_152 N_PZ_153 N_PZ_154 N_PZ_155 
+            N_PZ_156 N_PZ_157 N_PZ_158 N_PZ_159 N_PZ_160 N_PZ_161 N_PZ_162 N_PZ_163 
+            N_PZ_164 N_PZ_165 N_PZ_166 N_PZ_167 N_PZ_168 N_PZ_169 N_PZ_170 N_PZ_171 
+            N_PZ_172 N_PZ_173 N_PZ_174 N_PZ_175 N_PZ_176 N_PZ_177 N_PZ_178 N_PZ_179 
+            N_PZ_180 N_PZ_181 N_PZ_182 N_PZ_183 N_PZ_184 N_PZ_185 N_PZ_186 N_PZ_187 
+            N_PZ_188 N_PZ_189
+
+AINT= ( 50) N_PZ_1 N_PZ_4 N_PZ_6 N_PZ_7 N_PZ_8 N_PZ_9 N_PZ_10 N_PZ_11 N_PZ_12 N_PZ_13 
+            N_PZ_14 N_PZ_15 N_PZ_16 N_PZ_17 N_PZ_18 N_PZ_19 N_PZ_20 N_PZ_21 N_PZ_22 
+            N_PZ_23 N_PZ_24 N_PZ_25 N_PZ_26 N_PZ_27 N_PZ_28 N_PZ_29 N_PZ_30 N_PZ_31 
+            N_PZ_32 N_PZ_33 N_PZ_34 N_PZ_35 N_PZ_36 N_PZ_37 N_PZ_38 N_PZ_39 N_PZ_40 
+            N_PZ_41 N_PZ_42 N_PZ_43 N_PZ_44 N_PZ_45 N_PZ_46 N_PZ_47 N_PZ_48 N_PZ_49 
+            N_PZ_50 N_PZ_51 N_PZ_71 N_PZ_89
+
+
+----------------------------
+|  D F S    N e t w o r k  |
+----------------------------
+clk_i N_PZ_1 DRIVER_7SEG/s_cnt<1>.CLK N_PZ_4 DRIVER_7SEG/s_cnt<0>.CLK SW12_CPLD  
+SW8_CPLD SW4_CPLD SW0_CPLD DRIVER_7SEG/s_cnt<1>.Q DRIVER_7SEG/s_cnt<0>.Q N_PZ_143  
+N_PZ_144 N_PZ_145 N_PZ_146 SW7_CPLD N_PZ_149 N_PZ_158 SW11_CPLD N_PZ_150 N_PZ_159  
+SW15_CPLD N_PZ_151 N_PZ_160 SW3_CPLD N_PZ_148 N_PZ_161 SW13_CPLD SW1_CPLD SW14_CPLD  
+SW2_CPLD N_PZ_171 SW9_CPLD SW5_CPLD SW10_CPLD SW6_CPLD N_PZ_172 N_PZ_176 N_PZ_177  
+N_PZ_178 N_PZ_179 N_PZ_181 N_PZ_184 N_PZ_182 N_PZ_185 N_PZ_180 N_PZ_186 N_PZ_183  
+N_PZ_187 N_PZ_6 disp_seg_o<3> N_PZ_7 disp_seg_o<6> N_PZ_8 disp_dp  
+DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q  
+DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q N_PZ_189 N_PZ_141 BTN0  
+DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q  
+DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q  
+DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q  
+DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q N_PZ_162  
+DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q N_PZ_163 N_PZ_164  
+N_PZ_165 N_PZ_166 N_PZ_167 N_PZ_168 N_PZ_169 N_PZ_170 N_PZ_175 N_PZ_188 N_PZ_9  
+DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D N_PZ_10 DRIVER_7SEG/CLK_EN_0/s_cnt<0>.CLK N_PZ_11  
+DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D N_PZ_12 DRIVER_7SEG/CLK_EN_0/s_cnt<10>.CLK N_PZ_13  
+DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D N_PZ_14 DRIVER_7SEG/CLK_EN_0/s_cnt<11>.CLK N_PZ_15  
+DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D N_PZ_16 DRIVER_7SEG/CLK_EN_0/s_cnt<12>.CLK N_PZ_17  
+DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D N_PZ_18 DRIVER_7SEG/CLK_EN_0/s_cnt<13>.CLK N_PZ_19  
+DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D N_PZ_20 DRIVER_7SEG/CLK_EN_0/s_cnt<14>.CLK  
+DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q N_PZ_152 N_PZ_21 DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D  
+N_PZ_22 DRIVER_7SEG/CLK_EN_0/s_cnt<1>.CLK DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q N_PZ_140  
+N_PZ_153 N_PZ_23 DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D N_PZ_24  
+DRIVER_7SEG/CLK_EN_0/s_cnt<2>.CLK N_PZ_142 N_PZ_154 N_PZ_25  
+DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D N_PZ_26 DRIVER_7SEG/CLK_EN_0/s_cnt<3>.CLK N_PZ_147  
+N_PZ_155 N_PZ_27 DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D N_PZ_28  
+DRIVER_7SEG/CLK_EN_0/s_cnt<4>.CLK N_PZ_156 N_PZ_29 DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D  
+N_PZ_30 DRIVER_7SEG/CLK_EN_0/s_cnt<5>.CLK N_PZ_31 DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D  
+N_PZ_32 DRIVER_7SEG/CLK_EN_0/s_cnt<6>.CLK N_PZ_33 DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D  
+N_PZ_34 DRIVER_7SEG/CLK_EN_0/s_cnt<7>.CLK N_PZ_35 DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D  
+N_PZ_36 DRIVER_7SEG/CLK_EN_0/s_cnt<8>.CLK N_PZ_37 DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D  
+N_PZ_38 DRIVER_7SEG/CLK_EN_0/s_cnt<9>.CLK N_PZ_39 DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D  
+N_PZ_40 DRIVER_7SEG/CLK_EN_0/s_cnt<15>.CLK N_PZ_157 N_PZ_41 DRIVER_7SEG/s_en.D N_PZ_42  
+DRIVER_7SEG/s_en.CLK N_PZ_43 disp_dig_o<0> N_PZ_44 disp_dig_o<1> N_PZ_45 disp_dig_o<3>  
+N_PZ_46 disp_seg_o<2> N_PZ_173 N_PZ_174 N_PZ_47 disp_seg_o<4> N_PZ_48 disp_seg_o<5>  
+N_PZ_49 disp_seg_o<0> N_PZ_50 disp_seg_o<1> N_PZ_51 disp_dig_o<2> DRIVER_7SEG/s_en.Q  
+N_PZ_71 DRIVER_7SEG/s_cnt<1>.T N_PZ_89 DRIVER_7SEG/s_cnt<0>.D 
+
+                                  Short Name                 Collapsible
+          Name       Base   Ext   | TypePolOld pt/th fi/FI fo | min          Pair        pxapin
+          BTN0       BTN0         i   PI  -  -  -| -  -| -  4 -   -             -             -
+         clk_i      clk_i         k   PI  -  -  -| -  -| - 19 -   -             -             -
+     SW12_CPLD  SW12_CPLD        n3   PI  -  -  -| -  -| -  5 -   -             -             -
+      SW8_CPLD   SW8_CPLD        q3   PI  -  -  -| -  -| -  5 -   -             -             -
+      SW4_CPLD   SW4_CPLD        r3   PI  -  -  -| -  -| -  5 -   -             -             -
+      SW0_CPLD   SW0_CPLD        s3   PI  -  -  -| -  -| -  5 -   -             -             -
+     SW13_CPLD  SW13_CPLD        t3   PI  -  -  -| -  -| -  6 -   -             -             -
+      SW9_CPLD   SW9_CPLD        w3   PI  -  -  -| -  -| -  6 -   -             -             -
+      SW5_CPLD   SW5_CPLD        x3   PI  -  -  -| -  -| -  6 -   -             -             -
+      SW1_CPLD   SW1_CPLD        y3   PI  -  -  -| -  -| -  6 -   -             -             -
+     SW14_CPLD  SW14_CPLD        z3   PI  -  -  -| -  -| -  7 -   -             -             -
+     SW10_CPLD  SW10_CPLD        c4   PI  -  -  -| -  -| -  7 -   -             -             -
+      SW6_CPLD   SW6_CPLD        d4   PI  -  -  -| -  -| -  7 -   -             -             -
+      SW2_CPLD   SW2_CPLD        e4   PI  -  -  -| -  -| -  7 -   -             -             -
+     SW15_CPLD  SW15_CPLD        f4   PI  -  -  -| -  -| -  1 -   -             -             -
+     SW11_CPLD  SW11_CPLD        i4   PI  -  -  -| -  -| -  1 -   -             -             -
+      SW7_CPLD   SW7_CPLD        j4   PI  -  -  -| -  -| -  1 -   -             -             -
+      SW3_CPLD   SW3_CPLD        k4   PI  -  -  -| -  -| -  1 -   -             -             -
+        N_PZ_1     N_PZ_1     -  c8 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/s_cnt<1>.CLK             -
+        N_PZ_4     N_PZ_4     -  f8 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/s_cnt<0>.CLK             -
+        N_PZ_6     N_PZ_6     -  h8 AINT  L  - 10|28 22|32  1 -   - disp_seg_o<3>             -
+        N_PZ_7     N_PZ_7     -  i8 AINT  -  -  8|28 20|32  1 -   - disp_seg_o<6>             -
+        N_PZ_8     N_PZ_8     -  j8 AINT  L  -  1|28  1|32  1 -   -       disp_dp             -
+        N_PZ_9     N_PZ_9     -  k8 AINT  -  -  1|28  2|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D             -
+       N_PZ_10    N_PZ_10     -  l8 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<0>.CLK             -
+       N_PZ_11    N_PZ_11     -  m8 AINT  -  -  0|28  0|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D             -
+       N_PZ_12    N_PZ_12     -  n8 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<10>.CLK             -
+       N_PZ_13    N_PZ_13     -  o8 AINT  -  -  0|28  0|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D             -
+       N_PZ_14    N_PZ_14     -  p8 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<11>.CLK             -
+       N_PZ_15    N_PZ_15     -  q8 AINT  -  -  0|28  0|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D             -
+       N_PZ_16    N_PZ_16     -  r8 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<12>.CLK             -
+       N_PZ_17    N_PZ_17     -  s8 AINT  -  -  0|28  0|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D             -
+       N_PZ_18    N_PZ_18     -  t8 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<13>.CLK             -
+       N_PZ_19    N_PZ_19     -  u8 AINT  -  -  0|28  0|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D             -
+       N_PZ_20    N_PZ_20     -  v8 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<14>.CLK             -
+       N_PZ_21    N_PZ_21     -  w8 AINT  -  -  1|28  2|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D             -
+       N_PZ_22    N_PZ_22     -  x8 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<1>.CLK             -
+       N_PZ_23    N_PZ_23     -  y8 AINT  -  -  1|28  2|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D             -
+       N_PZ_24    N_PZ_24     -  z8 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<2>.CLK             -
+       N_PZ_25    N_PZ_25     -  a9 AINT  -  -  1|28  3|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D             -
+       N_PZ_26    N_PZ_26     -  b9 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<3>.CLK             -
+       N_PZ_27    N_PZ_27     -  c9 AINT  -  -  1|28  3|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D             -
+       N_PZ_28    N_PZ_28     -  d9 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<4>.CLK             -
+       N_PZ_29    N_PZ_29     -  e9 AINT  -  -  1|28  2|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D             -
+       N_PZ_30    N_PZ_30     -  f9 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<5>.CLK             -
+       N_PZ_31    N_PZ_31     -  g9 AINT  -  -  0|28  0|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D             -
+       N_PZ_32    N_PZ_32     -  h9 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<6>.CLK             -
+       N_PZ_33    N_PZ_33     -  i9 AINT  -  -  0|28  0|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D             -
+       N_PZ_34    N_PZ_34     -  j9 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<7>.CLK             -
+       N_PZ_35    N_PZ_35     -  k9 AINT  -  -  0|28  0|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D             -
+       N_PZ_36    N_PZ_36     -  l9 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<8>.CLK             -
+       N_PZ_37    N_PZ_37     -  m9 AINT  -  -  0|28  0|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D             -
+       N_PZ_38    N_PZ_38     -  n9 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<9>.CLK             -
+       N_PZ_39    N_PZ_39     -  o9 AINT  -  -  0|28  0|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D             -
+       N_PZ_40    N_PZ_40     -  p9 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/CLK_EN_0/s_cnt<15>.CLK             -
+       N_PZ_41    N_PZ_41     -  q9 AINT  L  -  2|28  3|32  1 -   -DRIVER_7SEG/s_en.D             -
+       N_PZ_42    N_PZ_42     -  r9 AINT  -  -  1|28  1|32  1 -   -DRIVER_7SEG/s_en.CLK             -
+       N_PZ_43    N_PZ_43     -  s9 AINT  L  -  1|28  1|32  1 -   - disp_dig_o<0>             -
+       N_PZ_44    N_PZ_44     -  t9 AINT  L  -  1|28  1|32  1 -   - disp_dig_o<1>             -
+       N_PZ_45    N_PZ_45     -  u9 AINT  L  -  1|28  1|32  1 -   - disp_dig_o<3>             -
+       N_PZ_46    N_PZ_46     -  v9 AINT  -  - 12|28 24|32  1 -   - disp_seg_o<2>             -
+       N_PZ_47    N_PZ_47     -  w9 AINT  L  - 10|28 14|32  1 -   - disp_seg_o<4>             -
+       N_PZ_48    N_PZ_48     -  x9 AINT  L  - 14|28 22|32  1 -   - disp_seg_o<5>             -
+       N_PZ_49    N_PZ_49     -  y9 AINT  -  -  8|28 20|32  1 -   - disp_seg_o<0>             -
+       N_PZ_50    N_PZ_50     -  z9 AINT  -  -  6|28 10|32  1 -   - disp_seg_o<1>             -
+       N_PZ_51    N_PZ_51     - a10 AINT  L  -  1|28  1|32  1 -   - disp_dig_o<2>             -
+DRIVER_7SEG/s_cnt<1>.CLKDRIVER_7SEG/s_cnt<1>  .CLK  u4   PO  -  -  -| -  -| -  0 -   -        N_PZ_1DRIVER_7SEG/s_cnt<1>
+DRIVER_7SEG/s_cnt<0>.CLKDRIVER_7SEG/s_cnt<0>  .CLK  x4   PO  -  -  -| -  -| -  0 -   -        N_PZ_4DRIVER_7SEG/s_cnt<0>
+ disp_seg_o<3>disp_seg_o<3>        z4   PO  -  -  -| -  -| -  0 -   -        N_PZ_6 disp_seg_o<3>
+ disp_seg_o<6>disp_seg_o<6>        a5   PO  -  -  -| -  -| -  0 -   -        N_PZ_7 disp_seg_o<6>
+       disp_dp    disp_dp        b5   PO  -  -  -| -  -| -  0 -   -        N_PZ_8       disp_dp
+DRIVER_7SEG/CLK_EN_0/s_cnt<0>.DDRIVER_7SEG/CLK_EN_0/s_cnt<0>    .D  c5   PO  -  -  -| -  -| -  0 -   -        N_PZ_9DRIVER_7SEG/CLK_EN_0/s_cnt<0>
+DRIVER_7SEG/CLK_EN_0/s_cnt<0>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<0>  .CLK  d5   PO  -  -  -| -  -| -  0 -   -       N_PZ_10DRIVER_7SEG/CLK_EN_0/s_cnt<0>
+DRIVER_7SEG/CLK_EN_0/s_cnt<10>.DDRIVER_7SEG/CLK_EN_0/s_cnt<10>    .D  e5   PO  -  -  -| -  -| -  0 -   -       N_PZ_11DRIVER_7SEG/CLK_EN_0/s_cnt<10>
+DRIVER_7SEG/CLK_EN_0/s_cnt<10>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<10>  .CLK  f5   PO  -  -  -| -  -| -  0 -   -       N_PZ_12DRIVER_7SEG/CLK_EN_0/s_cnt<10>
+DRIVER_7SEG/CLK_EN_0/s_cnt<11>.DDRIVER_7SEG/CLK_EN_0/s_cnt<11>    .D  g5   PO  -  -  -| -  -| -  0 -   -       N_PZ_13DRIVER_7SEG/CLK_EN_0/s_cnt<11>
+DRIVER_7SEG/CLK_EN_0/s_cnt<11>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<11>  .CLK  h5   PO  -  -  -| -  -| -  0 -   -       N_PZ_14DRIVER_7SEG/CLK_EN_0/s_cnt<11>
+DRIVER_7SEG/CLK_EN_0/s_cnt<12>.DDRIVER_7SEG/CLK_EN_0/s_cnt<12>    .D  i5   PO  -  -  -| -  -| -  0 -   -       N_PZ_15DRIVER_7SEG/CLK_EN_0/s_cnt<12>
+DRIVER_7SEG/CLK_EN_0/s_cnt<12>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<12>  .CLK  j5   PO  -  -  -| -  -| -  0 -   -       N_PZ_16DRIVER_7SEG/CLK_EN_0/s_cnt<12>
+DRIVER_7SEG/CLK_EN_0/s_cnt<13>.DDRIVER_7SEG/CLK_EN_0/s_cnt<13>    .D  k5   PO  -  -  -| -  -| -  0 -   -       N_PZ_17DRIVER_7SEG/CLK_EN_0/s_cnt<13>
+DRIVER_7SEG/CLK_EN_0/s_cnt<13>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<13>  .CLK  l5   PO  -  -  -| -  -| -  0 -   -       N_PZ_18DRIVER_7SEG/CLK_EN_0/s_cnt<13>
+DRIVER_7SEG/CLK_EN_0/s_cnt<14>.DDRIVER_7SEG/CLK_EN_0/s_cnt<14>    .D  m5   PO  -  -  -| -  -| -  0 -   -       N_PZ_19DRIVER_7SEG/CLK_EN_0/s_cnt<14>
+DRIVER_7SEG/CLK_EN_0/s_cnt<14>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<14>  .CLK  n5   PO  -  -  -| -  -| -  0 -   -       N_PZ_20DRIVER_7SEG/CLK_EN_0/s_cnt<14>
+DRIVER_7SEG/CLK_EN_0/s_cnt<1>.DDRIVER_7SEG/CLK_EN_0/s_cnt<1>    .D  o5   PO  -  -  -| -  -| -  0 -   -       N_PZ_21DRIVER_7SEG/CLK_EN_0/s_cnt<1>
+DRIVER_7SEG/CLK_EN_0/s_cnt<1>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<1>  .CLK  p5   PO  -  -  -| -  -| -  0 -   -       N_PZ_22DRIVER_7SEG/CLK_EN_0/s_cnt<1>
+DRIVER_7SEG/CLK_EN_0/s_cnt<2>.DDRIVER_7SEG/CLK_EN_0/s_cnt<2>    .D  q5   PO  -  -  -| -  -| -  0 -   -       N_PZ_23DRIVER_7SEG/CLK_EN_0/s_cnt<2>
+DRIVER_7SEG/CLK_EN_0/s_cnt<2>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<2>  .CLK  r5   PO  -  -  -| -  -| -  0 -   -       N_PZ_24DRIVER_7SEG/CLK_EN_0/s_cnt<2>
+DRIVER_7SEG/CLK_EN_0/s_cnt<3>.DDRIVER_7SEG/CLK_EN_0/s_cnt<3>    .D  s5   PO  -  -  -| -  -| -  0 -   -       N_PZ_25DRIVER_7SEG/CLK_EN_0/s_cnt<3>
+DRIVER_7SEG/CLK_EN_0/s_cnt<3>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<3>  .CLK  t5   PO  -  -  -| -  -| -  0 -   -       N_PZ_26DRIVER_7SEG/CLK_EN_0/s_cnt<3>
+DRIVER_7SEG/CLK_EN_0/s_cnt<4>.DDRIVER_7SEG/CLK_EN_0/s_cnt<4>    .D  u5   PO  -  -  -| -  -| -  0 -   -       N_PZ_27DRIVER_7SEG/CLK_EN_0/s_cnt<4>
+DRIVER_7SEG/CLK_EN_0/s_cnt<4>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<4>  .CLK  v5   PO  -  -  -| -  -| -  0 -   -       N_PZ_28DRIVER_7SEG/CLK_EN_0/s_cnt<4>
+DRIVER_7SEG/CLK_EN_0/s_cnt<5>.DDRIVER_7SEG/CLK_EN_0/s_cnt<5>    .D  w5   PO  -  -  -| -  -| -  0 -   -       N_PZ_29DRIVER_7SEG/CLK_EN_0/s_cnt<5>
+DRIVER_7SEG/CLK_EN_0/s_cnt<5>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<5>  .CLK  x5   PO  -  -  -| -  -| -  0 -   -       N_PZ_30DRIVER_7SEG/CLK_EN_0/s_cnt<5>
+DRIVER_7SEG/CLK_EN_0/s_cnt<6>.DDRIVER_7SEG/CLK_EN_0/s_cnt<6>    .D  y5   PO  -  -  -| -  -| -  0 -   -       N_PZ_31DRIVER_7SEG/CLK_EN_0/s_cnt<6>
+DRIVER_7SEG/CLK_EN_0/s_cnt<6>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<6>  .CLK  z5   PO  -  -  -| -  -| -  0 -   -       N_PZ_32DRIVER_7SEG/CLK_EN_0/s_cnt<6>
+DRIVER_7SEG/CLK_EN_0/s_cnt<7>.DDRIVER_7SEG/CLK_EN_0/s_cnt<7>    .D  a6   PO  -  -  -| -  -| -  0 -   -       N_PZ_33DRIVER_7SEG/CLK_EN_0/s_cnt<7>
+DRIVER_7SEG/CLK_EN_0/s_cnt<7>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<7>  .CLK  b6   PO  -  -  -| -  -| -  0 -   -       N_PZ_34DRIVER_7SEG/CLK_EN_0/s_cnt<7>
+DRIVER_7SEG/CLK_EN_0/s_cnt<8>.DDRIVER_7SEG/CLK_EN_0/s_cnt<8>    .D  c6   PO  -  -  -| -  -| -  0 -   -       N_PZ_35DRIVER_7SEG/CLK_EN_0/s_cnt<8>
+DRIVER_7SEG/CLK_EN_0/s_cnt<8>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<8>  .CLK  d6   PO  -  -  -| -  -| -  0 -   -       N_PZ_36DRIVER_7SEG/CLK_EN_0/s_cnt<8>
+DRIVER_7SEG/CLK_EN_0/s_cnt<9>.DDRIVER_7SEG/CLK_EN_0/s_cnt<9>    .D  e6   PO  -  -  -| -  -| -  0 -   -       N_PZ_37DRIVER_7SEG/CLK_EN_0/s_cnt<9>
+DRIVER_7SEG/CLK_EN_0/s_cnt<9>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<9>  .CLK  f6   PO  -  -  -| -  -| -  0 -   -       N_PZ_38DRIVER_7SEG/CLK_EN_0/s_cnt<9>
+DRIVER_7SEG/CLK_EN_0/s_cnt<15>.DDRIVER_7SEG/CLK_EN_0/s_cnt<15>    .D  g6   PO  -  -  -| -  -| -  0 -   -       N_PZ_39DRIVER_7SEG/CLK_EN_0/s_cnt<15>
+DRIVER_7SEG/CLK_EN_0/s_cnt<15>.CLKDRIVER_7SEG/CLK_EN_0/s_cnt<15>  .CLK  h6   PO  -  -  -| -  -| -  0 -   -       N_PZ_40DRIVER_7SEG/CLK_EN_0/s_cnt<15>
+DRIVER_7SEG/s_en.DDRIVER_7SEG/s_en    .D  q7   PO  -  -  -| -  -| -  0 -   -       N_PZ_41DRIVER_7SEG/s_en
+DRIVER_7SEG/s_en.CLKDRIVER_7SEG/s_en  .CLK  r7   PO  -  -  -| -  -| -  0 -   -       N_PZ_42DRIVER_7SEG/s_en
+ disp_dig_o<0>disp_dig_o<0>        s7   PO  -  -  -| -  -| -  0 -   -       N_PZ_43 disp_dig_o<0>
+ disp_dig_o<1>disp_dig_o<1>        t7   PO  -  -  -| -  -| -  0 -   -       N_PZ_44 disp_dig_o<1>
+ disp_dig_o<3>disp_dig_o<3>        u7   PO  -  -  -| -  -| -  0 -   -       N_PZ_45 disp_dig_o<3>
+ disp_seg_o<2>disp_seg_o<2>        v7   PO  -  -  -| -  -| -  0 -   -       N_PZ_46 disp_seg_o<2>
+ disp_seg_o<4>disp_seg_o<4>        w7   PO  -  -  -| -  -| -  0 -   -       N_PZ_47 disp_seg_o<4>
+ disp_seg_o<5>disp_seg_o<5>        x7   PO  -  -  -| -  -| -  0 -   -       N_PZ_48 disp_seg_o<5>
+ disp_seg_o<0>disp_seg_o<0>        y7   PO  -  -  -| -  -| -  0 -   -       N_PZ_49 disp_seg_o<0>
+ disp_seg_o<1>disp_seg_o<1>        z7   PO  -  -  -| -  -| -  0 -   -       N_PZ_50 disp_seg_o<1>
+ disp_dig_o<2>disp_dig_o<2>        a8   PO  -  -  -| -  -| -  0 -   -       N_PZ_51 disp_dig_o<2>
+DRIVER_7SEG/s_cnt<1>.QDRIVER_7SEG/s_cnt<1>    .Q b10   PI  -  -  -| -  -| -  5 -   -             -             -
+DRIVER_7SEG/s_cnt<0>.QDRIVER_7SEG/s_cnt<0>    .Q c10   PI  -  -  -| -  -| -  6 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<0>.QDRIVER_7SEG/CLK_EN_0/s_cnt<0>    .Q d10   PI  -  -  -| -  -| -  3 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<10>.QDRIVER_7SEG/CLK_EN_0/s_cnt<10>    .Q e10   PI  -  -  -| -  -| -  1 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<11>.QDRIVER_7SEG/CLK_EN_0/s_cnt<11>    .Q f10   PI  -  -  -| -  -| -  1 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<12>.QDRIVER_7SEG/CLK_EN_0/s_cnt<12>    .Q g10   PI  -  -  -| -  -| -  1 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<13>.QDRIVER_7SEG/CLK_EN_0/s_cnt<13>    .Q h10   PI  -  -  -| -  -| -  1 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<14>.QDRIVER_7SEG/CLK_EN_0/s_cnt<14>    .Q i10   PI  -  -  -| -  -| -  1 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<1>.QDRIVER_7SEG/CLK_EN_0/s_cnt<1>    .Q j10   PI  -  -  -| -  -| -  2 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<2>.QDRIVER_7SEG/CLK_EN_0/s_cnt<2>    .Q k10   PI  -  -  -| -  -| -  2 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<3>.QDRIVER_7SEG/CLK_EN_0/s_cnt<3>    .Q l10   PI  -  -  -| -  -| -  3 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<4>.QDRIVER_7SEG/CLK_EN_0/s_cnt<4>    .Q m10   PI  -  -  -| -  -| -  3 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<5>.QDRIVER_7SEG/CLK_EN_0/s_cnt<5>    .Q n10   PI  -  -  -| -  -| -  5 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<6>.QDRIVER_7SEG/CLK_EN_0/s_cnt<6>    .Q o10   PI  -  -  -| -  -| -  1 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<7>.QDRIVER_7SEG/CLK_EN_0/s_cnt<7>    .Q p10   PI  -  -  -| -  -| -  1 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<8>.QDRIVER_7SEG/CLK_EN_0/s_cnt<8>    .Q q10   PI  -  -  -| -  -| -  1 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<9>.QDRIVER_7SEG/CLK_EN_0/s_cnt<9>    .Q r10   PI  -  -  -| -  -| -  1 -   -             -             -
+DRIVER_7SEG/CLK_EN_0/s_cnt<15>.QDRIVER_7SEG/CLK_EN_0/s_cnt<15>    .Q s10   PI  -  -  -| -  -| -  1 -   -             -             -
+DRIVER_7SEG/s_en.QDRIVER_7SEG/s_en    .Q t10   PI  -  -  -| -  -| -  2 -   -             -             -
+       N_PZ_71    N_PZ_71     - z12 AINT  -  -  2|28  4|32  1 -   -DRIVER_7SEG/s_cnt<1>.T             -
+       N_PZ_89    N_PZ_89     - r13 AINT  -  -  2|28  3|32  1 -   -DRIVER_7SEG/s_cnt<0>.D             -
+DRIVER_7SEG/s_cnt<1>.TDRIVER_7SEG/s_cnt<1>    .T g12   PO  -  -  -| -  -| -  0 -   -       N_PZ_71DRIVER_7SEG/s_cnt<1>
+DRIVER_7SEG/s_cnt<0>.DDRIVER_7SEG/s_cnt<0>    .D y12   PO  -  -  -| -  -| -  0 -   -       N_PZ_89DRIVER_7SEG/s_cnt<0>
+      N_PZ_140   N_PZ_140     - q15 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_140
+      N_PZ_141   N_PZ_141     - r15 PINT  -  -  2|28  2|32  1 Y   -             -      N_PZ_141
+      N_PZ_142   N_PZ_142     - s15 PINT  -  -  2|28  2|32  4 Y   -             -      N_PZ_142
+      N_PZ_143   N_PZ_143     - t15 PINT  -  -  1|28  2|32  6 Y   -             -      N_PZ_143
+      N_PZ_144   N_PZ_144     - u15 PINT  -  -  1|28  2|32  5 Y   -             -      N_PZ_144
+      N_PZ_145   N_PZ_145     - v15 PINT  -  -  1|28  2|32  5 Y   -             -      N_PZ_145
+      N_PZ_146   N_PZ_146     - w15 PINT  -  -  1|28  2|32  5 Y   -             -      N_PZ_146
+      N_PZ_147   N_PZ_147     - x15 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_147
+      N_PZ_148   N_PZ_148     - y15 PINT  -  -  1|28  2|32  7 Y   -             -      N_PZ_148
+      N_PZ_149   N_PZ_149     - z15 PINT  -  -  1|28  2|32  7 Y   -             -      N_PZ_149
+      N_PZ_150   N_PZ_150     - a16 PINT  -  -  1|28  2|32  7 Y   -             -      N_PZ_150
+      N_PZ_151   N_PZ_151     - b16 PINT  -  -  1|28  2|32  7 Y   -             -      N_PZ_151
+      N_PZ_152   N_PZ_152     - c16 PINT  -  -  2|28  2|32  1 Y   -             -      N_PZ_152
+      N_PZ_153   N_PZ_153     - d16 PINT  -  -  2|28  2|32  1 Y   -             -      N_PZ_153
+      N_PZ_154   N_PZ_154     - e16 PINT  -  -  2|28  2|32  1 Y   -             -      N_PZ_154
+      N_PZ_155   N_PZ_155     - f16 PINT  -  -  2|28  2|32  1 Y   -             -      N_PZ_155
+      N_PZ_156   N_PZ_156     - g16 PINT  -  -  2|28  5|32  1 Y   -             -      N_PZ_156
+      N_PZ_157   N_PZ_157     - h16 PINT  -  -  2|28  3|32  1 Y   -             -      N_PZ_157
+      N_PZ_158   N_PZ_158     - i16 PINT  -  -  1|28  2|32  7 Y   -             -      N_PZ_158
+      N_PZ_159   N_PZ_159     - j16 PINT  -  -  1|28  2|32  7 Y   -             -      N_PZ_159
+      N_PZ_160   N_PZ_160     - k16 PINT  -  -  1|28  2|32  7 Y   -             -      N_PZ_160
+      N_PZ_161   N_PZ_161     - l16 PINT  -  -  1|28  2|32  7 Y   -             -      N_PZ_161
+      N_PZ_162   N_PZ_162     - m16 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_162
+      N_PZ_163   N_PZ_163     - n16 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_163
+      N_PZ_164   N_PZ_164     - o16 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_164
+      N_PZ_165   N_PZ_165     - p16 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_165
+      N_PZ_166   N_PZ_166     - q16 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_166
+      N_PZ_167   N_PZ_167     - r16 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_167
+      N_PZ_168   N_PZ_168     - s16 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_168
+      N_PZ_169   N_PZ_169     - t16 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_169
+      N_PZ_170   N_PZ_170     - u16 PINT  -  -  1|28  2|32  2 Y   -             -      N_PZ_170
+      N_PZ_171   N_PZ_171     - v16 PINT  -  -  2|28  6|32  2 Y   -             -      N_PZ_171
+      N_PZ_172   N_PZ_172     - w16 PINT  -  -  2|28  6|32  2 Y   -             -      N_PZ_172
+      N_PZ_173   N_PZ_173     - x16 PINT  -  -  2|28  4|32  2 Y   -             -      N_PZ_173
+      N_PZ_174   N_PZ_174     - y16 PINT  -  -  2|28  4|32  2 Y   -             -      N_PZ_174
+      N_PZ_175   N_PZ_175     - z16 PINT  -  -  1|28  2|32  4 Y   -             -      N_PZ_175
+      N_PZ_176   N_PZ_176     - a17 PINT  -  -  2|28  2|32  4 Y   -             -      N_PZ_176
+      N_PZ_177   N_PZ_177     - b17 PINT  -  -  2|28  2|32  4 Y   -             -      N_PZ_177
+      N_PZ_178   N_PZ_178     - c17 PINT  -  -  2|28  2|32  4 Y   -             -      N_PZ_178
+      N_PZ_179   N_PZ_179     - d17 PINT  -  -  2|28  2|32  4 Y   -             -      N_PZ_179
+      N_PZ_180   N_PZ_180     - e17 PINT  -  -  1|28  2|32  5 Y   -             -      N_PZ_180
+      N_PZ_181   N_PZ_181     - f17 PINT  -  -  1|28  2|32  5 Y   -             -      N_PZ_181
+      N_PZ_182   N_PZ_182     - g17 PINT  -  -  1|28  2|32  5 Y   -             -      N_PZ_182
+      N_PZ_183   N_PZ_183     - h17 PINT  -  -  1|28  2|32  5 Y   -             -      N_PZ_183
+      N_PZ_184   N_PZ_184     - i17 PINT  -  -  2|28  3|32  1 Y   -             -      N_PZ_184
+      N_PZ_185   N_PZ_185     - j17 PINT  -  -  2|28  3|32  1 Y   -             -      N_PZ_185
+      N_PZ_186   N_PZ_186     - k17 PINT  -  -  2|28  3|32  1 Y   -             -      N_PZ_186
+      N_PZ_187   N_PZ_187     - l17 PINT  -  -  2|28  3|32  1 Y   -             -      N_PZ_187
+      N_PZ_188   N_PZ_188     - m17 PINT  -  -  1|28  2|32  3 Y   -             -      N_PZ_188
+      N_PZ_189   N_PZ_189     - n17 PINT  -  -  1|28  2|32  3 Y   -             -      N_PZ_189
+
+---------------------------------------------------------
+|  PinCnt = 30, NodeCnt = 69, Total = 99, TotalPt = 176 |
+---------------------------------------------------------
+BTN0,net=top: PI
+  <--0-- 
+  --4--> (N_PZ_89, top) (N_PZ_71, top) (N_PZ_41, top) (N_PZ_175, top) 
+clk_i,net=top: PI
+  <--0-- 
+  --19--> (N_PZ_1, top) (N_PZ_4, top) (N_PZ_10, top) (N_PZ_12, top) (N_PZ_14, top)  
+          (N_PZ_16, top) (N_PZ_18, top) (N_PZ_20, top) (N_PZ_22, top) (N_PZ_24, top)  
+          (N_PZ_26, top) (N_PZ_28, top) (N_PZ_30, top) (N_PZ_32, top) (N_PZ_34, top)  
+          (N_PZ_36, top) (N_PZ_38, top) (N_PZ_40, top) (N_PZ_42, top) 
+SW12_CPLD,net=top: PI
+  <--0-- 
+  --5--> (N_PZ_160, top) (N_PZ_48, top) (N_PZ_46, top) (N_PZ_7, top) (N_PZ_6, top) 
+SW8_CPLD,net=top: PI
+  <--0-- 
+  --5--> (N_PZ_159, top) (N_PZ_48, top) (N_PZ_46, top) (N_PZ_7, top) (N_PZ_6, top) 
+SW4_CPLD,net=top: PI
+  <--0-- 
+  --5--> (N_PZ_158, top) (N_PZ_48, top) (N_PZ_46, top) (N_PZ_7, top) (N_PZ_6, top) 
+SW0_CPLD,net=top: PI
+  <--0-- 
+  --5--> (N_PZ_161, top) (N_PZ_48, top) (N_PZ_46, top) (N_PZ_7, top) (N_PZ_6, top) 
+SW13_CPLD,net=top: PI
+  <--0-- 
+  --6--> (N_PZ_171, top) (N_PZ_48, top) (N_PZ_176, top) (N_PZ_181, top) (N_PZ_49, top)  
+         (N_PZ_184, top) 
+SW9_CPLD,net=top: PI
+  <--0-- 
+  --6--> (N_PZ_172, top) (N_PZ_48, top) (N_PZ_178, top) (N_PZ_180, top) (N_PZ_49, top)  
+         (N_PZ_186, top) 
+SW5_CPLD,net=top: PI
+  <--0-- 
+  --6--> (N_PZ_172, top) (N_PZ_48, top) (N_PZ_177, top) (N_PZ_182, top) (N_PZ_49, top)  
+         (N_PZ_185, top) 
+SW1_CPLD,net=top: PI
+  <--0-- 
+  --6--> (N_PZ_171, top) (N_PZ_48, top) (N_PZ_179, top) (N_PZ_49, top) (N_PZ_183, top)  
+         (N_PZ_187, top) 
+SW14_CPLD,net=top: PI
+  <--0-- 
+  --7--> (N_PZ_171, top) (N_PZ_47, top) (N_PZ_48, top) (N_PZ_176, top) (N_PZ_181, top)  
+         (N_PZ_49, top) (N_PZ_184, top) 
+SW10_CPLD,net=top: PI
+  <--0-- 
+  --7--> (N_PZ_172, top) (N_PZ_47, top) (N_PZ_48, top) (N_PZ_178, top) (N_PZ_180, top)  
+         (N_PZ_49, top) (N_PZ_186, top) 
+SW6_CPLD,net=top: PI
+  <--0-- 
+  --7--> (N_PZ_172, top) (N_PZ_47, top) (N_PZ_48, top) (N_PZ_177, top) (N_PZ_182, top)  
+         (N_PZ_49, top) (N_PZ_185, top) 
+SW2_CPLD,net=top: PI
+  <--0-- 
+  --7--> (N_PZ_171, top) (N_PZ_47, top) (N_PZ_48, top) (N_PZ_179, top) (N_PZ_49, top)  
+         (N_PZ_183, top) (N_PZ_187, top) 
+SW15_CPLD,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_151, top) 
+SW11_CPLD,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_150, top) 
+SW7_CPLD,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_149, top) 
+SW3_CPLD,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_148, top) 
+N_PZ_1,net=top: PINT ( DRIVER_7SEG/s_cnt<1>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/s_cnt<1>.CLK, top) 
+N_PZ_4,net=top: PINT ( DRIVER_7SEG/s_cnt<0>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/s_cnt<0>.CLK, top) 
+N_PZ_6,net=top: PINT ( disp_seg_o<3> )
+  <--22--  (SW12_CPLD, top) (SW8_CPLD, top) (SW4_CPLD, top) (SW0_CPLD, top) 
+           (N_PZ_143, top) (N_PZ_144, top) (N_PZ_145, top) (N_PZ_146, top) 
+           (N_PZ_158, top) (N_PZ_159, top) (N_PZ_160, top) (N_PZ_161, top) 
+           (N_PZ_171, top) (N_PZ_172, top) (N_PZ_176, top) (N_PZ_177, top) 
+           (N_PZ_178, top) (N_PZ_179, top) (N_PZ_184, top) (N_PZ_185, top) 
+           (N_PZ_186, top) (N_PZ_187, top)
+  --1--> (disp_seg_o<3>, top) 
+N_PZ_7,net=top: PINT ( disp_seg_o<6> )
+  <--20--  (SW12_CPLD, top) (SW8_CPLD, top) (SW4_CPLD, top) (SW0_CPLD, top) 
+           (N_PZ_148, top) (N_PZ_149, top) (N_PZ_150, top) (N_PZ_151, top) 
+           (N_PZ_158, top) (N_PZ_159, top) (N_PZ_160, top) (N_PZ_161, top) 
+           (N_PZ_176, top) (N_PZ_177, top) (N_PZ_178, top) (N_PZ_179, top) 
+           (N_PZ_180, top) (N_PZ_181, top) (N_PZ_182, top) (N_PZ_183, top)
+  --1--> (disp_seg_o<6>, top) 
+N_PZ_8,net=top: PINT ( disp_dp )
+  <--1--  (N_PZ_143, top)
+  --1--> (disp_dp, top) 
+N_PZ_9,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D )
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q, top) (N_PZ_188, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D, top) 
+N_PZ_10,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<0>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<0>.CLK, top) 
+N_PZ_11,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D )
+  <--0-- 
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D, top) 
+N_PZ_12,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<10>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<10>.CLK, top) 
+N_PZ_13,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D )
+  <--0-- 
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D, top) 
+N_PZ_14,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<11>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<11>.CLK, top) 
+N_PZ_15,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D )
+  <--0-- 
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D, top) 
+N_PZ_16,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<12>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<12>.CLK, top) 
+N_PZ_17,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D )
+  <--0-- 
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D, top) 
+N_PZ_18,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<13>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<13>.CLK, top) 
+N_PZ_19,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D )
+  <--0-- 
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D, top) 
+N_PZ_20,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<14>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<14>.CLK, top) 
+N_PZ_21,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D )
+  <--2--  (N_PZ_152, top) (N_PZ_188, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D, top) 
+N_PZ_22,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<1>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<1>.CLK, top) 
+N_PZ_23,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D )
+  <--2--  (N_PZ_153, top) (N_PZ_188, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D, top) 
+N_PZ_24,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<2>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<2>.CLK, top) 
+N_PZ_25,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D )
+  <--3--  (DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q, top) (N_PZ_154, top) (N_PZ_175, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D, top) 
+N_PZ_26,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<3>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<3>.CLK, top) 
+N_PZ_27,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D )
+  <--3--  (DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q, top) (N_PZ_155, top) (N_PZ_175, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D, top) 
+N_PZ_28,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<4>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<4>.CLK, top) 
+N_PZ_29,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D )
+  <--2--  (N_PZ_156, top) (N_PZ_175, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D, top) 
+N_PZ_30,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<5>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<5>.CLK, top) 
+N_PZ_31,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D )
+  <--0-- 
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D, top) 
+N_PZ_32,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<6>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<6>.CLK, top) 
+N_PZ_33,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D )
+  <--0-- 
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D, top) 
+N_PZ_34,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<7>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<7>.CLK, top) 
+N_PZ_35,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D )
+  <--0-- 
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D, top) 
+N_PZ_36,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<8>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<8>.CLK, top) 
+N_PZ_37,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D )
+  <--0-- 
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D, top) 
+N_PZ_38,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<9>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<9>.CLK, top) 
+N_PZ_39,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D )
+  <--0-- 
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D, top) 
+N_PZ_40,net=top: PINT ( DRIVER_7SEG/CLK_EN_0/s_cnt<15>.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/CLK_EN_0/s_cnt<15>.CLK, top) 
+N_PZ_41,net=top: PINT ( DRIVER_7SEG/s_en.D )
+  <--3--  (BTN0, top) (N_PZ_157, top) (N_PZ_170, top)
+  --1--> (DRIVER_7SEG/s_en.D, top) 
+N_PZ_42,net=top: PINT ( DRIVER_7SEG/s_en.CLK )
+  <--1--  (clk_i, top)
+  --1--> (DRIVER_7SEG/s_en.CLK, top) 
+N_PZ_43,net=top: PINT ( disp_dig_o<0> )
+  <--1--  (N_PZ_144, top)
+  --1--> (disp_dig_o<0>, top) 
+N_PZ_44,net=top: PINT ( disp_dig_o<1> )
+  <--1--  (N_PZ_146, top)
+  --1--> (disp_dig_o<1>, top) 
+N_PZ_45,net=top: PINT ( disp_dig_o<3> )
+  <--1--  (N_PZ_145, top)
+  --1--> (disp_dig_o<3>, top) 
+N_PZ_46,net=top: PINT ( disp_seg_o<2> )
+  <--24--  (SW12_CPLD, top) (SW8_CPLD, top) (SW4_CPLD, top) (SW0_CPLD, top) 
+           (N_PZ_143, top) (N_PZ_144, top) (N_PZ_145, top) (N_PZ_146, top) 
+           (N_PZ_148, top) (N_PZ_149, top) (N_PZ_150, top) (N_PZ_151, top) 
+           (N_PZ_158, top) (N_PZ_159, top) (N_PZ_160, top) (N_PZ_161, top) 
+           (N_PZ_176, top) (N_PZ_177, top) (N_PZ_178, top) (N_PZ_179, top) 
+           (N_PZ_180, top) (N_PZ_181, top) (N_PZ_182, top) (N_PZ_183, top)
+  --1--> (disp_seg_o<2>, top) 
+N_PZ_47,net=top: PINT ( disp_seg_o<4> )
+  <--14--  (SW14_CPLD, top) (SW10_CPLD, top) (SW6_CPLD, top) (SW2_CPLD, top) 
+           (N_PZ_148, top) (N_PZ_149, top) (N_PZ_150, top) (N_PZ_151, top) 
+           (N_PZ_158, top) (N_PZ_159, top) (N_PZ_160, top) (N_PZ_161, top) 
+           (N_PZ_173, top) (N_PZ_174, top)
+  --1--> (disp_seg_o<4>, top) 
+N_PZ_48,net=top: PINT ( disp_seg_o<5> )
+  <--22--  (SW12_CPLD, top) (SW8_CPLD, top) (SW4_CPLD, top) (SW0_CPLD, top) 
+           (SW13_CPLD, top) (SW9_CPLD, top) (SW5_CPLD, top) (SW1_CPLD, top) 
+           (SW14_CPLD, top) (SW10_CPLD, top) (SW6_CPLD, top) (SW2_CPLD, top) 
+           (N_PZ_148, top) (N_PZ_149, top) (N_PZ_150, top) (N_PZ_151, top) 
+           (N_PZ_158, top) (N_PZ_159, top) (N_PZ_160, top) (N_PZ_161, top) 
+           (N_PZ_173, top) (N_PZ_174, top)
+  --1--> (disp_seg_o<5>, top) 
+N_PZ_49,net=top: PINT ( disp_seg_o<0> )
+  <--20--  (SW13_CPLD, top) (SW9_CPLD, top) (SW5_CPLD, top) (SW1_CPLD, top) 
+           (SW14_CPLD, top) (SW10_CPLD, top) (SW6_CPLD, top) (SW2_CPLD, top) 
+           (N_PZ_148, top) (N_PZ_149, top) (N_PZ_150, top) (N_PZ_151, top) 
+           (N_PZ_158, top) (N_PZ_159, top) (N_PZ_160, top) (N_PZ_161, top) 
+           (N_PZ_180, top) (N_PZ_181, top) (N_PZ_182, top) (N_PZ_183, top)
+  --1--> (disp_seg_o<0>, top) 
+N_PZ_50,net=top: PINT ( disp_seg_o<1> )
+  <--10--  (N_PZ_158, top) (N_PZ_159, top) (N_PZ_160, top) (N_PZ_161, top) 
+           (N_PZ_171, top) (N_PZ_172, top) (N_PZ_176, top) (N_PZ_177, top) 
+           (N_PZ_178, top) (N_PZ_179, top)
+  --1--> (disp_seg_o<1>, top) 
+N_PZ_51,net=top: PINT ( disp_dig_o<2> )
+  <--1--  (N_PZ_143, top)
+  --1--> (disp_dig_o<2>, top) 
+DRIVER_7SEG/s_cnt<1>.CLK,net=top: PO
+  <--1--  (N_PZ_1, top)
+  --0--> 
+DRIVER_7SEG/s_cnt<0>.CLK,net=top: PO
+  <--1--  (N_PZ_4, top)
+  --0--> 
+disp_seg_o<3>,net=top: PO
+  <--1--  (N_PZ_6, top)
+  --0--> 
+disp_seg_o<6>,net=top: PO
+  <--1--  (N_PZ_7, top)
+  --0--> 
+disp_dp,net=top: PO
+  <--1--  (N_PZ_8, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D,net=top: PO
+  <--1--  (N_PZ_9, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<0>.CLK,net=top: PO
+  <--1--  (N_PZ_10, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D,net=top: PO
+  <--1--  (N_PZ_11, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<10>.CLK,net=top: PO
+  <--1--  (N_PZ_12, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D,net=top: PO
+  <--1--  (N_PZ_13, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<11>.CLK,net=top: PO
+  <--1--  (N_PZ_14, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D,net=top: PO
+  <--1--  (N_PZ_15, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<12>.CLK,net=top: PO
+  <--1--  (N_PZ_16, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D,net=top: PO
+  <--1--  (N_PZ_17, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<13>.CLK,net=top: PO
+  <--1--  (N_PZ_18, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D,net=top: PO
+  <--1--  (N_PZ_19, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<14>.CLK,net=top: PO
+  <--1--  (N_PZ_20, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D,net=top: PO
+  <--1--  (N_PZ_21, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<1>.CLK,net=top: PO
+  <--1--  (N_PZ_22, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D,net=top: PO
+  <--1--  (N_PZ_23, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<2>.CLK,net=top: PO
+  <--1--  (N_PZ_24, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D,net=top: PO
+  <--1--  (N_PZ_25, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<3>.CLK,net=top: PO
+  <--1--  (N_PZ_26, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D,net=top: PO
+  <--1--  (N_PZ_27, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<4>.CLK,net=top: PO
+  <--1--  (N_PZ_28, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D,net=top: PO
+  <--1--  (N_PZ_29, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<5>.CLK,net=top: PO
+  <--1--  (N_PZ_30, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D,net=top: PO
+  <--1--  (N_PZ_31, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<6>.CLK,net=top: PO
+  <--1--  (N_PZ_32, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D,net=top: PO
+  <--1--  (N_PZ_33, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<7>.CLK,net=top: PO
+  <--1--  (N_PZ_34, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D,net=top: PO
+  <--1--  (N_PZ_35, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<8>.CLK,net=top: PO
+  <--1--  (N_PZ_36, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D,net=top: PO
+  <--1--  (N_PZ_37, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<9>.CLK,net=top: PO
+  <--1--  (N_PZ_38, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D,net=top: PO
+  <--1--  (N_PZ_39, top)
+  --0--> 
+DRIVER_7SEG/CLK_EN_0/s_cnt<15>.CLK,net=top: PO
+  <--1--  (N_PZ_40, top)
+  --0--> 
+DRIVER_7SEG/s_en.D,net=top: PO
+  <--1--  (N_PZ_41, top)
+  --0--> 
+DRIVER_7SEG/s_en.CLK,net=top: PO
+  <--1--  (N_PZ_42, top)
+  --0--> 
+disp_dig_o<0>,net=top: PO
+  <--1--  (N_PZ_43, top)
+  --0--> 
+disp_dig_o<1>,net=top: PO
+  <--1--  (N_PZ_44, top)
+  --0--> 
+disp_dig_o<3>,net=top: PO
+  <--1--  (N_PZ_45, top)
+  --0--> 
+disp_seg_o<2>,net=top: PO
+  <--1--  (N_PZ_46, top)
+  --0--> 
+disp_seg_o<4>,net=top: PO
+  <--1--  (N_PZ_47, top)
+  --0--> 
+disp_seg_o<5>,net=top: PO
+  <--1--  (N_PZ_48, top)
+  --0--> 
+disp_seg_o<0>,net=top: PO
+  <--1--  (N_PZ_49, top)
+  --0--> 
+disp_seg_o<1>,net=top: PO
+  <--1--  (N_PZ_50, top)
+  --0--> 
+disp_dig_o<2>,net=top: PO
+  <--1--  (N_PZ_51, top)
+  --0--> 
+DRIVER_7SEG/s_cnt<1>.Q,net=top: PI
+  <--0-- 
+  --5--> (N_PZ_71, top) (N_PZ_143, top) (N_PZ_144, top) (N_PZ_145, top)  
+         (N_PZ_146, top) 
+DRIVER_7SEG/s_cnt<0>.Q,net=top: PI
+  <--0-- 
+  --6--> (N_PZ_89, top) (N_PZ_71, top) (N_PZ_143, top) (N_PZ_144, top) (N_PZ_145, top)  
+         (N_PZ_146, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q,net=top: PI
+  <--0-- 
+  --3--> (N_PZ_140, top) (N_PZ_152, top) (N_PZ_9, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_165, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_163, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_170, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_162, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_163, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q,net=top: PI
+  <--0-- 
+  --2--> (N_PZ_140, top) (N_PZ_152, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q,net=top: PI
+  <--0-- 
+  --2--> (N_PZ_142, top) (N_PZ_153, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q,net=top: PI
+  <--0-- 
+  --3--> (N_PZ_147, top) (N_PZ_154, top) (N_PZ_189, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q,net=top: PI
+  <--0-- 
+  --3--> (N_PZ_155, top) (N_PZ_156, top) (N_PZ_189, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q,net=top: PI
+  <--0-- 
+  --5--> (N_PZ_25, top) (N_PZ_27, top) (N_PZ_141, top) (N_PZ_156, top) (N_PZ_157, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_162, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_166, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_167, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_168, top) 
+DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q,net=top: PI
+  <--0-- 
+  --1--> (N_PZ_169, top) 
+DRIVER_7SEG/s_en.Q,net=top: PI
+  <--0-- 
+  --2--> (N_PZ_89, top) (N_PZ_71, top) 
+N_PZ_71,net=top: PINT ( DRIVER_7SEG/s_cnt<1>.T )
+  <--4--  (BTN0, top) (DRIVER_7SEG/s_cnt<1>.Q, top) (DRIVER_7SEG/s_cnt<0>.Q, top) 
+          (DRIVER_7SEG/s_en.Q, top)
+  --1--> (DRIVER_7SEG/s_cnt<1>.T, top) 
+N_PZ_89,net=top: PINT ( DRIVER_7SEG/s_cnt<0>.D )
+  <--3--  (BTN0, top) (DRIVER_7SEG/s_cnt<0>.Q, top) (DRIVER_7SEG/s_en.Q, top)
+  --1--> (DRIVER_7SEG/s_cnt<0>.D, top) 
+DRIVER_7SEG/s_cnt<1>.T,net=top: PO
+  <--1--  (N_PZ_71, top)
+  --0--> 
+DRIVER_7SEG/s_cnt<0>.D,net=top: PO
+  <--1--  (N_PZ_89, top)
+  --0--> 
+N_PZ_140,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q, top) (DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q, top)
+  --2--> (N_PZ_142, top) (N_PZ_153, top) 
+N_PZ_141,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q, top) (N_PZ_189, top)
+  --1--> (N_PZ_188, top) 
+N_PZ_142,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q, top) (N_PZ_140, top)
+  --4--> (N_PZ_147, top) (N_PZ_154, top) (N_PZ_156, top) (N_PZ_157, top) 
+N_PZ_143,net=top: INT
+  <--2--  (DRIVER_7SEG/s_cnt<1>.Q, top) (DRIVER_7SEG/s_cnt<0>.Q, top)
+  --6--> (N_PZ_8, top) (N_PZ_51, top) (N_PZ_150, top) (N_PZ_174, top) (N_PZ_46, top)  
+         (N_PZ_6, top) 
+N_PZ_144,net=top: INT
+  <--2--  (DRIVER_7SEG/s_cnt<1>.Q, top) (DRIVER_7SEG/s_cnt<0>.Q, top)
+  --5--> (N_PZ_43, top) (N_PZ_148, top) (N_PZ_46, top) (N_PZ_173, top) (N_PZ_6, top) 
+N_PZ_145,net=top: INT
+  <--2--  (DRIVER_7SEG/s_cnt<1>.Q, top) (DRIVER_7SEG/s_cnt<0>.Q, top)
+  --5--> (N_PZ_45, top) (N_PZ_151, top) (N_PZ_46, top) (N_PZ_173, top) (N_PZ_6, top) 
+N_PZ_146,net=top: INT
+  <--2--  (DRIVER_7SEG/s_cnt<1>.Q, top) (DRIVER_7SEG/s_cnt<0>.Q, top)
+  --5--> (N_PZ_44, top) (N_PZ_149, top) (N_PZ_174, top) (N_PZ_46, top) (N_PZ_6, top) 
+N_PZ_147,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q, top) (N_PZ_142, top)
+  --2--> (N_PZ_155, top) (N_PZ_156, top) 
+N_PZ_148,net=top: INT
+  <--2--  (SW3_CPLD, top) (N_PZ_144, top)
+  --7--> (N_PZ_161, top) (N_PZ_171, top) (N_PZ_47, top) (N_PZ_48, top) (N_PZ_46, top)  
+         (N_PZ_49, top) (N_PZ_7, top) 
+N_PZ_149,net=top: INT
+  <--2--  (SW7_CPLD, top) (N_PZ_146, top)
+  --7--> (N_PZ_158, top) (N_PZ_172, top) (N_PZ_47, top) (N_PZ_48, top) (N_PZ_46, top)  
+         (N_PZ_49, top) (N_PZ_7, top) 
+N_PZ_150,net=top: INT
+  <--2--  (SW11_CPLD, top) (N_PZ_143, top)
+  --7--> (N_PZ_159, top) (N_PZ_172, top) (N_PZ_47, top) (N_PZ_48, top) (N_PZ_46, top)  
+         (N_PZ_49, top) (N_PZ_7, top) 
+N_PZ_151,net=top: INT
+  <--2--  (SW15_CPLD, top) (N_PZ_145, top)
+  --7--> (N_PZ_160, top) (N_PZ_171, top) (N_PZ_47, top) (N_PZ_48, top) (N_PZ_46, top)  
+         (N_PZ_49, top) (N_PZ_7, top) 
+N_PZ_152,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q, top) (DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q, top)
+  --1--> (N_PZ_21, top) 
+N_PZ_153,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q, top) (N_PZ_140, top)
+  --1--> (N_PZ_23, top) 
+N_PZ_154,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q, top) (N_PZ_142, top)
+  --1--> (N_PZ_25, top) 
+N_PZ_155,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q, top) (N_PZ_147, top)
+  --1--> (N_PZ_27, top) 
+N_PZ_156,net=top: INT
+  <--5--  (DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q, top) (DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q, top) 
+          (N_PZ_142, top) (N_PZ_147, top) (N_PZ_189, top)
+  --1--> (N_PZ_29, top) 
+N_PZ_157,net=top: INT
+  <--3--  (DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q, top) (N_PZ_142, top) (N_PZ_189, top)
+  --1--> (N_PZ_41, top) 
+N_PZ_158,net=top: INT
+  <--2--  (SW4_CPLD, top) (N_PZ_149, top)
+  --7--> (N_PZ_47, top) (N_PZ_48, top) (N_PZ_50, top) (N_PZ_46, top) (N_PZ_49, top)  
+         (N_PZ_7, top) (N_PZ_6, top) 
+N_PZ_159,net=top: INT
+  <--2--  (SW8_CPLD, top) (N_PZ_150, top)
+  --7--> (N_PZ_47, top) (N_PZ_48, top) (N_PZ_50, top) (N_PZ_46, top) (N_PZ_49, top)  
+         (N_PZ_7, top) (N_PZ_6, top) 
+N_PZ_160,net=top: INT
+  <--2--  (SW12_CPLD, top) (N_PZ_151, top)
+  --7--> (N_PZ_47, top) (N_PZ_48, top) (N_PZ_50, top) (N_PZ_46, top) (N_PZ_49, top)  
+         (N_PZ_7, top) (N_PZ_6, top) 
+N_PZ_161,net=top: INT
+  <--2--  (SW0_CPLD, top) (N_PZ_148, top)
+  --7--> (N_PZ_47, top) (N_PZ_48, top) (N_PZ_50, top) (N_PZ_46, top) (N_PZ_49, top)  
+         (N_PZ_7, top) (N_PZ_6, top) 
+N_PZ_162,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q, top) 
+          (DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q, top)
+  --1--> (N_PZ_164, top) 
+N_PZ_163,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q, top) 
+          (DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q, top)
+  --1--> (N_PZ_164, top) 
+N_PZ_164,net=top: INT
+  <--2--  (N_PZ_162, top) (N_PZ_163, top)
+  --1--> (N_PZ_165, top) 
+N_PZ_165,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q, top) (N_PZ_164, top)
+  --1--> (N_PZ_166, top) 
+N_PZ_166,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q, top) (N_PZ_165, top)
+  --1--> (N_PZ_167, top) 
+N_PZ_167,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q, top) (N_PZ_166, top)
+  --1--> (N_PZ_168, top) 
+N_PZ_168,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q, top) (N_PZ_167, top)
+  --1--> (N_PZ_169, top) 
+N_PZ_169,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q, top) (N_PZ_168, top)
+  --1--> (N_PZ_170, top) 
+N_PZ_170,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q, top) (N_PZ_169, top)
+  --2--> (N_PZ_41, top) (N_PZ_175, top) 
+N_PZ_171,net=top: INT
+  <--6--  (SW13_CPLD, top) (SW1_CPLD, top) (SW14_CPLD, top) (SW2_CPLD, top) 
+          (N_PZ_148, top) (N_PZ_151, top)
+  --2--> (N_PZ_50, top) (N_PZ_6, top) 
+N_PZ_172,net=top: INT
+  <--6--  (SW9_CPLD, top) (SW5_CPLD, top) (SW10_CPLD, top) (SW6_CPLD, top) 
+          (N_PZ_149, top) (N_PZ_150, top)
+  --2--> (N_PZ_50, top) (N_PZ_6, top) 
+N_PZ_173,net=top: INT
+  <--4--  (N_PZ_144, top) (N_PZ_145, top) (N_PZ_181, top) (N_PZ_183, top)
+  --2--> (N_PZ_47, top) (N_PZ_48, top) 
+N_PZ_174,net=top: INT
+  <--4--  (N_PZ_143, top) (N_PZ_146, top) (N_PZ_180, top) (N_PZ_182, top)
+  --2--> (N_PZ_47, top) (N_PZ_48, top) 
+N_PZ_175,net=top: INT
+  <--2--  (BTN0, top) (N_PZ_170, top)
+  --4--> (N_PZ_25, top) (N_PZ_27, top) (N_PZ_29, top) (N_PZ_188, top) 
+N_PZ_176,net=top: INT
+  <--2--  (SW13_CPLD, top) (SW14_CPLD, top)
+  --4--> (N_PZ_50, top) (N_PZ_46, top) (N_PZ_7, top) (N_PZ_6, top) 
+N_PZ_177,net=top: INT
+  <--2--  (SW5_CPLD, top) (SW6_CPLD, top)
+  --4--> (N_PZ_50, top) (N_PZ_46, top) (N_PZ_7, top) (N_PZ_6, top) 
+N_PZ_178,net=top: INT
+  <--2--  (SW9_CPLD, top) (SW10_CPLD, top)
+  --4--> (N_PZ_50, top) (N_PZ_46, top) (N_PZ_7, top) (N_PZ_6, top) 
+N_PZ_179,net=top: INT
+  <--2--  (SW1_CPLD, top) (SW2_CPLD, top)
+  --4--> (N_PZ_50, top) (N_PZ_46, top) (N_PZ_7, top) (N_PZ_6, top) 
+N_PZ_180,net=top: INT
+  <--2--  (SW9_CPLD, top) (SW10_CPLD, top)
+  --5--> (N_PZ_174, top) (N_PZ_46, top) (N_PZ_49, top) (N_PZ_7, top) (N_PZ_186, top) 
+N_PZ_181,net=top: INT
+  <--2--  (SW13_CPLD, top) (SW14_CPLD, top)
+  --5--> (N_PZ_46, top) (N_PZ_49, top) (N_PZ_173, top) (N_PZ_7, top) (N_PZ_184, top) 
+N_PZ_182,net=top: INT
+  <--2--  (SW5_CPLD, top) (SW6_CPLD, top)
+  --5--> (N_PZ_174, top) (N_PZ_46, top) (N_PZ_49, top) (N_PZ_7, top) (N_PZ_185, top) 
+N_PZ_183,net=top: INT
+  <--2--  (SW1_CPLD, top) (SW2_CPLD, top)
+  --5--> (N_PZ_46, top) (N_PZ_49, top) (N_PZ_173, top) (N_PZ_7, top) (N_PZ_187, top) 
+N_PZ_184,net=top: INT
+  <--3--  (SW13_CPLD, top) (SW14_CPLD, top) (N_PZ_181, top)
+  --1--> (N_PZ_6, top) 
+N_PZ_185,net=top: INT
+  <--3--  (SW5_CPLD, top) (SW6_CPLD, top) (N_PZ_182, top)
+  --1--> (N_PZ_6, top) 
+N_PZ_186,net=top: INT
+  <--3--  (SW9_CPLD, top) (SW10_CPLD, top) (N_PZ_180, top)
+  --1--> (N_PZ_6, top) 
+N_PZ_187,net=top: INT
+  <--3--  (SW1_CPLD, top) (SW2_CPLD, top) (N_PZ_183, top)
+  --1--> (N_PZ_6, top) 
+N_PZ_188,net=top: INT
+  <--2--  (N_PZ_141, top) (N_PZ_175, top)
+  --3--> (N_PZ_9, top) (N_PZ_21, top) (N_PZ_23, top) 
+N_PZ_189,net=top: INT
+  <--2--  (DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q, top) (DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q, top)
+  --3--> (N_PZ_141, top) (N_PZ_156, top) (N_PZ_157, top) 

@@ -1,0 +1,639 @@
+" XPLAOPT Version 9.99.99.99
+" Created on Sun Mar  8 11:31:57 2020
+" 81 Mcells, 157 PLApts, 11 Levels, 281 Fanins
+" XPLAOPT -run s -it b -i top.blx -dev XC2C256-6TQ144 -reg -xor a -mode 1 -th 
+"         28 -fi 32 -bfi 38 -pre keep -unused keeper -terminate keeper -no_output_files 
+MODULE top
+
+	BTN0  pin 143 ; 
+ 	SW0_CPLD  pin 134 ; 
+ 	SW10_CPLD  pin 5 ; 
+ 	SW11_CPLD  pin 4 ; 
+ 	SW12_CPLD  pin 7 ; 
+ 	SW13_CPLD  pin 6 ; 
+ 	SW14_CPLD  pin 10 ; 
+ 	SW15_CPLD  pin 9 ; 
+ 	SW1_CPLD  pin 133 ; 
+ 	SW2_CPLD  pin 136 ; 
+ 	SW3_CPLD  pin 135 ; 
+ 	SW4_CPLD  pin 139 ; 
+ 	SW5_CPLD  pin 138 ; 
+ 	SW6_CPLD  pin 142 ; 
+ 	SW7_CPLD  pin 140 ; 
+ 	SW8_CPLD  pin 3 ; 
+ 	SW9_CPLD  pin 2 ; 
+ 	clk_i  pin 38 ; 
+ 	disp_dig_o<0>  pin 126 ;  " 1 pt.
+ 	disp_dig_o<1>  pin 128 ;  " 1 pt.
+ 	disp_dig_o<2>  pin 129 ;  " 1 pt.
+ 	disp_dig_o<3>  pin 130 ;  " 1 pt.
+ 	disp_dp  pin 59 ;  " 1 pt.
+ 	disp_seg_o<0>  pin 61 ;  " 8 pt.
+ 	disp_seg_o<1>  pin 54 ;  " 6 pt.
+ 	disp_seg_o<2>  pin 57 ;  " 12 pt.
+ 	disp_seg_o<3>  pin 58 ;  " 10 pt.
+ 	disp_seg_o<4>  pin 60 ;  " 10 pt.
+ 	disp_seg_o<5>  pin 53 ;  " 14 pt.
+ 	disp_seg_o<6>  pin 56 ;  " 8 pt.
+ 
+
+	DRIVER_7SEG/CLK_EN_0/s_cnt<0>  node ;  " 1 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<10>  node ;  " 0 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<11>  node ;  " 0 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<12>  node ;  " 0 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<13>  node ;  " 0 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<14>  node ;  " 0 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<15>  node ;  " 0 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<1>  node ;  " 1 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<2>  node ;  " 1 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<3>  node ;  " 1 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<4>  node ;  " 1 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<5>  node ;  " 1 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<6>  node ;  " 0 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<7>  node ;  " 0 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<8>  node ;  " 0 pt.
+ 	DRIVER_7SEG/CLK_EN_0/s_cnt<9>  node ;  " 0 pt.
+ 	DRIVER_7SEG/s_cnt<0>  node ;  " 2 pt.
+ 	DRIVER_7SEG/s_cnt<1>  node ;  " 2 pt.
+ 	DRIVER_7SEG/s_en  node ;  " 2 pt.
+ 	N_PZ_140  node istype 'collapse';  " 2 pt.
+ 	N_PZ_141  node istype 'collapse';  " 2 pt.
+ 	N_PZ_142  node istype 'collapse';  " 2 pt.
+ 	N_PZ_143  node istype 'collapse';  " 1 pt.
+ 	N_PZ_144  node istype 'collapse';  " 1 pt.
+ 	N_PZ_145  node istype 'collapse';  " 1 pt.
+ 	N_PZ_146  node istype 'collapse';  " 1 pt.
+ 	N_PZ_147  node istype 'collapse';  " 2 pt.
+ 	N_PZ_148  node istype 'collapse';  " 1 pt.
+ 	N_PZ_149  node istype 'collapse';  " 1 pt.
+ 	N_PZ_150  node istype 'collapse';  " 1 pt.
+ 	N_PZ_151  node istype 'collapse';  " 1 pt.
+ 	N_PZ_152  node istype 'collapse';  " 2 pt.
+ 	N_PZ_153  node istype 'collapse';  " 2 pt.
+ 	N_PZ_154  node istype 'collapse';  " 2 pt.
+ 	N_PZ_155  node istype 'collapse';  " 2 pt.
+ 	N_PZ_156  node istype 'collapse';  " 2 pt.
+ 	N_PZ_157  node istype 'collapse';  " 2 pt.
+ 	N_PZ_158  node istype 'collapse';  " 1 pt.
+ 	N_PZ_159  node istype 'collapse';  " 1 pt.
+ 	N_PZ_160  node istype 'collapse';  " 1 pt.
+ 	N_PZ_161  node istype 'collapse';  " 1 pt.
+ 	N_PZ_162  node istype 'collapse';  " 1 pt.
+ 	N_PZ_163  node istype 'collapse';  " 1 pt.
+ 	N_PZ_164  node istype 'collapse';  " 1 pt.
+ 	N_PZ_165  node istype 'collapse';  " 1 pt.
+ 	N_PZ_166  node istype 'collapse';  " 1 pt.
+ 	N_PZ_167  node istype 'collapse';  " 1 pt.
+ 	N_PZ_168  node istype 'collapse';  " 1 pt.
+ 	N_PZ_169  node istype 'collapse';  " 1 pt.
+ 	N_PZ_170  node istype 'collapse';  " 1 pt.
+ 	N_PZ_171  node istype 'collapse';  " 2 pt.
+ 	N_PZ_172  node istype 'collapse';  " 2 pt.
+ 	N_PZ_173  node istype 'collapse';  " 2 pt.
+ 	N_PZ_174  node istype 'collapse';  " 2 pt.
+ 	N_PZ_175  node istype 'collapse';  " 1 pt.
+ 	N_PZ_176  node istype 'collapse';  " 2 pt.
+ 	N_PZ_177  node istype 'collapse';  " 2 pt.
+ 	N_PZ_178  node istype 'collapse';  " 2 pt.
+ 	N_PZ_179  node istype 'collapse';  " 2 pt.
+ 	N_PZ_180  node istype 'collapse';  " 1 pt.
+ 	N_PZ_181  node istype 'collapse';  " 1 pt.
+ 	N_PZ_182  node istype 'collapse';  " 1 pt.
+ 	N_PZ_183  node istype 'collapse';  " 1 pt.
+ 	N_PZ_184  node istype 'collapse';  " 2 pt.
+ 	N_PZ_185  node istype 'collapse';  " 2 pt.
+ 	N_PZ_186  node istype 'collapse';  " 2 pt.
+ 	N_PZ_187  node istype 'collapse';  " 2 pt.
+ 	N_PZ_188  node istype 'collapse';  " 1 pt.
+ 	N_PZ_189  node istype 'collapse';  " 1 pt.
+ 
+
+xpla property 'USER_SLEW_RATE disp_seg_o<3> disp_seg_o<6> disp_dp disp_dig_o<0> disp_dig_o<1> 
+	disp_dig_o<3> disp_seg_o<2> disp_seg_o<4> disp_seg_o<5> disp_seg_o<0> disp_seg_o<1> disp_dig_o<2> 
+	'; 
+xpla property 'GLOBAL_CLK clk_i '; 
+xpla property 'unused_keeper'; 
+xpla property 'timespec  DRIVER_7SEG/s_cnt<1>.Q DRIVER_7SEG/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/s_cnt<0>.Q DRIVER_7SEG/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/s_en.Q DRIVER_7SEG/s_cnt<1>.CE 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/s_cnt<0>.Q DRIVER_7SEG/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/s_en.Q DRIVER_7SEG/s_cnt<0>.CE 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'timespec  DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q DRIVER_7SEG/s_en.D 33332.000000'; 
+xpla property 'IOSTD BTN0 0 -1';
+xpla property 'IOSTD clk_i 0 -1';
+xpla property 'IOSTD disp_seg_o<3> 0 -1';
+xpla property 'IOSTD disp_seg_o<6> 0 -1';
+xpla property 'IOSTD disp_dp 0 -1';
+xpla property 'IOSTD SW12_CPLD 0 -1';
+xpla property 'IOSTD SW8_CPLD 0 -1';
+xpla property 'IOSTD SW4_CPLD 0 -1';
+xpla property 'IOSTD SW0_CPLD 0 -1';
+xpla property 'IOSTD SW13_CPLD 0 -1';
+xpla property 'IOSTD SW9_CPLD 0 -1';
+xpla property 'IOSTD SW5_CPLD 0 -1';
+xpla property 'IOSTD SW1_CPLD 0 -1';
+xpla property 'IOSTD SW14_CPLD 0 -1';
+xpla property 'IOSTD SW10_CPLD 0 -1';
+xpla property 'IOSTD SW6_CPLD 0 -1';
+xpla property 'IOSTD SW2_CPLD 0 -1';
+xpla property 'IOSTD SW15_CPLD 0 -1';
+xpla property 'IOSTD SW11_CPLD 0 -1';
+xpla property 'IOSTD SW7_CPLD 0 -1';
+xpla property 'IOSTD SW3_CPLD 0 -1';
+xpla property 'IOSTD disp_dig_o<0> 0 -1';
+xpla property 'IOSTD disp_dig_o<1> 0 -1';
+xpla property 'IOSTD disp_dig_o<3> 0 -1';
+xpla property 'IOSTD disp_seg_o<2> 0 -1';
+xpla property 'IOSTD disp_seg_o<4> 0 -1';
+xpla property 'IOSTD disp_seg_o<5> 0 -1';
+xpla property 'IOSTD disp_seg_o<0> 0 -1';
+xpla property 'IOSTD disp_seg_o<1> 0 -1';
+xpla property 'IOSTD disp_dig_o<2> 0 -1';
+EQUATIONS 
+
+ DRIVER_7SEG/CLK_EN_0/s_cnt<0>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<0>.D = !DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q & N_PZ_188
+    ;		"--- [PT=1, FI=2, LVL=11] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<10>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<10>.D = 0;
+ DRIVER_7SEG/CLK_EN_0/s_cnt<11>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<11>.D = 0;
+ DRIVER_7SEG/CLK_EN_0/s_cnt<12>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<12>.D = 0;
+ DRIVER_7SEG/CLK_EN_0/s_cnt<13>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<13>.D = 0;
+ DRIVER_7SEG/CLK_EN_0/s_cnt<14>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<14>.D = 0;
+ DRIVER_7SEG/CLK_EN_0/s_cnt<15>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<15>.D = 0;
+ DRIVER_7SEG/CLK_EN_0/s_cnt<1>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<1>.D = N_PZ_152 & N_PZ_188
+    ;		"--- [PT=1, FI=2, LVL=11] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<2>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<2>.D = N_PZ_153 & N_PZ_188
+    ;		"--- [PT=1, FI=2, LVL=11] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<3>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<3>.D = !DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q & N_PZ_154
+     & N_PZ_175;		"--- [PT=1, FI=3, LVL=10] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<4>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<4>.D = !DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q & N_PZ_155
+     & N_PZ_175;		"--- [PT=1, FI=3, LVL=10] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<5>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<5>.D = N_PZ_156 & N_PZ_175
+    ;		"--- [PT=1, FI=2, LVL=10] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<6>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<6>.D = 0;
+ DRIVER_7SEG/CLK_EN_0/s_cnt<7>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<7>.D = 0;
+ DRIVER_7SEG/CLK_EN_0/s_cnt<8>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<8>.D = 0;
+ DRIVER_7SEG/CLK_EN_0/s_cnt<9>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/CLK_EN_0/s_cnt<9>.D = 0;
+ DRIVER_7SEG/s_cnt<0>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/s_cnt<0>.D = BTN0 & DRIVER_7SEG/s_cnt<0>.Q & !DRIVER_7SEG/s_en.Q
+    
+      # BTN0 & !DRIVER_7SEG/s_cnt<0>.Q & DRIVER_7SEG/s_en.Q
+    ;		"--- [PT=2, FI=3, LVL=1] ---
+ DRIVER_7SEG/s_cnt<1>.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+ DRIVER_7SEG/s_cnt<1>.T = BTN0 & DRIVER_7SEG/s_cnt<0>.Q & DRIVER_7SEG/s_en.Q
+    
+      # !BTN0 & DRIVER_7SEG/s_cnt<1>.Q;		"--- [PT=2, FI=4, LVL=1] ---
+ DRIVER_7SEG/s_en.CLK = clk_i;		"--- [PT=1, FI=1, LVL=1] ---
+! DRIVER_7SEG/s_en.D = N_PZ_157 & N_PZ_170
+      # !BTN0;		"--- [PT=2, FI=3, LVL=9] ---
+ N_PZ_140 = !DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q
+      # !DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_141 = N_PZ_189
+      # !DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q;		"--- [PT=2, FI=2, LVL=2] ---
+ N_PZ_142 = N_PZ_140
+      # !DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q;		"--- [PT=2, FI=2, LVL=2] ---
+ N_PZ_143 = DRIVER_7SEG/s_cnt<1>.Q & !DRIVER_7SEG/s_cnt<0>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_144 = !DRIVER_7SEG/s_cnt<1>.Q & !DRIVER_7SEG/s_cnt<0>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_145 = DRIVER_7SEG/s_cnt<1>.Q & DRIVER_7SEG/s_cnt<0>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_146 = !DRIVER_7SEG/s_cnt<1>.Q & DRIVER_7SEG/s_cnt<0>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_147 = N_PZ_142
+      # !DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q;		"--- [PT=2, FI=2, LVL=3] ---
+ N_PZ_148 = !SW3_CPLD & N_PZ_144;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_149 = !SW7_CPLD & N_PZ_146;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_150 = !SW11_CPLD & N_PZ_143;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_151 = !SW15_CPLD & N_PZ_145;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_152 = !DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q & DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q
+    
+      # DRIVER_7SEG/CLK_EN_0/s_cnt<0>.Q & !DRIVER_7SEG/CLK_EN_0/s_cnt<1>.Q
+    ;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_153 = !DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q & !N_PZ_140
+      # DRIVER_7SEG/CLK_EN_0/s_cnt<2>.Q & N_PZ_140
+    ;		"--- [PT=2, FI=2, LVL=2] ---
+ N_PZ_154 = !DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q & !N_PZ_142
+      # DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q & N_PZ_142
+    ;		"--- [PT=2, FI=2, LVL=3] ---
+ N_PZ_155 = !DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q & !N_PZ_147
+      # DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q & N_PZ_147
+    ;		"--- [PT=2, FI=2, LVL=4] ---
+ N_PZ_156 = DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q & N_PZ_142 & N_PZ_189
+      # DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q & !DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q & !
+    N_PZ_147;		"--- [PT=2, FI=5, LVL=4] ---
+ N_PZ_157 = N_PZ_142 & N_PZ_189
+      # !DRIVER_7SEG/CLK_EN_0/s_cnt<5>.Q;		"--- [PT=2, FI=3, LVL=3] ---
+ N_PZ_158 = SW4_CPLD & N_PZ_149;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_159 = SW8_CPLD & N_PZ_150;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_160 = SW12_CPLD & N_PZ_151;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_161 = SW0_CPLD & N_PZ_148;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_162 = !DRIVER_7SEG/CLK_EN_0/s_cnt<13>.Q & !
+    DRIVER_7SEG/CLK_EN_0/s_cnt<6>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_163 = !DRIVER_7SEG/CLK_EN_0/s_cnt<11>.Q & !
+    DRIVER_7SEG/CLK_EN_0/s_cnt<14>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_164 = N_PZ_162 & N_PZ_163;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_165 = !DRIVER_7SEG/CLK_EN_0/s_cnt<10>.Q & N_PZ_164
+    ;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_166 = !DRIVER_7SEG/CLK_EN_0/s_cnt<7>.Q & N_PZ_165
+    ;		"--- [PT=1, FI=2, LVL=4] ---
+ N_PZ_167 = !DRIVER_7SEG/CLK_EN_0/s_cnt<8>.Q & N_PZ_166
+    ;		"--- [PT=1, FI=2, LVL=5] ---
+ N_PZ_168 = !DRIVER_7SEG/CLK_EN_0/s_cnt<9>.Q & N_PZ_167
+    ;		"--- [PT=1, FI=2, LVL=6] ---
+ N_PZ_169 = !DRIVER_7SEG/CLK_EN_0/s_cnt<15>.Q & N_PZ_168
+    ;		"--- [PT=1, FI=2, LVL=7] ---
+ N_PZ_170 = !DRIVER_7SEG/CLK_EN_0/s_cnt<12>.Q & N_PZ_169
+    ;		"--- [PT=1, FI=2, LVL=8] ---
+ N_PZ_171 = SW1_CPLD & !SW2_CPLD & N_PZ_148
+      # SW13_CPLD & !SW14_CPLD & N_PZ_151;		"--- [PT=2, FI=6, LVL=3] ---
+ N_PZ_172 = SW5_CPLD & !SW6_CPLD & N_PZ_149
+      # SW9_CPLD & !SW10_CPLD & N_PZ_150;		"--- [PT=2, FI=6, LVL=3] ---
+ N_PZ_173 = N_PZ_144 & N_PZ_183
+      # N_PZ_145 & N_PZ_181;		"--- [PT=2, FI=4, LVL=2] ---
+ N_PZ_174 = N_PZ_146 & N_PZ_182
+      # N_PZ_143 & N_PZ_180;		"--- [PT=2, FI=4, LVL=2] ---
+ N_PZ_175 = BTN0 & N_PZ_170;		"--- [PT=1, FI=2, LVL=9] ---
+ N_PZ_176 = !SW14_CPLD
+      # SW13_CPLD;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_177 = !SW6_CPLD
+      # SW5_CPLD;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_178 = !SW10_CPLD
+      # SW9_CPLD;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_179 = !SW2_CPLD
+      # SW1_CPLD;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_180 = !SW9_CPLD & !SW10_CPLD;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_181 = !SW13_CPLD & !SW14_CPLD;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_182 = !SW5_CPLD & !SW6_CPLD;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_183 = !SW1_CPLD & !SW2_CPLD;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_184 = SW13_CPLD & SW14_CPLD
+      # N_PZ_181;		"--- [PT=2, FI=3, LVL=2] ---
+ N_PZ_185 = SW5_CPLD & SW6_CPLD
+      # N_PZ_182;		"--- [PT=2, FI=3, LVL=2] ---
+ N_PZ_186 = SW9_CPLD & SW10_CPLD
+      # N_PZ_180;		"--- [PT=2, FI=3, LVL=2] ---
+ N_PZ_187 = SW1_CPLD & SW2_CPLD
+      # N_PZ_183;		"--- [PT=2, FI=3, LVL=2] ---
+ N_PZ_188 = N_PZ_141 & N_PZ_175;		"--- [PT=1, FI=2, LVL=10] ---
+ N_PZ_189 = !DRIVER_7SEG/CLK_EN_0/s_cnt<3>.Q & !
+    DRIVER_7SEG/CLK_EN_0/s_cnt<4>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+! disp_dig_o<0> = N_PZ_144;		"--- [PT=1, FI=1, LVL=2] ---
+! disp_dig_o<1> = N_PZ_146;		"--- [PT=1, FI=1, LVL=2] ---
+! disp_dig_o<2> = N_PZ_143;		"--- [PT=1, FI=1, LVL=2] ---
+! disp_dig_o<3> = N_PZ_145;		"--- [PT=1, FI=1, LVL=2] ---
+! disp_dp = N_PZ_143;		"--- [PT=1, FI=1, LVL=2] ---
+ disp_seg_o<0> = SW1_CPLD & SW2_CPLD & N_PZ_161
+      # SW13_CPLD & SW14_CPLD & N_PZ_160
+      # SW9_CPLD & SW10_CPLD & N_PZ_159
+      # SW5_CPLD & SW6_CPLD & N_PZ_158
+      # N_PZ_148 & N_PZ_183
+      # N_PZ_149 & N_PZ_182
+      # N_PZ_151 & N_PZ_181
+      # N_PZ_150 & N_PZ_180;		"--- [PT=8, FI=20, LVL=4] ---
+ disp_seg_o<1> = N_PZ_161 & N_PZ_179
+      # N_PZ_159 & N_PZ_178
+      # N_PZ_158 & N_PZ_177
+      # N_PZ_160 & N_PZ_176
+      # N_PZ_172
+      # N_PZ_171;		"--- [PT=6, FI=10, LVL=4] ---
+ disp_seg_o<2> = SW0_CPLD & N_PZ_144 & N_PZ_183
+      # SW4_CPLD & N_PZ_146 & N_PZ_182
+      # SW12_CPLD & N_PZ_145 & N_PZ_181
+      # SW8_CPLD & N_PZ_143 & N_PZ_180
+      # N_PZ_148 & !N_PZ_179
+      # N_PZ_150 & !N_PZ_178
+      # N_PZ_149 & !N_PZ_177
+      # N_PZ_151 & !N_PZ_176
+      # N_PZ_161
+      # N_PZ_160
+      # N_PZ_159
+      # N_PZ_158;		"--- [PT=12, FI=24, LVL=4] ---
+! disp_seg_o<3> = !SW0_CPLD & N_PZ_144 & N_PZ_187
+      # !SW8_CPLD & N_PZ_143 & N_PZ_186
+      # !SW4_CPLD & N_PZ_146 & N_PZ_185
+      # !SW12_CPLD & N_PZ_145 & N_PZ_184
+      # N_PZ_161 & !N_PZ_179
+      # N_PZ_159 & !N_PZ_178
+      # N_PZ_158 & !N_PZ_177
+      # N_PZ_160 & !N_PZ_176
+      # N_PZ_172
+      # N_PZ_171;		"--- [PT=10, FI=22, LVL=4] ---
+! disp_seg_o<4> = SW14_CPLD & N_PZ_151
+      # SW10_CPLD & N_PZ_150
+      # SW6_CPLD & N_PZ_149
+      # SW2_CPLD & N_PZ_148
+      # N_PZ_174
+      # N_PZ_173
+      # N_PZ_161
+      # N_PZ_160
+      # N_PZ_159
+      # N_PZ_158;		"--- [PT=10, FI=14, LVL=4] ---
+! disp_seg_o<5> = !SW12_CPLD & !SW13_CPLD & N_PZ_151
+      # !SW8_CPLD & !SW9_CPLD & N_PZ_150
+      # !SW4_CPLD & !SW5_CPLD & N_PZ_149
+      # !SW0_CPLD & !SW1_CPLD & N_PZ_148
+      # SW1_CPLD & N_PZ_161
+      # SW13_CPLD & N_PZ_160
+      # SW9_CPLD & N_PZ_159
+      # SW5_CPLD & N_PZ_158
+      # !SW14_CPLD & N_PZ_151
+      # !SW10_CPLD & N_PZ_150
+      # !SW6_CPLD & N_PZ_149
+      # !SW2_CPLD & N_PZ_148
+      # N_PZ_174
+      # N_PZ_173;		"--- [PT=14, FI=22, LVL=4] ---
+ disp_seg_o<6> = !SW0_CPLD & N_PZ_148 & !N_PZ_179
+      # !SW8_CPLD & N_PZ_150 & !N_PZ_178
+      # !SW4_CPLD & N_PZ_149 & !N_PZ_177
+      # !SW12_CPLD & N_PZ_151 & !N_PZ_176
+      # N_PZ_161 & N_PZ_183
+      # N_PZ_158 & N_PZ_182
+      # N_PZ_160 & N_PZ_181
+      # N_PZ_159 & N_PZ_180;		"--- [PT=8, FI=20, LVL=4] ---
+END
