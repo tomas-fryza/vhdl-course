@@ -58,97 +58,13 @@ You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ1
 2. Create a new folder `Labs/06-display_driver`
 
 
-## 3 Display multiplexer VHDL code
+## 3 Display driver VHDL code
 
 Multiplexer or MUX is a digital switch. It allows to route binary information from several input lines or sources to one output line or channel.
 
 1. Create a new project in ISE titled `display_driver` for XC2C256-TQ144 CPLD device in location `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/06-display_driver`
 
-2. Create a new VHDL module `mux_7seg` and copy/paste the following code template.
-
-```vhdl
-------------------------------------------------------------------------
---
--- Multiplexer for seven-segment displays.
--- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
---
--- Copyright (c) 2019-2020 Tomas Fryza
--- Dept. of Radio Electronics, Brno University of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-------------------------------------------------------------------------
-
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
-
-------------------------------------------------------------------------
--- Entity declaration for display multiplexer
-------------------------------------------------------------------------
-entity mux_7seg is
-port (
-    clk_i    : in  std_logic;
-    srst_n_i : in  std_logic;   -- Synchronous reset (active low)
-    en_i     : in  std_logic;   -- Enable
-    data0_i  : in  std_logic_vector(4-1 downto 0);  -- Input values
-    data1_i  : in  std_logic_vector(4-1 downto 0);
-    data2_i  : in  std_logic_vector(4-1 downto 0);
-    data3_i  : in  std_logic_vector(4-1 downto 0);
-    dp_i     : in  std_logic_vector(4-1 downto 0);  -- Decimal points
-    
-    data_o   : out std_logic_vector(4-1 downto 0);  -- Output value
-    dp_o     : out std_logic;                       -- Decimal point
-    dig_o    : out std_logic_vector(4-1 downto 0)   -- Digit position
-);
-end entity mux_7seg;
-
-------------------------------------------------------------------------
--- Architecture declaration for display multiplexer
-------------------------------------------------------------------------
-architecture Behavioral of mux_7seg is
-    signal s_cnt : std_logic_vector(2-1 downto 0) := "00";
-begin
-
-    --------------------------------------------------------------------
-    -- p_select_cnt:
-    -- Sequential process with synchronous reset and clock enable,
-    -- which implements an internal 2-bit counter for multiplexer 
-    -- selection bits.
-    --------------------------------------------------------------------
-    p_select_cnt : process (clk_i)
-    begin
-        if rising_edge(clk_i) then  -- Rising clock edge
-            -- WRITE YOUR CODE HERE
-        end if;
-    end process p_select_cnt;
-
-    --------------------------------------------------------------------
-    -- p_mux:
-    -- Combinational process which implements a 4-to-1 mux.
-    --------------------------------------------------------------------
-    p_mux : process (s_cnt, data0_i, data1_i, data2_i, data3_i, dp_i)
-    begin
-        case s_cnt is
-        when "00" =>
-            -- WRITE YOUR CODE HERE
-        when "01" =>
-            -- WRITE YOUR CODE HERE
-        when "10" =>
-            -- WRITE YOUR CODE HERE
-        when others =>
-            -- WRITE YOUR CODE HERE
-        end case;
-    end process p_mux;
-
-end architecture Behavioral;
-```
-
-2. Implement an internal 2-bit binary counter and use the value in a combinational process to perform 4-to-1 mux. For each selection, define output value, decimal point, and digit position.
-
-
-## 4 Display multiplexer VHDL code
-
-1. Create a new VHDL module `driver_7seg` and copy/paste the following code template.
+2. Create a new VHDL module `driver_7seg` and copy/paste the following code template.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -164,6 +80,7 @@ end architecture Behavioral;
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
 
 ------------------------------------------------------------------------
 -- Entity declaration for display driver
@@ -188,16 +105,13 @@ end entity driver_7seg;
 -- Architecture declaration for display driver
 ------------------------------------------------------------------------
 architecture Behavioral of driver_7seg is
-    -- WRITE YOUR CODE HERE
+    signal s_en  : std_logic;
+    signal s_hex : std_logic_vector(4-1 downto 0);
+    signal s_cnt : std_logic_vector(2-1 downto 0) := "00";
 begin
 
     --------------------------------------------------------------------
-    -- Sub-block of clock_enable entity
-    --- WRITE YOUR CODE HERE
-
-
-    --------------------------------------------------------------------
-    -- Sub-block of mux_7seg entity
+    -- Sub-block of clock_enable entity. Create s_en signal.
     --- WRITE YOUR CODE HERE
 
 
@@ -205,15 +119,51 @@ begin
     -- Sub-block of hex_to_7seg entity
     --- WRITE YOUR CODE HERE
 
+
+    --------------------------------------------------------------------
+    -- p_select_cnt:
+    -- Sequential process with synchronous reset and clock enable,
+    -- which implements an internal 2-bit counter s_cnt for multiplexer 
+    -- selection bits.
+    --------------------------------------------------------------------
+    p_select_cnt : process (clk_i)
+    begin
+        if rising_edge(clk_i) then  -- Rising clock edge
+            if srst_n_i = '0' then  -- Synchronous reset (active low)
+                -- WRITE YOUR CODE HERE
+            elsif s_en = '1' then
+                -- WRITE YOUR CODE HERE
+            end if;
+        end if;
+    end process p_select_cnt;
+
+    --------------------------------------------------------------------
+    -- p_mux:
+    -- Combinational process which implements a 4-to-1 mux.
+    --------------------------------------------------------------------
+    p_mux : process (s_cnt, data0_i, data1_i, data2_i, data3_i, dp_i)
+    begin
+        case s_cnt is
+        when "00" =>
+            -- WRITE YOUR CODE HERE
+        when "01" =>
+            -- WRITE YOUR CODE HERE
+        when "10" =>
+            -- WRITE YOUR CODE HERE
+        when others =>
+            -- WRITE YOUR CODE HERE
+        end case;
+    end process p_mux;
+
 end architecture Behavioral;
 ```
 
-2. Connect clock enable (period of 4 ms), display multiplexer, and hex to seven-segment decoder sub-blocks. Define internal signals if needed. Copy VHDL file of clock enable and seven-segment decoder to the working folder. Add these files to the project.
+2. Connect clock enable (period of 4 ms) and hex to seven-segment decoder sub-blocks. Define internal signals if needed. Copy VHDL file of clock enable and seven-segment decoder to the working folder. Add these files to the project.
 
-![ise_driver_7seg](../../Images/ise_driver_7seg_rtl.png)
+   Implement an internal 2-bit binary counter and use the value in a combinational process to perform 4-to-1 mux. For each selection, define output value, decimal point, and digit position.
 
 
-## 5 Top level implementation of display driver
+## 4 Top level implementation of display driver
 
 1. Create a new VHDL module `top` and copy/paste the following code template.
 
@@ -239,23 +189,11 @@ entity top is
 port (
     clk_i      : in  std_logic;     -- 10 kHz clock signal
     BTN0       : in  std_logic;     -- Synchronous reset
-    SW0_CPLD   : in  std_logic;     -- Input 0
-    SW1_CPLD   : in  std_logic;
-    SW2_CPLD   : in  std_logic;
-    SW3_CPLD   : in  std_logic;
-    SW4_CPLD   : in  std_logic;     -- Input 1
-    SW5_CPLD   : in  std_logic;
-    SW6_CPLD   : in  std_logic;
-    SW7_CPLD   : in  std_logic;
-    SW8_CPLD   : in  std_logic;     -- Input 2
-    SW9_CPLD   : in  std_logic;
-    SW10_CPLD  : in  std_logic;
-    SW11_CPLD  : in  std_logic;
-    SW12_CPLD  : in  std_logic;     -- Input 3
-    SW13_CPLD  : in  std_logic;
-    SW14_CPLD  : in  std_logic;
-    SW15_CPLD  : in  std_logic;
-    
+    SW0_CPLD, SW1_CPLD, SW2_CPLD, SW3_CPLD  : in  std_logic; -- Input 0
+    SW4_CPLD, SW5_CPLD, SW6_CPLD, SW7_CPLD  : in  std_logic; -- Input 1
+    SW8_CPLD, SW9_CPLD, SW10_CPLD,SW11_CPLD : in  std_logic; -- Input 2
+    SW12_CPLD,SW13_CPLD,SW14_CPLD,SW15_CPLD : in  std_logic; -- Input 3
+
     disp_dp    : out std_logic;     -- Decimal point
     disp_seg_o : out std_logic_vector(7-1 downto 0);
     disp_dig_o : out std_logic_vector(4-1 downto 0)

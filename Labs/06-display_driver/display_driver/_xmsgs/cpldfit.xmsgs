@@ -11,9 +11,6 @@
 <msg type="info" file="Cpld" num="0" delta="new" >Inferring BUFG constraint for signal &apos;<arg fmt="%s" index="1">clk_i</arg>&apos; based upon the LOC constraint &apos;<arg fmt="%s" index="2">P38</arg>&apos;. It is recommended that you declare this BUFG explicitedly in your design. Note that for certain device families the output of a BUFG constraint can not drive a gated clock, and the BUFG constraint will be ignored.
 </msg>
 
-<msg type="warning" file="Cpld" num="0" delta="new" >Unable to map all desired signals into function block, FB<arg fmt="%s" index="1">16</arg>. Buffering output signal <arg fmt="%s" index="2">disp_dp</arg> to allow all signals assigned to this function block to be placed.
-</msg>
-
 <msg type="warning" file="Cpld" num="0" delta="new" >Unable to map all desired signals into function block, FB<arg fmt="%s" index="1">16</arg>. Buffering output signal <arg fmt="%s" index="2">disp_seg_o&lt;6&gt;</arg> to allow all signals assigned to this function block to be placed.
 </msg>
 
