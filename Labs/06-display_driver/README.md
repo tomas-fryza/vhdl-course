@@ -32,7 +32,7 @@ You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ1
   ],
   ['Seven-segment data',
     {name: 'disp_seg_o',       wave: 'xx33335555xx', data: ['0','3','1','4','0','3','1','4'], },  
-    {name: 'A: disp_seg_o(6)', wave: 'xx0.1.0.1.x.', },
+    {name: 'A: disp_seg_o(6)', wave: 'xx0.1.0.1.xx', },
     {name: 'B: disp_seg_o(5)', wave: 'xx0',          },
     {name: 'C: disp_seg_o(4)', wave: 'xx0',          },
     {name: 'D: disp_seg_o(3)', wave: 'xx0',          },
