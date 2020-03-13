@@ -22,6 +22,7 @@ Let the entity has these inputs:
 * `srst_n_i` (synchronous reset, active low)
 * `ce_100Hz_i` (clock enable)
 * `cnt_en_i` (stopwatch enable)
+
 and outputs:
 * `sec_h_o[3:0]` (counter for tens of seconds)
 * `sec_l_o[3:0]` (counter for seconds)
@@ -29,7 +30,7 @@ and outputs:
 * `hth_l_o[3:0]` (counter for hundredths of seconds)
 
 
-## 3 EDA playground design
+## 3 Stopwatch simulation
 
 Design and simulate stopwatch counters in [EDA playground](https://www.edaplayground.com) or Xilinx ISE. Write a testbench that verifies all the functions of your stopwatch.
 
