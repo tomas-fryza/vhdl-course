@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/fryza/GIT/Digital-electronics-1/Labs/07-stopwatch/stopwatch/stopwatch_tb_isim_beh.exe" -prj "/home/fryza/GIT/Digital-electronics-1/Labs/07-stopwatch/stopwatch/stopwatch_tb_beh.prj" "work.stopwatch_tb" 
