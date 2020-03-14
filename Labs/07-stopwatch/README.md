@@ -32,15 +32,25 @@ and outputs:
 
 ## 3 Stopwatch simulation
 
-Design and simulate stopwatch counters in [EDA playground](https://www.edaplayground.com) or Xilinx ISE. Write a testbench that verifies all the functions of your stopwatch.
+Design and simulate stopwatch counters in [EDA playground](https://www.edaplayground.com) or Xilinx ISE. Write a testbench that verifies all the functions of your stopwatch (reset, counting, enable(s)).
 
+Hint: Use the `numeric_std` package that defines the `unsigned` type and mathematical operations with that type (you will need the sum for the counter). Use the following conversion to associate the `unsigned` signal with the `std_logic_vector` output.
 
+```vhdl
+...
+use ieee.numeric_std.all;
+...
+hth_l_o : out std_logic_vector(4-1 downto 0);
+...
+signal s_cnt0 : unsigned(4-1 downto 0) := (others => '0');
+...
+s_cnt0 <= s_cnt0 + 1;
+...
+hth_l_o <= std_logic_vector(s_cnt0);
+...
+```
 
-
-ukázka přetypování čítače na výstupní vektor
-dodržovat coding style
-
-
+**Follow programming conventions and coding style from computer exercises.**
 
 
 ## Synchronize git
