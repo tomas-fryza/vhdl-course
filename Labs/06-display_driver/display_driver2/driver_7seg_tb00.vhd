@@ -70,7 +70,7 @@ ARCHITECTURE behavior OF driver_7seg_tb00 IS
    signal dig_o : std_logic_vector(3 downto 0);
 
    -- Clock period definitions
-   constant clk_i_period : time := 10 ns;
+   constant clk_i_period : time := 100000 ns;
  
 BEGIN
  
@@ -103,10 +103,10 @@ BEGIN
     begin
         -- insert stimulus here 
         srst_n_i <= '0';
-        data0_i  <= "0000";
+        data3_i  <= "0000";
+        data2_i  <= "0011";
         data1_i  <= "0001";
-        data2_i  <= "0111";
-        data3_i  <= "1000";
+        data0_i  <= "0100";
         dp_i <= "1011";
         wait for clk_i_period;
 
