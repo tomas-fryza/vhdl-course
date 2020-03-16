@@ -58,7 +58,7 @@ architecture Behavioral of stopwatch is
 end architecture Behavioral;
 ```
 
-**Follow programming conventions and coding style from previous lab exercises.**
+Follow **programming conventions** and **coding style** from previous lab exercises.
 
 
 ## 4 Top level
