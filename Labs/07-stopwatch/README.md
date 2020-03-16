@@ -2,8 +2,9 @@
 
 #### Objectives
 
-In this laboratory exercise you will study XXXX.
-You will use a push button on the CoolRunner board as reset device, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and 7-segment display as output device.
+In this laboratory exercise you will BCD counters. You will use the Xilinx Isim simulator or the EDA playground online tool. You will use a push button on the CoolRunner board as reset device, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and 7-segment display as output device.
+
+![basys_stopwatch](../../Images/basys_stopwatch.jpg)
 
 
 ## 1 Synchronize Git and create a new folder
@@ -13,7 +14,7 @@ Synchronize the contents of your Digital-electronics-1 working directory with Gi
 
 ## 2 Stopwatch
 
-In VHDL, write a stopwatch counter and simulate it. The counter counts the time in the form of a **second : hundredths** and the maximum value is 59:99 (1 minute), then the time is reset to 00:00. The counter increment must be performed every 10 ms (one hundredth of a second) with the clock enable signal. In addition, the counting is enabled by the input signal `cnt_en_i` and the counter is reset by the synchronous reset input.
+In VHDL, write a stopwatch counter. The counter counts the time in the form of a **second&nbsp;&nbsp;hundredths** and the maximum value is 59 99 (1 minute), then the time is reset to 00 00. The counter increment must be performed every 10 ms (one hundredth of a second) with the clock enable signal. In addition, the counting is enabled by the input signal `cnt_en_i` and the counter is reset by the synchronous reset input.
 
 Use an approach that uses one BCD counter for each decade and counts from 0 to 9. The lowest of the counters is incremented every 10 ms, and each higher-order counter is incremented if all lower-order counters are equal to the maximum value of 9.
 
@@ -37,22 +38,34 @@ Design and simulate stopwatch counters in [EDA playground](https://www.edaplaygr
 Hint: Use the `numeric_std` package that defines the `unsigned` type and mathematical operations with that type (you will need the sum for the counter). Use the following conversion to associate the `unsigned` signal with the `std_logic_vector` output.
 
 ```vhdl
-...
+library ieee;
+use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+
+entity stopwatch is
+port(
+    hth_l_o : out std_logic_vector(4-1 downto 0);
 ...
-hth_l_o : out std_logic_vector(4-1 downto 0);
-...
-signal s_cnt0 : unsigned(4-1 downto 0) := (others => '0');
-...
-s_cnt0 <= s_cnt0 + 1;
-...
-hth_l_o <= std_logic_vector(s_cnt0);
-...
+
+architecture Behavioral of stopwatch is
+    signal s_cnt0 : unsigned(4-1 downto 0) := (others => '0');
+    ...
+
+    s_cnt0 <= s_cnt0 + 1;
+    ...
+
+    hth_l_o <= std_logic_vector(s_cnt0);
+end architecture Behavioral;
 ```
 
-**Follow programming conventions and coding style from computer exercises.**
+**Follow programming conventions and coding style from previous lab exercises.**
+
+
+## 4 Top level
+
+Implement the top level in VHDL **or instead** draw a block diagram of used modules and name all input, output and internal signals.
 
 
 ## Synchronize git
 
-Your repository must include the source code for the stopwatch, the testbench code and the screenshot of the correct simulation. Add, commit, and push all local changes to your remote repository.
+Your repository must include README file, source code for the stopwatch, testbench code, screenshot of the correct simulation, and source code or schematic of top level implementation.
