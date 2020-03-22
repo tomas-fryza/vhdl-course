@@ -63,9 +63,9 @@ Follow **programming conventions** and **coding style** from previous lab exerci
 
 ## 4 Top level
 
-Implement the top level in VHDL **or instead** draw a block diagram of used modules and name all input, output and internal signals.
+Implement the top level in VHDL **or instead** draw a block diagram of used modules and name all inputs, outputs and internal signals.
 
 
 ## Synchronize git
 
-Your repository must include README file, source code for the stopwatch, testbench code, screenshot of the correct simulation, and source code or schematic of top level implementation. Submit your solution **no later** than Friday.
+Your repository must include `README.md` file, source code for the stopwatch, testbench code, screenshot of the correct simulation, and source code or schematic of top level implementation. Submit your solution **no later** than Friday.
