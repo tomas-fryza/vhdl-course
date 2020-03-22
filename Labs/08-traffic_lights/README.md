@@ -69,7 +69,7 @@ Implement the top level in VHDL **or instead** draw a block diagram of used modu
 
 ## Synchronize git
 
-Your repository must include README file, source code for the traffic light controller, testbench code, screenshot of the correct simulation, and source code or schematic of top level implementation. Submit your solution **no later** than Friday.
+Your repository must include README file, source code for the traffic light controller, testbench code, screenshot of the correct simulation(s), and source code or schematic of top level implementation. Submit your solution **no later** than Friday.
 
 
 ## Experiments on your own
