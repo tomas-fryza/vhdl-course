@@ -78,4 +78,6 @@ Your repository must include `README.md` file with simulation screenshot(s), nex
 
    ![traffic_light2](../../Images/lab8_traffic_light_intersection.png)
 
-Explain how the intersection throughput is maximized.
+   Explain how the intersection throughput is maximized.
+
+   Sraw a state diagram of your implementation.
