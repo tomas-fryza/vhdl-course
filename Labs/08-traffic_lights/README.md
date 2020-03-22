@@ -84,4 +84,4 @@ Your repository must include `README.md` file with simulation screenshot(s), nex
 
    Explain how the intersection throughput is maximized.
 
-   Sraw a state diagram of your implementation.
+   Draw a state diagram of your implementation.
