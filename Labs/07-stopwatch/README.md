@@ -14,7 +14,7 @@ Synchronize the contents of your Digital-electronics-1 working directory with Gi
 
 ## 2 Stopwatch
 
-In VHDL, write a stopwatch counter. The counter counts the time in the form of a **seconds&nbsp;&nbsp;hundredths** and the maximum value is 59 99 (1 minute), then the time is reset to 00 00 and the counting continues. The counter increment must be performed every 10 ms (one hundredth of a second) with the clock enable signal. In addition, the counting is enabled by the input signal `cnt_en_i` and the counter is reset by the synchronous reset input.
+In VHDL, write a stopwatch counter. The counter counts the time in the form of a **seconds&nbsp.hundredths** and the maximum value is 59.99 (1 minute), then the time is reset to 00 00 and the counting continues. The counter increment must be performed every 10 ms (one hundredth of a second) with the clock enable signal. In addition, the counting is enabled by the input signal `cnt_en_i` and the counter is reset by the synchronous reset input.
 
 Use an approach that uses one BCD counter for each decade and counts from 0 to 9. The lowest of the counters is incremented every 10 ms, and each higher-order counter is incremented if all lower-order counters are equal to the maximum value of 9.
 
@@ -22,7 +22,7 @@ Let the entity has these inputs:
 * `clk_i` (clock)
 * `srst_n_i` (synchronous reset, active low)
 * `ce_100Hz_i` (clock enable)
-* `cnt_en_i` (stopwatch enable)
+* `cnt_en_i` (stopwatch enable by external switch or push button)
 
 and outputs:
 * `sec_h_o[3:0]` (counter for tens of seconds)
