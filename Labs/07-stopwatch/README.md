@@ -68,4 +68,4 @@ Implement the top level in VHDL **or instead** draw a block diagram of used modu
 
 ## Synchronize git
 
-Your repository must include `README.md` file, source code for the stopwatch, testbench code, screenshot of the correct simulation, and source code or schematic of top level implementation. Submit your solution **no later** than Friday.
+Your repository must include `README.md` file with simulation screenshot(s), next the source code for stopwatch, testbench code, and source code or schematic of top level implementation. Submit your solution **no later** than Friday.
