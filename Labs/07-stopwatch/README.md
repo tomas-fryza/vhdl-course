@@ -4,7 +4,7 @@
 
 In this laboratory exercise you will implement several counters and create a stopwatch. You will use the Xilinx Isim simulator or the EDA playground online tool. You will use a push button on the CoolRunner board as reset device, a switch as external enable input, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and 7-segment display as output device.
 
-![basys_stopwatch](../../Images/basys_stopwatch.jpg)
+![stopwatch_photo](stopwatch_photo.jpg)
 
 
 ## 1 Synchronize Git and create a new folder
