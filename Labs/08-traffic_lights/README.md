@@ -21,7 +21,7 @@ A finite state machine (FSM) is a computation model that can be implemented with
 * The output of the Mealy FSM depends on the present state and inputs.
 * The outputs of a Moore machine depend only on the present state and not on the inputs.
 
-Read the article [Implementing a Finite State Machine in VHDL](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/) and understand how to design your own FSM. How you can define your own data type in VHDL?
+Read the article [Implementing a Finite State Machine in VHDL](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/) and understand how to design your own FSM. How you can define your own data type in VHDL? Give an example.
 
 
 ## 3 Traffic light controller
@@ -68,7 +68,7 @@ Design and simulate traffic light FSM in [EDA playground](https://www.edaplaygro
 
 ## 5 Top level
 
-Implement the top level in VHDL **or instead** draw a block diagram of used modules and name all inputs, outputs and internal signals.
+Implement the top level in VHDL **or instead** draw a block diagram of used modules and name all inputs, outputs and internal signals. Use the `clock_enable` entity with the correct timing (the duration of each state should be 1 or 5 seconds).
 
 
 ## Synchronize git
