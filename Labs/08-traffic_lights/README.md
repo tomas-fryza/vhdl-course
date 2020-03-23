@@ -58,7 +58,7 @@ end traffic;
 
 Change the reset in the example from asynchronous to synchronous.
 
-Rename the states `s0`, `s1`, .., `s5` from the example to more meaningful.
+Rename the states `s0`, `s1`, .., `s5` from the example to more meaningful and draw the state diagram.
 
 
 ## 4 Traffic light simulation
