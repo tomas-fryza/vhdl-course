@@ -28,7 +28,7 @@ Read the article [Implementing a Finite State Machine in VHDL](https://www.allab
 
 Watch [Example 62: Traffic Light Controller](https://www.youtube.com/watch?v=6_Rotnw1hFM) video and implement the basic controller for 2 one-way streets in VHDL.
 
-Hint: Follow **programming conventions** and **coding style** from previous lab exercises. Use the `numeric_std` package instead of `ieee.std_logic_unsigned` and change type for internal signals `count`, `SEC5`, and `SEC1` from `std_logic_vector` to `unsigned`. Also change `clk'event and clk = '1'` to `rising_edge(clk)`.
+Hint: Use the `numeric_std` package instead of `ieee.std_logic_unsigned` and change type for internal signals `count`, `SEC5`, and `SEC1` from `std_logic_vector` to `unsigned`. Also change `clk'event and clk = '1'` to `rising_edge(clk)`.
 
 ```vhdl
 library ieee;
@@ -57,6 +57,8 @@ end traffic;
 ```
 
 Change the reset in the example from asynchronous to synchronous.
+
+Follow programming conventions and coding style from previous lab exercises and rename all inputs, outputs and internal signals.
 
 Rename the states `s0`, `s1`, .., `s5` from the example to more meaningful and draw the state diagram.
 
