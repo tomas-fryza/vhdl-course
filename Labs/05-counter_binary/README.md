@@ -1,4 +1,4 @@
-# Lab 5: Binary counters
+# Lab 5: Binary counter
 
 #### Objectives
 
