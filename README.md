@@ -18,7 +18,7 @@ The repository contains VHDL examples for bachelor course [*Digital Electronics 
 | [06-display_driver](Labs/06-display_driver) | Lab 6: Driver for seven-segment display |
 | [07-stopwatch](Labs/07-stopwatch) | Lab 7: Stopwatch |
 | [08-traffic_lights](Labs/08-traffic_lights) | Lab 8: Traffic light controller |
-| [project](Labs/project) | Lab 9-13: Final project |
+| [project](Labs/project) | Lab 9-13: Project |
 
 
 ## Materials
