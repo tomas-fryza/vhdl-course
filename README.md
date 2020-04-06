@@ -45,8 +45,7 @@ The following hardware and software components are mainly used in the lab.
 
 ![ise](Images/ise_synthesize_org.png)
 
-<img src="Images/coolrunner_board.jpg" alt="CoolRunner-II board" height="250"/>
-<img src="Images/ise_synthesize_org.png" alt="ISE" height="250"/>
+<img src="Images/coolrunner_board.jpg" alt="CoolRunner-II board" height="250"/> <img src="Images/ise_synthesize_org.png" alt="ISE" height="250"/>
 
 
 ## References
