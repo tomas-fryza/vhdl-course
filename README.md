@@ -34,7 +34,7 @@ The following hardware and software components are mainly used in the lab.
 | CPLD board | CPLD expansion board by Michal Kubicek | [Schematic](Docs/cpld_expansion.pdf)
 
 ![cpld](Images/coolrunner_board.jpg)
-
+<img src="Images/coolrunner_board.jpg" alt="CoolRunner-II board" width="400"/>
 
 ## Software
 
