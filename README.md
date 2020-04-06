@@ -33,8 +33,8 @@ The following hardware and software components are mainly used in the lab.
 | [Platform Cable USB II](https://www.xilinx.com/products/boards-and-kits/hw-usb-ii-g.html) | USB tool for in-circuit configuration and programming of all Xilinx devices |
 | CPLD board | CPLD expansion board by Michal Kubicek | [Schematic](Docs/cpld_expansion.pdf)
 
-![cpld](Images/coolrunner_board.jpg)
-<img src="Images/coolrunner_board.jpg" alt="CoolRunner-II board" width="400"/>
+<img src="Images/coolrunner_board.jpg" alt="CoolRunner-II board" height="300"/>
+<img src="Images/ise_synthesize_org.png" alt="ISE" height="300"/>
 
 ## Software
 
@@ -44,6 +44,9 @@ The following hardware and software components are mainly used in the lab.
 | [Linux Mint](https://linuxmint.com/download_all.php) | Linux Mint 18.2 "Sonya" - Xfce (64-bit) |
 
 ![ise](Images/ise_synthesize_org.png)
+
+<img src="Images/coolrunner_board.jpg" alt="CoolRunner-II board" height="300"/>
+<img src="Images/ise_synthesize_org.png" alt="ISE" height="300"/>
 
 
 ## References
