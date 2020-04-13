@@ -63,7 +63,7 @@ You will use push buttons and slide switches on the CoolRunner-II CPLD starter b
     ```
 
 
-## 3 Hexadecimal digit to seven-segment decoder in VHDL
+## 3 VHDL code for hexadecimal digit to seven-segment decoder
 
 1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE) titled `hex_to_segment` for XC2C256-TQ144 CPLD device. Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-segment`, ie in **your** local folder.
 
@@ -129,7 +129,7 @@ end architecture Behavioral;
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
 
-## 4 Top level VHDL code
+## 4 VHDL code for top level
 
 1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy/paste the following code template.
 
