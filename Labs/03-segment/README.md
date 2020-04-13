@@ -1,4 +1,4 @@
-# Lab 3: Hex to seven-segment decoder
+# Lab 3: Hexadecimal digit to seven-segment decoder
 
 #### Objectives
 
@@ -63,7 +63,7 @@ You will use push buttons and slide switches on the CoolRunner-II CPLD starter b
     ```
 
 
-## 3 Hex to seven-segment VHDL code
+## 3 Hexadecimal digit to seven-segment decoder in VHDL
 
 1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE) titled `hex_to_segment` for XC2C256-TQ144 CPLD device. Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-segment`, ie in **your** local folder.
 
@@ -74,7 +74,7 @@ You will use push buttons and slide switches on the CoolRunner-II CPLD starter b
 ```vhdl
 ------------------------------------------------------------------------
 --
--- Hex to seven-segment decoder.
+-- Hexadecimal digit to seven-segment decoder.
 -- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
 --
 -- Copyright (c) 2019-2020 Tomas Fryza
@@ -87,7 +87,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 ------------------------------------------------------------------------
--- Entity declaration for hex to seven-segment decoder
+-- Entity declaration for hexadecimal digit to seven-segment decoder
 ------------------------------------------------------------------------
 entity hex_to_7seg is
 port (
@@ -138,7 +138,7 @@ end architecture Behavioral;
 ```vhdl
 ------------------------------------------------------------------------
 --
--- Implementation of hex to seven-segment decoder.
+-- Implementation of hexadecimal digit to seven-segment decoder.
 -- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
 --
 -- Copyright (c) 2018-2020 Tomas Fryza
