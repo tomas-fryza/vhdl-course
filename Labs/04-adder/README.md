@@ -66,7 +66,7 @@ You will use slide switches on the CPLD expansion board ([schematic](../../Docs/
     ```
 
 
-## 3 Half adder VHDL code
+## 3 VHDL code for half adder
 
 1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE) titled `binary_adder` for XC2C256-TQ144 CPLD device. Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/04-adder`, ie in **your** local folder.
 
@@ -112,7 +112,7 @@ end architecture Behavioral;
 3. Use low-level gates `and`, `or`, `not`, etc. and write logic functions for Carry and Sum. Save all files in menu **File > Save All**.
 
 
-## 4 Full adder VHDL code
+## 4 VHDL code for full adder
 
 1.  Create a new source file **Project > New Source... > VHDL Module**, name it `full_adder` and copy/paste the following code.
 
