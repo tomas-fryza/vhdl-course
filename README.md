@@ -7,7 +7,7 @@ The repository contains VHDL examples for bachelor course [*Digital Electronics 
 | :-- | :-- |
 | [01-gates](Labs/01-gates) | Lab 1: Introduction to digital circuits |
 | [02-ise](Labs/02-ise) | Lab 2: Introduction to VHDL and Xilinx ISE |
-| [03-segment](Labs/03-segment) | Lab 3: Hex to seven-segment decoder |
+| [03-segment](Labs/03-segment) | Lab 3: Hexadecimal digit to seven-segment decoder |
 | [04-adder](Labs/04-adder) | Lab 4: Binary adder |
 | [05-counter_binary](Labs/05-counter_binary) | Lab 5: Binary counter |
 | [06-display_driver](Labs/06-display_driver) | Lab 6: Driver for seven-segment display |
