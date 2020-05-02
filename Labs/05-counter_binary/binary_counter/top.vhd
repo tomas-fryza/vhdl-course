@@ -40,12 +40,12 @@ begin
     --- WRITE YOUR CODE HERE
     CLK_EN_0 : entity work.clock_enable
     generic map (
-        g_NPERIOD => x"09c4"        -- @ 250 ms if fclk = 10 kHz
+        g_MAX        => x"09c4"        -- @ 250 ms if fclk = 10 kHz
     )
     port map (
         clk_i          => clk_i,    -- 10 kHz
         srst_n_i       => BTN0,     -- Synchronous reset
-        clock_enable_o => s_en
+        clk_en_o => s_en
     );
 
 

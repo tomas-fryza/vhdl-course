@@ -11,14 +11,14 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
+use ieee.numeric_std.all;   -- Provides unsigned numerical computation
 
 ------------------------------------------------------------------------
 -- Entity declaration for N-bit binary counter
 ------------------------------------------------------------------------
 entity binary_cnt is
 generic(
-    g_NBIT : positive := 5      -- Number of bits
+    g_NBIT : natural := 5      -- Number of bits
 );
 port(
     clk_i    : in  std_logic;
@@ -32,17 +32,20 @@ end entity binary_cnt;
 -- Architecture declaration for N-bit binary counter
 ------------------------------------------------------------------------
 architecture Behavioral of binary_cnt is
-    signal s_cnt : std_logic_vector(g_NBIT-1 downto 0);
-begin
 
+    -- Internal signals
+    signal s_cnt : unsigned(g_NBIT-1 downto 0) := (others => '0');
+
+begin
     --------------------------------------------------------------------
     -- p_binary_cnt:
-    -- Sequential process with synchronous reset and clock enable,
-    -- which implements an one-way binary counter.
+    -- Clocked process with synchronous reset and clock enable,
+    -- which implements one-way binary counter.
     --------------------------------------------------------------------
     p_binary_cnt : process (clk_i)
     begin
         if rising_edge(clk_i) then  -- Rising clock edge
+
             if srst_n_i = '0' then  -- Synchronous reset (active low)
                 s_cnt <= (others => '0');   -- Clear all bits
             elsif en_i = '1' then
@@ -51,6 +54,6 @@ begin
         end if;
     end process p_binary_cnt;
 
-    cnt_o <= s_cnt;                 -- Entity output
+    cnt_o <= std_logic_vector(s_cnt);   -- Must be retyped
 
 end architecture Behavioral;
