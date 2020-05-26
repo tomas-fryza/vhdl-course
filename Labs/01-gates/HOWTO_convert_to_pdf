@@ -1,0 +1,1 @@
+pandoc README.md -o README.pdf "-fmarkdown-implicit_figures -o" --from=markdown -V geometry:margin=.4in --toc --highlight-style=espresso
