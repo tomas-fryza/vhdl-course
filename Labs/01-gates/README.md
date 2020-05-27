@@ -95,7 +95,7 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 
 1. Use online digital circuit simulator [CircuitVerse](https://circuitverse.org/), launch the simulator, draw and verify basic two-input logic gates.
 
-    ![](../../Images/simulator_basic_gates.png)\
+    ![](../../Images/simulator_basic_gates.png)
 
 2. Run any text editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` **local** file (not on GitHub), create/complete tables with logical values, and add a screenshot from the simulator.
 
@@ -113,11 +113,11 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 
 3. Use De Morgan's law and modify logic function to form with (N)AND and (N)OR gates only. Verify all three functions in online simulator.
 
-    ![](equation1.png)\
+    ![](equation1.png)
 
-    ![](equation1_nand.png)\
+    ![](equation1_nand.png)
     
-    ![](equation1_nor.png)\
+    ![](equation1_nor.png)
     
     | **A** | **B** |**C** | **f** | **f_NAND** | **f_NOR** |
     | :-: | :-: | :-: | :-: | :-: | :-: |
