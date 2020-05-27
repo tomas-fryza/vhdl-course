@@ -95,7 +95,7 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 
 1. Use online digital circuit simulator [CircuitVerse](https://circuitverse.org/), launch the simulator, draw and verify basic two-input logic gates.
 
-    ![and_gates](../../Images/simulator_basic_gates.png){ width=300px }
+    ![and_gates](../../Images/simulator_basic_gates.png)
 
 2. Run any text editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` **local** file (not on GitHub), create/complete tables with logical values, and add a screenshot from the simulator.
 
