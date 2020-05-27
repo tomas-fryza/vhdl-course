@@ -1,3 +1,1 @@
-pandoc README.md -o README.pdf "-fmarkdown-implicit_figures -o" --from=markdown -V geometry:margin=.4in --toc --highlight-style=espresso
-
-pandoc --from=markdown --output=README.pdf README.md --variable=geometry:"margin=0.5cm, paperheight=421pt, paperwidth=595pt" --highlight-style=kate --verbose
+pandoc --from=markdown --output=README.pdf README.md --variable=geometry:"margin=1.5cm, paperheight=842pt, paperwidth=595pt" --toc --highlight-style=tango
