@@ -113,17 +113,7 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 
 3. Use De Morgan's law and modify logic function to form with (N)AND and (N)OR gates only. Verify all three functions in online simulator.
 
-
-```` {.latex}
- $\frac{n!}{k!(n-k)!} = \binom{n}{k}$
-````
-
-The result:
-
-$\frac{n!}{k!(n-k)!} = \binom{n}{k}$
-
-
-   ![equation](https://latex.codecogs.com/gif.latex?f%28c%2Cb%2Ca%29%20%3D%20%28%5Coverline%7Bb%7Da%29%20&plus;%20%28%5Coverline%7Bc%7D%5Coverline%7Bb%7D%29)
+    ![equation](https://latex.codecogs.com/gif.latex?f%28c%2Cb%2Ca%29%20%3D%20%28%5Coverline%7Bb%7Da%29%20&plus;%20%28%5Coverline%7Bc%7D%5Coverline%7Bb%7D%29)
 
     &nbsp;
 
