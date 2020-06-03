@@ -1,0 +1,26 @@
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+
+%\let\centering\relax
+
+\IfFileExists{xcolor.sty}{
+    \RequirePackage{xcolor}
+}{
+    \RequirePackage{color}
+}
+
+% change background color for inline code in
+% markdown files. The following code does not work well for
+% long text as the text will exceed the page boundary
+\definecolor{bgcolor}{HTML}{E0E0E0}
+\let\oldtexttt\texttt
+
+\renewcommand{\texttt}[1]{
+    \colorbox{bgcolor}{\oldtexttt{#1}}
+}
