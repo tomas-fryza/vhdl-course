@@ -14,9 +14,9 @@ You will use push buttons on the CoolRunner-II CPLD starter board ([XC2C256-TQ14
 
 ## 1 Preparation tasks (done before the lab at home)
 
-1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs. Complete the truth table for 1-bit *Identity comparator* (A=B), and two *Magnitude comparators* (A>B, A<B). Note, '1' represents true, '0' represents false.
+1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs. Complete the truth table for 1-bit *Identity comparator* (A equals B), and two *Magnitude comparators* (A greater than B, A less than B). Note, '1' represents true, '0' represents false.
 
-    | **A** | **B** | **A>B** | **A=B** | **A\<B** |
+    | **A** | **B** | **A greater than B** | **A equals B** | **A less than B** |
     | :-: | :-: | :-: | :-: | :-: |
     | 0 | 0 | 0 | 1 | 0 |
     | 0 | 1 |  |  |  |
@@ -25,9 +25,8 @@ You will use push buttons on the CoolRunner-II CPLD starter board ([XC2C256-TQ14
 
     According to the truth table, create canonical SoP (Sum of Products) or PoS (Product of Sums) forms as follows:
 
-    &nbsp;
-
-    ![equation](https://latex.codecogs.com/gif.latex?y_%7BA%3EB%7D%5E%7BSoP%7D%3D)
+    ![Greater than](comparator_gt.png
+        )
 
     &nbsp;
     
