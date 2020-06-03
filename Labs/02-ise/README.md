@@ -9,19 +9,19 @@ The purpose of this laboratory exercise is to become familiar with the Xilinx IS
 
 You will use push buttons on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as inputs and light emitting diodes (LEDs) as output devices.
 
-![cpld_leds](../../Images/coolrunner_leds.jpg)
+![CoolRunner-II CPLD starter board](coolrunner_leds.jpg)
 
 
 ## 1 Preparation tasks (done before the lab at home)
 
 1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs. Complete the truth table for 1-bit *Identity comparator* (A=B), and two *Magnitude comparators* (A>B, A<B). Note, '1' represents true, '0' represents false.
 
-    | **A** | **B** | **A>B** | **A=B** | **A<B** |
+    | **A** | **B** | **A>B** | **A=B** | **A\<B** |
     | :-: | :-: | :-: | :-: | :-: |
     | 0 | 0 | 0 | 1 | 0 |
-    | 0 | 1 |  |   |   |
-    | 1 | 0 |  |   |   |
-    | 1 | 1 |  |   |   |
+    | 0 | 1 |  |  |  |
+    | 1 | 0 |  |  |  |
+    | 1 | 1 |  |  |  |
 
     According to the truth table, create canonical SoP (Sum of Products) or PoS (Product of Sums) forms as follows:
 
@@ -114,8 +114,8 @@ You will use push buttons on the CoolRunner-II CPLD starter board ([XC2C256-TQ14
 
 5. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
-![ise_schema](../../Images/ise_template_top.png)
-![ise_schema](../../Images/ise_template_gates.png)
+![ise_schema](ise_template_top.png)
+![ise_schema](ise_template_gates.png)
 
 6. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
 

@@ -95,7 +95,7 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 
 1. Use online digital circuit simulator [CircuitVerse](https://circuitverse.org/), launch the simulator, draw and verify basic two-input logic gates.
 
-    ![](../../Images/simulator_basic_gates.png)
+    ![Basic gates in CircuitVerse online digital circuit simulator](simulator_basic_gates.png)
 
 2. Run any text editor, such as Visual Studio Code, open `Digital-electronics-1/Labs/01-gates/README.md` **local** file (not on GitHub), create/complete tables with logical values, and add a screenshot from the simulator.
 
@@ -113,11 +113,11 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 
 3. Use De Morgan's law and modify logic function to form with (N)AND and (N)OR gates only. Verify all three functions in online simulator.
 
-    ![](equation1.png)
+    ![Logic function](equation1.png)
 
-    ![](equation1_nand.png)
+    ![NAND version](equation1_nand.png)
     
-    ![](equation1_nor.png)
+    ![NOR version](equation1_nor.png)
     
     | **A** | **B** |**C** | **f** | **f_NAND** | **f_NOR** |
     | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -161,23 +161,23 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 
 1. Use digital circuit [simulator](https://circuitverse.org/) and verify basic Boolean postulates:
 
-    ![equation](postulate1.png)
+    ![Boolean postulate 1](postulate1.png)
 
-    ![equation](postulate2.png)
+    ![Boolean postulate 2](postulate2.png)
 
-    ![equation](postulate3.png)
+    ![Boolean postulate 3](postulate3.png)
 
-    ![equation](postulate4.png)
+    ![Boolean postulate 4](postulate4.png)
 
     and Distributive laws:
 
-    ![equation](distributive1.png)
+    ![Distributive law 1](distributive1.png)
 
-    ![equation](distributive2.png)
+    ![Distributive law 2](distributive2.png)
 
 2. Use online digital circuit [simulator](https://circuitverse.org/), draw the logic diagram according to figure, complete the truth table, and determine the circuit function.
 
-    ![logic](../../Images/simulator_gates_2-4.png)
+    ![Unknown circuit](../../Images/simulator_gates_2-4.png)
 
     | **A** | **B** | **Q3** | **Q2** | **Q1** | **Q0** |
     | :-: | :-: | :-: | :-: | :-: | :-: |

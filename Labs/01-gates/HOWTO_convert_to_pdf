@@ -1,1 +1,0 @@
-pandoc --from=markdown --output=README.pdf README.md --variable=geometry:"margin=1.5cm, paperheight=842pt, paperwidth=595pt" --toc --highlight-style=tango
