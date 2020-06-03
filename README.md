@@ -31,7 +31,9 @@ The following hardware and software components are mainly used in the lab.
 * ISE Design, ISE WebPACK Design Software, ver 14.7: [web page](https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html), [installation](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
 * Linux Mint 18.2 "Sonya" - Xfce (64-bit): [web page](https://linuxmint.com/download_all.php)
 
-<img src="Images/coolrunner_board.jpg" alt="CoolRunner-II board" height="300"/> <img src="Images/ise_synthesize_org.png" alt="ISE" height="300"/>
+![CoolRunner-II CPLD starter board](Images/coolrunner_board.jpg)
+
+![ISE Design, ISE WebPACK Design Software, ver 14.7](Images/ise_synthesize_org.png)
 
 
 ## References
