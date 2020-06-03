@@ -49,3 +49,6 @@ The following hardware and software components are mainly used in the lab.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+[![university](https://img.shields.io/badge/university-Brno%20University%20of%20Technology-red.svg)](https://www.vutbr.cz/en/)
+[![department](https://img.shields.io/badge/department-Dept.%20of%20Radio%20Electronics-blue)](https://www.facebook.com/URELBrno)
