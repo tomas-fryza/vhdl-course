@@ -9,7 +9,7 @@ The purpose of this laboratory exercise is to design a 7-segment display decoder
 
 You will use push buttons and slide switches on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as inputs and light emitting diodes (LEDs) and 7-segment display as output devices.
 
-![cpld_segments](../../Images/coolrunner_segments.jpg)
+![CoolRunner-II CPLD starter board](Images/coolrunner_segments.jpg)
 
 
 ## 1 Preparation tasks (done before the lab at home)
@@ -69,7 +69,7 @@ You will use push buttons and slide switches on the CoolRunner-II CPLD starter b
 
 2. Create a new source file **Project > New Source... > VHDL Module**, name it `hex_to_7seg` and copy/paste the following code template.
 
-![hex_to_7seg](../../Images/hex_to_7seg.svg)
+![Ports of hexadecimal digit to seven-segment decoder](Images/hex_to_7seg.png)
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -133,7 +133,7 @@ end architecture Behavioral;
 
 1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy/paste the following code template.
 
-![top](../../Images/top___hex_to_7seg.svg)
+![Ports of top module](Images/top___hex_to_7seg.png)
 
 ```vhdl
 ------------------------------------------------------------------------

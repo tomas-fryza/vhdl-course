@@ -1,27 +1,30 @@
 #!/bin/bash
 # Convert README files to PDF
 
-filename="README"
 pandocparams="-V colorlinks -V urlcolor=Magenta \
-    ${filename}.md -o ${filename}.pdf \
     --variable=geometry:"margin=2.25cm, paperheight=842pt, paperwidth=595pt" \
     --highlight-style=tango"
 
 cd ..
-echo -n "Converting `pwd`/${filename}.md ..."
-pandoc -H Labs/head.tex ${pandocparams}
+filename="labs"
+echo -n "Converting `pwd`/README.md -> ${filename}.pdf ..."
+pandoc -H Labs/head.tex README.md -o ${filename}.pdf ${pandocparams}
 echo "done"
 
-cd Labs/01-gates
-echo -n "Converting `pwd`/${filename}.md ..."
-pandoc -H ../head.tex ${pandocparams}
+filename="01-gates"
+cd Labs/${filename}
+echo -n "Converting `pwd`/README.md -> ${filename}.pdf ..."
+pandoc -H ../head.tex README.md -o ../${filename}.pdf ${pandocparams}
 echo "done"
 
-cd ../02-ise
-echo -n "Converting `pwd`/${filename}.md ..."
-pandoc -H ../head.tex \
-    -V colorlinks -V urlcolor=Magenta \
-    ${filename}.md -o ${filename}.pdf \
-    --variable=geometry:"margin=2.25cm, paperheight=842pt, paperwidth=595pt" \
-    --highlight-style=tango
+filename="02-ise"
+cd ../${filename}
+echo -n "Converting `pwd`/README.md -> ${filename}.pdf ..."
+pandoc -H ../head.tex README.md -o ../${filename}.pdf ${pandocparams}
+echo "done"
+
+filename="03-segment"
+cd ../${filename}
+echo -n "Converting `pwd`/README.md -> ${filename}.pdf ..."
+pandoc -H ../head.tex README.md -o ../${filename}.pdf ${pandocparams}
 echo "done"
