@@ -1,1 +1,0 @@
-pandoc -H head.tex -V colorlinks -V urlcolor=NavyBlue -V toccolor=Red README.md -o README.pdf --variable=geometry:"margin=2.5cm, paperheight=842pt, paperwidth=595pt" --toc --highlight-style=tango
