@@ -48,4 +48,4 @@ The following hardware and software components are mainly used in the lab.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+The course is [licensed](https://choosealicense.com/licenses/mit/) under the MIT license.
