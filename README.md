@@ -48,4 +48,4 @@ The following hardware and software components are mainly used in the lab.
 
 ## License
 
-The course is [licensed](https://choosealicense.com/licenses/mit/) under the MIT license.
+The course is [licensed](https://github.com/tomas-fryza/Digital-electronics-1/blob/master/LICENSE) under the MIT license.
