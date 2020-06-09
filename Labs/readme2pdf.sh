@@ -24,7 +24,7 @@ pandoc -H ../head.tex README.md -o ../${filename}.pdf --variable=geometry:"margi
 echo "done."
 
 #for ii in 02-ise 03-segment 04-adder 05-counter_binary
-for ii in 05-counter_binary
+for ii in 06-display_driver
 do
     cd ../${ii}
     echo -n "Converting `pwd`/README.md -> ${ii}.pdf... "

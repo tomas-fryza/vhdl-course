@@ -9,16 +9,14 @@ In this laboratory exercise, you will study the creation of a sequential circuit
 
 You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as reset device, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and 7-segment display as output device. You will also use slide switches on the CPLD expansion board ([schematic](../../Docs/cpld_expansion.pdf)) as inputs.
 
-![coolrunner_bin_cnt](../../Images/coolrunner_disp_driver.jpg)
+![CoolRunner-II CPLD starter board](Images/coolrunner_disp_driver.jpg)
 
 
 ## 1 Preparation tasks (done before the lab at home)
 
 1. See [reference manual](../../Docs/coolrunner-ii_rm.pdf) of the Coolrunner board, find out the connection of 7-segment display, and complete the signal timing to display `03.14` value. Note that the duration of one symbol is 4&nbsp;ms.
 
-    &nbsp;
-    ![segment_timing](../../Images/wavedrom_7-segment.png)
-    &nbsp;
+![Timing of seven-segment display](Images/wavedrom_7-segment.png)
 
 > The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows:
 >
@@ -234,7 +232,7 @@ end architecture Behavioral;
 
 ## Experiments on your own
 
-1. On your smartphone, set slow motion video recording and observe the seven-segment display behavior. :)
+1. On your smartphone, set slow motion video recording and observe the seven-segment display behavior:)
 
 2. Display 4-bit input values with green and red LEDs on the CPLD expansion board.
 
