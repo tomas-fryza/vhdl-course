@@ -23,8 +23,8 @@ echo -n "Converting `pwd`/README.md -> ${filename}.pdf... "
 pandoc -H ../head.tex README.md -o ../${filename}.pdf --variable=geometry:"margin=2.25cm, paperheight=842pt, paperwidth=595pt" ${pandocstyle}
 echo "done."
 
-#for ii in 02-ise 03-segment 04-adder 05-counter_binary
-for ii in 06-display_driver
+#for ii in 02-ise 03-segment 04-adder 05-counter_binary 06-display_driver
+for ii in 07-stopwatch
 do
     cd ../${ii}
     echo -n "Converting `pwd`/README.md -> ${ii}.pdf... "

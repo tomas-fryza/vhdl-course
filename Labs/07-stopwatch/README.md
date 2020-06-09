@@ -6,7 +6,7 @@ In this laboratory exercise you will implement several counters and create a sto
 
 [Video](https://youtu.be/B-whkwjdaxU)
 
-![stopwatch_photo](stopwatch_photo.jpg)
+![CoolRunner-II CPLD starter board](Images/stopwatch_photo.jpg)
 
 
 ## 1 Synchronize Git and create a new folder
@@ -20,17 +20,16 @@ In VHDL, write a stopwatch counter. The counter counts the time in the form of a
 
 Use an approach that uses one counter for each decade and counts from 0 to 9 (or to 5). The lowest of the counters is incremented every 10 ms, and each higher-order counter is incremented if all lower-order counters are equal to the maximum value of 9. To do this, use a single sequential process similar to the previous two exercises.
 
-Let the entity has these inputs:
-* `clk_i` (clock)
-* `srst_n_i` (synchronous reset, active low)
-* `ce_100Hz_i` (clock enable)
-* `cnt_en_i` (stopwatch enable by external switch or push button)
-
-and outputs:
-* `sec_h_o[3:0]` (counter for tens of seconds)
-* `sec_l_o[3:0]` (counter for seconds)
-* `hth_h_o[3:0]` (counter for tenths of seconds)
-* `hth_l_o[3:0]` (counter for hundredths of seconds)
+| **Name** | **Direction** | **Description** |
+| :-- | :-: | :-- |
+| `clk_i` | input | Main clock |
+| `srst_n_i` | input | Synchronous reset, active low |
+| `ce_100Hz_i` | input | Clock enable |
+| `cnt_en_i` | input | Stopwatch enable by external switch or push button |
+| `sec_h_o[3:0]` | output | Counter for tens of seconds |
+| `sec_l_o[3:0]` | output | Counter for seconds |
+| `hth_h_o[3:0]` | output | Counter for tenths of seconds |
+| `hth_l_o[3:0]` | output | Counter for hundredths of seconds |
 
 
 ## 3 Stopwatch simulation
