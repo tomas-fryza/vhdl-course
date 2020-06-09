@@ -46,7 +46,7 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 
 2. In the lab, make your own home folder within `Documents`, and with help of `git` command create a local copy of your public repository:
 
-    ```bash
+    ```zsh
     $ cd
     $ pwd
     /home/lab661
@@ -65,14 +65,14 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 
 3. Download `Docs` folder from [teacher's repository](https://github.com/tomas-fryza/Digital-electronics-1) and copy it to your `Digital-electronics-1` local repository.
 
-    ```bash
+    ```zsh
     $ ls
     Docs  LICENSE  README.md
     ```
 
 4. Make a new folder `Labs/01-gates` and create an empty file `README.md`.
 
-    ```bash
+    ```zsh
     $ mkdir Labs
     $ cd Labs/
     $ mkdir 01-gates
@@ -130,7 +130,7 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 
 1. Use `cd ..` command in Linux terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
-    ```bash
+    ```zsh
     $ pwd
     /home/lab661/Documents/your-name/Digital-electronics-1/Labs/01-gates
 

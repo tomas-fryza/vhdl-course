@@ -42,7 +42,7 @@ You will use push buttons and slide switches on the CoolRunner-II CPLD starter b
 
 1. Open a Linux terminal, use `cd` commands to change path to your Digital-electronics-1 working directory, and [synchronize the contents](https://github.com/joshnh/Git-Commands) with GitHub.
 
-    ```bash
+    ```zsh
     $ pwd
     /home/lab661
     $ cd Documents/your-name/Digital-electronics-1/
@@ -53,7 +53,7 @@ You will use push buttons and slide switches on the CoolRunner-II CPLD starter b
 
 2. Create a new folder `Labs/03-segment`
 
-    ```bash
+    ```zsh
     $ cd Labs/
     $ mkdir 03-segment
     $ cd 03-segment/
