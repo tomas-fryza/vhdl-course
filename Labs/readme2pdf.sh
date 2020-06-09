@@ -14,7 +14,7 @@ pandocstyle="--highlight-style=zenburn"
 cd ..
 filename="labs"
 echo -n "Converting `pwd`/README.md -> ${filename}.pdf... "
-pandoc -H Labs/head.tex README.md -o ../${filename}.pdf --variable=geometry:"margin=2.25cm, paperheight=842pt, paperwidth=595pt" ${pandocstyle}
+pandoc -H Labs/head.tex README.md -o Labs/${filename}.pdf --variable=geometry:"margin=2.25cm, paperheight=842pt, paperwidth=595pt" ${pandocstyle}
 echo "done."
 
 filename="01-gates"
@@ -23,14 +23,11 @@ echo -n "Converting `pwd`/README.md -> ${filename}.pdf... "
 pandoc -H ../head.tex README.md -o ../${filename}.pdf --variable=geometry:"margin=2.25cm, paperheight=842pt, paperwidth=595pt" ${pandocstyle}
 echo "done."
 
-filename="02-ise"
-cd ../${filename}
-echo -n "Converting `pwd`/README.md -> ${filename}.pdf... "
-pandoc -H ../head.tex README.md -o ../${filename}.pdf --variable=geometry:"margin=2.25cm, paperheight=842pt, paperwidth=595pt" ${pandocstyle}
-echo "done."
-
-filename="03-segment"
-cd ../${filename}
-echo -n "Converting `pwd`/README.md -> ${filename}.pdf... "
-pandoc -H ../head.tex README.md -o ../${filename}.pdf --variable=geometry:"margin=2.25cm, paperheight=842pt, paperwidth=595pt" ${pandocstyle}
-echo "done."
+#for ii in 02-ise 03-segment 04-adder 05-counter_binary
+for ii in 05-counter_binary
+do
+    cd ../${ii}
+    echo -n "Converting `pwd`/README.md -> ${ii}.pdf... "
+    pandoc -H ../head.tex README.md -o ../${ii}.pdf --variable=geometry:"margin=2.25cm, paperheight=842pt, paperwidth=595pt" ${pandocstyle}
+    echo "done."
+done

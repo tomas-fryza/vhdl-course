@@ -9,7 +9,7 @@ The purpose of this laboratory exercise is to design an adder. It is a type of d
 
 You will use slide switches on the CPLD expansion board ([schematic](../../Docs/cpld_expansion.pdf)) as inputs and 7-segment display on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as output device.
 
-![coolrunner_expansion](../../Images/coolrunner_expansion_board.jpg)
+![CoolRunner-II CPLD starter board](Images/coolrunner_expansion_board.jpg)
 
 
 ## 1 Preparation tasks (done before the lab at home)
