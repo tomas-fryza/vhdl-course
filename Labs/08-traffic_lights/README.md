@@ -6,7 +6,7 @@ In this laboratory exercise you will implement a finite state machine, specifica
 
 [Video](https://youtu.be/P2emiQeBgE8)
 
-![traffic_lights_photo](traffic_lights_photo.jpg)
+![CoolRunner-II CPLD starter board](Images/traffic_lights_photo.jpg)
 
 
 ## 1 Synchronize Git and create a new folder
@@ -82,7 +82,7 @@ Your repository must include `README.md` file with simulation screenshot(s), nex
 
 1. Follow the [exercise inspired by prof. Jon Valvano](https://arduining.com/2015/09/18/traffic-light-states-machine-with-arduino/) from University of Texas and desing an enhanced traffic light controller for the intersection of two equally busy one-way streets. The controller using two sensors and 6 lights. Two sensors detects the presence of cars in each direction and the goal is to maximize traffic flow, minimize waiting time at a red light, and avoid accidents.
 
-   ![traffic_light2](../../Images/lab8_traffic_light_intersection.png)
+   ![Enhanced traffic light controller for the intersection](Images/lab8_traffic_light_intersection.png)
 
    Explain how the intersection throughput is maximized.
 
