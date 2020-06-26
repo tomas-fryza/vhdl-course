@@ -43,7 +43,6 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 | `pwd`        | Print name of current/working directory |
 | `clear`      | Clear the terminal screen |
 | `touch`      | Create an empty file (if it does not exist) |
-| `cp`         | Copy files and directories |
 | `mc`         | GNU Midnight Commander (file manager) |
 
 **Step 2:** In the lab, make your own home folder within `Documents`, and with help of `git` command clone a local copy of your public repository:
