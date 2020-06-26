@@ -1,19 +1,19 @@
 
 # Digital electronics 1
 
-The repository contains VHDL examples for bachelor course [*Digital Electronics 1*](https://www.vutbr.cz/en/students/courses/detail/210628) at Brno University of Technology, Czechia. In folder `Docs` all manuals are stored. Folder `Docs/Hw` contains KiCad schematic of CPLD expansion board used in the course. All screenshots and images are located in `Images` folder and  computer lab exercises are located in `Labs` folder.
+The repository contains VHDL examples for bachelor course [*Digital Electronics 1*](https://www.vutbr.cz/en/students/courses/detail/224131) at Brno University of Technology, Czechia. In folder `Docs` all manuals are stored and computer lab exercises are located in `Labs` folder.
 
-| **Laboratory exercise** | **Description** |
-| :-- | :-- |
-| [01-gates](Labs/01-gates) | Lab 1: Introduction to digital circuits |
-| [02-ise](Labs/02-ise) | Lab 2: Introduction to VHDL and Xilinx ISE |
-| [03-segment](Labs/03-segment) | Lab 3: Hexadecimal digit to seven-segment decoder |
-| [04-adder](Labs/04-adder) | Lab 4: Binary adder |
-| [05-counter_binary](Labs/05-counter_binary) | Lab 5: Binary counter |
-| [06-display_driver](Labs/06-display_driver) | Lab 6: Driver for seven-segment display |
-| [07-stopwatch](Labs/07-stopwatch) | Lab 7: Stopwatch |
-| [08-traffic_lights](Labs/08-traffic_lights) | Lab 8: Traffic light controller |
-| [project](Labs/project) | Lab 9-13: Project |
+| **Laboratory exercise** | **Description** | **Tool** |
+| :-- | :-- | :-- |
+| [01-gates](Labs/01-gates) | Lab 1: Introduction to Git and VHDL | EDA Playground |
+| 02-functions | Lab 2: Minimization of logic functions | EDA Playground |
+| 03-segments | Lab 3: Hexadecimal digit to seven-segment decoder | Vivado |
+| 04-adder | Lab 4: Binary adder | Vivado |
+| 05-counter | Lab 5: Binary counter | Vivado |
+| 06-display_driver | Lab 6: Driver for seven-segment display | Vivado |
+| 07-stopwatch | Lab 7: Stopwatch | Vivado |
+| 08-traffic_lights | Lab 8: Traffic light controller | Vivado |
+| [project](Labs/project) | Lab 9-13: Project | Vivado |
 
 
 ## Materials
@@ -22,18 +22,16 @@ The following hardware and software components are mainly used in the lab.
 
 ### Hardware
 
-* CoolRunner-II CPLD starter board: [reference manual](Docs/coolrunner-ii_rm.pdf), [schematic](Docs/coolrunner-ii_sch.pdf), [XC2C256-TQ144](Docs/xc2c256_cpld.pdf), [shop](https://store.digilentinc.com/coolrunner-ii-cpld-starter-board-limited-time/)
-* Platform Cable USB II, USB tool for in-circuit configuration and programming of all Xilinx devices: [shop](https://www.xilinx.com/products/boards-and-kits/hw-usb-ii-g.html)
-* CPLD expansion board by Michal Kubicek: [schematic](Docs/cpld_expansion.pdf)
+* Nexys A7 Artix-7 FPGA Trainer Board: [web page](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/), [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual), [schematic](Docs/nexys-a7-sch.pdf), [XC7A50T-1CSG324C](Docs/ds180_7Series_Overview.pdf)
 
 ### Software
 
-* ISE Design, ISE WebPACK Design Software, ver 14.7: [web page](https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html), [installation](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
+* Vivado Design Suite 2020.1: [web page](https://www.xilinx.com/products/design-tools/vivado.html), [installation](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
 * Linux Mint 18.2 "Sonya" - Xfce (64-bit): [web page](https://linuxmint.com/download_all.php)
 
-![CoolRunner-II CPLD starter board](Images/coolrunner_board.jpg)
+![Nexys A7 Artix-7 FPGA Trainer Board](Images/TBD)
 
-![ISE Design, ISE WebPACK Design Software, ver 14.7](Images/ise_synthesize_org.png)
+![Vivado Design Suite 2020.1](Images/TBD)
 
 
 ## References
