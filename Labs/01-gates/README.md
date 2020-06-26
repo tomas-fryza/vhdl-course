@@ -105,7 +105,7 @@ README.md
 
 Run any text editor, such as Visual Studio Code, open your `Digital-electronics-1/Labs/01-gates/README.md` local file (not on GitHub), create/complete tables with logical values, add link to your Playground and a screenshot from the simulator.
 
-| **A** | **B** |**C** | **f** |
+| **c** | **b** |**a** | **f(c,b,a)** |
 | :-: | :-: | :-: | :-: |
 | 0 | 0 | 0 |  |
 | 0 | 0 | 1 |  |
