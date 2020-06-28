@@ -3,17 +3,25 @@
 
 The repository contains VHDL examples for bachelor course [*Digital Electronics 1*](https://www.vutbr.cz/en/students/courses/detail/224131) at Brno University of Technology, Czechia. In folder `Docs` all manuals are stored and computer lab exercises are located in `Labs` folder.
 
-| **Laboratory exercise** | **Description** | **Tool** |
-| :-- | :-- | :-- |
-| [01-gates](Labs/01-gates) | Lab 1: Introduction to Git and VHDL | EDA Playground |
-| 02-functions | Lab 2: Minimization of logic functions | EDA Playground |
-| 03-segments | Lab 3: Hexadecimal digit to seven-segment decoder | Vivado |
-| 04-adder | Lab 4: Binary adder | Vivado |
-| 05-counter | Lab 5: Binary counter | Vivado |
-| 06-display_driver | Lab 6: Driver for seven-segment display | Vivado |
-| 07-stopwatch | Lab 7: Stopwatch | Vivado |
-| 08-traffic_lights | Lab 8: Traffic light controller | Vivado |
-| [project](Labs/project) | Lab 9-13: Project | Vivado |
+## Exercises
+
+### EDA Playground
+
+* [Introduction to Git and VHDL](Labs/01-gates)
+* Minimization of logic functions
+
+### Vivado
+
+* Hexadecimal digit to seven-segment decoder
+* Binary adder
+* Binary counter
+* Driver for seven-segment display
+* Stopwatch
+* Traffic light controller
+
+### Other
+
+* Project
 
 
 ## Materials
