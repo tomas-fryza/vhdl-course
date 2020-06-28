@@ -20,9 +20,9 @@ The repository contains VHDL examples for bachelor course [*Digital Electronics 
 * Stopwatch
 * Traffic light controller
 
-### Other
+### Project
 
-* Project
+* General instructions
 
 
 ## Materials
