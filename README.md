@@ -1,7 +1,7 @@
 
 # Digital electronics 1
 
-The repository contains VHDL examples for bachelor course [*Digital Electronics 1*](https://www.vutbr.cz/en/students/courses/detail/224131) at Brno University of Technology, Czechia. In folder `Docs` all manuals are stored and computer lab exercises are located in `Labs` folder.
+The repository contains VHDL examples for bachelor course [*Digital Electronics 1*](https://www.vutbr.cz/en/students/courses/detail/224131) at Brno University of Technology, Czechia.
 
 ## Exercises
 
