@@ -3,6 +3,7 @@
 
 The repository contains VHDL examples for bachelor course [*Digital Electronics 1*](https://www.vutbr.cz/en/students/courses/detail/224131) at Brno University of Technology, Czechia.
 
+
 ## Exercises
 
 ### EDA Playground
@@ -50,8 +51,3 @@ The following hardware and software components are mainly used in the lab.
 4. CHU, Pong P. *FPGA prototyping by VHDL examples.* Hoboken, N.J.: Wiley-Interscience, c2008. ISBN 978-0-470-18531-5.
 5. KALLSTROM, P. [A Fairly Small VHDL Guide](Docs/VHDL_guide.pdf). Version 2.1.
 6. [GitHub GIT CHEAT SHEET](Docs/git_cheatsheet.pdf)
-
-
-## License
-
-The course is [licensed](https://github.com/tomas-fryza/Digital-electronics-1/blob/master/LICENSE) under the MIT license.
