@@ -116,7 +116,7 @@ Use De Morgan's laws and modify logic function to the form with NAND and NOR gat
 ```
 >
 
-Run any text editor, such as *Visual Studio Code* or *Atom*, open your `Digital-electronics-1/Labs/01-gates/README.md` local file (not on GitHub), create/complete tables with logical values, add link to your Playground and a time waveforms screenshot from the simulator.
+Run any text editor, such as *Visual Studio Code* or *Atom*, open your `Digital-electronics-1/Labs/01-gates/README.md` local file (not on GitHub), create/complete tables with logical values, add link to your Playground and a screenshot with time waveforms from the simulator.
 
 | **c** | **b** |**a** | **f(c,b,a)** |
 | :-: | :-: | :-: | :-: |
@@ -168,7 +168,7 @@ and Distributive laws:
 
 ## Lab assignment
 
-1. Verification of Boolean postulates. Submit: VHDL code (`design.vhd`), time waveforms screenshot, link to your playground.
-2. Verification of Distributive laws. Submit: VHDL code (`design.vhd`), time waveforms screenshot, link to your playground.
+1. Verification of Boolean postulates. Submit: VHDL code (`design.vhd`), screenshot with time waveforms, link to your playground.
+2. Verification of Distributive laws. Submit: VHDL code (`design.vhd`), screenshot with time waveforms, link to your playground.
 
 The deadline for submitting the assignment is before the start of the next laboratory exercise. Use BUT e-learning web page and submit a single PDF file.
