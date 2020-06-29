@@ -7,7 +7,7 @@ The purpose of this laboratory exercise is to learn how to use the git versionin
 
 ### Preparation tasks (done before the lab at home)
 
-Create an account on [GitHub](https://github.com/) server. If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
+Create an account on [GitHub](https://github.com/). If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
 
 
 ## Part 1: GitHub
