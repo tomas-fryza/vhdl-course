@@ -9,14 +9,14 @@ The repository contains VHDL examples for bachelor course [*Digital Electronics 
 ### EDA Playground
 
 * [Introduction to Git and VHDL](Labs/01-gates)
-* Minimization of logic functions
+* Combinational logic
 
 ### Vivado
 
-* Hexadecimal digit to seven-segment decoder
+* Seven-segment display decoder
 * Binary adder
 * Binary counter
-* Driver for seven-segment display
+* Driver for multiple seven-segment displays
 * Stopwatch
 * Traffic light controller
 
