@@ -86,7 +86,7 @@ README.md
 
 ## Part 3: EDA Playground
 
-Log in to [EDA Playground](https://www.edaplayground.com/login), then open [Example of basic gates](https://www.edaplayground.com/x/5L92). Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity), [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture), and testbench. Make a copy of the demo example and run the simulation. 
+Open the [Example of basic gates](https://www.edaplayground.com/x/5L92). Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity), [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture), and testbench. Make a copy of the demo example and run the simulation. 
 
 Most common VHDL operators are shown in the table.
 
