@@ -1,36 +1,36 @@
 # Lab 1: Introduction to Git and VHDL
 
-#### Objectives
+#### Learning objectives
 
 The purpose of this laboratory exercise is to learn how to use the git versioning system, write the markdown readme file, use the Linux console terminal to work in the lab, and how to compose a basic VHDL code using the online development tool.
 
 
-## 1 Preparation tasks (done before the lab at home)
+#### Preparation tasks (done before the lab at home)
 
 Create an account on [GitHub](https://github.com/) server. If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
 
 
-## 2 GitHub
+## Part 1: GitHub
 
 GitHub is a code hosting platform for collaboration and version control. GitHub lets you (and others) work together on projects.
 
-**Step 1:** In GitHub, create a new public repository titled **Digital-electronics-1**. Initialize a README and [MIT license](https://choosealicense.com/licenses/mit/).
+In GitHub, create a new public repository titled **Digital-electronics-1**. Initialize a README and [MIT license](https://choosealicense.com/licenses/mit/).
 
-**Step 2:** Use [How to make the perfect Readme.md on GitHub](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061), [Basic writing and formatting syntax](https://help.github.com/en/articles/basic-writing-and-formatting-syntax) or [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) articles and add the following parts in your README file.
+Use manuals [How to make the perfect Readme.md on GitHub](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061), [Basic writing and formatting syntax](https://help.github.com/en/articles/basic-writing-and-formatting-syntax) or [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) and add the following parts in your README file.
 
    * Headers
-   * Emphasis
-   * List
-   * Link
+   * Emphasis (italics, bold)
+   * Lists (ordered, unordered)
+   * Links
    * Table
    * Listing of VHDL source code
 
 
-## 3 Linux console terminal
+## Part 2: Linux console terminal
 
 A Linux console terminal is one of the system consoles provided in the Linux kernel. The Linux console terminal acts as the medium for input and output operations for a Linux system. A Linux console terminal is similar to command line in Microsoft Windows but it differs in that it can perform any operation on the system. (Cited from [Technopedia](https://www.techopedia.com/definition/26897/linux-console-terminal).)
 
-**Step 1:** Try basic commands in the Linux console terminal.
+Try basic commands in the Linux console terminal.
 
 | **Command**  | **Description** |
 | :-:          | :--             |
@@ -45,7 +45,7 @@ A Linux console terminal is one of the system consoles provided in the Linux ker
 | `touch`      | Create an empty file (if it does not exist) |
 | `mc`         | GNU Midnight Commander (file manager) |
 
-**Step 2:** In the lab, make your own home folder within `Documents`, and with help of `git` command clone a local copy of your public repository:
+In the lab, make your own home folder within `Documents`, and with help of `git` command clone a local copy of your public repository:
 
 ```bash
 $ cd
@@ -64,14 +64,14 @@ $ ls
 LICENSE  README.md
 ```
 
-**Step 3:** Download `Docs` folder from [teacher's repository](https://github.com/tomas-fryza/Digital-electronics-1) and copy it to your `Digital-electronics-1` local repository.
+Download `Docs` folder from [teacher's repository](https://github.com/tomas-fryza/Digital-electronics-1) and copy it to your `Digital-electronics-1` local repository.
 
 ```bash
 $ ls
 Docs  LICENSE  README.md
 ```
 
-**Step 4:** Make a new folder `Labs/01-gates` and create an empty `README.md` file.
+Make a new folder `Labs/01-gates` and create an empty `README.md` file.
 
 ```bash
 $ mkdir Labs
@@ -84,11 +84,25 @@ README.md
 ```
 
 
-## 4 EDA Playground
+## Part 3: EDA Playground
 
-**Step 1:** Log in to [EDA Playground](https://www.edaplayground.com/login), then open [Example of basic gates](https://www.edaplayground.com/x/5L92). Take a look at the basic parts of the VHDL source code and testbench. Make a copy of the demo example and run the simulation.
+Log in to [EDA Playground](https://www.edaplayground.com/login), then open [Example of basic gates](https://www.edaplayground.com/x/5L92). Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity), [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture), and testbench. Make a copy of the demo example and run the simulation. 
 
-**Step 2:**  Use De Morgan's law and modify logic function to the form with NAND and NOR gates only. Verify all three functions in EDA Playground simulator.
+Most common VHDL operators are shown in the table.
+
+| **Operator** | **Description** |
+| :-: | :-- |
+| `<=` | Value assignment |
+| `and` | Logical AND |
+| `nand` | Logical AND with negated output |
+| `or` | Logical OR |
+| `nor` | Logical OR with negated output |
+| `not` | Nagation |
+| `xor` | Exclusive OR |
+| `xnor` | Exclusive OR with negated output |
+| `-- comment` | Comments |
+
+Use De Morgan's law and modify logic function to the form with NAND and NOR gates only. Verify all three functions in EDA Playground simulator.
 
 ![Logic function](Images/equations.png)
 
@@ -116,7 +130,7 @@ Run any text editor, such as Visual Studio Code, open your `Digital-electronics-
 | 1 | 1 | 1 |  |
 
 
-## 5 Synchronize git
+## Synchronize git
 
 Use `cd ..` command in Linux console terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
@@ -152,10 +166,9 @@ and Distributive laws:
 2. Try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), and compare their options.
 
 
-## Submission of the assignment
+## Lab assignment
 
-Use BUT e-learning and before the next lab, submit the following tasks in the form of a single PDF file:
+1. Verification of Boolean postulates: VHDL code, simulated time waveform, link to your playground.
+2. Verification of Distributive laws: VHDL code, simulated time waveform, link to your playground.
 
-* Link to your GitHub repository
-* VHDL code and testbench for Boolean postulates
-* VHDL code and testbench for Distributive laws
+The deadline for submitting the assignment is before the start of the next laboratory exercise. Use BUT e-learning web page and submit a single PDF file.

@@ -1,18 +1,17 @@
-# Lab 2: Introduction to VHDL and Xilinx ISE
+# Lab 2: Minimization of logic functions
+
+
+
+
+
+
 
 #### Objectives
 
 The purpose of this laboratory exercise is to become familiar with the Xilinx ISE development environment, next with basic VHDL syntax, and input/output devices. 
 
 
-#### Materials
-
-You will use push buttons on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as inputs and light emitting diodes (LEDs) as output devices.
-
-![CoolRunner-II CPLD starter board](Images/coolrunner_leds.jpg)
-
-
-## 1 Preparation tasks (done before the lab at home)
+#### Preparation tasks (done before the lab at home)
 
 1. *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs. Complete the truth table for 1-bit *Identity comparator* (A equals B), and two *Magnitude comparators* (A greater than B, A less than B). Note, '1' represents true, '0' represents false.
 
@@ -79,19 +78,11 @@ You will use push buttons on the CoolRunner-II CPLD starter board ([XC2C256-TQ14
 
 1. Follow instructions from wiki and [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE). Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/02-ise`, ie in **your** local folder.
 
-2. Using VHDL operators, define the architecture for 1-bit digital comparator. Most common VHDL operators are shown in the table.
 
-    | **Operator** | **Description** |
-    | :-: | :-- |
-    | `<=` | Value assignment |
-    | `and` | Logical AND |
-    | `nand` | Logical AND with negated output |
-    | `or` | Logical OR |
-    | `nor` | Logical OR with negated output |
-    | `not` | Nagation |
-    | `xor` | Exclusive OR |
-    | `xnor` | Exclusive OR with negated output |
-    | `-- comment` | Comments |
+
+
+
+
 
 3. Follow instructions from wiki, create a test bench with all input combinations, and [simulate your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Simulate-Your-Design-in-ISE) in ISim simulator.
 
