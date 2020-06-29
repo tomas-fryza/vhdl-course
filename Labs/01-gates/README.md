@@ -5,7 +5,7 @@
 The purpose of this laboratory exercise is to learn how to use the git versioning system, write the markdown readme file, use the Linux console terminal to work in the lab, and how to compose a basic VHDL code using the online development tool.
 
 
-### Preparation tasks (done before the lab at home)
+## Preparation tasks (done before the lab at home)
 
 Create an account on [GitHub](https://github.com/). If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
 
