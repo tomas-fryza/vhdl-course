@@ -31,16 +31,12 @@ The following hardware and software components are mainly used in the lab.
 
 ### Hardware
 
-* Nexys A7 Artix-7 FPGA Trainer Board: [web page](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/), [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual), [schematic](Docs/nexys-a7-sch.pdf), [XC7A50T-1CSG324C](Docs/ds180_7Series_Overview.pdf)
+* [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA Trainer Board: [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual), [schematic](Docs/nexys-a7-sch.pdf), [XC7A50T-1CSG324C FPGA](Docs/ds180_7Series_Overview.pdf)
 
 ### Software
 
-* Vivado Design Suite 2020.1: [web page](https://www.xilinx.com/products/design-tools/vivado.html), [installation](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
-* Linux Mint 18.2 "Sonya" - Xfce (64-bit): [web page](https://linuxmint.com/download_all.php)
-
-![Nexys A7 Artix-7 FPGA Trainer Board](Images/TBD)
-
-![Vivado Design Suite 2020.1](Images/TBD)
+* [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.1: [installation](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
+* [Linux Mint](https://linuxmint.com/download_all.php) 18.2 "Sonya" - Xfce (64-bit)
 
 
 ## References
