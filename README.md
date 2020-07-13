@@ -31,7 +31,7 @@ The following hardware and software components are mainly used in the lab.
 
 ### Hardware
 
-* [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA Trainer Board: [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual), [schematic](Docs/nexys-a7-sch.pdf), [XC7A50T-1CSG324C FPGA](Docs/ds180_7Series_Overview.pdf)
+* [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA Trainer Board: [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual), [schematic](Docs/nexys-a7-sch.pdf), [XC7A50T-1CSG324C](Docs/ds180_7Series_Overview.pdf) FPGA
 
 ### Software
 
