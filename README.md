@@ -9,7 +9,7 @@ The repository contains VHDL examples for bachelor course [*Digital Electronics 
 ### EDA Playground
 
 * [Introduction to Git and VHDL](Labs/01-gates)
-* Combinational logic
+* [Combinational logic](Labs/02-logic)
 
 ### Vivado
 
