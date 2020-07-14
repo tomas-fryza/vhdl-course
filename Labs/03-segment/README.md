@@ -1,3 +1,33 @@
+
+
+
+
+
+
+TODO: copied from lab 02
+
+Follow instructions from wiki and [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE). Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/02-ise`, ie in **your** local folder.
+
+3. Follow instructions from wiki, create a test bench with all input combinations, and [simulate your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Simulate-Your-Design-in-ISE) in ISim simulator.
+
+4. See [schematic](../../Docs/coolrunner-ii_sch.pdf) or [reference manual](../../Docs/coolrunner-ii_rm.pdf) of the board and find out the connection of LD0, LD1, LD2 LEDs and BTN0, BTN1 push buttons. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-implement-your-design-to-target-device-in-ISE) to CoolRunner-II CPLD starter board. Modify the internal architecture of your design so that a pressed button represents log. 1 and a LED is turn off for log. 0.
+
+5. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
+
+![ise_schema](Images/ise_template_top.png)
+![ise_schema](Images/ise_template_gates.png)
+
+6. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
+
+
+1. Follow the [Linux](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Install-ISE-14.7-on-Linux) or [Windows](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive-ise.html) instructions and install ISE 14.7 on your computer.
+
+
+
+
+
+
+
 # Lab 3: Hexadecimal digit to seven-segment decoder
 
 #### Objectives
