@@ -168,7 +168,16 @@ and Distributive laws:
 
 ## Lab assignment
 
-1. Verification of Boolean postulates. Submit: VHDL code (`design.vhd`), screenshot with time waveforms, link to your playground.
-2. Verification of Distributive laws. Submit: VHDL code (`design.vhd`), screenshot with time waveforms, link to your playground.
+1. Link to your GitHub repository.
 
-The deadline for submitting the assignment is before the start of the next laboratory exercise. Use BUT e-learning web page and submit a single PDF file.
+2. Verification of basic Boolean postulates. Submit:
+    * VHDL code (`design.vhd`),
+    * screenshot with simulated time waveforms,
+    * link to your public EDA playground.
+
+3. Verification of Distributive laws. Submit:
+    * VHDL code (`design.vhd`),
+    * screenshot with simulated time waveforms,
+    * link to your public EDA playground.
+
+The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
