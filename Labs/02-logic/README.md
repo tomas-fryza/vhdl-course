@@ -198,7 +198,7 @@ $ git status
 
 ## Lab assignment
 
-1. 4-bit binary comparator. Submit:
+1. A 4-bit binary comparator. Submit:
     * VHDL code (`design.vhd`),
     * VHDL testbench (`testbench.vhd`),
     * screenshot with simulated time waveforms,
