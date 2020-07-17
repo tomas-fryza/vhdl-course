@@ -13,6 +13,7 @@ The repository contains VHDL examples for bachelor course [*Digital Electronics 
 
 ### Vivado
 
+* [Introduction to Vivado](Labs/03-vivado)
 * Seven-segment display decoder
 * Binary adder
 * Binary counter
