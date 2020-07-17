@@ -90,9 +90,9 @@ README.md
 
 Log in to your [EDA Playground](https://www.edaplayground.com/login) account and create a new project: you can copy your previous playground and save it under a different name.
 
-In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity) for a 2-bit binary comparator.
+In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity) for a 2-bit binary comparator (`comparator_2bit`).
 
-| **Name** | **Direction** | **Description** |
+| **Port name** | **Direction** | **Description** |
 | :-- | :-: | :-- |
 | `a_i`       | input  | 2-bit [vector](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Data-types) |
 | `b_i`       | input  | 2-bit vector |
@@ -183,9 +183,9 @@ $ git status
 
 ## Experiments on your own
 
-1. In VHDL, define entity and architecture for a 4-bit binary comparator.
+1. In VHDL, define entity and architecture for a 4-bit binary comparator (`comparator_4bit`).
 
-   | **Name** | **Direction** | **Description** |
+   | **Port name** | **Direction** | **Description** |
    | :-- | :-: | :-- |
    | `a_i`       | input  | 4-bit vector |
    | `b_i`       | input  | 4-bit vector |
