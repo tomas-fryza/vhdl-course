@@ -92,13 +92,13 @@ Log in to your [EDA Playground](https://www.edaplayground.com/login) account and
 
 In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity) for a 2-bit binary comparator (`comparator_2bit`).
 
-| **Port name** | **Direction** | **Description** |
-| :-- | :-: | :-- |
-| `a_i`       | input  | 2-bit [vector](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Data-types) |
-| `b_i`       | input  | 2-bit vector |
-| `greater_o` | output | B is greater than A |
-| `equals_o`  | output | B equals A |
-| `less_o`    | output | B is less than A |
+| **Port name** | **Direction** | **Width** | **Description** |
+| :-- | :-: | :-: | :-- |
+| `a_i`       | input  | [2 bits](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Data-types) | Data A |
+| `b_i`       | input  | 2 bits | Data B |
+| `greater_o` | output | 1 bit | B is greater than A |
+| `equals_o`  | output | 1 bit | B equals A |
+| `less_o`    | output | 1 bit | B is less than A |
 
 In VHDL, define an [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [signal assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments). Use the assignment `when`,` else` to describe the three output functions, such as:
 
@@ -185,13 +185,13 @@ $ git status
 
 1. In VHDL, define entity and architecture for a 4-bit binary comparator (`comparator_4bit`).
 
-   | **Port name** | **Direction** | **Description** |
-   | :-- | :-: | :-- |
-   | `a_i`       | input  | 4-bit vector |
-   | `b_i`       | input  | 4-bit vector |
-   | `greater_o` | output | B is greater than A |
-   | `equals_o`  | output | B equals A |
-   | `less_o`    | output | B is less than A |
+   | **Port name** | **Direction** | **Width** | **Description** |
+   | :-- | :-: | :-: | :-- |
+   | `a_i`       | input  | 4 bits | Data A |
+   | `b_i`       | input  | 4 bits | Data B |
+   | `greater_o` | output | 1 bit | B is greater than A |
+   | `equals_o`  | output | 1 bit |  B equals A |
+   | `less_o`    | output | 1 bit |  B is less than A |
 
 2. In VHDL, define a testbench for a 4-bit binary comparator. Verify at least ten random input combinations.
 
