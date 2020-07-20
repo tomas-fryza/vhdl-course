@@ -7,7 +7,7 @@ The purpose of this laboratory exercise is to learn to use Vivado to create a si
 
 ## Preparation tasks (done before the lab at home)
 
-See schematic or reference manual of the Nexys A7 board and find out the connection of LEDs and slide switches.
+The Nexys A7 board provides sixteen switches and LEDs. The switches can be used to provide inputs, and the LEDs can be used as output devices. See schematic or reference manual of the Nexys A7 board and find out the connection of slide switches and LEDs.
 
 &nbsp;
 
@@ -57,7 +57,7 @@ Get inspired by the [Creating and Programming our First FPGA Project Part 2: Ini
 
 Copy/paste your EDA Playground `design.vhd` code from the previous exercise to `comparator_2bit.vhd` source file.
 
-Copy/paste constraints from [Nexys-A7-50T-Master.xdc](https://github.com/Digilent/digilent-xdc) to `nexys-a7-50t.xdc` file.
+The Nexys A7 board have hardwired connections between FPGA chip and the switches and LEDs. To use these devices it is necessary to include in your project the correct pin assignments. Copy/paste constraints from [Nexys-A7-50T-Master.xdc](https://github.com/Digilent/digilent-xdc) to `nexys-a7-50t.xdc` file. The pin assignments in the file are useful only if the pin names that appear in this file are exactly the same as the port names used in your VHDL entity.
 
 Use **Add Sources** > **Add or create simulation sources** and create a new VHDL file `tb_comparator_2bit`. Copy/pase your EDA Playground `testbench.vhd` code from previous exercise to `tb_comparator_2bit.vhd` file.
 
@@ -68,14 +68,23 @@ Get inspired by the [Creating and Programming our First FPGA Project Part 4](htt
 
 ## Part 3: Multiplexer in VHDL language
 
-TBD: mux description.
+A multiplexer (MUX) is a device that has multiple inputs and a single line output. The select lines determine which input is connected to the output. Consider a circuit in which the 2-bit output F[1:0] has to be selected from four inputs A[1:0], B[1:0], C[1:0], and D[1:0]. The circuit uses a 2-bit select input S[1:0] and implements the following  truth table.
+
+| **Select S[1:0]** | **Output F[1:0]** |
+| :-: | :-: |
+| 0 0 | A[1:0] |
+| 0 1 | B[1:0] |
+| 1 0 | C[1:0] |
+| 1 1 | D[1:0] |
+
+![Circuit symbol for two-bit wide 4-to-1 multiplexer](Images/mux_4to1.png)
 
 Perform the following steps to implement the two-bit wide 4-to-1 multiplexer. Take screenshots and make your own README tutorial on how to create a Vivado project, how to run a simulation and how to program an FPGA on board Nexys A7.
 
    1. Create a new Vivado project for your circuit.
    2. Create a VHDL entity `mux_2bit_4to1` for the two-bit wide 4-to-1 multiplexer. 
    3. Create a testbench and simulate the circuit. 
-   4. Make pin assignments for the Nexys A7 board: connect mux select inputs to switches SW[15:14] and use switches SW[7:0] to provide the four inputs A to D. Connect output F[1:0] to leds LD[15:14].
+   4. Make pin assignments for the Nexys A7 board: connect mux select inputs S[1:0] to slide switches SW[15:14] and use switches SW[7:0] to provide the four inputs A[1:0] to D[1:0]. Connect output F[1:0] to leds LD[15:14].
    5. Compile the project and download the compiled circuit into the FPGA chip.
    6. Test the functionality of the two-bit wide 4-to-1 multiplexer by toggling the switches and observing the LEDs.
 
