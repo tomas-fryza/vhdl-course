@@ -36,8 +36,8 @@ The following hardware and software components are mainly used in the lab.
 
 ### Software
 
+* [EDA Playground](https://www.edaplayground.com/)
 * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.1: [installation](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
-* [Linux Mint](https://linuxmint.com/download_all.php) 18.2 "Sonya" - Xfce (64-bit)
 
 
 ## References
