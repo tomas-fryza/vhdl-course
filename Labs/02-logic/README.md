@@ -4,6 +4,8 @@
 
 The purpose of this laboratory exercise is to learn to use different ways of writing combination functions (truth table, K-map, SoP/PoS forms), their minimization, the use of signal assignments in VHDL, and assertion statements in VHDL testbench.
 
+![Screenshot od EDA Playground](Images/screenshot_eda.png)
+
 
 ## Preparation tasks (done before the lab at home)
 
