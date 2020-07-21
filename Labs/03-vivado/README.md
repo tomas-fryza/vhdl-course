@@ -51,7 +51,7 @@ README.md
 
 ## Part 2: Project creation in Vivado
 
-Get inspired by the [Creating and Programming our First FPGA Project Part 2: Initial Project Creation](https://blog.digilentinc.com/creating-and-programming-our-first-fpga-project-part-2-initial-project-creation/) tutorial and create a new project in Vivado. Unlike the instructions, let your project contains:
+Get inspired by the [Creating and Programming our First FPGA Project Part 2: Initial Project Creation](https://blog.digilentinc.com/creating-and-programming-our-first-fpga-project-part-2-initial-project-creation/) tutorial and create a new project in Vivado (Set location to your `Labs/03-vivado` working folder). Unlike the instructions, let your project contains:
 
    * VHDL source file: `comparator_2bit` (the same file name as the entity)
    * Created constraints XDC file: `nexys-a7-50t`
