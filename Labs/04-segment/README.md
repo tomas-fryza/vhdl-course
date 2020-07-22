@@ -128,7 +128,7 @@ VHDL provides a mechanism how to build a larger system from simpler or predesign
 
 VHDL-93 and later offers two methods of instantiation: direct instantiation and component instantiation. In direct instantiation, the entity itself is directly instantiated in an architecture. Its ports are connected using the port map. Let the top-level design `top.vhd`, implements an instance of the module defined in `hex_7seg.vhd`.
 
-Perform the following steps to implement the seven-segment display decoder on .
+Perform the following steps to implement the seven-segment display decoder on the Nexys A7 board.
 
    1. Create a new design source `top` in your project.
    2. Define an entity `top` as follows.
