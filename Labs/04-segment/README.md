@@ -7,7 +7,7 @@ The purpose of this laboratory exercise is to design a 7-segment display decoder
 
 ## Preparation tasks (done before the lab at home)
 
-The Nexys A7 board provides two four-digit common anode seven-segment LED displays, configured to behave like a single eight-digit display. See schematic or reference manual of the Nexys A7 board and find out the connection of 7-segment displays.
+The Nexys A7 board provides two four-digit common anode seven-segment LED displays, configured to behave like a single eight-digit display. See schematic or reference manual of the Nexys A7 board and find out the connection of 7-segment display.
 
 &nbsp;
 
@@ -75,7 +75,7 @@ Perform the following steps to implement the seven-segment display decoder.
 
    1. Create a new Vivado project in your `Labs/04-segment` working folder.
    2. Create a VHDL source file `hex_7seg` for the decoder.
-   3. Created constraints XDC file: `nexys-a7-50t`.
+   3. Create a constraints XDC file: `nexys-a7-50t`.
    4. Choose default board: `Nexys A7-50T`.
    5. In source file, define an entity `hex_7seg` as follows.
 
@@ -84,7 +84,7 @@ Perform the following steps to implement the seven-segment display decoder.
    | `hex_i` | input   | 4 bits | Input binary data |
    | `seg_o` | output  | 7 bits | Cathode values in the order A, B, C, D, E, F, G |
 
-   6. Use [combinational process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) and define an architecture of the decoder. Note that, inside the process `case`-`when` [assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) can be used.
+   6. Use [combinational process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) and define an architecture of the decoder. Note that, inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) can be used.
 
 ```vhdl
 ------------------------------------------------------------
