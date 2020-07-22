@@ -71,20 +71,19 @@ README.md
 
 ## Part 2: VHDL code for seven-segment display decoder
 
-Perform the following steps to implement the seven-segment display decoder.
+Perform the following steps to simulate the seven-segment display decoder.
 
    1. Create a new Vivado project in your `Labs/04-segment` working folder.
    2. Create a VHDL source file `hex_7seg` for the decoder.
-   3. Create a constraints XDC file: `nexys-a7-50t`.
-   4. Choose default board: `Nexys A7-50T`.
-   5. In source file, define an entity `hex_7seg` as follows.
+   3. Choose default board: `Nexys A7-50T`.
+   4. In source file, define an entity `hex_7seg` as follows.
 
    | **Port name** | **Direction** | **Width** | **Description** |
    | :-- | :-: | :-: | :-- |
    | `hex_i` | input   | 4 bits | Input binary data |
    | `seg_o` | output  | 7 bits | Cathode values in the order A, B, C, D, E, F, G |
 
-   6. Use [combinational process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) and define an architecture of the decoder. Note that, inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) can be used.
+   5. Use [combinational process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) and define an architecture of the decoder. Note that, inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) can be used.
 
 ```vhdl
 ------------------------------------------------------------
@@ -120,99 +119,81 @@ begin
 end architecture behavioral;
 ```
 
-   7. Create a simulation source `tb_hex_7seg` and verify the functionality of your decoder.
+   6. Create a simulation source `tb_hex_7seg` and verify the functionality of your decoder.
 
 
-## Part 3: Top level
+## Part 3: Top level VHDL code
 
+VHDL provides a mechanism how to build a larger system from simpler or predesigned components. It is called an instantiation. Each instantiation statement creates an instance (copy) of a design entity.
 
+VHDL-93 and later offers two methods of instantiation: direct instantiation and component instantiation. In direct instantiation, the entity itself is directly instantiated in an architecture. Its ports are connected using the port map. Let the top-level design `top.vhd`, implements an instance of the module defined in `hex_7seg.vhd`.
 
+Perform the following steps to implement the seven-segment display decoder on .
 
+   1. Create a new design source `top` in your project.
+   2. Define an entity `top` as follows.
 
+   | **Port name** | **Direction** | **Width** | **Description** |
+   | :-- | :-: | :-: | :-- |
+   | `SW`  | input   | 4 bits | Input binary data |
+   | `LED` | output  | 4 bits | LED indicators |
+   | `CA` | output | 1 bit | Cathod A |
+   | `CB` | output | 1 bit | Cathod B |
+   | `CC` | output | 1 bit | Cathod C |
+   | `CD` | output | 1 bit | Cathod D |
+   | `CE` | output | 1 bit | Cathod E |
+   | `CF` | output | 1 bit | Cathod F |
+   | `CG` | output | 1 bit | Cathod G |
+   | `AN` | output | 8 bits | Common anode signals to individual displays |
 
-
-
-
-
-
-
-
-
-
-1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy/paste the following code template.
-
-![Ports of top module](Images/top___hex_to_7seg.png)
+   3. Create a new [constraints XDC]((https://github.com/Digilent/digilent-xdc)) file: `nexys-a7-50t` and uncomment assigned pins.
+   4. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
 ```vhdl
-------------------------------------------------------------------------
---
--- Implementation of hexadecimal digit to seven-segment decoder.
--- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
---
--- Copyright (c) 2018-2020 Tomas Fryza
--- Dept. of Radio Electronics, Brno University of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-------------------------------------------------------------------------
-
-library ieee;
-use ieee.std_logic_1164.all;
-
-------------------------------------------------------------------------
--- Entity declaration for top level
-------------------------------------------------------------------------
-entity top is
-port (
-    SW0, SW1 :           in  std_logic;
-    BTN0, BTN1 :         in  std_logic;
-    LD0, LD1, LD2, LD3 : out std_logic;
-    disp_seg_o :         out std_logic_vector(7-1 downto 0);
-    disp_dig_o :         out std_logic_vector(4-1 downto 0)
-);
-end entity top;
-
-------------------------------------------------------------------------
--- Architecture declaration for top level
-------------------------------------------------------------------------
-architecture Behavioral of top is
-    signal s_hex : std_logic_vector(4-1 downto 0);  -- Internal signals
+------------------------------------------------------------
+-- Architecture body for top level
+------------------------------------------------------------
+architecture behavioral of top is
 begin
 
-    -- Combine inputs [SW1, SW0, BTN1, BTN0] into internal vector
-    s_hex(3) <= SW1;
-    s_hex(2) <= SW0;
-    s_hex(1) <= not BTN1;
-    s_hex(0) <= not BTN0;
-
-
     --------------------------------------------------------------------
-    -- Sub-block of hex_to_7seg entity
-    HEX2SSEG : entity work.hex_to_7seg
+    -- Instance (copy) of hex_7seg entity
+    hex2seg : entity work.hex_7seg
     port map (
-        -- <component_signal> => <actual_signal>,
-        -- <component_signal> => <actual_signal>,
-        -- <other signals>...
+        hex_i    => SW,
+        seg_o(6) => CA,
+
         -- WRITE YOUR CODE HERE
+
+        seg_o(0) => CG
     );
 
-    -- Select display position
-    disp_dig_o <= "1110";
+    -- Connect one common anode to 3.3V
+    AN <= b"1111_0111";
+    
+    -- Use LEDs as indicators
+    LED <= "0011";
 
-
-    -- Turn on LD3 if the input value is equal to "0000"
-    -- WRITE YOUR CODE HERE
-
-    -- Turn on LD2 if the input value is A, B, C, D, E, or F
-    -- WRITE YOUR CODE HERE
-
-    -- Turn on LD1 if the input value is odd, ie 1, 3, ..., F
-    -- WRITE YOUR CODE HERE
-
-    -- Turn on LD0 if the input value is a power of two, ie 1, 2, 4, or 8
-    -- WRITE YOUR CODE HERE
-
-end architecture Behavioral;
+end architecture behavioral;
 ```
+
+
+
+
+
+TODO: TBD
+
+-- Turn on LD3 if the input value is equal to "0000"
+-- WRITE YOUR CODE HERE
+
+-- Turn on LD2 if the input value is A, B, C, D, E, or F
+-- WRITE YOUR CODE HERE
+
+-- Turn on LD1 if the input value is odd, ie 1, 3, 5, ..., F
+-- WRITE YOUR CODE HERE
+
+-- Turn on LD0 if the input value is a power of two, ie 1, 2, 4, or 8
+-- WRITE YOUR CODE HERE
 
 2. Use onboard push buttons and slide switches as 4-bit input. How is the sub-block of hex to 7-segment decoder connected to the top module?
 
