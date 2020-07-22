@@ -146,7 +146,7 @@ Perform the following steps to implement the seven-segment display decoder on th
    | `CG` | output | 1 bit | Cathod G |
    | `AN` | output | 8 bits | Common anode signals to individual displays |
 
-   3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment assigned pins.
+   3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins.
    4. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
 ```vhdl
