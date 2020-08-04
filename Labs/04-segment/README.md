@@ -4,10 +4,12 @@
 
 The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
 
+![Nexys A7 board](Images/nexys_a7_segment.jpg)
+
 
 ## Preparation tasks (done before the lab at home)
 
-The Nexys A7 board provides two four-digit common anode seven-segment LED displays, configured to behave like a single eight-digit display. See schematic or reference manual of the Nexys A7 board and find out the connection of 7-segment display.
+The Nexys A7 board provides two four-digit common anode seven-segment LED displays (configured to behave like a single eight-digit display). See schematic or reference manual of the Nexys A7 board and find out the connection of 7-segment display.
 
 &nbsp;
 
@@ -79,7 +81,7 @@ Perform the following steps to simulate the seven-segment display decoder.
    4. In source file, define an entity `hex_7seg` as follows.
 
    | **Port name** | **Direction** | **Width** | **Description** |
-   | :-- | :-: | :-: | :-- |
+   | :-: | :-: | :-: | :-- |
    | `hex_i` | input   | 4 bits | Input binary data |
    | `seg_o` | output  | 7 bits | Cathode values in the order A, B, C, D, E, F, G |
 
@@ -134,9 +136,9 @@ Perform the following steps to implement the seven-segment display decoder on th
    2. Define an entity `top` as follows.
 
    | **Port name** | **Direction** | **Width** | **Description** |
-   | :-- | :-: | :-: | :-- |
+   | :-: | :-: | :-: | :-- |
    | `SW`  | input   | 4 bits | Input binary data |
-   | `LED` | output  | 4 bits | LED indicators |
+   | `LED` | output  | 8 bits | LED indicators |
    | `CA` | output | 1 bit | Cathod A |
    | `CB` | output | 1 bit | Cathod B |
    | `CC` | output | 1 bit | Cathod C |
@@ -146,7 +148,7 @@ Perform the following steps to implement the seven-segment display decoder on th
    | `CG` | output | 1 bit | Cathod G |
    | `AN` | output | 8 bits | Common anode signals to individual displays |
 
-   3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins.
+   3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
    4. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
 ```vhdl
@@ -170,84 +172,65 @@ begin
 
     -- Connect one common anode to 3.3V
     AN <= b"1111_0111";
+
+    -- Display input value
+    LED(3 downto 0) <= SW;
+
+    -- Turn LED(4) on if input value is equal to "0000"
+    -- WRITE YOUR CODE HERE
     
-    -- Use LEDs as indicators
-    LED <= "0011";
+    -- Turn LED(5) on if input value is A, b, C, d, E, or F
+    -- WRITE YOUR CODE HERE
+    
+    -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ..., F
+    -- WRITE YOUR CODE HERE
+    
+    -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
+    -- WRITE YOUR CODE HERE
 
 end architecture behavioral;
 ```
 
+   5. Compile the project and download the generated bitstream into the FPGA chip.
+   6. Test the functionality of the seven-segment display decoder by toggling the switches and observing the display and LEDs.
+   7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 
+## Synchronize git
 
+Use `cd ..` command in Linux console terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
-TODO: TBD
+```bash
+$ pwd
+/home/lab661/Documents/your-name/Digital-electronics-1/Labs/04-segment
 
--- Turn on LD3 if the input value is equal to "0000"
--- WRITE YOUR CODE HERE
+$ cd ..
+$ cd ..
+$ pwd
+/home/lab661/Documents/your-name/Digital-electronics-1
 
--- Turn on LD2 if the input value is A, B, C, D, E, or F
--- WRITE YOUR CODE HERE
-
--- Turn on LD1 if the input value is odd, ie 1, 3, 5, ..., F
--- WRITE YOUR CODE HERE
-
--- Turn on LD0 if the input value is a power of two, ie 1, 2, 4, or 8
--- WRITE YOUR CODE HERE
-
-2. Use onboard push buttons and slide switches as 4-bit input. How is the sub-block of hex to 7-segment decoder connected to the top module?
-
-3. What coding style is used to name the input, output, and internal signals in VHDL?
-
-4. Follow instructions from wiki, create a constraints file, and [implement your design](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-implement-your-design-to-target-device-in-ISE) to CoolRunner-II CPLD starter board.
-
-5. Write logic functions for LEDs. Let two functions are defined using VHDL construction `when`-`else` and two functions using low-level gates `and`, `or`, `not`, etc.
-
-6. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
-
-7. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
-
-
-## 5 Clean project and synchronize git
-
-1. In Xilinx ISE, clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
-
-    > **Warning:** In any file manager, make sure the project folder does not contain any **large** (gigabyte) files. These can be caused by incorrect simulation in ISim. Delete such files.
-    >
-
-2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
-
-    ```bash
-    $ pwd
-    /home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-segment
-
-    $ cd ..
-    $ cd ..
-    $ pwd
-    /home/lab661/Documents/your-name/Digital-electronics-1
-
-    $ git status
-    $ git add <your-modified-files>
-    $ git status
-    $ git commit -m "[LAB] Adding 03-segment lab"
-    $ git status
-    $ git push
-    $ git status
-    ```
+$ git status
+$ git add <your-modified-files>
+$ git status
+$ git commit -m "[LAB] Creating 04-segment lab"
+$ git status
+$ git push
+$ git status
+```
 
 
 ## Experiments on your own
 
-1. Program and simulate a 4-to-1 multiplexer consists of four data input lines `data_i` two select lines `sel_i` and a single output line `y_o`.
-
-2. Complete your `README.md` file with notes and screenshots from the implementation.
+1. Write logic functions for LEDs(7:4) according to comments in source code above. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not`.
 
 
+## Lab assignment
 
+1. Seven-segment display decoder. Submit:
+    * VHDL code of the decoder (`hex_7seg.vhd`),
+    * VHDL testbench (`tb_hex_7seg.vhd`).
 
+2. LED indicators. Submit:
+    * VHDL code for LEDs(7:4).
 
-
-
-
-#TODO
-4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
+The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
