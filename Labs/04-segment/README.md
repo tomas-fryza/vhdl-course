@@ -88,20 +88,19 @@ Perform the following steps to simulate the seven-segment display decoder.
    5. Use [combinational process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) and define an architecture of the decoder. Note that, inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) can be used.
 
 ```vhdl
-------------------------------------------------------------
+------------------------------------------------------------------------
 -- Architecture body for seven-segment display decoder
-------------------------------------------------------------
+------------------------------------------------------------------------
 architecture behavioral of hex_7seg is
 begin
 
-    ------------------------------------------------------------
+    --------------------------------------------------------------------
     -- p_7seg_decoder:
     -- A combinational process for 7-segment display decoder. 
     -- Any time "hex_i" is changed, the process is "executed".
-    -- Output pin seg_o(6) corresponds to segment A, seg_o(5) to B,
-    -- etc.
-    ------------------------------------------------------------
-    p_7seg_decoder : process (hex_i)
+    -- Output pin seg_o(6) corresponds to segment A, seg_o(5) to B, etc.
+    --------------------------------------------------------------------
+    p_7seg_decoder : process(hex_i)
     begin
         case hex_i is
             when "0000" =>
@@ -152,23 +151,23 @@ Perform the following steps to implement the seven-segment display decoder on th
    4. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
 ```vhdl
-------------------------------------------------------------
+------------------------------------------------------------------------
 -- Architecture body for top level
-------------------------------------------------------------
+------------------------------------------------------------------------
 architecture behavioral of top is
 begin
 
     --------------------------------------------------------------------
     -- Instance (copy) of hex_7seg entity
     hex2seg : entity work.hex_7seg
-    port map (
-        hex_i    => SW,
-        seg_o(6) => CA,
+        port map(
+            hex_i    => SW,
+            seg_o(6) => CA,
 
-        -- WRITE YOUR CODE HERE
+            -- WRITE YOUR CODE HERE
 
-        seg_o(0) => CG
-    );
+            seg_o(0) => CG
+        );
 
     -- Connect one common anode to 3.3V
     AN <= b"1111_0111";

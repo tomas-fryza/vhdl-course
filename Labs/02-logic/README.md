@@ -105,8 +105,7 @@ In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1
 In VHDL, define an [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [signal assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments). Use the assignment `when`,` else` to describe the three output functions, such as:
 
 ```vhdl
-greater_o <= '1' when (b_i > a_i) else
-             '0';
+greater_o <= '1' when (b_i > a_i) else '0';
 ```
 
 
@@ -124,35 +123,34 @@ An assertion statement checks that a specified condition is true and reports an 
 
 ```vhdl
 assert (<condition>)
-    report <message_string>
-    [severity <severity_level>];
+report <message_string>
+[severity <severity_level>];
 ```
 
 The message is displayed to the console when the condition is NOT met, therefore the message should be an opposite to the condition.
 
 ```vhdl
-------------------------------------------------------------
--- Data generation process
-------------------------------------------------------------
-p_stimulus : process
-begin
-    report "Stimulus process started" severity note;
+    --------------------------------------------------------------------
+    -- Data generation process
+    --------------------------------------------------------------------
+    p_stimulus : process
+    begin
+        report "Stimulus process started" severity note;
 
-    s_b <= "00";
-    s_a <= "00";
-    wait for 100 ns;
-    assert ((s_greater = '0') and (s_equals = '1') and (s_less = '0')) -- Expected output
+        s_b <= "00";
+        s_a <= "00";
+        wait for 100 ns;
+        -- Expected output
+        assert ((s_greater = '0') and (s_equals = '1') and (s_less = '0'))
         -- If false, report an error
         report "Test failed for input combination: 00, 00"
         severity error;
 
+        -- ADD OTHER TEST CASES
 
-    -- Add other test cases
-
-
-    report "Stimulus process finished" severity note;
-    wait;
-end process p_stimulus;
+        report "Stimulus process finished" severity note;
+        wait;
+    end process p_stimulus;
 ```
 
 In VHDL, write a testbench and verify the correct functionality of the comparator for all input combinations.
