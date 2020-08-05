@@ -4,132 +4,76 @@
 
 The purpose of this laboratory exercise is to become familiar with the creation of sequential processes in VHDL, next to implement a clock enable signal to drive another logic with slower clock, and to design a binary counter.
 
-
-#### Materials
-
-You will use a push button on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as reset device, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and 7-segment display as output device.
-
-![CoolRunner-II CPLD starter board](Images/coolrunner_binary_cnt.jpg)
+![Nexys A7 board](Images/TBD.jpg)
 
 
-## 1 Preparation tasks (done before the lab at home)
+## Preparation tasks (done before the lab at home)
 
-1. Calculate how many periods of clock signal with frequency of 10&nbsp;kHz contain time intervals 4&nbsp;ms, 10&nbsp;ms, 250&nbsp;ms, 500&nbsp;ms, and 1&nbsp;s. Write values in decimal, binary, and hexadecimal forms.
+The Nexys A7 board provides six push buttons. See schematic or reference manual of the Nexys A7 board and find out the connection of these push buttons. What output the push buttons normally generate when they are at rest, and what output when the push buttons are pressed?
 
-    &nbsp;
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+Calculate how many periods of clock signal with frequency of 100&nbsp;MHz contain time intervals 2&nbsp;ms, 4&nbsp;ms, 10&nbsp;ms, 250&nbsp;ms, 500&nbsp;ms, and 1&nbsp;s. Write values in decimal, binary, and hexadecimal forms.
+
+   &nbsp;
     
-    ![Clock period](Images/freq.png)
+   ![Clock period](Images/freq.png)
     
-    &nbsp;
+   &nbsp;
 
-    | **Freq** | **Time** | **Number of periods** | **Number of periods in binary** | **Number of periods in hex** |
-    | :-: | :-: | :----------------: | :----------------: | :----------------: |
-    | 250&nbsp;Hz | 4&nbsp;ms |
-    | 100&nbsp;Hz | 10&nbsp;ms |
-    | 4&nbsp;Hz | 250&nbsp;ms |
-    | 2&nbsp;Hz | 500&nbsp;ms |
-    | 1&nbsp;Hz | 1&nbsp;sec |
+   | **Freq** | **Time** | **Number of periods** | **Number of periods in hex** | **Number of periods in binary** |
+   | :-: | :-: | :-: | :-: | :-: |
+   | 500&nbsp;Hz | 2&nbsp;ms | 200 000 | x"3_0d40" | b"0011_0000_1101_0100_0000" |
+   | 250&nbsp;Hz | 4&nbsp;ms |
+   | 100&nbsp;Hz | 10&nbsp;ms |
+   | 4&nbsp;Hz | 250&nbsp;ms |
+   | 2&nbsp;Hz | 500&nbsp;ms |
+   | 1&nbsp;Hz | 1&nbsp;sec | 100 000 000 | x"5F5_E100" | b"0101_1111_0101_1110_0001_0000_0000" |
 
-2. See how to create a [sequential process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) in VHDL.
 
-
-## 2 Synchronize Git and create a new folder
+## Part 1: Synchronize Git and create a new folder
 
 1. Open a Linux terminal, change path to your Digital-electronics-1 working directory, and synchronize the contents with GitHub.
-
-2. Create a new folder `Labs/05-counter_binary`
-
-
-## 3 Clock enable VHDL code
-
-To drive another logic in the design (with slower clock), it is better to generate a **clock enable signal** instead of creating another clock domain (using **clock dividers**) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.
-
-1. Create a new project in ISE titled `binary_counter` for XC2C256-TQ144 CPLD device in location `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/05-counter_binary`
-
-2. Create a new VHDL module `clock_enable`, copy/paste the following code template, and run the synthesis (**Implement Design > Synthesize - XST**).
-
-```vhdl
-------------------------------------------------------------------------
---
--- Generates clock enable signal.
--- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
---
--- Copyright (c) 2019-2020 Tomas Fryza
--- Dept. of Radio Electronics, Brno University of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-------------------------------------------------------------------------
-
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;    -- Provides unsigned numerical computation
-
-------------------------------------------------------------------------
--- Entity declaration for clock enable
-------------------------------------------------------------------------
-entity clock_enable is
-generic (
-    g_MAX    : unsigned(16-1 downto 0) := x"0005"  -- Default value
-);
-port (
-    clk_i    : in  std_logic;
-    srst_n_i : in  std_logic; -- Synchronous reset (active low)
-    clk_en_o : out std_logic
-);
-end entity clock_enable;
-
-------------------------------------------------------------------------
--- Architecture body for clock enable
-------------------------------------------------------------------------
-architecture Behavioral of clock_enable is
-
-    -- Internal signals
-    signal s_cnt : unsigned(16-1 downto 0) := (others => '0');
-
-begin
-    --------------------------------------------------------------------
-    -- p_clk_enable:
-    -- Generate clock enable signal instead of creating another clock 
-    -- domain. By default enable signal is low and generated pulse is 
-    -- always one clock long.
-    --------------------------------------------------------------------
-    p_clk_enable : process (clk_i)
-    begin
-        if rising_edge(clk_i) then          -- Rising clock edge
-
-            if srst_n_i = '0' then          -- Synchronous reset (active low)
-                s_cnt <= (others => '0');   -- Clear all bits
-                clk_en_o <= '0';
-            elsif s_cnt >= (g_MAX-1) then   -- Enable pulse
-                s_cnt <= (others => '0');
-                clk_en_o <= '1';
-            else
-                s_cnt <= s_cnt + 1;
-                clk_en_o <= '0';
-            end if;
-
-        end if; -- Rising edge
-    end process p_clk_enable;
-
-end architecture Behavioral;
-```
-
-**Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
-
-3. Create a new VHDL test bench, simulate the module for different `g_MAX` values, and verify that the reset works correctly. **Comment or remove** lines in generated test bench that contain `clock_enable_o_process` process definition. The clock enable signal is generated by the VHDL module.
-
-```vhdl
---   clock_enable_o_process :process
---   begin
---       clock_enable_o <= '0';
---       wait for clock_enable_o_period/2;
---       clock_enable_o <= '1';
---       wait for clock_enable_o_period/2;
---   end process;
-```
+2. Create a new folder `Labs/05-counter`
 
 
-## 4 Binary counter VHDL code
+## Part 2: VHDL code for clock enable
+
+To drive another logic in the design (with slower clock), it is better to generate a **clock enable signal** instead of creating another clock domain (using clock dividers) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.
+
+Perform the following steps to simulate the clock enable circuit.
+
+   1. Create a new Vivado project `counter` in your `Labs/05-counter` working folder.
+   2. Create a VHDL source file `clock_enable` for the clock enable circuit.
+   3. Choose default board: `Nexys A7-50T`.
+   4. Open the [Clock enable circuit example](https://www.edaplayground.com/x/5LiJ) and copy/paste the `design.vhd` code to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as package for arithmetic operations, `generic`, `signal`, and [synchronous process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes). **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
+
+   5. Create a simulation source `tb_clock_enable`, copy/paste the `testbench.vhd` code and run the simulation. Verify the meaning of the constant `c_MAX` and reset generation process. The default simulation run time is set to 1000&nbsp;ns in Vivado. You can change it in the menu **Tools > Settings...**
+
+![Specify simulation run time in Vivado](Images/screenshot_vivado_run_time.png)
+
+
+
+
+
+
+
+
+
+#TBD
+
+## Part 3: Top level VHDL code for 
 
 1. Create a new VHDL module `binary_cnt`, copy/paste the following code template, and run the synthesis.
 
@@ -299,10 +243,28 @@ If top level module in Xilinx ISE has not changed automatically, do it manually:
 2. Use git commands to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
-## Experiments on your own
+
+
+
+
+## TBD:Experiments on your own
 
 1. Display 4-bit counter value with onboard LEDs.
 
 2. Implement a second 8-bit counter with a different time base (ie. different clock enable value) and display its value using LEDs on the CPLD expansion board.
 
 3. Complete your `README.md` file with notes and screenshots from simulation and implementation.
+
+
+
+
+## TBD:Lab assignment
+
+1. XXXX. Submit:
+    * VHDL code of the decoder (`hex_7seg.vhd`),
+    * VHDL testbench (`tb_hex_7seg.vhd`).
+
+2. LED indicators. Submit:
+    * VHDL code for LEDs(7:4).
+
+The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
