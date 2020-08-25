@@ -15,8 +15,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 
 * [Introduction to Vivado](Labs/03-vivado)
 * [Seven-segment display decoder](Labs/04-segment)
-* Binary adder
-* Binary counter
+* [Binary counter](Labs/05-counter)
 * Driver for multiple seven-segment displays
 * Stopwatch
 * Traffic light controller
