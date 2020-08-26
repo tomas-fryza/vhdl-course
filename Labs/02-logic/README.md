@@ -95,7 +95,7 @@ Log in to your [EDA Playground](https://www.edaplayground.com/login) account and
 In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity) for a 2-bit binary comparator (`comparator_2bit`).
 
 | **Port name** | **Direction** | **Type** | **Description** |
-| :-- | :-: | :-- | :-- |
+| :-: | :-: | :-- | :-- |
 | `a_i`       | input  | [`std_logic_vector(2 - 1 downto 0)`](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Data-types) | Data A |
 | `b_i`       | input  | `std_logic_vector(2 - 1 downto 0)` | Data B |
 | `greater_o` | output | `std_logic` | B is greater than A |
@@ -186,7 +186,7 @@ $ git status
 1. In VHDL, define entity and architecture for a 4-bit binary comparator (`comparator_4bit`).
 
    | **Port name** | **Direction** | **Type** | **Description** |
-   | :-- | :-: | :-- | :-- |
+   | :-: | :-: | :-- | :-- |
    | `a_i`       | input  | `std_logic_vector(4 - 1 downto 0)` | Data A |
    | `b_i`       | input  | `std_logic_vector(4 - 1 downto 0)` | Data B |
    | `greater_o` | output | `std_logic` | B is greater than A |
