@@ -129,14 +129,22 @@ begin
     --------------------------------------------------------------------
     -- Instance (copy) of clock_enable entity
     clk_en0 : entity work.clock_enable
-
-        --- WRITE YOUR CODE HERE
+        generic map(
+            --- WRITE YOUR CODE HERE
+        )
+        port map(
+            --- WRITE YOUR CODE HERE
+        );
 
     --------------------------------------------------------------------
     -- Instance (copy) of cnt_up_down entity
     bin_cnt0 : entity work.cnt_up_down
-
-       --- WRITE YOUR CODE HERE
+        generic map(
+            --- WRITE YOUR CODE HERE
+        )
+        port map(
+            --- WRITE YOUR CODE HERE
+        );
 
     -- Display input value
     LED(3 downto 0) <= s_cnt;
