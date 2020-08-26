@@ -80,10 +80,10 @@ Perform the following steps to simulate the seven-segment display decoder.
    3. Choose default board: `Nexys A7-50T`.
    4. In source file, define an entity `hex_7seg` as follows.
 
-   | **Port name** | **Direction** | **Width** | **Description** |
-   | :-: | :-: | :-: | :-- |
-   | `hex_i` | input   | 4 bits | Input binary data |
-   | `seg_o` | output  | 7 bits | Cathode values in the order A, B, C, D, E, F, G |
+   | **Port name** | **Direction** | **Type** | **Description** |
+   | :-: | :-: | :-- | :-- |
+   | `hex_i` | input   | `std_logic_vector(4 - 1 downto 0)` | Input binary data |
+   | `seg_o` | output  | `std_logic_vector(7 - 1 downto 0)` | Cathode values in the order A, B, C, D, E, F, G |
 
    5. Use [combinational process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) and define an architecture of the decoder. Note that, inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) can be used.
 
@@ -134,18 +134,18 @@ Perform the following steps to implement the seven-segment display decoder on th
    1. Create a new design source `top` in your project.
    2. Define an entity `top` as follows.
 
-   | **Port name** | **Direction** | **Width** | **Description** |
-   | :-: | :-: | :-: | :-- |
-   | `SW`  | input   | 4 bits | Input binary data |
-   | `LED` | output  | 8 bits | LED indicators |
-   | `CA` | output | 1 bit | Cathod A |
-   | `CB` | output | 1 bit | Cathod B |
-   | `CC` | output | 1 bit | Cathod C |
-   | `CD` | output | 1 bit | Cathod D |
-   | `CE` | output | 1 bit | Cathod E |
-   | `CF` | output | 1 bit | Cathod F |
-   | `CG` | output | 1 bit | Cathod G |
-   | `AN` | output | 8 bits | Common anode signals to individual displays |
+   | **Port name** | **Direction** | **Type** | **Description** |
+   | :-: | :-: | :-- | :-- |
+   | `SW`  | input   | `std_logic_vector(4 - 1 downto 0)` | Input binary data |
+   | `LED` | output  | `std_logic_vector(8 - 1 downto 0)` | LED indicators |
+   | `CA` | output | `std_logic` | Cathod A |
+   | `CB` | output | `std_logic` | Cathod B |
+   | `CC` | output | `std_logic` | Cathod C |
+   | `CD` | output | `std_logic` | Cathod D |
+   | `CE` | output | `std_logic` | Cathod E |
+   | `CF` | output | `std_logic` | Cathod F |
+   | `CG` | output | `std_logic` | Cathod G |
+   | `AN` | output | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
 
    3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
    4. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
