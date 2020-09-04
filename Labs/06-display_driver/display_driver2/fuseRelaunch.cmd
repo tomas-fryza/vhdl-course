@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -o "/home/fryza/GIT/Digital-electronics-1/Labs/06-display_driver/display_driver2/driver_7seg_tb00_isim_beh.exe" -prj "/home/fryza/GIT/Digital-electronics-1/Labs/06-display_driver/display_driver2/driver_7seg_tb00_beh.prj" "work.driver_7seg_tb00" 
