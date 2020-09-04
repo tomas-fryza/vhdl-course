@@ -62,7 +62,7 @@ Perform the following steps to model the driver circuit.
    1. Create a new Vivado RTL project `display_driver` in your `Labs/06-display_driver` working folder.
    2. Create a VHDL source file `driver_7seg_4digits.vhd` for the driver circuit.
    3. Choose default board: `Nexys A7-50T`.
-   4. Open the [Driver for seven-segment display](https://www.edaplayground.com/x/3f_A) and copy/paste the `design.vhd` code to your `driver_7seg_4digits.vhd` file. Copy source files of clock enable, binary counter, 7-segment decoder modules from previous labs to `display_driver/display_driver.srcs/sources_1/new/` and add then to the project.
+   4. Open the [Driver for 7-segment display](https://www.edaplayground.com/x/3f_A) example and copy/paste the `design.vhd` code to your `driver_7seg_4digits.vhd` file. Copy source files of clock enable, binary counter, 7-segment decoder modules from previous labs to `display_driver/display_driver.srcs/sources_1/new/` and add then to the project.
    5. Complete the driver code according to the following block diagram.
 
 ![Block diagram of 7-segment display driver](Images/schema_driver.jpg)
