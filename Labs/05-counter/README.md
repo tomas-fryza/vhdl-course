@@ -52,7 +52,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 Perform the following steps to simulate the clock enable circuit.
 
-   1. Create a new Vivado project `counter` in your `Labs/05-counter` working folder.
+   1. Create a new Vivado RTL project `counter` in your `Labs/05-counter` working folder.
    2. Create a VHDL source file `clock_enable.vhd` for the clock enable circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Clock enable circuit example](https://www.edaplayground.com/x/5LiJ) and copy/paste the `design.vhd` code to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as package for arithmetic operations, `generic` part, internal signal, and [synchronous process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes). **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
@@ -88,7 +88,6 @@ Perform the following steps to simulate the bidirectional N-bit counter.
 
 ## Part 4: Top level VHDL code
 
-
 Perform the following steps to implement the 4-bit bidirectional counter on the Nexys A7 board.
 
    1. Create a new design source `top.vhd` in your project.
@@ -97,7 +96,7 @@ Perform the following steps to implement the 4-bit bidirectional counter on the 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-: | :-- |
    | `CLK100MHZ` | input | `std_logic` | Main clock |
-   | `BTNC` | input | `std_logic` | Reset |
+   | `BTNC` | input | `std_logic` | Synchronous reset |
    | `SW`  | input   | `std_logic_vector(1 - 1 downto 0)` | Counter direction |
    | `LED` | output  | `std_logic_vector(4 - 1 downto 0)` | Counter value LED indicators |
    | `CA` | output | `std_logic` | Cathod A |
@@ -110,10 +109,9 @@ Perform the following steps to implement the 4-bit bidirectional counter on the 
    | `AN` | output | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
 
    3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
-   4. Use direct instantiation and define an architecture of the top level: make a copy of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratory to the current source folder.
+   4. Use direct instantiation and define an architecture of the top level: make a copy of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratories to the `counter/counter.srcs/sources_1/new/` source folder and add them to the project.
 
 ```vhdl
-
 ------------------------------------------------------------------------
 -- Architecture body for top level
 ------------------------------------------------------------------------
@@ -169,7 +167,7 @@ begin
 end architecture behavioral;
 ```
 
-   5. Compile the project and download the generated bitstream into the FPGA chip.
+   5. Compile the project and download the generated bitstream `counter/counter.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the 4-bit counter by toggling the switch, pressing the button and observing the display and LEDs.
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
