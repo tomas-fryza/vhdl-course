@@ -68,7 +68,7 @@ Perform the following steps to model the driver circuit.
 ![Block diagram of 7-segment display driver](Images/schema_driver.jpg)
 
 
-## Top level VHDL code
+## Part 3: Top level VHDL code
 
 Perform the following steps to implement the 4-digit 7-segment display driver on the Nexys A7 board.
 
