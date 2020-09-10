@@ -50,7 +50,7 @@ Due to the physiological properties of human vision, it is necessary that the ti
 ## Part 1: Synchronize Git and create a new folder
 
 1. Open a Linux terminal, change path to your Digital-electronics-1 working directory, and synchronize the contents with GitHub.
-2. Create a new folder `Labs/06-display_driver`
+2. Create a new folder `Labs/06-display_driver`.
 
 
 ## Part 2: VHDL code for display driver
@@ -103,7 +103,7 @@ begin
 
     --------------------------------------------------------------------
     -- Instance (copy) of driver_7seg_4digits entity
-    driver_seg0 : entity work.driver_7seg_4digits
+    driver_seg_4 : entity work.driver_7seg_4digits
         port map(
             clk      => CLK100MHZ,
             reset    => BTNC,
@@ -135,18 +135,17 @@ Use `cd ..` command in Linux console terminal and change the working directory t
 ## Experiments on your own
 
 1. On your smartphone, set slow motion video recording and observe the seven-segment display behavior:)
-
 2. Extend the duration of one symbol on the 7-segment display ie. generic `g_MAX` in `driver_7seg_4digit.vhd` file and experimentally determine the maximum value at which switching by the human eye is not yet observable.
-
-3. Add a second instance (copy) of the 4-digit driver (`driver_seg1`) and display the values of the 4-bit switches in the opposite direction, ie let SW(0) represents the MSB of the first value, SW(3) the LSB bit, etc.
+3. Design the structure of `driver_7seg_8digits` module, which controls all eight 7-segment displays.
 
 
 ## Lab assignment
 
 1. Display driver. Submit:
     * VHDL code of the process `p_mux`.
-
-2. Second display driver. Submit:
     * VHDL code of the top layer architecture.
+
+2. Eight-digit driver. Submit:
+    * (Hand-drawn) sketch of the driver schematic.
 
 The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
