@@ -45,5 +45,6 @@ The following hardware and software components are mainly used in the lab.
 2. [Digital electronics 1 wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
 3. ASHENDEN, Peter J. *The designer's guide to VHDL.* 3rd ed. Boston: Morgan Kaufmann Publishers, c2008. ISBN 978-0-12-088785-9.
 4. CHU, Pong P. *FPGA prototyping by VHDL examples.* Hoboken, N.J.: Wiley-Interscience, c2008. ISBN 978-0-470-18531-5.
-5. KALLSTROM, P. [A Fairly Small VHDL Guide](Docs/VHDL_guide.pdf). Version 2.1.
-6. [GitHub GIT CHEAT SHEET](Docs/git_cheatsheet.pdf)
+5. MANO, M. Morris. Digital Design: With an Introduction to the Verilog, HDL, VHDL, and System Verilog. Pearson, 6th edition, 2018. ISBN-13: 978-1292231167.
+6. KALLSTROM, P. [A Fairly Small VHDL Guide](Docs/VHDL_guide.pdf). Version 2.1.
+7. [GitHub GIT CHEAT SHEET](Docs/git_cheatsheet.pdf)
