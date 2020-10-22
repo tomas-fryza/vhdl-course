@@ -1,20 +1,34 @@
 # Lab 8: Traffic light controller
 
-#### Objectives
+### Learning objectives
 
-In this laboratory exercise you will implement a finite state machine, specifically a traffic light controller at a junction. You will use the Xilinx Isim simulator or the EDA playground online tool. You will use a push button on the CoolRunner board as reset device, onboard clock signal with frequency of 10&nbsp;kHz for synchronization, and CPLD expansion board LEDs as outputs.
+In this laboratory exercise you will implement a finite state machine (FSM), specifically a traffic light controller at a junction. At first, the intersection will contain only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green color after a given period. subsequently, the system will be extended with a smarter way of driving.
 
-[Video](https://youtu.be/P2emiQeBgE8)
-
-![CoolRunner-II CPLD starter board](Images/traffic_lights_photo.jpg)
+![Nexys A7 board](Images/nexys_a7_traffic.jpg)
 
 
-## 1 Synchronize Git and create a new folder
+## Preparation tasks (done before the lab at home)
 
-Synchronize the contents of your Digital-electronics-1 working directory with GitHub. and create a new folder `Labs/08-traffic_lights`.
+TBD
 
 
-## 2 Finite State Machine (FSM)
+## Part 1: Synchronize Git and create a new folder
+
+1. Synchronize the contents of your Digital-electronics-1 working directory with GitHub.
+2. Create a new folder `Labs/08-traffic_lights`.
+
+
+
+
+
+
+
+
+
+
+
+
+## Part 2: Finite State Machine (FSM)
 
 A finite state machine (FSM) is a computation model that can be implemented with hardware or software and can be used to simulate sequential logic. There are two different main types of finite state machines: the Mealy FSM and the Moore FSM. The fundamental difference between these two types lies in the management of the outputs:
 
@@ -24,7 +38,7 @@ A finite state machine (FSM) is a computation model that can be implemented with
 Read the article [Implementing a Finite State Machine in VHDL](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/) and understand how to design your own FSM. How you can define your own data type in VHDL? Give an example.
 
 
-## 3 Traffic light controller
+## Part 3: Traffic light controller
 
 Watch [Example 62: Traffic Light Controller](https://www.youtube.com/watch?v=6_Rotnw1hFM) video and implement the basic controller for 2 one-way streets in VHDL.
 
@@ -63,19 +77,19 @@ Follow programming conventions and coding style from previous lab exercises and 
 Rename the states `s0`, `s1`, .., `s5` from the example to more meaningful and draw the state diagram.
 
 
-## 4 Traffic light simulation
+## Part 4: Traffic light simulation
 
 Design and simulate traffic light FSM in [EDA playground](https://www.edaplayground.com) or Xilinx ISE. Write a testbench that verifies all the functions of your traffic light controller (reset, timing, output lights).
 
 
-## 5 Top level
+## Part 5: Top level VHDL code
 
 Implement the top level in VHDL **or instead** draw a block diagram of used modules and name all inputs, outputs and internal signals. Use the `clock_enable` entity with the correct timing (the duration of each state should be 1 or 5 seconds).
 
 
 ## Synchronize git
 
-Your repository must include `README.md` file with simulation screenshot(s), next the source code for traffic light controller, testbench code, and source code or schematic of top level implementation. Submit your solution **no later** than Friday.
+Synchronize the contents of your Digital-electronics-1 working directory with GitHub.
 
 
 ## Experiments on your own
@@ -87,3 +101,20 @@ Your repository must include `README.md` file with simulation screenshot(s), nex
    Explain how the intersection throughput is maximized.
 
    Draw a state diagram of your implementation.
+
+
+## Lab assignment
+
+1. Preparation tasks (done before the lab at home). Submit:
+    * Xxx,
+    * Xxx.
+
+2. Xxx. Submit:
+    * VHDL code of xxx,
+    * Screenshot(s) of the simulation, from which it is clear xxxx work correctly,
+    * VHDL code of the top layer architecture.
+
+3. Xxx. Submit:
+    * (Hand-drawn) sketch of the xxx schematic.
+
+The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
