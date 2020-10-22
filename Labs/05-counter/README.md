@@ -1,6 +1,6 @@
 # Lab 5: Binary counter
 
-#### Objectives
+### Learning objectives
 
 The purpose of this laboratory exercise is to become familiar with the creation of sequential processes in VHDL, next to implement a clock enable signal to drive another logic with slower clock, and to design a binary counter.
 

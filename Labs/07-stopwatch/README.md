@@ -1,6 +1,6 @@
 # Lab 7: Stopwatch
 
-#### Objectives
+### Learning objectives
 
 In this laboratory exercise, you will implement several decimal counters to create a stopwatch and display its value on 7-segment displays. Let the stopwatch has four places, from tens of seconds to hundreds of seconds.
 

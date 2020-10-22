@@ -1,6 +1,6 @@
 # Lab 4: Seven-segment display decoder
 
-#### Objectives
+### Learning objectives
 
 The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
 

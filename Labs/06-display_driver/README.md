@@ -1,6 +1,6 @@
 # Lab 6: Driver for multiple seven-segment displays
 
-#### Objectives
+### Learning objectives
 
 In this laboratory exercise, you will study the creation of a sequential circuit for multiplexing 7-segment displays. This allows you to display four or even eight-digit values, including the decimal point on the display.
 
