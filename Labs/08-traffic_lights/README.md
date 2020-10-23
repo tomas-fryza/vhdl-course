@@ -2,7 +2,7 @@
 
 ### Learning objectives
 
-In this laboratory exercise you will implement a finite state machine (FSM), specifically a traffic light controller at a junction. At first, the intersection will contain only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green color after a given period. Subsequently, the system will be extended with a smarter way of driving.
+In this laboratory exercise you will implement a finite state machine (FSM), specifically a traffic light controller at a junction. At first, the intersection will contain only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green, yellow, and red color after a given period. Subsequently, the system will be extended with a smarter way of driving.
 
 ![Nexys A7 board](Images/nexys_a7_traffic.jpg)
 
@@ -48,7 +48,7 @@ Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repo
 A finite state machine (FSM) is a computation model that can be implemented with hardware or software and can be used to simulate sequential logic. There are two different main types of finite state machines: the Mealy FSM and the Moore FSM. The fundamental difference between these two types lies in the management of the outputs:
 
    * The output of the **Mealy** FSM depends on the present state and inputs.
-   * The outputs of a **Moore** machine depend only on the present state and not on the inputs, as shown in the figure.
+   * The outputs of a **Moore** machine depend only on the present state and not on the inputs, as shown in the figure [[1]](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/).
 
 ![Moore-type FSM](Images/moore_structure.png)
 
@@ -56,18 +56,33 @@ A common way how to represent a finite state machine is a **state diagram** whic
    * Circles and
    * Directed arcs to the next state circles.
 
-Circles represent the machine states labelled with a reflecting state and for a Moore machine also the output value. Directed arcs represent the transitions between states and they are labelled with input/output pair for a Mealy machine and with input for a Moore machine as shown [[1]](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-spring-2017/c6/c6s1/).
+Circles represent the machine states labelled with a reflecting state and for a Moore machine also the output value.
+
+![State diagrams](Images/diagram_circle.png)
+
+Directed arcs represent the transitions between states and they are labelled with input/output pair for a Mealy machine and with input for a Moore machine as shown [[2]](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-spring-2017/c6/c6s1/).
 
 ![State diagrams](Images/diagram_structure.png)
 
 
 ## Part 3: Traffic light controller VHDL code
 
-Let the intersection contains only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green color after a given period.
+Let the intersection contains only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green, yellow, and red color after a given period. If it is red in one direction on the traffic light, it is green in the other, and green in the first direction can only occur when it is red in the other direction.
+
+| **Current state** | **N-S** | **W-E** | **Next state** |
+| :-- | :-: | :-: | :-- |
+| `RED` | red | red | `NS_YELLOW` |
+| `NS_YELLOW` | yellow | red | `NS_GREEN` |
+| `NS_GREEN` | green | red | `NS_YELLOW2` |
+| `NS_YELLOW2` | yellow | red | `WE_YELLOW` |
+| `WE_YELLOW` | red | yellow | `WE_GREEN` |
+| `WE_GREEN` | red | green | `WE_YELLOW2` |
+| `WE_YELLO2` | red | yellow | `RED` |
 
 
 
-TODO: Popis situace se dvěma semaforama. Vždy jen jedna barva, nikoliv červená+žlutá.
+
+
 
 
 
