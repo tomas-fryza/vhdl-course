@@ -2,7 +2,7 @@
 
 ### Learning objectives
 
-In this laboratory exercise you will implement a finite state machine (FSM), specifically a traffic light controller at a junction. At first, the intersection will contain only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green color after a given period. subsequently, the system will be extended with a smarter way of driving.
+In this laboratory exercise you will implement a finite state machine (FSM), specifically a traffic light controller at a junction. At first, the intersection will contain only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green color after a given period. Subsequently, the system will be extended with a smarter way of driving.
 
 ![Nexys A7 board](Images/nexys_a7_traffic.jpg)
 
@@ -11,26 +11,31 @@ In this laboratory exercise you will implement a finite state machine (FSM), spe
 
 Read the article [Implementing a Finite State Machine in VHDL](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/) (parts **A Bit of Background** and **The Finite State Machine**) and understand what a FSM is.
 
-Complete the state diagram from the example so that for each state both transitions are visible, ie for P=1 but also for P=0.
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
 Fill in the table with the state names and output values in the order in which they are listed below.
 
 | **Input P** | `0` | `0` | `1` | `1` | `0` | `1` | `0` | `1` | `1` | `1` | `1` | `0` | `0` | `1` | `1` | `1` |
 | :-- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | **State** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **Output R** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+
+See schematic or reference manual of the Nexys board and find out the connection of two RGB LEDs. How to control them to get red, yellow, or green colors?
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+| **RGB LED** | **Artix-7 pin names** | **Red color** | **Yellow** | **Green** |
+| :-: | :-: | :-: | :-: | :-: |
+| LD16 | N15, M16, R12 | `1,0,0` |  |  |
+| LD17 |  |  |  |  |
 
 
 ## Part 1: Synchronize Git and create a new folder
@@ -42,20 +47,31 @@ Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repo
 
 A finite state machine (FSM) is a computation model that can be implemented with hardware or software and can be used to simulate sequential logic. There are two different main types of finite state machines: the Mealy FSM and the Moore FSM. The fundamental difference between these two types lies in the management of the outputs:
 
-* The output of the Mealy FSM depends on the present state and inputs.
-* The outputs of a Moore machine depend only on the present state and not on the inputs.
+   * The output of the **Mealy** FSM depends on the present state and inputs.
+   * The outputs of a **Moore** machine depend only on the present state and not on the inputs, as shown in the figure.
+
+![Moore-type FSM](Images/moore_structure.png)
+
+A common way how to represent a finite state machine is a **state diagram** which contains:
+   * Circles and
+   * Directed arcs to the next state circles.
+
+Circles represent the machine states labelled with a reflecting state and for a Moore machine also the output value. Directed arcs represent the transitions between states and they are labelled with input/output pair for a Mealy machine and with input for a Moore machine as shown [[1]](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-spring-2017/c6/c6s1/).
+
+![State diagrams](Images/diagram_structure.png)
+
+
+## Part 3: Traffic light controller VHDL code
+
+Let the intersection contains only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green color after a given period.
+
+
+
+TODO: Popis situace se dvěma semaforama. Vždy jen jedna barva, nikoliv červená+žlutá.
 
 
 
 
-
-
-
-
-
-
-
-## Part 3: Traffic light controller
 
 Watch [Example 62: Traffic Light Controller](https://www.youtube.com/watch?v=6_Rotnw1hFM) video and implement the basic controller for 2 one-way streets in VHDL.
 
