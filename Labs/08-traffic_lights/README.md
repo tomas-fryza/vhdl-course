@@ -15,8 +15,8 @@ Fill in the table with the state names and output values in the order in which t
 
 | **Input P** | `0` | `0` | `1` | `1` | `0` | `1` | `0` | `1` | `1` | `1` | `1` | `0` | `0` | `1` | `1` | `1` |
 | :-- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| **State** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| **Output R** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **State** | A |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **Output R** | `0` |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 
 See schematic or reference manual of the Nexys board and find out the connection of two RGB LEDs. How to control them to get red, yellow, or green colors?
 
@@ -32,7 +32,7 @@ See schematic or reference manual of the Nexys board and find out the connection
 
 &nbsp;
 
-| **RGB LED** | **Artix-7 pin names** | **Red color** | **Yellow** | **Green** |
+| **RGB LED** | **Artix-7 pin names** | **Red** | **Yellow** | **Green** |
 | :-: | :-: | :-: | :-: | :-: |
 | LD16 | N15, M16, R12 | `1,0,0` |  |  |
 | LD17 |  |  |  |  |
