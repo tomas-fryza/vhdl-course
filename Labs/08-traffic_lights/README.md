@@ -9,23 +9,33 @@ In this laboratory exercise you will implement a finite state machine (FSM), spe
 
 ## Preparation tasks (done before the lab at home)
 
-TBD
+Read the article [Implementing a Finite State Machine in VHDL](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/) (parts **A Bit of Background** and **The Finite State Machine**) and understand what a FSM is.
+
+Complete the state diagram from the example so that for each state both transitions are visible, ie for P=1 but also for P=0.
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+Fill in the table with the state names and output values in the order in which they are listed below.
+
+| **Input P** | `0` | `0` | `1` | `1` | `0` | `1` | `0` | `1` | `1` | `1` | `1` | `0` | `0` | `1` | `1` | `1` |
+| :-- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| **State** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **Output R** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 
 
 ## Part 1: Synchronize Git and create a new folder
 
-1. Synchronize the contents of your Digital-electronics-1 working directory with GitHub.
-2. Create a new folder `Labs/08-traffic_lights`.
-
-
-
-
-
-
-
-
-
-
+Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories. Create a new working folder `Labs/08-traffic_lights`.
 
 
 ## Part 2: Finite State Machine (FSM)
@@ -35,7 +45,14 @@ A finite state machine (FSM) is a computation model that can be implemented with
 * The output of the Mealy FSM depends on the present state and inputs.
 * The outputs of a Moore machine depend only on the present state and not on the inputs.
 
-Read the article [Implementing a Finite State Machine in VHDL](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/) and understand how to design your own FSM. How you can define your own data type in VHDL? Give an example.
+
+
+
+
+
+
+
+
 
 
 ## Part 3: Traffic light controller
