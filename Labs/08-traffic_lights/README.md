@@ -67,30 +67,43 @@ Directed arcs represent the transitions between states and they are labelled wit
 
 ## Part 3: Traffic light controller VHDL code
 
-Let the intersection contains only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green, yellow, and red color after a given period. If it is red in one direction on the traffic light, it is green in the other, and green in the first direction can only occur when it is red in the other direction.
+Let a intersection contains only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green, yellow, and red color after a given period. If it is red in one direction on the traffic light, it is green in the other, and green in the first direction can only occur when it is red in the other direction.
 
-| **Current state** | **N-S** | **W-E** | **Next state** |
-| :-- | :-: | :-: | :-- |
-| `RED` | red | red | `NS_YELLOW` |
-| `NS_YELLOW` | yellow | red | `NS_GREEN` |
-| `NS_GREEN` | green | red | `NS_YELLOW2` |
-| `NS_YELLOW2` | yellow | red | `WE_YELLOW` |
-| `WE_YELLOW` | red | yellow | `WE_GREEN` |
-| `WE_GREEN` | red | green | `WE_YELLOW2` |
-| `WE_YELLO2` | red | yellow | `RED` |
+This following exercise is inspired by [Example 62: Traffic Light Controller](https://www.youtube.com/watch?v=6_Rotnw1hFM) video. Note that several changes have been made to preserve the programming style from previous exercises:
+   * Use `numeric_std` package instead of `IEEE.STD_LOGIC_unsigned`,
+   * Types for internal signal/constants changed from `STD_LOGIC_VECTOR(3 downto 0)` to `unsigned`,
+   * Edge detector `clk'event and clk = '1'` changed to `rising_edge(clk)`.
 
-
-
-
+Perform the following steps to model the traffic light controller.
+   1. Create a new Vivado RTL project `traffic` in your `Labs/08-traffic_lights` working folder.
+   2. Create a VHDL source file `tlc.vhd` for the traffic light controller circuit.
+   3. Choose default board: `Nexys A7-50T`.
+   4. Open the [Traffic light controller](https://www.edaplayground.com/x/5HBi) example and copy/paste the `design.vhd` code to your `tlc.vhd` file. Copy source file of XXXXXX  clock enable circuit from previous labs to `stopwatch/stopwatch.srcs/sources_1/new/` folder and add it to the project.
+   5. Complete the traffic light code according to the following block diagram.
 
 
-
+XXXXX
 
 
 
-Watch [Example 62: Traffic Light Controller](https://www.youtube.com/watch?v=6_Rotnw1hFM) video and implement the basic controller for 2 one-way streets in VHDL.
 
-Hint: Use the `numeric_std` package instead of `ieee.std_logic_unsigned` and change type for internal signals `count`, `SEC5`, and `SEC1` from `std_logic_vector` to `unsigned`. Also change `clk'event and clk = '1'` to `rising_edge(clk)`.
+
+| **Current state** | **Direction North** | **Direction West** |
+| :-- | :-: | :-: |
+| `RESET`      | red    | red |
+| `NORTH_GO`   | green  | red |
+| `NORTH_WAIT` | yellow | red |
+| `WEST_GO`    | red    | green |
+| `WEST_WAIT`  | red    | yellow |
+
+
+
+
+
+
+
+
+
 
 ```vhdl
 library ieee;
