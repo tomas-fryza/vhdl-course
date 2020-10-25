@@ -68,15 +68,16 @@ Directed arcs represent the transitions between states and they are labelled wit
 
 Let a intersection contains only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green, yellow, and red color after a given period. If it is red in one direction on the traffic light, it is green in the other, and green in the first direction can only occur when it is red in the other direction.
 
-The exercise is inspired by the following references:
+> The exercise is inspired by the following references:
    1. LBEbooks, Lesson 92 - Example 62: [Traffic Light Controller](https://www.youtube.com/watch?v=6_Rotnw1hFM) video
    2. David Williams, [Implementing a Finite State Machine in VHDL](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/)
    3. VHDLwhiz, [One-process vs two-process vs three-process state machine](https://vhdlwhiz.com/n-process-state-machine/)
-
-Note that, several changes have been made to preserve the programming style from previous exercises such as:
+> 
+> Note that, several changes have been made to preserve the programming style from previous exercises such as:
    * Use `numeric_std` package instead of `IEEE.STD_LOGIC_unsigned`,
    * Types for internal signal/constants changed from `STD_LOGIC_VECTOR(3 downto 0)` to `unsigned`,
    * Edge detector `clk'event and clk = '1'` changed to `rising_edge(clk)`.
+>
 
 Perform the following steps to model the traffic light controller.
    1. Create a new Vivado RTL project `traffic` in your `Labs/08-traffic_lights` working folder.
