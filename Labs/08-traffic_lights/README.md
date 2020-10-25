@@ -69,7 +69,12 @@ Directed arcs represent the transitions between states and they are labelled wit
 
 Let a intersection contains only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green, yellow, and red color after a given period. If it is red in one direction on the traffic light, it is green in the other, and green in the first direction can only occur when it is red in the other direction.
 
-This following exercise is inspired by [Example 62: Traffic Light Controller](https://www.youtube.com/watch?v=6_Rotnw1hFM) video. Note that several changes have been made to preserve the programming style from previous exercises:
+The exercise is inspired by the following references:
+   1. LBEbooks, Lesson 92 - Example 62: [Traffic Light Controller](https://www.youtube.com/watch?v=6_Rotnw1hFM) video
+   2. David Williams, [Implementing a Finite State Machine in VHDL](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/)
+   3. VHDLwhiz, [One-process vs two-process vs three-process state machine](https://vhdlwhiz.com/n-process-state-machine/)
+
+Note that, several changes have been made to preserve the programming style from previous exercises such as:
    * Use `numeric_std` package instead of `IEEE.STD_LOGIC_unsigned`,
    * Types for internal signal/constants changed from `STD_LOGIC_VECTOR(3 downto 0)` to `unsigned`,
    * Edge detector `clk'event and clk = '1'` changed to `rising_edge(clk)`.
@@ -78,74 +83,135 @@ Perform the following steps to model the traffic light controller.
    1. Create a new Vivado RTL project `traffic` in your `Labs/08-traffic_lights` working folder.
    2. Create a VHDL source file `tlc.vhd` for the traffic light controller circuit.
    3. Choose default board: `Nexys A7-50T`.
-   4. Open the [Traffic light controller](https://www.edaplayground.com/x/5HBi) example and copy/paste the `design.vhd` code to your `tlc.vhd` file. Copy source file of XXXXXX  clock enable circuit from previous labs to `stopwatch/stopwatch.srcs/sources_1/new/` folder and add it to the project.
-   5. Complete the traffic light code according to the following block diagram.
+   4. Open the [Traffic light controller](https://www.edaplayground.com/x/5HBi) example and copy/paste the `design.vhd` code to your `tlc.vhd` file.
+   5. Copy source file of clock enable circuit from previous labs to `traffic/traffic.srcs/sources_1/new/` folder and add it to the project.
+   6. Complete the traffic light code according to the following description.
 
+The controller contains six states and sets the semaphore outputs according to the following table. It remains in each of the states for a certain time.
 
-XXXXX
+| **Current state** | **Direction North** | **Direction West** | **Delay** |
+| :-- | :-: | :-: | :-: |
+| `STOP1`      | red    | red | 1 sec |
+| `WEST_GO`    | red    | green | 4 sec |
+| `WEST_WAIT`  | red    | yellow | 2 sec |
+| `STOP2`      | red    | red | 1 sec |
+| `NORTH_GO`   | green  | red | 4 sec |
+| `NORTH_WAIT` | yellow | red | 2 sec |
 
+Draw a state diagram according to the table.
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
-| **Current state** | **Direction North** | **Direction West** |
-| :-- | :-: | :-: |
-| `RESET`      | red    | red |
-| `NORTH_GO`   | green  | red |
-| `NORTH_WAIT` | yellow | red |
-| `WEST_GO`    | red    | green |
-| `WEST_WAIT`  | red    | yellow |
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
-
-
-
-
-
-
+In VHDL it is possible to define a new data type, which contains the names of our states.
 
 ```vhdl
-library ieee;
-use ieee.std_logic_1164.all;
---use ieee.std_logic_unsigned.all;
-use ieee.numeric_std.all;
-
-...
-
-architecture traffic of traffic is
-    ...
-    --signal count: std_logic_vector(3 downto 0);
-    --constant SEC5: std_logic_vector(3 downto 0) := "1111";
-    --constant SEC1: std_logic_vector(3 downto 0) := "0011";
-    signal count : unsigned(3 downto 0);
-    constant SEC5: unsigned(3 downto 0) := "1111";
-    constant SEC1: unsigned(3 downto 0) := "0011";
-
-    ...
-
-        --elsif clk'event and clk = '1' then
-        elsif rising_edge(clk) then
-        ...
-
-end traffic;
+    -- Define the states
+    type   t_state is (STOP1, WEST_GO,  WEST_WAIT,
+                       STOP2, SOUTH_GO, SOUTH_WAIT);
+    -- Define the signal that uses different states
+    signal s_state  : t_state;
 ```
 
-Change the reset in the example from asynchronous to synchronous.
+The FSM function is divided into two processes, where the first is sequential and it entirely controls state changes by CASE statement. The second is a combinatorial process, it is sensitive to state changes, and sets the output signals accordingly. This is an example of a Moore state machine because the output is set based on the active state. FSM behavior can be written in one to three processes. The differences between these approaches are described in detail [here](https://vhdlwhiz.com/n-process-state-machine/).
 
-Follow programming conventions and coding style from previous lab exercises and rename all inputs, outputs and internal signals.
+```vhdl
+    --------------------------------------------------------------------
+    -- p_traffic_fsm:
+    -- The sequential process with synchronous reset and clock_enable 
+    -- entirely controls the s_state signal by CASE statement.
+    --------------------------------------------------------------------
+    p_traffic_fsm : process(clk)
+    begin
+        if rising_edge(clk) then
+            if (reset = '1') then       -- Synchronous reset
+                s_state <= STOP1 ;      -- Set initial state
+                s_cnt   <= c_ZERO;      -- Clear all bits
 
-Rename the states `s0`, `s1`, .., `s5` from the example to more meaningful and draw the state diagram.
+            elsif (s_en = '1') then
+                -- Every 250 ms, CASE checks the value of the s_state 
+                -- variable and changes to the next state according 
+                -- to the delay value.
+                case s_state is
+
+                    -- If the current state is STOP1, then wait 1 sec
+                    -- and move to the next GO_WAIT state.
+                    when STOP1 =>
+                        -- Count up to c_DELAY_1SEC
+                        if (s_cnt < c_DELAY_1SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= WEST_GO;
+                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        end if;
+
+                    ...
+```
+
+Complete CASE/WHEN statements in both processes.
 
 
-## Part 4: Traffic light simulation
+## Part 4: Traffic light controller simulation
 
-Design and simulate traffic light FSM in [EDA playground](https://www.edaplayground.com) or Xilinx ISE. Write a testbench that verifies all the functions of your traffic light controller (reset, timing, output lights).
+Perform the following steps to simulate traffic light controller.
+   1. Create a VHDL simulation source `tb_tlc.vhd`, copy/paste the `testbench.vhd` code from EDA Playground example. Note that the maximum value of clock enable circuit is set to 1 for the simulation, ie the traffic light controller changes its state with a frequency of 100&nbsp;MHz and not 4&nbsp;Hz.
+   2. Change the duration of simulation to 10000ns in **Tools > Settings... > Simulation > Simulation**.
+   3. Run the simulation, and verify that the controller works correctly (reset, timing, output lights).
 
 
 ## Part 5: Top level VHDL code
 
-Implement the top level in VHDL **or instead** draw a block diagram of used modules and name all inputs, outputs and internal signals. Use the `clock_enable` entity with the correct timing (the duration of each state should be 1 or 5 seconds).
+Perform the following steps to implement the traffic light controller on the Nexys A7 board.
+   1. Create a new design source `top.vhd` in your project.
+   2. Define an entity `top` as follows.
+
+   | **Port name** | **Direction** | **Type** | **Description** |
+   | :-: | :-: | :-: | :-- |
+   | `CLK100MHZ` | input | `std_logic` | Main clock |
+   | `BTNC` | input | `std_logic` | Synchronous reset |
+   | `LED16_R` | output | `std_logic` | Red1 |
+   | `LED16_G` | output | `std_logic` | Green1 |
+   | `LED16_B` | output | `std_logic` | Blue1 |
+   | `LED17_R` | output | `std_logic` | Red2 |
+   | `LED17_G` | output | `std_logic` | Green2 |
+   | `LED17_B` | output | `std_logic` | Blue2 |
+
+   3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
+   4. Use direct instantiation and define an architecture of the top level.
+
+```vhdl
+------------------------------------------------------------------------
+-- Architecture body for top level
+------------------------------------------------------------------------
+architecture behavioral of top is
+
+begin
+    --------------------------------------------------------------------
+    -- Instance (copy) of tlc entity
+    tlc : entity work.tlc
+        port map(
+            clk   => CLK100MHZ,
+            reset => BTNC,
+            --- WRITE YOUR CODE HERE
+        );
+
+end architecture behavioral;
+```
+
+   5. Compile the project and download the generated bitstream `traffic/traffic.runs/impl_1/top.bit` into the FPGA chip.
+   6. Observe the functionality of the traffic light controller.
+   7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 
 ## Synchronize git
@@ -154,6 +220,8 @@ Synchronize the contents of your Digital-electronics-1 working directory with Gi
 
 
 ## Experiments on your own
+
+**TBD**
 
 1. Follow the [exercise inspired by prof. Jon Valvano](https://arduining.com/2015/09/18/traffic-light-states-machine-with-arduino/) from University of Texas and desing an enhanced traffic light controller for the intersection of two equally busy one-way streets. The controller using two sensors and 6 lights. Two sensors detects the presence of cars in each direction and the goal is to maximize traffic flow, minimize waiting time at a red light, and avoid accidents.
 
@@ -164,18 +232,24 @@ Synchronize the contents of your Digital-electronics-1 working directory with Gi
    Draw a state diagram of your implementation.
 
 
+
+
+
+
+
 ## Lab assignment
 
 1. Preparation tasks (done before the lab at home). Submit:
-    * Xxx,
-    * Xxx.
+    * State table,
+    * RGB LEDs table.
 
-2. Xxx. Submit:
-    * VHDL code of xxx,
-    * Screenshot(s) of the simulation, from which it is clear xxxx work correctly,
+2. Traffic light controller. Submit:
+    * VHDL code of the process `p_traffic_fsm`,
+    * Screenshot(s) of the simulation, from which it is clear that controller works correctly,
     * VHDL code of the top layer architecture.
 
-3. Xxx. Submit:
+3. Smart controller. Submit:
+    * Xxx,
     * (Hand-drawn) sketch of the xxx schematic.
 
 The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
