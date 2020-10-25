@@ -46,7 +46,6 @@ Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repo
 ## Part 2: Finite State Machine (FSM)
 
 A finite state machine (FSM) is a computation model that can be implemented with hardware or software and can be used to simulate sequential logic. There are two different main types of finite state machines: the Mealy FSM and the Moore FSM. The fundamental difference between these two types lies in the management of the outputs:
-
    * The output of the **Mealy** FSM depends on the present state and inputs.
    * The outputs of a **Moore** machine depend only on the present state and not on the inputs, as shown in the figure [[1]](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/).
 
@@ -84,7 +83,7 @@ Perform the following steps to model the traffic light controller.
    2. Create a VHDL source file `tlc.vhd` for the traffic light controller circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Traffic light controller](https://www.edaplayground.com/x/5HBi) example and copy/paste the `design.vhd` code to your `tlc.vhd` file.
-   5. Copy source file of clock enable circuit from previous labs to `traffic/traffic.srcs/sources_1/new/` folder and add it to the project.
+   5. Copy source file of clock_enable circuit from previous labs to `traffic/traffic.srcs/sources_1/new/` folder and add it to the project.
    6. Complete the traffic light code according to the following description.
 
 The controller contains six states and sets the semaphore outputs according to the following table. It remains in each of the states for a certain time.
