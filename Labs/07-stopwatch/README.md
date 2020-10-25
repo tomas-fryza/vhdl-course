@@ -30,7 +30,6 @@ Let the stopwatch counts the time in the form of a **seconds.hundredths** and th
 Use an approach that uses four different counters (one counter for each decade) and counts from 0 to 9 (or to 5). The lowest of the counters is incremented every 10&nbsp;ms, and each higher-order counter is incremented if all lower-order counters are equal to the maximum value.
 
 Perform the following steps to model the stopwatch counter.
-
    1. Create a new Vivado RTL project `stopwatch` in your `Labs/07-stopwatch` working folder.
    2. Create a VHDL source file `stopwatch_seconds.vhd` for the stopwatch circuit.
    3. Choose default board: `Nexys A7-50T`.
@@ -43,8 +42,7 @@ Perform the following steps to model the stopwatch counter.
 ## Part 3: Stopwatch simulation
 
 Perform the following steps to simulate stopwatch counter.
-
-   1. Create a simulation source `tb_stopwatch_seconds.vhd`, copy/paste the `testbench.vhd` code from EDA Playground example. Note that the maximum value of clock enable circuit is set to 1 for the simulation, ie the stopwatch increments its value with a frequency of 100&nbsp;MHz and not 100&nbsp;Hz.
+   1. Create a VHDL simulation source `tb_stopwatch_seconds.vhd`, copy/paste the `testbench.vhd` code from EDA Playground example. Note that the maximum value of clock_enable circuit is set to 1 for the simulation, ie the stopwatch increments its value with a frequency of 100&nbsp;MHz and not 100&nbsp;Hz.
    2. Change the duration of simulation to 100000ns in **Tools > Settings... > Simulation > Simulation**.
    3. Complete the input data process `p_stimulus`, run the simulation, and verify that the stopwatch is started, paused, and reset correctly.
 
@@ -52,7 +50,6 @@ Perform the following steps to simulate stopwatch counter.
 ## Part 4: Top level VHDL code
 
 Perform the following steps to implement the stopwatch counter on the Nexys A7 board.
-
    1. Create a new design source `top.vhd` in your project.
    2. Define an entity `top` as follows.
 
