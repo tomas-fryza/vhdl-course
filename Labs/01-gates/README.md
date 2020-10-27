@@ -9,7 +9,11 @@ The purpose of this laboratory exercise is to learn how to use the git versionin
 
 ## Preparation tasks (done before the lab at home)
 
-Create an account on [GitHub](https://github.com/). If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
+Create an account on [GitHub](https://github.com/).
+
+If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
+
+Download and install [git](https://git-scm.com/).
 
 
 ## Part 1: GitHub
@@ -18,7 +22,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 In GitHub, create a new public repository titled **Digital-electronics-1**. Initialize a README and [MIT license](https://choosealicense.com/licenses/mit/).
 
-Use manuals [How to make the perfect Readme.md on GitHub](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061), [Basic writing and formatting syntax](https://help.github.com/en/articles/basic-writing-and-formatting-syntax) or [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) and add the following parts in your README file.
+Use one of the available git manuals, such as [1](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061), [2](https://help.github.com/en/articles/basic-writing-and-formatting-syntax), or [3](https://guides.github.com/features/mastering-markdown/), and add the following sections to your README file.
 
    * Headers
    * Emphasis (italics, bold)
@@ -28,61 +32,48 @@ Use manuals [How to make the perfect Readme.md on GitHub](https://medium.com/swl
    * Listing of VHDL source code
 
 
-## Part 2: Linux console terminal
+## Part 2: Local repository
 
-A Linux console terminal is one of the system consoles provided in the Linux kernel. The Linux console terminal acts as the medium for input and output operations for a Linux system. A Linux console terminal is similar to command line in Microsoft Windows but it differs in that it can perform any operation on the system. (Cited from [Technopedia](https://www.techopedia.com/definition/26897/linux-console-terminal).)
-
-Try basic commands in the Linux console terminal.
-
-| **Command**  | **Description** |
-| :-:          | :--             |
-| `Ctrl+Alt+T` | Open Linux console terminal in Ubuntu based distributions |
-| `Tab`        | Automatic completion what you are typing or suggest options to you |
-| `Up/Down`    | Browse command history |
-| `ls`         | List directory contents (try this command in reverse order: `sl`) |
-| `cd`         | Change the current directory (change to parent directory: `cd ..`) |
-| `mkdir`      | Make directories |
-| `pwd`        | Print name of current/working directory |
-| `clear`      | Clear the terminal screen |
-| `touch`      | Create an empty file (if it does not exist) |
-| `mc`         | GNU Midnight Commander (file manager) |
-
-In the lab, make your own home folder within `Documents`, and with help of `git` command clone a local copy of your public repository:
+Run Git Bash (Windows) of Terminal (Linux) and create your own home folder inside `Documents`.
 
 ```bash
-$ cd
-$ pwd
-/home/lab661
+## Windows Git Bash:
+$ cd d:/Documents/
+$ mkdir your-name
+$ cd your-name/
 
+## Linux:
+$ cd
 $ cd Documents/
 $ mkdir your-name
 $ cd your-name/
-$ pwd
-/home/lab661/Documents/your-name
+```
 
+With help of `git` command, clone a local copy of your public repository.
+
+```bash
+## Windows Git Bash or Linux:
 $ git clone https://github.com/your-github-account/Digital-electronics-1
 $ cd Digital-electronics-1/
 $ ls
 LICENSE  README.md
 ```
 
-Download `Docs` folder from [teacher's repository](https://github.com/tomas-fryza/Digital-electronics-1) and copy it to your `Digital-electronics-1` local repository.
+Download `Docs` folder from [this repository](https://github.com/tomas-fryza/Digital-electronics-1) and copy it to your `Digital-electronics-1` local repository.
 
 ```bash
+## Windows Git Bash or Linux:
 $ ls
-Docs  LICENSE  README.md
+Docs  Examples  LICENSE  README.md
 ```
 
-Make a new folder `Labs/01-gates` and create an empty `README.md` file.
+Create a new working folder `Labs/01-gates` for this exercise.
 
 ```bash
+## Windows Git Bash or Linux:
 $ mkdir Labs
 $ cd Labs/
-$ mkdir 01-gates
-$ cd 01-gates/
-$ touch README.md
-$ ls
-README.md
+$ mkdir 01-tools
 ```
 
 
@@ -104,7 +95,7 @@ Most common VHDL operators are shown in the table.
 | `xnor` | Exclusive OR with negated output |
 | `-- comment` | Comments |
 
-Use De Morgan's laws and modify logic function to the form with NAND and NOR gates only. Verify all three functions in EDA Playground tool.
+Use De Morgan's laws and modify the following logic function to the form with NAND and NOR gates only. Verify all three functions in EDA Playground tool.
 
 ![Logic function](Images/equations.png)
 
@@ -134,17 +125,12 @@ Run any text editor, such as *Visual Studio Code* or *Atom*, open your `Digital-
 
 ## Synchronize git
 
-Use `cd ..` command in Linux console terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
+When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
+
+Use [git commands](https://github.com/tomas-fryza/Digital-electronics-2/wiki/Git-useful-commands) to add, commit, and push all local changes to your remote repository. Note that, a detailed description of all git commands can be found [here](https://github.com/joshnh/Git-Commands). Check the repository at GitHub web page for changes.
 
 ```bash
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1/Labs/01-gates
-
-$ cd ..
-$ cd ..
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1
-
+## Windows Git Bash or Linux:
 $ git status
 $ git add <your-modified-files>
 $ git status
@@ -157,7 +143,7 @@ $ git status
 
 ## Experiments on your own
 
-1. In VHDL, verify basic Boolean postulates:
+1. In EDA Playground, verify basic Boolean postulates:
 
 ![Boolean postulates](Images/postulates.png)
 
@@ -170,16 +156,16 @@ and Distributive laws:
 
 ## Lab assignment
 
-1. Link to your GitHub repository.
+1. Submit the GitHub link to your `Digital-electronics-1` repository.
 
 2. Verification of basic Boolean postulates. Submit:
     * VHDL code (`design.vhd`),
-    * screenshot with simulated time waveforms,
-    * link to your public EDA playground.
+    * Screenshot with simulated time waveforms,
+    * Link to your public EDA Playground example.
 
 3. Verification of Distributive laws. Submit:
     * VHDL code (`design.vhd`),
-    * screenshot with simulated time waveforms,
-    * link to your public EDA playground.
+    * Screenshot with simulated time waveforms,
+    * Link to your public EDA Playground example.
 
-The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
