@@ -35,7 +35,41 @@ According to the truth table, write canonical SoP (Sum of Products) and PoS (Pro
 ![Binary comparator functions](Images/comparator.png)
 
 
-## Part 1: Logic function minimization
+## Part 1: Synchronize Git and create a new folder
+
+When you start working, always synchronize the contents of your working folder and local repository with remote version at GitHub. This way you are sure that you will not lose any of your changes.
+
+Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories.
+
+```bash
+## Windows Git Bash:
+$ cd d:/Documents/
+$ cd your-name/
+$ ls
+Digital-electronics-1/
+$ cd Digital-electronics-1/
+$ git pull
+
+## Linux:
+$ cd
+$ cd Documents/
+$ cd your-name/
+$ ls
+Digital-electronics-1/
+$ cd Digital-electronics-1/
+$ git pull
+```
+
+Create a new working folder `Labs/02-logic` for this exercise.
+
+```bash
+## Windows Git Bash or Linux:
+$ cd Labs/
+$ mkdir 02-logic
+```
+
+
+## Part 2: Logic function minimization
 
 *[Karnaugh Maps](https://learnabout-electronics.org/Digital/dig24.php) (or K-maps) offer a graphical method of reducing a digital circuit to its minimum number of gates. The map is a simple table containing 1s and 0s that can express a truth table or complex Boolean expression describing the operation of a digital circuit.*
 
@@ -63,32 +97,7 @@ Use K-maps to create a simplified SoP form of the "greater than" function and a 
 ![Binary comparator simplified functions](Images/comparator_min.png)
 
  
-## Part 2: Synchronize Git and create a new folder
-
-Open a Linux terminal, use `cd` commands to change path to your Digital-electronics-1 working directory, and [synchronize the contents](https://github.com/joshnh/Git-Commands) with GitHub.
-
-```bash
-$ pwd
-/home/lab661
-$ cd Documents/your-name/Digital-electronics-1/
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1
-$ git pull
-```
-
-Create a new folder `Labs/02-logic`
-
-```bash
-$ cd Labs/
-$ mkdir 02-logic
-$ cd 02-logic/
-$ touch README.md
-$ ls
-README.md
-```
-
-
-## Part 3: Binary comparator in VHDL language
+ ## Part 3: Binary comparator in VHDL language
 
 Log in to your [EDA Playground](https://www.edaplayground.com/login) account and create a new project: you can copy your previous playground and save it under a different name.
 
@@ -160,30 +169,12 @@ Update your local (not GitHub) `README.md` file with a screenshot of the simulat
 
 ## Synchronize git
 
-Use `cd ..` command in Linux console terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
-
-```bash
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1/Labs/02-logic
-
-$ cd ..
-$ cd ..
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1
-
-$ git status
-$ git add <your-modified-files>
-$ git status
-$ git commit -m "[LAB] Creating 02-logic lab"
-$ git status
-$ git push
-$ git status
-```
+Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git-useful-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
 ## Experiments on your own
 
-1. In VHDL, define entity and architecture for a 4-bit binary comparator (`comparator_4bit`).
+1. In EDA Playground, define entity and architecture for a 4-bit binary comparator (`comparator_4bit`).
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
@@ -198,10 +189,13 @@ $ git status
 
 ## Lab assignment
 
-1. A 4-bit binary comparator. Submit:
-    * VHDL code (`design.vhd`),
-    * VHDL testbench (`testbench.vhd`),
-    * screenshot with simulated time waveforms,
-    * link to your public EDA playground.
+1. Preparation tasks (done before the lab at home). Submit:
+   * Binary comparator truth table.
 
-The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+2. A 4-bit binary comparator. Submit:
+   * VHDL code (`design.vhd`),
+   * VHDL testbench (`testbench.vhd`),
+   * Screenshot with simulated time waveforms,
+   * Link to your public EDA Playground example.
+
+The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
