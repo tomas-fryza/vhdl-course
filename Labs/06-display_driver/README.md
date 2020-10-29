@@ -1,5 +1,7 @@
 # Lab 6: Driver for multiple seven-segment displays
 
+![Logo](../../logolink_eng.jpg)
+
 ### Learning objectives
 
 In this laboratory exercise, you will study the creation of a sequential circuit for multiplexing 7-segment displays. This allows you to display four or even eight-digit values, including the decimal point on the display.
@@ -142,10 +144,10 @@ Use `cd ..` command in Linux console terminal and change the working directory t
 ## Lab assignment
 
 1. Display driver. Submit:
-    * VHDL code of the process `p_mux`.
+    * VHDL code of the process `p_mux`,
     * VHDL code of the top layer architecture.
 
 2. Eight-digit driver. Submit:
     * (Hand-drawn) sketch of the driver schematic.
 
-The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.

@@ -1,5 +1,7 @@
 # Lab 4: Seven-segment display decoder
 
+![Logo](../../logolink_eng.jpg)
+
 ### Learning objectives
 
 The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
@@ -232,4 +234,4 @@ $ git status
 2. LED indicators. Submit:
     * VHDL code for LEDs(7:4).
 
-The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.

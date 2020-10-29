@@ -1,5 +1,7 @@
 # Lab 5: Binary counter
 
+![Logo](../../logolink_eng.jpg)
+
 ### Learning objectives
 
 The purpose of this laboratory exercise is to become familiar with the creation of sequential processes in VHDL, next to implement a clock enable signal to drive another logic with slower clock, and to design a binary counter.
@@ -190,4 +192,4 @@ Use `cd ..` command in Linux console terminal and change the working directory t
 2. Second 16-bit counter. Submit:
     * (Hand-drawn) sketch of the top layer.
 
-The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.

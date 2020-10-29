@@ -1,5 +1,7 @@
 # Lab 8: Traffic light controller
 
+![Logo](../../logolink_eng.jpg)
+
 ### Learning objectives
 
 In this laboratory exercise you will implement a finite state machine (FSM), specifically a traffic light controller at a junction. At first, the intersection will contain only two one-way streets with a fixed time control system in which traffic lights are configured to turn on the green, yellow, and red color after a given period. Subsequently, the system will be extended with a smarter way of driving.

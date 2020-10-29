@@ -1,5 +1,7 @@
 # Lab 1: Introduction to Git and VHDL
 
+![Logo](../../logolink_eng.jpg)
+
 ### Learning objectives
 
 The purpose of this laboratory exercise is to learn how to use the git versioning system, write the markdown readme file, use the Linux console terminal to work in the lab, and how to compose a basic VHDL code using the online development tool.

@@ -1,5 +1,7 @@
 # Lab 7: Stopwatch
 
+![Logo](../../logolink_eng.jpg)
+
 ### Learning objectives
 
 In this laboratory exercise, you will implement several decimal counters to create a stopwatch and display its value on 7-segment displays. Let the stopwatch has four places, from tens of seconds to hundreds of seconds.
@@ -141,4 +143,4 @@ Synchronize the contents of your Digital-electronics-1 working directory with Gi
 2. Stopwatch with minutes. Submit:
     * (Hand-drawn) sketch of the stopwatch schematic.
 
-The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.

@@ -1,5 +1,7 @@
 # Lab 3: Introduction to Vivado
 
+![Logo](../../logolink_eng.jpg)
+
 ### Learning objectives
 
 The purpose of this laboratory exercise is to learn to use Vivado to create a simple HDL design targeting Nexys A7 Artix-7 FPGA Trainer Board.
@@ -127,6 +129,6 @@ $ git status
     * XDC constraints file (`nexys-a7-50t.xdc`).
 
 2. A Vivado tutorial. Submit:
-    * link to your README file with Vivado tutorial.
+    * Link to your README file with Vivado tutorial.
 
-The deadline for submitting the assignment is before the start of the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.

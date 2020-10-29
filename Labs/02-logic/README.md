@@ -1,5 +1,7 @@
 # Lab 2: Combinational logic
 
+![Logo](../../logolink_eng.jpg)
+
 ### Learning objectives
 
 The purpose of this laboratory exercise is to learn to use different ways of writing combination functions (truth table, K-map, SoP/PoS forms), their minimization, the use of signal assignments in VHDL, and assertion statements in VHDL testbench.
