@@ -216,9 +216,9 @@ end architecture behavioral;
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 
-## Synchronize git
+## Synchronize repositories
 
-Synchronize the contents of your Digital-electronics-1 working directory with GitHub.
+Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git-useful-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
 ## Experiments on your own
