@@ -25,7 +25,6 @@ The Nexys A7 board provides six push buttons. See schematic or reference manual 
 
 &nbsp;
 
-
 Calculate how many periods of clock signal with frequency of 100&nbsp;MHz contain time intervals 2&nbsp;ms, 4&nbsp;ms, 10&nbsp;ms, 250&nbsp;ms, 500&nbsp;ms, and 1&nbsp;s. Write values in decimal, binary, and hexadecimal forms.
 
    &nbsp; 
@@ -42,10 +41,9 @@ Calculate how many periods of clock signal with frequency of 100&nbsp;MHz contai
    | 1&nbsp;sec | 100 000 000 | `x"5F5_E100"` | `b"0101_1111_0101_1110_0001_0000_0000"` |
 
 
-## Part 1: Synchronize Git and create a new folder
+## Part 1: Synchronize repositories and create a new folder
 
-1. Open a Linux terminal, change path to your Digital-electronics-1 working directory, and synchronize the contents with GitHub.
-2. Create a new folder `Labs/05-counter`
+Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories. Create a new working folder `Labs/05-counter` for this exercise.
 
 
 ## Part 2: VHDL code for clock enable
@@ -174,9 +172,9 @@ end architecture behavioral;
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 
-## Synchronize git
+## Synchronize repositories
 
-Use `cd ..` command in Linux console terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
+Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git-useful-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
 ## Experiments on your own
