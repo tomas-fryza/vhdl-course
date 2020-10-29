@@ -25,52 +25,31 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 &nbsp;
 
-
 Complete the decoder conversion table for common anode 7-segment display.
 
-   | **Hex** | **Input** | **A** | **B** | **C** | **D** | **E** | **F** | **G** |
-   | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-   | 0 | 0000 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
-   | 1 | 0001 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
-   | 2 |      |   |   |   |   |   |   |   |
-   | 3 |      |   |   |   |   |   |   |   |
-   | 4 |      |   |   |   |   |   |   |   |
-   | 5 |      |   |   |   |   |   |   |   |
-   | 6 |      |   |   |   |   |   |   |   |
-   | 7 |      |   |   |   |   |   |   |   |
-   | 8 |      |   |   |   |   |   |   |   |
-   | 9 |      |   |   |   |   |   |   |   |
-   | A |      |   |   |   |   |   |   |   |
-   | b |      |   |   |   |   |   |   |   |
-   | C |      |   |   |   |   |   |   |   |
-   | d |      |   |   |   |   |   |   |   |
-   | E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
-   | F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
+| **Hex** | **Input** | **A** | **B** | **C** | **D** | **E** | **F** | **G** |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| 0 | 0000 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 1 | 0001 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
+| 2 |      |   |   |   |   |   |   |   |
+| 3 |      |   |   |   |   |   |   |   |
+| 4 |      |   |   |   |   |   |   |   |
+| 5 |      |   |   |   |   |   |   |   |
+| 6 |      |   |   |   |   |   |   |   |
+| 7 |      |   |   |   |   |   |   |   |
+| 8 |      |   |   |   |   |   |   |   |
+| 9 |      |   |   |   |   |   |   |   |
+| A |      |   |   |   |   |   |   |   |
+| b |      |   |   |   |   |   |   |   |
+| C |      |   |   |   |   |   |   |   |
+| d |      |   |   |   |   |   |   |   |
+| E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
+| F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
 
 
-## Part 1: Synchronize Git and create a new folder
+## Part 1: Synchronize repositories and create a new folder
 
-Open a Linux terminal, use `cd` commands to change path to your Digital-electronics-1 working directory, and [synchronize the contents](https://github.com/joshnh/Git-Commands) with GitHub.
-
-```bash
-$ pwd
-/home/lab661
-$ cd Documents/your-name/Digital-electronics-1/
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1
-$ git pull
-```
-
-Create a new folder `Labs/04-segment`
-
-```bash
-$ cd Labs/
-$ mkdir 04-segment
-$ cd 04-segment/
-$ touch README.md
-$ ls
-README.md
-```
+Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories. Create a new working folder `Labs/04-segment` for this exercise.
 
 
 ## Part 2: VHDL code for seven-segment display decoder
@@ -197,27 +176,9 @@ end architecture behavioral;
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 
-## Synchronize git
+## Synchronize repositories
 
-Use `cd ..` command in Linux console terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
-
-```bash
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1/Labs/04-segment
-
-$ cd ..
-$ cd ..
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1
-
-$ git status
-$ git add <your-modified-files>
-$ git status
-$ git commit -m "[LAB] Creating 04-segment lab"
-$ git status
-$ git push
-$ git status
-```
+Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git-useful-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
 ## Experiments on your own
