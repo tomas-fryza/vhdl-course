@@ -1,25 +1,32 @@
+# Project: General instructions
 
-# Project
+![Logo](../../logolink_eng.jpg)
 
-The essence of the project is cooperation in small groups, study of the assigned topic, design of your own solution, simulation, implementation, and presentation of results.
+The aim of the project is cooperation in small groups, study of the assigned topic, design of your own solution, simulation, implementation and presentation of results.
 
-Students solve the project from the 9th to the 13th week of the semester in the same groups as in the computer labs. Source codes for CPLD must be written in VHDL language and implemented on Xilinx CoolRunner-II CPLD starter board (XC2C256-TQ144).
+Students solve the project from the 9th to the 13th week of the semester in the same groups as in the computer labs. Source codes for FPGA must be written in VHDL language and implemented on Nexys A7 Artix-7 FPGA Trainer Board (XC7A50T-1CSG324C FPGA).
 
 Students may consult with their tutor from the computer labs and may not “assign” anyone else, including consultations with other student, academics or PhD students.
 
 The project is submitted on Thursday April 30, 2020 via the GitHub repository. It must contain:
 
-* own README file with a complete description of the problem, circuit diagram of peripherals, graphical representation of the application (flowchart / state diagram), screenshots of simulations, links to source files in the repository, discussion of results, list of references, link to your own video with a demo, etc. The README file must be written in English
-* complete project in Xilinx ISE
-* testbench of all developed components
-* all source files must be written in English
+   * Own README file with a complete description of the problem, circuit diagram of peripherals, graphical representation of the application (flowchart / state diagram), screenshots of simulations, links to source files in the repository, discussion of results, list of references, link to your own video with a demo, etc. The README file must be written in English. You can find the required structure of README file bellow.
+   * Complete project in Vivado.
+   * Testbench of all components developed by you.
+   * All source files must be written in English.
 
-The complexity of the created application, functionality, compliance with VHDL guidelines, division of code into modules, code purity, use of comments, completeness and clarity of documentation, application wiring diagrams, discussion of results, compliance with assignment instructions are evaluated.
+Will be evaluated:
+   * The complexity of the created application, functionality,
+   * Compliance with assignment instructions,
+   * Compliance with VHDL guidelines, division of code into modules, code purity, use of comments,
+   * Completeness and clarity of documentation,
+   * Circuit diagram (schema),
+   * Discussion of results.
 
-Use VHDL modules from previous labs (especially `clock_enable`, `binary_cnt`, `driver_7seg`) and not codes taken from the Internet. Design the application as a synchronous sequential system.
+Use VHDL modules from previous labs and not codes taken from the Internet. Design the application as a synchronous sequential system.
 
 
-#### Topics 2019/20
+### Topics 2019/20
 
 1. Code lock with 4x3 matrix keyboard, time limit for entering the correct pin code and signaling an incorrect attempt.
 
@@ -34,30 +41,32 @@ Use VHDL modules from previous labs (especially `clock_enable`, `binary_cnt`, `d
 6. Countdown from set value to zero. Value is given by rotary encoder KY-040 with button, output is shown on serial 4-digit 7-segment display with control circuit TM1637.
 
 
-#### Mandatory structure of your README file:
+---
+
+The required structure of your README file is as follows.
 
 # Your project title
 
-#### Objectives
+### Project objectives
 
-TBD
+*Write your text here*
 
 
 ## Hardware description
 
-TBD
+*Write your text here*
 
 
 ## Code description and simulations
 
-TBD
+*Write your text here*
 
 
 ## Video
 
-TBD
+*Write your text here*
 
 
 ## References
 
-TBD
+*Write your text here*
