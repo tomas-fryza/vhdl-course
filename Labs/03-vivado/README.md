@@ -28,33 +28,40 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 ## Part 1: Synchronize Git and create a new folder
 
-Open a Linux terminal, use `cd` commands to change path to your Digital-electronics-1 working directory, and [synchronize the contents](https://github.com/joshnh/Git-Commands) with GitHub.
+Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories.
 
 ```bash
-$ pwd
-/home/lab661
-$ cd Documents/your-name/Digital-electronics-1/
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1
+## Windows Git Bash:
+$ cd d:/Documents/
+$ cd your-name/
+$ ls
+Digital-electronics-1/
+$ cd Digital-electronics-1/
+$ git pull
+
+
+## Linux:
+$ cd
+$ cd Documents/
+$ cd your-name/
+$ ls
+Digital-electronics-1/
+$ cd Digital-electronics-1/
 $ git pull
 ```
 
-Create a new folder `Labs/03-vivado`
+Create a new working folder `Labs/03-vivado` for this exercise.
 
 ```bash
+## Windows Git Bash or Linux:
 $ cd Labs/
 $ mkdir 03-vivado
-$ cd 03-vivado/
-$ touch README.md
-$ ls
-README.md
 ```
 
 
 ## Part 2: Project creation in Vivado
 
 Get inspired by the [Creating and Programming our First FPGA Project Part 2: Initial Project Creation](https://blog.digilentinc.com/creating-and-programming-our-first-fpga-project-part-2-initial-project-creation/) tutorial and create a new project in Vivado (Set location to your `Labs/03-vivado` working folder). Unlike the instructions, let your project contains:
-
    * VHDL source file: `comparator_2bit` (the same file name as the entity)
    * Created constraints XDC file: `nexys-a7-50t`
    * Default board : `Nexys A7-50T`
@@ -93,27 +100,9 @@ Perform the following steps to implement the two-bit wide 4-to-1 multiplexer. Ta
    6. Test the functionality of the two-bit wide 4-to-1 multiplexer by toggling the switches and observing the LEDs.
 
 
-## Synchronize git
+## Synchronize repositories
 
-Use `cd ..` command in Linux console terminal and change the working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
-
-```bash
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1/Labs/03-vivado
-
-$ cd ..
-$ cd ..
-$ pwd
-/home/lab661/Documents/your-name/Digital-electronics-1
-
-$ git status
-$ git add <your-modified-files>
-$ git status
-$ git commit -m "[LAB] Creating 03-vivado lab"
-$ git status
-$ git push
-$ git status
-```
+Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git-useful-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
 ## Experiments on your own
