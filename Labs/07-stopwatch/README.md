@@ -19,10 +19,9 @@ Consider the clock enable circuit from previous laboratories and find out the va
    | 1000&nbsp;Hz | | |
 
 
-## Part 1: Synchronize Git and create a new folder
+## Part 1: Synchronize repositories and create a new folder
 
-1. Synchronize the contents of your Digital-electronics-1 working directory with GitHub.
-2. Create a new folder `Labs/07-stopwatch`.
+Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories. Create a new working folder `Labs/07-stopwatch` for this exercise.
 
 
 ## Part 2: VHDL code for stopwatch
@@ -121,9 +120,9 @@ end architecture behavioral;
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 
-## Synchronize git
+## Synchronize repositories
 
-Synchronize the contents of your Digital-electronics-1 working directory with GitHub.
+Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git-useful-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
 ## Experiments on your own
