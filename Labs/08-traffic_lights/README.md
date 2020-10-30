@@ -42,7 +42,7 @@ See schematic or reference manual of the Nexys board and find out the connection
 
 ## Part 1: Synchronize Git and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories. Create a new working folder `Labs/08-traffic_lights`.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/08-traffic_lights`.
 
 
 ## Part 2: Finite State Machine (FSM)

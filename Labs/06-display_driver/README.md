@@ -51,7 +51,7 @@ Due to the physiological properties of human vision, it is necessary that the ti
 
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories. Create a new working folder `Labs/06-display_driver` for this exercise.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/06-display_driver` for this exercise.
 
 
 ## Part 2: VHDL code for display driver

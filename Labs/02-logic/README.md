@@ -41,7 +41,7 @@ According to the truth table, write canonical SoP (Sum of Products) and PoS (Pro
 
 When you start working, always synchronize the contents of your working folder and local repository with remote version at GitHub. This way you are sure that you will not lose any of your changes.
 
-Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
 
 ```bash
 ## Windows Git Bash:

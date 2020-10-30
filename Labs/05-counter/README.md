@@ -43,7 +43,7 @@ Calculate how many periods of clock signal with frequency of 100&nbsp;MHz contai
 
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories. Create a new working folder `Labs/05-counter` for this exercise.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/05-counter` for this exercise.
 
 
 ## Part 2: VHDL code for clock enable

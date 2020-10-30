@@ -49,7 +49,7 @@ Complete the decoder conversion table for common anode 7-segment display.
 
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories. Create a new working folder `Labs/04-segment` for this exercise.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/04-segment` for this exercise.
 
 
 ## Part 2: VHDL code for seven-segment display decoder

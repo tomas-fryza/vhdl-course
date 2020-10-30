@@ -28,7 +28,7 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 ## Part 1: Synchronize Git and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux) and synchronize local and remote repositories.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. 
 
 ```bash
 ## Windows Git Bash:
