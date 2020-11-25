@@ -158,7 +158,9 @@ The FSM function is divided into two processes, where the first is sequential an
                             s_cnt   <= c_ZERO;
                         end if;
 
-                    when ...
+                    -- If the current state is WEST_GO, then wait 4 sec
+                    -- and move to the next WEST_WAIT state.
+                    when WEST_GO => ...
 ```
 
 Complete CASE/WHEN statements in both processes.
