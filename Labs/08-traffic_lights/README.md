@@ -161,6 +161,19 @@ The FSM function is divided into two processes, where the first is sequential an
                     -- If the current state is WEST_GO, then wait 4 sec
                     -- and move to the next WEST_WAIT state.
                     when WEST_GO => ...
+
+                    ...
+
+                    -- It is a good programming practice to use the 
+                    -- OTHERS clause, even if all CASE choices have 
+                    -- been made. 
+                    when others =>
+                        s_state <= STOP1;
+
+                end case;
+            end if; -- Synchronous reset
+        end if; -- Rising edge
+    end process p_traffic_fsm;
 ```
 
 Complete CASE/WHEN statements in both processes.
