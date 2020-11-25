@@ -158,7 +158,7 @@ The FSM function is divided into two processes, where the first is sequential an
                             s_cnt   <= c_ZERO;
                         end if;
 
-                    ...
+                    when ...
 ```
 
 Complete CASE/WHEN statements in both processes.
