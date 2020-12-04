@@ -1,4 +1,4 @@
-# Project: General instructions
+# VHDL project: General instructions
 
 ![Logo](../../logolink_eng.jpg)
 
