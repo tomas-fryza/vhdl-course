@@ -11,20 +11,20 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 ### EDA Playground
 
 1. [Introduction to Git and VHDL](Labs/01-gates)
-2. [Combinational logic](Labs/02-logic)
+2. Combinational logic
 
 ### Vivado
 
-3. [Introduction to Vivado](Labs/03-vivado)
-4. [Seven-segment display decoder](Labs/04-segment)
-5. [Binary counter](Labs/05-counter)
-6. [Driver for multiple seven-segment displays](Labs/06-display_driver)
-7. [Stopwatch](Labs/07-stopwatch)
-8. [Traffic light controller](Labs/08-traffic_lights)
+3. Introduction to Vivado
+4. Seven-segment display decoder
+5. Binary counter
+6. Driver for multiple seven-segment displays
+7. Stopwatch
+8. Traffic light controller
 
 ### VHDL project
 
-9.-13. [General instructions](Labs/project)
+9.-13. General instructions
 
 
 ## Materials
