@@ -160,7 +160,7 @@ and Distributive laws:
 
 1. Submit the GitHub link to your `Digital-electronics-1` repository.
 
-2. Verification of De Morgan's laws of funcetion f(c,b,a). Submit:
+2. Verification of De Morgan's laws of function f(c,b,a). Submit:
     * VHDL code (`design.vhd`),
     * Screenshot with simulated time waveforms,
     * Link to your public EDA Playground example.
