@@ -66,7 +66,7 @@ Download `Docs` folder from [this repository](https://github.com/tomas-fryza/Dig
 ```bash
 ## Windows Git Bash or Linux:
 $ ls
-Docs  Examples  LICENSE  README.md
+Docs  LICENSE  README.md
 ```
 
 Create a new working folder `Labs/01-gates` for this exercise.
