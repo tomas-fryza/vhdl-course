@@ -111,7 +111,7 @@ Use De Morgan's laws and modify the following logic function to the form with NA
 ```
 >
 
-Run any text editor, such as *Visual Studio Code* or *Atom*, open your `Digital-electronics-1/Labs/01-gates/README.md` local file (not on GitHub), create/complete tables with logical values, add link to your Playground and a screenshot with time waveforms from the simulator.
+Run any text editor, such as *Visual Studio Code* or *Atom*, open/create your `Digital-electronics-1/Labs/01-gates/README.md` local file (not on GitHub), complete tables with logical values, add link to your Playground and a screenshot with time waveforms from the simulator.
 
 | **c** | **b** |**a** | **f(c,b,a)** |
 | :-: | :-: | :-: | :-: |
@@ -160,7 +160,7 @@ and Distributive laws:
 
 1. Submit the GitHub link to your `Digital-electronics-1` repository.
 
-2. Verification of basic Boolean postulates. Submit:
+2. Verification of De Morgan's laws of funcetion f(c,b,a). Submit:
     * VHDL code (`design.vhd`),
     * Screenshot with simulated time waveforms,
     * Link to your public EDA Playground example.
@@ -170,4 +170,4 @@ and Distributive laws:
     * Screenshot with simulated time waveforms,
     * Link to your public EDA Playground example.
 
-The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+Prepare all tasks in your `Digital-electronics-1/Labs/01-gates/README.md` file, export/print it to PDF, use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.
