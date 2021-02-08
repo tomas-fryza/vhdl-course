@@ -170,4 +170,4 @@ $ git status
     * Screenshot with simulated time waveforms,
     * Link to your public EDA Playground example.
 
-Prepare all tasks in your README file `Digital-electronics-1/Labs/01-gates/README.md`, export/print it to PDF, use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.
+**Prepare all tasks in your README file `Digital-electronics-1/Labs/01-gates/README.md`, export/print it to PDF, use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.**
