@@ -161,12 +161,12 @@ $ git status
 1. Submit the GitHub link to your `Digital-electronics-1` repository.
 
 2. Verification of De Morgan's laws of function f(c,b,a). Submit:
-    * VHDL code (`design.vhd`),
+    * Listing of VHDL code `design.vhd`,
     * Screenshot with simulated time waveforms,
     * Link to your public EDA Playground example.
 
 3. Verification of Distributive laws. Submit:
-    * VHDL code (`design.vhd`),
+    * Listing of VHDL code `design.vhd`,
     * Screenshot with simulated time waveforms,
     * Link to your public EDA Playground example.
 
