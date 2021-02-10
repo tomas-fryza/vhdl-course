@@ -1,4 +1,4 @@
-# Lab 1: Introduction to Git and VHDL
+# Lab 1: Introduction to Git and VHDLLL
 
 ![Logo](../../logolink_eng.jpg)
 
