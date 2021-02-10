@@ -75,7 +75,7 @@ Create a new working folder `Labs/01-gates` for this exercise.
 ## Windows Git Bash or Linux:
 $ mkdir Labs
 $ cd Labs/
-$ mkdir 01-tools
+$ mkdir 01-gates
 ```
 
 
