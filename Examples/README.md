@@ -1,6 +1,7 @@
 # Examples
 
 * [Basic gates](https://www.edaplayground.com/x/5L92)
+* [Binary comparator](https://www.edaplayground.com/x/5uu3)
 * [Half/Full adder](https://www.edaplayground.com/x/2Jcz)
 * [Clock enable circuit](https://www.edaplayground.com/x/5LiJ)
 * [N-bit Up/Down binary counter](https://www.edaplayground.com/x/5bgq)
