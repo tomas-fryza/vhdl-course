@@ -109,14 +109,14 @@ In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1
 | :-: | :-: | :-- | :-- |
 | `a_i`       | input  | [`std_logic_vector(2 - 1 downto 0)`](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Data-types) | Data A |
 | `b_i`       | input  | `std_logic_vector(2 - 1 downto 0)` | Data B |
-| `greater_o` | output | `std_logic` | B is greater than A |
-| `equals_o`  | output | `std_logic` | B equals A |
-| `less_o`    | output | `std_logic` | B is less than A |
+| `B_greater_A_o` | output | `std_logic` | B is greater than A |
+| `B_equals_A_o`  | output | `std_logic` | B equals A |
+| `B_less_A_o`    | output | `std_logic` | B is less than A |
 
 In VHDL, define an [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [signal assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments). Use the assignment `when`,` else` to describe the three output functions, such as:
 
 ```vhdl
-greater_o <= '1' when (b_i > a_i) else '0';
+B_greater_A_o <= '1' when (b_i > a_i) else '0';
 ```
 
 
@@ -152,7 +152,7 @@ The message is displayed to the console when the condition is NOT met, therefore
         s_a <= "00";
         wait for 100 ns;
         -- Expected output
-        assert ((s_greater = '0') and (s_equals = '1') and (s_less = '0'))
+        assert ((s_B_greater_A = '0') and (s_B_equals_A = '1') and (s_B_less_A = '0'))
         -- If false, report an error
         report "Test failed for input combination: 00, 00"
         severity error;
@@ -182,9 +182,9 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
    | :-: | :-: | :-- | :-- |
    | `a_i`       | input  | `std_logic_vector(4 - 1 downto 0)` | Data A |
    | `b_i`       | input  | `std_logic_vector(4 - 1 downto 0)` | Data B |
-   | `greater_o` | output | `std_logic` | B is greater than A |
-   | `equals_o`  | output | `std_logic` | B equals A |
-   | `less_o`    | output | `std_logic` | B is less than A |
+   | `B_greater_A_o` | output | `std_logic` | B is greater than A |
+   | `B_equals_A_o`  | output | `std_logic` | B equals A |
+   | `B_less_A_o`    | output | `std_logic` | B is less than A |
 
 2. In VHDL, define a testbench for a 4-bit binary comparator. Verify at least ten random input combinations.
 
