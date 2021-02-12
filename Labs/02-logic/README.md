@@ -194,10 +194,14 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
 1. Preparation tasks (done before the lab at home). Submit:
    * Binary comparator truth table.
 
-2. A 4-bit binary comparator. Submit:
+2. A 2-bit comparator. Submit:
+   * Karnaugh maps for all three functions.
+   * SoP and PoS functions.
+
+3. A 4-bit binary comparator. Submit:
    * VHDL code (`design.vhd`),
    * VHDL testbench (`testbench.vhd`),
    * Screenshot with simulated time waveforms,
    * Link to your public EDA Playground example.
 
-The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+*Prepare all tasks in your README file `Digital-electronics-1/Labs/01-gates/README.md`, export/print it to PDF, use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
