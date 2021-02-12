@@ -101,9 +101,9 @@ Use K-maps to create a simplified SoP form of the "greater than" function and a 
  
  ## Part 3: Binary comparator in VHDL language
 
-Log in to your [EDA Playground](https://www.edaplayground.com/login) account and create a new project: you can copy your previous playground and save it under a different name.
+Log in to your [EDA Playground](https://www.edaplayground.com/login) account, open [template](https://www.edaplayground.com/x/5uu3) project, use copy button, and save the project under a different name.
 
-In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity) for a 2-bit binary comparator (`comparator_2bit`).
+In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity) for a 2-bit binary comparator (`comparator_2bit`) according to the following table.
 
 | **Port name** | **Direction** | **Type** | **Description** |
 | :-: | :-: | :-- | :-- |
@@ -146,19 +146,22 @@ The message is displayed to the console when the condition is NOT met, therefore
     --------------------------------------------------------------------
     p_stimulus : process
     begin
+        -- Report a note at the begining of stimulus process
         report "Stimulus process started" severity note;
 
-        s_b <= "00";
-        s_a <= "00";
-        wait for 100 ns;
+
+        -- First test values
+        s_b <= "00"; s_a <= "00"; wait for 100 ns;
         -- Expected output
         assert ((s_B_greater_A = '0') and (s_B_equals_A = '1') and (s_B_less_A = '0'))
-        -- If false, report an error
-        report "Test failed for input combination: 00, 00"
-        severity error;
+        -- If false, then report an error
+        report "Test failed for input combination: 00, 00" severity error;
+        
+        
+        -- WRITE OTHER TESTS HERE
 
-        -- ADD OTHER TEST CASES
 
+        -- Report a note at the end of stimulus process
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
@@ -186,7 +189,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
    | `B_equals_A_o`  | output | `std_logic` | B equals A |
    | `B_less_A_o`    | output | `std_logic` | B is less than A |
 
-2. In VHDL, define a testbench for a 4-bit binary comparator. Verify at least ten random input combinations.
+2. In VHDL, define a testbench for a 4-bit binary comparator. Verify at least ten random input combinations. Make one intentional mistake when automatically verifying expected values using the `assert` command.
 
 
 ## Lab assignment
@@ -196,7 +199,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
 
 2. A 2-bit comparator. Submit:
    * Karnaugh maps for all three functions.
-   * SoP and PoS functions.
+   * Simplified SoP form of the "greater than" function and a PoS form of the "less than" function.
 
 3. A 4-bit binary comparator. Submit:
    * VHDL code (`design.vhd`),
