@@ -11,7 +11,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 ### EDA Playground
 
 1. [Introduction to Git and VHDL](Labs/01-gates)
-2. Combinational logic
+2. [Combinational logic](Labs/02-logic)
 
 ### Vivado
 
