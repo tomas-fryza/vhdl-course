@@ -162,9 +162,7 @@ The message is displayed to the console when the condition is NOT met, therefore
     end process p_stimulus;
 ```
 
-In VHDL, write a testbench and verify the correct functionality of the comparator for all input combinations.
-
-Update your local (not GitHub) `README.md` file with a screenshot of the simulation(s) and a link to your public EDA playground.
+In VHDL, write a testbench and verify the correct functionality of the comparator for all input combinations. Update your local (not GitHub) `Labs/02-logic/README.md` file with a link to your public EDA playground.
 
 
 ## Synchronize git
@@ -195,6 +193,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
 2. A 2-bit comparator. Submit:
     * Karnaugh maps for all three functions,
     * Equations of simplified SoP form of the "greater than" function and simplified PoS form of the "less than" function.
+    * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
 
 3. A 4-bit binary comparator. Submit:
     * Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting,
