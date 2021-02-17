@@ -160,7 +160,8 @@ $ git status
 
 2. Verification of De Morgan's laws of function f(c,b,a). Submit:
     * Equations of all three versions of logic function f(c,b,a),
-      ![Logic function](Images/equations.png)
+
+     ![Logic function](Images/equations.png)
     * Completed table with logic functions' values,
     * Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting,
     * Screenshot with simulated time waveforms of all three functions,
