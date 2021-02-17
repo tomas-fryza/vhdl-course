@@ -11,7 +11,7 @@ The purpose of this laboratory exercise is to learn to use Vivado to create a si
 
 ## Preparation tasks (done before the lab at home)
 
-Download and install [Vivado Design Suite](https://www.xilinx.com/support/download.html). For Linux, follow the instructions on [Wiki page](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Install-Vivado-2020.1-on-Linux). For Windows, download Xilinx Unified Installer 2020.2: Windows Self Extracting Web Installer and during the instalation select **Vivado HL WebPACK** edition.
+Download and install [Vivado Design Suite](https://www.xilinx.com/support/download.html). For Linux, follow the instructions on [Wiki page](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Install-Vivado-2020.1-on-Linux). For Windows, download **Xilinx Unified Installer 2020.2: Windows Self Extracting Web Installer** and during the instalation select **Vivado HL WebPACK** edition.
 
 The Nexys A7 board provides sixteen switches and LEDs. The switches can be used to provide inputs, and the LEDs can be used as output devices. See [schematic](https://github.com/tomas-fryza/Digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of slide switches and LEDs.
 
