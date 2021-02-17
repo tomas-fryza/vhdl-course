@@ -1,4 +1,3 @@
-
 # Lab 2: Combinational logic
 
 ![Logo](../../logolink_eng.jpg)
