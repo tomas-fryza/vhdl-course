@@ -104,7 +104,7 @@ In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1
 | `B_equals_A_o`  | output | `std_logic` | B equals A |
 | `B_less_A_o`    | output | `std_logic` | B is less than A |
 
-In VHDL, define an [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [signal assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments). Use the assignment `when`,` else` to describe the three output functions, such as:
+In VHDL, define an [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [signal assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments). Use the **conditional signal assignment** `when`,` else` (outside process) to describe the three output functions, such as:
 
 ```vhdl
 B_less_A_o   <= '1' when (b_i < a_i) else '0';
@@ -119,7 +119,12 @@ You can write any information to the console using the report statement. The bas
 report <message_string> [severity <severity_level>];
 ```
 
-where possible values for `severity_level` are: `note`, `warning`, `error`, `failure`. If the severity level is omitted, then the default value is `note`.
+where possible values for `severity_level` are: `note`, `warning`, `error`, `failure`. If the severity level is omitted, then the default value is `note`. The following two statements are therefore equivalent:
+
+```vhdl
+report "Stimulus process started" severity note;
+report "Stimulus process started";
+```
 
 An assertion statement checks that a specified condition is true and reports an error if it is not. It is combined with a report statement as follows:
 
