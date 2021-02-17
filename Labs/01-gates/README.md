@@ -113,16 +113,16 @@ Use De Morgan's laws and modify the following logic function to the form with NA
 
 Run any text editor, such as *Visual Studio Code* or *Atom*, open/create your `Digital-electronics-1/Labs/01-gates/README.md` local file (not on GitHub), complete tables with logical values, add link to your Playground and a screenshot with time waveforms from the simulator.
 
-| **c** | **b** |**a** | **f(c,b,a)** |
-| :-: | :-: | :-: | :-: |
-| 0 | 0 | 0 |  |
-| 0 | 0 | 1 |  |
-| 0 | 1 | 0 |  |
-| 0 | 1 | 1 |  |
-| 1 | 0 | 0 |  |
-| 1 | 0 | 1 |  |
-| 1 | 1 | 0 |  |
-| 1 | 1 | 1 |  |
+| **c** | **b** |**a** | **f(c,b,a)** | **f_NAND(c,b,a)** | **f_NOR(c,b,a)** |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| 0 | 0 | 0 |  |  |  |
+| 0 | 0 | 1 |  |  |  |
+| 0 | 1 | 0 |  |  |  |
+| 0 | 1 | 1 |  |  |  |
+| 1 | 0 | 0 |  |  |  |
+| 1 | 0 | 1 |  |  |  |
+| 1 | 1 | 0 |  |  |  |
+| 1 | 1 | 1 |  |  |  |
 
 
 ## Synchronize git
@@ -145,29 +145,28 @@ $ git status
 
 ## Experiments on your own
 
-1. In EDA Playground, verify basic Boolean postulates:
-
-![Boolean postulates](Images/postulates.png)
-
-2. In EDA Playground, verify Distributive laws:
+1. In EDA Playground, verify Distributive laws:
 
 ![Distributive laws](Images/distributives.png)
 
-3. Try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), and compare their options.
+2. Try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), and compare their options.
 
 
 ## Lab assignment
 
-1. Submit the GitHub link to your `Digital-electronics-1` repository.
+1. Submit the link to your `Digital-electronics-1` GitHub repository in the form `https://github.com/...`
 
 2. Verification of De Morgan's laws of function f(c,b,a). Submit:
-    * Listing of VHDL code `design.vhd`,
-    * Screenshot with simulated time waveforms,
-    * Link to your public EDA Playground example.
+    * Equations of all three versions of logic function f(c,b,a),
+    * Completed table with logic functions' values,
+    * Listing of VHDL architecture with syntax highlighting,
+    * Screenshot with simulated time waveforms of all three functions,
+    * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
 
 3. Verification of Distributive laws. Submit:
-    * Listing of VHDL code `design.vhd`,
-    * Screenshot with simulated time waveforms,
-    * Link to your public EDA Playground example.
+    * Completed table with logic functions' values,
+    * Listing of VHDL architecture with syntax highlighting,
+    * Screenshot with simulated time waveforms of all four functions,
+    * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
 
 *Prepare all tasks in your README file `Digital-electronics-1/Labs/01-gates/README.md`, [export/print it to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-MD-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
