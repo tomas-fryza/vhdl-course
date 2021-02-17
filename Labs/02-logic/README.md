@@ -82,7 +82,7 @@ The K-map for the "equals" function is as follows:
 
 Create K-maps for other two functions.
 
-![Empty Karnaugh map 4x4](Images/kmap_empty.png)
+![Empty Karnaugh map 4x4](Images/kmap_empty.png) &nbspc;  &nbspc;  &nbspc;  &nbspc; 
 ![Empty Karnaugh map 4x4](Images/kmap_empty.png)
 
 Use K-maps to create a simplified SoP form of the "greater than" function and a simplified PoS form of the "less than" function.
@@ -185,16 +185,16 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
 ## Lab assignment
 
 1. Preparation tasks (done before the lab at home). Submit:
-   * Completed 2-bit comparator truth table.
+    * Completed 2-bit comparator truth table.
 
 2. A 2-bit comparator. Submit:
-   * Karnaugh maps for all three functions,
-   * Equations of simplified SoP form of the "greater than" function and simplified PoS form of the "less than" function.
+    * Karnaugh maps for all three functions,
+    * Equations of simplified SoP form of the "greater than" function and simplified PoS form of the "less than" function.
 
 3. A 4-bit binary comparator. Submit:
-   * Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting,
-   * Listing of VHDL stimulus process from testbench file (`testbench.vhd`) with syntax highlighting,
-   * Listing of simulator console output, i.e. with one reported error,
-   * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
+    * Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting,
+    * Listing of VHDL stimulus process from testbench file (`testbench.vhd`) with syntax highlighting,
+    * Listing of simulator console output, i.e. with one reported error,
+    * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
 
 *Prepare all tasks in your README file `Digital-electronics-1/Labs/02-logic/README.md`, [export/print it to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-MD-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
