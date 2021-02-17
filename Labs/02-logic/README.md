@@ -116,7 +116,7 @@ In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1
 In VHDL, define an [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [signal assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments). Use the assignment `when`,` else` to describe the three output functions, such as:
 
 ```vhdl
-B_greater_A_o <= '1' when (b_i > a_i) else '0';
+B_less_A_o   <= '1' when (b_i < a_i) else '0';
 ```
 
 
@@ -134,8 +134,7 @@ An assertion statement checks that a specified condition is true and reports an 
 
 ```vhdl
 assert (<condition>)
-report <message_string>
-[severity <severity_level>];
+report <message_string> [severity <severity_level>];
 ```
 
 The message is displayed to the console when the condition is NOT met, therefore the message should be an opposite to the condition.
