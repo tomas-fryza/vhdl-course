@@ -161,13 +161,13 @@ $ git status
 2. Verification of De Morgan's laws of function f(c,b,a). Submit:
     * Equations of all three versions of logic function f(c,b,a),
     * Completed table with logic functions' values,
-    * Listing of VHDL architecture with syntax highlighting,
+    * Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting,
     * Screenshot with simulated time waveforms of all three functions,
     * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
 
 3. Verification of Distributive laws. Submit:
     * Completed table with logic functions' values,
-    * Listing of VHDL architecture with syntax highlighting,
+    * Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting,
     * Screenshot with simulated time waveforms of all four functions,
     * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
 
