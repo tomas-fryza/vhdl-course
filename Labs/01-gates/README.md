@@ -31,7 +31,7 @@ Use one of the available git manuals, such as [1](https://medium.com/swlh/how-to
    * Lists (ordered, unordered)
    * Links
    * Table
-   * Listing of VHDL source code
+   * Listing of VHDL source code (with syntax highlighting)
 
 
 ## Part 2: Local repository
