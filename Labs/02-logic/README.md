@@ -141,7 +141,7 @@ The message is displayed to the console when the condition is NOT met, therefore
     --------------------------------------------------------------------
     p_stimulus : process
     begin
-        -- Report a note at the begining of stimulus process
+        -- Report a note at the beginning of stimulus process
         report "Stimulus process started" severity note;
 
 
