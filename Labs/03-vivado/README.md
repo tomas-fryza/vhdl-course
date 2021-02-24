@@ -63,14 +63,14 @@ $ mkdir 03-vivado
 
 ## Part 2: Project creation in Vivado
 
-Get inspired by the [Creating and Programming our First FPGA Project Part 2: Initial Project Creation](https://blog.digilentinc.com/creating-and-programming-our-first-fpga-project-part-2-initial-project-creation/) tutorial and create a new project in Vivado (Set location to your `Labs/03-vivado` working folder). Unlike the instructions, let your project contains:
+Get inspired by the [Creating and Programming our First FPGA Project Part 2: Initial Project Creation](https://blog.digilentinc.com/creating-and-programming-our-first-fpga-project-part-2-initial-project-creation/) tutorial and create a new Vivado RTL project `comparator` (Set location to your `Labs/03-vivado` working folder). Unlike the instructions, let your project contains:
    * VHDL source file: `comparator_2bit` (the same file name as the entity)
    * Created constraints XDC file: `nexys-a7-50t`
-   * Default board : `Nexys A7-50T`
+   * Default board: `Nexys A7-50T`
 
 Copy/paste your EDA Playground `design.vhd` code from the previous exercise to `comparator_2bit.vhd` source file.
 
-Use **File** > **Add Sources Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_comparator_2bit` (same filename as tested entity with prefix `tb_`). Copy/pase your EDA Playground `testbench.vhd` code from previous exercise to `tb_comparator_2bit.vhd` file.
+Use **File** > **Add Sources Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_comparator_2bit` (same filename as tested entity with prefix `tb_`). Copy/pase your EDA Playground `testbench.vhd` code from previous exercise to `tb_comparator_2bit.vhd` file. 
 
 Use **Flow** > **Run Simulation** > **Run Behavioral Simulation** and run Vivado simulator.
 
@@ -94,9 +94,9 @@ A multiplexer (MUX) is a device that has multiple inputs and a single line outpu
 
 Perform the following steps to implement the two-bit wide 4-to-1 multiplexer. Take screenshots and make your own README tutorial on how to create a Vivado project, how to run a simulation and how to program an FPGA on board Nexys A7.
 
-   1. Create a new Vivado project for your circuit.
-   2. Create a VHDL entity `mux_2bit_4to1` for the two-bit wide 4-to-1 multiplexer.
-   3. Complete a VHDL architecture using the [conditional signal assignment](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) `when`, `else` (outside process).
+   1. Create a new  Vivado RTL project `multiplexer` in your Labs/03-vivado working folder.
+   2. Create a VHDL source file `mux_2bit_4to1` for the two-bit wide 4-to-1 multiplexer and define an entity `mux_2bit_4to1`.
+   3. DEfine a VHDL architecture using the [conditional signal assignment](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) `when`, `else` (outside process).
    4. Create a testbench `tb_mux_2bit_4to1` and simulate the circuit.
    5. Make pin assignments for the Nexys A7 board in `nexys-a7-50t.xdc`: connect mux select inputs sel_i[1:0] to slide switches SW[15:14] and use switches SW[7:0] to provide the four inputs a_i[1:0] to d_i[1:0]. Connect output f_o[1:0] to LEDs LD[15:14].
    6. Compile the project and download the generated bitstream into the FPGA chip.
