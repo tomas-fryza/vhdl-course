@@ -56,7 +56,7 @@ Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, 
 
 Perform the following steps to simulate the seven-segment display decoder.
 
-   1. Create a new Vivado project in your `Labs/04-segment` working folder.
+   1. Create a new Vivado RTL project `display` in your `Labs/04-segment` working folder.
    2. Create a VHDL source file `hex_7seg` for the decoder.
    3. Choose default board: `Nexys A7-50T`.
    4. In source file, define an entity `hex_7seg` as follows.
