@@ -121,7 +121,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
 2. Two-bit wide 4-to-1 multiplexer. Submit:
     * Listing of VHDL architecture from source file `mux_2bit_4to1.vhd` with syntax highlighting,
     * Listing of VHDL stimulus process from testbench file `tb_mux_2bit_4to1.vhd` with syntax highlighting,
-    * Screenshot with simulated time waveforms; always put all inputs and outputs.
+    * Screenshot with simulated time waveforms; always display all inputs and outputs.
 
 3. A Vivado tutorial. Submit:
     * Your tutorial for Vivado design flow: project creation, adding source file, adding testbench file, running simulation, (adding XDC constraints file).
