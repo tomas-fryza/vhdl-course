@@ -68,7 +68,7 @@ Get inspired by the [Creating and Programming our First FPGA Project Part 2: Ini
    * Created constraints XDC file: `nexys-a7-50t`
    * Default board: `Nexys A7-50T`
 
-Copy/paste your EDA Playground `design.vhd` code from the previous exercise to `comparator_2bit.vhd` source file.
+Copy/paste your EDA Playground `design.vhd` code from the previous exercise (or use this [unfinished template](https://www.edaplayground.com/x/5uu3)) to `comparator_2bit.vhd` source file.
 
 Use **File** > **Add Sources Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_comparator_2bit` (same filename as tested entity with prefix `tb_`). Copy/pase your EDA Playground `testbench.vhd` code from previous exercise to `tb_comparator_2bit.vhd` file. 
 
