@@ -6,7 +6,7 @@
 
 The purpose of this laboratory exercise is to learn to use Vivado to create a simple HDL design targeting Nexys A7 Artix-7 FPGA Trainer Board.
 
-![Screenshot od Vivado](Images/screenshot_vivado.png)
+![Screenshot of Vivado](Images/screenshot_vivado.png)
 
 
 ## Preparation tasks (done before the lab at home)
@@ -73,6 +73,11 @@ Copy/paste your EDA Playground `design.vhd` code from the previous exercise to `
 Use **File** > **Add Sources Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_comparator_2bit` (same filename as tested entity with prefix `tb_`). Copy/pase your EDA Playground `testbench.vhd` code from previous exercise to `tb_comparator_2bit.vhd` file. 
 
 Use **Flow** > **Run Simulation** > **Run Behavioral Simulation** and run Vivado simulator.
+
+> **Note:** To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation**.
+>
+> ![Reset simulation](Images/screenshot_vivado_reset_simul.png)
+>
 
 The Nexys A7 board have hardwired connections between FPGA chip and the switches and LEDs. To use these devices it is necessary to include in your project the correct pin assignments. Copy/paste constraints from [Nexys-A7-50T-Master.xdc](https://github.com/Digilent/digilent-xdc) to `nexys-a7-50t.xdc` file. The pin assignments in the file are useful only if the pin names that appear in this file are exactly the same as the port names used in your VHDL entity.
 
