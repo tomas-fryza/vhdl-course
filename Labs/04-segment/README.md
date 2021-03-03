@@ -25,7 +25,7 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 &nbsp;
 
-Complete the decoder conversion table for common anode 7-segment display.
+Complete the decoder truth table for common anode 7-segment display.
 
 | **Hex** | **Inputs** | **A** | **B** | **C** | **D** | **E** | **F** | **G** |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -188,11 +188,18 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 
 ## Lab assignment
 
-1. Seven-segment display decoder. Submit:
-    * VHDL code of the decoder (`hex_7seg.vhd`),
-    * VHDL testbench (`tb_hex_7seg.vhd`).
+1. Preparation tasks (done before the lab at home). Submit:
+    * Figure or table with connection of 7-segment displays on Nexys A7 board,
+    * Decoder truth table for common anode 7-segment display.
 
-2. LED indicators. Submit:
-    * VHDL code for LEDs(7:4).
+2. Seven-segment display decoder. Submit:
+    * Listing of VHDL architecture from source file `hex_7seg.vhd` with syntax highlighting,
+    * Listing of VHDL stimulus process from testbench file `tb_hex_7seg.vhd` with syntax highlighting,
+    * Screenshot with simulated time waveforms; always display all inputs and outputs,
+    * Listing of VHDL code from source file `top.vhd` with 7-segment module instantiation.
 
-The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+3. LED(7:4) indicators. Submit:
+    * Listing of VHDL code for LEDs(7:4) with syntax highlighting,
+    * Screenshot with simulated time waveforms; always display all inputs and outputs.
+
+*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/04-segment/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
