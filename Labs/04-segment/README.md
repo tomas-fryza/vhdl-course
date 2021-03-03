@@ -156,13 +156,13 @@ begin
     -- Display input value
     LED(3 downto 0) <= SW;
 
-    -- Turn LED(4) on if input value is equal to "0000"
+    -- Turn LED(4) on if input value is equal to 0, ie "0000"
     -- WRITE YOUR CODE HERE
     
-    -- Turn LED(5) on if input value is A, b, C, d, E, or F
+    -- Turn LED(5) on if input value is greater than 9
     -- WRITE YOUR CODE HERE
     
-    -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ..., F
+    -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
     -- WRITE YOUR CODE HERE
     
     -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
@@ -183,7 +183,26 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 
 ## Experiments on your own
 
-1. Write logic functions for LEDs(7:4) according to comments in source code above. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not`.
+1. Write logic functions for LEDs(7:4) according to comments in source code above. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not`. Complete the truth table for LEDs.
+
+| **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| 0 | 0000 |  |  |  |  |
+| 1 | 0001 |  |  |  |  |
+| 2 |      |  |  |  |  |
+| 3 |      |  |  |  |  |
+| 4 |      |  |  |  |  |
+| 5 |      |  |  |  |  |
+| 6 |      |  |  |  |  |
+| 7 |      |  |  |  |  |
+| 8 |      |  |  |  |  |
+| 9 |      |  |  |  |  |
+| A |      |  |  |  |  |
+| b |      |  |  |  |  |
+| C |      |  |  |  |  |
+| d |      |  |  |  |  |
+| E | 1110 |  |  |  |  |
+| F | 1111 |  |  |  |  |
 
 
 ## Lab assignment
@@ -199,7 +218,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
     * Listing of VHDL code from source file `top.vhd` with 7-segment module instantiation.
 
 3. LED(7:4) indicators. Submit:
-    * Listing of VHDL code for LEDs(7:4) with syntax highlighting,
+    * Truth table and listing of VHDL code for LEDs(7:4) with syntax highlighting,
     * Screenshot with simulated time waveforms; always display all inputs and outputs.
 
 *Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/04-segment/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
