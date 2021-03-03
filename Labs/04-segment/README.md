@@ -37,7 +37,7 @@ Complete the decoder truth table for common anode 7-segment display.
 | 5 |      |   |   |   |   |   |   |   |
 | 6 |      |   |   |   |   |   |   |   |
 | 7 |      |   |   |   |   |   |   |   |
-| 8 |      |   |   |   |   |   |   |   |
+| 8 | 1000 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 9 |      |   |   |   |   |   |   |   |
 | A |      |   |   |   |   |   |   |   |
 | b |      |   |   |   |   |   |   |   |
