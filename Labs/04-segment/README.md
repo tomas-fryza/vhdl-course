@@ -163,7 +163,7 @@ begin
     -- Turn LED(4) on if input value is equal to 0, ie "0000"
     -- WRITE YOUR CODE HERE
     
-    -- Turn LED(5) on if input value is greater than 9
+    -- Turn LED(5) on if input value is greater than "1001"
     -- WRITE YOUR CODE HERE
     
     -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
