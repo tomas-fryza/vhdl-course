@@ -197,7 +197,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 
 3. A 4-bit binary comparator. Submit:
     * Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting,
-    * Listing of VHDL stimulus process from testbench file (`testbench.vhd`) with syntax highlighting,
+    * Listing of VHDL stimulus process from testbench file (`testbench.vhd`) with syntax highlighting and asserts,
     * Listing of simulator console output, i.e. with one reported error,
     * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
 
