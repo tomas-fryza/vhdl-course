@@ -86,7 +86,14 @@ begin
     -- p_7seg_decoder:
     -- A combinational process for 7-segment display decoder. 
     -- Any time "hex_i" is changed, the process is "executed".
-    -- Output pin seg_o(6) corresponds to segment A, seg_o(5) to B, etc.
+    -- Output pin seg_o(6) controls segment A, seg_o(5) segment B, etc.
+    --       segment A
+    --        | segment B
+    --        |  | segment C
+    --        |  |  |   ...   segment G
+    --        +-+|+-+          |
+    --          |||            |
+    -- seg_o = "0000001"-------+
     --------------------------------------------------------------------
     p_7seg_decoder : process(hex_i)
     begin
