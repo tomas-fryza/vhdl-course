@@ -54,7 +54,7 @@ Complete the decoder truth table for common anode 7-segment display.
 
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/04-segment` for this exercise.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/04-segment` for this laboratory exercise.
 
 
 ## Part 2: VHDL code for seven-segment display decoder
@@ -64,12 +64,14 @@ Perform the following steps to simulate the seven-segment display decoder.
    1. Create a new Vivado RTL project `display` in your `Labs/04-segment` working folder.
    2. Create a VHDL source file `hex_7seg` for the decoder.
    3. Choose default board: `Nexys A7-50T`.
-   4. In source file, define an entity `hex_7seg` as follows.
+   4. Use **Define Module** dialog and define I/O ports of entity `hex_7seg` as follows.
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
    | `hex_i` | input   | `std_logic_vector(4 - 1 downto 0)` | Input binary data |
    | `seg_o` | output  | `std_logic_vector(7 - 1 downto 0)` | Cathode values in the order A, B, C, D, E, F, G |
+
+   ![Vivado Port definition](Images/vivado_io_ports.png)
 
    5. Use [combinational process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) and define an architecture of the decoder. Note that, inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) can be used.
 
