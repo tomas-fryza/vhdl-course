@@ -143,7 +143,6 @@ Perform the following steps to implement the seven-segment display decoder on th
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
    | `SW`  | input   | `std_logic_vector(4 - 1 downto 0)` | Input binary data |
-   | `LED` | output  | `std_logic_vector(8 - 1 downto 0)` | LED indicators |
    | `CA` | output | `std_logic` | Cathod A |
    | `CB` | output | `std_logic` | Cathod B |
    | `CC` | output | `std_logic` | Cathod C |
@@ -152,6 +151,7 @@ Perform the following steps to implement the seven-segment display decoder on th
    | `CF` | output | `std_logic` | Cathod F |
    | `CG` | output | `std_logic` | Cathod G |
    | `AN` | output | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
+   | `LED` | output  | `std_logic_vector(8 - 1 downto 0)` | LED indicators |
 
    3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
    4. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
