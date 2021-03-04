@@ -92,7 +92,7 @@ Use K-maps to create a simplified SoP form of the "greater than" function and a 
  
  ## Part 3: Binary comparator in VHDL language
 
-Log in to your [EDA Playground](https://www.edaplayground.com/login) account, open [template](https://www.edaplayground.com/x/5uu3) project, use copy button, and save the project under a different name.
+Log in to your [EDA Playground](https://www.edaplayground.com/login) account, open [template](https://www.edaplayground.com/x/5uu3) project, use **Copy** button, and **Save** the project under a different name.
 
 In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity) for a 2-bit binary comparator (`comparator_2bit`) according to the following table.
 
