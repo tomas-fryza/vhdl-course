@@ -240,7 +240,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 
 2. Seven-segment display decoder. Submit:
     * Listing of VHDL architecture from source file `hex_7seg.vhd` with syntax highlighting,
-    * Listing of VHDL stimulus process from testbench file `tb_hex_7seg.vhd` with syntax highlighting,
+    * Listing of VHDL stimulus process from testbench file `tb_hex_7seg.vhd` with syntax highlighting and asserts,
     * Screenshot with simulated time waveforms; always display all inputs and outputs,
     * Listing of VHDL code from source file `top.vhd` with 7-segment module instantiation.
 
