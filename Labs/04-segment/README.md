@@ -160,7 +160,7 @@ Perform the following steps to implement the seven-segment display decoder on th
 ------------------------------------------------------------------------
 -- Architecture body for top level
 ------------------------------------------------------------------------
-architecture behavioral of top is
+architecture Behavioral of top is
 begin
 
     --------------------------------------------------------------------
@@ -178,9 +178,11 @@ begin
     -- Connect one common anode to 3.3V
     AN <= b"1111_0111";
 
-    -- Display input value
+    -- Display input value on LEDs
     LED(3 downto 0) <= SW;
 
+
+    -- LED(7:4) indicators
     -- Turn LED(4) on if input value is equal to 0, ie "0000"
     -- WRITE YOUR CODE HERE
     
@@ -193,7 +195,7 @@ begin
     -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
     -- WRITE YOUR CODE HERE
 
-end architecture behavioral;
+end architecture Behavioral;
 ```
 
    5. Compile the project and download the generated bitstream into the FPGA chip.
