@@ -79,7 +79,7 @@ Perform the following steps to simulate the seven-segment display decoder.
 ------------------------------------------------------------------------
 -- Architecture body for seven-segment display decoder
 ------------------------------------------------------------------------
-architecture behavioral of hex_7seg is
+architecture Behavioral of hex_7seg is
 begin
 
     --------------------------------------------------------------------
@@ -95,9 +95,20 @@ begin
                 seg_o <= "0000001";     -- 0
             when "0001" =>
                 seg_o <= "1001111";     -- 1
-    
+
+
             -- WRITE YOUR CODE HERE
-    
+            -- 2, 3, 4, 5, 6, 7
+
+
+            when "1000" =>
+                seg_o <= "0000000";     -- 8
+
+
+            -- WRITE YOUR CODE HERE
+            -- 9, A, b, C, d
+
+
             when "1110" =>
                 seg_o <= "0110000";     -- E
             when others =>
@@ -105,7 +116,7 @@ begin
         end case;
     end process p_7seg_decoder;
 
-end architecture behavioral;
+end architecture Behavioral;
 ```
 
    6. Create a simulation source `tb_hex_7seg` and verify the functionality of your decoder.
