@@ -153,8 +153,7 @@ Perform the following steps to implement the seven-segment display decoder on th
    | `AN` | output | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
    | `LED` | output  | `std_logic_vector(8 - 1 downto 0)` | LED indicators |
 
-   3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
-   4. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
+   3. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -198,8 +197,9 @@ begin
 end architecture Behavioral;
 ```
 
-   5. Compile the project and download the generated bitstream into the FPGA chip.
-   6. Test the functionality of the seven-segment display decoder by toggling the switches and observing the display and LEDs.
+   4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
+   5. Compile the project and download the generated bitstream `display/display.runs/impl_1/top.bit` into the FPGA chip.
+   6. Test the functionality of the seven-segment display decoder by toggling the switches and observing the display and LEDs. Change the binary value `AN <= b"0111_1111"` and observe its effect on the display selection.
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 
@@ -210,7 +210,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 
 ## Experiments on your own
 
-1. Write logic functions for LEDs(7:4) according to comments in source code above. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not`. Complete the truth table for LEDs.
+1. Complete the truth table for LEDs according to comments in source code above. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not` and write logic functions for LED(7:4) indicators.
 
 | **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -222,7 +222,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 | 5 |      |  |  |  |  |
 | 6 |      |  |  |  |  |
 | 7 |      |  |  |  |  |
-| 8 |      |  |  |  |  |
+| 8 | 1000 |  |  |  |  |
 | 9 |      |  |  |  |  |
 | A |      |  |  |  |  |
 | b |      |  |  |  |  |
