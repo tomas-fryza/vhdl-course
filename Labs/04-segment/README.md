@@ -119,7 +119,7 @@ begin
 end architecture Behavioral;
 ```
 
-   6. Create a simulation source `tb_hex_7seg` and verify the functionality of your decoder.
+   6. Create a [simulation source](https://www.edaplayground.com/x/Vdpu) `tb_hex_7seg.vhd` and verify the functionality of your decoder.
 
 
 ## Part 3: Top level VHDL code
