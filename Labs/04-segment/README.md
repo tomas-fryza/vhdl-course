@@ -48,7 +48,8 @@ Complete the decoder truth table for common anode 7-segment display.
 
 ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](Images/7-Segment-Display-Number-Formation-Segment-Contol.png)
 
-Figure used from webpage: [How Seven Segment Display Works & Interface it with Arduino](https://lastminuteengineers.com/seven-segment-arduino-tutorial/).
+> The image above was used from a website: [How Seven Segment Display Works & Interface it with Arduino](https://lastminuteengineers.com/seven-segment-arduino-tutorial/).
+> 
 
 
 ## Part 1: Synchronize repositories and create a new folder
