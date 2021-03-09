@@ -11,7 +11,7 @@ The purpose of this laboratory exercise is to become familiar with the creation 
 
 ## Preparation tasks (done before the lab at home)
 
-The Nexys A7 board provides six push buttons. See schematic or reference manual of the Nexys A7 board and find out the connection of these push buttons. What output the push buttons normally generate when they are at rest, and what output when the push buttons are pressed?
+The Nexys A7 board provides six push buttons. See schematic or reference manual of the Nexys A7 board and find out the connection of these push buttons, ie to which FPGA pins are connected and how. What output the push buttons normally generate when they are at rest, and what output when the push buttons are pressed?
 
 &nbsp;
 
@@ -43,7 +43,7 @@ Calculate how many periods of clock signal with frequency of 100&nbsp;MHz contai
 
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/05-counter` for this exercise.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/05-counter` for this laboratory exercise.
 
 
 ## Part 2: VHDL code for clock enable
@@ -184,10 +184,17 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
 
 ## Lab assignment
 
-1. Bidirectional counter. Submit:
-    * VHDL code of the process (`p_cnt_up_down`).
+1. Preparation tasks (done before the lab at home). Submit:
+    * Figure or table with connection of push buttons on Nexys A7 board,
+    * Table with calculated values.
 
-2. Second 16-bit counter. Submit:
-    * (Hand-drawn) sketch of the top layer.
+2. Bidirectional counter. Submit:
+    * VHDL code of the process `p_cnt_up_down` with syntax highlighting.
+    * Listing of VHDL architecture from source file `hex_7seg.vhd` with syntax highlighting,
+    * Listing of VHDL stimulus process from testbench file `tb_hex_7seg.vhd` with syntax highlighting and asserts,
+    * Screenshot with simulated time waveforms; always display all inputs and outputs,
 
-The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+3. Second 16-bit counter. Submit:
+    * (Hand-drawn) sketch of the top layer including both counters.
+
+*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/05-counter/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
