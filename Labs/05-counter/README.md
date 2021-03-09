@@ -53,7 +53,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 Perform the following steps to simulate the clock enable circuit.
 
    1. Create a new Vivado RTL project `counter` in your `Labs/05-counter` working folder.
-   2. Create a VHDL source file `clock_enable.vhd` for the clock enable circuit.
+   2. Create a VHDL source file `clock_enable` for the clock enable circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Clock enable circuit example](https://www.edaplayground.com/x/5LiJ) and copy/paste the `design.vhd` code to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as package for arithmetic operations, `generic` part, internal signal, and [synchronous process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes). **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
    5. Create a simulation source `tb_clock_enable.vhd`, copy/paste the `testbench.vhd` code and run the simulation. Verify the meaning of the constant `c_MAX` and reset generation process.
