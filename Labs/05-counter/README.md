@@ -193,7 +193,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
     * Screenshot with simulated time waveforms; always display all inputs and outputs,
 
 3. Top level. Submit:
-    * Listing of VHDL code from source file `top.vhd` with all instantiations.
+    * Listing of VHDL code from source file `top.vhd` with all instantiations for the 4-bit bidirectional counter.
     * (Hand-drawn) sketch of the top layer including both counters, ie a 4-bit bidirectional counter from Part 4 and a 16-bit counter with a different time base from Part Experiments on your own.
 
 *Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/05-counter/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
