@@ -91,7 +91,7 @@ Perform the following steps to simulate the bidirectional N-bit counter.
 Perform the following steps to implement the 4-bit bidirectional counter on the Nexys A7 board.
 
    1. Create a new design source `top.vhd` in your project.
-   2. Define an entity `top` as follows.
+   2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-: | :-- |
@@ -108,14 +108,13 @@ Perform the following steps to implement the 4-bit bidirectional counter on the 
    | `CG` | output | `std_logic` | Cathod G |
    | `AN` | output | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
 
-   3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
-   4. Use direct instantiation and define an architecture of the top level: make a copy of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratories to the `counter/counter.srcs/sources_1/new/` source folder and add them to the project.
+   3. Use direct instantiation and define an architecture of the top level: make a copy of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratories to the `counter/counter.srcs/sources_1/new/` source folder and add it to the project.
 
 ```vhdl
 ------------------------------------------------------------------------
 -- Architecture body for top level
 ------------------------------------------------------------------------
-architecture behavioral of top is
+architecture Behavioral of top is
 
     -- Internal clock enable
     signal s_en  : std_logic;
@@ -144,7 +143,7 @@ begin
             --- WRITE YOUR CODE HERE
         );
 
-    -- Display input value
+    -- Display input value on LEDs
     LED(3 downto 0) <= s_cnt;
 
     --------------------------------------------------------------------
@@ -164,9 +163,9 @@ begin
     -- Connect one common anode to 3.3V
     AN <= b"1111_1110";
 
-end architecture behavioral;
+end architecture Behavioral;
 ```
-
+   4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
    5. Compile the project and download the generated bitstream `counter/counter.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the 4-bit counter by toggling the switch, pressing the button and observing the display and LEDs.
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
@@ -189,12 +188,12 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
     * Table with calculated values.
 
 2. Bidirectional counter. Submit:
-    * VHDL code of the process `p_cnt_up_down` with syntax highlighting.
-    * Listing of VHDL architecture from source file `hex_7seg.vhd` with syntax highlighting,
-    * Listing of VHDL stimulus process from testbench file `tb_hex_7seg.vhd` with syntax highlighting and asserts,
+    * Listing of VHDL code of the process `p_cnt_up_down` with syntax highlighting.
+    * Listing of VHDL reset and stimulus processes from testbench file `tb_cnt_up_down.vhd` with syntax highlighting and asserts,
     * Screenshot with simulated time waveforms; always display all inputs and outputs,
 
-3. Second 16-bit counter. Submit:
-    * (Hand-drawn) sketch of the top layer including both counters.
+3. Top level. Submit:
+    * Listing of VHDL code from source file `top.vhd` with all instantiations.
+    * (Hand-drawn) sketch of the top layer including both counters, ie a 4-bit bidirectional counter from Part 4 and a 16-bit counter with a different time base from Part Experiments on your own.
 
 *Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/05-counter/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
