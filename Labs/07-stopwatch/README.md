@@ -32,7 +32,7 @@ Use an approach that uses four different counters (one counter for each decade) 
 
 Perform the following steps to model the stopwatch counter.
    1. Create a new Vivado RTL project `stopwatch` in your `Labs/07-stopwatch` working folder.
-   2. Create a VHDL source file `stopwatch_seconds.vhd` for the stopwatch circuit.
+   2. Create a VHDL source file `stopwatch_seconds` for the stopwatch circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Stopwatch](https://www.edaplayground.com/x/2uKg) example and copy/paste the `design.vhd` code to your `stopwatch_seconds.vhd` file. Copy source file of clock enable circuit from previous labs to `stopwatch/stopwatch.srcs/sources_1/new/` folder and add it to the project.
    5. Complete the stopwatch code according to the following block diagram.
@@ -43,7 +43,7 @@ Perform the following steps to model the stopwatch counter.
 ## Part 3: Stopwatch simulation
 
 Perform the following steps to simulate stopwatch counter.
-   1. Create a VHDL simulation source `tb_stopwatch_seconds.vhd`, copy/paste the `testbench.vhd` code from EDA Playground example. Note that the maximum value of clock_enable circuit is set to 1 for the simulation, ie the stopwatch increments its value with a frequency of 100&nbsp;MHz and not 100&nbsp;Hz.
+   1. Create a VHDL simulation source `tb_stopwatch_seconds`, copy/paste the `testbench.vhd` code from EDA Playground example. Note that the maximum value of clock_enable circuit is set to 1 for the simulation, ie the stopwatch increments its value with a frequency of 100&nbsp;MHz and not 100&nbsp;Hz.
    2. Change the duration of simulation to 100000ns in **Tools > Settings... > Simulation > Simulation**.
    3. Complete the input data process `p_stimulus`, run the simulation, and verify that the stopwatch is started, paused, and reset correctly.
 
@@ -51,7 +51,7 @@ Perform the following steps to simulate stopwatch counter.
 ## Part 4: Top level VHDL code
 
 Perform the following steps to implement the stopwatch counter on the Nexys A7 board.
-   1. Create a new design source `top.vhd` in your project.
+   1. Create a new design source `top` in your project.
    2. Define an entity `top` as follows.
 
    | **Port name** | **Direction** | **Type** | **Description** |
@@ -59,7 +59,7 @@ Perform the following steps to implement the stopwatch counter on the Nexys A7 b
    | `CLK100MHZ` | input | `std_logic` | Main clock |
    | `BTNC` | input | `std_logic` | Synchronous reset |
    | `BTND` | input | `std_logic` | Start button |
-   | `SW`  | input   | `std_logic_vector(1 - 1 downto 0)` | Pause |
+   | `SW` | input   | `std_logic_vector(1 - 1 downto 0)` | Pause |
    | `CA` | output | `std_logic` | Cathod A |
    | `CB` | output | `std_logic` | Cathod B |
    | `CC` | output | `std_logic` | Cathod C |
@@ -78,7 +78,7 @@ Perform the following steps to implement the stopwatch counter on the Nexys A7 b
 ------------------------------------------------------------------------
 -- Architecture body for top level
 ------------------------------------------------------------------------
-architecture behavioral of top is
+architecture Behavioral of top is
 
     -- Local counters
     signal s_cnt3  : std_logic_vector(3 - 1 downto 0);
@@ -110,7 +110,7 @@ begin
     -- Disconnect the top four digits of the 7-segment display
     AN(7 downto 4) <= b"1111";
 
-end architecture behavioral;
+end architecture Behavioral;
 ```
 
 ![Block diagram of top level](Images/schema_top.jpg)
