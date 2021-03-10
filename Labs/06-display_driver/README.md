@@ -61,7 +61,7 @@ Multiplexer or MUX is a digital switch. It allows to route binary information fr
 Perform the following steps to model the driver circuit.
 
    1. Create a new Vivado RTL project `display_driver` in your `Labs/06-display_driver` working folder.
-   2. Create a VHDL source file `driver_7seg_4digits.vhd` for the driver circuit.
+   2. Create a VHDL source file `driver_7seg_4digits` for the driver circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Driver for 7-segment display](https://www.edaplayground.com/x/3f_A) example and copy/paste the `design.vhd` code to your `driver_7seg_4digits.vhd` file. Copy source files of clock enable, binary counter, 7-segment decoder modules from previous labs to `display_driver/display_driver.srcs/sources_1/new/` folder and add then to the project.
    5. Complete the driver code according to the following block diagram.
@@ -73,14 +73,14 @@ Perform the following steps to model the driver circuit.
 
 Perform the following steps to implement the 4-digit 7-segment display driver on the Nexys A7 board.
 
-   1. Create a new design source `top.vhd` in your project.
+   1. Create a new design source `top` in your project.
    2. Define an entity `top` as follows.
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-: | :-- |
    | `CLK100MHZ` | input | `std_logic` | Main clock |
    | `BTNC` | input | `std_logic` | Synchronous reset |
-   | `SW`  | input   | `std_logic_vector(16 - 1 downto 0)` | Four 4-bit values |
+   | `SW` | input  | `std_logic_vector(16 - 1 downto 0)` | Four 4-bit values |
    | `CA` | output | `std_logic` | Cathod A |
    | `CB` | output | `std_logic` | Cathod B |
    | `CC` | output | `std_logic` | Cathod C |
@@ -98,7 +98,7 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
 ------------------------------------------------------------------------
 -- Architecture body for top level
 ------------------------------------------------------------------------
-architecture behavioral of top is
+architecture Behavioral of top is
     -- No internal signals
 begin
 
@@ -106,8 +106,8 @@ begin
     -- Instance (copy) of driver_7seg_4digits entity
     driver_seg_4 : entity work.driver_7seg_4digits
         port map(
-            clk      => CLK100MHZ,
-            reset    => BTNC,
+            clk        => CLK100MHZ,
+            reset      => BTNC,
             data0_i(3) => SW(3),
             data0_i(2) => SW(2),
             data0_i(1) => SW(1),
@@ -120,7 +120,7 @@ begin
     -- Disconnect the top four digits of the 7-segment display
     AN(7 downto 4) <= b"1111";
 
-end architecture behavioral;
+end architecture Behavioral;
 ```
 
    5. Compile the project and download the generated bitstream `display_driver/display_driver.runs/impl_1/top.bit` into the FPGA chip.
