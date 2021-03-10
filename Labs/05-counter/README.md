@@ -11,7 +11,7 @@ The purpose of this laboratory exercise is to become familiar with the creation 
 
 ## Preparation tasks (done before the lab at home)
 
-The Nexys A7 board provides six push buttons. See schematic or reference manual of the Nexys A7 board and find out the connection of these push buttons, ie to which FPGA pins are connected and how. What output the push buttons normally generate when they are at rest, and what output when the push buttons are pressed?
+The Nexys A7 board provides five push buttons for user applications. See schematic or reference manual of the Nexys A7 board and find out the connection of these push buttons, ie to which FPGA pins are connected and how. What output the push buttons normally generate when they are at rest, and what output when the push buttons are pressed?
 
 &nbsp;
 
