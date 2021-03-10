@@ -50,6 +50,8 @@ Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, 
 
 To drive another logic in the design (with slower clock), it is better to generate a **clock enable signal** instead of creating another clock domain (using clock dividers) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.
 
+![Clock enable](Images/wavedrom_clock_enable.png)
+
 Perform the following steps to simulate the clock enable circuit.
 
    1. Create a new Vivado RTL project `counter` in your `Labs/05-counter` working folder.
