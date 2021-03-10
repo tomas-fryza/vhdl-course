@@ -58,13 +58,13 @@ To drive another logic in the design (with slower clock), it is better to genera
 {
   signal:
   [
-  	{name: "clk",  wave: 'P...........'},
-  	{name: "ce_o", wave: 'l........hl.'},
-  	{},
+    {name: "clk",  wave: 'P...........'},
+    {name: "ce_o", wave: 'l........hl.'},
+    {},
   ],
   head:
   {
-  	tick: 0,
+    tick: 0,
   },
 }
 ```
