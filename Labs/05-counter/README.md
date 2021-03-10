@@ -52,6 +52,23 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 ![Clock enable](Images/wavedrom_clock_enable.png)
 
+> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows:
+>
+```javascript
+{
+  signal:
+  [
+  	{name: "clk",  wave: 'P...........'},
+  	{name: "ce_o", wave: 'l........hl.'},
+  	{},
+  ],
+  head:
+  {
+  	tick: 0,
+  },
+}
+```
+
 Perform the following steps to simulate the clock enable circuit.
 
    1. Create a new Vivado RTL project `counter` in your `Labs/05-counter` working folder.
