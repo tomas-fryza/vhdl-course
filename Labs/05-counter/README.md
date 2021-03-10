@@ -182,7 +182,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
 
 ## Experiments on your own
 
-1. Add a second instantiation (copy) of the counter (`bin_cnt1`) and clock enable (`clk_en1`) entities and make a 16-bit counter with a different time base. Display its value on LED(15:0).
+1. Add a second instantiation (copy) of the counter and clock enable entities and make a 16-bit counter with a 10 ms time base. Display its value on LED(15:0).
 
 
 ## Lab assignment
@@ -198,6 +198,6 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
 
 3. Top level. Submit:
     * Listing of VHDL code from source file `top.vhd` with all instantiations for the 4-bit bidirectional counter.
-    * (Hand-drawn) sketch of the top layer including both counters, ie a 4-bit bidirectional counter from Part 4 and a 16-bit counter with a different time base from Part Experiments on your own.
+    * Image of the top layer including both counters, ie a 4-bit bidirectional counter from Part 4 and a 16-bit counter with a different time base from Part Experiments on your own. The image can be drawn on a computer or by hand.
 
 *Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/05-counter/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
