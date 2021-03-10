@@ -58,7 +58,7 @@ Perform the following steps to simulate the clock enable circuit.
    2. Create a VHDL source file `clock_enable` for the clock enable circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Clock enable circuit example](https://www.edaplayground.com/x/5LiJ) and copy/paste the `design.vhd` code to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as package for arithmetic operations, `generic` part, internal signal, and [synchronous process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes). **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
-   5. Create a simulation source `tb_clock_enable.vhd`, copy/paste the `testbench.vhd` code and run the simulation. Verify the meaning of the constant `c_MAX` and reset generation process.
+   5. Create a simulation source `tb_clock_enable`, copy/paste the `testbench.vhd` code and run the simulation. Verify the meaning of the constant `c_MAX` and reset generation process.
    
    The default simulation run time is set to 1000&nbsp;ns in Vivado. You can change it in the menu **Tools > Settings...**
 
@@ -71,12 +71,12 @@ Perform the following steps to simulate the clock enable circuit.
 
 Perform the following steps to simulate the bidirectional N-bit counter.
 
-   1. Create a new design source `cnt_up_down.vhd` in your project.
+   1. Create a new design source `cnt_up_down` in your project.
    2. Open the [N-bit Up/Down binary counter example](https://www.edaplayground.com/x/5bgq) and copy/paste the `design.vhd` code to your `cnt_up_down.vhd` file. Take a look at the new parts of the VHDL source code.
 
    Note that an internal `s_cnt_local` signal is used to implement the counter. This is because the **output** port `cnt_o` cannot be read and therefore the operation `cnt_o + 1` cannot be performed. Also note that local value must be retyped to the output port.
 
-   3. Create a simulation source `tb_cnt_up_down.vhd`, copy/paste the `testbench.vhd` code.
+   3. Create a simulation source `tb_cnt_up_down`, copy/paste the `testbench.vhd` code.
    4. Change the testbench you want to simulate, right click to file name and select `Set as Top`. Run the simulation. Verify the meaning of the constant `c_CNT_WIDTH` and reset generation process.
 
 ![Set as Top](Images/screenshot_vivado_set_top.png)
@@ -92,7 +92,7 @@ Perform the following steps to simulate the bidirectional N-bit counter.
 
 Perform the following steps to implement the 4-bit bidirectional counter on the Nexys A7 board.
 
-   1. Create a new design source `top.vhd` in your project.
+   1. Create a new design source `top` in your project.
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
    | **Port name** | **Direction** | **Type** | **Description** |
