@@ -167,6 +167,8 @@ begin
 
 end architecture Behavioral;
 ```
+   ![Top level](Images/top_schema_4bit_cnt.jpeg)
+
    4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
    5. Compile the project and download the generated bitstream `counter/counter.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the 4-bit counter by toggling the switch, pressing the button and observing the display and LEDs.
