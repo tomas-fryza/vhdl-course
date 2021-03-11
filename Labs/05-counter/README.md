@@ -52,19 +52,22 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 ![Clock enable](Images/wavedrom_clock_enable.png)
 
-> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows:
+> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows (tick -1, 10, 11 and 12 were manually adjusted afterwards):
 >
 ```javascript
 {
   signal:
   [
-    {name: "clk",  wave: 'P...........'},
-    {name: "ce_o", wave: 'l........hl.'},
-    {},
+    {name: "clk",  wave: 'P............'},
+    {name: "ce_o", wave: 'lhl........hl'},
   ],
   head:
   {
-    tick: 0,
+    tick: -1,
+  },
+  foot:
+  {
+    text:'g_MAX = 10',
   },
 }
 ```
