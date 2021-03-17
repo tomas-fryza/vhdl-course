@@ -68,13 +68,15 @@ Perform the following steps to model the driver circuit.
 
 ![Block diagram of 7-segment display driver](Images/schema_driver.jpg)
 
+   6. Create a simulation source `tb_driver_7seg_4digits`, copy/paste the `testbench.vhd` code from EDA Playground [template](https://www.edaplayground.com/x/3f_A), complete the code, set the same conditions to display value `3.142` and run the simulation. Compare simulated timing diagram with yours in Preparation tasks. Verify the meaning of the constant c_MAX and reset generation process.
+
 
 ## Part 3: Top level VHDL code
 
 Perform the following steps to implement the 4-digit 7-segment display driver on the Nexys A7 board.
 
    1. Create a new design source `top` in your project.
-   2. Define an entity `top` as follows.
+   2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-: | :-- |
@@ -91,8 +93,7 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
    | `DP` | output | `std_logic` | Decimal point |
    | `AN` | output | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
 
-   3. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
-   4. Use direct instantiation and define an architecture of the top level.
+   3. Use direct instantiation and define an architecture of the top level.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -123,6 +124,7 @@ begin
 end architecture Behavioral;
 ```
 
+   4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
    5. Compile the project and download the generated bitstream `display_driver/display_driver.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the driver by toggling the switches and observing the display.
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
@@ -142,11 +144,16 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 
 ## Lab assignment
 
-1. Display driver. Submit:
-    * VHDL code of the process `p_mux`,
-    * VHDL code of the top layer architecture.
+1. Preparation tasks (done before the lab at home). Submit:
+    * Timing diagram figure for displaying value `3.142`.
 
-2. Eight-digit driver. Submit:
-    * (Hand-drawn) sketch of the driver schematic.
+2. Display driver. Submit:
+    * Listing of VHDL code of the process `p_mux` with syntax highlighting.
+    * Listing of VHDL testbench file `tb_driver_7seg_4digits` with syntax highlighting and asserts,
+    * Screenshot with simulated time waveforms; always display all inputs and outputs,
+    * Listing of VHDL architecture of the top layer.
 
-The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+3. Eight-digit driver. Submit:
+    * Image of the driver schematic. The image can be drawn on a computer or by hand.
+
+*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/06-display_driver/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
