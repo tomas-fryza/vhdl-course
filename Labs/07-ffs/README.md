@@ -13,9 +13,38 @@ In this laboratory exercise, you will study the ...
 ![Nexys A7 board](Images/nexys_a7_driver.jpg)
 -->
 
-<!--
+
 ## Preparation tasks (done before the lab at home)
 
+Write characteristic equations and complete truth tabels for D, JK, T flip-flops.
+
+   | **D** | **Qn** | **Q(n+1)** | **Comments** |
+   | :-: | :-: | :-: | :-- |
+   | 0 | 0 |  |  |
+   | 0 | 1 |  |  |
+   |  |  |  |  |
+   |  |  |  |  |
+
+   | **J** | **K** | **Qn** | **Q(n+1)** | **Comments** |
+   | :-: | :-: | :-: | :-: | :-- |
+   | 0 | 0 | 0 | 0 | No change |
+   | 0 | 0 | 1 | 1 | No change |
+   |  |  |  |  |  |
+   |  |  |  |  |  |
+   |  |  |  |  |  |
+   |  |  |  |  |  |
+   |  |  |  |  |  |
+   |  |  |  |  |  |
+
+   | **T** | **Qn** | **Q(n+1)** | **Comments** |
+   | :-: | :-: | :-: | :-- |
+   | 0 | 0 |  |  |
+   | 0 | 1 |  |  |
+   |  |  |  |  |
+   |  |  |  |  |
+
+
+<!--
 Dokreslit průběhy pro D-latch a D-type FF.
 
 ![Timing of seven-segment display](Images/wavedrom_7-segment.png)
