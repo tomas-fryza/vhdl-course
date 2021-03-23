@@ -60,9 +60,9 @@ Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, 
 
 ## Part 2: VHDL code for D latches
 
-<!-->
+<!--
 TODO: Popis co je to Latch.
-<!-->
+-->
 A latch is a level triggered element.
 
 Perform the following steps to model the latch and flip-flop circuits.
@@ -137,18 +137,18 @@ end architecture Behavioral;
 Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
-<!-->
+<!--
 ## Experiments on your own
 
 1. 
-<!-->
+-->
 
 
 ## Lab assignment
 
 TBD
 
-<!-->
+<!--
 1. Preparation tasks (done before the lab at home). Submit:
     * Timing diagram figure for displaying value `3.142`.
 
@@ -160,6 +160,6 @@ TBD
 
 3. Eight-digit driver. Submit:
     * Image of the driver schematic. The image can be drawn on a computer or by hand.
-<!-->
+-->
 
 *Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/07-ffs/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
