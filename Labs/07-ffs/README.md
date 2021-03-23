@@ -7,13 +7,13 @@
 
 TBD
 
-<!-->
+<!--
 In this laboratory exercise, you will study the ...
 
 ![Nexys A7 board](Images/nexys_a7_driver.jpg)
-<!-->
+-->
 
-<!-->
+<!--
 ## Preparation tasks (done before the lab at home)
 
 Dokreslit průběhy pro D-latch a D-type FF.
@@ -50,7 +50,7 @@ Dokreslit průběhy pro D-latch a D-type FF.
   },
 }
 ```
-<!-->
+-->
 
 
 ## Part 1: Synchronize repositories and create a new folder
