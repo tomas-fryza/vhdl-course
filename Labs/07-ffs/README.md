@@ -1,6 +1,8 @@
 # Lab 7: Latches and Flip-flops
 
+<!--
 ![Logo](../../logolink_eng.jpg)
+-->
 
 
 <!--
