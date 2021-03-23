@@ -16,7 +16,7 @@ In this laboratory exercise, you will study the ...
 
 ## Preparation tasks (done before the lab at home)
 
-Write characteristic equations and complete truth tabels for D, JK, T flip-flops.
+Write characteristic equations and complete truth tables for D, JK, T flip-flops.
 
    | **D** | **Qn** | **Q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-- |
@@ -109,10 +109,18 @@ Create entities for D flip-flop (without a reset, with an async reset, with a sy
 
 Simulate each entity separately.
 
+   | **Entity** | **Inputs** | **Outputs** | **Description** |
+   | :-- | :-- | :-- | :-- |
+   | `d_ff` | `clk`, `d` | `q`, `q_bar` | D type flip-flop without a reset |
+   | `d_ff_arst` | `clk`, `d`, `arst` | `q`, `q_bar` | D type flip-flop with an async reset |
+   | `d_ff_rst` | `clk`, `d`, `rst` | `q`, `q_bar` | D type flip-flop with a sync reset |
+   | `jk_ff_rst` | `clk`, `j`, `k`, `rst` | `q`, `q_bar` | JK type flip-flop with a sync reset |
+   | `t_ff_rst` | `clk`, `t`, `rst` | `q`, `q_bar` | T type flip-flop with a sync reset |
+
 
 ## Part 4: VHDL code for shift register
 
-Perform the following steps to implement the 4-bit shift register on the Nexys A7 board.
+Use D type flip-flops and perform the following steps to implement the 4-bit shift register on the Nexys A7 board.
 
    1. Create a new design source `top` in your project.
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
