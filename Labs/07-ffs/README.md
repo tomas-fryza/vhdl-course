@@ -102,7 +102,10 @@ Perform the following steps to implement the 4-bit shift register on the Nexys A
 -- Architecture body for top level
 ------------------------------------------------------------------------
 architecture Behavioral of top is
-    -- No internal signals
+
+    -- Internal signals between flip-flops
+    -- WRITE YOUR CODE HERE
+
 begin
 
     --------------------------------------------------------------------
@@ -111,17 +114,17 @@ begin
         port map(
             clk        => BTNU,
             reset      => BTNC,
-            --- WRITE YOUR CODE HERE
+            -- WRITE YOUR CODE HERE
         );
 
     d_ff_1 : entity work.d_ff_arst
         port map(
             clk        => BTNU,
             reset      => BTNC,
-            --- WRITE YOUR CODE HERE
+            -- WRITE YOUR CODE HERE
         );
 
-    --- WRITE YOUR CODE HERE
+    -- WRITE YOUR CODE HERE
 
 end architecture Behavioral;
 ```
