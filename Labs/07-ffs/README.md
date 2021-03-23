@@ -89,11 +89,11 @@ Perform the following steps to implement the 4-bit shift register on the Nexys A
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
    | **Port name** | **Direction** | **Type** | **Description** |
-   | :-: | :-: | :-: | :-- |
+   | :-: | :-: | :-- | :-- |
    | `BTNU` | in | `std_logic` | Clock emulator |
    | `BTNC` | in | `std_logic` | Synchronous reset |
-   | `SW` | in  | `std_logic_vector(1 - 1 downto 0)` | Serial in |
-   | LED | out | `std_logic_vector(4 - 1 downto 0)` | Shift register parallel outputs |
+   | `SW` | in  | `std_logic_vector(1 - 1 downto 0)` | Shift register serial input |
+   | `LED` | out | `std_logic_vector(4 - 1 downto 0)` | Shift register parallel outputs |
 
    3. Use direct instantiation and define an architecture of the top level.
 
