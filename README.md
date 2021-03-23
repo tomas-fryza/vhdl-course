@@ -19,7 +19,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 4. [Seven-segment display decoder](Labs/04-segment)
 5. [Binary counter](Labs/05-counter)
 6. [Driver for multiple seven-segment displays](Labs/06-display_driver)
-7. Stopwatch
+7. [Latches and Flip-flops](Labs/07-ffs)
 8. Traffic light controller
 
 ### VHDL project
