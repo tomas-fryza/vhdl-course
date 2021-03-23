@@ -3,9 +3,11 @@
 ![Logo](../../logolink_eng.jpg)
 
 
+<!--
 ### Learning objectives
 
 TBD
+-->
 
 <!--
 In this laboratory exercise, you will study the ...
