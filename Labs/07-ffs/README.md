@@ -11,7 +11,7 @@ TBD
 In this laboratory exercise, you will study the ...
 
 ![Nexys A7 board](Images/nexys_a7_driver.jpg)
-<-->
+<!-->
 
 <!-->
 ## Preparation tasks (done before the lab at home)
@@ -50,7 +50,7 @@ Dokreslit průběhy pro D-latch a D-type FF.
   },
 }
 ```
-<-->
+<!-->
 
 
 ## Part 1: Synchronize repositories and create a new folder
@@ -62,7 +62,7 @@ Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, 
 
 <!-->
 TODO: Popis co je to Latch.
-<-->
+<!-->
 A latch is a level triggered element.
 
 Perform the following steps to model the latch and flip-flop circuits.
@@ -141,7 +141,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 ## Experiments on your own
 
 1. 
-<-->
+<!-->
 
 
 ## Lab assignment
@@ -160,6 +160,6 @@ TBD
 
 3. Eight-digit driver. Submit:
     * Image of the driver schematic. The image can be drawn on a computer or by hand.
-<-->
+<!-->
 
 *Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/07-ffs/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
