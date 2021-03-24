@@ -148,9 +148,9 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
     * Timing diagram figure for displaying value `3.142`.
 
 2. Display driver. Submit:
-    * Listing of VHDL code of the process `p_mux` with syntax highlighting.
-    * Listing of VHDL testbench file `tb_driver_7seg_4digits` with syntax highlighting and asserts,
-    * Screenshot with simulated time waveforms; always display all inputs and outputs,
+    * VHDL code listing of the process `p_mux` with syntax highlighting,
+    * Listing of VHDL testbench file `tb_driver_7seg_4digits.vhd` with syntax highlighting and asserts,
+    * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entity must be verified,
     * Listing of VHDL architecture of the top layer.
 
 3. Eight-digit driver. Submit:
