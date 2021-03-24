@@ -104,9 +104,7 @@ Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, 
 <!--
 TODO: Popis co je to Latch.
 -->
-A latch is a level triggered element.
-
-Perform the following steps to model the latch and flip-flop circuits.
+A latch is a level triggered element. Perform the following steps to model the D latch circuit.
 
    1. Create a new Vivado RTL project `flip_flops` in your `Labs/07-ffs` working folder.
    2. Create a VHDL source file `d_latch` for D latch circuit.
@@ -117,9 +115,7 @@ Perform the following steps to model the latch and flip-flop circuits.
 
 ## Part 3: VHDL code for flip-flops
 
-Create entities for D flip-flop (with an async reset, with a sync reset), JK flip-flop (with a sync reset), T flip-flop (with a sync reset).
-
-Simulate each entity separately.
+Create entities for D flip-flop (with an async reset, with a sync reset), JK flip-flop (with a sync reset), T flip-flop (with a sync reset) and simulate each entity separately.
 
    | **Entity** | **Inputs** | **Outputs** | **Description** |
    | :-- | :-- | :-- | :-- |
