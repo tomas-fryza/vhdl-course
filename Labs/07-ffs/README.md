@@ -193,7 +193,7 @@ end architecture Behavioral;
 3. Flip-flops. Submit:
     * VHDL code listing of the processes `p_d_ff_arst`, `p_d_ff_rst`, `p_jk_ff_rst`, `p_t_ff_rst` with syntax highlighting,
     * Listing of VHDL clock, reset and stimulus processes from the testbench files with syntax highlighting and asserts,
-    * Screenshot, with simulated time waveforms; always display all inputs and outputs. The full functionality of the entities must be verified.
+    * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entities must be verified.
 
 4. Shift register. Submit:
     * Image of the shift register schematic. The image can be drawn on a computer or by hand. Name all inputs, outputs, components and internal signals.
