@@ -30,12 +30,12 @@ Write characteristic equations and complete truth tables for D, JK, T flip-flops
     q_{n+1}^T =&\\
 \end{align*}-->
 
-   | **d** | **q(n)** | **q(n+1)** | **Comments** |
-   | :-: | :-: | :-: | :-- |
-   | 0 | 0 |  |  |
-   | 0 | 1 |  |  |
-   | 1 |  |  |  |
-   | 1 |  |  |  |
+   | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
+   | :-: | :-: | :-: | :-: | :-- |
+   | ![rising](Images/eq_uparrow.png) | 0 | 0 |  |  |
+   | ![rising](Images/eq_uparrow.png) | 0 | 1 |  |  |
+   | ![rising](Images/eq_uparrow.png) | 1 |  |  |  |
+   | ![rising](Images/eq_uparrow.png) | 1 |  |  |  |
 
    | **j** | **k** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
