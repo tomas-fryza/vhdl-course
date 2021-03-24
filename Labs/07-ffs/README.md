@@ -20,7 +20,7 @@ In this laboratory exercise, you will study the ...
 
 ## Preparation tasks (done before the lab at home)
 
-Write characteristic equations and complete truth tables for D, JK, T flip-flops.
+Write characteristic equations and complete truth tables for D, JK, T flip-flops where `Qn` represents main output value before clock edge and `Q(n+1)` represents value after the edge.
 
    | **D** | **Qn** | **Q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-- |
@@ -91,7 +91,7 @@ Dokreslit průběhy pro D-latch a D-type FF.
 Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/07-ffs` for this exercise.
 
 
-## Part 2: VHDL code for D latches
+## Part 2: VHDL code for D latch
 
 <!--
 TODO: Popis co je to Latch.
@@ -109,22 +109,26 @@ Perform the following steps to model the latch and flip-flop circuits.
 
 ## Part 3: VHDL code for flip-flops
 
-Create entities for D flip-flop (without a reset, with an async reset, with a sync reset), JK flip-flop (with a sync reset), T flip-flop (with a sync reset).
+Create entities for D flip-flop (with an async reset, with a sync reset), JK flip-flop (with a sync reset), T flip-flop (with a sync reset).
 
 Simulate each entity separately.
 
    | **Entity** | **Inputs** | **Outputs** | **Description** |
    | :-- | :-- | :-- | :-- |
-   | `d_ff` | `clk`, `d` | `q`, `q_bar` | D type flip-flop without a reset |
    | `d_ff_arst` | `clk`, `d`, `arst` | `q`, `q_bar` | D type flip-flop with an async reset |
    | `d_ff_rst` | `clk`, `d`, `rst` | `q`, `q_bar` | D type flip-flop with a sync reset |
    | `jk_ff_rst` | `clk`, `j`, `k`, `rst` | `q`, `q_bar` | JK type flip-flop with a sync reset |
    | `t_ff_rst` | `clk`, `t`, `rst` | `q`, `q_bar` | T type flip-flop with a sync reset |
 
 
-## Part 4: VHDL code for shift register
+## Synchronize repositories
 
-Use D type flip-flops and perform the following steps to implement the 4-bit shift register on the Nexys A7 board.
+Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
+
+
+## Experiments on your own: Shift register
+
+Use D type flip-flops with synchronous reset and perform the following steps to implement the 4-bit shift register on the Nexys A7 board.
 
    1. Create a new design source `top` in your project.
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
@@ -151,14 +155,14 @@ begin
 
     --------------------------------------------------------------------
     -- Four instances (copies) of D type FF entity
-    d_ff_0 : entity work.d_ff_arst
+    d_ff_0 : entity work.d_ff_rst
         port map(
             clk        => BTNU,
             reset      => BTNC,
             -- WRITE YOUR CODE HERE
         );
 
-    d_ff_1 : entity work.d_ff_arst
+    d_ff_1 : entity work.d_ff_rst
         port map(
             clk        => BTNU,
             reset      => BTNC,
@@ -176,34 +180,22 @@ end architecture Behavioral;
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 
-## Synchronize repositories
-
-Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
-
-
-<!--
-## Experiments on your own
-
-1. 
--->
-
-
 ## Lab assignment
 
-TBD
-
-<!--
 1. Preparation tasks (done before the lab at home). Submit:
-    * Timing diagram figure for displaying value `3.142`.
+    * Characteristic equations and completed tables for D, JK, T flip-flops.
 
-2. Display driver. Submit:
-    * Listing of VHDL code of the process `p_mux` with syntax highlighting.
-    * Listing of VHDL testbench file `tb_driver_7seg_4digits` with syntax highlighting and asserts,
-    * Screenshot with simulated time waveforms; always display all inputs and outputs,
-    * Listing of VHDL architecture of the top layer.
+2. D latch. Submit:
+    * VHDL code listing of the process `p_d_latch` with syntax highlighting,
+    * Listing of VHDL reset and stimulus processes from the testbench `tb_d_latch` file with syntax highlighting and asserts,
+    * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entity must be verified.
 
-3. Eight-digit driver. Submit:
-    * Image of the driver schematic. The image can be drawn on a computer or by hand.
--->
+3. Flip-flops. Submit:
+    * VHDL code listing of the processes `p_d_ff_arst`, `p_d_ff_rst`, `p_jk_ff_rst`, `p_t_ff_rst` with syntax highlighting,
+    * Listing of VHDL clock, reset and stimulus processes from the testbench files with syntax highlighting and asserts,
+    * Screenshot, with simulated time waveforms; always display all inputs and outputs. The full functionality of the entities must be verified.
+
+4. Shift register. Submit:
+    * Image of the shift register schematic. The image can be drawn on a computer or by hand. Name all inputs, outputs, components and internal signals.
 
 *Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/07-ffs/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
