@@ -157,15 +157,15 @@ begin
     -- Four instances (copies) of D type FF entity
     d_ff_0 : entity work.d_ff_rst
         port map(
-            clk        => BTNU,
-            reset      => BTNC,
+            clk   => BTNU,
+            rst   => BTNC,
             -- WRITE YOUR CODE HERE
         );
 
     d_ff_1 : entity work.d_ff_rst
         port map(
-            clk        => BTNU,
-            reset      => BTNC,
+            clk   => BTNU,
+            rst   => BTNC,
             -- WRITE YOUR CODE HERE
         );
 
