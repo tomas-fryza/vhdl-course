@@ -115,10 +115,10 @@ Simulate each entity separately.
 
    | **Entity** | **Inputs** | **Outputs** | **Description** |
    | :-- | :-- | :-- | :-- |
-   | `d_ff_arst` | `clk`, `d`, `arst` | `q`, `q_bar` | D type flip-flop with an async reset |
-   | `d_ff_rst` | `clk`, `d`, `rst` | `q`, `q_bar` | D type flip-flop with a sync reset |
-   | `jk_ff_rst` | `clk`, `j`, `k`, `rst` | `q`, `q_bar` | JK type flip-flop with a sync reset |
-   | `t_ff_rst` | `clk`, `t`, `rst` | `q`, `q_bar` | T type flip-flop with a sync reset |
+   | `d_ff_arst` | `clk`, `arst`, `d` | `q`, `q_bar` | D type flip-flop with an async reset |
+   | `d_ff_rst` | `clk`, `rst`, `d` | `q`, `q_bar` | D type flip-flop with a sync reset |
+   | `jk_ff_rst` | `clk`, `rst`, `j`, `k` | `q`, `q_bar` | JK type flip-flop with a sync reset |
+   | `t_ff_rst` | `clk`, `rst`, `t` | `q`, `q_bar` | T type flip-flop with a sync reset |
 
 
 ## Synchronize repositories
