@@ -240,13 +240,13 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
     * Decoder truth table for common anode 7-segment display.
 
 2. Seven-segment display decoder. Submit:
-    * Listing of VHDL architecture from source file `hex_7seg.vhd` with syntax highlighting,
-    * Listing of VHDL stimulus process from testbench file `tb_hex_7seg.vhd` with syntax highlighting and asserts,
-    * Screenshot with simulated time waveforms; always display all inputs and outputs,
-    * Listing of VHDL code from source file `top.vhd` with 7-segment module instantiation.
+    * Listing of VHDL architecture from the source file `hex_7seg.vhd` with syntax highlighting,
+    * Listing of VHDL stimulus process from the testbench file `tb_hex_7seg.vhd` with syntax highlighting and asserts,
+    * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entities must be verified,
+    * VHDL code listing of the source file `top.vhd` with 7-segment module instantiation.
 
 3. LED(7:4) indicators. Submit:
     * Truth table and listing of VHDL code for LEDs(7:4) with syntax highlighting,
-    * Screenshot with simulated time waveforms; always display all inputs and outputs.
+    * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entities must be verified.
 
 *Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/04-segment/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
