@@ -32,7 +32,7 @@ Write characteristic equations and complete truth tables for D, JK, T flip-flops
 
    | **d** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-- |
-   | 0 | 0 |  |  |
+   | 0 | 0 |  | ![Characteristic equations](Images/eq_flip_flops.png) |
    | 0 | 1 |  |  |
    | 1 |  |  |  |
    | 1 |  |  |  |
