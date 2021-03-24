@@ -20,16 +20,24 @@ In this laboratory exercise, you will study the ...
 
 ## Preparation tasks (done before the lab at home)
 
-Write characteristic equations and complete truth tables for D, JK, T flip-flops where `Qn` represents main output value before clock edge and `Q(n+1)` represents value after the edge.
+Write characteristic equations and complete truth tables for D, JK, T flip-flops where `q(n)` represents main output value before clock edge and `q(n+1)` represents value after the clock edge.
 
-   | **D** | **Qn** | **Q(n+1)** | **Comments** |
+![Characteristic equations](Images/eq_flip_flops.png)
+<!--
+\begin{align*}
+    q_{n+1}^D =&~ \\
+    q_{n+1}^{JK} =&\\
+    q_{n+1}^T =&\\
+\end{align*}-->
+
+   | **d** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-- |
    | 0 | 0 |  |  |
    | 0 | 1 |  |  |
    | 1 |  |  |  |
    | 1 |  |  |  |
 
-   | **J** | **K** | **Qn** | **Q(n+1)** | **Comments** |
+   | **j** | **k** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
    | 0 | 0 | 0 | 0 | No change |
    | 0 | 0 | 1 | 1 | No change |
@@ -40,7 +48,7 @@ Write characteristic equations and complete truth tables for D, JK, T flip-flops
    | 1 |  |  |  |  |
    | 1 |  |  |  |  |
 
-   | **T** | **Qn** | **Q(n+1)** | **Comments** |
+   | **t** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-- |
    | 0 | 0 |  |  |
    | 0 | 1 |  |  |
