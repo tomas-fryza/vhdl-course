@@ -19,11 +19,12 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 5. [Binary counter](Labs/05-counter)
 6. [Driver for multiple seven-segment displays](Labs/06-display_driver)
 7. [Latches and Flip-flops](Labs/07-ffs)
-8. Traffic light controller
+8. [Stopwatch](Labs/07-stopwatch)
+9. [Traffic light controller](Labs/08-traffic_lights)
 
 ### VHDL project
 
-9.-13. General instructions
+9.-13. [General instructions](Labs/project)
 
 
 ## Materials
