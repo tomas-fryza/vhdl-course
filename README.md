@@ -1,5 +1,4 @@
-
-# Digital electronics 1
+# Digital electronics
 
 ![Logo](logolink_eng.jpg)
 
