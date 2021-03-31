@@ -184,7 +184,7 @@ end architecture Behavioral;
     * Characteristic equations and completed tables for D, JK, T flip-flops.
 
 2. D latch. Submit:
-    * VHDL code listing of the process `p_d_latch` with syntax highlighting,
+    * VHDL code listing of the process `p_d_latch` with asynchronous reset and syntax highlighting,
     * Listing of VHDL reset and stimulus processes from the testbench `tb_d_latch.vhd` file with syntax highlighting and asserts,
     * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entity must be verified.
 
