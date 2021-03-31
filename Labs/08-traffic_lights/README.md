@@ -93,14 +93,14 @@ Perform the following steps to model the traffic light controller.
 
 The controller contains six states and sets the semaphore outputs according to the following table. It remains in each of the states for a certain time.
 
-| **Current state** | **Direction North** | **Direction West** | **Delay** |
+| **Current state** | **Direction South** | **Direction West** | **Delay** |
 | :-- | :-: | :-: | :-: |
 | `STOP1`      | red    | red | 1 sec |
 | `WEST_GO`    | red    | green | 4 sec |
 | `WEST_WAIT`  | red    | yellow | 2 sec |
 | `STOP2`      | red    | red | 1 sec |
-| `NORTH_GO`   | green  | red | 4 sec |
-| `NORTH_WAIT` | yellow | red | 2 sec |
+| `SOUTH_GO`   | green  | red | 4 sec |
+| `SOUTH_WAIT` | yellow | red | 2 sec |
 
 Draw a state diagram according to the table.
 
