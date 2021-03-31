@@ -288,6 +288,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
     * Figure with connection of RGB LEDs on Nexys A7 board and completed table with color settings.
 
 2. Traffic light controller. Submit:
+    * State diagram,
     * Listing of VHDL code of sequential process `p_traffic_fsm` with syntax highlighting,
     * Listing of VHDL code of combinatorial process `p_output_fsm` with syntax highlighting,
     * Screenshot(s) of the simulation, from which it is clear that controller works correctly.
