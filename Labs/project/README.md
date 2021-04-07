@@ -1,65 +1,99 @@
 # VHDL project: General instructions
 
-![Logo](../../logolink_eng.jpg)
+The aim of the VHDL project is cooperation in small groups, study of the assigned topic, design of own solution, simulation, implementation, creation of project documentation and presentation of results.
 
-The aim of the project is cooperation in small groups, study of the assigned topic, design of your own solution, simulation, implementation and presentation of results.
+Students are divided into groups that represent small teams within one company. Their task will be to redistribute their work, best to fulfill the assigned task and defeat competing teams from the "company". The division of roles and tasks within the team is up to their members. All team members will be evaluated with the same number of points.
 
-Students solve the project from the 9th to the 13th week of the semester in the same groups as in the computer labs. Source codes for FPGA must be written in VHDL language and implemented on Nexys A7 Artix-7 FPGA Trainer Board (XC7A50T-1CSG324C FPGA).
+Students work on the project in computer laboratories from the 9th to the 13th week of the semester in groups of 3 to 5 students. Students may consult the project within their own group, with their laboratory teacher and may not assign anyone else, including other students, academics, or PhD students. Consultations with the teacher will take place during the computer laboratories. Students present their results during the last laboratory in the 13th week of the semester.
 
-Students may consult with their tutor from the computer labs and may not “assign” anyone else, including consultations with other student, academics or PhD students.
-
-The project is submitted on Thursday April 30, 2020 via the GitHub repository. It must contain:
-
-   * Own README file with a complete description of the problem, circuit diagram of peripherals, graphical representation of the application (flowchart / state diagram), screenshots of simulations, links to source files in the repository, discussion of results, list of references, link to your own video with a demo, etc. The README file must be written in English. You can find the required structure of README file bellow.
-   * Complete project in Vivado.
-   * Testbench of all components developed by you.
-   * All source files must be written in English.
-
-Will be evaluated:
-   * The complexity of the created application, functionality,
-   * Compliance with assignment instructions,
-   * Compliance with VHDL guidelines, division of code into modules, code purity, use of comments,
-   * Completeness and clarity of documentation,
-   * Circuit diagram (schema),
-   * Discussion of results.
-
-Use VHDL modules from previous labs and not codes taken from the Internet. Design the application as a synchronous sequential system.
+The source code for the FPGA must be written in VHDL language and must be implementable on Arty A7-35T or Arty A7-100T (https://store.digilentinc.com/arty-a7-artix-7-fpga-development-board/).
 
 
-### Topics 2019/20
+## Topics 2020/21
 
-1. Code lock with 4x3 matrix keyboard, time limit for entering the correct pin code and signaling an incorrect attempt.
+1. Parking assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
 
-2. PWM dimmer with adjustable "timing" with rotary encoder KY-040 and push button. After the time has elapsed, the output of 100% PWM is continuously dimmed to zero.
+*Parkovací asistent s HC-SR04 ultrazvukovým senzorem, zvuková PWM signalizace, signalizace pomocí LED bargrafu.*
 
-3. UART (Universal asynchronous receiver / transmitter) transmitter with adjustable UART frame, data word and one of two preset standard symbol rate parameters while the application is running.
+2. Door lock system with PIN (4-digit) terminal, 4x3 push buttons, 4-digit 7-segment display, relay for door lock control.
 
-4. Ultrasonic distance meter HC-SR04. Output on multiplexed 7-segment display.
+*Terminál pro odemčení/zamčení dveří pomocí 4místného PIN kódu, 4x3 tlačítek, 4 sedmisegmentové displeje, relé pro ovládání zámku dveří.*
 
-5. Own ALU (Arithmetic Logic Unit) unit. Possibility to select instructions and input values while the application is running. Output on multiplexed 7-segment display.
+3. Console for exercise bike/bike, hall sensor, measuring and displaying speed, distance traveled, etc.
 
-6. Countdown from set value to zero. Value is given by rotary encoder KY-040 with button, output is shown on serial 4-digit 7-segment display with control circuit TM1637.
+*Konzole pro rotoped/kolo, hallova sonda, měření a zobrazení rychlosti, ujeté vzdálenosti, atd.*
 
+
+## Suggested schedule
+TODO: Vložit PNG obrázek
+
+
+The deadline for submitting the project is Tuesday May 4, 2021. Use BUT e-learning web page, export your project README file to PDF and submit it.
+
+
+## Will be evaluated:
+   * The contents of submitted README file (see below),
+   * The complexity of created application, functionality,
+   * Custom functionality beyond the topic,
+   * If the topic has been completed,
+   * Compliance with VHDL Guidelines (2020), see elearning page,
+   * Usage of codes and modules from previous exercises instead of copying from the Internet,
+   * Presence of Vivado project and generated bitstream file,
+   * Discussion of results,
+   * 5-minute video presentation in English, Czech, or Slovak.
+
+## Bude hodnoceno:
+   * Obsah odeslaného souboru README (viz dále),
+   * Složitost vytvořené aplikace, funkčnost,
+   * Přidání vlastní funkcionality nad rámec zadání,
+   * Zda práce odpovídá zadání,
+   * Dodržování pravidel dle VHDL Guidelines (2020), viz elearning,
+   * Využití kódů a modulů z předchozích cvičení namísto jejich kopírování z internetu,
+   * Přítomnost kompletního projektu ve Vivado a vygenerovaný programovací soubor,
+   * Diskuse o výsledcích,
+   * 5minutová video prezentace v angličtině, češtině, nebo slovenštině.
+
+
+The repository folder itself must contain:
+
+   * Project README file according to the required structure (You will export and submit this file). The README file can be written in English, Czech, or Slovak,
+   * Complete project in Vivado. All source files must be written in English,
+   * Testbench of all components that you have developed,
+   * Screenshots of simulations (individual components--not the whole project--can be simulated by EDA Playground as well),
+   * External circuit diagrams and their simulations, if needed,
+   * Any other files, such as PCB of proposed circuit, production documentation, etc.
 
 ---
 
-The required structure of your README file is as follows.
+The README file has a complete description of the problem, circuit diagram of peripherals, graphical representation of the application (flowchart or state diagram), screenshots of simulations, links to source files in the repository, block diagram of final application, discussion of results, list of references, link to your video presentation, etc. The required structure of your README file is as follows.
+
 
 # Your project title
 
+### Team members
+
+Names of all project team members.
+
+[Link to your GitHub project folder]( http://github.com/xxx)
+
 ### Project objectives
 
-*Write your text here*
+Write your text here.
 
 
 ## Hardware description
 
-*Write your text here*
+Write your text here.
 
 
-## Code description and simulations
+## VHDL modules description and simulations
 
-*Write your text here*
+Write your text here.
+
+
+## TOP module description and simulations
+
+Write your text here.
 
 
 ## Video
@@ -69,4 +103,4 @@ The required structure of your README file is as follows.
 
 ## References
 
-*Write your text here*
+   1. Write your text here.
