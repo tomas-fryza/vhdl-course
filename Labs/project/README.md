@@ -25,10 +25,12 @@ The source code for the FPGA must be written in VHDL language and must be implem
 
 
 ## Suggested schedule
-TODO: Vložit PNG obrázek
+
+![Schedule](schedule.png)
 
 
-The deadline for submitting the project is Tuesday May 4, 2021. Use BUT e-learning web page, export your project README file to PDF and submit it.
+
+The deadline for submitting the project is **Tuesday May 4, 2021**. Use BUT e-learning web page, export your project README file to PDF and submit it.
 
 
 ## Will be evaluated:
