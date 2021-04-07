@@ -13,15 +13,15 @@ The source code for the FPGA must be written in VHDL language and must be implem
 
 1. Parking assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
 
-*Parkovací asistent s HC-SR04 ultrazvukovým senzorem, zvuková PWM signalizace, signalizace pomocí LED bargrafu.*
+   *Parkovací asistent s HC-SR04 ultrazvukovým senzorem, zvuková PWM signalizace, signalizace pomocí LED bargrafu.*
 
 2. Door lock system with PIN (4-digit) terminal, 4x3 push buttons, 4-digit 7-segment display, relay for door lock control.
 
-*Terminál pro odemčení/zamčení dveří pomocí 4místného PIN kódu, 4x3 tlačítek, 4 sedmisegmentové displeje, relé pro ovládání zámku dveří.*
+   *Terminál pro odemčení/zamčení dveří pomocí 4místného PIN kódu, 4x3 tlačítek, 4 sedmisegmentové displeje, relé pro ovládání zámku dveří.*
 
 3. Console for exercise bike/bike, hall sensor, measuring and displaying speed, distance traveled, etc.
 
-*Konzole pro rotoped/kolo, hallova sonda, měření a zobrazení rychlosti, ujeté vzdálenosti, atd.*
+   *Konzole pro rotoped/kolo, hallova sonda, měření a zobrazení rychlosti, ujeté vzdálenosti, atd.*
 
 
 ## Suggested schedule
