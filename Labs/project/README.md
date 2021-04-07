@@ -6,7 +6,7 @@ Students are divided into groups that represent small teams within one company. 
 
 Students work on the project in computer laboratories from the 9th to the 13th week of the semester in groups of 3 to 5 students. Students may consult the project within their own group, with their laboratory teacher and may not assign anyone else, including other students, academics, or PhD students. Consultations with the teacher will take place during the computer laboratories. Students present their results during the last laboratory in the 13th week of the semester.
 
-The source code for the FPGA must be written in VHDL language and must be implementable on Arty A7-35T or Arty A7-100T (https://store.digilentinc.com/arty-a7-artix-7-fpga-development-board/).
+The source code for the FPGA must be written in VHDL language and must be implementable on **Arty A7-35T** or **Arty A7-100T** board (https://store.digilentinc.com/arty-a7-artix-7-fpga-development-board/), not Nexys A7!
 
 
 ## Topics 2020/21
