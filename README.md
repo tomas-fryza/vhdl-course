@@ -23,7 +23,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 
 ### VHDL project
 
-9.-13. General instructions
+9.-13. [General instructions](Labs/project)
 
 
 ## Materials
