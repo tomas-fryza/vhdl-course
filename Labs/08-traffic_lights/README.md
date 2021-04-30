@@ -181,7 +181,7 @@ Complete CASE/WHEN statements in both sequential and combinatorial processes.
     end process p_traffic_fsm;
 ```
 
-**Combinatorial processes:**
+**Combinatorial process:**
 ```vhdl
     --------------------------------------------------------------------
     -- p_output_fsm:
