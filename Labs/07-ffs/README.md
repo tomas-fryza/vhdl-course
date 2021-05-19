@@ -103,7 +103,7 @@ A latch is a level triggered element. Perform the following steps to model the D
    1. Create a new Vivado RTL project `flip_flops` in your `Labs/07-ffs` working folder.
    2. Create a VHDL source file `d_latch` for D latch circuit.
    3. Choose default board: `Nexys A7-50T`.
-   4. Define entity with `en`, `arst`, `d`, `q`, `q_bar`, use example from lecture and complete the latch with asynchronous reset.
+   4. Define entity with `en`, `arst`, `d`, `q`, `q_bar`, use example from lecture *5 Sequential logic circuit* and complete the latch with asynchronous reset.
    5. Create a simulation source `tb_d_latch`, set input conditions and run the simulation. Verify the reset and enable functionality.
 
 
