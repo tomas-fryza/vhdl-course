@@ -68,7 +68,7 @@ Perform the following steps to model the driver circuit.
 
 ![Block diagram of 7-segment display driver](Images/schema_driver.jpg)
 
-   6. Create a simulation source `tb_driver_7seg_4digits`, copy/paste the `testbench.vhd` code from EDA Playground [template](https://www.edaplayground.com/x/3f_A), complete the code, set the same conditions to display value `3.142` and run the simulation. Compare simulated timing diagram with yours in Preparation tasks. Verify the meaning of the constant c_MAX and reset generation process.
+   6. Create a simulation source `tb_driver_7seg_4digits`, copy/paste the `testbench.vhd` code from EDA Playground [template](https://www.edaplayground.com/x/3f_A), complete the code, set conditions to display value `3.142` and run the simulation. Compare simulated timing diagram with yours in Preparation tasks. Verify the meaning of the constant c_MAX and reset generation process.
 
 
 ## Part 3: Top level VHDL code
