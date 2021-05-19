@@ -109,7 +109,7 @@ A latch is a level triggered element. Perform the following steps to model the D
 
 ## Part 3: VHDL code for flip-flops
 
-Create entities for D flip-flop (with an async reset, with a sync reset), JK flip-flop (with a sync reset), T flip-flop (with a sync reset) and simulate each entity separately.
+As specified by the teacher, create at least two entities for flip-flop D (with asynchronous reset, with synchronization reset), flip-flop JK (with synchronization reset), or T flip-flop (with synchronization reset). Try to simulate them together in a single testbench with a maximum duration of 200 ns.
 
    | **Entity** | **Inputs** | **Outputs** | **Description** |
    | :-- | :-- | :-- | :-- |
@@ -189,9 +189,9 @@ end architecture Behavioral;
     * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entity must be verified.
 
 3. Flip-flops. Submit:
-    * VHDL code listing of the processes `p_d_ff_arst`, `p_d_ff_rst`, `p_jk_ff_rst`, `p_t_ff_rst` with syntax highlighting,
-    * Listing of VHDL clock, reset and stimulus processes from the testbench files with syntax highlighting and asserts,
-    * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entities must be verified.
+    * Listing of VHDL code of architectures of selected flip-flops with syntax highlighting,
+    * Listing of VHDL clock, reset and stimulus processes from the testbench file(s) with syntax highlighting and asserts,
+    * Screenshot with simulated time waveforms with a maximum duration of 200 ns; always display all inputs and outputs. The full functionality of the entities must be verified.
 
 4. Shift register. Submit:
     * Image of the shift register schematic. The image can be drawn on a computer or by hand. Name all inputs, outputs, components and internal signals.
