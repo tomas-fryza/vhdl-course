@@ -66,7 +66,7 @@ Perform the following steps to model the driver circuit.
    4. Open the [Driver for 7-segment display](https://www.edaplayground.com/x/3f_A) example and copy/paste the `design.vhd` code to your `driver_7seg_4digits.vhd` file. Copy source files of clock enable, binary counter, 7-segment decoder modules from previous labs to `display_driver/display_driver.srcs/sources_1/new/` folder and add them to the project.
    5. Complete the driver code according to the following block diagram.
 
-![Block diagram of 7-segment display driver](Images/schema_driver.jpg)
+![Block diagram of 7-segment display driver](Images/schema_driver2.jpg)
 
    6. Create a simulation source `tb_driver_7seg_4digits`, copy/paste the `testbench.vhd` code from EDA Playground [template](https://www.edaplayground.com/x/3f_A), complete the code, set conditions to display value `3.142` and run the simulation. Compare simulated timing diagram with yours in Preparation tasks. Verify the meaning of the constant c_MAX and reset generation process.
 
