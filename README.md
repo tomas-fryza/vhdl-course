@@ -6,7 +6,6 @@
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
 
-
 The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vutbr.cz/en/students/courses/detail/224131) at Brno University of Technology, Czechia.
 
 
