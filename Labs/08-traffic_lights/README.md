@@ -1,7 +1,10 @@
 # Lab 8: Traffic light controller
 
 ![Logo](../../logolink_eng.jpg)
-
+<p align="center">
+  The Study of Modern and Developing Engineering BUT<br>
+  CZ.02.2.69/0.0/0.0/18_056/0013325
+</p>
 
 ### Learning objectives
 
