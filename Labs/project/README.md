@@ -1,5 +1,11 @@
 # VHDL project: General instructions
 
+![Logo](../../logolink_eng.jpg)
+<p align="center">
+  The Study of Modern and Developing Engineering BUT<br>
+  CZ.02.2.69/0.0/0.0/18_056/0013325
+</p>
+
 The aim of the VHDL project is cooperation in small groups, study of the assigned topic, design of own solution, simulation, implementation, creation of project documentation and presentation of results.
 
 Students are divided into groups that represent small teams within one company. Their task will be to redistribute their work, best to fulfill the assigned task and defeat competing teams from the "company". The division of roles and tasks within the team is up to their members. All team members will be evaluated with the same number of points. *Any non-cooperation of some of the team members will be resolved individually.*
