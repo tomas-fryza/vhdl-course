@@ -122,6 +122,7 @@ end architecture Behavioral;
    5. Compile the project and download the generated bitstream `stopwatch/stopwatch.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the stopwatch by pressing the buttons, toggling the switch, and observing the display.
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
+   8. Use digital oscilloscope or logic analyser and display stopwatch signals via Pmod ports. See schematic or reference manual of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
 
 ## Synchronize repositories
