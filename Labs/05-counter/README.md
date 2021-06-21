@@ -169,7 +169,7 @@ begin
             --- WRITE YOUR CODE HERE
         );
 
-    -- Display input value on LEDs
+    -- Display counter values on LEDs
     LED(3 downto 0) <= s_cnt;
 
     --------------------------------------------------------------------
@@ -197,6 +197,7 @@ end architecture Behavioral;
    5. Compile the project and download the generated bitstream `counter/counter.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the 4-bit counter by toggling the switch, pressing the button and observing the display and LEDs.
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
+   8. Use digital oscilloscope or analysator and display counter values via Pmod ports. See schematic or reference manual of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
 
 ## Synchronize repositories
