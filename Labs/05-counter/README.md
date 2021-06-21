@@ -199,6 +199,10 @@ end architecture Behavioral;
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
    8. Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See schematic or reference manual of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
+![Pmod port](Images/pmod.png)
+
+![Binary counter verification](Images/logic_analyser.jpg)
+
 
 ## Synchronize repositories
 
