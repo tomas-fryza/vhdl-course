@@ -7,14 +7,22 @@
 </p>
 
 ### Learning objectives
+After completing this lab you will be able to:
+  * Use markdown README files
+  * Create git repository
+  * Understand basic structure of VHDL files
 
-The purpose of this laboratory exercise is to learn how to use the git versioning system, write the markdown readme file, use the Linux console terminal to work in the lab, and how to compose a basic VHDL code using the online development tool.
+In this laboratory exercise, you will learn how to use the git versioning system, write the markdown readme file, use the Windows/Linux console terminal to work in the lab, and then how to compose a basic VHDL code using the online development tool.
 
 ![Screenshot od EDA Playground](Images/screenshot_eda.png)
 
 
-## Preparation tasks (done before the lab at home)
+### Table of contents
+[Preparation tasks](#Preparation-tasks-(done-before-the-lab-at-home))
+[Part 1: GitHub](#Part-1:-GitHub)
 
+
+## Preparation tasks (done before the lab at home)
 Create an account on [GitHub](https://github.com/).
 
 If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
