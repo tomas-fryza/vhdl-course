@@ -19,6 +19,7 @@ In this laboratory exercise, you will learn how to use the git versioning system
 
 ### Table of contents
 [Preparation tasks](#Preparation-tasks-(done-before-the-lab-at-home))
+
 [Part 1: GitHub](#Part-1:-GitHub)
 
 
