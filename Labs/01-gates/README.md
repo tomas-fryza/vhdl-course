@@ -7,6 +7,7 @@
 </p>
 
 ### Learning objectives
+
 After completing this lab you will be able to:
   * Use markdown README files
   * Create git repository
@@ -19,11 +20,17 @@ In this laboratory exercise, you will learn how to use the git versioning system
 
 ### Table of contents
 * [Preparation tasks](#preparation)
-* [Part 1: GitHub](#Part-1:-GitHub)
+* [Part 1: GitHub](#part1)
+* [Part 2: Local repository](#part2)
+* [Part 3: EDA Playground](#part3)
+* [Synchronize git](#synchronize)
+* [Experiments on your own](#experiments)
+* [Lab assignment](#assignment)
 
 
 <a name="preparation"></a>
 ## Preparation tasks (done before the lab at home)
+
 Create an account on [GitHub](https://github.com/).
 
 If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
@@ -31,7 +38,9 @@ If you don't have Google or Facebook account, register your account on [EDA Play
 Download and install [git](https://git-scm.com/).
 
 
+<a name="part1"></a>
 ## Part 1: GitHub
+
 GitHub is a code hosting platform for collaboration and version control. GitHub lets you (and others) work together on projects.
 
 In GitHub, create a new public repository titled **Digital-electronics-1**. Initialize a README and [MIT license](https://choosealicense.com/licenses/mit/).
@@ -46,6 +55,7 @@ Use one of the available git manuals, such as [1](https://medium.com/swlh/how-to
    * Listing of VHDL source code (with syntax highlighting)
 
 
+<a name="part2"></a>
 ## Part 2: Local repository
 
 Run Git Bash (Windows) of Terminal (Linux) and create your own home folder inside `Documents`.
@@ -91,6 +101,7 @@ $ mkdir 01-gates
 ```
 
 
+<a name="part3"></a>
 ## Part 3: EDA Playground
 
 Open the [Example of basic gates](https://www.edaplayground.com/x/5L92). Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Entity), [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture), and testbench. Use button **Run** to run the simulation and log in to your account using **Log In (save edits)**.
@@ -137,6 +148,7 @@ Run any text editor, such as *Visual Studio Code* or *Atom*, open/create your `D
 | 1 | 1 | 1 |  |  |  |
 
 
+<a name="synchronize"></a>
 ## Synchronize git
 
 When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
@@ -155,6 +167,7 @@ $ git status
 ```
 
 
+<a name="experiments"></a>
 ## Experiments on your own
 
 1. In EDA Playground, verify Distributive laws:
@@ -166,6 +179,7 @@ $ git status
 2. Try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), and compare their options.
 
 
+<a name="assignment"></a>
 ## Lab assignment
 
 1. Submit the link to your `Digital-electronics-1` GitHub repository in the form `https://github.com/...`
