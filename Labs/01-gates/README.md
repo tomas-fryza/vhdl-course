@@ -18,8 +18,8 @@ In this laboratory exercise, you will learn how to use the git versioning system
 
 
 ### Table of contents
-1. [Preparation tasks](#preparation)
-2. [Part 1: GitHub](#part1)
+[Preparation tasks](#preparation)
+[Part 1: GitHub](#part1)
 
 
 <a name="preparation"></a>
