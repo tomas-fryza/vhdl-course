@@ -18,8 +18,8 @@ In this laboratory exercise, you will learn how to use the git versioning system
 
 
 ### Table of contents
-  * [Preparation tasks](#preparation)
-  * [Part 1: GitHub](#part1)
+* [Preparation tasks](#preparation)
+* [Part 1: GitHub](#Part-1:-GitHub)
 
 
 <a name="preparation"></a>
@@ -31,7 +31,6 @@ If you don't have Google or Facebook account, register your account on [EDA Play
 Download and install [git](https://git-scm.com/).
 
 
-<a name="part1"></a>
 ## Part 1: GitHub
 GitHub is a code hosting platform for collaboration and version control. GitHub lets you (and others) work together on projects.
 
