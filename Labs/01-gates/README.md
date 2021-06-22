@@ -1,10 +1,3 @@
-<style>
-H1{color:Blue !important;}
-H2{color:DarkOrange !important;}
-p{color:Black !important;}
-</style>
-
-
 # Lab 1: Introduction to Git and VHDL
 
 ![Logo](../../logolink_eng.jpg)
