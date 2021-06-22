@@ -147,4 +147,4 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 2. Stopwatch with minutes. Submit:
     * (Hand-drawn) sketch of the stopwatch schematic.
 
-The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
+*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/07-stopwatch/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
