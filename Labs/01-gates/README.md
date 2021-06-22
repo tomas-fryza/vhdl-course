@@ -17,6 +17,9 @@ In this laboratory exercise, you will learn how to use the git versioning system
 
 ![Screenshot od EDA Playground](Images/screenshot_eda.png)
 
+<div class="text-white bg-blue mb-2">
+  .text-white on .bg-blue
+</div>
 
 ### Table of contents
 * [Preparation tasks](#preparation)
