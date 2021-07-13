@@ -18,11 +18,9 @@ Link to your `Digital-electronics-1` GitHub repository:
 ```vhdl
 architecture dataflow of demorgan is
 begin
-
     f_o      <= -- WRITE YOUR CODE HERE
     f_nand_o <= -- WRITE YOUR CODE HERE
     f_nor_o  <= -- WRITE YOUR CODE HERE
-
 end architecture dataflow;
 ```
 
@@ -51,10 +49,8 @@ end architecture dataflow;
 ```vhdl
 architecture dataflow of distributive is
 begin
-
     f_left_o  <= -- WRITE YOUR CODE HERE
     f_right_o <= -- WRITE YOUR CODE HERE
-
 end architecture dataflow;
 ```
 
