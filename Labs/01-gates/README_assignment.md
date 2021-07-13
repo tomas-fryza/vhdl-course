@@ -1,6 +1,6 @@
 # Lab1: Assignment
 
-**YOUR_NAME**
+**YOUR_FIRSTNAME_FAMILYNAME**
 
 Link to your `Digital-electronics-1` GitHub repository:
 
