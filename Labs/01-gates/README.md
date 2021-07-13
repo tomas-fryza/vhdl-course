@@ -169,7 +169,7 @@ $ git status
 <a name="experiments"></a>
 ## Experiments on your own
 
-1. In EDA Playground, verify Distributive laws:
+1. In EDA Playground, verify at least one of the Distributive laws:
 
 ![Distributive law1](Images/distributive1.png)
 
