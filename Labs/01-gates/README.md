@@ -23,7 +23,6 @@ In this laboratory exercise, you will learn how to use the git versioning system
 * [Part 1: GitHub](#part1)
 * [Part 2: Local repository](#part2)
 * [Part 3: EDA Playground](#part3)
-* [Synchronize git](#synchronize)
 * [Experiments on your own](#experiments)
 * [Lab assignment](#assignment)
 
@@ -148,7 +147,6 @@ Run any text editor, such as *Visual Studio Code* or *Atom*, open/create your `D
 | 1 | 1 | 1 |  |  |  |
 
 
-<a name="synchronize"></a>
 ## Synchronize git
 
 When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
@@ -182,21 +180,4 @@ $ git status
 <a name="assignment"></a>
 ## Lab assignment
 
-1. Submit the link to your `Digital-electronics-1` GitHub repository in the form `https://github.com/...`
-
-2. Verification of De Morgan's laws of function f(c,b,a). Submit:
-    * Equations of all three versions of logic function f(c,b,a),
-
-     ![Logic function](Images/equations.png)
-    * Completed table with logic functions' values,
-    * Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting,
-    * Screenshot with simulated time waveforms of all three functions,
-    * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
-
-3. Verification of Distributive laws. Submit:
-    * Completed table with logic functions' values,
-    * Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting,
-    * Screenshot with simulated time waveforms of all four functions,
-    * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
-
-*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/01-gates/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
+*Prepare all parts of the assignment on a computer (not by hand), insert them in this [README template file](README_assignment.md), export the formated output (not the listing in markdown language) [from HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
