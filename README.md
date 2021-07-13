@@ -19,8 +19,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 6. [Binary counter](Labs/06-counter)
 7. [Driver for multiple seven-segment displays](Labs/07-display_driver)
 8. [Traffic light controller](Labs/08-traffic_lights)
-
-9.-13. [VHDL projekt: General instructions](Labs/project)
+9. [VHDL project: General instructions](Labs/project)
 
 
 ## Materials
@@ -41,10 +40,11 @@ The following hardware and software components are mainly used in the lab.
 
 ## References
 
-1. [ES 4 VHDL reference sheet](Docs/vhdl_cheatsheet.pdf)
-2. [Digital electronics 1 wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
-3. ASHENDEN, Peter J. *The designer's guide to VHDL.* 3rd ed. Boston: Morgan Kaufmann Publishers, c2008. ISBN 978-0-12-088785-9.
-4. CHU, Pong P. *FPGA prototyping by VHDL examples.* Hoboken, N.J.: Wiley-Interscience, c2008. ISBN 978-0-470-18531-5.
-5. MANO, M. Morris. Digital Design: With an Introduction to the Verilog, HDL, VHDL, and System Verilog. Pearson, 6th edition, 2018. ISBN-13: 978-1292231167.
-6. KALLSTROM, P. [A Fairly Small VHDL Guide](Docs/VHDL_guide.pdf). Version 2.1.
-7. [GitHub GIT CHEAT SHEET](Docs/git_cheatsheet.pdf)
+1. [Digital electronics wiki](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
+2. [Digital electronics Examples](Examples)
+3. [ES 4 VHDL reference sheet](Docs/vhdl_cheatsheet.pdf)
+4. ASHENDEN, Peter J. *The designer's guide to VHDL.* 3rd ed. Boston: Morgan Kaufmann Publishers, c2008. ISBN 978-0-12-088785-9.
+5. CHU, Pong P. *FPGA prototyping by VHDL examples.* Hoboken, N.J.: Wiley-Interscience, c2008. ISBN 978-0-470-18531-5.
+6. MANO, M. Morris. Digital Design: With an Introduction to the Verilog, HDL, VHDL, and System Verilog. Pearson, 6th edition, 2018. ISBN-13: 978-1292231167.
+7. KALLSTROM, P. [A Fairly Small VHDL Guide](Docs/VHDL_guide.pdf). Version 2.1.
+8. [GitHub GIT CHEAT SHEET](Docs/git_cheatsheet.pdf)
