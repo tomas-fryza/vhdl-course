@@ -6,6 +6,9 @@
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
 
+![Screenshot od EDA Playground](Images/screenshot_eda.png)
+
+
 ### Learning objectives
 
 After completing this lab you will be able to:
@@ -14,8 +17,6 @@ After completing this lab you will be able to:
   * Understand basic structure of VHDL files
 
 In this laboratory exercise, you will learn how to use the git versioning system, write the markdown readme file, use the Windows/Linux console terminal to work in the lab, and then how to compose a basic VHDL code using the online development tool.
-
-![Screenshot od EDA Playground](Images/screenshot_eda.png)
 
 
 ### Table of contents
@@ -180,4 +181,6 @@ $ git status
 <a name="assignment"></a>
 ## Lab assignment
 
-*Prepare all parts of the assignment on a computer (not by hand), insert them in this [README template file](README_assignment.md), export the formated output (not the listing in markdown language) [from HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
+*Prepare all parts of the assignment in Czech, Slovak or English, insert them in this [README template](README_assignment.md), export formatted output (not Markdown) [from HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), and submit a single PDF file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next laboratory exercise.*
+
+*Vypracujte všechny části úkolu v českém, slovenském, nebo anglickém jazyce, vložte je do této [šablony README](README_assignment.md), exportujte formátovaný výstup (nikoli výpis v jazyce Markdown) [z HTML do PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF) a odevzdejte jeden PDF soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
