@@ -171,9 +171,11 @@ $ git status
 
 1. In EDA Playground, verify at least one of the Distributive laws:
 
-![Distributive law1](Images/distributive1.png)
+   First:
+   ![Distributive law1](Images/distributive1.png)
 
-![Distributive law2](Images/distributive2.png)
+   Second:
+   ![Distributive law2](Images/distributive2.png)
 
 2. You can also try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), and compare their options.
 
