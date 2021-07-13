@@ -1,3 +1,5 @@
+https://www.codecogs.com/latex/eqneditor.php
+
 \begin{align*}
     x\cdot y + x\cdot z =&~ x\cdot (y+z)\\
     f(z,y,x)_{\textup{left}} =&~x\cdot y + x\cdot z\\
