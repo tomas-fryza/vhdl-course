@@ -1,4 +1,4 @@
-# Lab 7: Latches and Flip-flops
+# Lab 5: Latches and Flip-flops
 
 ![Logo](../../logolink_eng.jpg)
 <p align="center">
@@ -93,7 +93,7 @@ Dokreslit průběhy pro D-latch a D-type FF.
 
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/07-ffs` for this exercise.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/05-ffs` for this exercise.
 
 
 ## Part 2: VHDL code for D latch
@@ -103,7 +103,7 @@ TODO: Popis co je to Latch.
 -->
 A latch is a level triggered element. Perform the following steps to model the D latch circuit.
 
-   1. Create a new Vivado RTL project `flip_flops` in your `Labs/07-ffs` working folder.
+   1. Create a new Vivado RTL project `flip_flops` in your `Labs/05-ffs` working folder.
    2. Create a VHDL source file `d_latch` for D latch circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Define entity with `en`, `arst`, `d`, `q`, `q_bar`, use example from lecture *5 Sequential logic circuit* and complete the latch with asynchronous reset.
@@ -199,4 +199,4 @@ end architecture Behavioral;
 4. Shift register. Submit:
     * Image of the shift register schematic. The image can be drawn on a computer or by hand. Name all inputs, outputs, components and internal signals.
 
-*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/07-ffs/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
+*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/05-ffs/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
