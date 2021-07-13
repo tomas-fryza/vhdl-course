@@ -1,4 +1,4 @@
-# Lab 5: Binary counter
+# Lab 6: Binary counter
 
 ![Logo](../../logolink_eng.jpg)
 <p align="center">
@@ -47,7 +47,7 @@ Calculate how many periods of clock signal with frequency of 100&nbsp;MHz contai
 
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/05-counter` for this laboratory exercise.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/06-counter` for this laboratory exercise.
 
 
 ## Part 2: VHDL code for clock enable
@@ -78,7 +78,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 Perform the following steps to simulate the clock enable circuit.
 
-   1. Create a new Vivado RTL project `counter` in your `Labs/05-counter` working folder.
+   1. Create a new Vivado RTL project `counter` in your `Labs/06-counter` working folder.
    2. Create a VHDL source file `clock_enable` for the clock enable circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Clock enable circuit example](https://www.edaplayground.com/x/5LiJ) and copy/paste the `design.vhd` code to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as package for arithmetic operations, `generic` part, internal signal, and [synchronous process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes). **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
@@ -229,4 +229,4 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
     * Listing of VHDL code from source file `top.vhd` with all instantiations for the 4-bit bidirectional counter.
     * Image of the top layer including both counters, ie a 4-bit bidirectional counter from Part 4 and a 16-bit counter with a 10 ms time base from Part Experiments on your own. The image can be drawn on a computer or by hand.
 
-*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/05-counter/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
+*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/06-counter/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
