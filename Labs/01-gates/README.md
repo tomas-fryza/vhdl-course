@@ -157,7 +157,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 ```bash
 ## Windows Git Bash or Linux:
 $ git status
-$ git add <your-modified-files>
+$ git add -A
 $ git status
 $ git commit -m "[LAB] Creating 01-gates lab"
 $ git status
@@ -175,7 +175,7 @@ $ git status
 
 ![Distributive law2](Images/distributive2.png)
 
-2. Try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), and compare their options.
+2. You can also try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), and compare their options.
 
 
 <a name="assignment"></a>
