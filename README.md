@@ -11,36 +11,27 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 
 ## Exercises
 
-### EDA Playground
-
 1. [Introduction to Git and VHDL](Labs/01-gates)
 2. [Combinational logic](Labs/02-logic)
-
-### Vivado
-
 3. [Introduction to Vivado](Labs/03-vivado)
 4. [Seven-segment display decoder](Labs/04-segment)
-5. [Binary counter](Labs/05-counter)
-6. [Driver for multiple seven-segment displays](Labs/06-display_driver)
-7. [Latches and Flip-flops](Labs/07-ffs)
-7. [Stopwatch](Labs/07-stopwatch)
+5. [Latches and Flip-flops](Labs/05-ffs)
+6. [Binary counter](Labs/06-counter)
+7. [Driver for multiple seven-segment displays](Labs/07-display_driver)
 8. [Traffic light controller](Labs/08-traffic_lights)
-
-### VHDL project
-
-9.-13. [General instructions](Labs/project)
+9.-13. [VHDL projekt: General instructions](Labs/project)
 
 
 ## Materials
 
 The following hardware and software components are mainly used in the lab.
 
-### Hardware
+#### Hardware
 
 * [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA Trainer Board: [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual), [schematic](Docs/nexys-a7-sch.pdf), XC7A50T-1CSG324C [FPGA](Docs/ds180_7Series_Overview.pdf), [Nexys-A7-50T-Master.xdc](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
 * Oscilloscope Keysight Technologies [DSOX3034T](https://www.keysight.com/en/pdx-x202175-pn-DSOX3034T/oscilloscope-350-mhz-4-analog-channels?&cc=CZ&lc=eng) (350 MHz, 4 analog channels), including 16 logic timing channels [DSOXT3MSO](https://www.keysight.com/en/pdx-x205238-pn-DSOXT3MSO/3000t-x-series-oscilloscope-mso-upgrade?cc=CZ&lc=eng) and serial protocol triggering and decode options [D3000BDLA](https://www.keysight.com/en/pd-2990560-pn-D3000BDLA/ultimate-software-bundle-for-the-3000a-t-x-series?&cc=CZ&lc=eng)
 
-### Software
+#### Software
 
 * [EDA Playground](https://www.edaplayground.com/)
 * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.1: [installation](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
