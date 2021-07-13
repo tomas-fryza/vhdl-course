@@ -42,7 +42,7 @@ end architecture dataflow;
 
 ### Distributive laws
 
-1. Listing of VHDL architecture from design file with syntax highlighting for first or second distributive law (select only one law):
+1. Listing of VHDL architecture from design file with syntax highlighting for first or second distributive law:
 
 ```vhdl
 architecture dataflow of distributive is
