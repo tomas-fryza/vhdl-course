@@ -1,4 +1,4 @@
-# Lab1: Assignment
+# Lab 1: Assignment
 
 **YOUR_FIRSTNAME_FAMILYNAME**
 
