@@ -32,7 +32,9 @@ Link to your `Digital-electronics-1` GitHub repository:
 architecture dataflow of demorgan is
 begin
 
-    -- WRITE YOUR CODE HERE
+    f_o      <= -- WRITE YOUR CODE HERE
+    f_nand_o <= -- WRITE YOUR CODE HERE
+    f_nor_o  <= -- WRITE YOUR CODE HERE
 
 end architecture dataflow;
 ```
@@ -44,13 +46,14 @@ end architecture dataflow;
 
 ### Distributive laws
 
-1. Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting for first or second distributive law:
+1. Listing of VHDL architecture from design file with syntax highlighting for first or second distributive law (select only one law):
 
 ```vhdl
 architecture dataflow of distributive is
 begin
 
-    -- WRITE YOUR CODE HERE
+    f_left_o  <= -- WRITE YOUR CODE HERE
+    f_right_o <= -- WRITE YOUR CODE HERE
 
 end architecture dataflow;
 ```
