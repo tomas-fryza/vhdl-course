@@ -1,4 +1,4 @@
-# Lab 6: Driver for multiple seven-segment displays
+# Lab 7: Driver for multiple seven-segment displays
 
 ![Logo](../../logolink_eng.jpg)
 <p align="center">
@@ -55,7 +55,7 @@ Due to the physiological properties of human vision, it is necessary that the ti
 
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/06-display_driver` for this exercise.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/07-display_driver` for this exercise.
 
 
 ## Part 2: VHDL code for display driver
@@ -64,7 +64,7 @@ Multiplexer or MUX is a digital switch. It allows to route binary information fr
 
 Perform the following steps to model the driver circuit.
 
-   1. Create a new Vivado RTL project `display_driver` in your `Labs/06-display_driver` working folder.
+   1. Create a new Vivado RTL project `display_driver` in your `Labs/07-display_driver` working folder.
    2. Create a VHDL source file `driver_7seg_4digits` for the driver circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Driver for 7-segment display](https://www.edaplayground.com/x/3f_A) example and copy/paste the `design.vhd` code to your `driver_7seg_4digits.vhd` file. Copy source files of clock enable, binary counter, 7-segment decoder modules from previous labs to `display_driver/display_driver.srcs/sources_1/new/` folder and add them to the project.
@@ -161,4 +161,4 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 3. Eight-digit driver. Submit:
     * Image of the driver schematic. The image can be drawn on a computer or by hand.
 
-*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/06-display_driver/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
+*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/07-display_driver/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
