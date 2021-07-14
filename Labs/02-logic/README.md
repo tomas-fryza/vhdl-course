@@ -173,7 +173,7 @@ The message is displayed to the console when the condition is NOT met, therefore
         report "Stimulus process started" severity note;
 
         -- First test case
-        s_b <= "0000"; s_a <= "0000"; wait for 100 ns;
+        s_b <= "00"; s_a <= "00"; wait for 100 ns;
         -- Expected output
         assert ((s_B_greater_A = '0') and
                 (s_B_equals_A  = '1') and
