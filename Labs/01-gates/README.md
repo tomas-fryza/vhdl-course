@@ -46,7 +46,7 @@ In GitHub, create a new public repository titled **Digital-electronics-1**. Init
 Use one of the available git manuals, such as [1](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061), [2](https://help.github.com/en/articles/basic-writing-and-formatting-syntax), or [3](https://guides.github.com/features/mastering-markdown/), and add the following sections to your online README.md file.
 
    * Headers
-   * Emphasis (italics, bold)
+   * Emphasis (*italics*, **bold**)
    * Lists (ordered, unordered)
    * Links
    * Table
