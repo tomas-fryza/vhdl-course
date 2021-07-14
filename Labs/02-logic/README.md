@@ -204,8 +204,8 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
-   | `a_i`       | input  | `std_logic_vector(4 - 1 downto 0)` | Data A |
    | `b_i`       | input  | `std_logic_vector(4 - 1 downto 0)` | Data B |
+   | `a_i`       | input  | `std_logic_vector(4 - 1 downto 0)` | Data A |
    | `B_greater_A_o` | output | `std_logic` | B is greater than A |
    | `B_equals_A_o`  | output | `std_logic` | B equals A |
    | `B_less_A_o`    | output | `std_logic` | B is less than A |
