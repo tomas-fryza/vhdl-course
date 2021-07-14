@@ -81,12 +81,12 @@ $ ls
 LICENSE  README.md
 ```
 
-Download `Docs` folder from [this repository](https://github.com/tomas-fryza/Digital-electronics-1) and copy it to your `Digital-electronics-1` local repository.
+Download `Docs` and `Examples` folders from [this repository](https://github.com/tomas-fryza/Digital-electronics-1) and copy them to your `Digital-electronics-1` local repository.
 
 ```bash
 ## Windows Git Bash or Linux:
 $ ls
-Docs  LICENSE  README.md
+Docs  Examples  LICENSE  README.md
 ```
 
 Create a new working folder `Labs/01-gates` for this exercise.
