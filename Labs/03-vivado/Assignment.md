@@ -9,7 +9,7 @@ Link to your `Digital-electronics-1` GitHub repository:
 
 1. Figure or table with connection of 16 slide switches and 16 LEDs on Nexys A7 board:
 
-   ![title](url)
+   ![title]()
 
 
 ### Two-bit wide 4-to-1 multiplexer
