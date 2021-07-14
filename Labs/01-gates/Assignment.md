@@ -42,15 +42,9 @@ end architecture dataflow;
 
 ### Distributive laws
 
-1. Listing of VHDL architecture from design file with syntax highlighting for first or second distributive law:
+1. Screenshot with simulated time waveforms; always display all inputs and outputs:
 
-```vhdl
-architecture dataflow of distributive is
-begin
-    f_left_o  <= -- WRITE YOUR CODE HERE
-    f_right_o <= -- WRITE YOUR CODE HERE
-end architecture dataflow;
-```
+   ![Screenshot](Images/equations.png)
 
 2. Link to your public EDA Playground example:
 
