@@ -42,9 +42,9 @@ end architecture dataflow;
 
 ### Distributive laws
 
-1. Screenshot with simulated time waveforms; always display all inputs and outputs:
+1. Screenshot with simulated time waveforms; always display all inputs and outputs (inputs first):
 
-   ![Screenshot](Images/basicgates_waveform.png)
+   ![Screenshot example](Images/basicgates_waveform.png)
 
 2. Link to your public EDA Playground example:
 
