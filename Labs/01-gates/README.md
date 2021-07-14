@@ -56,7 +56,7 @@ Use one of the available git manuals, such as [1](https://medium.com/swlh/how-to
 <a name="part2"></a>
 ## Part 2: Local repository
 
-Run Git Bash (Windows) of Terminal (Linux) and create your own home folder inside `Documents`.
+Run Git Bash (Windows) of Terminal (Linux) and create your own home folder inside `Documents`. *Important: To avoid future problems, never use national characters (such as éščřèêö, ...) and spaces in folder- and file-names.*
 
 ```bash
 ## Windows Git Bash:
