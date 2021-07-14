@@ -41,18 +41,18 @@ The purpose of this laboratory exercise is to learn to use different ways of wri
 | 1 | 0 0 | 0 1 | 0 | 0 | 1 |
 | 2 | 0 0 | 1 0 | 0 | 0 | 1 |
 | 3 | 0 0 | 1 1 | 0 | 0 | 1 |
-| 4 | 0 1 | 0 0 |  |  |  |
-| 5 | 0 1 | 0 1 |  |  |  |
-| 6 |  |  |  |  |  |
-| 7 |  |  |  |  |  |
-| 8 |  |  |  |  |  |
-| 9 |  |  |  |  |  |
-| 10 |  |  |  |  |  |
-| 11 |  |  |  |  |  |
-| 12 |  |  |  |  |  |
-| 13 |  |  |  |  |  |
-| 14 | 1 1 | 1 0 |  |  |  |
-| 15 | 1 1 | 1 1 |  |  |  |
+| 4 | 0 1 | 0 0 |  | 0 |  |
+| 5 | 0 1 | 0 1 |  | 1 |  |
+| 6 |  |  |  | 0 |  |
+| 7 |  |  |  | 0 |  |
+| 8 |  |  |  | 0 |  |
+| 9 |  |  |  | 0 |  |
+| 10 |  |  |  | 1 |  |
+| 11 |  |  |  | 0 |  |
+| 12 |  |  |  | 0 |  |
+| 13 |  |  |  | 0 |  |
+| 14 | 1 1 | 1 0 |  | 0 |  |
+| 15 | 1 1 | 1 1 |  | 1 |  |
 
 According to the truth table, write canonical SoP (Sum of Products) and PoS (Product of Sums) forms for "equals" and "less than" functions:
 
