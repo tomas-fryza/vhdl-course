@@ -44,7 +44,7 @@ end architecture dataflow;
 
 1. Screenshot with simulated time waveforms; always display all inputs and outputs:
 
-   ![Screenshot](Images/equations.png)
+   ![Screenshot](Images/basicgates_waveform.png)
 
 2. Link to your public EDA Playground example:
 
