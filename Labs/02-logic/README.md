@@ -6,13 +6,31 @@
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
 
-### Learning objectives
-
-The purpose of this laboratory exercise is to learn to use different ways of writing combination functions (truth table, K-map, SoP/PoS forms), their minimization, the use of signal assignments in VHDL, and assertion statements in VHDL testbench.
-
 ![Screenshot od EDA Playground](Images/screenshot_eda.png)
 
 
+### Learning objectives
+
+After completing this lab you will be able to:
+  * Use truth table, K-map, SoP/PoS forms of logic functions
+  * Minimize logic function
+  * Understand signal assignments in VHDL
+  * Use VHDL assertion statements for testing
+
+The purpose of this laboratory exercise is to learn to use different ways of writing combination functions (truth table, K-map, SoP/PoS forms), their minimization, the use of signal assignments in VHDL, and assertion statements in VHDL testbench.
+
+
+### Table of contents
+* [Preparation tasks](#preparation)
+* [Part 1: Synchronize Git and create a new folder](#part1)
+* [Part 2: Logic function minimization](#part2)
+* [Part 3: Binary comparator in VHDL language](#part3)
+* [Part 4: Assertion statements in VHDL testbench](#part4)
+* [Experiments on your own](#experiments)
+* [Lab assignment](#assignment)
+
+
+<a name="preparation"></a>
 ## Preparation tasks (done before the lab at home)
 
 *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs. Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, B is less than A). Note that, such a digital device has four inputs and three outputs/functions.
@@ -41,6 +59,7 @@ According to the truth table, write canonical SoP (Sum of Products) and PoS (Pro
 ![Binary comparator functions](Images/comparator.png)
 
 
+<a name="part1"></a>
 ## Part 1: Synchronize Git and create a new folder
 
 When you start working, always synchronize the contents of your working folder and local repository with remote version at GitHub. This way you are sure that you will not lose any of your changes.
@@ -75,6 +94,7 @@ $ mkdir 02-logic
 ```
 
 
+<a name="part2"></a>
 ## Part 2: Logic function minimization
 
 *[Karnaugh Maps](https://learnabout-electronics.org/Digital/dig24.php) (or K-maps) offer a graphical method of reducing a digital circuit to its minimum number of gates. The map is a simple table containing 1s and 0s that can express a truth table or complex Boolean expression describing the operation of a digital circuit.*
@@ -94,6 +114,7 @@ Use K-maps to create a simplified SoP form of the "greater than" function and a 
 ![Binary comparator simplified functions](Images/comparator_min.png)
 
  
+<a name="part3"></a>
  ## Part 3: Binary comparator in VHDL language
 
 Log in to your [EDA Playground](https://www.edaplayground.com/login) account, open [template](https://www.edaplayground.com/x/5uu3) project, use **Copy** button, and **Save** the project under a different name.
@@ -102,8 +123,8 @@ In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1
 
 | **Port name** | **Direction** | **Type** | **Description** |
 | :-: | :-: | :-- | :-- |
-| `a_i`       | input  | [`std_logic_vector(2 - 1 downto 0)`](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Data-types) | Data A |
-| `b_i`       | input  | `std_logic_vector(2 - 1 downto 0)` | Data B |
+| `b_i`       | input  | [`std_logic_vector(2 - 1 downto 0)`](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Data-types) | Data B |
+| `a_i`       | input  | `std_logic_vector(2 - 1 downto 0)` | Data A |
 | `B_greater_A_o` | output | `std_logic` | B is greater than A |
 | `B_equals_A_o`  | output | `std_logic` | B equals A |
 | `B_less_A_o`    | output | `std_logic` | B is less than A |
@@ -111,10 +132,11 @@ In VHDL, define an [entity](https://github.com/tomas-fryza/Digital-electronics-1
 In VHDL, define an [architecture](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [signal assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments). Use the **conditional signal assignment** `when`,` else` (outside process) to describe the three output functions, such as:
 
 ```vhdl
-B_less_A_o   <= '1' when (b_i < a_i) else '0';
+    B_less_A_o    <= '1' when (b_i < a_i) else '0';
 ```
 
 
+<a name="part4"></a>
 ## Part 4: Assertion statements in VHDL testbench
 
 You can write any information to the console using the report statement. The basic syntax in VHDL is:
@@ -148,17 +170,16 @@ The message is displayed to the console when the condition is NOT met, therefore
         -- Report a note at the beginning of stimulus process
         report "Stimulus process started" severity note;
 
-
-        -- First test values
-        s_b <= "00"; s_a <= "00"; wait for 100 ns;
+        -- First test case
+        s_b <= "0000"; s_a <= "0000"; wait for 100 ns;
         -- Expected output
-        assert ((s_B_greater_A = '0') and (s_B_equals_A = '1') and (s_B_less_A = '0'))
+        assert ((s_B_greater_A = '0') and
+                (s_B_equals_A  = '1') and
+                (s_B_less_A    = '0'))
         -- If false, then report an error
-        report "Test failed for input combination: 00, 00" severity error;
-        
-        
-        -- WRITE OTHER TESTS HERE
+        report "Input combination 0000, 0000 FAILED" severity error;
 
+        -- WRITE OTHER TEST CASES HERE
 
         -- Report a note at the end of stimulus process
         report "Stimulus process finished" severity note;
@@ -171,9 +192,12 @@ In VHDL, write a testbench and verify the correct functionality of the comparato
 
 ## Synchronize git
 
+When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
+
 Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
+<a name="experiments"></a>
 ## Experiments on your own
 
 1. In EDA Playground, define entity and architecture for a 4-bit binary comparator (`comparator_4bit`).
@@ -189,20 +213,9 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 2. In VHDL, define a testbench for a 4-bit binary comparator. Verify at least ten random input combinations. Make one intentional mistake when automatically verifying expected values using the `assert` command.
 
 
+<a name="assignment"></a>
 ## Lab assignment
 
-1. Preparation tasks (done before the lab at home). Submit:
-    * Completed 2-bit comparator truth table.
+*Prepare all parts of the assignment in Czech, Slovak or English, insert them in this [template](Assignment.md), export formatted output (not Markdown) [from HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), and submit a single PDF file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next laboratory exercise.*
 
-2. A 2-bit comparator. Submit:
-    * Karnaugh maps for all three functions,
-    * Equations of simplified SoP form of the "greater than" function and simplified PoS form of the "less than" function.
-    * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
-
-3. A 4-bit binary comparator. Submit:
-    * Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting,
-    * Listing of VHDL stimulus process from testbench file (`testbench.vhd`) with syntax highlighting and asserts,
-    * Listing of simulator console output, i.e. with one reported error,
-    * Link to your public EDA Playground example in the form `https://www.edaplayground.com/...`
-
-*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/02-logic/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
+*Vypracujte všechny části úkolu v českém, slovenském, nebo anglickém jazyce, vložte je do této [šablony](Assignment.md), exportujte formátovaný výstup (nikoli výpis v jazyce Markdown) [z HTML do PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF) a odevzdejte jeden PDF soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
