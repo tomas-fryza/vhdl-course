@@ -46,7 +46,7 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 &nbsp;
 
-2. **Optional task:** Follow the instructions for [Windows](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Install-Vivado-2020.2-on-Windows) or [Linux](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Install-Vivado-2020.1-on-Linux), download and install Vivado Design Suite.
+2. **Optional task:** Follow the instructions for [Windows](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Install-Vivado-2020.2-on-Windows) or [Linux](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Install-Vivado-2020.1-on-Linux), download and install Vivado Design Suite. See known issues and recommendations at the end of [this file](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Install-Vivado-2020.2-on-Windows).
 
 
 <a name="part1"></a>
