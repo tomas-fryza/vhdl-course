@@ -187,7 +187,7 @@ The message is displayed to the console when the condition is NOT met, therefore
     end process p_stimulus;
 ```
 
-In VHDL, write a testbench and verify the correct functionality of the comparator for all input combinations. Update your local (not GitHub) `Labs/02-logic/README.md` file with a link to your public EDA playground.
+In VHDL, write a testbench and verify the correct functionality of the comparator for all input combinations.
 
 
 ## Synchronize git
