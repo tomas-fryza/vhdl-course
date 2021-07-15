@@ -6,30 +6,36 @@
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
 
-### Learning objectives
-
-The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
-
 ![Nexys A7 board](Images/nexys_a7_segment.jpg)
 
 
+### Learning objectives
+
+After completing this lab you will be able to:
+  * Use 7-segment display
+  * Use VHDL processes
+  * Understand the structural VHDL description
+
+The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
+
+
+### Table of contents
+* [Preparation tasks](#preparation)
+* [Part 1: Synchronize Git and create a new folder](#part1)
+* [Part 2: VHDL code for seven-segment display decoder](#part2)
+* [Part 3: Top level VHDL code](#part3)
+* [Experiments on your own](#experiments)
+* [Lab assignment](#assignment)
+
+
+<a name="preparation"></a>
 ## Preparation tasks (done before the lab at home)
 
-The Nexys A7 board provides two four-digit common anode seven-segment LED displays (configured to behave like a single eight-digit display). See schematic or reference manual of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how.
+The Nexys A7 board provides two four-digit common anode seven-segment LED displays (configured to behave like a single eight-digit display).
 
-&nbsp;
+1. See [schematic](https://github.com/tomas-fryza/Digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how.
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-Complete the decoder truth table for common anode 7-segment display.
+2. Complete the decoder truth table for **common anode** 7-segment display.
 
 | **Hex** | **Inputs** | **A** | **B** | **C** | **D** | **E** | **F** | **G** |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -56,14 +62,16 @@ Complete the decoder truth table for common anode 7-segment display.
 > 
 
 
+<a name="part1"></a>
 ## Part 1: Synchronize repositories and create a new folder
 
 Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/04-segment` for this laboratory exercise.
 
 
+<a name="part2"></a>
 ## Part 2: VHDL code for seven-segment display decoder
 
-Perform the following steps to simulate the seven-segment display decoder.
+Perform the following steps to simulate the seven-segment display decoder in Vivado.
 
    1. Create a new Vivado RTL project `display` in your `Labs/04-segment` working folder.
    2. Create a VHDL source file `hex_7seg` for the decoder.
@@ -77,7 +85,7 @@ Perform the following steps to simulate the seven-segment display decoder.
 
    ![Vivado Port definition](Images/vivado_io_ports.png)
 
-   5. Use [combinational process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) and define an architecture of the decoder. Note that, inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) can be used.
+   5. Use [combinational process](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Processes) and define an architecture of the decoder. Note that, the process below is "executed" only when `hex_i` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Signal-assignments) can be used.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -133,6 +141,7 @@ end architecture Behavioral;
    6. Create a VHDL [simulation source](https://www.edaplayground.com/x/Vdpu) `tb_hex_7seg` and verify the functionality of your decoder.
 
 
+<a name="part3"></a>
 ## Part 3: Top level VHDL code
 
 VHDL provides a mechanism how to build a larger system from simpler or predesigned components. It is called an instantiation. Each instantiation statement creates an instance (copy) of a design entity.
@@ -146,7 +155,7 @@ Perform the following steps to implement the seven-segment display decoder on th
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
-   | `SW`  | input   | `std_logic_vector(4 - 1 downto 0)` | Input binary data |
+   | `SW` | input  | `std_logic_vector(4 - 1 downto 0)` | Input binary data |
    | `CA` | output | `std_logic` | Cathod A |
    | `CB` | output | `std_logic` | Cathod B |
    | `CC` | output | `std_logic` | Cathod C |
@@ -155,7 +164,7 @@ Perform the following steps to implement the seven-segment display decoder on th
    | `CF` | output | `std_logic` | Cathod F |
    | `CG` | output | `std_logic` | Cathod G |
    | `AN` | output | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
-   | `LED` | output  | `std_logic_vector(8 - 1 downto 0)` | LED indicators |
+   | `LED` | output | `std_logic_vector(8 - 1 downto 0)` | LED indicators |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
@@ -185,7 +194,9 @@ begin
     LED(3 downto 0) <= SW;
 
 
-    -- LED(7:4) indicators
+    --------------------------------------------------------------------
+    -- Experiments on your own: LED(7:4) indicators
+
     -- Turn LED(4) on if input value is equal to 0, ie "0000"
     -- WRITE YOUR CODE HERE
     
@@ -213,9 +224,10 @@ end architecture Behavioral;
 Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
+<a name="experiments"></a>
 ## Experiments on your own
 
-1. Complete the truth table for LEDs according to comments in source code above. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not` and write logic functions for LED(7:4) indicators.
+1. Complete the truth table for LEDs according to comments in source code above. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not` and write logic functions for LED(7:4) indicators as simple as possible.
 
 | **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -237,20 +249,18 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 | F | 1111 |  |  |  |  |
 
 
+<a name="assignment"></a>
 ## Lab assignment
 
-1. Preparation tasks (done before the lab at home). Submit:
-    * Figure or table with connection of 7-segment displays on Nexys A7 board,
-    * Decoder truth table for common anode 7-segment display.
+*Prepare all parts of the assignment in Czech, Slovak or English, insert them in this [template](Assignment.md), export formatted output (not Markdown) [from HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), and submit a single PDF file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next laboratory exercise.*
 
-2. Seven-segment display decoder. Submit:
-    * Listing of VHDL architecture from the source file `hex_7seg.vhd` with syntax highlighting,
-    * Listing of VHDL stimulus process from the testbench file `tb_hex_7seg.vhd` with syntax highlighting and asserts,
-    * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entities must be verified,
-    * VHDL code listing of the source file `top.vhd` with 7-segment module instantiation.
+*Vypracujte všechny části úkolu v českém, slovenském, nebo anglickém jazyce, vložte je do této [šablony](Assignment.md), exportujte formátovaný výstup (nikoli výpis v jazyce Markdown) [z HTML do PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF) a odevzdejte jeden PDF soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
 
-3. LED(7:4) indicators. Submit:
-    * Truth table and listing of VHDL code for LEDs(7:4) with syntax highlighting,
-    * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entities must be verified.
 
-*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/04-segment/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
+## References
+
+1. Digilent blog. [Nexys A7 Reference Manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual)
+
+2. LastMinuteEngineers. [How Seven Segment Display Works & Interface it with Arduino](https://lastminuteengineers.com/seven-segment-arduino-tutorial/)
+
+3. Tomas Fryza. [Template for 7-segment display decoder](https://www.edaplayground.com/x/Vdpu)
