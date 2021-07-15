@@ -26,6 +26,7 @@ The purpose of this laboratory exercise is to learn to use Vivado to create a si
 * [Part 3: Multiplexer](#part3)
 * [Experiments on your own](#experiments)
 * [Lab assignment](#assignment)
+* [References](#references)
 
 
 <a name="preparation"></a>
@@ -140,6 +141,7 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 *Vypracujte všechny části úkolu v českém, slovenském, nebo anglickém jazyce, vložte je do této [šablony](Assignment.md), exportujte formátovaný výstup (nikoli výpis v jazyce Markdown) [z HTML do PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF) a odevzdejte jeden PDF soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
 
 
+<a name="references"></a>
 ## References
 
 1. Digilent blog. [Nexys A7 Reference Manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual)
