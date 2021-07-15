@@ -186,3 +186,28 @@ $ git status
 *Prepare all parts of the assignment in Czech, Slovak or English, insert them in this [template](Assignment.md), export formatted output (not Markdown) [from HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), and submit a single PDF file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next laboratory exercise.*
 
 *Vypracujte všechny části úkolu v českém, slovenském, nebo anglickém jazyce, vložte je do této [šablony](Assignment.md), exportujte formátovaný výstup (nikoli výpis v jazyce Markdown) [z HTML do PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF) a odevzdejte jeden PDF soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
+
+
+## References
+
+1. [MIT license](https://choosealicense.com/licenses/mit/)
+
+2. Sayan Mondal. [How to make the perfect Readme.md on GitHub](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061)
+
+3. GitHub, Inc. [Basic writing and formatting syntax](https://help.github.com/en/articles/basic-writing-and-formatting-syntax)
+
+4. GitHub, Inc. [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+
+5. Tomas Fryza. [Example of basic OR, AND, XOR gates](https://www.edaplayground.com/x/5L92)
+
+6. CodeCogs. [Online LaTeX Equation Editor](https://www.codecogs.com/latex/eqneditor.php)
+
+7. CircuitVerse. [Online Digital Logic Circuit Simulator](https://circuitverse.org/)
+
+8. Bowler Hat LLC. [Logicly - A logic circuit simulator for Windows and macOS](https://logic.ly/)
+
+9. CircuitLab, Inc. [Online circuit simulation & schematic editor](https://www.circuitlab.com/)
+
+10. Bastian Born. [simulatorIO - Build and simulate logic circuits](https://simulator.io/)
+
+11. Lode Vandevenne. [LogicEmu: Online Logic Simulator](https://lodev.org/logicemu/)
