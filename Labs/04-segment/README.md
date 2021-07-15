@@ -38,26 +38,26 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 2. Complete the decoder truth table for **common anode** 7-segment display.
 
-| **Hex** | **Inputs** | **A** | **B** | **C** | **D** | **E** | **F** | **G** |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| 0 | 0000 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
-| 1 | 0001 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
-| 2 |      |   |   |   |   |   |   |   |
-| 3 |      |   |   |   |   |   |   |   |
-| 4 |      |   |   |   |   |   |   |   |
-| 5 |      |   |   |   |   |   |   |   |
-| 6 |      |   |   |   |   |   |   |   |
-| 7 |      |   |   |   |   |   |   |   |
-| 8 | 1000 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 9 |      |   |   |   |   |   |   |   |
-| A |      |   |   |   |   |   |   |   |
-| b |      |   |   |   |   |   |   |   |
-| C |      |   |   |   |   |   |   |   |
-| d |      |   |   |   |   |   |   |   |
-| E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
-| F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
+   | **Hex** | **Inputs** | **A** | **B** | **C** | **D** | **E** | **F** | **G** |
+   | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+   | 0 | 0000 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+   | 1 | 0001 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
+   | 2 |      |   |   |   |   |   |   |   |
+   | 3 |      |   |   |   |   |   |   |   |
+   | 4 |      |   |   |   |   |   |   |   |
+   | 5 |      |   |   |   |   |   |   |   |
+   | 6 |      |   |   |   |   |   |   |   |
+   | 7 |      |   |   |   |   |   |   |   |
+   | 8 | 1000 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+   | 9 |      |   |   |   |   |   |   |   |
+   | A |      |   |   |   |   |   |   |   |
+   | b |      |   |   |   |   |   |   |   |
+   | C |      |   |   |   |   |   |   |   |
+   | d |      |   |   |   |   |   |   |   |
+   | E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
+   | F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
 
-![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](Images/7-Segment-Display-Number-Formation-Segment-Contol.png)
+   ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](Images/7-Segment-Display-Number-Formation-Segment-Contol.png)
 
 > The image above was used from a website: [How Seven Segment Display Works & Interface it with Arduino](https://lastminuteengineers.com/seven-segment-arduino-tutorial/).
 > 
@@ -156,16 +156,16 @@ Perform the following steps to implement the seven-segment display decoder on th
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
-   | `SW` | input  | `std_logic_vector(4 - 1 downto 0)` | Input binary data |
-   | `CA` | output | `std_logic` | Cathod A |
-   | `CB` | output | `std_logic` | Cathod B |
-   | `CC` | output | `std_logic` | Cathod C |
-   | `CD` | output | `std_logic` | Cathod D |
-   | `CE` | output | `std_logic` | Cathod E |
-   | `CF` | output | `std_logic` | Cathod F |
-   | `CG` | output | `std_logic` | Cathod G |
-   | `AN` | output | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
-   | `LED` | output | `std_logic_vector(8 - 1 downto 0)` | LED indicators |
+   | `SW` | in  | `std_logic_vector(4 - 1 downto 0)` | Input binary data |
+   | `CA` | out | `std_logic` | Cathod A |
+   | `CB` | out | `std_logic` | Cathod B |
+   | `CC` | out | `std_logic` | Cathod C |
+   | `CD` | out | `std_logic` | Cathod D |
+   | `CE` | out | `std_logic` | Cathod E |
+   | `CF` | out | `std_logic` | Cathod F |
+   | `CG` | out | `std_logic` | Cathod G |
+   | `AN` | out | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
+   | `LED` | out | `std_logic_vector(8 - 1 downto 0)` | LED indicators |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
@@ -266,3 +266,5 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Use
 2. LastMinuteEngineers. [How Seven Segment Display Works & Interface it with Arduino](https://lastminuteengineers.com/seven-segment-arduino-tutorial/)
 
 3. Tomas Fryza. [Template for 7-segment display decoder](https://www.edaplayground.com/x/Vdpu)
+
+4. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
