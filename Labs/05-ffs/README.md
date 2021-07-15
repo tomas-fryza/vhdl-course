@@ -6,18 +6,35 @@
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
 
-### Learning objectives
-
-In this laboratory exercise, you will study the differences between a statically controlled latch and flip-flops that are synchronized with a clock signal. In VHDL, combinational and synchronous processes will be used and the difference between asynchronous and synchronous reset will be illustrated.
-
 <!--
 ![Nexys A7 board](Images/nexys_a7_driver.jpg)
 -->
 
 
+### Learning objectives
+
+After completing this lab you will be able to:
+  * Use latches and flip-flops
+  * Use VHDL synchronous processes
+  * Understand the asynchronous and synchronous resets
+
+In this laboratory exercise, you will study the differences between a statically controlled latch and flip-flops that are synchronized with a clock signal. In VHDL, combinational and synchronous processes will be used and the difference between asynchronous and synchronous reset will be illustrated.
+
+
+### Table of contents
+* [Preparation tasks](#preparation)
+* [Part 1: Synchronize Git and create a new folder](#part1)
+* [Part 2: VHDL code for D latch](#part2)
+* [Part 3: VHDL code for flip-flops](#part3)
+* [Experiments on your own](#experiments)
+* [Lab assignment](#assignment)
+* [References](#references)
+
+
+<a name="preparation"></a>
 ## Preparation tasks (done before the lab at home)
 
-Write characteristic equations and complete truth tables for D, JK, T flip-flops where `q(n)` represents main output value before the clock edge and `q(n+1)` represents value after the clock edge.
+1. Write characteristic equations and complete truth tables for D, JK, T flip-flops where `q(n)` represents main output value before the clock edge and `q(n+1)` represents value after the clock edge.
 
 ![Characteristic equations](Images/eq_flip_flops.png)
 <!--
@@ -25,7 +42,8 @@ Write characteristic equations and complete truth tables for D, JK, T flip-flops
     q_{n+1}^D =&~ \\
     q_{n+1}^{JK} =&\\
     q_{n+1}^T =&\\
-\end{align*}-->
+\end{align*}
+-->
 
    | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
@@ -91,11 +109,13 @@ Dokreslit průběhy pro D-latch a D-type FF.
 -->
 
 
+<a name="part1"></a>
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/05-ffs` for this exercise.
+Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/05-ffs` for this laboratory exercise.
 
 
+<a name="part2"></a>
 ## Part 2: VHDL code for D latch
 
 <!--
@@ -110,9 +130,13 @@ A latch is a level triggered element. Perform the following steps to model the D
    5. Create a simulation source `tb_d_latch`, set input conditions and run the simulation. Verify the reset and enable functionality.
 
 
+<a name="part3"></a>
 ## Part 3: VHDL code for flip-flops
 
-As specified by the teacher, create at least two entities for flip-flop D (with asynchronous reset, with synchronization reset), flip-flop JK (with synchronization reset), or T flip-flop (with synchronization reset). Try to simulate them together in a single testbench with a maximum duration of 200 ns.
+<!--
+TODO: Popis co je to Flip-flop.
+-->
+Create at least two entities for flip-flop D (with asynchronous reset, with synchronization reset), flip-flop JK (with synchronization reset), or T flip-flop (with synchronization reset). (Prefered combination is `d_ff_rst` and `t_ff_rst`.) Try to simulate them together in a single testbench with a maximum duration of 200 ns.
 
    | **Entity** | **Inputs** | **Outputs** | **Description** |
    | :-- | :-- | :-- | :-- |
@@ -127,7 +151,8 @@ As specified by the teacher, create at least two entities for flip-flop D (with 
 Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
-## Experiments on your own: Shift register
+<a name="experiments"></a>
+## Experiments on your own
 
 Use D type flip-flops with synchronous reset and perform the following steps to implement the 4-bit shift register on the Nexys A7 board.
 
@@ -155,7 +180,7 @@ architecture Behavioral of top is
 begin
 
     --------------------------------------------------------------------
-    -- Four instances (copies) of D type FF entity
+    -- Four instances (copies) of D-type FF entity
     d_ff_0 : entity work.d_ff_rst
         port map(
             clk   => BTNU,
@@ -181,22 +206,15 @@ end architecture Behavioral;
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 
+<a name="assignment"></a>
 ## Lab assignment
 
-1. Preparation tasks (done before the lab at home). Submit:
-    * Characteristic equations and completed tables for D, JK, T flip-flops.
+*Prepare all parts of the assignment in Czech, Slovak or English, insert them in this [template](Assignment.md), export formatted output (not Markdown) [from HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), and submit a single PDF file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next laboratory exercise.*
 
-2. D latch. Submit:
-    * VHDL code listing of the process `p_d_latch` with asynchronous reset and syntax highlighting,
-    * Listing of VHDL reset and stimulus processes from the testbench `tb_d_latch.vhd` file with syntax highlighting and asserts,
-    * Screenshot with simulated time waveforms; always display all inputs and outputs. The full functionality of the entity must be verified.
+*Vypracujte všechny části úkolu v českém, slovenském, nebo anglickém jazyce, vložte je do této [šablony](Assignment.md), exportujte formátovaný výstup (nikoli výpis v jazyce Markdown) [z HTML do PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF) a odevzdejte jeden PDF soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
 
-3. Flip-flops. Submit:
-    * Listing of VHDL code of architectures of selected flip-flops with syntax highlighting,
-    * Listing of VHDL clock, reset and stimulus processes from the testbench file(s) with syntax highlighting and asserts,
-    * Screenshot with simulated time waveforms with a maximum duration of 200 ns; always display all inputs and outputs. The full functionality of the entities must be verified.
 
-4. Shift register. Submit:
-    * Image of the shift register schematic. The image can be drawn on a computer or by hand. Name all inputs, outputs, components and internal signals.
+<a name="references"></a>
+## References
 
-*Prepare all parts of the assignment on a computer (not by hand), insert them in your README file `Digital-electronics-1/Labs/05-ffs/README.md`, export the formated output (not the listing in markdown language) from [HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file. The deadline for submitting the task is the day before the next laboratory exercise.*
+1. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
