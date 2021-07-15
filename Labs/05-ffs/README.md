@@ -136,7 +136,7 @@ A latch is a level triggered element. Perform the following steps to model the D
 <!--
 TODO: Popis co je to Flip-flop.
 -->
-Create at least two entities for flip-flop D (with asynchronous reset, with synchronization reset), flip-flop JK (with synchronization reset), or T flip-flop (with synchronization reset). (Prefered combination is `d_ff_rst` and `t_ff_rst`.) Try to simulate them together in a single testbench with a maximum duration of 200 ns.
+Create at least two entities for flip-flop D (with asynchronous reset, with synchronization reset), flip-flop JK (with synchronization reset), or T flip-flop (with synchronization reset). Prefered combination is `d_ff_rst` and `t_ff_rst`.
 
    | **Entity** | **Inputs** | **Outputs** | **Description** |
    | :-- | :-- | :-- | :-- |
@@ -144,6 +144,49 @@ Create at least two entities for flip-flop D (with asynchronous reset, with sync
    | `d_ff_rst` | `clk`, `rst`, `d` | `q`, `q_bar` | D type flip-flop with a sync reset |
    | `jk_ff_rst` | `clk`, `rst`, `j`, `k` | `q`, `q_bar` | JK type flip-flop with a sync reset |
    | `t_ff_rst` | `clk`, `rst`, `t` | `q`, `q_bar` | T type flip-flop with a sync reset |
+
+
+ Try to simulate both flip-flops together in a single testbench `tb_ff_rst.vhd` with a maximum duration of 200 ns. Verify the synchronous reset as well.
+ 
+ ```vhdl
+architecture testbench of tb_ff_rst is
+
+    constant c_CLK_100MHZ_PERIOD : time := 10 ns;
+
+    --Local signals
+    signal s_clk_100MHz : std_logic;
+    signal s_rst        : std_logic;
+    signal s_data       : std_logic;
+    signal s_d_q        : std_logic;
+    signal s_d_q_bar    : std_logic;
+    signal s_t_q        : std_logic;
+    signal s_t_q_bar    : std_logic;
+
+begin
+    -- Connecting testbench signals with d_ff_rst entity
+    -- (Unit Under Test)
+    uut_d_ff_rst : entity work.d_ff_rst
+        port map(
+            clk   => s_clk_100MHz,
+            rst   => s_rst,
+            d     => s_data,
+            q     => s_d_q,
+            q_bar => s_d_q_bar
+        );
+
+    -- Connecting testbench signals with t_ff_rst entity
+    -- (Unit Under Test)
+    uut_t_ff_rst : entity work.t_ff_rst
+        port map(
+            clk   => s_clk_100MHz,
+            rst   => s_rst,
+            t     => s_data,
+            q     => s_t_q,
+            q_bar => s_t_q_bar
+        );
+
+    -- WRITE YOUR CLOCK, RESET, AND DATA GENERATION PROCESSES HERE
+```
 
 
 ## Synchronize repositories
