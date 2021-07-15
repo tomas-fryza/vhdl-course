@@ -173,10 +173,24 @@ $ git status
    First:
    
    ![Distributive law1](Images/distributive1.png)
+<!--
+\begin{align*}
+    x\cdot y + x\cdot z =&~ x\cdot (y+z)\\
+    f(z,y,x)_{\textup{left}} =&~x\cdot y + x\cdot z\\
+    f(z,y,x)_{\textup{right}} =&~x\cdot (y+z)\\
+\end{align*}
+-->
 
    Second:
    
    ![Distributive law2](Images/distributive2.png)
+<!--
+\begin{align*}
+    (x+y)\cdot (x+z) =&~ x+ (y\cdot z)\\
+    f(z,y,x)_{\textup{left}} =&~(x+y)\cdot (x+z)\\
+    f(z,y,x)_{\textup{right}} =&~x+ (y\cdot z)\\
+\end{align*}
+-->
 
 2. You can also try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), and compare their options.
 
