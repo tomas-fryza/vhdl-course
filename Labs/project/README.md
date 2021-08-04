@@ -12,32 +12,6 @@ Students are divided into groups that represent small teams within one company. 
 
 Students work on the project in computer laboratories from the 9th to the 13th week of the semester in groups of 3 to 5 students. Students may consult the project within their own group, with their laboratory teacher and may not assign anyone else, including other students, academics, or PhD students. Consultations with the teacher will take place during the computer laboratories. Students present their results during the last laboratory in the 13th week of the semester.
 
-The source code for the FPGA must be written in VHDL language and must be implementable on **Arty A7-35T** or **Arty A7-100T** board (https://store.digilentinc.com/arty-a7-artix-7-fpga-development-board/), not Nexys A7!
-
-
-## Topics 2020/21
-
-1. Parking assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
-
-   *Parkovací asistent s HC-SR04 ultrazvukovým senzorem, zvuková PWM signalizace, signalizace pomocí LED bargrafu.*
-
-2. Door lock system with PIN (4-digit) terminal, 4x3 push buttons, 4-digit 7-segment display, relay for door lock control.
-
-   *Terminál pro odemčení/zamčení dveří pomocí 4místného PIN kódu, 4x3 tlačítek, 4 sedmisegmentové displeje, relé pro ovládání zámku dveří.*
-
-3. Console for exercise bike/bike, hall sensor, measuring and displaying speed, distance traveled, etc.
-
-   *Konzole pro rotoped/kolo, hallova sonda, měření a zobrazení rychlosti, ujeté vzdálenosti, atd.*
-
-
-## Suggested schedule
-
-![Schedule](schedule.png)
-
-
-
-The deadline for submitting the project is **Tuesday May 4, 2021**. Use BUT e-learning web page, export your project README file to PDF and submit it.
-
 
 ## Will be evaluated:
    * The contents of submitted README file (see below),
@@ -49,6 +23,7 @@ The deadline for submitting the project is **Tuesday May 4, 2021**. Use BUT e-le
    * Presence of Vivado project and generated bitstream file,
    * Discussion of results,
    * 5-minute video presentation in English, Czech, or Slovak.
+
 
 ## Bude hodnoceno:
    * Obsah odeslaného souboru README (viz dále),
@@ -71,44 +46,28 @@ The repository folder itself must contain:
    * External circuit diagrams and their simulations, if needed,
    * Any other files, such as PCB of proposed circuit, production documentation, etc.
 
----
 
-The README file has a complete description of the problem, circuit diagram of peripherals, graphical representation of the application (flowchart or state diagram), screenshots of simulations, links to source files in the repository, block diagram of final application, discussion of results, list of references, link to your video presentation, etc. The required structure of your README file is as follows.
+## README template
 
-
-# Your project title
-
-### Team members
-
-Names of all project team members.
-
-[Link to your GitHub project folder]( http://github.com/xxx)
-
-### Project objectives
-
-Write your text here.
+The README file has a complete description of the problem, circuit diagram of peripherals, graphical representation of the application (flowchart or state diagram), screenshots of simulations, links to source files in the repository, block diagram of final application, discussion of results, list of references, link to your video presentation, etc. Use this required structure of [project README file](Project.md).
 
 
-## Hardware description
+## Topics 2020/21
 
-Write your text here.
+The source code for the FPGA must be written in VHDL language and must be implementable on **Arty A7-35T** or **Arty A7-100T** board (https://store.digilentinc.com/arty-a7-artix-7-fpga-development-board/), not Nexys A7!
 
+1. Parking assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
 
-## VHDL modules description and simulations
+   *Parkovací asistent s HC-SR04 ultrazvukovým senzorem, zvuková PWM signalizace, signalizace pomocí LED bargrafu.*
 
-Write your text here.
+2. Door lock system with PIN (4-digit) terminal, 4x3 push buttons, 4-digit 7-segment display, relay for door lock control.
 
+   *Terminál pro odemčení/zamčení dveří pomocí 4místného PIN kódu, 4x3 tlačítek, 4 sedmisegmentové displeje, relé pro ovládání zámku dveří.*
 
-## TOP module description and simulations
+3. Console for exercise bike/bike, hall sensor, measuring and displaying speed, distance traveled, etc.
 
-Write your text here.
+   *Konzole pro rotoped/kolo, hallova sonda, měření a zobrazení rychlosti, ujeté vzdálenosti, atd.*
 
+The deadline for submitting the project is **Tuesday May 4, 2021**. Use BUT e-learning web page, export your project README file to PDF and submit it.
 
-## Video
-
-*Write your text here*
-
-
-## References
-
-   1. Write your text here.
+![Schedule](schedule.png)
