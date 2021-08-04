@@ -242,3 +242,5 @@ Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Git
 2. [WaveDrom - Digital Timing Diagram everywhere](https://wavedrom.com/)
 
 3. Tomas Fryza. [Template for clock enable modul](https://www.edaplayground.com/x/Vdpu)
+
+4. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
