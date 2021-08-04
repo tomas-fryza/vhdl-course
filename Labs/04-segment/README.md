@@ -151,8 +151,8 @@ VHDL-93 and later offers two methods of instantiation: direct instantiation and 
 
 Perform the following steps to implement the seven-segment display decoder on the Nexys A7 board.
 
-   1. Create a new design source `top` in your project.
-   2. Define an entity `top` as follows.
+   1. Create a new VHDL design source `top` in your project.
+   2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
