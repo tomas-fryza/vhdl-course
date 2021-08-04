@@ -123,14 +123,14 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
    3. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
 ```vhdl
-------------------------------------------------------------------------
+------------------------------------------------------------
 -- Architecture body for top level
-------------------------------------------------------------------------
+------------------------------------------------------------
 architecture Behavioral of top is
     -- No internal signals
 begin
 
-    --------------------------------------------------------------------
+    --------------------------------------------------------
     -- Instance (copy) of driver_7seg_4digits entity
     driver_seg_4 : entity work.driver_7seg_4digits
         port map(
