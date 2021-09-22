@@ -1,4 +1,4 @@
-# Lab 8: YOUR_FIRSTNAME_FAMILYNAME
+# Lab 8: YOUR_FIRSTNAME FAMILYNAME
 
 Link to your `Digital-electronics-1` GitHub repository:
 
