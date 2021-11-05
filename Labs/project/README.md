@@ -56,17 +56,20 @@ The README file has a complete description of the problem, circuit diagram of pe
 
 The source code for the FPGA must be written in VHDL language and must be implementable on **Arty A7-35T** or **Arty A7-100T** board (https://store.digilentinc.com/arty-a7-artix-7-fpga-development-board/), not Nexys A7!
 
-1. Parking assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
+1. [Parking assistant with HC-SR04](https://github.com/xrysav25/DE1_Parking_assistant) ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
 
-   *Parkovací asistent s HC-SR04 ultrazvukovým senzorem, zvuková PWM signalizace, signalizace pomocí LED bargrafu.*
+   > *Parkovací asistent s HC-SR04 ultrazvukovým senzorem, zvuková PWM signalizace, signalizace pomocí LED bargrafu.*
+   >
 
-2. Door lock system with PIN (4-digit) terminal, 4x3 push buttons, 4-digit 7-segment display, relay for door lock control.
+2. [Door lock system](https://github.com/xcadaj00/DE1_project) with PIN (4-digit) terminal, 4x3 push buttons, 4-digit 7-segment display, relay for door lock control.
 
-   *Terminál pro odemčení/zamčení dveří pomocí 4místného PIN kódu, 4x3 tlačítek, 4 sedmisegmentové displeje, relé pro ovládání zámku dveří.*
+   > *Terminál pro odemčení/zamčení dveří pomocí 4místného PIN kódu, 4x3 tlačítek, 4 sedmisegmentové displeje, relé pro ovládání zámku dveří.*
+   >
 
-3. Console for exercise bike/bike, hall sensor, measuring and displaying speed, distance traveled, etc.
+3. [Console for exercise bike](https://github.com/mkousal/Digital-electronics-1-Tachometer), hall sensor, measuring and displaying speed, distance traveled, etc.
 
-   *Konzole pro rotoped/kolo, hallova sonda, měření a zobrazení rychlosti, ujeté vzdálenosti, atd.*
+   > *Konzole pro rotoped/kolo, hallova sonda, měření a zobrazení rychlosti, ujeté vzdálenosti, atd.*
+   >
 
 The deadline for submitting the project is **Tuesday May 4, 2021**. Use BUT e-learning web page, export your project README file to PDF and submit it.
 
