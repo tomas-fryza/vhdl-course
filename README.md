@@ -6,8 +6,7 @@
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
 
-The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vutbr.cz/en/students/courses/detail/224131) at Brno University of Technology, Czechia.
-
+The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/242350) at Brno University of Technology, Czechia.
 
 ## Exercises
 
@@ -21,18 +20,30 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 8. [Traffic light controller](Labs/08-traffic_lights)
 9. [VHDL project: General instructions](Labs/project)
 
+## List of examples
 
-## Materials
+* [Basic gates in VHDL](https://www.edaplayground.com/x/5L92)
+* [Binary comparator](https://www.edaplayground.com/x/5uu3)
+* [Half/Full adder](https://www.edaplayground.com/x/2Jcz)
+* [Seven-segment display](https://www.edaplayground.com/x/Vdpu)
+* [Clock enable circuit](https://www.edaplayground.com/x/5LiJ)
+* [N-bit Up/Down binary counter](https://www.edaplayground.com/x/5bgq)
+* [Driver for 7-segment display](https://www.edaplayground.com/x/3f_A)
+* [One-minute stopwatch](https://www.edaplayground.com/x/2uKg)
+* [Traffic light controller](https://www.edaplayground.com/x/5HBi)
+
+## Components
 
 The following hardware and software components are mainly used in the lab.
 
-#### Hardware
-
+* Boards:
 * [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA Trainer Board: [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual), [schematic](Docs/nexys-a7-sch.pdf), XC7A50T-1CSG324C [FPGA](Docs/ds180_7Series_Overview.pdf), [Nexys-A7-50T-Master.xdc](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
-* Oscilloscope Keysight Technologies [DSOX3034T](https://www.keysight.com/en/pdx-x202175-pn-DSOX3034T/oscilloscope-350-mhz-4-analog-channels?&cc=CZ&lc=eng) (350 MHz, 4 analog channels), including 16 logic timing channels [DSOXT3MSO](https://www.keysight.com/en/pdx-x205238-pn-DSOXT3MSO/3000t-x-series-oscilloscope-mso-upgrade?cc=CZ&lc=eng) and serial protocol triggering and decode options [D3000BDLA](https://www.keysight.com/en/pd-2990560-pn-D3000BDLA/ultimate-software-bundle-for-the-3000a-t-x-series?&cc=CZ&lc=eng)
 
-#### Software
+* Analyzers:
+  * 24MHz 8-channel [logic analyzer](https://www.ebay.com/sch/i.html?LH_CAds=&_ex_kw=&_fpos=&_fspt=1&_mPrRngCbx=1&_nkw=24mhz%20logic%20analyzer&_sacat=&_sadis=&_sop=12&_udhi=&_udlo=): [software](https://www.saleae.com/)
+  * Oscilloscope Keysight Technologies [DSOX3034T](https://www.keysight.com/en/pdx-x202175-pn-DSOX3034T/oscilloscope-350-mhz-4-analog-channels?&cc=CZ&lc=eng) (350 MHz, 4 analog channels), including 16 logic timing channels [DSOXT3MSO](https://www.keysight.com/en/pdx-x205238-pn-DSOXT3MSO/3000t-x-series-oscilloscope-mso-upgrade?cc=CZ&lc=eng) and serial protocol triggering and decode options [D3000BDLA](https://www.keysight.com/en/pd-2990560-pn-D3000BDLA/ultimate-software-bundle-for-the-3000a-t-x-series?&cc=CZ&lc=eng)
 
+* Development tools:
 * [EDA Playground](https://www.edaplayground.com/) is a cloud-based service that runs in your browser
 * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.1: [installation](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
 * [git](https://git-scm.com/)
