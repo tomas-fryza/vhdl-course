@@ -39,7 +39,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 The following hardware and software components are mainly used in the lab.
 
 * Boards:
-  * [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA Trainer Board: [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual), [schematic](Docs/nexys-a7-sch.pdf), XC7A50T-1CSG324C [FPGA](Docs/ds180_7Series_Overview.pdf), [Nexys-A7-50T-Master.xdc](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
+  * [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA Trainer Board: [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual), [schematic](docs/nexys-a7-sch.pdf), XC7A50T-1CSG324C [FPGA](docs/ds180_7Series_Overview.pdf), [Nexys-A7-50T-Master.xdc](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
 
 * Analyzers:
   * 24MHz 8-channel [logic analyzer](https://www.ebay.com/sch/i.html?LH_CAds=&_ex_kw=&_fpos=&_fspt=1&_mPrRngCbx=1&_nkw=24mhz%20logic%20analyzer&_sacat=&_sadis=&_sop=12&_udhi=&_udlo=): [software](https://www.saleae.com/)
@@ -47,7 +47,7 @@ The following hardware and software components are mainly used in the lab.
 
 * Development tools:
   * [EDA Playground](https://www.edaplayground.com/) is a cloud-based service that runs in your browser
-  * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.2: [installation](https://github.com/tomas-fryza/Digital-electronics-1/wiki)
+  * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.2: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki)
   * [git](https://git-scm.com/)
 
 
