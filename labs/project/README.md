@@ -1,10 +1,12 @@
 # VHDL project: General instructions
 
+<!-->
 ![Logo](../../logolink_eng.jpg)
 <p align="center">
   The Study of Modern and Developing Engineering BUT<br>
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
+-->
 
 The aim of the VHDL project is cooperation in small groups, study of the assigned topic, design of own solution, simulation, implementation, creation of project documentation and presentation of results.
 
@@ -12,49 +14,46 @@ Students are divided into groups that represent small teams within one company. 
 
 Students work on the project in computer laboratories from the 9th to the 13th week of the semester in groups of 3 to 5 students. Students may consult the project within their own group, with their laboratory teacher and may not assign anyone else, including other students, academics, or PhD students. Consultations with the teacher will take place during the computer laboratories. Students present their results during the last laboratory in the 13th week of the semester.
 
+## Will be evaluated
 
-## Will be evaluated:
-   * The contents of submitted README file (see below),
-   * The complexity of created application, functionality,
-   * Custom functionality beyond the topic,
-   * If the topic has been completed,
-   * Compliance with VHDL Guidelines (2020), see elearning page,
-   * Usage of codes and modules from previous exercises instead of copying from the Internet,
-   * Presence of Vivado project and generated bitstream file,
-   * Discussion of results,
-   * 5-minute video presentation in English, Czech, or Slovak.
+* The contents of submitted README file (see below),
+* The complexity of created application, functionality,
+* Custom functionality beyond the topic,
+* If the topic has been completed,
+* Compliance with VHDL Guidelines (2020), see elearning page,
+* Usage of codes and modules from previous exercises instead of copying from the Internet,
+* Presence of Vivado project and generated bitstream file,
+* Discussion of results,
+* 5-minute video presentation in English, Czech, or Slovak.
 
+## Bude hodnoceno
 
-## Bude hodnoceno:
-   * Obsah odeslaného souboru README (viz dále),
-   * Složitost vytvořené aplikace, funkčnost,
-   * Přidání vlastní funkcionality nad rámec zadání,
-   * Zda práce odpovídá zadání,
-   * Dodržování pravidel dle VHDL Guidelines (2020), viz elearning,
-   * Využití kódů a modulů z předchozích cvičení namísto jejich kopírování z internetu,
-   * Přítomnost kompletního projektu ve Vivado a vygenerovaný programovací soubor,
-   * Diskuse o výsledcích,
-   * 5minutová video prezentace v angličtině, češtině, nebo slovenštině.
-
+* Obsah odeslaného souboru README (viz dále),
+* Složitost vytvořené aplikace, funkčnost,
+* Přidání vlastní funkcionality nad rámec zadání,
+* Zda práce odpovídá zadání,
+* Dodržování pravidel dle VHDL Guidelines (2020), viz elearning,
+* Využití kódů a modulů z předchozích cvičení namísto jejich kopírování z internetu,
+* Přítomnost kompletního projektu ve Vivado a vygenerovaný programovací soubor,
+* Diskuse o výsledcích,
+* 5minutová video prezentace v angličtině, češtině, nebo slovenštině.
 
 The repository folder itself must contain:
 
-   * Project README file according to the required structure (You will export and submit this file). The README file can be written in English, Czech, or Slovak,
-   * Complete project in Vivado. All source files must be written in English,
-   * Testbench of all components that you have developed,
-   * Screenshots of simulations (individual components--not the whole project--can be simulated by EDA Playground as well),
-   * External circuit diagrams and their simulations, if needed,
-   * Any other files, such as PCB of proposed circuit, production documentation, etc.
-
+* Project README file according to the required structure (You will export and submit this file). The README file can be written in English, Czech, or Slovak,
+* Complete project in Vivado. All source files must be written in English,
+* Testbench of all components that you have developed,
+* Screenshots of simulations (individual components--not the whole project--can be simulated by EDA Playground as well),
+* External circuit diagrams and their simulations, if needed,
+* Any other files, such as PCB of proposed circuit, production documentation, etc.
 
 ## README template
 
-The README file has a complete description of the problem, circuit diagram of peripherals, graphical representation of the application (flowchart or state diagram), screenshots of simulations, links to source files in the repository, block diagram of final application, discussion of results, list of references, link to your video presentation, etc. Use this required structure of [project README file](Project.md).
-
+The README file has a complete description of the problem, circuit diagram of peripherals, graphical representation of the application (flowchart or state diagram), screenshots of simulations, links to source files in the repository, block diagram of final application, discussion of results, list of references, link to your video presentation, etc. Use this required structure of [project README file](project.md).
 
 ## Topics 2020/21
 
-The source code for the FPGA must be written in VHDL language and must be implementable on **Arty A7-35T** or **Arty A7-100T** board (https://store.digilentinc.com/arty-a7-artix-7-fpga-development-board/), not Nexys A7!
+The source code for the FPGA must be written in VHDL language and must be implementable on **Arty A7-35T** or **Arty A7-100T** [board](https://store.digilentinc.com/arty-a7-artix-7-fpga-development-board/), not Nexys A7!
 
 1. [Parking assistant with HC-SR04](https://github.com/xrysav25/DE1_Parking_assistant) ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
 
