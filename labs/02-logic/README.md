@@ -209,7 +209,7 @@ Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Use
   | `B_equals_A_o`  | output | `std_logic` | B equals A |
   | `B_less_A_o`    | output | `std_logic` | B is less than A |
 
-2. In VHDL, define a testbench for a 4-bit binary comparator. Verify at least ten random input combinations. Make one intentional mistake when automatically verifying expected values using the `assert` command.
+2. In VHDL, define a testbench for a 4-bit binary comparator and verify several input combinations. Make one intentional mistake when automatically verifying expected values using the `assert` command.
 
 <a name="assignment"></a>
 
