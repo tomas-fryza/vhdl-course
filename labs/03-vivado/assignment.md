@@ -11,7 +11,7 @@ begin
 end architecture Behavioral;
 ```
 
-2. Listing of VHDL stimulus process from testbench file (`tb_mux_2bit_4to1`) with syntax highlighting and asserts. Verify at least four random input combinations:
+2. Listing of VHDL stimulus process from testbench file (`tb_mux_2bit_4to1`) with asserts. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines. Verify at least four random input combinations:
 
 ```vhdl
     p_stimulus : process

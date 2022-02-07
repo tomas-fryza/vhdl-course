@@ -1,20 +1,8 @@
-# Lab 4: YOUR_FIRSTNAME FAMILYNAME
-
-Link to your `Digital-electronics-1` GitHub repository:
-
-   [https://github.com/...](https://github.com/...)
-
-
-### Preparation tasks
-
-1. Figure or table with connection of 7-segment displays on Nexys A7 board:
-
-   ![your figure]()
-
+# Lab 4: YOUR_FIRSTNAME LASTNAME
 
 ### Seven-segment display decoder
 
-1. Listing of VHDL stimulus process from testbench file (`tb_hex_7seg.vhd`) with syntax highlighting and asserts. Verify all input combinations:
+1. Listing of VHDL stimulus process from testbench file (`tb_hex_7seg.vhd`) with asserts. Verify all input combinations. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
 
 ```vhdl
     p_stimulus : process
@@ -39,10 +27,9 @@ Link to your `Digital-electronics-1` GitHub repository:
 
    ![your figure]()
 
-
 ### LED(7:4) indicators
 
-1. Listing of LEDs(7:4) part of VHDL architecture from source file `top.vhd` with syntax highlighting; try to write logic functions as simple as possible:
+1. Listing of LEDs(7:4) part of VHDL architecture from source file `top.vhd`. Try to write logic functions as simple as possible. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
 
 ```vhdl
     --------------------------------------------------------------------
