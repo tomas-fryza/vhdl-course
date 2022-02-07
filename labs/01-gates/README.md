@@ -34,7 +34,7 @@ In this laboratory exercise, you will learn how to use the git versioning system
 
 ## Preparation tasks (done before the lab at home)
 
-1. If you don't have yet, create your account on [GitHub](https://github.com/).
+1. Create your account on [GitHub](https://github.com/).
 2. If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
 3. For future synchronization of local folders with GitHub, download and install [git](https://git-scm.com/).
 
@@ -44,9 +44,9 @@ In this laboratory exercise, you will learn how to use the git versioning system
 
 GitHub is a code hosting platform for collaboration and version control. GitHub lets you (and others) work together on projects.
 
-In GitHub, create a new public repository titled **Digital-electronics-1**. Initialize a README and [MIT license](https://choosealicense.com/licenses/mit/).
+1. In GitHub, create a new public repository titled **digital-electronics-1**. Initialize a README and [MIT license](https://choosealicense.com/licenses/mit/).
 
-Use one of the available git manuals, such as [1](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061), [2](https://help.github.com/en/articles/basic-writing-and-formatting-syntax), or [3](https://guides.github.com/features/mastering-markdown/), and add the following sections to your online README.md file.
+2. Use one of the available git manuals, such as [1](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061), [2](https://help.github.com/en/articles/basic-writing-and-formatting-syntax), or [3](https://guides.github.com/features/mastering-markdown/), and add the following sections to your online README.md file.
 
 * Headers H1, H2, H3
 * Emphasis (*italics*, **bold**)
@@ -59,95 +59,95 @@ Use one of the available git manuals, such as [1](https://medium.com/swlh/how-to
 
 ## Part 2: Local repository
 
-Run Git Bash (Windows) of Terminal (Linux) and create your own home folder inside `Documents`. *Important: To avoid future problems, never use national characters (such as éščřèêö, ...) and spaces in folder- and file-names.*
+1. Run Git Bash (Windows), Terminal (Linux), or your favorite file manager, and create your own home folder inside `Documents`. *Important: To avoid future problems, never use national characters (such as éščřèêö, ...) and spaces in folder- and file-names.*
 
-```bash
-## Windows Git Bash:
-$ cd d:/Documents/
-$ mkdir your-name
-$ cd your-name/
+   ```bash
+   ## Windows Git Bash:
+   $ cd d:/Documents/
+   $ mkdir your-name
+   $ cd your-name/
 
-## Linux:
-$ cd
-$ cd Documents/
-$ mkdir your-name
-$ cd your-name/
-```
+   ## Linux:
+   $ cd
+   $ cd Documents/
+   $ mkdir your-name
+   $ cd your-name/
+   ```
 
-With help of `git` command, clone a local copy of your public repository.
+2. With help of `git` command, clone a local copy of your public repository.
 
-```bash
-## Windows Git Bash or Linux:
-$ git clone https://github.com/your-github-account/digital-electronics-1.git
-$ cd digital-electronics-1/
-$ ls
-LICENSE  README.md
-```
+   ```bash
+   ## Windows Git Bash or Linux:
+   $ git clone https://github.com/your-github-account/digital-electronics-1.git
+   $ cd digital-electronics-1/
+   $ ls
+   LICENSE  README.md
+   ```
 
-Download `docs` folder from [this repository](https://github.com/tomas-fryza/digital-electronics-1) and copy them to your `digital-electronics-1` local repository.
+3. Download `docs` folder from [this repository](https://github.com/tomas-fryza/digital-electronics-1) and copy them to your `digital-electronics-1` local repository.
 
-```bash
-## Windows Git Bash or Linux:
-$ ls
-docs  LICENSE  README.md
-```
+   ```bash
+   ## Windows Git Bash or Linux:
+   $ ls
+   docs  LICENSE  README.md
+   ```
 
-Create a new working folder `labs/01-gates` for this exercise.
+4. Create a new working folder `labs/01-gates` for this exercise.
 
-```bash
-## Windows Git Bash or Linux:
-$ mkdir labs
-$ cd labs/
-$ mkdir 01-gates
-```
+   ```bash
+   ## Windows Git Bash or Linux:
+   $ mkdir labs
+   $ cd labs/
+   $ mkdir 01-gates
+   ```
 
 <a name="part3"></a>
 
 ## Part 3: EDA Playground
 
-EDA Playground is a cloud-based service that runs in your browser. Open the [Example of basic gates](https://www.edaplayground.com/x/5L92). Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/digital-electronics-1/wiki/Entity), [architecture](https://github.com/tomas-fryza/digital-electronics-1/wiki/Architecture), and testbench. Use button **Run** to run the simulation and log in to your account using **Log In (save edits)**.
+1. EDA Playground is a cloud-based service that runs in your browser. Open the [Example of basic gates](https://www.edaplayground.com/x/5L92). Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/digital-electronics-1/wiki/Entity), [architecture](https://github.com/tomas-fryza/digital-electronics-1/wiki/Architecture), and testbench. Use button **Run** to run the simulation and log in to your account using **Log In (save edits)**.
 
-Most common VHDL operators are shown in the table.
+   Most common VHDL operators are shown in the table.
 
-| **Operator** | **Description** |
-| :-: | :-- |
-| `<=` | Value assignment |
-| `and` | Logical AND |
-| `nand` | Logical AND with negated output |
-| `or` | Logical OR |
-| `nor` | Logical OR with negated output |
-| `not` | Nagation |
-| `xor` | Exclusive OR |
-| `xnor` | Exclusive OR with negated output |
-| `-- comment` | Comments |
+   | **Operator** | **Description** |
+   | :-: | :-- |
+   | `<=` | Value assignment |
+   | `and` | Logical AND |
+   | `nand` | Logical AND with negated output |
+   | `or` | Logical OR |
+   | `nor` | Logical OR with negated output |
+   | `not` | Nagation |
+   | `xor` | Exclusive OR |
+   | `xnor` | Exclusive OR with negated output |
+   | `-- comment` | Comments |
 
-Use De Morgan's laws and modify the following logic function to the form with NAND and NOR gates only. Verify all three functions in EDA Playground tool.
+2. Use De Morgan's laws and modify the following logic function to the form with NAND and NOR gates only. Verify all three functions in EDA Playground tool.
 
-![Logic function](Images/equations.png)
+   ![Logic function](images/equations.png)
 
-> Note that, equations were generated by [Online LaTeX Equation Editor](https://www.codecogs.com/latex/eqneditor.php) using the following code.
->
-```LaTeX
-\begin{align*}
-    f(c,b,a) =&~ \overline{b}\,a + \overline{c}\,\overline{b}\\
-    f(c,b,a)_{\textup{NAND}} =&\\
-    f(c,b,a)_{\textup{NOR}} =&\\
-\end{align*}
-```
->
+   > Note that, equations were generated by [Online LaTeX Equation Editor](https://www.codecogs.com/latex/eqneditor.php) using the following code.
+   >
+   ```LaTeX
+   \begin{align*}
+       f(c,b,a) =&~ \overline{b}\,a + \overline{c}\,\overline{b}\\
+       f(c,b,a)_{\textup{NAND}} =&\\
+       f(c,b,a)_{\textup{NOR}} =&\\
+   \end{align*}
+   ```
+   >
 
-Run any text editor, such as *Visual Studio Code* or *Atom*, open/create your `Digital-electronics-1/labs/01-gates/README.md` local file (not on GitHub), complete table with logical values, and add link to your Playground.
+3. According to the simulation, complete the table with logic values.
 
-| **c** | **b** |**a** | **f(c,b,a)** | **f_NAND(c,b,a)** | **f_NOR(c,b,a)** |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| 0 | 0 | 0 |  |  |  |
-| 0 | 0 | 1 |  |  |  |
-| 0 | 1 | 0 |  |  |  |
-| 0 | 1 | 1 |  |  |  |
-| 1 | 0 | 0 |  |  |  |
-| 1 | 0 | 1 |  |  |  |
-| 1 | 1 | 0 |  |  |  |
-| 1 | 1 | 1 |  |  |  |
+   | **c** | **b** |**a** | **f(c,b,a)** | **f_NAND(c,b,a)** | **f_NOR(c,b,a)** |
+   | :-: | :-: | :-: | :-: | :-: | :-: |
+   | 0 | 0 | 0 |  |  |  |
+   | 0 | 0 | 1 |  |  |  |
+   | 0 | 1 | 0 |  |  |  |
+   | 0 | 1 | 1 |  |  |  |
+   | 1 | 0 | 0 |  |  |  |
+   | 1 | 0 | 1 |  |  |  |
+   | 1 | 1 | 0 |  |  |  |
+   | 1 | 1 | 1 |  |  |  |
 
 ## Synchronize git
 
@@ -155,16 +155,16 @@ When you finish working, always synchronize the contents of your working folder 
 
 Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Note that, a detailed description of all git commands can be found [here](https://github.com/joshnh/Git-Commands). Check the repository at GitHub web page for changes.
 
-```bash
-## Windows Git Bash or Linux:
-$ git status
-$ git add -A
-$ git status
-$ git commit -m "[LAB] Creating 01-gates lab"
-$ git status
-$ git push
-$ git status
-```
+   ```bash
+   ## Windows Git Bash or Linux:
+   $ git status
+   $ git add -A
+   $ git status
+   $ git commit -m "[LAB] Creating 01-gates lab"
+   $ git status
+   $ git push
+   $ git status
+   ```
 
 <a name="experiments"></a>
 
@@ -202,9 +202,9 @@ $ git status
 
 ## Lab assignment
 
-*Copy the [assignment template](assignment.md) to your GitHub repository. Prepare all parts in Czech, Slovak or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next laboratory exercise.*
+*Copy the [assignment template](assignment.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
 
-*Vložte [šablonu úkolu](assignment.md) do vašeho GitHub repozitáře. Vypracujte všechny části v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
+*Vložte [šablonu úkolu](assignment.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
 
 <a name="references"></a>
 

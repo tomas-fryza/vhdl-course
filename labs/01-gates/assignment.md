@@ -1,4 +1,4 @@
-# Lab 1: YOUR_FIRSTNAME FAMILYNAME
+# Lab 1: YOUR_FIRSTNAME LASTNAME
 
 ### De Morgan's laws
 
@@ -6,7 +6,7 @@
 
    ![Logic function](images/equations.png)
 
-2. Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting for all three functions:
+2. Listing of VHDL architecture from design file (`design.vhd`) for all three functions. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
 
 ```vhdl
 architecture dataflow of demorgan is
@@ -17,7 +17,7 @@ begin
 end architecture dataflow;
 ```
 
-3. Completed table with logic functions' values:
+3. Complete table with logic functions' values:
 
 | **c** | **b** |**a** | **f(c,b,a)** | **f_NAND(c,b,a)** | **f_NOR(c,b,a)** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -32,9 +32,9 @@ end architecture dataflow;
 
 ### Distributive laws
 
-1. Screenshot with simulated time waveforms; always display all inputs and outputs (inputs first):
+1. Screenshot with simulated time waveforms. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
 
-   ![Screenshot example](images/basicgates_waveform.png)
+   ![your figure]()
 
 2. Link to your public EDA Playground example:
 
