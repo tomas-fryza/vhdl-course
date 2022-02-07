@@ -1,6 +1,6 @@
 # VHDL project: General instructions
 
-<!-->
+<!--
 ![Logo](../../logolink_eng.jpg)
 <p align="center">
   The Study of Modern and Developing Engineering BUT<br>
