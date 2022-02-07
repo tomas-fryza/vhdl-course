@@ -1,21 +1,4 @@
-# Lab 8: YOUR_FIRSTNAME FAMILYNAME
-
-Link to your `Digital-electronics-1` GitHub repository:
-
-   [https://github.com/...](https://github.com/...)
-
-
-### Preparation tasks
-
-1. Figure or table with connection of RGB LEDs on Nexys A7 board and completed table with color settings:
-
-   ![your figure]()
-
-   | **RGB LED** | **Artix-7 pin names** | **Red** | **Yellow** | **Green** |
-   | :-: | :-: | :-: | :-: | :-: |
-   | LD16 | N15, M16, R12 | `1,0,0` |  |  |
-   | LD17 |  |  |  |  |
-
+# Lab 8: YOUR_FIRSTNAME LASTNAME
 
 ### Traffic light controller
 
@@ -23,7 +6,7 @@ Link to your `Digital-electronics-1` GitHub repository:
 
    ![your figure]()
 
-2. Listing of VHDL code of the completed process `p_traffic_fsm` with syntax highlighting:
+2. Listing of VHDL code of the completed process `p_traffic_fsm`. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
 
 ```vhdl
     --------------------------------------------------------
@@ -74,10 +57,9 @@ Link to your `Digital-electronics-1` GitHub repository:
     end process p_traffic_fsm;
 ```
 
-3. Screenshot with simulated time waveforms; always display all inputs and outputs (inputs first). The full functionality of the entity must be verified:
+3. Screenshot with simulated time waveforms. The full functionality of the entity must be verified. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
 
    ![your figure]()
-
 
 ### Smart controller
 
