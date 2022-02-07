@@ -1,15 +1,10 @@
 # Lab 1: YOUR_FIRSTNAME FAMILYNAME
 
-Link to your `Digital-electronics-1` GitHub repository:
-
-   [https://github.com/...](https://github.com/...)
-
-
 ### De Morgan's laws
 
 1. Equations of all three versions of logic function f(c,b,a):
 
-   ![Logic function](Images/equations.png)
+   ![Logic function](images/equations.png)
 
 2. Listing of VHDL architecture from design file (`design.vhd`) with syntax highlighting for all three functions:
 
@@ -35,16 +30,11 @@ end architecture dataflow;
 | 1 | 1 | 0 |  |  |  |
 | 1 | 1 | 1 |  |  |  |
 
-4. Link to your public EDA Playground example:
-
-   [https://www.edaplayground.com/...](https://www.edaplayground.com/...)
-
-
 ### Distributive laws
 
 1. Screenshot with simulated time waveforms; always display all inputs and outputs (inputs first):
 
-   ![Screenshot example](Images/basicgates_waveform.png)
+   ![Screenshot example](images/basicgates_waveform.png)
 
 2. Link to your public EDA Playground example:
 
