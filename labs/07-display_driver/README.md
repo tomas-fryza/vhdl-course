@@ -1,25 +1,27 @@
 # Lab 7: Driver for multiple seven-segment displays
 
+<!--
 ![Logo](../../logolink_eng.jpg)
 <p align="center">
   The Study of Modern and Developing Engineering BUT<br>
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
+-->
 
-![Nexys A7 board](Images/nexys_a7_driver.jpg)
-
+![Nexys A7 board](images/nexys_a7_driver.jpg)
 
 ### Learning objectives
 
 After completing this lab you will be able to:
-  * Use several 7-segment displays
-  * Use previously created modules in a new design
-  * Understand how to use the multiplexer to switch between displays
+
+* Use several 7-segment displays
+* Use previously created modules in a new design
+* Understand how to use the multiplexer to switch between displays
 
 In this laboratory exercise, you will study the creation of a sequential circuit for multiplexing 7-segment displays. This allows you to display four or even eight-digit values, including the decimal point on the display.
 
-
 ### Table of contents
+
 * [Preparation tasks](#preparation)
 * [Part 1: Synchronize Git and create a new folder](#part1)
 * [Part 2: VHDL code for display driver](#part2)
@@ -28,8 +30,8 @@ In this laboratory exercise, you will study the creation of a sequential circuit
 * [Lab assignment](#assignment)
 * [References](#references)
 
-
 <a name="preparation"></a>
+
 ## Preparation tasks (done before the lab at home)
 
 A common way to control multiple displays is to gradually switch between them. We control (connect to supply voltage) only one of the displays at a time, as can be seen [here](https://engineeringtutorial.com/seven-segment-display-working-principle/).
@@ -38,7 +40,7 @@ Due to the physiological properties of human vision, it is necessary that the ti
 
 1. See [schematic](https://github.com/tomas-fryza/Digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys board, find out the connection of 7-segment displays, and complete the signal timing to display four-digit value `3.142`.
 
-![Timing of seven-segment display](Images/wavedrom_7-segment.png)
+![Timing of seven-segment display](images/wavedrom_7-segment.png)
 
 > The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows:
 >
@@ -71,33 +73,33 @@ Due to the physiological properties of human vision, it is necessary that the ti
 }
 ```
 
-
 <a name="part1"></a>
+
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `Labs/07-display_driver` for this exercise.
-
+1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `labs/07-display_driver` for this exercise.
 
 <a name="part2"></a>
+
 ## Part 2: VHDL code for display driver
 
 Multiplexer or MUX is a digital switch. It allows to route binary information from several input lines or sources to one output line or channel.
 
-Perform the following steps to model the driver circuit.
+1. Perform the following steps to model the driver circuit.
 
-   1. Create a new Vivado RTL project `display_driver` in your `Labs/07-display_driver` working folder.
+   1. Create a new Vivado RTL project `display_driver` in your `labs/07-display_driver` working folder.
    2. Create a VHDL source file `driver_7seg_4digits` for the driver circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Driver for 7-segment display](https://www.edaplayground.com/x/3f_A) example and copy/paste the `design.vhd` code to your `driver_7seg_4digits.vhd` file.
    5. Copy source files of clock enable, binary counter, 7-segment decoder modules from previous labs to `display_driver/display_driver.srcs/sources_1/new/` folder and add them to the project.
    6. Complete the driver code according to the following block diagram.
 
-   ![Block diagram of 7-segment display driver](Images/schema_driver2.jpg)
+   ![Block diagram of 7-segment display driver](images/schema_driver2.jpg)
 
    7. Create a VHDL [simulation source](https://www.edaplayground.com/x/3f_A) `tb_driver_7seg_4digits`, complete the code, set conditions to display value `3.142` and run the simulation. Compare simulated timing diagram with yours in Preparation tasks. Verify the meaning of the constant `c_MAX` and reset generation process.
 
-
 <a name="part3"></a>
+
 ## Part 3: Top level VHDL code
 
 Perform the following steps to implement the 4-digit 7-segment display driver on the Nexys A7 board.
@@ -120,15 +122,15 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
    | `DP` | out | `std_logic` | Decimal point |
    | `AN` | out | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
 
-   3. Use [direct instantiation](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
+   3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
-```vhdl
-------------------------------------------------------------
--- Architecture body for top level
-------------------------------------------------------------
-architecture Behavioral of top is
+  ```vhdl
+  ------------------------------------------------------------
+  -- Architecture body for top level
+  ------------------------------------------------------------
+  architecture Behavioral of top is
     -- No internal signals
-begin
+  begin
 
     --------------------------------------------------------
     -- Instance (copy) of driver_7seg_4digits entity
@@ -148,38 +150,37 @@ begin
     -- Disconnect the top four digits of the 7-segment display
     AN(7 downto 4) <= b"1111";
 
-end architecture Behavioral;
-```
+  end architecture Behavioral;
+  ```
 
    4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
    5. Compile the project and download the generated bitstream `display_driver/display_driver.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the driver by toggling the switches and observing the display.
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
-   8. Use digital oscilloscope or logic analyser and display anode signals via Pmod ports. See [schematic](https://github.com/tomas-fryza/Digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
-
+   8. Use digital oscilloscope or logic analyser and display anode signals via Pmod ports. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
 ## Synchronize repositories
 
-Use [git commands](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
-
+Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 <a name="experiments"></a>
+
 ## Experiments on your own
 
 1. If you have the option, set slow motion video recording on your smartphone and watch the behavior of the seven-segment display:)
 2. Extend the duration of one symbol on the 7-segment display ie. generic `g_MAX` in `driver_7seg_4digit.vhd` file and experimentally determine the maximum value at which switching by the human eye is not yet observable.
 3. Design the structure of `driver_7seg_8digits` module, which controls all eight 7-segment displays.
 
-
 <a name="assignment"></a>
+
 ## Lab assignment
 
-*Prepare all parts of the assignment in Czech, Slovak or English, insert them in this [template](Assignment.md), export formatted output (not Markdown) [from HTML to PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF), and submit a single PDF file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next laboratory exercise.*
+*Copy the [assignment template](assignment.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
 
-*Vypracujte všechny části úkolu v českém, slovenském, nebo anglickém jazyce, vložte je do této [šablony](Assignment.md), exportujte formátovaný výstup (nikoli výpis v jazyce Markdown) [z HTML do PDF](https://github.com/tomas-fryza/Digital-electronics-1/wiki/Export-README-to-PDF) a odevzdejte jeden PDF soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
-
+*Vložte [šablonu úkolu](assignment.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
 
 <a name="references"></a>
+
 ## References
 
 1. Bharadwaj. [Seven Segment Display Working Principle](https://engineeringtutorial.com/seven-segment-display-working-principle/)

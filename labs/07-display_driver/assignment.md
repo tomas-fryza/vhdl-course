@@ -1,20 +1,8 @@
-# Lab 7: YOUR_FIRSTNAME FAMILYNAME
-
-Link to your `Digital-electronics-1` GitHub repository:
-
-   [https://github.com/...](https://github.com/...)
-
-
-### Preparation tasks
-
-1. Figure of timing diagram for displaying value `3.142`:
-
-   ![your figure]()
-
+# Lab 7: YOUR_FIRSTNAME LASTNAME
 
 ### Display driver
 
-1. Listing of VHDL code of the completed process `p_mux` with syntax highlighting:
+1. Listing of VHDL code of the completed process `p_mux`. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
 
 ```vhdl
     --------------------------------------------------------
@@ -51,13 +39,12 @@ Link to your `Digital-electronics-1` GitHub repository:
     end process p_mux;
 ```
 
-2. Screenshot with simulated time waveforms; always display all inputs and outputs (inputs first). The full functionality of the entity must be verified:
+2. Screenshot with simulated time waveforms. Test reset as well. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
 
    ![your figure]()
 
-
 ### Eight-digit driver
 
-1. Image of the driver schematic. The image can be drawn on a computer or by hand. Always name all inputs, outputs, components and internal signals!
+1. Image of the 8-digit driver's block schematic. The image can be drawn on a computer or by hand. Always name all inputs, outputs, components and internal signals!
 
    ![your figure]()
