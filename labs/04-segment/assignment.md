@@ -23,7 +23,7 @@
     end process p_stimulus;
 ```
 
-2. Screenshot with simulated time waveforms; always display all inputs and outputs (inputs first):
+2. Screenshot with simulated time waveforms. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
 
    ![your figure]()
 
