@@ -58,7 +58,7 @@ The Nexys A7 board provides five push buttons for user applications.
 
 ## Part 1: Synchronize repositories and create a new folder
 
-Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `labs/06-counter` for this laboratory exercise.
+1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `labs/06-counter` for this laboratory exercise.
 
 <a name="part2"></a>
 
