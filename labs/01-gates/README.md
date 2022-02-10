@@ -61,6 +61,13 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 1. Run Git Bash (Windows), Terminal (Linux), or your favorite file manager, and create your own home folder inside `Documents`. *Important: To avoid future problems, never use national characters (such as éščřèêö, ...) and spaces in folder- and file-names.*
 
+   > Useful bash commands are:
+   > `cd` - Change working directory
+   > `mkdir` - Create directory
+   > `ls` - List information about files in the current directory
+   > `pwd` - Print the name of the current working directory
+   >
+
    ```bash
    ## Windows Git Bash:
    $ cd d:/Documents/
@@ -84,21 +91,28 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
    LICENSE  README.md
    ```
 
-3. Download `docs` folder from [this repository](https://github.com/tomas-fryza/digital-electronics-1) and copy them to your `digital-electronics-1` local repository.
-
-   ```bash
-   ## Windows Git Bash or Linux:
-   $ ls
-   docs  LICENSE  README.md
-   ```
-
-4. Create a new working folder `labs/01-gates` for this exercise.
+3. Create a new working folder `labs/01-gates` for this exercise.
 
    ```bash
    ## Windows Git Bash or Linux:
    $ mkdir labs
    $ cd labs/
    $ mkdir 01-gates
+   ```
+
+4. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `assignment.md` in your `labs/01-gates/` folder. Copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/01-gates/assignment.md) to your `assignment.md` text file.
+
+5. Synchronize the contents of your working folder with the local and remote repository. Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Note that, a detailed description of all git commands can be found [here](https://github.com/joshnh/Git-Commands). Check the repository at GitHub web page for changes.
+
+   ```bash
+   ## Windows Git Bash or Linux:
+   $ git status
+   $ git add -A
+   $ git status
+   $ git commit -m "[LAB] Creating 01-gates lab"
+   $ git status
+   $ git push
+   $ git status
    ```
 
 <a name="part3"></a>
@@ -148,23 +162,6 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
    | 1 | 0 | 1 |  |  |  |
    | 1 | 1 | 0 |  |  |  |
    | 1 | 1 | 1 |  |  |  |
-
-## Synchronize git
-
-When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
-
-Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Note that, a detailed description of all git commands can be found [here](https://github.com/joshnh/Git-Commands). Check the repository at GitHub web page for changes.
-
-   ```bash
-   ## Windows Git Bash or Linux:
-   $ git status
-   $ git add -A
-   $ git status
-   $ git commit -m "[LAB] Creating 01-gates lab"
-   $ git status
-   $ git push
-   $ git status
-   ```
 
 <a name="experiments"></a>
 
