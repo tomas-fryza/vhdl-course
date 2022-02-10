@@ -61,11 +61,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 1. Run Git Bash (Windows), Terminal (Linux), or your favorite file manager, and create your own home folder inside `Documents`. *Important: To avoid future problems, never use national characters (such as éščřèêö, ...) and spaces in folder- and file-names.*
 
-   > Useful bash commands are:
-   > `cd` - Change working directory
-   > `mkdir` - Create directory
-   > `ls` - List information about files in the current directory
-   > `pwd` - Print the name of the current working directory
+   > Useful bash commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory.
    >
 
    ```bash
