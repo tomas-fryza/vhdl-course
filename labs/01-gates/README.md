@@ -111,6 +111,8 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
    $ git status
    ```
 
+   ![git](images/git_basics.png)
+
 <a name="part3"></a>
 
 ## Part 3: EDA Playground
