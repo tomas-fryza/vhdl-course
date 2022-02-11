@@ -34,7 +34,7 @@ In this laboratory exercise, you will learn how to use the git versioning system
 
 ## Preparation tasks (done before the lab at home)
 
-1. Create your account on [GitHub](https://github.com/).
+1. If you don't have any, create your account on [GitHub](https://github.com/signup?source=login).
 2. If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
 3. For future synchronization of local folders with GitHub, download and install [git](https://git-scm.com/).
 
