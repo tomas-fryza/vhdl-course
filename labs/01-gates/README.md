@@ -78,7 +78,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
    $ cd your-name/
    ```
 
-2. With help of `git` command, clone a local copy of your public repository. (Important: The `clone` command is used only once to create a local version of the repository.)
+2. With help of `git` command, clone a local copy of your public repository. (Important: The `clone` command is used only once to create a local version of the repository. Later synchronization is performed differently.)
 
    ```bash
    ## Windows Git Bash or Linux:
