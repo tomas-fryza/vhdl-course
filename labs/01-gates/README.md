@@ -88,7 +88,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
    LICENSE  README.md
    ```
 
-3. Create a new working folder `labs/01-gates` for this exercise.
+3. Each computer exercise will be located in a separate folder in your repository, eg `01-gates` for the first exercise, `02-logic` for the second, `03-vivado` for the third, etc. Create a new working folder `labs/01-gates` for this exercise.
 
    ```bash
    ## Windows Git Bash or Linux:
