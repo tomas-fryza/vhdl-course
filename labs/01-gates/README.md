@@ -6,9 +6,9 @@
   The Study of Modern and Developing Engineering BUT<br>
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
--->
 
 ![Screenshot od EDA Playground](images/screenshot_eda.png)
+-->
 
 ### Learning objectives
 
@@ -66,6 +66,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
    ```bash
    ## Windows Git Bash:
+   ## Note that in the lab, home folders are located in Documents on disk D:
    $ cd d:/Documents/
    $ mkdir your-name
    $ cd your-name/
@@ -98,7 +99,10 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 4. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `assignment.md` in your `labs/01-gates/` folder. Copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/01-gates/assignment.md) to your `assignment.md` text file.
 
-5. Synchronize the contents of your working folder with the local and remote repository. Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Note that, a detailed description of all git commands can be found [here](https://github.com/joshnh/Git-Commands). Check the repository at GitHub web page for changes.
+5. Synchronize the contents of your working folder with the local and remote repository. Use git commands to add, commit, and push all local changes to your remote repository Check the repository at GitHub web page for changes.
+
+   > Useful git commands are: `status` - Get state of working directory and staging area. `add` - Add new and modified files to the staging area. `commit` - Record changes to the local repository. `push` - Push changes to remote repository. `pull` - Update local repository and working folder. Use  to add, commit, and push all local changes to your remote repository. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands). 
+   >
 
    ```bash
    ## Windows Git Bash or Linux:
