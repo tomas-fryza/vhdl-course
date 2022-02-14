@@ -97,7 +97,7 @@ When you start working, always synchronize the contents of your working folder a
    $ mkdir 02-logic
    ```
 
-3. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `assignment.md` in your labs/02-logic/ folder. Copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/02-logic/assignment.md) to your `assignment.md` text file.
+3. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `assignment.md` in your `labs/02-logic/` folder. Copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/02-logic/assignment.md) to your `assignment.md` text file.
 
 <a name="part2"></a>
 
