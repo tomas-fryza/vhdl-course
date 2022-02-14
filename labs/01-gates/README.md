@@ -80,7 +80,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 2. With help of `git` command, clone a local copy of your public repository.
 
-   > Useful git command is: `git clone` - Create a local copy of remote repository. This command is permorm just once; later synchronization is performed differently.
+   > Useful git command is: `git clone` - Create a local copy of remote repository. This command is executed just once; later synchronization between remote and local repositories is performed differently.
    >
 
    ```bash
