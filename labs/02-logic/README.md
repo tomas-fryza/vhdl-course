@@ -67,27 +67,27 @@ When you start working, always synchronize the contents of your working folder a
 
 1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
 
-  > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
-  >
+   > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
+   >
 
-  ```bash
-  ## Windows Git Bash:
-  $ cd d:/Documents/
-  $ cd your-name/
-  $ ls
-  digital-electronics-1/
-  $ cd digital-electronics-1/
-  $ git pull
+   ```bash
+   ## Windows Git Bash:
+   $ cd d:/Documents/
+   $ cd your-name/
+   $ ls
+   digital-electronics-1/
+   $ cd digital-electronics-1/
+   $ git pull
 
-  ## Linux:
-  $ cd
-  $ cd Documents/
-  $ cd your-name/
-  $ ls
-  digital-electronics-1/
-  $ cd digital-electronics-1/
-  $ git pull
-  ```
+   ## Linux:
+   $ cd
+   $ cd Documents/
+   $ cd your-name/
+   $ ls
+   digital-electronics-1/
+   $ cd digital-electronics-1/
+   $ git pull
+   ```
 
 2. Create a new working folder `labs/02-logic` for this exercise.
 
@@ -96,6 +96,8 @@ When you start working, always synchronize the contents of your working folder a
   $ cd labs/
   $ mkdir 02-logic
   ```
+
+3. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `assignment.md` in your labs/02-logic/ folder. Copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/02-logic/assignment.md) to your `assignment.md` text file.
 
 <a name="part2"></a>
 
