@@ -104,7 +104,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 5. Synchronize the contents of your working folder with the local and remote repository. Use git commands to add, commit, and push all local changes to your remote repository. Check GitHub web page for changes.
 
-   > Useful git commands are: `status` - Get state of working directory and staging area. `add` - Add new and modified files to the staging area. `commit` - Record changes to the local repository. `push` - Push changes to remote repository. `pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands). 
+   > Useful git commands are: `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands). 
    >
 
    ```bash
