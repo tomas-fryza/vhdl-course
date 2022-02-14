@@ -6,9 +6,9 @@
   The Study of Modern and Developing Engineering BUT<br>
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
--->
 
 ![Screenshot od EDA Playground](images/screenshot_eda.png)
+-->
 
 ### Learning objectives
 
@@ -66,6 +66,9 @@ The purpose of this laboratory exercise is to learn to use different ways of wri
 When you start working, always synchronize the contents of your working folder and local repository with remote version at GitHub. This way you are sure that you will not lose any of your changes.
 
 1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
+
+  > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
+  >
 
   ```bash
   ## Windows Git Bash:
