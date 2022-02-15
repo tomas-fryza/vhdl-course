@@ -148,7 +148,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
    >
    ```LaTeX
    \begin{align*}
-       f(c,b,a) =&~ \overline{b}\,a + \overline{c}\,\overline{b}\\
+       f(c,b,a)_{\textup{ORG}} =&~ \overline{b}\,a + \overline{c}\,\overline{b}\\
        f(c,b,a)_{\textup{NAND}} =&\\
        f(c,b,a)_{\textup{NOR}} =&\\
    \end{align*}
@@ -157,7 +157,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 3. According to the simulation, complete the table with logic values.
 
-   | **c** | **b** |**a** | **f(c,b,a)** | **f_NAND(c,b,a)** | **f_NOR(c,b,a)** |
+   | **c** | **b** |**a** | **f(c,b,a)_ORG** | **f(c,b,a)_NAND** | **f(c,b,a)_NOR** |
    | :-: | :-: | :-: | :-: | :-: | :-: |
    | 0 | 0 | 0 |  |  |  |
    | 0 | 0 | 1 |  |  |  |
