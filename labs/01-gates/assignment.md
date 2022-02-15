@@ -1,4 +1,4 @@
-# Lab 1: YOUR_FIRSTNAME LASTNAMEEE
+# Lab 1: YOUR_FIRSTNAME LASTNAME
 
 ### De Morgan's laws
 
