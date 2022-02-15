@@ -11,7 +11,7 @@
 ```vhdl
 architecture dataflow of demorgan is
 begin
-    f_o      <= -- WRITE YOUR CODE HERE
+    f_org_o  <= (not(b_i) and a_i) or (not(c_i) and not(b_i));
     f_nand_o <= -- WRITE YOUR CODE HERE
     f_nor_o  <= -- WRITE YOUR CODE HERE
 end architecture dataflow;
@@ -19,7 +19,7 @@ end architecture dataflow;
 
 3. Complete table with logic functions' values:
 
-| **c** | **b** |**a** | **f(c,b,a)** | **f_NAND(c,b,a)** | **f_NOR(c,b,a)** |
+| **c** | **b** |**a** | **f(c,b,a)_ORG** | **f(c,b,a)_NAND** | **f(c,b,a)_NOR** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | 0 | 0 | 0 |  |  |  |
 | 0 | 0 | 1 |  |  |  |
