@@ -22,7 +22,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 8. [Traffic light controller](labs/08-traffic_lights)
 9. [VHDL project: General instructions](labs/project)
 
-## List of examples
+## List of VHDL examples
 
 * [Basic gates in VHDL](https://www.edaplayground.com/x/5L92)
 * [Binary comparator](https://www.edaplayground.com/x/5uu3)
