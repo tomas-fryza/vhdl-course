@@ -154,3 +154,6 @@ Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Use
 4. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
 
 5. Digilent blog. [Creating and Programming our First FPGA Project Part 4](https://blog.digilentinc.com/creating-and-programming-our-first-fpga-project-part-4/)
+
+6. DesignSpark. [Implement a simple digital circuit through FPGA trainer board and in Xilinx Vivado IDE (VHDL)](https://www.rs-online.com/designspark/lab1-vhdl)
+ 
