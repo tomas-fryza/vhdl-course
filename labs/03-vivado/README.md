@@ -100,14 +100,14 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 ## Part 3: Multiplexer
 
-A multiplexer (MUX) is a device that has multiple inputs and a single line output. The select lines determine which input is connected to the output. Consider a circuit in which the 2-bit output f_o[1:0] has to be selected from four 2-bit inputs a_i[1:0], b_i[1:0], c_i[1:0], and d_i[1:0]. The circuit uses a 2-bit select input sel_i[1:0] and implements the following truth table.
+A multiplexer (MUX) is a device that has multiple inputs and a single line output. The select lines determine which input is connected to the output. Consider a circuit in which the 2-bit output `f_o[1:0]` has to be selected from four 2-bit inputs `a_i[1:0]`, `b_i[1:0]`, `c_i[1:0]`, and `d_i[1:0]`. The circuit uses a 2-bit select input `sel_i[1:0]` and implements the following truth table.
 
    | **Select sel_i[1:0]** | **Output f_o[1:0]** |
    | :-: | :-: |
-   | 0 0 | a_i[1:0] |
-   | 0 1 | b_i[1:0] |
-   | 1 0 | c_i[1:0] |
-   | 1 1 | d_i[1:0] |
+   | 0 0 | `a_i[1:0]` |
+   | 0 1 | `b_i[1:0]` |
+   | 1 0 | `c_i[1:0]` |
+   | 1 1 | `d_i[1:0]` |
 
    ![Circuit symbol for two-bit wide 4-to-1 multiplexer](images/mux_4to1.png)
 
