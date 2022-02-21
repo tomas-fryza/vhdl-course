@@ -8,8 +8,6 @@
 </p>
 -->
 
-![Screenshot of Vivado](images/screenshot_vivado.png)
-
 ### Learning objectives
 
 After completing this lab you will be able to:
@@ -46,32 +44,32 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
 
-  ```bash
-  ## Windows Git Bash:
-  $ cd d:/Documents/
-  $ cd your-name/
-  $ ls
-  digital-electronics-1/
-  $ cd digital-electronics-1/
-  $ git pull
+   ```bash
+   ## Windows Git Bash:
+   $ cd d:/Documents/
+   $ cd your-name/
+   $ ls
+   digital-electronics-1/
+   $ cd digital-electronics-1/
+   $ git pull
 
-  ## Linux:
-  $ cd
-  $ cd Documents/
-  $ cd your-name/
-  $ ls
-  digital-electronics-1/
-  $ cd digital-electronics-1/
-  $ git pull
-  ```
+   ## Linux:
+   $ cd
+   $ cd Documents/
+   $ cd your-name/
+   $ ls
+   digital-electronics-1/
+   $ cd digital-electronics-1/
+   $ git pull
+   ```
 
 2. Create a new working folder `labs/03-vivado` for this exercise.
 
-  ```bash
-  ## Windows Git Bash or Linux:
-  $ cd labs/
-  $ mkdir 03-vivado
-  ```
+   ```bash
+   ## Windows Git Bash or Linux:
+   $ cd labs/
+   $ mkdir 03-vivado
+   ```
 
 <a name="part2"></a>
 
@@ -89,10 +87,10 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 4. Use **Flow** > **Run Simulation** > **Run Behavioral Simulation** and run Vivado simulator.
 
-  > **Note:** To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation**.
-  >
-  > ![Reset simulation](images/screenshot_vivado_reset_simul.png)
-  >
+   > To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation**.
+   >
+   > ![Reset simulation](images/screenshot_vivado_reset_simul.png)
+   >
 
 5. The Nexys A7 board have hardwired connections between FPGA chip and the switches and LEDs. To use these devices it is necessary to include in your project the correct pin assignments. Copy/paste constraints from [Nexys-A7-50T-Master.xdc](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc) to `nexys-a7-50t.xdc` file. The pin assignments in the file are useful only if the pin names that appear in this file are exactly the same as the port names used in your VHDL entity.
 
@@ -104,14 +102,14 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 A multiplexer (MUX) is a device that has multiple inputs and a single line output. The select lines determine which input is connected to the output. Consider a circuit in which the 2-bit output f_o[1:0] has to be selected from four 2-bit inputs a_i[1:0], b_i[1:0], c_i[1:0], and d_i[1:0]. The circuit uses a 2-bit select input sel_i[1:0] and implements the following truth table.
 
-  | **Select sel_i[1:0]** | **Output f_o[1:0]** |
-  | :-: | :-: |
-  | 0 0 | a_i[1:0] |
-  | 0 1 | b_i[1:0] |
-  | 1 0 | c_i[1:0] |
-  | 1 1 | d_i[1:0] |
+   | **Select sel_i[1:0]** | **Output f_o[1:0]** |
+   | :-: | :-: |
+   | 0 0 | a_i[1:0] |
+   | 0 1 | b_i[1:0] |
+   | 1 0 | c_i[1:0] |
+   | 1 1 | d_i[1:0] |
 
-  ![Circuit symbol for two-bit wide 4-to-1 multiplexer](images/mux_4to1.png)
+   ![Circuit symbol for two-bit wide 4-to-1 multiplexer](images/mux_4to1.png)
 
 1. Perform the following steps to implement the two-bit wide 4-to-1 multiplexer. Take screenshots and make your own README tutorial on how to create a Vivado project, how to run a simulation and how to program an FPGA on board Nexys A7.
 
@@ -122,6 +120,8 @@ A multiplexer (MUX) is a device that has multiple inputs and a single line outpu
    5. Make pin assignments for the Nexys A7 board in `nexys-a7-50t.xdc`: connect mux select inputs sel_i[1:0] to slide switches SW[15:14] and use switches SW[7:0] to provide the four inputs a_i[1:0] to d_i[1:0]. Connect output f_o[1:0] to LEDs LD[15:14].
    6. Compile the project and download the generated bitstream `multiplexer/multiplexer.runs/impl_1/mux_2bit_4to1.bit` into the FPGA chip.
    7. Test the functionality of the two-bit wide 4-to-1 multiplexer by toggling the switches and observing the LEDs.
+
+   ![Screenshot of Vivado](images/screenshot_vivado.png)
 
 ## Synchronize repositories
 
