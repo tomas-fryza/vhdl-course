@@ -36,9 +36,9 @@ The purpose of this laboratory exercise is to learn to use Vivado to create a si
 
 The Nexys A7 board provides sixteen switches and LEDs. The switches can be used to provide inputs, and the LEDs can be used as output devices.
 
-1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of slide switches and LEDs, ie to which FPGA pins are connected and how.
+1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of slide switches and LEDs, ie to which FPGA pins are connected and how. Draw the schematic.
 
-2. **Optional task:** Follow the instructions for [Windows](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-Install-Vivado-2020.2-on-Windows) or [Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-Install-Vivado-2020.1-on-Linux), download and install Vivado Design Suite. See known issues and recommendations at the end of [this file](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-Install-Vivado-2020.2-on-Windows).
+2. **Optional task:** Follow the instructions for [Windows or Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions), download and install Vivado Design Suite.
 
 <a name="part1"></a>
 
