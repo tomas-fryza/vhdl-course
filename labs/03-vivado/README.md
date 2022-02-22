@@ -117,7 +117,7 @@ A multiplexer (MUX) is a device that has multiple inputs and a single line outpu
    2. Create a VHDL source file `mux_2bit_4to1` for the two-bit wide 4-to-1 multiplexer and define an entity `mux_2bit_4to1`.
    3. Define a VHDL architecture using the [conditional signal assignment](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) `when`, `else` (outside process).
    4. Create a VHDL testbench `tb_mux_2bit_4to1` and simulate the circuit.
-   5. Make pin assignments for the Nexys A7 board in `nexys-a7-50t.xdc`: connect mux select inputs sel_i[1:0] to slide switches SW[15:14] and use switches SW[7:0] to provide the four inputs a_i[1:0] to d_i[1:0]. Connect output f_o[1:0] to LEDs LD[15:14].
+   5. Make pin assignments for the Nexys A7 board in `nexys-a7-50t.xdc`: connect mux select inputs `sel_i[1:0]` to slide switches `SW[15:14]` and use switches `SW[7:0]` to provide the four inputs `a_i[1:0]` to `d_i[1:0]`. Connect output `f_o[1:0]` to LEDs `LD[15:14]`.
    6. Compile the project and download the generated bitstream `multiplexer/multiplexer.runs/impl_1/mux_2bit_4to1.bit` into the FPGA chip.
    7. Test the functionality of the two-bit wide 4-to-1 multiplexer by toggling the switches and observing the LEDs.
 
