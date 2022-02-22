@@ -172,23 +172,26 @@ The message is displayed to the console when the condition is NOT met, therefore
     --------------------------------------------------------------------
     p_stimulus : process
     begin
-      -- Report a note at the beginning of stimulus process
-      report "Stimulus process started" severity note;
+        -- Report a note at the beginning of stimulus process
+        report "Stimulus process started" severity note;
 
-      -- First test case
-      s_b <= "00"; s_a <= "00"; wait for 100 ns;
-      -- Expected output
-      assert ((s_B_greater_A = '0') and
-              (s_B_equals_A  = '1') and
-              (s_B_less_A    = '0'))
-      -- If false, then report an error
-      report "Input combination 00, 00 FAILED" severity error;
+        -- First test case ...
+        s_b <= "00"; s_a <= "00"; wait for 100 ns;
+        -- ... and its expected outputs
+        assert ((s_B_greater_A = '0') and
+                (s_B_equals_A  = '1') and
+                (s_B_less_A    = '0'))
+        -- If false, then report an error
+        -- If true, then do not report anything
+        report "Input combination 00, 00 FAILED" severity error;
 
-      -- WRITE OTHER TEST CASES HERE
 
-      -- Report a note at the end of stimulus process
-      report "Stimulus process finished" severity note;
-      wait;
+        -- WRITE OTHER TEST CASES HERE
+
+
+        -- Report a note at the end of stimulus process
+        report "Stimulus process finished" severity note;
+        wait; -- Data generation process is suspended forever
     end process p_stimulus;
    ```
 
