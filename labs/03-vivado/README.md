@@ -49,6 +49,8 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 2. Create a new working folder `labs/03-vivado` for this exercise.
 
+3. Create a new file `labs/03-vivado/assignment.md` and copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/03-vivado/assignment.md) to your `assignment.md` into it.
+
 <a name="part2"></a>
 
 ## Part 2: Project creation in Vivado
