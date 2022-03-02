@@ -115,6 +115,7 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
       | `SW` | in  | `std_logic_vector(3 downto 0)` | Input binary data |
+      | `LED` | out | `std_logic_vector(7 downto 0)` | LED indicators |
       | `CA` | out | `std_logic` | Cathod A |
       | `CB` | out | `std_logic` | Cathod B |
       | `CC` | out | `std_logic` | Cathod C |
@@ -123,7 +124,6 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
       | `CF` | out | `std_logic` | Cathod F |
       | `CG` | out | `std_logic` | Cathod G |
       | `AN` | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
-      | `LED` | out | `std_logic_vector(7 downto 0)` | LED indicators |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
