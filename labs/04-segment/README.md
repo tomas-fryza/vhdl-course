@@ -112,18 +112,18 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
    1. Create a new VHDL design source `top` in your project.
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
-   | **Port name** | **Direction** | **Type** | **Description** |
-   | :-: | :-: | :-- | :-- |
-   | `SW` | in  | `std_logic_vector(3 downto 0)` | Input binary data |
-   | `CA` | out | `std_logic` | Cathod A |
-   | `CB` | out | `std_logic` | Cathod B |
-   | `CC` | out | `std_logic` | Cathod C |
-   | `CD` | out | `std_logic` | Cathod D |
-   | `CE` | out | `std_logic` | Cathod E |
-   | `CF` | out | `std_logic` | Cathod F |
-   | `CG` | out | `std_logic` | Cathod G |
-   | `AN` | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
-   | `LED` | out | `std_logic_vector(7 downto 0)` | LED indicators |
+      | **Port name** | **Direction** | **Type** | **Description** |
+      | :-: | :-: | :-- | :-- |
+      | `SW` | in  | `std_logic_vector(3 downto 0)` | Input binary data |
+      | `CA` | out | `std_logic` | Cathod A |
+      | `CB` | out | `std_logic` | Cathod B |
+      | `CC` | out | `std_logic` | Cathod C |
+      | `CD` | out | `std_logic` | Cathod D |
+      | `CE` | out | `std_logic` | Cathod E |
+      | `CF` | out | `std_logic` | Cathod F |
+      | `CG` | out | `std_logic` | Cathod G |
+      | `AN` | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
+      | `LED` | out | `std_logic_vector(7 downto 0)` | LED indicators |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
@@ -192,24 +192,24 @@ When you finish working, always synchronize the contents of your working folder 
 
 1. Complete the truth table for LEDs according to comments in source code above.
 
-    | **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
-    | :-: | :-: | :-: | :-: | :-: | :-: |
-    | 0 | 0000 |  |  |  |  |
-    | 1 | 0001 |  |  |  |  |
-    | 2 |      |  |  |  |  |
-    | 3 |      |  |  |  |  |
-    | 4 |      |  |  |  |  |
-    | 5 |      |  |  |  |  |
-    | 6 |      |  |  |  |  |
-    | 7 |      |  |  |  |  |
-    | 8 | 1000 |  |  |  |  |
-    | 9 |      |  |  |  |  |
-    | A |      |  |  |  |  |
-    | b |      |  |  |  |  |
-    | C |      |  |  |  |  |
-    | d |      |  |  |  |  |
-    | E | 1110 |  |  |  |  |
-    | F | 1111 |  |  |  |  |
+   | **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
+   | :-: | :-: | :-: | :-: | :-: | :-: |
+   | 0 | 0000 |  |  |  |  |
+   | 1 | 0001 |  |  |  |  |
+   | 2 |      |  |  |  |  |
+   | 3 |      |  |  |  |  |
+   | 4 |      |  |  |  |  |
+   | 5 |      |  |  |  |  |
+   | 6 |      |  |  |  |  |
+   | 7 |      |  |  |  |  |
+   | 8 | 1000 |  |  |  |  |
+   | 9 |      |  |  |  |  |
+   | A |      |  |  |  |  |
+   | b |      |  |  |  |  |
+   | C |      |  |  |  |  |
+   | d |      |  |  |  |  |
+   | E | 1110 |  |  |  |  |
+   | F | 1111 |  |  |  |  |
 
 2. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not` and write logic functions for LED(7:4) indicators in the simplest way possible.
 
