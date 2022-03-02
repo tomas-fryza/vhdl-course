@@ -4,13 +4,11 @@
 
 The purpose of this laboratory exercise is to design an adder. It is a type of digital circuit that performs the operation of additions of two numbers.
 
-
 #### Materials
 
-You will use slide switches on the CPLD expansion board ([schematic](../../Docs/cpld_expansion.pdf)) as inputs and 7-segment display on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../Docs/xc2c256_cpld.pdf), [manual](../../Docs/coolrunner-ii_rm.pdf), [schematic](../../Docs/coolrunner-ii_sch.pdf)) as output device.
+You will use slide switches on the CPLD expansion board ([schematic](../../docs/cpld_expansion.pdf)) as inputs and 7-segment display on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../docs/xc2c256_cpld.pdf), [manual](../../docs/coolrunner-ii_rm.pdf), [schematic](../../docs/coolrunner-ii_sch.pdf)) as output device.
 
-![CoolRunner-II CPLD starter board](Images/coolrunner_expansion_board.jpg)
-
+![CoolRunner-II CPLD starter board](images/coolrunner_expansion_board.jpg)
 
 ## 1 Preparation tasks (done before the lab at home)
 
@@ -38,8 +36,7 @@ You will use slide switches on the CPLD expansion board ([schematic](../../Docs/
 
 3. Find the relationship between half adder and full adder logic diagrams.
 
-4. See schematic of the [CPLD expansion board](../../Docs/cpld_expansion.pdf) and find out the connection of LEDs, push buttons, and slide switches.
-
+4. See schematic of the [CPLD expansion board](../../docs/cpld_expansion.pdf) and find out the connection of LEDs, push buttons, and slide switches.
 
 ## 2 Synchronize Git and create a new folder
 
@@ -48,16 +45,16 @@ You will use slide switches on the CPLD expansion board ([schematic](../../Docs/
     ```bash
     $ pwd
     /home/lab661
-    $ cd Documents/your-name/Digital-electronics-1/
+    $ cd Documents/your-name/digital-electronics-1/
     $ pwd
-    /home/lab661/Documents/your-name/Digital-electronics-1
+    /home/lab661/Documents/your-name/digital-electronics-1
     $ git pull
     ```
 
-2. Create a new folder `Labs/04-adder`
+2. Create a new folder `labs/04-adder`
 
     ```bash
-    $ cd Labs/
+    $ cd labs/
     $ mkdir 04-adder
     $ cd 04-adder/
     $ touch README.md
@@ -65,10 +62,9 @@ You will use slide switches on the CPLD expansion board ([schematic](../../Docs/
     README.md
     ```
 
-
 ## 3 VHDL code for half adder
 
-1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE) titled `binary_adder` for XC2C256-TQ144 CPLD device. Make sure the project location is `/home/lab661/Documents/your-name/Digital-electronics-1/Labs/04-adder`, ie in **your** local folder.
+1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE) titled `binary_adder` for XC2C256-TQ144 CPLD device. Make sure the project location is `/home/lab661/Documents/your-name/digital-electronics-1/Labs/04-adder`, ie in **your** local folder.
 
 2. Create a new source file **Project > New Source... > VHDL Module**, name it `half_adder` and copy/paste the following code template.
 
@@ -111,10 +107,9 @@ end architecture Behavioral;
 
 3. Use low-level gates `and`, `or`, `not`, etc. and write logic functions for Carry and Sum. Save all files in menu **File > Save All**.
 
-
 ## 4 VHDL code for full adder
 
-1.  Create a new source file **Project > New Source... > VHDL Module**, name it `full_adder` and copy/paste the following code.
+1. Create a new source file **Project > New Source... > VHDL Module**, name it `full_adder` and copy/paste the following code.
 
 ```vhdl
 ------------------------------------------------------------------------
@@ -178,10 +173,9 @@ end architecture Behavioral;
     > If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **full_adder - Behavioral (full_adder.vhd)** line and select **Set as Top Module**.
     >
 
-3. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://github.com/tomas-fryza/Digital-electronics-1/wiki/How-to-Simulate-Your-Design-in-ISE).
+3. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-Simulate-Your-Design-in-ISE).
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
-
 
 ## 5 Top level implementation of 4-bit adder
 
@@ -287,7 +281,6 @@ end architecture Behavioral;
 
     Create a new constraints file with file name `cpld_board` and copy/paste the following code. The file contains pin assignments of input/output devices on CPLD expansion board. Again, comment/uncomment all inputs/outputs you need in this top level design.
 
-
 ```bash
 #-----------------------------------------------------------------------
 #
@@ -368,7 +361,6 @@ end architecture Behavioral;
 
 5. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
 
-
 ## 6 Clean project and synchronize git
 
 1. In Xilinx ISE, clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
@@ -376,16 +368,16 @@ end architecture Behavioral;
     > **Warning:** In any file manager, make sure the project folder does not contain any **large** (gigabyte) files. These can be caused by incorrect simulation in ISim. Delete such files.
     >
 
-2. Use `cd ..` command in Linux terminal and change working directory to `Digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
+2. Use `cd ..` command in Linux terminal and change working directory to `digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
     ```bash
     $ pwd
-    /home/lab661/Documents/your-name/Digital-electronics-1/Labs/04-adder
+    /home/lab661/Documents/your-name/digital-electronics-1/Labs/04-adder
 
     $ cd ..
     $ cd ..
     $ pwd
-    /home/lab661/Documents/your-name/Digital-electronics-1
+    /home/lab661/Documents/your-name/digital-electronics-1
 
     $ git status
     $ git add <your-modified-files>
@@ -395,7 +387,6 @@ end architecture Behavioral;
     $ git push
     $ git status
     ```
-
 
 ## Experiments on your own
 
