@@ -178,6 +178,8 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
 
       ![Nexys A7 board](images/nexys_a7_segment.jpg)
 
+   7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
+
 ## Synchronize repositories
 
 When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
