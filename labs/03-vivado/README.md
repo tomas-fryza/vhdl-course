@@ -110,11 +110,12 @@ A multiplexer (MUX) is a device that has multiple inputs and a single line outpu
 
    1. Create a new Vivado RTL project `multiplexer` in your `labs/03-vivado` working folder.
    2. Create a VHDL source file `mux_3bit_4to1` for the three-bit wide 4-to-1 multiplexer and define an entity `mux_3bit_4to1`.
-   3. Define a VHDL architecture using the [conditional signal assignment](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) `when`, `else` (outside process).
-   4. Create a VHDL testbench `tb_mux_3bit_4to1` and simulate the circuit.
-   5. Make pin assignments for the Nexys A7 board in `nexys-a7-50t.xdc`.
-   6. Compile the project and download the generated bitstream `YOUR_FOLDER/multiplexer/multiplexer.runs/impl_1/mux_3bit_4to1.bit` into the FPGA chip.
-   7. Test the functionality by toggling the switches and observing the LEDs.
+   3. Choose default board: `Nexys A7-50T`.
+   4. Define a VHDL architecture using the [conditional signal assignment](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) `when`, `else` (outside process).
+   5. Create a VHDL testbench `tb_mux_3bit_4to1` and simulate the circuit.
+   6. Make pin assignments for the Nexys A7 board in `nexys-a7-50t.xdc`.
+   7. Compile the project and download the generated bitstream `YOUR_FOLDER/multiplexer/multiplexer.runs/impl_1/mux_3bit_4to1.bit` into the FPGA chip.
+   8. Test the functionality by toggling the switches and observing the LEDs.
 
 <!--
    ![Screenshot of Vivado](images/screenshot_vivado.png)
