@@ -156,16 +156,16 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
             -- Experiments on your own: LED(7:4) indicators
 
             -- Turn LED(4) on if input value is equal to 0, ie "0000"
-            -- WRITE YOUR CODE HERE
+            -- LED(4) <= `0` when WRITE YOUR CODE HERE
 
             -- Turn LED(5) on if input value is greater than "1001", ie 10, 11, 12, ...
-            -- WRITE YOUR CODE HERE
+            -- LED(5) <= WRITE YOUR CODE HERE
 
             -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
-            -- WRITE YOUR CODE HERE
+            -- LED(6) <= WRITE YOUR CODE HERE
 
             -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
-            -- WRITE YOUR CODE HERE
+            -- LED(7) <= WRITE YOUR CODE HERE
 
         end architecture Behavioral;
         ```
