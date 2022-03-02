@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -o "/home/lab661/Documents/fryza/Digital-electronics-1/Labs/04-adder/binary_adder/full_adder_tb00_isim_beh.exe" -prj "/home/lab661/Documents/fryza/Digital-electronics-1/Labs/04-adder/binary_adder/full_adder_tb00_beh.prj" "work.full_adder_tb00" 
