@@ -133,7 +133,6 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
         ------------------------------------------------------------------------
         architecture Behavioral of top is
         begin
-
             --------------------------------------------------------------------
             -- Instance (copy) of hex_7seg entity
             hex2seg : entity work.hex_7seg
