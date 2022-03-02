@@ -8,8 +8,6 @@
 </p>
 -->
 
-![Nexys A7 board](images/nexys_a7_segment.jpg)
-
 ### Learning objectives
 
 After completing this lab you will be able to:
@@ -36,7 +34,7 @@ The purpose of this laboratory exercise is to design a 7-segment display decoder
 
 The Nexys A7 board provides two four-digit common anode seven-segment LED displays (configured to behave like a single eight-digit display).
 
-1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how.
+1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how. Draw the schematic with 7-segment displays.
 
 2. Complete the decoder truth table for **common anode** 7-segment display.
 
@@ -59,16 +57,23 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
    | E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
    | F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
 
-   ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](images/7-Segment-Display-Number-Formation-Segment-Contol.png)
-
-    > The image above was used from website: [How Seven Segment Display Works & Interface it with Arduino](https://lastminuteengineers.com/seven-segment-arduino-tutorial/).
-    >
+   > ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](images/7-Segment-Display-Number-Formation-Segment-Contol.png)
+   >
+   > The image above was used from website: [How Seven Segment Display Works & Interface it with Arduino](https://lastminuteengineers.com/seven-segment-arduino-tutorial/).
+   >
 
 <a name="part1"></a>
 
 ## Part 1: Synchronize repositories and create a new folder
 
-1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `labs/04-segment` for this laboratory exercise.
+1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
+
+   > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
+   >
+
+2. Create a new working folder `labs/04-segment` for this laboratory exercise.
+
+3. Create a new file `labs/04-segment/assignment.md` and copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/04-segment/assignment.md) into it.
 
 <a name="part2"></a>
 
@@ -83,65 +88,16 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
-   | `hex_i` | input   | `std_logic_vector(4 - 1 downto 0)` | Input binary data |
-   | `seg_o` | output  | `std_logic_vector(7 - 1 downto 0)` | Cathode values in the order A, B, C, D, E, F, G |
+   | `hex_i` | input   | `std_logic_vector(3 downto 0)` | Input binary data |
+   | `seg_o` | output  | `std_logic_vector(6 downto 0)` | Cathode values in the order A, B, C, D, E, F, G |
 
    ![Vivado Port definition](images/vivado_io_ports.png)
 
-   5. Use [combinational process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes) and define an architecture of the decoder. Note that, the process below is "executed" only when `hex_i` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) can be used.
+   5. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu). Use [combinational process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `hex_i` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) can be used.
 
-    ```vhdl
-    ------------------------------------------------------------------------
-    -- Architecture body for seven-segment display decoder
-    ------------------------------------------------------------------------
-    architecture Behavioral of hex_7seg is
-    begin
+   6. Create a VHDL simulation source `tb_hex_7seg`, copy/paste the [template](https://www.edaplayground.com/x/Vdpu), complete all test cases, and verify the functionality of your decoder.
 
-        --------------------------------------------------------------------
-        -- p_7seg_decoder:
-        -- A combinational process for 7-segment display (Common Anode)
-        -- decoder. Any time "hex_i" is changed, the process is "executed".
-        -- Output pin seg_o(6) controls segment A, seg_o(5) segment B, etc.
-        --       segment A
-        --        | segment B
-        --        |  | segment C
-        --        +-+|  |   ...   segment G
-        --          ||+-+          |
-        --          |||            |
-        -- seg_o = "0000001"-------+
-        --------------------------------------------------------------------
-        p_7seg_decoder : process(hex_i)
-        begin
-            case hex_i is
-                when "0000" =>
-                    seg_o <= "0000001";     -- 0
-                when "0001" =>
-                    seg_o <= "1001111";     -- 1
-
-
-                -- WRITE YOUR CODE HERE
-                -- 2, 3, 4, 5, 6, 7
-
-
-                when "1000" =>
-                    seg_o <= "0000000";     -- 8
-
-
-                -- WRITE YOUR CODE HERE
-                -- 9, A, b, C, d
-
-
-                when "1110" =>
-                    seg_o <= "0110000";     -- E
-                when others =>
-                    seg_o <= "0111000";     -- F
-            end case;
-        end process p_7seg_decoder;
-
-    end architecture Behavioral;
-    ```
-
-   6. Create a VHDL [simulation source](https://www.edaplayground.com/x/Vdpu) `tb_hex_7seg` and verify the functionality of your decoder.
+   7. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
 <a name="part3"></a>
 
@@ -158,7 +114,7 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
-   | `SW` | in  | `std_logic_vector(4 - 1 downto 0)` | Input binary data |
+   | `SW` | in  | `std_logic_vector(3 downto 0)` | Input binary data |
    | `CA` | out | `std_logic` | Cathod A |
    | `CB` | out | `std_logic` | Cathod B |
    | `CC` | out | `std_logic` | Cathod C |
@@ -166,71 +122,75 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
    | `CE` | out | `std_logic` | Cathod E |
    | `CF` | out | `std_logic` | Cathod F |
    | `CG` | out | `std_logic` | Cathod G |
-   | `AN` | out | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
-   | `LED` | out | `std_logic_vector(8 - 1 downto 0)` | LED indicators |
+   | `AN` | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
+   | `LED` | out | `std_logic_vector(7 downto 0)` | LED indicators |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
-    ```vhdl
-    ------------------------------------------------------------------------
-    -- Architecture body for top level
-    ------------------------------------------------------------------------
-    architecture Behavioral of top is
-    begin
+        ```vhdl
+        ------------------------------------------------------------------------
+        -- Architecture body for top level
+        ------------------------------------------------------------------------
+        architecture Behavioral of top is
+        begin
 
-        --------------------------------------------------------------------
-        -- Instance (copy) of hex_7seg entity
-        hex2seg : entity work.hex_7seg
-            port map(
-                hex_i    => SW,
-                seg_o(6) => CA,
+            --------------------------------------------------------------------
+            -- Instance (copy) of hex_7seg entity
+            hex2seg : entity work.hex_7seg
+                port map(
+                    hex_i    => SW,
+                    seg_o(6) => CA,
+                    seg_o(5) => CB,
 
-                -- WRITE YOUR CODE HERE
+                    -- WRITE YOUR CODE HERE
 
-                seg_o(0) => CG
-            );
+                    seg_o(0) => CG
+                );
 
-        -- Connect one common anode to 3.3V
-        AN <= b"1111_0111";
+            -- Connect one common anode to 3.3V
+            AN <= b"1111_0111";
 
-        -- Display input value on LEDs
-        LED(3 downto 0) <= SW;
+            -- Display input value on LEDs
+            LED(3 downto 0) <= SW;
 
+            --------------------------------------------------------------------
+            -- Experiments on your own: LED(7:4) indicators
 
-        --------------------------------------------------------------------
-        -- Experiments on your own: LED(7:4) indicators
+            -- Turn LED(4) on if input value is equal to 0, ie "0000"
+            -- WRITE YOUR CODE HERE
 
-        -- Turn LED(4) on if input value is equal to 0, ie "0000"
-        -- WRITE YOUR CODE HERE
+            -- Turn LED(5) on if input value is greater than "1001", ie 10, 11, 12, ...
+            -- WRITE YOUR CODE HERE
 
-        -- Turn LED(5) on if input value is greater than "1001", ie 10, 11, 12, ...
-        -- WRITE YOUR CODE HERE
+            -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
+            -- WRITE YOUR CODE HERE
 
-        -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
-        -- WRITE YOUR CODE HERE
+            -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
+            -- WRITE YOUR CODE HERE
 
-        -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
-        -- WRITE YOUR CODE HERE
+        end architecture Behavioral;
+        ```
 
-    end architecture Behavioral;
-    ```
-
-   ![Top level](images/top_schema_hex_7seg.jpg)
+        ![Top level](images/top_schema_hex_7seg.jpg)
 
    4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
-   5. Compile the project and download the generated bitstream `display/display.runs/impl_1/top.bit` into the FPGA chip.
+   5. Compile the project and download the generated bitstream `YOUR_FOLDER/display/display.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the seven-segment display decoder by toggling the switches and observing the display and LEDs. Change the binary value `AN <= b"0111_1111"` and observe its effect on the display selection.
-   7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
+
+      ![Nexys A7 board](images/nexys_a7_segment.jpg)
 
 ## Synchronize repositories
 
-Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
+When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
+
+   > Useful git commands are: `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
+   >
 
 <a name="experiments"></a>
 
 ## Experiments on your own
 
-1. Complete the truth table for LEDs according to comments in source code above. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not` and write logic functions for LED(7:4) indicators as simple as possible.
+1. Complete the truth table for LEDs according to comments in source code above.
 
     | **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
     | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -250,6 +210,8 @@ Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Use
     | d |      |  |  |  |  |
     | E | 1110 |  |  |  |  |
     | F | 1111 |  |  |  |  |
+
+2. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not` and write logic functions for LED(7:4) indicators in the simplest way possible.
 
 <a name="assignment"></a>
 
