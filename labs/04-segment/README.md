@@ -86,12 +86,12 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
    3. Choose default board: `Nexys A7-50T`.
    4. Use **Define Module** dialog and define I/O ports of entity `hex_7seg` as follows.
 
-   | **Port name** | **Direction** | **Type** | **Description** |
-   | :-: | :-: | :-- | :-- |
-   | `hex_i` | input   | `std_logic_vector(3 downto 0)` | Input binary data |
-   | `seg_o` | output  | `std_logic_vector(6 downto 0)` | Cathode values in the order A, B, C, D, E, F, G |
+      | **Port name** | **Direction** | **Type** | **Description** |
+      | :-: | :-: | :-- | :-- |
+      | `hex_i` | input   | `std_logic_vector(3 downto 0)` | Input binary data |
+      | `seg_o` | output  | `std_logic_vector(6 downto 0)` | Cathode values in the order A, B, C, D, E, F, G |
 
-   ![Vivado Port definition](images/vivado_io_ports.png)
+      ![Vivado Port definition](images/vivado_io_ports.png)
 
    5. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu). Use [combinational process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `hex_i` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) can be used.
 
