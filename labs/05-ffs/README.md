@@ -339,6 +339,8 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
                 clk   => BTNU,
                 rst   => BTNC,
                 -- WRITE YOUR CODE HERE
+
+                q_bar => '0'
             );
 
         d_ff_1 : entity work.d_ff_rst
@@ -346,6 +348,8 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
                 clk   => BTNU,
                 rst   => BTNC,
                 -- WRITE YOUR CODE HERE
+
+                q_bar => '0'
             );
 
         -- PUT OTHER TWO INSTANCES HERE
