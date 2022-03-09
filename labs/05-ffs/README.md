@@ -309,17 +309,17 @@ When you finish working, always synchronize the contents of your working folder 
 
 Use D type flip-flops with synchronous reset and perform the following steps to implement a 4-bit shift register on the Nexys A7 board.
 
-  1. Create a new design source `top` in your project.
-  2. Use **Define Module** dialog and set ports of `top` entity as follows.
+   1. Create a new design source `top` in your project.
+   2. Use **Define Module** dialog and set ports of `top` entity as follows.
 
-    | **Port name** | **Direction** | **Type** | **Description** |
-    | :-: | :-: | :-- | :-- |
-    | `BTNU` | input  | `std_logic` | Clock emulator |
-    | `BTNC` | input  | `std_logic` | Synchronous reset |
-    | `SW`   | input  | `std_logic_vector(1 - 1 downto 0)` | Shift register serial input |
-    | `LED`  | output | `std_logic_vector(4 - 1 downto 0)` | Shift register parallel outputs |
+      | **Port name** | **Direction** | **Type** | **Description** |
+      | :-: | :-: | :-- | :-- |
+      | `BTNU` | input  | `std_logic` | Clock emulator |
+      | `BTNC` | input  | `std_logic` | Synchronous reset |
+      | `SW`   | input  | `std_logic_vector(1 - 1 downto 0)` | Shift register serial input |
+      | `LED`  | output | `std_logic_vector(4 - 1 downto 0)` | Shift register parallel outputs |
 
-  3. Use direct instantiation and define an architecture of the top level.
+   3. Use direct instantiation and define an architecture of the top level.
 
       ```vhdl
       ------------------------------------------------------------------------
