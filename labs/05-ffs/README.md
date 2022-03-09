@@ -307,51 +307,51 @@ When you finish working, always synchronize the contents of your working folder 
 
 ## Experiments on your own
 
-Use D type flip-flops with synchronous reset and perform the following steps to implement the 4-bit shift register on the Nexys A7 board.
+Use D type flip-flops with synchronous reset and perform the following steps to implement a 4-bit shift register on the Nexys A7 board.
 
   1. Create a new design source `top` in your project.
-  2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
+  2. Use **Define Module** dialog and set ports of `top` entity as follows.
 
-  | **Port name** | **Direction** | **Type** | **Description** |
-  | :-: | :-: | :-- | :-- |
-  | `BTNU` | in | `std_logic` | Clock emulator |
-  | `BTNC` | in | `std_logic` | Synchronous reset |
-  | `SW` | in  | `std_logic_vector(1 - 1 downto 0)` | Shift register serial input |
-  | `LED` | out | `std_logic_vector(4 - 1 downto 0)` | Shift register parallel outputs |
+    | **Port name** | **Direction** | **Type** | **Description** |
+    | :-: | :-: | :-- | :-- |
+    | `BTNU` | input  | `std_logic` | Clock emulator |
+    | `BTNC` | input  | `std_logic` | Synchronous reset |
+    | `SW`   | input  | `std_logic_vector(1 - 1 downto 0)` | Shift register serial input |
+    | `LED`  | output | `std_logic_vector(4 - 1 downto 0)` | Shift register parallel outputs |
 
   3. Use direct instantiation and define an architecture of the top level.
 
-  ```vhdl
-  ------------------------------------------------------------------------
-  -- Architecture body for top level
-  ------------------------------------------------------------------------
-  architecture Behavioral of top is
+      ```vhdl
+      ------------------------------------------------------------------------
+      -- Architecture body for top level
+      ------------------------------------------------------------------------
+      architecture Behavioral of top is
 
-    -- Internal signals between flip-flops
-    -- WRITE YOUR CODE HERE
+        -- Internal signals between flip-flops
+        -- WRITE YOUR CODE HERE
 
-  begin
+      begin
 
-    --------------------------------------------------------------------
-    -- Four instances (copies) of D-type FF entity
-    d_ff_0 : entity work.d_ff_rst
-        port map(
-            clk   => BTNU,
-            rst   => BTNC,
-            -- WRITE YOUR CODE HERE
-        );
+        --------------------------------------------------------------------
+        -- Four instances (copies) of D-type FF entity
+        d_ff_0 : entity work.d_ff_rst
+            port map(
+                clk   => BTNU,
+                rst   => BTNC,
+                -- WRITE YOUR CODE HERE
+            );
 
-    d_ff_1 : entity work.d_ff_rst
-        port map(
-            clk   => BTNU,
-            rst   => BTNC,
-            -- WRITE YOUR CODE HERE
-        );
+        d_ff_1 : entity work.d_ff_rst
+            port map(
+                clk   => BTNU,
+                rst   => BTNC,
+                -- WRITE YOUR CODE HERE
+            );
 
-    -- PUT OTHER INSTANCES HERE
+        -- PUT OTHER TWO INSTANCES HERE
 
-  end architecture Behavioral;
-  ```
+      end architecture Behavioral;
+      ```
 
    4. Create a testbench file `tb_top` and simulate it or create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
    5. Compile the project and download the generated bitstream `YOUR_FOLDER/flip_flops/flip_flops.runs/impl_1/top.bit` into the FPGA chip.
