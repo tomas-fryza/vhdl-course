@@ -173,7 +173,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
       | `q`     | output | `std_logic` | Main output |
       | `q_bar` | output | `std_logic` | Complementary output |
 
-   5. Use the following architecture example and complete the synchronous reset.
+   5. Use the following architecture example and complete the synchronous reset [assignment](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments).
 
       ```vhdl
       architecture Behavioral of d_ff_rst is
