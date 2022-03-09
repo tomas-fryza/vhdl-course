@@ -292,7 +292,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
    | `jk_ff_rst` | `clk`, `rst`, `j`, `k` | `q`, `q_bar` | JK type flip-flop with a sync reset |
    | `t_ff_rst` | `clk`, `rst`, `t` | `q`, `q_bar` | T type flip-flop with a sync reset |
 
-3. Try to simulate both flip-flops together in a single testbench `tb_ff_rst.vhd` with a maximum duration of 200 ns. Verify the synchronous reset as well.
+3. Try to simulate both flip-flops together in existing testbench  file `tb_ff_rst.vhd` with a maximum duration of 200 ns. Verify the synchronous reset as well.
 
 4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
