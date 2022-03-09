@@ -55,8 +55,8 @@ In this laboratory exercise, you will study the differences between a statically
    **JK-type FF**
    | **clk** | **j** | **k** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | 0 | No change |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 1 | 1 | No change |
+   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | 0 | Output did not change |
+   | ![rising](images/eq_uparrow.png) | 0 | 0 | 1 | 1 | Output did not change |
    | ![rising](images/eq_uparrow.png) | 0 |  |  |  |  |
    | ![rising](images/eq_uparrow.png) | 0 |  |  |  |  |
    | ![rising](images/eq_uparrow.png) | 1 |  |  |  |  |
@@ -67,7 +67,7 @@ In this laboratory exercise, you will study the differences between a statically
    **T-type FF**
    | **clk** | **t** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 |  |  |
+   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | Output did not change |
    | ![rising](images/eq_uparrow.png) | 0 | 1 |  |  |
    | ![rising](images/eq_uparrow.png) | 1 |  |  |  |
    | ![rising](images/eq_uparrow.png) | 1 |  |  |  |
