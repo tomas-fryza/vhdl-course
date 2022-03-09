@@ -168,7 +168,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
       | `clk`   | input  | `std_logic` | Clock |
-      | `rst`   | input  | `std_logic` | Synchronous reset |
+      | `rst`   | input  | `std_logic` | High-active synchronous reset |
       | `d`     | input  | `std_logic` | Data input |
       | `q`     | output | `std_logic` | Main output |
       | `q_bar` | output | `std_logic` | Complementary output |
