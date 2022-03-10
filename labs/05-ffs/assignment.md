@@ -15,6 +15,8 @@ begin
     -- T type flip-flop with a high-active synchro reset,
     -- rising-edge clk.
     -- q(n+1) = t./q(n) + /t.q(n)
+    -- q(n+1) =  q(n) if t = 0 (no change)
+    -- q(n+1) = /q(n) if t = 1 (inversion)
     --------------------------------------------------------
     p_t_ff_rst : process(clk)
     begin
