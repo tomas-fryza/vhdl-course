@@ -283,7 +283,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
       end architecture testbench;
       ```
 
-2. Create at least one other source VHDL file and define a different type of flip-flop, such as flip-flop D with asynchronous reset, flip-flop JK with synchronization reset, or T flip-flop with synchronization reset. (Prefered combination is `d_ff_rst` and `t_ff_rst`).
+2. Create at least one other design source VHDL file and define a different type of flip-flop, such as flip-flop D with asynchronous reset, flip-flop JK with synchronization reset, or T flip-flop with synchronization reset. (Prefered combination is `d_ff_rst` and [`t_ff_rst`](https://github.com/tomas-fryza/digital-electronics-1/blob/master/labs/05-ffs/assignment.md)).
 
    | **Entity** | **Inputs** | **Outputs** | **Description** |
    | :-- | :-- | :-- | :-- |
