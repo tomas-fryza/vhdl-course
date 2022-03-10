@@ -353,7 +353,7 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
 
             );
 
-        -- PUT OTHER TWO INSTANCES HERE
+        -- PUT OTHER TWO FLIP-FLOP INSTANCES HERE
 
       end architecture Behavioral;
       ```
