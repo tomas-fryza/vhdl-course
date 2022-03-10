@@ -314,7 +314,7 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
-      | `BTNU` | input  | `std_logic` | Clock emulator |
+      | `CLK100MHZ` | input  | `std_logic` | On-board clock |
       | `BTNC` | input  | `std_logic` | Synchronous reset |
       | `SW`   | input  | `std_logic_vector(1 - 1 downto 0)` | Shift register serial input |
       | `LED`  | output | `std_logic_vector(4 - 1 downto 0)` | Shift register parallel outputs |
@@ -328,6 +328,8 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
       architecture Behavioral of top is
 
         -- Internal signals between flip-flops
+        signal s_ff0 : std_logic;
+
         -- WRITE YOUR CODE HERE
 
       begin
@@ -336,20 +338,19 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
         -- Four instances (copies) of D-type FF entity
         d_ff_0 : entity work.d_ff_rst
             port map(
-                clk   => BTNU,
+                clk   => CLK100MHZ,
                 rst   => BTNC,
                 -- WRITE YOUR CODE HERE
-
-                q_bar => '0'
+                
+                q     => s_ff0
             );
 
         d_ff_1 : entity work.d_ff_rst
             port map(
-                clk   => BTNU,
+                clk   => CLK100MHZ,
                 rst   => BTNC,
                 -- WRITE YOUR CODE HERE
 
-                q_bar => '0'
             );
 
         -- PUT OTHER TWO INSTANCES HERE
