@@ -6,8 +6,8 @@
 
 ```vhdl
 architecture Behavioral of t_ff_rst is
-    -- Must use this local signal instead of output ports,
-    -- because "out" ports can not be read within an architecture
+    -- It must use this local signal instead of output ports
+    -- because "out" ports cannot be read within the architecture
     signal s_q : std_logic;
 begin
     --------------------------------------------------------
