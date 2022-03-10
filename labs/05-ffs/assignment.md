@@ -24,6 +24,7 @@ begin
 
         -- WRITE YOUR CODE HERE
 
+        end if;
     end process p_t_ff_rst;
 
     -- Output ports are permanently connected to local signal
