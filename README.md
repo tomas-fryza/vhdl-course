@@ -47,7 +47,7 @@ The following hardware and software components are mainly used in the lab.
 
 * Development tools:
   * [EDA Playground](https://www.edaplayground.com/) is a cloud-based service that runs in your browser :+1:
-  * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.2: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki)
+  * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.2: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
   * [git](https://git-scm.com/)
 
 ## References
