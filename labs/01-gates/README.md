@@ -15,7 +15,8 @@
 After completing this lab you will be able to:
 
 * Use markdown README files
-* Create git repository
+* Create and clone repositories through GitHub
+* Commit, push, and pull changes to the repository
 * Understand basic structure of VHDL files
 
 In this laboratory exercise, you will learn how to use the git versioning system, write the markdown readme file, use the Windows/Linux console terminal to work in the lab, and then how to compose a basic VHDL code using the online development tool.
@@ -34,9 +35,9 @@ In this laboratory exercise, you will learn how to use the git versioning system
 
 ## Preparation tasks (done before the lab at home)
 
-1. If you don't have any, create your account on [GitHub](https://github.com/signup?source=login).
+1. If you don't have any, create a free account on [GitHub](https://github.com/signup?source=login).
 2. If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
-3. For future synchronization of local folders with GitHub, download and install [git](https://git-scm.com/).
+3. For future synchronization of local folders with GitHub, download and install [git](https://git-scm.com/). Git is free, open source, and available on Windows, Mac, and Linux platforms. Window users will also need to use the Git Bash application (installed automatically with git) for command line operations.
 
 <a name="part1"></a>
 
