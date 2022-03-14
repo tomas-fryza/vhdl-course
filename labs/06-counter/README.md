@@ -8,8 +8,6 @@
 </p>
 -->
 
-![Nexys A7 board](images/nexys_a7_counter.jpg)
-
 ### Learning objectives
 
 After completing this lab you will be able to:
@@ -105,7 +103,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
    The default simulation run time is set to 1000&nbsp;ns in Vivado. Note that, you can change it in the menu **Tools > Settings...**
 
-   ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
+     ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
 
 <a name="part3"></a>
 
@@ -120,13 +118,13 @@ To drive another logic in the design (with slower clock), it is better to genera
    3. Create a VHDL [simulation source](https://www.edaplayground.com/x/5bgq) `tb_cnt_up_down`.
    4. Change the testbench you want to simulate, right click to file name and select `Set as Top`. Run the simulation. Verify the meaning of the constant `c_CNT_WIDTH` and reset generation process.
 
-   ![Set as Top](images/screenshot_vivado_set_top.png)
+     ![Set as Top](images/screenshot_vivado_set_top.png)
 
    5. Complete architecture of the counter, make it bidirectional, and simulate again.
 
    Note that for any vector, it is possible to change the numeric system in the simulation which represents the current value. To do so, right-click the vector name (here `s_cnt[4:0]`) and select **Radix > Unsigned Decimal** from the context menu. You can change the vector color by **Signal Color** as well.
 
-   ![Change radix](images/screenshot_vivado_radix.png)
+     ![Change radix](images/screenshot_vivado_radix.png)
 
 <a name="part4"></a>
 
@@ -137,20 +135,20 @@ To drive another logic in the design (with slower clock), it is better to genera
    1. Create a new VHDL design source `top` in your project.
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
-   | **Port name** | **Direction** | **Type** | **Description** |
-   | :-: | :-: | :-: | :-- |
-   | `CLK100MHZ` | in  | `std_logic` | Main clock |
-   | `BTNC`      | in  | `std_logic` | Synchronous reset |
-   | `SW`        | in  | `std_logic_vector(1 - 1 downto 0)` | Counter direction |
-   | `LED`       | out | `std_logic_vector(4 - 1 downto 0)` | Counter value LED indicators |
-   | `CA`        | out | `std_logic` | Cathod A |
-   | `CB`        | out | `std_logic` | Cathod B |
-   | `CC`        | out | `std_logic` | Cathod C |
-   | `CD`        | out | `std_logic` | Cathod D |
-   | `CE`        | out | `std_logic` | Cathod E |
-   | `CF`        | out | `std_logic` | Cathod F |
-   | `CG`        | out | `std_logic` | Cathod G |
-   | `AN`        | out | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
+     | **Port name** | **Direction** | **Type** | **Description** |
+     | :-: | :-: | :-- | :-- |
+     | `CLK100MHZ` | in  | `std_logic` | Main clock |
+     | `BTNC`      | in  | `std_logic` | Synchronous reset |
+     | `SW`        | in  | `std_logic_vector(1 - 1 downto 0)` | Counter direction |
+     | `LED`       | out | `std_logic_vector(4 - 1 downto 0)` | Counter value LED indicators |
+     | `CA`        | out | `std_logic` | Cathod A |
+     | `CB`        | out | `std_logic` | Cathod B |
+     | `CC`        | out | `std_logic` | Cathod C |
+     | `CD`        | out | `std_logic` | Cathod D |
+     | `CE`        | out | `std_logic` | Cathod E |
+     | `CF`        | out | `std_logic` | Cathod F |
+     | `CG`        | out | `std_logic` | Cathod G |
+     | `AN`        | out | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level: complete instantiation (copy) of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratories to the `counter/counter.srcs/sources_1/new/` source folder and add it to the project.
 
@@ -210,17 +208,20 @@ To drive another logic in the design (with slower clock), it is better to genera
   end architecture Behavioral;
   ```
   
-  ![Top level](images/top_schema_4bit_cnt.jpg)
+     ![Top level](images/top_schema_4bit_cnt.jpg)
 
    4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
    5. Compile the project and download the generated bitstream `counter/counter.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the 4-bit counter by toggling the switch, pressing the button and observing the display and LEDs.
+
+      ![Nexys A7 board](images/nexys_a7_counter.jpg)
+
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
    8. Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
-   ![Pmod port](images/pmod.png)
+      ![Pmod port](images/pmod.png)
 
-   ![Binary counter verification](images/logic_analyser.jpg)
+      ![Binary counter verification](images/logic_analyser.jpg)
 
 ## Synchronize repositories
 
