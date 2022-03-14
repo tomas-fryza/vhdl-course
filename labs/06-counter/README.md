@@ -136,78 +136,78 @@ To drive another logic in the design (with slower clock), it is better to genera
    1. Create a new VHDL design source `top` in your project.
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
-     | **Port name** | **Direction** | **Type** | **Description** |
-     | :-: | :-: | :-- | :-- |
-     | `CLK100MHZ` | in  | `std_logic` | Main clock |
-     | `BTNC`      | in  | `std_logic` | Synchronous reset |
-     | `SW`        | in  | `std_logic_vector(1 - 1 downto 0)` | Counter direction |
-     | `LED`       | out | `std_logic_vector(4 - 1 downto 0)` | Counter value LED indicators |
-     | `CA`        | out | `std_logic` | Cathod A |
-     | `CB`        | out | `std_logic` | Cathod B |
-     | `CC`        | out | `std_logic` | Cathod C |
-     | `CD`        | out | `std_logic` | Cathod D |
-     | `CE`        | out | `std_logic` | Cathod E |
-     | `CF`        | out | `std_logic` | Cathod F |
-     | `CG`        | out | `std_logic` | Cathod G |
-     | `AN`        | out | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
+      | **Port name** | **Direction** | **Type** | **Description** |
+      | :-: | :-: | :-- | :-- |
+      | `CLK100MHZ` | in  | `std_logic` | Main clock |
+      | `BTNC`      | in  | `std_logic` | Synchronous reset |
+      | `SW`        | in  | `std_logic` | Counter direction |
+      | `LED`       | out | `std_logic_vector(3 downto 0)` | Counter value LED indicators |
+      | `CA`        | out | `std_logic` | Cathod A |
+      | `CB`        | out | `std_logic` | Cathod B |
+      | `CC`        | out | `std_logic` | Cathod C |
+      | `CD`        | out | `std_logic` | Cathod D |
+      | `CE`        | out | `std_logic` | Cathod E |
+      | `CF`        | out | `std_logic` | Cathod F |
+      | `CG`        | out | `std_logic` | Cathod G |
+      | `AN`        | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level: complete instantiation (copy) of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratories to the `counter/counter.srcs/sources_1/new/` source folder and add it to the project.
 
-  ```vhdl
-  ------------------------------------------------------------------------
-  -- Architecture body for top level
-  ------------------------------------------------------------------------
-  architecture Behavioral of top is
+      ```vhdl
+      ------------------------------------------------------------------------
+      -- Architecture body for top level
+      ------------------------------------------------------------------------
+      architecture Behavioral of top is
 
-    -- Internal clock enable
-    signal s_en  : std_logic;
-    -- Internal counter
-    signal s_cnt : std_logic_vector(4 - 1 downto 0);
+        -- Internal clock enable
+        signal s_en  : std_logic;
+        -- Internal counter
+        signal s_cnt : std_logic_vector(4 - 1 downto 0);
 
-  begin
+      begin
 
-    --------------------------------------------------------------------
-    -- Instance (copy) of clock_enable entity
-    clk_en0 : entity work.clock_enable
-        generic map(
-            --- WRITE YOUR CODE HERE
-        )
-        port map(
-            --- WRITE YOUR CODE HERE
-        );
+        --------------------------------------------------------------------
+        -- Instance (copy) of clock_enable entity
+        clk_en0 : entity work.clock_enable
+            generic map(
+                --- WRITE YOUR CODE HERE
+            )
+            port map(
+                --- WRITE YOUR CODE HERE
+            );
 
-    --------------------------------------------------------------------
-    -- Instance (copy) of cnt_up_down entity
-    bin_cnt0 : entity work.cnt_up_down
-        generic map(
-            --- WRITE YOUR CODE HERE
-        )
-        port map(
-            --- WRITE YOUR CODE HERE
-        );
+        --------------------------------------------------------------------
+        -- Instance (copy) of cnt_up_down entity
+        bin_cnt0 : entity work.cnt_up_down
+           generic map(
+                --- WRITE YOUR CODE HERE
+            )
+            port map(
+                --- WRITE YOUR CODE HERE
+            );
 
-    -- Display counter values on LEDs
-    LED(3 downto 0) <= s_cnt;
+        -- Display counter values on LEDs
+        LED(3 downto 0) <= s_cnt;
 
-    --------------------------------------------------------------------
-    -- Instance (copy) of hex_7seg entity
-    hex2seg : entity work.hex_7seg
-        port map(
-            hex_i    => s_cnt,
-            seg_o(6) => CA,
-            seg_o(5) => CB,
-            seg_o(4) => CC,
-            seg_o(3) => CD,
-            seg_o(2) => CE,
-            seg_o(1) => CF,
-            seg_o(0) => CG
-        );
+        --------------------------------------------------------------------
+        -- Instance (copy) of hex_7seg entity
+        hex2seg : entity work.hex_7seg
+            port map(
+                hex_i    => s_cnt,
+                seg_o(6) => CA,
+                seg_o(5) => CB,
+                seg_o(4) => CC,
+                seg_o(3) => CD,
+                seg_o(2) => CE,
+                seg_o(1) => CF,
+                seg_o(0) => CG
+            );
 
-    -- Connect one common anode to 3.3V
-    AN <= b"1111_1110";
+        -- Connect one common anode to 3.3V
+        AN <= b"1111_1110";
 
-  end architecture Behavioral;
-  ```
+      end architecture Behavioral;
+      ```
   
      ![Top level](images/top_schema_4bit_cnt.jpg)
 
