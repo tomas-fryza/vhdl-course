@@ -72,27 +72,27 @@ The Nexys A7 board provides five push buttons for user applications.
 
 To drive another logic in the design (with slower clock), it is better to generate a **clock enable signal** (see figure bellow) instead of creating another clock domain (using clock dividers) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.
 
-![Clock enable](images/wavedrom_clock_enable.png)
+  ![Clock enable](images/wavedrom_clock_enable.png)
 
-> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows (ticks -1, 10, 11 and 12 were manually adjusted afterwards):
->
-```javascript
-{
-  signal:
-  [
-    {name: "clk",  wave: 'P............'},
-    {name: "ce_o", wave: 'lhl........hl'},
-  ],
-  head:
+  > The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows (ticks -1, 10, 11 and 12 were manually adjusted afterwards):
+  >
+  ```javascript
   {
-    tick: -1,
-  },
-  foot:
-  {
-    text:'g_MAX = 10',
-  },
-}
-```
+    signal:
+    [
+      {name: "clk",  wave: 'P............'},
+      {name: "ce_o", wave: 'lhl........hl'},
+    ],
+    head:
+    {
+      tick: -1,
+    },
+    foot:
+    {
+      text:'g_MAX = 10',
+    },
+  }
+  ```
 
 1. Perform the following steps to simulate the clock enable circuit in Vivado.
 
@@ -104,7 +104,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
    The default simulation run time is set to 1000&nbsp;ns in Vivado. Note that, you can change it in the menu **Tools > Settings...**
 
-     ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
+      ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
 
 <a name="part3"></a>
 
