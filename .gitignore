@@ -1,105 +1,73 @@
-# gitignore template for Xilinx Vivado Design Suite
-# website: https://www.xilinx.com/support/download.html
+#########################################################################################
+##  Project    : Collect of various scripts for working with EDA-tools (ASIC/FPGA/etc) ##
+##  Link       : https://github.com/iDoka/eda-scripts                                  ##
+##  Description: .gitignore                                                            ##
+##  Usage      : just rename or add contain to .gitignore                              ##
+##  License    : MIT                                                                   ##
+#########################################################################################
 
-# [home]
-*.jou
+## log files
 *.log
-*.debug
-*.str
-*.zip
-*.tmp
-*.rst
-*.os
-*.js
-*.pb
-*.dcp
-*.hwdef
-*.vds
-*.veo
-*.wdf
-*.vdi
-*.dmp
-*.rpx
+*.jou
 *.rpt
-*_stub.v
-*_stub.vhdl
-*_funcsim.v
-*_funcsim.vhdl
-.project
+*.vdi
 
-# [dir]
+## bitstream
+*.bit
+*.bin
+*.mcs
+*.svf
+*.image
+
+## netlist
+*.edf
+*.edif
+*.vn
+*.vm
+
+## SDF
+*.sdf
+
+## sim dump
+*.vcd
+*.saif
+*.tcf
+*.wdb
+
+## others
+unisims
+
+## C-files
+*.elf
+*.a
+*.sa
+*.so
+*.lib
+
+## dirs
+vivado.cache/
+vivado.hw/
+vivado.ip_user_files/
+vivado.runs/
+vivado.sim/
+
+###### for Xilinx Vivado|ISE
+.Xil/
+.cache/
+fsm_encoding.os
+tab_*/
+webtalk.*
+vivado_pid*.str
+hs_err_pid*
+xelab.*
+xsim.*
+xvlog.*
 *.cache
-.metadata
-*.data
-*.ipdefs
-.Xil
-*.sdk
+*.sim
+*.runs
 *.hw
-*.ip_user_files
+*.backup.*
+*.debug
 
-### IP synth
-*_synth_*
-
-.jobs
-
-### project synth
-*/*.runs/synth*/*.xml
-*/*.runs/synth*/*.txt
-*/*.runs/synth*/*.sh
-*/*.runs/synth*/*.tcl
-*/*.runs/synth*/*.bat
-*/*.runs/synth*/*.xdc
-!*/*.runs/synth*/*utilization*.rpt
-
-*.runs/synth*/*.xml
-*.runs/synth*/*.txt
-*.runs/synth*/*.sh
-*.runs/synth*/*.tcl
-*.runs/synth*/*.bat
-*.runs/synth*/*.xdc
-!*.runs/synth*/*utilization*.rpt
-
-### project impl
-*/*.runs/impl*/*.xml
-*/*.runs/impl*/*.html
-*/*.runs/impl*/*.txt
-*/*.runs/impl*/*.sh
-*/*.runs/impl*/*.tcl
-*/*.runs/impl*/*.bat
-!*/*.runs/impl*/*utilization*.rpt
-
-*.runs/impl*/*.xml
-*.runs/impl*/*.html
-*.runs/impl*/*.txt
-*.runs/impl*/*.sh
-*.runs/impl*/*.tcl
-*.runs/impl*/*.bat
-!*.runs/impl*/*utilization*.rpt
-
-### block design
-*/*/bd/*/hdl
-*/*/*/bd/*/hdl
-
-*/*/bd/*/*.xdc
-*/*/*/bd/*/*.xdc
-
-*/*/bd/*/ip/*/*.xdc
-*/*/*/bd/*/ip/*/*.xdc
-
-*/*/bd/*/ip/*/*/
-*/*/*/bd/*/ip/*/*/
-
-*/*/bd/*/ip/*/*.vhd
-*/*/*/bd/*/ip/*/*.vhd
-
-*/*/bd/*/ip/*/*.xml
-*/*/*/bd/*/ip/*/*.xml
-
-*.c
-*.h
-*.vho
-*.html
-*/*/bd/*/ip/*/*.tcl
-*/*/*/bd/*/ip/*/*.tcl
-hw_handoff
-ipshared
+## checkpoint files
+*.dcp
