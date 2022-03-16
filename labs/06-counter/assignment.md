@@ -21,7 +21,7 @@
 
                 -- TEST COUNTER DIRECTION HERE
 
-                s_cnt_local <= s_cnt_local + 1;
+                    s_cnt_local <= s_cnt_local + 1;
             end if;
         end if;
     end process p_cnt_up_down;
