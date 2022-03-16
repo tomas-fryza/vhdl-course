@@ -35,7 +35,7 @@ The purpose of this laboratory exercise is to become familiar with the creation 
 
 The Nexys A7 board provides five push buttons for user applications.
 
-1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of these push buttons, ie to which FPGA pins are connected and how (schema). What logic/voltage value do the buttons generate when not pressed and what value when the buttons are pressed? Draw the schematic with push buttons.
+1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of these push buttons, ie to which FPGA pins are connected and how. What logic/voltage value do the buttons generate when not pressed and what value when the buttons are pressed? Draw the schematic with push buttons.
 
 2. Calculate how many periods of clock signal with frequency of 100&nbsp;MHz contain time intervals 2&nbsp;ms, 4&nbsp;ms, 10&nbsp;ms, 250&nbsp;ms, 500&nbsp;ms, and 1&nbsp;s. Write values in decimal, binary, and hexadecimal forms.
 
@@ -64,7 +64,14 @@ The Nexys A7 board provides five push buttons for user applications.
 
 ## Part 1: Synchronize repositories and create a new folder
 
-1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `labs/06-counter` for this laboratory exercise.
+1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
+
+   > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
+   >
+
+2. Create a new working folder `labs/06-counter` for this laboratory exercise.
+
+3. Create a new file `labs/06-counter/assignment.md` and copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/06-counter/assignment.md) into it.
 
 <a name="part2"></a>
 
@@ -72,29 +79,29 @@ The Nexys A7 board provides five push buttons for user applications.
 
 To drive another logic in the design (with slower clock), it is better to generate a **clock enable signal** (see figure bellow) instead of creating another clock domain (using clock dividers) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.
 
-  ![Clock enable](images/wavedrom_clock_enable.png)
+![Clock enable](images/wavedrom_clock_enable.png)
 
-  > The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows (ticks -1, 10, 11 and 12 were manually adjusted afterwards):
-  >
-  ```javascript
+> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows (ticks -1, 10, 11 and 12 were manually adjusted afterwards):
+>
+```javascript
+{
+  signal:
+  [
+    {name: "clk",  wave: 'P............'},
+    {name: "ce_o", wave: 'lhl........hl'},
+  ],
+  head:
   {
-    signal:
-    [
-      {name: "clk",  wave: 'P............'},
-      {name: "ce_o", wave: 'lhl........hl'},
-    ],
-    head:
-    {
-      tick: -1,
-    },
-    foot:
-    {
-      text:'g_MAX = 10',
-    },
-  }
-  ```
+    tick: -1,
+  },
+  foot:
+  {
+    text:'g_MAX = 10',
+  },
+}
+```
 
-1. Perform the following steps to simulate the clock enable circuit in Vivado.
+1. Perform the following steps to model clock enable circuit in Vivado.
 
    1. Create a new Vivado RTL project `counter` in your `labs/06-counter` working folder.
    2. Create a VHDL source file `clock_enable` for the clock enable circuit.
@@ -139,7 +146,6 @@ To drive another logic in the design (with slower clock), it is better to genera
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
       | `CLK100MHZ` | in  | `std_logic` | Main clock |
-      | `BTNC`      | in  | `std_logic` | Synchronous reset |
       | `SW`        | in  | `std_logic` | Counter direction |
       | `LED`       | out | `std_logic_vector(3 downto 0)` | Counter value LED indicators |
       | `CA`        | out | `std_logic` | Cathod A |
@@ -150,6 +156,7 @@ To drive another logic in the design (with slower clock), it is better to genera
       | `CF`        | out | `std_logic` | Cathod F |
       | `CG`        | out | `std_logic` | Cathod G |
       | `AN`        | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
+      | `BTNC`      | in  | `std_logic` | Synchronous reset |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level: complete instantiation (copy) of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratories to the `counter/counter.srcs/sources_1/new/` source folder and add it to the project.
 
@@ -170,10 +177,12 @@ To drive another logic in the design (with slower clock), it is better to genera
         -- Instance (copy) of clock_enable entity
         clk_en0 : entity work.clock_enable
             generic map(
-                --- WRITE YOUR CODE HERE
+                g_MAX => 25000000
             )
             port map(
-                --- WRITE YOUR CODE HERE
+                clk   => --- WRITE YOUR CODE HERE
+                reset => --- WRITE YOUR CODE HERE
+                ce_o  => s_en
             );
 
         --------------------------------------------------------------------
@@ -185,9 +194,6 @@ To drive another logic in the design (with slower clock), it is better to genera
             port map(
                 --- WRITE YOUR CODE HERE
             );
-
-        -- Display counter values on LEDs
-        LED(3 downto 0) <= s_cnt;
 
         --------------------------------------------------------------------
         -- Instance (copy) of hex_7seg entity
@@ -206,19 +212,25 @@ To drive another logic in the design (with slower clock), it is better to genera
         -- Connect one common anode to 3.3V
         AN <= b"1111_1110";
 
+        -- Display counter values on LEDs
+        LED(3 downto 0) <= s_cnt;
+
       end architecture Behavioral;
       ```
   
      ![Top level](images/top_schema_4bit_cnt.jpg)
 
-   4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
+   4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
+
+      IMPORTANT: Because we defined `SW` as a single signal and not a bus, make sure you rename the selected port name in XDC file, for example `SW[0]` to `SW`.
+
    5. Compile the project and download the generated bitstream `counter/counter.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the 4-bit counter by toggling the switch, pressing the button and observing the display and LEDs.
 
       ![Nexys A7 board](images/nexys_a7_counter.jpg)
 
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
-   8. Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
+   8. Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
       ![Pmod port](images/pmod.png)
 
@@ -226,7 +238,10 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 ## Synchronize repositories
 
-Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Git-useful-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
+When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
+
+   > Useful git commands are: `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
+   >
 
 <a name="experiments"></a>
 
@@ -234,7 +249,7 @@ Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Git
 
 1. Add a second instantiation (copy) of the counter and clock enable entities and make a 16-bit counter with a 10 ms time base. Therefore, the application will contain two independent binary counters (4-bit and 16-bit), each with a different counting speed.
 
-   Display second counter value on LED(15:0). Since it is not possible to control one output device with two different sources, the values of the first counter will no longer be displayed on the LED(3:0). All LEDs here are reserved for the second counter only!
+   Display the second counter value on LED(15:0). Since it is not possible to control one output device with two different sources, the values of the first counter will no longer be displayed on the LED(3:0). All LEDs here are reserved for the second counter only!
 
 <a name="assignment"></a>
 
@@ -252,6 +267,8 @@ Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Git
 
 2. [WaveDrom - Digital Timing Diagram everywhere](https://wavedrom.com/)
 
-3. Tomas Fryza. [Template for clock enable modul](https://www.edaplayground.com/x/Vdpu)
+3. Tomas Fryza. [Template for clock enable module](https://www.edaplayground.com/x/Vdpu)
 
-4. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
+4. Tomas Fryza. [Template for bi-directional counter](https://www.edaplayground.com/x/5bgq)
+
+5. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
