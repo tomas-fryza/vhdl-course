@@ -158,7 +158,7 @@ A D-type latch can be modeled in VHDL as follows.
 
 The basic difference between a latch and a flip-flop is a gating or clocking mechanism: flip-flop is edge-triggered and a latch is level triggered.
 
-1. Perform the following steps to model at D-type flip-flop entity in Vivado.
+1. Perform the following steps to model D-type flip-flop entity in Vivado.
 
    1. Create a new Vivado RTL project `flip_flops` in your `labs/05-ffs` working folder.
    2. Create a VHDL source file `d_ff_rst` for D-type flip-flop circuit with synchronous reset.
