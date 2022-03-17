@@ -81,21 +81,18 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 ![Clock enable](images/wavedrom_clock_enable.png)
 
-> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows (ticks -1, 10, 11 and 12 were manually adjusted afterwards):
+> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows (ticks -2, -1, 10, 11 and 12 were manually adjusted afterwards):
 >
 ```javascript
 {
-  signal:
-  [
-    {name: "clk",  wave: 'P............'},
-    {name: "ce_o", wave: 'lhl........hl'},
+  signal: [
+    {name: "clk",  wave: 'P.............'},
+    {name: "ce_o", wave: 'lhl........hl.'},
   ],
-  head:
-  {
-    tick: -1,
+  head: {
+    tick: -2,
   },
-  foot:
-  {
+  foot: {
     text:'g_MAX = 10',
   },
 }
