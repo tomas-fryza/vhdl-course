@@ -177,8 +177,8 @@ To drive another logic in the design (with slower clock), it is better to genera
                 g_MAX => 25000000
             )
             port map(
-                clk   => --- WRITE YOUR CODE HERE
-                reset => --- WRITE YOUR CODE HERE
+                clk   => -- WRITE YOUR CODE HERE
+                reset => -- WRITE YOUR CODE HERE
                 ce_o  => s_en
             );
 
@@ -186,10 +186,10 @@ To drive another logic in the design (with slower clock), it is better to genera
         -- Instance (copy) of cnt_up_down entity
         bin_cnt0 : entity work.cnt_up_down
            generic map(
-                --- WRITE YOUR CODE HERE
+                -- WRITE YOUR CODE HERE
             )
             port map(
-                --- WRITE YOUR CODE HERE
+                -- WRITE YOUR CODE HERE
             );
 
         --------------------------------------------------------------------
