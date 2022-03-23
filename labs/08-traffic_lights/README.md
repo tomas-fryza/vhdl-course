@@ -8,8 +8,6 @@
 </p>
 -->
 
-![Nexys A7 board](images/nexys_a7_traffic.jpg)
-
 ### Learning objectives
 
 After completing this lab you will be able to:
@@ -227,7 +225,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
    | **Port name** | **Direction** | **Type** | **Description** |
-   | :-: | :-: | :-: | :-- |
+   | :-: | :-: | :-- | :-- |
    | `CLK100MHZ` | in | `std_logic` | Main clock |
    | `BTNC` | in | `std_logic` | Synchronous reset |
    | `LED16_R` | out | `std_logic` | Red1 |
@@ -261,6 +259,9 @@ end architecture Behavioral;
    4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
    5. Compile the project and download the generated bitstream `traffic/traffic.runs/impl_1/top.bit` into the FPGA chip.
    6. Observe the functionality of the traffic light controller.
+
+      ![Nexys A7 board](images/nexys_a7_traffic.jpg)
+
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 ## Synchronize repositories
