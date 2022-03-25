@@ -119,7 +119,7 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
       | `CLK100MHZ` | in | `std_logic` | Main clock |
-      | `SW` | in  | `std_logic_vector(15 downto 0)` | Four 4-bit values |
+      | `SW` | in  | `std_logic_vector(15 downto 0)` | Four 4-bit data values |
       | `CA` | out | `std_logic` | Cathod A |
       | `CB` | out | `std_logic` | Cathod B |
       | `CC` | out | `std_logic` | Cathod C |
