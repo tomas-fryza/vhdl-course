@@ -103,7 +103,7 @@ A display drive is able to control several 7-segment displays. Using the multipl
 
       ![Block diagram of 7-segment display driver](images/schema_driver2.jpg)
 
-   7. Create a VHDL [simulation source](https://www.edaplayground.com/x/3f_A) `tb_driver_7seg_4digits`, complete the code, set conditions to display value `3.142` and run the simulation. Compare simulated timing diagram with yours in Preparation tasks. Verify the meaning of the constant `c_MAX` and reset generation process.
+   7. Create a VHDL [simulation source](https://www.edaplayground.com/x/3f_A) `tb_driver_7seg_4digits`, complete the code, set conditions to display value `3.142` and run the simulation. Compare simulated timing diagram with yours in Preparation tasks. Verify reset as well.
 
    8. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
@@ -151,9 +151,18 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
                 data0_i(2) => SW(2),
                 data0_i(1) => SW(1),
                 data0_i(0) => SW(0),
-                -- WRITE YOUR CODE HERE
-                dp_i => "0111",
-                -- WRITE YOUR CODE HERE
+
+                -- MAP DATA INPUTS TO ON-BOARD SWITCHES
+
+                data3_i(3) => SW(15),
+                data3_i(2) => SW(14),
+                data3_i(1) => SW(13),
+                data3_i(0) => SW(12),
+                dp_i       => "0111",
+
+                -- MAP DECIMAL POINT AND SEGMENTS
+
+                dig_o(3 downto 0) => AN(3 downto 0)
             );
 
         -- Disconnect the top four digits of the 7-segment display
@@ -169,7 +178,7 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
       ![Nexys A7 board](images/nexys_a7_driver.jpg)
 
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
-   8. Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
+   8. Optionel: Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
 ## Synchronize repositories
 
