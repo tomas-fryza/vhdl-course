@@ -35,20 +35,27 @@ In this laboratory exercise you will implement a finite state machine (FSM) in V
 
 ## Preparation tasks (done before the lab at home)
 
-1. Read the article [Implementing a Finite State Machine in VHDL](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/) (parts **A Bit of Background** and **The Finite State Machine**) and understand what an FSM is.
-
-2. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys board and find out the connection of two RGB LEDs. How you can control them to get red, yellow, or green colors?
+1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of two RGB LEDs, ie to which FPGA pins are connected and how. How you can control them to get red, yellow, or green colors? Draw the schematic with RGB LEDs.
 
 | **RGB LED** | **Artix-7 pin names** | **Red** | **Yellow** | **Green** |
 | :-: | :-: | :-: | :-: | :-: |
 | LD16 | N15, M16, R12 | `1,0,0` |  |  |
 | LD17 |  |  |  |  |
 
+2. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
+
 <a name="part1"></a>
 
 ## Part 1: Synchronize Git and create a new folder
 
-1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository. Create a new working folder `labs/08-traffic_lights`.
+1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
+
+   > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
+   >
+
+2. Create a new working folder `labs/08-traffic_lights` for this laboratory exercise.
+
+3. Create a new file `labs/08-traffic_lights/assignment.md` and copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/08-traffic_lights/assignment.md) into it.
 
 <a name="part2"></a>
 
@@ -59,7 +66,7 @@ A finite state machine (FSM) is a computation model that can be implemented with
 * The output of the **Mealy** machine depends on the present state and inputs.
 * The outputs of a **Moore** machine depend only on the present state and not on the inputs, as shown in the figure [[1]](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/).
 
-![Moore-type FSM](images/moore_structure.png)
+   ![Moore-type FSM](images/moore_structure.png)
 
 A common way how to represent a finite state machine is a **state diagram** which contains of:
 
@@ -87,7 +94,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
 >* Edge detector `clk'event and clk = '1'` changed to `rising_edge(clk)`.
 >
 
-1. Perform the following steps to model the traffic light controller.
+1. Perform the following steps to model the traffic light controller in Vivado.
 
    1. Create a new Vivado RTL project `traffic` in your `labs/08-traffic_lights` working folder.
    2. Create a VHDL source file `tlc` for the traffic light controller circuit.
@@ -96,114 +103,114 @@ Let an intersection contains two one-way streets with a fixed time control syste
    5. Copy source file of clock enable circuit from previous labs to `traffic/traffic.srcs/sources_1/new/` folder and add it to the project.
    6. Complete the traffic light code according to the following description.
 
-   The controller contains six states and sets the semaphore outputs according to the following table. It remains in each of the states for a certain time.
+      The controller contains six states and sets the semaphore outputs according to the following table. It remains in each of the states for a certain time.
 
-   | **Current state** | **Direction South** | **Direction West** | **Delay** |
-   | :-- | :-: | :-: | :-: |
-   | `STOP1`      | red    | red    | 1 sec |
-   | `WEST_GO`    | red    | green  | 4 sec |
-   | `WEST_WAIT`  | red    | yellow | 2 sec |
-   | `STOP2`      | red    | red    | 1 sec |
-   | `SOUTH_GO`   | green  | red    | 4 sec |
-   | `SOUTH_WAIT` | yellow | red    | 2 sec |
+      | **Current state** | **Direction South** | **Direction West** | **Delay** |
+      | :-- | :-: | :-: | :-: |
+      | `STOP1`      | red    | red    | 1 sec |
+      | `WEST_GO`    | red    | green  | 4 sec |
+      | `WEST_WAIT`  | red    | yellow | 2 sec |
+      | `STOP2`      | red    | red    | 1 sec |
+      | `SOUTH_GO`   | green  | red    | 4 sec |
+      | `SOUTH_WAIT` | yellow | red    | 2 sec |
 
 2. Draw a state diagram according to the table.
 
 3. In VHDL it is possible to define a new data type, which contains the names of our states.
 
-    ```vhdl
-        -- Define the states
-        type t_state is (STOP1,
-                         WEST_GO,
-                         WEST_WAIT,
-                         STOP2,
-                         SOUTH_GO,
-                         SOUTH_WAIT);
-        -- Define the signal that uses different states
-        signal s_state : t_state;
-    ```
+   ```vhdl
+       -- Define the states
+       type t_state is (STOP1,
+                        WEST_GO,
+                        WEST_WAIT,
+                        STOP2,
+                        SOUTH_GO,
+                        SOUTH_WAIT);
+       -- Define the signal that uses different states
+       signal s_state : t_state;
+   ```
 
-    The FSM function is divided into two processes, where the first is sequential and it entirely controls state changes by CASE statement. The second is a combinatorial process, it is sensitive to state changes, and sets the output signals accordingly. This is an example of a Moore state machine because the output is set based on the active state. FSM behavior can be written in one to three processes. The differences between these approaches are described in [detail here](https://vhdlwhiz.com/n-process-state-machine/).
+   The FSM function is divided into two processes, where the first is sequential and it entirely controls state changes by CASE statement. The second is a combinatorial process, it is sensitive to state changes, and sets the output signals accordingly. This is an example of a Moore state machine because the output is set based on the active state. FSM behavior can be written in one to three processes. The differences between these approaches are described in [detail here](https://vhdlwhiz.com/n-process-state-machine/).
 
 4. Complete CASE/WHEN statements in both sequential and combinatorial processes.
 
    **Sequential process:**
 
-```vhdl
-    --------------------------------------------------------
-    -- p_traffic_fsm:
-    -- The sequential process with synchronous reset and 
-    -- clock_enable entirely controls the s_state signal by 
-    -- CASE statement.
-    --------------------------------------------------------
-    p_traffic_fsm : process(clk)
-    begin
-        if rising_edge(clk) then
-            if (reset = '1') then       -- Synchronous reset
-                s_state <= STOP1 ;      -- Set initial state
-                s_cnt   <= c_ZERO;      -- Clear all bits
+    ```vhdl
+        --------------------------------------------------------
+        -- p_traffic_fsm:
+        -- The sequential process with synchronous reset and 
+        -- clock_enable entirely controls the s_state signal by 
+        -- CASE statement.
+        --------------------------------------------------------
+        p_traffic_fsm : process(clk)
+        begin
+            if rising_edge(clk) then
+                if (reset = '1') then   -- Synchronous reset
+                    s_state <= STOP1;   -- Set initial state
+                    s_cnt   <= c_ZERO;  -- Clear delay counter
 
-            elsif (s_en = '1') then
-                -- Every 250 ms, CASE checks the value of the s_state 
-                -- variable and changes to the next state according 
-                -- to the delay value.
-                case s_state is
+                elsif (s_en = '1') then
+                    -- Every 250 ms, CASE checks the value of the s_state 
+                    -- variable and changes to the next state according 
+                    -- to the delay value.
+                    case s_state is
 
-                    -- If the current state is STOP1, then wait 1 sec
-                    -- and move to the next GO_WAIT state.
-                    when STOP1 =>
-                        -- Count up to c_DELAY_1SEC
-                        if (s_cnt < c_DELAY_1SEC) then
-                            s_cnt <= s_cnt + 1;
-                        else
-                            -- Move to the next state
-                            s_state <= WEST_GO;
-                            -- Reset local counter value
+                        -- If the current state is STOP1, then wait 1 sec
+                        -- and move to the next GO_WAIT state.
+                        when STOP1 =>
+                            -- Count up to c_DELAY_1SEC
+                            if (s_cnt < c_DELAY_1SEC) then
+                                s_cnt <= s_cnt + 1;
+                            else
+                                -- Move to the next state
+                                s_state <= WEST_GO;
+                                -- Reset local counter value
+                                s_cnt <= c_ZERO;
+                            end if;
+
+                        when WEST_GO =>
+                            -- WRITE OTHER STATES HERE
+
+
+                        -- It is a good programming practice to use the 
+                        -- OTHERS clause, even if all CASE choices have 
+                        -- been made.
+                        when others =>
+                            s_state <= STOP1;
                             s_cnt   <= c_ZERO;
-                        end if;
-
-                    when WEST_GO =>
-
-                        -- WRITE YOUR CODE HERE
-
-                    -- It is a good programming practice to use the 
-                    -- OTHERS clause, even if all CASE choices have 
-                    -- been made. 
-                    when others =>
-                        s_state <= STOP1;
-
-                end case;
-            end if; -- Synchronous reset
-        end if; -- Rising edge
-    end process p_traffic_fsm;
-```
+                    end case;
+                end if; -- Synchronous reset
+            end if; -- Rising edge
+        end process p_traffic_fsm;
+    ```
 
    **Combinatorial process:**
 
-```vhdl
-    --------------------------------------------------------
-    -- p_output_fsm:
-    -- The combinatorial process is sensitive to state changes,
-    -- and sets the output signals accordingly. This is an 
-    -- example of a Moore state machine because the output 
-    -- is set based on the active state.
-    --------------------------------------------------------
-    p_output_fsm : process(s_state)
-    begin
-        case s_state is
-            when STOP1 =>
-                south_o <= c_RED;
-                west_o  <= c_RED;
-            when WEST_GO =>
+    ```vhdl
+        --------------------------------------------------------
+        -- p_output_fsm:
+        -- The combinatorial process is sensitive to state
+        -- changes and sets the output signals accordingly.
+        -- This is an example of a Moore state machine and
+        -- therefore the output is set based on the active state.
+        --------------------------------------------------------
+        p_output_fsm : process(s_state)
+        begin
+            case s_state is
+                when STOP1 =>
+                    south_o <= c_RED;
+                    west_o  <= c_RED;
+                when WEST_GO =>
+                    -- WRITE OTHER STATES HERE
 
-                -- WRITE YOUR CODE HERE
 
-            when others =>
-                south_o <= c_RED;
-                west_o  <= c_RED;
-        end case;
-    end process p_output_fsm;
-```
+                when others =>
+                    south_o <= c_RED;
+                    west_o  <= c_RED;
+            end case;
+        end process p_output_fsm;
+    ```
 
 <a name="part4"></a>
 
@@ -224,39 +231,40 @@ Let an intersection contains two one-way streets with a fixed time control syste
    1. Create a new design source `top` in your project.
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
-   | **Port name** | **Direction** | **Type** | **Description** |
-   | :-: | :-: | :-- | :-- |
-   | `CLK100MHZ` | in | `std_logic` | Main clock |
-   | `BTNC` | in | `std_logic` | Synchronous reset |
-   | `LED16_R` | out | `std_logic` | Red1 |
-   | `LED16_G` | out | `std_logic` | Green1 |
-   | `LED16_B` | out | `std_logic` | Blue1 |
-   | `LED17_R` | out | `std_logic` | Red2 |
-   | `LED17_G` | out | `std_logic` | Green2 |
-   | `LED17_B` | out | `std_logic` | Blue2 |
+      | **Port name** | **Direction** | **Type** | **Description** |
+      | :-: | :-: | :-- | :-- |
+      | `CLK100MHZ` | in | `std_logic` | Main clock |
+      | `LED16_R` | out | `std_logic` | Red1 |
+      | `LED16_G` | out | `std_logic` | Green1 |
+      | `LED16_B` | out | `std_logic` | Blue1 |
+      | `LED17_R` | out | `std_logic` | Red2 |
+      | `LED17_G` | out | `std_logic` | Green2 |
+      | `LED17_B` | out | `std_logic` | Blue2 |
+      | `BTNC` | in | `std_logic` | Synchronous reset |
 
    3. Use direct instantiation and define an architecture of the top level.
 
-```vhdl
-------------------------------------------------------------
--- Architecture body for top level
-------------------------------------------------------------
-architecture Behavioral of top is
+      ```vhdl
+      ------------------------------------------------------------
+      -- Architecture body for top level
+      ------------------------------------------------------------
+      architecture Behavioral of top is
 
-begin
-    --------------------------------------------------------
-    -- Instance (copy) of tlc entity
-    tlc : entity work.tlc
-        port map(
-            clk   => CLK100MHZ,
-            reset => BTNC,
-            --- WRITE YOUR CODE HERE
-        );
+      begin
+          --------------------------------------------------------
+          -- Instance (copy) of tlc entity
+          tlc : entity work.tlc
+              port map(
+                  clk   => CLK100MHZ,
+                  reset => BTNC,
+                  -- MAP TWO RGB LEDS HERE
 
-end architecture Behavioral;
-```
+              );
 
-   4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
+      end architecture Behavioral;
+      ```
+
+   4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to top entity.
    5. Compile the project and download the generated bitstream `traffic/traffic.runs/impl_1/top.bit` into the FPGA chip.
    6. Observe the functionality of the traffic light controller.
 
@@ -266,7 +274,10 @@ end architecture Behavioral;
 
 ## Synchronize repositories
 
-Use [git commands](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
+When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
+
+   > Useful git commands are: `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
+   >
 
 <a name="experiments"></a>
 
