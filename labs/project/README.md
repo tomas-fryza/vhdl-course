@@ -1,69 +1,81 @@
 # VHDL project: General instructions
 
-<!--
-![Logo](../../logolink_eng.jpg)
-<p align="center">
-  The Study of Modern and Developing Engineering BUT<br>
-  CZ.02.2.69/0.0/0.0/18_056/0013325
-</p>
--->
+The aim of the VHDL project is cooperation in small teams, study of assigned topic, design of own solution, simulation, implementation, creation of project documentation and presentation of results. Students are divided into groups that represent small teams within a company. Their task will be to redistribute the work, fulfill the assigned task and defeat competing teams from the "company". The division of roles and tasks within the team is up to their members. All team members will be evaluated with the same number of points. *Any non-cooperation of some of the team members will be resolved individually*.
 
-The aim of the VHDL project is cooperation in small groups, study of the assigned topic, design of own solution, simulation, implementation, creation of project documentation and presentation of results. Students are divided into groups that represent small teams within a company. Their task will be to redistribute their work, best to fulfill the assigned task and defeat competing teams from the "company". The division of roles and tasks within the team is up to their members. All team members will be evaluated with the same number of points. *Any non-cooperation of some of the team members will be resolved individually.*
+* Students work on the project in laboratories from the 9th(10th) to 12th(13th) week of the semester in groups of 3 to 4 students.
 
-* Students work on the project during 4 week in computer laboratories from the 9th to the 13th week of the semester in groups of 3 to 5 students.
+* Students may consult the project within their own team, with their laboratory teacher and may not assign anyone else, including other students, academics, or PhD students. Consultations with the teacher will take place during the laboratories.
 
-* Students may consult the project within their own group, with their laboratory teacher and may not assign anyone else, including other students, academics, or PhD students. Consultations with the teacher will take place during the computer laboratories.
+* Students submit their results after the last laboratory in the 12th(13th) week of the semester.
 
-* Students present their results during in the 12th (13th) week of the semester.
-
-* The source code for the FPGA must be written in VHDL and must be implementable on Nexys A7 Artix-7 board using toolchains used in the lab during the semester. Any other development tools are not allowed.
+* The source code for the FPGA must be written in VHDL language and must be implementable on Nexys A7-50T board using development tools used in the lab during the semester.
 
 ## Will be evaluated
 
-* Submitted README file (see below)
-* Content of GitHub repository
+* Content of GitHub repository (see below)
 * Complexity of created application, functionality
 * Other functionality beyond the topic
 * If the topic has been completed
-* Compliance with VHDL Guidelines (2021)
+* Compliance with VHDL Guidelines, see elearning web page
 * Usage of codes and modules from previous exercises instead of copying from the Internet
-* Presence of Vivado project and generated bitstream file
-* Completeness and clarity of documentation
+* Presence of Vivado project and generated bitstream
 * Discussion of results
-* 5-minute video presentation in English, Czech, or Slovak
+* 5-minute youtube video presentation in English, Czech, or Slovak
 
 > ## Bude hodnoceno
 >
-> * Obsah odeslaného souboru README (viz dále)
-> * Obsah GitHub repozitáře
+> * Obsah GitHub repozitáře (viz dále)
 > * Složitost vytvořené aplikace, funkčnost
 > * Přidání vlastní funkcionality nad rámec zadání
 > * Zda práce odpovídá zadání
-> * Dodržování pravidel dle VHDL Guidelines (2021)
+> * Dodržování pravidel dle VHDL Guidelines, viz elearning
 > * Využití kódů a modulů z předchozích cvičení namísto jejich kopírování z internetu
-> * Přítomnost kompletního projektu ve Vivado a vygenerovaný programovací soubor
-> * Úplnost a jasnost dokumentace
+> * Přítomnost projektu ve Vivado a vygenerovaný programovací soubor
 > * Diskuse o výsledcích
 > * 5minutová video prezentace v angličtině, češtině, nebo slovenštině
->
 
 ## The repository folder itself must contain
 
-* Project README file according to the required structure (You will export and submit this file). The README file can be written in English, Czech, or Slovak
-* Complete project in Vivado. All source files must be written in English
+* Project README file according to the required structure. The README file can be written in English, Czech, or Slovak
+* Project in Vivado. All source files must be written in English
 * Testbench of all components that you have developed
 * Screenshots of simulations (individual components--not the whole project--can be simulated by EDA Playground as well)
 * External circuit diagrams and their simulations, if needed
-* Any other files, such as PCB of proposed circuit, production documentation, etc.
+* Any other files, such as PCB of proposed circuit, documents for 3D printing, production documentation, etc.
 * Literature references you used
 
 ## README template
 
-The README file contains a complete description of the problem, circuit diagram of peripherals, graphical representation of the application (flowchart or state diagram), screenshots of simulations, links to source files in the repository (do NOT include whole code listing to README), block diagram of final application, discussion of results, list of references, link to your video presentation, etc. Use this required structure of [project README file](project.md).
+The README file contains a complete description of the problem, circuit diagram of peripherals, graphical representation of the application (flowchart or state diagram), screenshots of simulations, links to source files in the repository (do NOT include whole code listing to README), block diagram of final application, discussion of results, list of references, link to your youtube video presentation, etc. Use this required structure of [project README file](project.md).
 
-The deadline for submitting the project is **Tuesday May 4, 2021**. Use BUT e-learning web page, export your project README file to PDF and submit it.
+## Project submitting
 
-![project schedule](schedule.png)
+Use BUT e-learning web page and submit the project GitHub link. All team members work on one GitHub repository. The link is submitted by at least one member of the team (but everyone can submit it).
+
+The deadline for submitting the project GitHub link is on **day of the 12th computer exercise**.
+
+| Groups | Deadline |
+| :-- | :-: |
+| Thursday groups | 28-Apr, 23:59 |
+| Tuesday groups | 4-May, 23:59 |
+| Wednesday groups | 5-May, 23:59 |
+
+## Topics 2021/22
+
+1. TBD
+
+   > *Bude zveřejněno.*
+   >
+
+2. TBD
+
+   > *Bude zveřejněno.*
+   >
+
+3. TBD
+
+   > *Bude zveřejněno.*
+   >
 
 ## Topics 2020/21
 
@@ -83,3 +95,17 @@ The source code for the FPGA must be written in VHDL language and must be implem
 
    > *Konzole pro rotoped/kolo, hallova sonda, měření a zobrazení rychlosti, ujeté vzdálenosti, atd.*
    >
+
+## Topics 2019/20
+
+1. Code lock with 4x3 matrix keyboard, time limit for entering the correct pin code and signaling an incorrect attempt.
+
+2. PWM dimmer with adjustable "timing" with rotary encoder KY-040 and push button. After the time has elapsed, the output of 100% PWM is continuously dimmed to zero.
+
+3. UART (Universal asynchronous receiver / transmitter) transmitter with adjustable UART frame, data word and one of two preset standard symbol rate parameters while the application is running.
+
+4. Ultrasonic distance meter HC-SR04. Output on multiplexed 7-segment display.
+
+5. Own ALU (Arithmetic Logic Unit) unit. Possibility to select instructions and input values while the application is running. Output on multiplexed 7-segment display.
+
+6. Countdown from given value to zero. Value is given by rotary encoder KY-040 with button, output is shown on serial 4-digit 7-segment display with control circuit TM1637.
