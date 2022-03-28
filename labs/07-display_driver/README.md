@@ -105,6 +105,8 @@ A display drive is able to control several 7-segment displays. Using the multipl
 
    7. Create a VHDL [simulation source](https://www.edaplayground.com/x/3f_A) `tb_driver_7seg_4digits`, complete the code, set conditions to display value `3.142` and run the simulation. Compare simulated timing diagram with yours in Preparation tasks. Verify reset as well.
 
+      **Important note:** Change the `g_MAX` parameter of `clock_enable` entity in the driver architecture to **4**! Then each clock period will be equivalent to 1 ms and not 10 ns. For implementation, do sure to change back the correct value to 400,000.
+
    8. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
 <a name="part3"></a>
@@ -138,7 +140,7 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
       -- Architecture body for top level
       ------------------------------------------------------------
       architecture Behavioral of top is
-        -- No internal signals
+        -- No internal signals are needed today:)
       begin
 
         --------------------------------------------------------
@@ -160,7 +162,7 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
                 data3_i(0) => SW(12),
                 dp_i       => "0111",
 
-                -- MAP DECIMAL POINT AND SEGMENTS
+                -- MAP DECIMAL POINT AND DISPLAY SEGMENTS
 
                 dig_o(3 downto 0) => AN(3 downto 0)
             );
@@ -171,14 +173,13 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
       end architecture Behavioral;
       ```
 
-   4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
+   4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to top entity.
    5. Compile the project and download the generated bitstream `display_driver/display_driver.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the driver by toggling the switches and observing the display.
 
       ![Nexys A7 board](images/nexys_a7_driver.jpg)
 
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
-   8. Optionel: Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
 ## Synchronize repositories
 
