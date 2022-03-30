@@ -64,7 +64,7 @@ In this laboratory exercise you will implement a finite state machine (FSM) in V
 A finite state machine (FSM) is a computation model that can be implemented with hardware or software and can be used to simulate sequential logic. There are two main types of finite state machines: the Mealy FSM and the Moore FSM. The fundamental difference between these two types lies in the management of the outputs:
 
 * The output of the **Mealy** machine depends on the present state and inputs.
-* The outputs of a **Moore** machine depend only on the present state and not on the inputs, as shown in the figure [[1]](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/).
+* The outputs of a **Moore** machine depend only on the present state and not on the inputs, as shown in the [figure](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/).
 
    ![Moore-type FSM](images/moore_structure.png)
 
@@ -73,7 +73,7 @@ A common way how to represent a finite state machine is a **state diagram** whic
 * Circles and
 * Directed arcs to the next state circles.
 
-Circles represent the machine states labelled with a reflecting state and for a Moore machine also with the output value [[2]](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-spring-2017/c6/c6s1/).
+Circles represent the machine states labelled with a reflecting state and for a Moore machine also with the [output value](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-spring-2017/c6/c6s1/).
 
 ![State diagrams](images/diagram_circle.png)
 
