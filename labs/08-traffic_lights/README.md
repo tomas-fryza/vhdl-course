@@ -219,7 +219,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
 1. Perform the following steps to simulate traffic light controller.
 
    1. Create a VHDL [simulation source](https://www.edaplayground.com/x/5HBi) `tb_tlc`. Note that the maximum value of clock enable circuit is set to 1 for the simulation, ie the traffic light controller changes its state with a frequency of 100&nbsp;MHz and not 4&nbsp;Hz.
-   2. Change the duration of simulation to 2000ns in Vivado menu **Tools > Settings... > Simulation > Simulation**.
+   2. Change the duration of simulation to `2000ns` in Vivado menu **Tools > Settings... > Simulation > Simulation**.
    3. Run the simulation, and verify that the controller works correctly (reset, timing, output lights, states).
 
 <a name="part5"></a>
