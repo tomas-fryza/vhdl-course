@@ -222,6 +222,15 @@ Let an intersection contains two one-way streets with a fixed time control syste
    2. Change the duration of simulation to `2000ns` in Vivado menu **Tools > Settings... > Simulation > Simulation**.
    3. Run the simulation, and verify that the controller works correctly (reset, timing, output lights, states).
 
+      > To display internal signals values perform the followings:
+      > 1. Select `uut_tlc` in **Scope** folder.
+      > 2. Right click to `s_state` signal name in **Objects** folder.
+      > 3. Add this signal by selecting **Add to Wave Window** command.
+      > 4. Click to **Relaunch Simulation** icon.
+      >
+      >    ![Internal signals simulation](images/vivado_signals.png)
+      >
+
 <a name="part5"></a>
 
 ## Part 5: Top level VHDL code
