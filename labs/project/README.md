@@ -69,7 +69,7 @@ The deadline for submitting the project GitHub link is on **day of the 12th comp
 5. Digital clock (hh mm ss) with time/alarm setting.
 6. Running text on 7-seg displays.
 7. Frequency counter of square and harmonic and/or ECG signal.
-8. Measuring the speed of an object through a series of optical barriers.
+8. Measuring the speed of an object through a series of IR sensors (such as HW-201) or optical barriers.
 
 ## Topics 2020/21
 
