@@ -62,20 +62,14 @@ The deadline for submitting the project GitHub link is on **day of the 12th comp
 
 ## Topics 2021/22
 
-1. TBD
-
-   > *Bude zveřejněno.*
-   >
-
-2. TBD
-
-   > *Bude zveřejněno.*
-   >
-
-3. TBD
-
-   > *Bude zveřejněno.*
-   >
+1. UART interface, ie UART transmitter and receiver. Let the UART frame structure is 8N1 and symbol rate is 9600 Bd.
+2. Nexys board mono audio output and PWM sound generation. Generate basic signals and/or audio samples.
+3. Morse code receiver, ie converter of Morse code to characters/numbers.
+4. Morse code transmitter, ie converter of characters/numbers to Morse code.
+5. Digital clock (hh mm ss) with time/alarm setting.
+6. Running text on 7-seg displays.
+7. Frequency counter of square and harmonic and/or ECG signal.
+8. Measuring the speed of an object through a series of optical barriers.
 
 ## Topics 2020/21
 
