@@ -86,14 +86,16 @@ To drive another logic in the design (with slower clock), it is better to genera
 ```javascript
 {
   signal: [
-    {name: "clk",  wave: 'P.............'},
-    {name: "ce_o", wave: 'lhl........hl.'},
+    {name: "clk",         wave: 'P.................'},
+    {name: "reset",       wave: 'lnh.pl............'},
+    {name: "s_cnt_local", wave: 'x.3..3333333333333', data: ["0","1","2","3","4","5","0","1","2","3","4","5","0","1"]},
+    {},
+    {name: "ce_o",  wave: 'l.........hl....hl'},
   ],
   head: {
-    tick: -2,
   },
   foot: {
-    text:'g_MAX = 10',
+    text:'g_MAX = 6',
   },
 }
 ```
