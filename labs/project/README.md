@@ -57,8 +57,8 @@ The deadline for submitting the project GitHub link is on **day of the 12th comp
 | Groups | Deadline |
 | :-- | :-: |
 | Thursday groups | 28-Apr, 23:59 |
-| Tuesday groups | 4-May, 23:59 |
-| Wednesday groups | 5-May, 23:59 |
+| Tuesday groups | 3-May, 23:59 |
+| Wednesday groups | 4-May, 23:59 |
 
 ## Topics 2021/22
 
