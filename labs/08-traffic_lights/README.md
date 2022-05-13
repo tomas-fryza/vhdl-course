@@ -21,19 +21,19 @@ In this laboratory exercise you will implement a finite state machine (FSM) in V
 
 ### Table of contents
 
-* [Preparation tasks](#preparation)
+* [Pre-Lab preparation](#preparation)
 * [Part 1: Synchronize Git and create a new folder](#part1)
 * [Part 2: Finite State Machine (FSM)](#part2)
 * [Part 3: VHDL code for traffic light controller](#part3)
 * [Part 4: Traffic light controller simulation](#part4)
 * [Part 5: Top level VHDL code](#part5)
 * [Experiments on your own](#experiments)
-* [Lab assignment](#assignment)
+* [Post-Lab report](#report)
 * [References](#references)
 
 <a name="preparation"></a>
 
-## Preparation tasks (done before the lab at home)
+## Pre-Lab preparation
 
 1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of two RGB LEDs, ie to which FPGA pins are connected and how. How you can control them to get red, yellow, or green colors? Draw the schematic with RGB LEDs.
 
@@ -223,6 +223,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
    3. Run the simulation, and verify that the controller works correctly (reset, timing, output lights, states).
 
       > To display internal signal values perform the followings:
+      >
       > 1. Select `uut_tlc` in **Scope** folder.
       > 2. Right click to `s_state` signal name in **Objects** folder.
       > 3. Add this signal by selecting **Add to Wave Window** command.
@@ -298,13 +299,13 @@ When you finish working, always synchronize the contents of your working folder 
 
 2. Propose your own state table and draw a state diagram of this smart controller including delays. Use on-board slide switches to emulate two sensors and implement the traffic light controller on the Nexys A7 board.
 
-<a name="assignment"></a>
+<a name="report"></a>
 
-## Lab assignment
+## Post-Lab report
 
-*Copy the [assignment template](assignment.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
+*Copy the [report template](report.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
 
-*Vložte [šablonu úkolu](assignment.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
+*Vložte [šablonu úkolu](report.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
 
 <a name="references"></a>
 

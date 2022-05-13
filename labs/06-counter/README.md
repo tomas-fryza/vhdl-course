@@ -20,18 +20,18 @@ The purpose of this laboratory exercise is to become familiar with the creation 
 
 ### Table of contents
 
-* [Preparation tasks](#preparation)
+* [Pre-Lab preparation](#preparation)
 * [Part 1: Synchronize Git and create a new folder](#part1)
 * [Part 2: VHDL code for clock enable](#part2)
 * [Part 3: VHDL code for bidirectional binary counter](#part3)
 * [Part 4: Top level VHDL code](#part4)
 * [Experiments on your own](#experiments)
-* [Lab assignment](#assignment)
+* [Post-Lab report](#report)
 * [References](#references)
 
 <a name="preparation"></a>
 
-## Preparation tasks (done before the lab at home)
+## Pre-Lab preparation
 
 The Nexys A7 board provides five push buttons for user applications.
 
@@ -45,11 +45,11 @@ The Nexys A7 board provides five push buttons for user applications.
 
    ![number of periods](images/periods.png)
    &nbsp;
-   <!--
-   https://editor.codecogs.com/
-   T_{clk}=\frac{1}{f_{clk}}=
-   \textup{number of clk period} = \frac{\textup{time interval}}{T_{clk}}=
-   -->
+<!--
+https://editor.codecogs.com/
+T_{clk}=\frac{1}{f_{clk}}=
+\textup{number of clk period} = \frac{\textup{time interval}}{T_{clk}}=
+-->
 
    | **Time interval** | **Number of clk periods** | **Number of clk periods in hex** | **Number of clk periods in binary** |
    | :-: | :-: | :-: | :-: |
@@ -250,13 +250,13 @@ When you finish working, always synchronize the contents of your working folder 
 
    Display the second counter value on LED(15:0). Since it is not possible to control one output device with two different sources, the values of the first counter will no longer be displayed on the LED(3:0). All LEDs here are reserved for the second counter only!
 
-<a name="assignment"></a>
+<a name="report"></a>
 
-## Lab assignment
+## Post-Lab report
 
-*Copy the [assignment template](assignment.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
+*Copy the [report template](report.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
 
-*Vložte [šablonu úkolu](assignment.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
+*Vložte [šablonu úkolu](report.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
 
 <a name="references"></a>
 
