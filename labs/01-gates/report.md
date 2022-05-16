@@ -9,26 +9,26 @@
 2. Listing of VHDL architecture from design file (`design.vhd`) for all three functions. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
 
 ```vhdl
-architecture dataflow of demorgan is
+architecture dataflow of gates is
 begin
-    f_org_o  <= (not(b_i) and a_i) or (not(c_i) and not(b_i));
-    f_nand_o <= -- WRITE YOUR CODE HERE
-    f_nor_o  <= -- WRITE YOUR CODE HERE
+    f_orig_o <= (not(b_i) and a_i) or (c_i and not(b_i or not(a_i)));
+    f_nand_o <= b_i nand a_i; -- MODIFY THIS FUNCTION
+    f_nor_o  <= b_i nor a_i;  -- MODIFY THIS FUNCTION
 end architecture dataflow;
 ```
 
 3. Complete table with logic functions' values:
 
-| **c** | **b** |**a** | **f(c,b,a)_ORG** | **f(c,b,a)_NAND** | **f(c,b,a)_NOR** |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| 0 | 0 | 0 |  |  |  |
-| 0 | 0 | 1 |  |  |  |
-| 0 | 1 | 0 |  |  |  |
-| 0 | 1 | 1 |  |  |  |
-| 1 | 0 | 0 |  |  |  |
-| 1 | 0 | 1 |  |  |  |
-| 1 | 1 | 0 |  |  |  |
-| 1 | 1 | 1 |  |  |  |
+   | **c** | **b** |**a** | **f_ORIG** | **f_(N)AND** | **f_(N)OR** |
+   | :-: | :-: | :-: | :-: | :-: | :-: |
+   | 0 | 0 | 0 |  |  |  |
+   | 0 | 0 | 1 |  |  |  |
+   | 0 | 1 | 0 |  |  |  |
+   | 0 | 1 | 1 |  |  |  |
+   | 1 | 0 | 0 |  |  |  |
+   | 1 | 0 | 1 |  |  |  |
+   | 1 | 1 | 0 |  |  |  |
+   | 1 | 1 | 1 |  |  |  |
 
 ### Distributive laws
 

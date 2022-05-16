@@ -158,7 +158,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 3. According to the simulation, complete the table with logic values.
 
-   | **c** | **b** |**a** | **f(c,b,a)_ORIG** | **f(c,b,a)_(N)AND** | **f(c,b,a)_(N)OR** |
+   | **c** | **b** |**a** | **f_ORIG** | **f_(N)AND** | **f_(N)OR** |
    | :-: | :-: | :-: | :-: | :-: | :-: |
    | 0 | 0 | 0 |  |  |  |
    | 0 | 0 | 1 |  |  |  |
