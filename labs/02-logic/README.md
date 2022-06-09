@@ -97,7 +97,7 @@ When you start working, always synchronize the contents of your working folder a
    $ mkdir 02-logic
    ```
 
-3. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `assignment.md` in your `labs/02-logic/` folder. Copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/02-logic/assignment.md) to your `assignment.md` text file.
+3. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `report.md` in your `labs/02-logic/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/02-logic/report.md) to your `report.md` text file.
 
 <a name="part2"></a>
 
@@ -140,6 +140,8 @@ The K-map for the "equals" function is as follows:
       B_less_A_o    <= '1' when (b_i < a_i) else '0';
    ```
 
+   Write all three functions in signal-assignments style and one function also with low-level operators.
+
 <a name="part4"></a>
 
 ## Part 4: Assertion statements in VHDL testbench
@@ -173,7 +175,7 @@ The message is displayed to the console when the condition is NOT met, therefore
     p_stimulus : process
     begin
         -- Report a note at the beginning of stimulus process
-        report "Stimulus process started" severity note;
+        report "Stimulus process started";
 
         -- First test case ...
         s_b <= "00"; s_a <= "00"; wait for 100 ns;
@@ -190,7 +192,7 @@ The message is displayed to the console when the condition is NOT met, therefore
 
 
         -- Report a note at the end of stimulus process
-        report "Stimulus process finished" severity note;
+        report "Stimulus process finished";
         wait; -- Data generation process is suspended forever
     end process p_stimulus;
    ```
