@@ -71,7 +71,7 @@ T_{clk}=\frac{1}{f_{clk}}=
 
 2. Create a new working folder `labs/06-counter` for this laboratory exercise.
 
-3. Create a new file `labs/06-counter/assignment.md` and copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/06-counter/assignment.md) into it.
+3. Create a new file `labs/06-counter/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/06-counter/report.md) into it.
 
 <a name="part2"></a>
 
@@ -146,7 +146,6 @@ To drive another logic in the design (with slower clock), it is better to genera
       | :-: | :-: | :-- | :-- |
       | `CLK100MHZ` | in  | `std_logic` | Main clock |
       | `SW`        | in  | `std_logic` | Counter direction |
-      | `LED`       | out | `std_logic_vector(3 downto 0)` | Counter value LED indicators |
       | `CA`        | out | `std_logic` | Cathod A |
       | `CB`        | out | `std_logic` | Cathod B |
       | `CC`        | out | `std_logic` | Cathod C |
@@ -166,9 +165,9 @@ To drive another logic in the design (with slower clock), it is better to genera
       architecture Behavioral of top is
 
         -- Internal clock enable
-        signal s_en  : std_logic;
+        signal s_en_250ms : std_logic;
         -- Internal counter
-        signal s_cnt : std_logic_vector(4 - 1 downto 0);
+        signal s_cnt_4bit : std_logic_vector(4 - 1 downto 0);
 
       begin
 
@@ -181,7 +180,7 @@ To drive another logic in the design (with slower clock), it is better to genera
             port map(
                 clk   => -- WRITE YOUR CODE HERE
                 reset => -- WRITE YOUR CODE HERE
-                ce_o  => s_en
+                ce_o  => s_en_250ms
             );
 
         --------------------------------------------------------------------
@@ -198,7 +197,8 @@ To drive another logic in the design (with slower clock), it is better to genera
         -- Instance (copy) of hex_7seg entity
         hex2seg : entity work.hex_7seg
             port map(
-                hex_i    => s_cnt,
+                blank_i  => BTNC,
+                hex_i    => s_cnt_4bit,
                 seg_o(6) => CA,
                 seg_o(5) => CB,
                 seg_o(4) => CC,
@@ -211,13 +211,10 @@ To drive another logic in the design (with slower clock), it is better to genera
         -- Connect one common anode to 3.3V
         AN <= b"1111_1110";
 
-        -- Display counter values on LEDs
-        LED(3 downto 0) <= s_cnt;
-
       end architecture Behavioral;
       ```
   
-     ![Top level](images/top_schema_4bit_cnt.jpg)
+      ![Top level](images/top_schema_4bit_cnt.png)
 
    4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
 
@@ -246,9 +243,7 @@ When you finish working, always synchronize the contents of your working folder 
 
 ## Experiments on your own
 
-1. Add a second instantiation (copy) of the counter and clock enable entities and make a 16-bit counter with a 10 ms time base. Therefore, the application will contain two independent binary counters (4-bit and 16-bit), each with a different counting speed.
-
-   Display the second counter value on LED(15:0). Since it is not possible to control one output device with two different sources, the values of the first counter will no longer be displayed on the LED(3:0). All LEDs here are reserved for the second counter only!
+1. Add a second instantiation (copy) of the counter and clock enable entities and make a 10-bit counter with a 10 ms time base. Therefore, the application will contain two independent binary counters (4-bit and 10-bit), each with a different counting speed. Display the second counter value on LEDs.
 
 <a name="report"></a>
 
