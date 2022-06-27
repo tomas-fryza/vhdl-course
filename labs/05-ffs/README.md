@@ -83,7 +83,7 @@ https://editor.codecogs.com/
 
 2. Create a new working folder `labs/05-ffs` for this laboratory exercise.
 
-3. Create a new file `labs/05-ffs/assignment.md` and copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/05-ffs/assignment.md) into it.
+3. Create a new file `labs/05-ffs/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/05-ffs/report.md) into it.
 
 <a name="part2"></a>
 
@@ -283,14 +283,40 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
       end architecture testbench;
       ```
 
-2. Create at least one other design source VHDL file and define a different type of flip-flop, such as flip-flop D with asynchronous reset, flip-flop JK with synchronization reset, or T flip-flop with synchronization reset. (Prefered combination is `d_ff_rst` and [`t_ff_rst`](https://github.com/tomas-fryza/digital-electronics-1/blob/master/labs/05-ffs/assignment.md)).
+2. Create other design source VHDL file and define T flip-flop with synchronization reset [`t_ff_rst`](https://github.com/tomas-fryza/digital-electronics-1/blob/master/labs/05-ffs/report.md)).
 
    | **Entity** | **Inputs** | **Outputs** | **Description** |
    | :-- | :-- | :-- | :-- |
-   | `d_ff_arst` | `clk`, `arst`, `d` | `q`, `q_bar` | D type flip-flop with an async reset |
-   | `d_ff_rst` | `clk`, `rst`, `d` | `q`, `q_bar` | D type flip-flop with a sync reset |
-   | `jk_ff_rst` | `clk`, `rst`, `j`, `k` | `q`, `q_bar` | JK type flip-flop with a sync reset |
    | `t_ff_rst` | `clk`, `rst`, `t` | `q`, `q_bar` | T type flip-flop with a sync reset |
+
+   ```vhdl
+   architecture Behavioral of t_ff_rst is
+       -- It must use this local signal instead of output ports
+       -- because "out" ports cannot be read within the architecture
+       signal s_q : std_logic;
+   begin
+       --------------------------------------------------------
+       -- p_t_ff_rst:
+       -- T type flip-flop with a high-active synchro reset,
+       -- rising-edge clk.
+       -- q(n+1) = t./q(n) + /t.q(n)
+       -- q(n+1) =  q(n) if t = 0 (no change)
+       -- q(n+1) = /q(n) if t = 1 (inversion)
+       --------------------------------------------------------
+       p_t_ff_rst : process(clk)
+       begin
+           if rising_edge(clk) then
+
+           -- WRITE YOUR CODE HERE
+
+           end if;
+       end process p_t_ff_rst;
+
+       -- Output ports are permanently connected to local signal
+       q     <= s_q;
+       q_bar <= not s_q;
+   end architecture Behavioral;
+   ```
 
 3. Try to simulate both flip-flops together in existing testbench  file `tb_ff_rst.vhd` with a maximum duration of 200 ns. Verify the synchronous reset as well.
 
@@ -307,14 +333,14 @@ When you finish working, always synchronize the contents of your working folder 
 
 ## Experiments on your own
 
-Use D type flip-flops with synchronous reset and perform the following steps to implement a 4-bit shift register on the Nexys A7 board.
+Use D type flip-flops with synchronous reset and perform the following steps to simulate a 4-bit shift register.
 
    1. Create a new design source `top` in your project.
    2. Use **Define Module** dialog and set ports of `top` entity as follows.
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
-      | `CLK100MHZ` | input  | `std_logic` | On-board clock |
+      | `CLK100MHZ` | input  | `std_logic` | Main clock |
       | `BTNC` | input  | `std_logic` | Synchronous reset |
       | `SW`   | input  | `std_logic_vector(1 - 1 downto 0)` | Shift register serial input |
       | `LED`  | output | `std_logic_vector(4 - 1 downto 0)` | Shift register parallel outputs |
@@ -358,10 +384,7 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
       end architecture Behavioral;
       ```
 
-   4. Create a testbench file `tb_top` and simulate it or create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the entity.
-   5. Compile the project and download the generated bitstream `YOUR_FOLDER/flip_flops/flip_flops.runs/impl_1/top.bit` into the FPGA chip.
-   6. Test the functionality of the shift register by pressing the push buttons and observing LEDs.
-   7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
+   4. Create a testbench file `tb_top` and simulate it.
 
 <a name="report"></a>
 
