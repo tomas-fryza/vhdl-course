@@ -55,7 +55,7 @@ In this laboratory exercise you will implement a finite state machine (FSM) in V
 
 2. Create a new working folder `labs/08-traffic_lights` for this laboratory exercise.
 
-3. Create a new file `labs/08-traffic_lights/assignment.md` and copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/08-traffic_lights/assignment.md) into it.
+3. Create a new file `labs/08-traffic_lights/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/08-traffic_lights/report.md) into it.
 
 <a name="part2"></a>
 

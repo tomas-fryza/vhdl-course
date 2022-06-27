@@ -84,7 +84,7 @@ Due to the physiological properties of human vision, it is necessary that the ti
 
 2. Create a new working folder `labs/07-display_driver` for this laboratory exercise.
 
-3. Create a new file `labs/07-display_driver/assignment.md` and copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/07-display_driver/assignment.md) into it.
+3. Create a new file `labs/07-display_driver/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/07-display_driver/report.md) into it.
 
 <a name="part2"></a>
 
