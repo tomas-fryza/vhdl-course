@@ -73,7 +73,7 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 2. Create a new working folder `labs/04-segment` for this laboratory exercise.
 
-3. Create a new file `labs/04-segment/assignment.md` and copy/paste [assignment template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/04-segment/assignment.md) into it.
+3. Create a new file `labs/04-segment/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/04-segment/report.md) into it.
 
 <a name="part2"></a>
 
@@ -88,6 +88,7 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
+      | `blank_i` | input | `std_logic` | Blank (clear) display |
       | `hex_i` | input   | `std_logic_vector(3 downto 0)` | Input binary data |
       | `seg_o` | output  | `std_logic_vector(6 downto 0)` | Cathode values in the order A, B, C, D, E, F, G |
 
@@ -124,6 +125,7 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
       | `CF` | out | `std_logic` | Cathod F |
       | `CG` | out | `std_logic` | Cathod G |
       | `AN` | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
+      | `BTNC` | in | `std_logic` | Blank (clear) display |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
@@ -137,6 +139,7 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
             -- Instance (copy) of hex_7seg entity
             hex2seg : entity work.hex_7seg
                 port map(
+                    blank_i  => BTNC,
                     hex_i    => SW,
                     seg_o(6) => CA,
                     seg_o(5) => CB,
