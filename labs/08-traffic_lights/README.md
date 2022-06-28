@@ -107,25 +107,27 @@ Let an intersection contains two one-way streets with a fixed time control syste
 
       | **Current state** | **Direction South** | **Direction West** | **Delay** |
       | :-- | :-: | :-: | :-: |
-      | `STOP1`      | red    | red    | 1 sec |
+      | `WEST_STOP`  | red    | red    | 2 sec |
       | `WEST_GO`    | red    | green  | 4 sec |
-      | `WEST_WAIT`  | red    | yellow | 2 sec |
-      | `STOP2`      | red    | red    | 1 sec |
+      | `WEST_WAIT`  | red    | yellow | 1 sec |
+      | `SOUTH_STOP` | red    | red    | 2 sec |
       | `SOUTH_GO`   | green  | red    | 4 sec |
-      | `SOUTH_WAIT` | yellow | red    | 2 sec |
+      | `SOUTH_WAIT` | yellow | red    | 1 sec |
 
-2. Draw a state diagram according to the table.
+2. Draw Moore-based state diagram according to the table.
 
 3. In VHDL it is possible to define a new data type, which contains the names of our states.
 
    ```vhdl
        -- Define the states
-       type t_state is (STOP1,
-                        WEST_GO,
-                        WEST_WAIT,
-                        STOP2,
-                        SOUTH_GO,
-                        SOUTH_WAIT);
+       type t_state is (
+           WEST_STOP,
+           WEST_GO,
+           WEST_WAIT,
+           SOUTH_STOP,
+           SOUTH_GO,
+           SOUTH_WAIT
+       );
        -- Define the signal that uses different states
        signal s_state : t_state;
    ```
@@ -146,21 +148,18 @@ Let an intersection contains two one-way streets with a fixed time control syste
         p_traffic_fsm : process(clk)
         begin
             if rising_edge(clk) then
-                if (reset = '1') then   -- Synchronous reset
-                    s_state <= STOP1;   -- Set initial state
-                    s_cnt   <= c_ZERO;  -- Clear delay counter
+                if (reset = '1') then      -- Synchronous reset
+                    s_state <= WEST_STOP;  -- Init state
+                    s_cnt   <= c_ZERO;     -- Clear delay counter
 
                 elsif (s_en = '1') then
                     -- Every 250 ms, CASE checks the value of the s_state 
                     -- variable and changes to the next state according 
                     -- to the delay value.
                     case s_state is
-
-                        -- If the current state is STOP1, then wait 1 sec
-                        -- and move to the next GO_WAIT state.
-                        when STOP1 =>
-                            -- Count up to c_DELAY_1SEC
-                            if (s_cnt < c_DELAY_1SEC) then
+                        when WEST_STOP =>
+                            -- Count up to c_DELAY_2SEC
+                            if (s_cnt < c_DELAY_2SEC) then
                                 s_cnt <= s_cnt + 1;
                             else
                                 -- Move to the next state
@@ -177,7 +176,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
                         -- OTHERS clause, even if all CASE choices have 
                         -- been made.
                         when others =>
-                            s_state <= STOP1;
+                            s_state <= WEST_STOP;
                             s_cnt   <= c_ZERO;
                     end case;
                 end if; -- Synchronous reset
@@ -198,7 +197,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
         p_output_fsm : process(s_state)
         begin
             case s_state is
-                when STOP1 =>
+                when WEST_STOP =>
                     south_o <= c_RED;
                     west_o  <= c_RED;
                 when WEST_GO =>
@@ -293,11 +292,13 @@ When you finish working, always synchronize the contents of your working folder 
 
 ## Experiments on your own
 
-1. Follow the [exercise inspired by prof. Jon Valvano](https://arduining.com/2015/09/18/traffic-light-states-machine-with-arduino/) from University of Texas and desing an enhanced traffic light controller for the intersection of two equally busy one-way streets. The controller using two sensors and two traffic lights in three colors. Two sensors detects the presence of cars in each direction and the goal is to maximize traffic flow, minimize waiting time at a red light, and avoid accidents.
+1. Add a *speed button* to your design to ensure a synchronous transition to the `WEST_GO` state.
+
+2. Follow the [exercise inspired by prof. Jon Valvano](https://arduining.com/2015/09/18/traffic-light-states-machine-with-arduino/) from University of Texas and desing an enhanced traffic light controller for the intersection of two equally busy one-way streets. The controller using two sensors and two traffic lights in three colors. Two sensors detects the presence of cars in each direction and the goal is to maximize traffic flow, minimize waiting time at a red light, and avoid accidents.
 
    ![Enhanced traffic light controller for the intersection](images/lab8_traffic_light_intersection.png)
 
-2. Propose your own state table and draw a state diagram of this smart controller including delays. Use on-board slide switches to emulate two sensors and implement the traffic light controller on the Nexys A7 board.
+3. Propose your own state table and draw a state diagram of this smart controller including delays. Use on-board slide switches to emulate two sensors and implement the traffic light controller on the Nexys A7 board.
 
 <a name="report"></a>
 
