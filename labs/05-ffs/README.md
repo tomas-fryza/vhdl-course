@@ -271,12 +271,12 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
           --------------------------------------------------------
           p_stimulus : process
           begin
-              report "Stimulus process started" severity note;
+              report "Stimulus process started";
               s_data <='0'; wait for 13 ns;
 
               -- DEFINE YOUR INPUT DATA HERE
 
-              report "Stimulus process finished" severity note;
+              report "Stimulus process finished";
               wait;
           end process p_stimulus;
 
