@@ -101,7 +101,7 @@ A display drive is able to control several 7-segment displays. Using the multipl
    5. Copy source files of clock enable, binary counter, 7-segment decoder modules from previous labs to `display_driver/display_driver.srcs/sources_1/new/` folder and add them to the project.
    6. Complete the driver code according to the following block diagram.
 
-      ![Block diagram of 7-segment display driver](images/schema_driver2.jpg)
+      ![Block diagram of 7-segment display driver](images/schema_driver_4dig.png)
 
    7. Create a VHDL [simulation source](https://www.edaplayground.com/x/3f_A) `tb_driver_7seg_4digits`, complete the code, set conditions to display value `3.142` and run the simulation. Compare simulated timing diagram with yours in Preparation tasks. Verify reset as well.
 
