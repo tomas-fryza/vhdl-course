@@ -8,7 +8,7 @@
 </p>
 -->
 
-The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/242350) at Brno University of Technology, Czechia.
+The repository contain VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/242350) at Brno University of Technology, Czechia.
 
 ## Exercises
 
