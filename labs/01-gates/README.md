@@ -47,7 +47,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 1. In GitHub, create a new public repository titled **digital-electronics-1**. Initialize README, [`.gitignore`](https://raw.githubusercontent.com/iDoka/eda-scripts/master/gitignore/vivado.gitignore), and [MIT license](https://choosealicense.com/licenses/mit/).
 
-2. Use one of the available git manuals, such as [[1]](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061), [[2]](https://help.github.com/en/articles/basic-writing-and-formatting-syntax), or [[3]](https://guides.github.com/features/mastering-markdown/), and add the following sections to your online README.md file.
+2. Use one of the available git manuals, such as [[1]](https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061) or [[2]](https://help.github.com/en/articles/basic-writing-and-formatting-syntax) and add the following sections to your online README.md file.
 
 * Headers H1, H2, H3
 * Emphasis (*italics*, **bold**)
