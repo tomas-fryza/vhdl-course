@@ -8,7 +8,7 @@
 </p>
 -->
 
-The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/242350) at Brno University of Technology, Czechia.
+The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/258369) at Brno University of Technology, Czechia. [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA board is used the course.
 
 ## Exercises
 
@@ -20,7 +20,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 6. [Binary counter](labs/06-counter)
 7. [Driver for multiple seven-segment displays](labs/07-display_driver)
 8. [Traffic light controller](labs/08-traffic_lights)
-9. [VHDL project: General instructions](labs/project)
+9. [Project](labs/project)
 
 ## List of VHDL examples
 
@@ -48,6 +48,8 @@ The following hardware and software components are mainly used in the lab.
 * Development tools:
   * [EDA Playground](https://www.edaplayground.com/) is a cloud-based service that runs in your browser :+1:
   * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.2: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
+
+* Other tools:
   * [git](https://git-scm.com/)
 
 ## References
