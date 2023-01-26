@@ -24,7 +24,7 @@ The purpose of this laboratory exercise is to learn to use different ways of wri
 ### Table of contents
 
 * [Pre-Lab preparation](#preparation)
-* [Part 1: Synchronize Git and create a new folder](#part1)
+* [Part 1: Synchronize repositories and create a new folder](#part1)
 * [Part 2: Logic function minimization](#part2)
 * [Part 3: Binary comparator in VHDL language](#part3)
 * [Part 4: Assertion statements in VHDL testbench](#part4)
@@ -61,43 +61,27 @@ The purpose of this laboratory exercise is to learn to use different ways of wri
 
 <a name="part1"></a>
 
-## Part 1: Synchronize Git and create a new folder
+## Part 1: Synchronize repositories and create a new folder
 
 When you start working, always synchronize the contents of your working folder and local repository with remote version at GitHub. This way you are sure that you will not lose any of your changes.
 
-1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
+1. Run Git Bash (Windows) of Terminal (Linux) in your working directory, and update local repository.
 
-   > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
-   >
-
-   ```bash
-   ## Windows Git Bash:
-   $ cd d:/Documents/
-   $ cd your-name/
-   $ ls
-   digital-electronics-1/
-   $ cd digital-electronics-1/
-   $ git pull
-
-   ## Linux:
-   $ cd
-   $ cd Documents/
-   $ cd your-name/
-   $ ls
-   digital-electronics-1/
-   $ cd digital-electronics-1/
-   $ git pull
-   ```
-
-2. Create a new working folder `labs/02-logic` for this exercise.
+   > **Help:** Useful bash and git commands are `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
 
    ```bash
    ## Windows Git Bash or Linux:
-   $ cd labs/
+   $ git pull
+   ```
+
+2. Create a new working folder `02-logic` for this exercise.
+
+   ```bash
+   ## Windows Git Bash or Linux:
    $ mkdir 02-logic
    ```
 
-3. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `report.md` in your `labs/02-logic/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/02-logic/report.md) to your `report.md` text file.
+3. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `README.md` in your `02-logic/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/02-logic/report.md) to your `02-logic/README.md` file.
 
 <a name="part2"></a>
 
@@ -201,10 +185,9 @@ The message is displayed to the console when the condition is NOT met, therefore
 
 ## Synchronize git
 
-When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
+1. Synchronize the contents of your working folder with the local and remote repository. This way you are sure that you will not lose any of your changes. To do that, use git commands to add, commit, and push all local changes to your remote repository. Check GitHub web page for changes.
 
-   > Useful git commands are: `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
-   >
+   > **Help:** Useful git commands are `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
 
 <a name="experiments"></a>
 
@@ -226,9 +209,9 @@ When you finish working, always synchronize the contents of your working folder 
 
 ## Post-Lab report
 
-*Copy the [report template](report.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
+*Complete all parts of `02-logic/README.md` file (see Part 1.3) in Czech, Slovak, or English, push it to your GitHub repository, and submit a link to this file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next lab, i.e. in one week.*
 
-*Vložte [šablonu úkolu](report.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
+*Vypracujte všechny části ze souboru `02-logic/README.md` (viz Část 1.3) v českém, slovenském, nebo anglickém jazyce, uložte je na váš GitHub repozitář a odevzdejte link na tento soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším laboratorním cvičením, tj. za jeden týden.*
 
 <a name="references"></a>
 
