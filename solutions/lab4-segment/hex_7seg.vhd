@@ -4,7 +4,7 @@
 -- Nexys A7-50T, xc7a50ticsg324-1L
 -- Vivado v2018.3, EDA Playground, TerosHDL
 --
--- Copyright (c) 2018-Present Tomas Fryza
+-- Copyright (c) 2018 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
 -- This work is licensed under the terms of the MIT license.
 --
@@ -42,9 +42,9 @@ begin
     --          |||            |
     -- seg_o = "0000001"-------+
     --
-    -- Display is clear/blank if blank_i = 1.
+    -- Display is clear/blank if signal blank_i = 1.
     --------------------------------------------------------
-    p_7seg_decoder : process (hex_i, blank_i)
+    p_7seg_decoder : process (blank_i, hex_i)
     begin
         if (blank_i = '1') then
             seg_o <= "1111111"; -- Blanking display

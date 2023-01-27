@@ -4,7 +4,7 @@
 -- Nexys A7-50T, xc7a50ticsg324-1L
 -- Vivado v2018.3, EDA Playground, TerosHDL
 --
--- Copyright (c) 2019-Present Tomas Fryza
+-- Copyright (c) 2019 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
 -- This work is licensed under the terms of the MIT license.
 --
@@ -19,7 +19,7 @@ use ieee.numeric_std.all; -- Package for arithmetic operations
 entity clock_enable is
     generic (
         -- Number of clk pulses to generate one enable signal period
-        g_MAX : natural := 10
+        g_MAX : natural := 5
     ); -- Note that there IS a semicolon between generic and port sections
     port (
         clk   : in std_logic; -- Main clock
@@ -34,7 +34,7 @@ end entity clock_enable;
 architecture Behavioral of clock_enable is
 
     -- Local counter
-    signal s_cnt_local : natural;
+    signal s_cnt : natural;
 
 begin
     --------------------------------------------------------
@@ -47,17 +47,17 @@ begin
         if rising_edge(clk) then -- Synchronous process
 
             if (reset = '1') then -- High active reset
-                s_cnt_local <= 0; -- Clear local counter
-                ce_o        <= '0'; -- Set output to low
+                s_cnt <= 0;           -- Clear local counter
+                ce_o  <= '0';         -- Set output to low
 
                 -- Test number of clock periods
-            elsif (s_cnt_local >= (g_MAX - 1)) then
-                s_cnt_local <= 0; -- Clear local counter
-                ce_o        <= '1'; -- Generate clock enable pulse
+            elsif (s_cnt >= (g_MAX - 1)) then
+                s_cnt <= 0;   -- Clear local counter
+                ce_o  <= '1'; -- Generate clock enable pulse
 
             else
-                s_cnt_local <= s_cnt_local + 1;
-                ce_o        <= '0';
+                s_cnt <= s_cnt + 1;
+                ce_o  <= '0';
             end if;
         end if;
     end process p_clk_ena;

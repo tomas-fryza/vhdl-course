@@ -51,22 +51,38 @@ begin
     begin
 
         -- Set one test case and wait for 100 ns ...
-        s_c <= '0'; s_b <= '0'; s_a <= '0';
+        s_c <= '0';
+        s_b <= '0';
+        s_a <= '0';
         wait for 100 ns;
         -- ... and then continue with other test cases
-        s_c <= '0'; s_b <= '0'; s_a <= '1';
+        s_c <= '0';
+        s_b <= '0';
+        s_a <= '1';
         wait for 100 ns;
-        s_c <= '0'; s_b <= '1'; s_a <= '0';
+        s_c <= '0';
+        s_b <= '1';
+        s_a <= '0';
         wait for 100 ns;
-        s_c <= '0'; s_b <= '1'; s_a <= '1';
+        s_c <= '0';
+        s_b <= '1';
+        s_a <= '1';
         wait for 100 ns;
-        s_c <= '1'; s_b <= '0'; s_a <= '0';
+        s_c <= '1';
+        s_b <= '0';
+        s_a <= '0';
         wait for 100 ns;
-        s_c <= '1'; s_b <= '0'; s_a <= '1';
+        s_c <= '1';
+        s_b <= '0';
+        s_a <= '1';
         wait for 100 ns;
-        s_c <= '1'; s_b <= '1'; s_a <= '0';
+        s_c <= '1';
+        s_b <= '1';
+        s_a <= '0';
         wait for 100 ns;
-        s_c <= '1'; s_b <= '1'; s_a <= '1';
+        s_c <= '1';
+        s_b <= '1';
+        s_a <= '1';
         wait for 100 ns;
 
         wait; -- Generation process is suspended forever

@@ -4,7 +4,7 @@
 -- Nexys A7-50T, xc7a50ticsg324-1L
 -- Vivado v2018.3, EDA Playground, TerosHDL
 --
--- Copyright (c) 2020-Present Tomas Fryza
+-- Copyright (c) 2020 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
 -- This work is licensed under the terms of the MIT license.
 --
@@ -25,22 +25,22 @@ end entity tb_comparator_4bit;
 architecture testbench of tb_comparator_4bit is
 
     -- Testbench local signals
-    signal s_a           : std_logic_vector(4 - 1 downto 0);
-    signal s_b           : std_logic_vector(4 - 1 downto 0);
+    signal s_a : std_logic_vector(4 - 1 downto 0);
+    signal s_b : std_logic_vector(4 - 1 downto 0);
     signal s_B_greater_A : std_logic;
-    signal s_B_equals_A  : std_logic;
-    signal s_B_less_A    : std_logic;
+    signal s_B_equals_A : std_logic;
+    signal s_B_less_A : std_logic;
 
 begin
     -- Connecting testbench signals with comparator_4bit
     -- entity (Unit Under Test)
     uut_comparator_4bit : entity work.comparator_4bit
         port map(
-            a_i           => s_a,
-            b_i           => s_b,
+            a_i => s_a,
+            b_i => s_b,
             B_greater_A_o => s_B_greater_A,
-            B_equals_A_o  => s_B_equals_A,
-            B_less_A_o    => s_B_less_A
+            B_equals_A_o => s_B_equals_A,
+            B_less_A_o => s_B_less_A
         );
 
     --------------------------------------------------------
@@ -49,7 +49,7 @@ begin
     p_stimulus : process
     begin
         -- Report a note at the beginning of stimulus process
-        report "Stimulus process started" severity note;
+        report "Stimulus process started";
 
         -- First test case ...
         s_b <= "0000";
@@ -97,7 +97,7 @@ begin
         report "Input combination 1001, 1000 FAILED" severity error;
 
         -- Report a note at the end of stimulus process
-        report "Stimulus process finished" severity note;
+        report "Stimulus process finished";
         wait; -- Data generation process is suspended forever
     end process p_stimulus;
 

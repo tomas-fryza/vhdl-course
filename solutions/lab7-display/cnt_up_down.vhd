@@ -4,7 +4,7 @@
 -- Nexys A7-50T, xc7a50ticsg324-1L
 -- Vivado v2018.3, EDA Playground, TerosHDL
 --
--- Copyright (c) 2019-Present Tomas Fryza
+-- Copyright (c) 2019 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
 -- This work is licensed under the terms of the MIT license.
 --
@@ -32,9 +32,9 @@ end entity cnt_up_down;
 ------------------------------------------------------------
 -- Architecture body for n-bit counter
 ------------------------------------------------------------
-architecture behavioral of cnt_up_down is
+architecture Behavioral of cnt_up_down is
 
-    signal s_cnt_local : unsigned(g_CNT_WIDTH - 1 downto 0); --! Local counter
+    signal s_cnt : unsigned(g_CNT_WIDTH - 1 downto 0); --! Local counter
 
 begin
     --------------------------------------------------------
@@ -46,22 +46,22 @@ begin
     begin
         if rising_edge(clk) then
 
-            if (reset = '1') then -- Synchronous reset
-                s_cnt_local <= (others => '0'); -- Clear all bits
+            if (reset = '1') then     -- Synchronous reset
+                s_cnt <= (others => '0'); -- Clear all bits
 
             elsif (en_i = '1') then -- Test if counter is enabled
 
                 -- TEST COUNTER DIRECTION HERE
                 if (cnt_up_i = '1') then
-                    s_cnt_local <= s_cnt_local + 1;
+                    s_cnt <= s_cnt + 1;
                 else
-                    s_cnt_local <= s_cnt_local - 1;
+                    s_cnt <= s_cnt - 1;
                 end if;
             end if;
         end if;
     end process p_cnt_up_down;
 
     -- Output must be retyped from "unsigned" to "std_logic_vector"
-    cnt_o <= std_logic_vector(s_cnt_local);
+    cnt_o <= std_logic_vector(s_cnt);
 
-end architecture behavioral;
+end architecture Behavioral;

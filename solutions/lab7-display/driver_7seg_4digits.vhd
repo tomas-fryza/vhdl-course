@@ -4,7 +4,7 @@
 -- Nexys A7-50T, xc7a50ticsg324-1L
 -- Vivado v2018.3, EDA Playground, TerosHDL
 --
--- Copyright (c) 2020-Present Tomas Fryza
+-- Copyright (c) 2020 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
 -- This work is licensed under the terms of the MIT license.
 --

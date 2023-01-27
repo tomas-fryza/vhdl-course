@@ -3,7 +3,7 @@
 -- Template for 4-digit 7-segment display driver testbench.
 -- Nexys A7-50T, Vivado v2020.1.1, EDA Playground
 --
--- Copyright (c) 2020-Present Tomas Fryza
+-- Copyright (c) 2020 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
 -- This work is licensed under the terms of the MIT license.
 --
@@ -30,8 +30,6 @@ architecture testbench of tb_driver_7seg_4digits is
     -- Local signals
     signal s_clk_100MHz : std_logic;
     signal s_reset      : std_logic;
-    -- ADD OTHER SIGNALS ACCORDING TO DRIVER_7SEG_4DIGITS ENTITY
-    -- signal s_data0 : ...
     signal s_data0  : std_logic_vector(3 downto 0);
     signal s_data1  : std_logic_vector(3 downto 0);
     signal s_data2  : std_logic_vector(3 downto 0);
@@ -44,8 +42,6 @@ architecture testbench of tb_driver_7seg_4digits is
 begin
     -- Connecting testbench signals with driver_7seg_4digits
     -- entity (Unit Under Test)
-    -- MAP I/O PORTS FROM ENTITY TO LOCAL SIGNALS
-    -- uut_driver_7seg_4digits : entity work....
     uut_driver_7seg_4digits : entity work.driver_7seg_4digits
         port map(
             clk     => s_clk_100MHz,
@@ -77,11 +73,9 @@ begin
     --------------------------------------------------------
     -- Reset generation process
     --------------------------------------------------------
-    -- WRITE YOUR CODE HERE AND ACTIVATE RESET FOR A WHILE
-    -- p_reset_gen : process
-    -- begin
     p_reset_gen : process
     begin
+        -- WRITE YOUR CODE HERE AND ACTIVATE RESET FOR A WHILE
         s_reset <= '0';
         wait for 12 ns;
 
@@ -95,13 +89,11 @@ begin
     --------------------------------------------------------
     -- Data generation process
     --------------------------------------------------------
-    -- WRITE YOUR CODE HERE AND TEST INPUT VALUE "3.142"
-    -- p_stimulus : process
-    -- begin
     p_stimulus : process
     begin
         report "Stimulus process started";
 
+        -- WRITE YOUR CODE HERE AND TEST INPUT VALUE "3.142"
         -- Display "3.142"
         s_dp_in <= "0111"; -- Decimal point
         s_data3 <= x"3";
