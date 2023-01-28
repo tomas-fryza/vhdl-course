@@ -1,4 +1,4 @@
-# Lab 8: YOUR_FIRSTNAME LASTNAME
+# Lab 8: INSERT_YOUR_FIRSTNAME INSERT_YOUR_LASTNAME
 
 ### Traffic light controller
 
