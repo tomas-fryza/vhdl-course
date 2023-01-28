@@ -1,4 +1,4 @@
-# Lab 6: YOUR_FIRSTNAME LASTNAME
+# Lab 6: INSERT_YOUR_FIRSTNAME INSERT_YOUR_LASTNAME
 
 ### Bidirectional counter
 
