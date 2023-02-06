@@ -3,7 +3,7 @@
 -- Example of basic gates in VHDL.
 -- EDA Playground
 --
--- Copyright (c) 2019-Present Tomas Fryza
+-- Copyright (c) 2019 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
 -- This work is licensed under the terms of the MIT license.
 --
