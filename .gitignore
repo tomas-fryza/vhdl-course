@@ -1,5 +1,6 @@
 #########################################################################################
 ##  Project    : Collect of various scripts for working with EDA-tools (ASIC/FPGA/etc) ##
+##  Designer   : Dmitry Murzinov (kakstattakim@gmail.com)                              ##
 ##  Link       : https://github.com/iDoka/eda-scripts                                  ##
 ##  Description: .gitignore                                                            ##
 ##  Usage      : just rename or add contain to .gitignore                              ##
@@ -8,55 +9,34 @@
 
 ## log files
 *.log
-*.jou
 *.rpt
-*.vdi
 
 ## bitstream
 *.bit
-*.bin
-*.mcs
-*.svf
-*.image
 
 ## netlist
 *.edf
 *.edif
 *.vn
-*.vm
 
 ## SDF
 *.sdf
 
-## sim dump
-*.vcd
-*.saif
-*.tcf
-*.wdb
-
-## others
-unisims
-
-## C-files
-*.elf
-*.a
-*.sa
-*.so
-*.lib
-
-## dirs
-vivado.cache/
-vivado.hw/
-vivado.ip_user_files/
-vivado.runs/
-vivado.sim/
-
 ###### for Xilinx Vivado|ISE
 .Xil/
+.hbs/
 .cache/
+xsim.dir/
+
+worklib.tb.wdb
 fsm_encoding.os
 tab_*/
-webtalk.*
+webtalk.jou
+webtalk.log
+webtalk_*.jou
+webtalk_*.log
+vivado.jou
+vivado.log
 vivado_pid*.str
 hs_err_pid*
 xelab.*
@@ -69,5 +49,5 @@ xvlog.*
 *.backup.*
 *.debug
 
-## checkpoint files
-*.dcp
+
+unisims
