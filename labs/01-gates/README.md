@@ -14,7 +14,7 @@
 
 After completing this lab you will be able to:
 
-* Use markdown README files
+* Use git and markdown README files
 * Create and clone repositories through GitHub
 * Commit, push, and pull changes to the repository
 * Understand basic structure of VHDL files
