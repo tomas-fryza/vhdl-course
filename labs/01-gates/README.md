@@ -121,7 +121,11 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 ## Part 3: EDA Playground
 
-1. EDA Playground is a cloud-based service that runs in your browser. Open the [Example of basic gates](https://www.edaplayground.com/x/5L92). Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/digital-electronics-1/wiki/Entity), [architecture](https://github.com/tomas-fryza/digital-electronics-1/wiki/Architecture), and testbench. Use button **Run** to run the simulation and log in to your account using **Log In (save edits)**.
+EDA Playground is a cloud-based service that runs in your browser.
+
+1. Log in to your [EDA Playground](https://www.edaplayground.com/login) account, open [Example of basic gates](https://www.edaplayground.com/x/5L92) project, use **Copy** button, and **Save** the project under a different name.
+
+2. Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/digital-electronics-1/wiki/Entity), [architecture](https://github.com/tomas-fryza/digital-electronics-1/wiki/Architecture), and testbench. Use button **Run** to run the simulation.
 
    Most common VHDL operators are shown in the table.
 
@@ -137,7 +141,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
    | `xnor` | Exclusive OR with negated output |
    | `-- comment` | Comments |
 
-2. Use De Morgan's laws and modify the following logic function to the form with NAND and NOR gates only. Verify all three functions in EDA Playground tool.
+3. Use De Morgan's laws and modify the following logic function to the form with NAND and NOR gates only. Verify all three functions in EDA Playground tool.
 
    ![Logic function](images/equations.png)
 
@@ -152,7 +156,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
    > ```
    >
 
-3. According to the simulation, complete the table with logic values.
+4. According to the simulation, complete the table with logic values.
 
    | **c** | **b** |**a** | **f_ORIG** | **f_(N)AND** | **f_(N)OR** |
    | :-: | :-: | :-: | :-: | :-: | :-: |
