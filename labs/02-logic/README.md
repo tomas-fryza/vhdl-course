@@ -81,7 +81,7 @@ When you start working, always synchronize the contents of your working folder a
    $ mkdir 02-logic
    ```
 
-3. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `README.md` in your `02-logic/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/02-logic/report.md) to your `02-logic/README.md` file.
+3. Use your favorite text editor, such as VS Code, Notepad++, etc. and create a new file `README.md` in your `02-logic/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/02-logic/report.md) to your `02-logic/README.md` file.
 
 <a name="part2"></a>
 
