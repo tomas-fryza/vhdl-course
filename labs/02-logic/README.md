@@ -15,7 +15,7 @@
 After completing this lab you will be able to:
 
 * Use truth table, K-map, SoP/PoS forms of logic functions
-* Minimize logic function
+* Minimize logic functions
 * Understand signal assignments in VHDL
 * Use VHDL assertion statements for testing
 
