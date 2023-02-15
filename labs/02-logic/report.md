@@ -26,7 +26,7 @@
     p_stimulus : process
     begin
         -- Report a note at the beginning of stimulus process
-        report "Stimulus process started" severity note;
+        report "Stimulus process started";
 
         -- First test case
         s_b <= "BCD_OF_YOUR_SECOND_LAST_ID_DIGIT"; -- Such as "0101" if ID = xxxx56
@@ -40,7 +40,7 @@
         report "Input combination COMPLETE_THIS_TEXT FAILED" severity error;
 
         -- Report a note at the end of stimulus process
-        report "Stimulus process finished" severity note;
+        report "Stimulus process finished";
         wait;
     end process p_stimulus;
 ```

@@ -15,7 +15,7 @@
 After completing this lab you will be able to:
 
 * Use truth table, K-map, SoP/PoS forms of logic functions
-* Minimize logic function
+* Minimize logic functions
 * Understand signal assignments in VHDL
 * Use VHDL assertion statements for testing
 
@@ -169,7 +169,7 @@ The message is displayed to the console when the condition is NOT met, therefore
                 (s_B_less_A    = '0'))
         -- If false, then report an error
         -- If true, then do not report anything
-        report "Input combination 00, 00 FAILED" severity error;
+        report "Input combination b=0, a=0 FAILED" severity error;
 
 
         -- WRITE OTHER TEST CASES HERE
