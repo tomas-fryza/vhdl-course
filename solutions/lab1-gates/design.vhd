@@ -1,7 +1,7 @@
 ------------------------------------------------------------
 --
 -- Example of basic gates in VHDL.
--- EDA Playground
+-- TerosHDL, EDA Playground
 --
 -- Copyright (c) 2019 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
@@ -17,12 +17,12 @@ use ieee.std_logic_1164.all;
 ------------------------------------------------------------
 entity gates is
     port (
-        c_i      : in std_logic; -- Three data inputs
-        b_i      : in std_logic;
-        a_i      : in std_logic;
-        f_orig_o : out std_logic; -- Original function
-        f_nand_o : out std_logic; -- NAND version
-        f_nor_o  : out std_logic -- NOR version
+        c      : in std_logic; -- Three data inputs
+        b      : in std_logic;
+        a      : in std_logic;
+        f_orig : out std_logic; -- Original function
+        f_nand : out std_logic; -- NAND version
+        f_nor  : out std_logic -- NOR version
     );
 end entity gates;
 
@@ -31,7 +31,7 @@ end entity gates;
 ------------------------------------------------------------
 architecture dataflow of gates is
 begin
-    f_orig_o <= (not(b_i) and a_i) or (not(c_i) and not(b_i));
-    f_nand_o <= b_i nand a_i; -- MODIFY THIS FUNCTION
-    f_nor_o  <= b_i nor a_i; -- MODIFY THIS FUNCTION
+    f_orig <= (not(b) and a) or (not(c) and not(b));
+    f_nand <= b nand a; -- MODIFY THIS FUNCTION
+    f_nor  <= b nor a; -- MODIFY THIS FUNCTION
 end architecture dataflow;
