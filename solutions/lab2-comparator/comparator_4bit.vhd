@@ -16,9 +16,9 @@
 --! {name: 'b[3:0]', wave: 'x333333', data: ['0','3','8','9','a','7']},
 --! {name: 'a[3:0]', wave: 'x333333', data: ['0','c','9','3','a','6']},
 --! {},
---! {name: 'b_greater_a', wave: 'xl..hlh'},
---! {name: 'b_equals_a',  wave: 'xhl..hl'},
---! {name: 'b_less_a',    wave: 'xlh.l..'},
+--! {name: 'B_greater_A', wave: 'xl..hlh'},
+--! {name: 'B_equals_A',  wave: 'xhl..hl'},
+--! {name: 'B_less_A',    wave: 'xlh.l..'},
 --! ]}
 --
 -- Hardware: Nexys A7-50T, xc7a50ticsg324-1L
