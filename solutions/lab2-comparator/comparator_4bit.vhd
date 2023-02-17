@@ -25,28 +25,37 @@
 -- Software: TerosHDL
 --
 ------------------------------------------------------------
+
 library ieee;
-use ieee.std_logic_1164.all;
+  use ieee.std_logic_1164.all;
 
 ------------------------------------------------------------
 -- Entity declaration for 4-bit binary comparator
 ------------------------------------------------------------
+
 entity comparator_4bit is
-    port (
-        b           : in std_logic_vector(3 downto 0); --! Input data B[1:0]
-        a           : in std_logic_vector(3 downto 0); --! Input data A[1:0]
-        B_greater_A : out std_logic; --! Output is `1` if B>A
-        B_equals_A  : out std_logic; --! Output is `1` if B=A
-        B_less_A    : out std_logic  --! Output is `1` if B<A
-    );
+  port (
+    b           : in    std_logic_vector(3 downto 0); --! Input data B[1:0]
+    a           : in    std_logic_vector(3 downto 0); --! Input data A[1:0]
+    b_greater_a : out   std_logic;                    --! Output is `1` if B>A
+    b_equals_a  : out   std_logic;                    --! Output is `1` if B=A
+    b_less_a    : out   std_logic                     --! Output is `1` if B<A
+  );
 end entity comparator_4bit;
 
 ------------------------------------------------------------
 -- Architecture body for 4-bit binary comparator
 ------------------------------------------------------------
-architecture Behavioral of comparator_4bit is
+
+architecture behavioral of comparator_4bit is
+
 begin
-    B_greater_A <= '1' when (b > a) else '0';
-    B_equals_A  <= '1' when (b = a) else '0';
-    B_less_A    <= '1' when (b < a) else '0';
-end architecture Behavioral;
+
+  b_greater_a <= '1' when (b > a) else
+                 '0';
+  b_equals_a  <= '1' when (b = a) else
+                 '0';
+  b_less_a    <= '1' when (b < a) else
+                 '0';
+
+end architecture behavioral;
