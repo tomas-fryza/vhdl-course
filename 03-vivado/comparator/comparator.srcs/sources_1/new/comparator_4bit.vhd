@@ -35,8 +35,8 @@ library ieee;
 
 entity comparator_4bit is
   port (
-    b           : in    std_logic_vector(3 downto 0); --! Input data B[1:0]
-    a           : in    std_logic_vector(3 downto 0); --! Input data A[1:0]
+    b           : in    std_logic_vector(3 downto 0); --! Input data B[3:0]
+    a           : in    std_logic_vector(3 downto 0); --! Input data A[3:0]
     b_greater_a : out   std_logic;                    --! Output is `1` if B>A
     b_equals_a  : out   std_logic;                    --! Output is `1` if B=A
     b_less_a    : out   std_logic                     --! Output is `1` if B<A

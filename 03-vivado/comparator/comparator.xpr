@@ -6,7 +6,7 @@
 <Project Version="7" Minor="54" Path="C:/Users/fryza/Documents/digital-electronics-1/03-vivado/comparator/comparator.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="0438065fea484806b825ddc8eebfd79d"/>
+    <Option Name="Id" Val="7119e60e13904c68b39bbe2bf3b84ff8"/>
     <Option Name="Part" Val="xc7a50ticsg324-1L"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
