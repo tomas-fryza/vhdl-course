@@ -56,9 +56,10 @@ The following hardware and software components are mainly used in the lab.
 
 1. [Digital electronics wiki](https://github.com/tomas-fryza/digital-electronics-1/wiki)
 2. [How to install TerosHDL on Windows and Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
-3. [ES 4 VHDL reference sheet](docs/vhdl_cheatsheet.pdf)
-4. ASHENDEN, Peter J. *The designer's guide to VHDL.* 3rd ed. Boston: Morgan Kaufmann Publishers, c2008. ISBN 978-0-12-088785-9.
-5. CHU, Pong P. *FPGA prototyping by VHDL examples.* Hoboken, N.J.: Wiley-Interscience, c2008. ISBN 978-0-470-18531-5.
-6. MANO, M. Morris. Digital Design: With an Introduction to the Verilog, HDL, VHDL, and System Verilog. Pearson, 6th edition, 2018. ISBN-13: 978-1292231167.
-7. KALLSTROM, P. [A Fairly Small VHDL Guide](docs/VHDL_guide.pdf). Version 2.1.
-8. [GitHub GIT CHEAT SHEET](docs/git_cheatsheet.pdf)
+3. [How to install Vivado on Windows and Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
+4. [ES 4 VHDL reference sheet](docs/vhdl_cheatsheet.pdf)
+5. ASHENDEN, Peter J. *The designer's guide to VHDL.* 3rd ed. Boston: Morgan Kaufmann Publishers, c2008. ISBN 978-0-12-088785-9.
+6. CHU, Pong P. *FPGA prototyping by VHDL examples.* Hoboken, N.J.: Wiley-Interscience, c2008. ISBN 978-0-470-18531-5.
+7. MANO, M. Morris. Digital Design: With an Introduction to the Verilog, HDL, VHDL, and System Verilog. Pearson, 6th edition, 2018. ISBN-13: 978-1292231167.
+8. KALLSTROM, P. [A Fairly Small VHDL Guide](docs/VHDL_guide.pdf). Version 2.1.
+9. [GitHub GIT CHEAT SHEET](docs/git_cheatsheet.pdf)
