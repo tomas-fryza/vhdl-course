@@ -55,7 +55,7 @@ begin
   -- Display is clear/blank if signal blank = 1.
   --------------------------------------------------------
 
-  p_7seg_decoder : process (blank, hex) is --! sdfgh
+  p_7seg_decoder : process (blank, hex) is
 
   begin
 
