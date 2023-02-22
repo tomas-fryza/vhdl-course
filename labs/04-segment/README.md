@@ -144,49 +144,57 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
-        ```vhdl
-        ------------------------------------------------------------------------
-        -- Architecture body for top level
-        ------------------------------------------------------------------------
-        architecture Behavioral of top is
-        begin
-            --------------------------------------------------------------------
-            -- Instance (copy) of hex_7seg entity
-            hex2seg : entity work.hex_7seg
-                port map(
-                    blank  => BTNC,
-                    hex    => SW,
-                    seg(6) => CA,
-                    seg(5) => CB,
+```vhdl
+------------------------------------------------------------
+-- Architecture body for top level
+------------------------------------------------------------
 
-                    -- WRITE YOUR CODE HERE
+architecture behavioral of top is
 
-                    seg(0) => CG
-                );
+begin
 
-            -- Connect one common anode to 3.3V
-            AN <= b"1111_0111";
+  --------------------------------------------------------------------
+  -- Instance (copy) of hex_7seg entity
+  --------------------------------------------------------------------
 
-            -- Display input value on LEDs
-            LED(3 downto 0) <= SW;
+  hex2seg : entity work.hex_7seg
+    port map (
+      blank  => btnc,
+      hex    => sw,
+      seg(6) => ca,
+      seg(5) => cb,
 
-            --------------------------------------------------------------------
-            -- Experiments on your own: LED(7:4) indicators
+      -- WRITE YOUR CODE HERE
+      seg(4) => cc,
+      seg(3) => cd,
+      seg(2) => ce,
+      seg(1) => cf,
+      seg(0) => cg
+    );
 
-            -- Turn LED(4) on if input value is equal to 0, ie "0000"
-            -- LED(4) <= `0` when WRITE YOUR CODE HERE
+  -- Connect one common anode to 3.3V
+  an <= b"1111_0111";
 
-            -- Turn LED(5) on if input value is greater than "1001", ie 10, 11, 12, ...
-            -- LED(5) <= WRITE YOUR CODE HERE
+  -- Display input value on LEDs
+  LED(3 downto 0) <= sw;
 
-            -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
-            -- LED(6) <= WRITE YOUR CODE HERE
+--------------------------------------------------------------------
+-- Experiments on your own: LED(7:4) indicators
 
-            -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
-            -- LED(7) <= WRITE YOUR CODE HERE
+-- Turn LED(4) on if input value is equal to 0, ie "0000"
+-- LED(4) <= `0` when WRITE YOUR CODE HERE
 
-        end architecture Behavioral;
-        ```
+-- Turn LED(5) on if input value is greater than "1001", ie 10, 11, 12, ...
+-- LED(5) <= WRITE YOUR CODE HERE
+
+-- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
+-- LED(6) <= WRITE YOUR CODE HERE
+
+-- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
+-- LED(7) <= WRITE YOUR CODE HERE
+
+end architecture behavioral;
+```
 
         ![Top level](images/top_hex_7seg.png)
 
