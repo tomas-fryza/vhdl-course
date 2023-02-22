@@ -2,7 +2,28 @@
 
 ### LED(7:4) indicators
 
-1. Listing of LEDs(7:4) part of VHDL architecture from source file `top.vhd`. Try to write logic functions as simple as possible. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
+1. Complete the truth table for LEDs[7:4] according to comments in source code.
+
+   | **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
+   | :-: | :-: | :-: | :-: | :-: | :-: |
+   | 0 | 0000 |  |  |  |  |
+   | 1 | 0001 |  |  |  |  |
+   | 2 |      |  |  |  |  |
+   | 3 |      |  |  |  |  |
+   | 4 |      |  |  |  |  |
+   | 5 |      |  |  |  |  |
+   | 6 |      |  |  |  |  |
+   | 7 |      |  |  |  |  |
+   | 8 | 1000 |  |  |  |  |
+   | 9 |      |  |  |  |  |
+   | A |      |  |  |  |  |
+   | b |      |  |  |  |  |
+   | C |      |  |  |  |  |
+   | d |      |  |  |  |  |
+   | E | 1110 |  |  |  |  |
+   | F | 1111 |  |  |  |  |
+
+2. Listing of LEDs[7:4] part of VHDL architecture from source file `top.vhd`. Try to write logic functions as simple as possible. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
 
    ```vhdl
    --------------------------------------------------------------------
@@ -20,28 +41,3 @@
    -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
    -- LED(7) <= WRITE YOUR CODE HERE
    ```
-
-2. Listing of VHDL stimulus process from testbench file (`tb_top.vhd`) with asserts. Verify all input combinations. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
-
-```vhdl
-    p_stimulus : process
-    begin
-        report "Stimulus process started";
-
-        -- First test case
-        SW <= "0000"; wait for 50 ns;
-        assert (LED(4) = '0')
-        report "LED(4) indicator FAILED" severity error;
-
-
-        -- WRITE OTHER TEST CASES HERE
-
-
-        report "Stimulus process finished";
-        wait;
-    end process p_stimulus;
-```
-
-3. Screenshot with simulated time waveforms. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
-
-   ![your figure]()
