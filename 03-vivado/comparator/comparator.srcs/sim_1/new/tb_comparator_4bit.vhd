@@ -2,7 +2,7 @@
 --
 -- Testbench for 4-bit binary comparator.
 -- Nexys A7-50T, xc7a50ticsg324-1L
--- TerosHDL, Vivado 2020.2 
+-- TerosHDL, Vivado 2020.2
 --
 -- Copyright (c) 2020 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia

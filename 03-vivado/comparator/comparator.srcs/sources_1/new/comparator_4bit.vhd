@@ -22,7 +22,7 @@
 --! ]}
 --
 -- Hardware: Nexys A7-50T, xc7a50ticsg324-1L
--- Software: TerosHDL
+-- Software: TerosHDL, Vivado 2020.2
 --
 ------------------------------------------------------------
 
