@@ -34,9 +34,9 @@ The purpose of this laboratory exercise is to learn to use Vivado to create a si
 
 The Nexys A7 board provides sixteen switches and LEDs. The switches can be used to provide inputs, and the LEDs can be used as output devices.
 
-1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of slide switches and LEDs, ie to which FPGA pins are connected and how. Draw the schematic with LEDs and switches.
+1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of slide switches and LEDs, ie to which FPGA pins are connected and how.
 
-2. **Optional task:** Follow the instructions for [Windows or Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions), download and install Vivado Design Suite. *Note: The online EDA Playground tool can still be used to simulate designs without implementation in the target hardware.*
+2. **Optional task:** Follow the instructions for [Windows or Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions), download and install Vivado Design Suite. *Note: The online EDA Playground or TerosHDL tool can still be used to simulate designs without implementation in the target hardware.*
 
 <a name="part1"></a>
 
@@ -53,7 +53,7 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 2. Create a new working folder `03-vivado` for this exercise.
 
-3. Use your favorite text editor, such as VS Code, Notepad, etc. and create a new file `README.md` in your `03-vivado/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/03-vivado/report.md) to your `03-vivado/README.md` file.
+3. Use your favorite text editor, such as VS Code, Notepad++, etc. and create a new file `README.md` in your `03-vivado/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/03-vivado/report.md) to your `03-vivado/README.md` file.
 
 <a name="part2"></a>
 
