@@ -196,7 +196,7 @@ begin
 end architecture behavioral;
 ```
 
-        ![Top level](images/top_hex_7seg.png)
+   ![Top level](images/top_hex_7seg.png)
 
    4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
    5. Compile the project and download the generated bitstream `YOUR_FOLDER/display/display.runs/impl_1/top.bit` into the FPGA chip.
