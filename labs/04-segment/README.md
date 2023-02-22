@@ -34,7 +34,7 @@ The purpose of this laboratory exercise is to design a 7-segment display decoder
 
 The Nexys A7 board provides two four-digit common anode seven-segment LED displays (configured to behave like a single eight-digit display).
 
-1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how. Draw the schematic with 7-segment displays.
+1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how.
 
 2. Complete the decoder truth table for **common anode** 7-segment display.
 
@@ -68,12 +68,16 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
 
-   > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
-   >
+   > **Help:** Useful bash and git commands are `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
 
-2. Create a new working folder `labs/04-segment` for this laboratory exercise.
+   ```bash
+   ## Windows Git Bash or Linux:
+   $ git pull
+   ```
 
-3. Create a new file `labs/04-segment/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/04-segment/report.md) into it.
+2. Create a new working folder `04-segment` for this exercise.
+
+3. Use your favorite text editor, such as VS Code, Notepad++, etc. and create a new file `README.md` in your `04-segment/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/04-segment/report.md) to your `04-segment/README.md` file.
 
 <a name="part2"></a>
 
@@ -81,20 +85,31 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 1. Perform the following steps to simulate the seven-segment display decoder in Vivado.
 
-   1. Create a new Vivado RTL project `display` in your `labs/04-segment` working folder.
+   1. Create a new Vivado RTL project `display` in your `04-segment` working folder.
    2. Create a VHDL source file `hex_7seg` for the decoder.
    3. Choose default board: `Nexys A7-50T`.
    4. Use **Define Module** dialog and define I/O ports of entity `hex_7seg` as follows.
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
-      | `blank_i` | input | `std_logic` | Blank (clear) display |
-      | `hex_i` | input   | `std_logic_vector(3 downto 0)` | Input binary data |
-      | `seg_o` | output  | `std_logic_vector(6 downto 0)` | Cathode values in the order A, B, C, D, E, F, G |
+      | `blank` | input | `std_logic` | Blank (clear) display |
+      | `hex` | input   | `std_logic_vector(3 downto 0)` | Input binary data |
+      | `seg` | output  | `std_logic_vector(6 downto 0)` | Cathode values in the order A, B, C, D, E, F, G |
 
       ![Vivado Port definition](images/vivado_io_ports.png)
 
-   5. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu). Use [combinational process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `hex_i` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) can be used.
+
+
+
+
+   5. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu). Use [combinational process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `hex` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) can be used.
+
+
+
+
+
+
+
 
    6. Create a VHDL simulation source `tb_hex_7seg`, copy/paste the [template](https://www.edaplayground.com/x/Vdpu), complete all test cases, and verify the functionality of your decoder.
 
@@ -139,14 +154,14 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
             -- Instance (copy) of hex_7seg entity
             hex2seg : entity work.hex_7seg
                 port map(
-                    blank_i  => BTNC,
-                    hex_i    => SW,
-                    seg_o(6) => CA,
-                    seg_o(5) => CB,
+                    blank  => BTNC,
+                    hex    => SW,
+                    seg(6) => CA,
+                    seg(5) => CB,
 
                     -- WRITE YOUR CODE HERE
 
-                    seg_o(0) => CG
+                    seg(0) => CG
                 );
 
             -- Connect one common anode to 3.3V
@@ -183,12 +198,9 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
 
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
-## Synchronize repositories
+2. When you finish, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes. To do that, use git commands to add, commit, and push all local changes to your remote repository. Check GitHub web page for changes.
 
-When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
-
-   > Useful git commands are: `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
-   >
+   > **Help:** Useful git commands are `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
 
 <a name="experiments"></a>
 
@@ -221,9 +233,9 @@ When you finish working, always synchronize the contents of your working folder 
 
 ## Post-Lab report
 
-*Copy the [report template](report.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
+*Complete all parts of `04-segment/README.md` file (see Part 1.3) in Czech, Slovak, or English, push it to your GitHub repository, and submit a link to this file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next lab, i.e. in one week.*
 
-*Vložte [šablonu úkolu](report.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
+*Vypracujte všechny části ze souboru `04-segment/README.md` (viz Část 1.3) v českém, slovenském, nebo anglickém jazyce, uložte je na váš GitHub repozitář a odevzdejte link na tento soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším laboratorním cvičením, tj. za jeden týden.*
 
 <a name="references"></a>
 
