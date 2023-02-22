@@ -159,24 +159,24 @@ begin
 
   hex2seg : entity work.hex_7seg
     port map (
-      blank  => btnc,
-      hex    => sw,
-      seg(6) => ca,
-      seg(5) => cb,
+      blank  => BTNC,
+      hex    => SW,
+      seg(6) => CA,
+      seg(5) => CB,
 
       -- WRITE YOUR CODE HERE
-      seg(4) => cc,
-      seg(3) => cd,
-      seg(2) => ce,
-      seg(1) => cf,
-      seg(0) => cg
+      seg(4) => CC,
+      seg(3) => CD,
+      seg(2) => CE,
+      seg(1) => CF,
+      seg(0) => CG
     );
 
   -- Connect one common anode to 3.3V
-  an <= b"1111_0111";
+  AN <= b"1111_0111";
 
   -- Display input value on LEDs
-  LED(3 downto 0) <= sw;
+  LED(3 downto 0) <= SW;
 
 --------------------------------------------------------------------
 -- Experiments on your own: LED(7:4) indicators
