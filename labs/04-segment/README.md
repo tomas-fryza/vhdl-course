@@ -92,9 +92,9 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
-      | `blank` | input | `std_logic` | Blank (clear) display |
-      | `hex` | input   | `std_logic_vector(3 downto 0)` | Input binary data |
-      | `seg` | output  | `std_logic_vector(6 downto 0)` | Cathode values in the order A, B, C, D, E, F, G |
+      | `blank` | input | `std_logic` | Display is clear if blank = 1 |
+      | `hex` | input   | `std_logic_vector(3 downto 0)` | Binary representation of one hexadecimal symbol |
+      | `seg` | output  | `std_logic_vector(6 downto 0)` | Seven active-low segments in the order: a, b, ..., g |
 
       ![Vivado Port definition](images/vivado_io_ports.png)
 
@@ -102,7 +102,7 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 
 
-   5. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu). Use [combinational process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `hex` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) can be used.
+   5. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu). Use [combinational process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `hex` or `blank` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) can be used.
 
 
 
