@@ -41,3 +41,7 @@
    -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
    -- LED(7) <= WRITE YOUR CODE HERE
    ```
+
+3. Screenshot with simulated time waveforms for LED[7:4]. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
+
+   ![your figure]()
