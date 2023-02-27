@@ -83,6 +83,8 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 ## Part 2: VHDL code for seven-segment display decoder
 
+The Hex to 7-Segment Decoder converts 4-bit binary data to 7-bit control signal which can be displayed on 7-segment display. A display consist of 7 LED segments to display 0 to 9 and A to F.
+
 1. Perform the following steps to simulate the seven-segment display decoder in Vivado.
 
    1. Create a new Vivado RTL project `display` in your `04-segment` working folder.
