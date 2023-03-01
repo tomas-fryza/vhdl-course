@@ -2,22 +2,20 @@
 
 ### De Morgan's laws
 
-1. Equations of all three versions of logic function f(c,b,a):
-
-   ![Logic function](images/equations.png)
-
-2. Listing of VHDL architecture from design file (`design.vhd`) for all three functions. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
+1. Listing of VHDL architecture from design file (`design.vhd`) for all three functions. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
 
 ```vhdl
 architecture dataflow of gates is
 begin
-    f_orig_o <= (not(b_i) and a_i) or (c_i and not(b_i or not(a_i)));
-    f_nand_o <= b_i nand a_i; -- MODIFY THIS FUNCTION
-    f_nor_o  <= b_i nor a_i;  -- MODIFY THIS FUNCTION
+
+  f_orig <= (not(c and b)) or (not(b) and a);
+  f_nand <= b nand a; -- MODIFY THIS FUNCTION
+  f_nor  <= b nor a;  -- MODIFY THIS FUNCTION
+
 end architecture dataflow;
 ```
 
-3. Complete table with logic functions' values:
+2. Complete table with logic functions' values:
 
    | **c** | **b** |**a** | **f_ORIG** | **f_(N)AND** | **f_(N)OR** |
    | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -36,6 +34,6 @@ end architecture dataflow;
 
    ![your figure]()
 
-2. Link to your public EDA Playground example:
+2. Link to your public EDA Playground example with Distributive law:
 
    [https://www.edaplayground.com/...](https://www.edaplayground.com/...)
