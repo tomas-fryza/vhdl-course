@@ -1,4 +1,4 @@
-------------------------------------------------------------
+--------------------------------------------------
 --
 -- Example of basic gates in VHDL.
 -- TerosHDL, EDA Playground
@@ -7,15 +7,15 @@
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
 -- This work is licensed under the terms of the MIT license.
 --
-------------------------------------------------------------
+--------------------------------------------------
 
 library ieee; -- Standard library
   use ieee.std_logic_1164.all;
   -- Package for data type and logic operations
 
-------------------------------------------------------------
+--------------------------------------------------
 -- Entity declaration for basic gates
-------------------------------------------------------------
+--------------------------------------------------
 
 entity gates is
   port (
@@ -28,15 +28,14 @@ entity gates is
   );
 end entity gates;
 
-------------------------------------------------------------
+--------------------------------------------------
 -- Architecture body for basic gates
-------------------------------------------------------------
+--------------------------------------------------
 
 architecture dataflow of gates is
-
 begin
 
-  f_orig <= (not(b) and a) or (not(c) and not(b));
+  f_orig <= (not(c and b)) or (not(b) and a);
   f_nand <= b nand a; -- MODIFY THIS FUNCTION
   f_nor  <= b nor a;  -- MODIFY THIS FUNCTION
 
