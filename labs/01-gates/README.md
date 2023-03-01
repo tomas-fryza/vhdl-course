@@ -149,7 +149,7 @@ EDA Playground is a cloud-based service that runs in your browser.
    >
    > ```LaTeX
    > \begin{align*}
-   >    f_{\textup{ORIG}}(c,b,a) =&~ \overline{b}\cdot a + c\cdot\overline{(b+\overline{a})}\\
+   >    f_{\textup{ORIG}}(c,b,a) =&~ \overline{c\cdot b} + \overline{b}\cdot a\\
    >    f_{\textup{(N)AND}}(c,b,a) =&\\
    >    f_{\textup{(N)OR}}(c,b,a) =&\\
    > \end{align*}
