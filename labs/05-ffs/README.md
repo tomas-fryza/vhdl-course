@@ -78,18 +78,21 @@ https://editor.codecogs.com/
 
 1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
 
-   > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
-   >
+   > **Help:** Useful bash and git commands are `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
 
-2. Create a new working folder `labs/05-ffs` for this laboratory exercise.
+   ```bash
+   ## Windows Git Bash or Linux:
+   $ git pull
+   ```
 
-3. Create a new file `labs/05-ffs/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/05-ffs/report.md) into it.
+2. Create a new working folder `05-ffs` for this exercise.
+
+3. Use your favorite text editor, such as VS Code, Notepad++, etc. and create a new file `README.md` in your `05-ffs/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/05-ffs/report.md) to your `05-ffs/README.md` file.
 
 <a name="part2"></a>
 
 ## Part 2: D latch
 
-A latch is a level triggered element.
 There are two types of memory elements based on the type of triggering that is suitable to operate it:
 
 * Latches
@@ -160,7 +163,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
 
 1. Perform the following steps to model D-type flip-flop entity in Vivado.
 
-   1. Create a new Vivado RTL project `flip_flops` in your `labs/05-ffs` working folder.
+   1. Create a new Vivado RTL project `flip_flops` in your `05-ffs` working folder.
    2. Create a VHDL source file `d_ff_rst` for D-type flip-flop circuit with synchronous reset.
    3. Choose default board: `Nexys A7-50T`.
    4. Define entity with `clk`, `rst`, `d`, `q`, `q_bar` ports.
@@ -283,7 +286,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
       end architecture testbench;
       ```
 
-2. Create other design source VHDL file and define T flip-flop with synchronization reset [`t_ff_rst`](https://github.com/tomas-fryza/digital-electronics-1/blob/master/labs/05-ffs/report.md)).
+2. Create other design source VHDL file `t_ff_rst` and define T flip-flop with synchronization reset.
 
    | **Entity** | **Inputs** | **Outputs** | **Description** |
    | :-- | :-- | :-- | :-- |
@@ -318,16 +321,13 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
    end architecture Behavioral;
    ```
 
-3. Try to simulate both flip-flops together in existing testbench  file `tb_ff_rst.vhd` with a maximum duration of 200 ns. Verify the synchronous reset as well.
+3. Try to simulate both flip-flops together in existing testbench file `tb_ff_rst.vhd` with a maximum duration of 200 ns. Verify the synchronous reset as well.
 
 4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
-## Synchronize repositories
+5. When you finish, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes. To do that, use git commands to add, commit, and push all local changes to your remote repository. Check GitHub web page for changes.
 
-When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
-
-   > Useful git commands are: `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
-   >
+   > **Help:** Useful git commands are `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
 
 <a name="experiments"></a>
 
@@ -342,8 +342,8 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
       | :-: | :-: | :-- | :-- |
       | `CLK100MHZ` | input  | `std_logic` | Main clock |
       | `BTNC` | input  | `std_logic` | Synchronous reset |
-      | `SW`   | input  | `std_logic_vector(1 - 1 downto 0)` | Shift register serial input |
-      | `LED`  | output | `std_logic_vector(4 - 1 downto 0)` | Shift register parallel outputs |
+      | `SW`   | input  | `std_logic_vector(0 downto 0)` | Shift register serial input |
+      | `LED`  | output | `std_logic_vector(3 downto 0)` | Shift register parallel outputs |
 
    3. Use direct instantiation and define an architecture of the top level.
 
@@ -390,9 +390,9 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
 
 ## Post-Lab report
 
-*Copy the [report template](report.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
+*Complete all parts of `05-ffs/README.md` file (see Part 1.3) in Czech, Slovak, or English, push it to your GitHub repository, and submit a link to this file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next lab, i.e. in one week.*
 
-*Vložte [šablonu úkolu](report.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
+*Vypracujte všechny části ze souboru `05-ffs/README.md` (viz Část 1.3) v českém, slovenském, nebo anglickém jazyce, uložte je na váš GitHub repozitář a odevzdejte link na tento soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším laboratorním cvičením, tj. za jeden týden.*
 
 <a name="references"></a>
 
