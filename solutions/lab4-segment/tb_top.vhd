@@ -76,7 +76,6 @@ begin
     for ii in 0 to 15 loop
       sig_sw <= std_logic_vector(to_unsigned(ii, 4));
       wait for 50 ns;
-
     end loop;
 
     report "Stimulus process finished";
