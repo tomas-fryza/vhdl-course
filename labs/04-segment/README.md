@@ -100,18 +100,7 @@ The Hex to 7-Segment Decoder converts 4-bit binary data to 7-bit control signal 
 
       ![Vivado Port definition](images/vivado_io_ports.png)
 
-
-
-
-
    5. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu). Use [combinational process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `hex` or `blank` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) can be used.
-
-
-
-
-
-
-
 
    6. Create a VHDL simulation source `tb_hex_7seg`, copy/paste the [template](https://www.edaplayground.com/x/Vdpu), complete all test cases, and verify the functionality of your decoder.
 
@@ -155,10 +144,9 @@ architecture behavioral of top is
 
 begin
 
-  --------------------------------------------------------------------
+  ----------------------------------------------------------
   -- Instance (copy) of hex_7seg entity
-  --------------------------------------------------------------------
-
+  ----------------------------------------------------------
   hex2seg : entity work.hex_7seg
     port map (
       blank  => BTNC,
@@ -178,20 +166,25 @@ begin
   -- Display input value on LEDs
   LED(3 downto 0) <= SW;
 
---------------------------------------------------------------------
--- Experiments on your own: LED(7:4) indicators
+  ----------------------------------------------------------
+  -- Experiments on your own: LED(7:4) indicators
+  ----------------------------------------------------------
 
--- Turn LED(4) on if input value is equal to 0, ie "0000"
--- LED(4) <= WRITE YOUR CODE HERE
+  -- Turn LED(4) on if input value is equal to 0,
+  -- ie "0000"
+  LED(4) <= '0'; -- WRITE YOUR CODE HERE
 
--- Turn LED(5) on if input value is greater than "1001", ie 10, 11, 12, ...
--- LED(5) <= WRITE YOUR CODE HERE
+  -- Turn LED(5) on if input value is greater than "1001",
+  -- ie 10, 11, 12, ...
+  LED(5) <= '0'; -- WRITE YOUR CODE HERE
 
--- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
--- LED(6) <= WRITE YOUR CODE HERE
+  -- Turn LED(6) on if input value is odd,
+  -- ie 1, 3, 5, 7, ...
+  LED(6) <= '0'; -- WRITE YOUR CODE HERE
 
--- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
--- LED(7) <= WRITE YOUR CODE HERE
+  -- Turn LED(7) on if input value is a power of two,
+  -- ie 1, 2, 4, or 8
+  LED(7) <= '0'; -- WRITE YOUR CODE HERE
 
 end architecture behavioral;
 ```
