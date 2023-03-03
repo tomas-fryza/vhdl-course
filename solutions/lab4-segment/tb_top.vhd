@@ -30,17 +30,17 @@ end entity tb_top;
 architecture testbench of tb_top is
 
   -- Testbench local signals
-  signal sig_sw   : std_logic_vector(3 downto 0);
-  signal sig_led  : std_logic_vector(7 downto 0);
-  signal sig_ca   : std_logic;
-  signal sig_cb   : std_logic;
-  signal sig_cc   : std_logic;
-  signal sig_cd   : std_logic;
-  signal sig_ce   : std_logic;
-  signal sig_cf   : std_logic;
-  signal sig_cg   : std_logic;
-  signal sig_an   : std_logic_vector(7 downto 0);
-  signal sig_btnc : std_logic;
+  signal sig_sw   : std_logic_vector(3 downto 0) := (others => '0');
+  signal sig_led  : std_logic_vector(7 downto 0) := (others => '0');
+  signal sig_ca   : std_logic := '0';
+  signal sig_cb   : std_logic := '0';
+  signal sig_cc   : std_logic := '0';
+  signal sig_cd   : std_logic := '0';
+  signal sig_ce   : std_logic := '0';
+  signal sig_cf   : std_logic := '0';
+  signal sig_cg   : std_logic := '0';
+  signal sig_an   : std_logic_vector(7 downto 0):= (others => '0');
+  signal sig_btnc : std_logic := '0';
 
 begin
 
