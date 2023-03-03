@@ -2,7 +2,7 @@
 --
 -- Testbench for 7-segment display decoder.
 -- Nexys A7-50T, xc7a50ticsg324-1L
--- TerosHDL, Vivado v2020.2
+-- TerosHDL, Vivado v2020.2, EDA Playground
 --
 -- Copyright (c) 2020 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
@@ -19,7 +19,7 @@ library ieee;
 ------------------------------------------------------------
 
 entity tb_hex_7seg is
--- Entity of testbench is always empty
+  -- Entity of testbench is always empty
 end entity tb_hex_7seg;
 
 ------------------------------------------------------------
@@ -57,15 +57,15 @@ begin
     wait for 50 ns;
 
     sig_blank <= '1';    -- Blank display
-    wait for 150 ns;
+    wait for 115 ns;
     sig_blank <= '0';    -- Normal operation
-    wait for 15 ns;
+    wait for 25 ns;
 
     -- Loop for all hex values
     for ii in 0 to 15 loop
 
       -- Convert ii decimal value to 4-bit wide binary
-      -- s_hex <= std_logic_vector(to_unsigned(ii, s_hex'length));
+      -- sig_hex <= std_logic_vector(to_unsigned(ii, sig_hex'length));
       sig_hex <= std_logic_vector(to_unsigned(ii, 4));
       wait for 50 ns;
 
