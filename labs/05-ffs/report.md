@@ -16,8 +16,8 @@ architecture Behavioral of jk_ff_rst is
     -- WRITE YOUR CODE HERE
 
     -- Output ports are permanently connected to local signal
-    q     <= s_q;
-    q_bar <= not s_q;
+    q     <= sig_q;
+    q_bar <= not sig_q;
 end architecture Behavioral;
 ```
 
