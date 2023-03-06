@@ -48,4 +48,3 @@ ghdl -i --std=02 --ieee=standard *.vhd &&
 	$GTK/gtkwave dump.vcd
 
 rm -f dump.vcd *.cf
-
