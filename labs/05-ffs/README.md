@@ -132,27 +132,27 @@ A D-type latch can be modeled in VHDL as follows.
 
    ```vhdl
    library ieee;
-   use ieee.std_logic_1164.all;
+     use ieee.std_logic_1164.all;
    -------------------------------------
    entity d_latch is
-       port(
-           en    : in  std_logic;
-           d     : in  std_logic;
-           q     : out std_logic;
-           q_bar : out std_logic
+       port (
+           en    : in    std_logic;
+           d     : in    std_logic;
+           q     : out   std_logic;
+           q_bar : out   std_logic
        );
    end entity d_latch;
    -------------------------------------
-   architecture Behavioral of d_latch is
+   architecture behavioral of d_latch is
    begin
-       p_d_latch : process(en, d)
+       p_d_latch : process (en, d) is
        begin
            if (en = '1') then
                q     <= d;
                q_bar <= not d;
            end if;
        end process p_d_latch;
-   end architecture Behavioral;
+   end architecture behavioral;
    ```
 
 <a name="part3"></a>
@@ -170,7 +170,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
-      | `clk`   | input  | `std_logic` | Clock |
+      | `clk`   | input  | `std_logic` | Main clock |
       | `rst`   | input  | `std_logic` | High-active synchronous reset |
       | `d`     | input  | `std_logic` | Data input |
       | `q`     | output | `std_logic` | Main output |
@@ -179,15 +179,15 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
    5. Use the following architecture example and complete the synchronous reset [assignment](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments).
 
       ```vhdl
-      architecture Behavioral of d_ff_rst is
+      architecture behavioral of d_ff_rst is
       begin
           --------------------------------------------------------
           -- p_d_ff_rst:
-          -- D type flip-flop with a high-active sync reset,
+          -- D type flip-flop with a high-active sync reset and
           -- rising-edge clk.
           -- q(n+1) = d
           --------------------------------------------------------
-          p_d_ff_rst : process(clk)
+          p_d_ff_rst : process (clk)
           begin
               if rising_edge(clk) then  -- Synchronous process
 
@@ -197,20 +197,20 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
                       q_bar <= not d;
               end if;
           end process p_d_ff_rst;
-      end architecture Behavioral;
+      end architecture behavioral;
       ```
 
    6. Create a VHDL simulation source `tb_ff_rst`, use the following testbench example, and simulate the circuit. Verify the synchronous reset.
 
       ```vhdl
       library ieee;
-      use ieee.std_logic_1164.all;
+        use ieee.std_logic_1164.all;
 
       ------------------------------------------------------------
       -- Entity declaration for testbench
       ------------------------------------------------------------
       entity tb_ff_rst is
-          -- Entity of testbench is always empty
+        -- Entity of testbench is always empty
       end entity tb_ff_rst;
 
       ------------------------------------------------------------
@@ -221,22 +221,22 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
           constant c_CLK_100MHZ_PERIOD : time := 10 ns;
 
           --Local signals
-          signal s_clk_100MHz : std_logic;
-          signal s_rst        : std_logic;
-          signal s_data       : std_logic;
-          signal s_d_q        : std_logic;
-          signal s_d_q_bar    : std_logic;
+          signal sig_clk_100MHz : std_logic;
+          signal sig_rst        : std_logic;
+          signal sig_data       : std_logic;
+          signal sig_d_q        : std_logic;
+          signal sig_d_q_bar    : std_logic;
 
       begin
           -- Connecting testbench signals with d_ff_rst entity
           -- (Unit Under Test)
           uut_d_ff_rst : entity work.d_ff_rst
-              port map(
-                  clk   => s_clk_100MHz,
-                  rst   => s_rst,
-                  d     => s_data,
-                  q     => s_d_q,
-                  q_bar => s_d_q_bar
+              port map (
+                  clk   => sig_clk_100MHz,
+                  rst   => sig_rst,
+                  d     => sig_data,
+                  q     => sig_d_q,
+                  q_bar => sig_d_q_bar
               );
 
           --------------------------------------------------------
@@ -244,10 +244,10 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
           --------------------------------------------------------
           p_clk_gen : process
           begin
-              while now < 200 ns loop -- 20 periods of 100MHz clock
-                  s_clk_100MHz <= '0';
+              while now < 300 ns loop -- 30 periods of 100MHz clock
+                  sig_clk_100MHz <= '0';
                   wait for c_CLK_100MHZ_PERIOD / 2;
-                  s_clk_100MHz <= '1';
+                  sig_clk_100MHz <= '1';
                   wait for c_CLK_100MHZ_PERIOD / 2;
               end loop;
               wait;                -- Process is suspended forever
@@ -258,13 +258,13 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
           --------------------------------------------------------
           p_reset_gen : process
           begin
-              s_rst <= '0';
+              sig_rst <= '0';
 
               -- ACTIVATE AND DEACTIVATE RESET HERE
               -- wait for XXX ns;
-              -- s_rst <= XXX;
+              -- sig_rst <= XXX;
               -- wait for XXX ns;
-              -- s_rst <= XXX;
+              -- sig_rst <= XXX;
 
               wait;
           end process p_reset_gen;
@@ -275,7 +275,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
           p_stimulus : process
           begin
               report "Stimulus process started";
-              s_data <='0'; wait for 13 ns;
+              sig_data <='0'; wait for 13 ns;
 
               -- DEFINE YOUR INPUT DATA HERE
 
@@ -293,20 +293,20 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
    | `t_ff_rst` | `clk`, `rst`, `t` | `q`, `q_bar` | T type flip-flop with a sync reset |
 
    ```vhdl
-   architecture Behavioral of t_ff_rst is
+   architecture behavioral of t_ff_rst is
        -- It must use this local signal instead of output ports
        -- because "out" ports cannot be read within the architecture
        signal s_q : std_logic;
    begin
        --------------------------------------------------------
        -- p_t_ff_rst:
-       -- T type flip-flop with a high-active synchro reset,
+       -- T type flip-flop with a high-active synchro reset and
        -- rising-edge clk.
        -- q(n+1) = t./q(n) + /t.q(n)
        -- q(n+1) =  q(n) if t = 0 (no change)
        -- q(n+1) = /q(n) if t = 1 (inversion)
        --------------------------------------------------------
-       p_t_ff_rst : process(clk)
+       p_t_ff_rst : process (clk)
        begin
            if rising_edge(clk) then
 
@@ -318,7 +318,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
        -- Output ports are permanently connected to local signal
        q     <= s_q;
        q_bar <= not s_q;
-   end architecture Behavioral;
+   end architecture behavioral;
    ```
 
 3. Try to simulate both flip-flops together in existing testbench file `tb_ff_rst.vhd` with a maximum duration of 200 ns. Verify the synchronous reset as well.
@@ -351,10 +351,10 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
       ------------------------------------------------------------------------
       -- Architecture body for top level
       ------------------------------------------------------------------------
-      architecture Behavioral of top is
+      architecture behavioral of top is
 
         -- Internal signals between flip-flops
-        signal s_ff0 : std_logic;
+        signal sig_ff0 : std_logic;
 
         -- WRITE YOUR CODE HERE
 
@@ -363,25 +363,25 @@ Use D type flip-flops with synchronous reset and perform the following steps to 
         --------------------------------------------------------------------
         -- Four instances (copies) of D-type FF entity
         d_ff_0 : entity work.d_ff_rst
-            port map(
-                clk   => CLK100MHZ,
-                rst   => BTNC,
+            port map (
+                clk => CLK100MHZ,
+                rst => BTNC,
                 -- WRITE YOUR CODE HERE
                 
-                q     => s_ff0
+                q   => sig_ff0
             );
 
         d_ff_1 : entity work.d_ff_rst
-            port map(
-                clk   => CLK100MHZ,
-                rst   => BTNC,
+            port map (
+                clk => CLK100MHZ,
+                rst => BTNC,
                 -- WRITE YOUR CODE HERE
 
             );
 
         -- PUT OTHER TWO FLIP-FLOP INSTANCES HERE
 
-      end architecture Behavioral;
+      end architecture behavioral;
       ```
 
    4. Create a testbench file `tb_top` and simulate it.
