@@ -1,4 +1,4 @@
-------------------------------------------------------------
+----------------------------------------------------------
 --
 --! @title One-digit 7-segment display decoder
 --! @author Tomas Fryza
@@ -18,21 +18,21 @@
 library ieee;
   use ieee.std_logic_1164.all;
 
-------------------------------------------------------------
--- Entity declaration for seven7-segment display decoder
-------------------------------------------------------------
+----------------------------------------------------------
+-- Entity declaration for seven-segment display decoder
+----------------------------------------------------------
 
 entity hex_7seg is
   port (
-    blank : in    std_logic;                    --! Clear the display if blank = 1
+    blank : in    std_logic;                    --! Display is clear if blank = 1
     hex   : in    std_logic_vector(3 downto 0); --! Binary representation of one hexadecimal symbol
     seg   : out   std_logic_vector(6 downto 0)  --! Seven active-low segments in the order: a, b, ..., g
   );
 end entity hex_7seg;
 
-------------------------------------------------------------
+----------------------------------------------------------
 -- Architecture body for seven-segment display decoder
-------------------------------------------------------------
+----------------------------------------------------------
 
 architecture behavioral of hex_7seg is
 
@@ -73,43 +73,12 @@ begin
 
         -- WRITE YOUR CODE HERE
         -- 2, 3, 4, 5, 6, 7
-        when "0010" =>
-          seg <= "0010010"; -- 2
-
-        when "0011" =>
-          seg <= "0000110"; -- 3
-
-        when "0100" =>
-          seg <= "1001100"; -- 4
-
-        when "0101" =>
-          seg <= "0100100"; -- 5
-
-        when "0110" =>
-          seg <= "0100000"; -- 6
-
-        when "0111" =>
-          seg <= "0001111"; -- 7
 
         when "1000" =>
           seg <= "0000000"; -- 8
 
         -- WRITE YOUR CODE HERE
         -- 9, A, b, C, d
-        when "1001" =>
-          seg <= "0000100"; -- 9
-
-        when "1010" =>
-          seg <= "0001000"; -- A (10)
-
-        when "1011" =>
-          seg <= "1100000"; -- b (11)
-
-        when "1100" =>
-          seg <= "0110001"; -- C (12)
-
-        when "1101" =>
-          seg <= "1000010"; -- d (13)
 
         when "1110" =>
           seg <= "0110000"; -- E

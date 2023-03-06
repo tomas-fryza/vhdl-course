@@ -1,29 +1,29 @@
-------------------------------------------------------------
+----------------------------------------------------------
 --
 -- Testbench for 4-bit binary comparator.
 -- Nexys A7-50T, xc7a50ticsg324-1L
--- TerosHDL, Vivado 2020.2
+-- TerosHDL, Vivado 2020.2, EDA Playground
 --
 -- Copyright (c) 2020 Tomas Fryza
 -- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
 -- This work is licensed under the terms of the MIT license.
 --
-------------------------------------------------------------
+----------------------------------------------------------
 
 library ieee;
   use ieee.std_logic_1164.all;
 
-------------------------------------------------------------
+----------------------------------------------------------
 -- Entity declaration for testbench
-------------------------------------------------------------
+----------------------------------------------------------
 
 entity tb_comparator_4bit is
   -- Entity of testbench is always empty
 end entity tb_comparator_4bit;
 
-------------------------------------------------------------
+----------------------------------------------------------
 -- Architecture body for testbench
-------------------------------------------------------------
+----------------------------------------------------------
 
 architecture testbench of tb_comparator_4bit is
 
@@ -122,7 +122,6 @@ begin
 
     -- Report a note at the end of stimulus process
     report "Stimulus process finished";
-
     wait; -- Data generation process is suspended forever
 
   end process p_stimulus;

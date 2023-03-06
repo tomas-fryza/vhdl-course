@@ -10,8 +10,8 @@
 --------------------------------------------------
 
 library ieee; -- Standard library
-  use ieee.std_logic_1164.all;
   -- Package for data type and logic operations
+  use ieee.std_logic_1164.all;
 
 --------------------------------------------------
 -- Entity declaration for basic gates
