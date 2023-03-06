@@ -14,6 +14,8 @@
 --
 -- Hardware: Nexys A7-50T, xc7a50ticsg324-1L
 -- Software: TerosHDL, Vivado 2020.2, EDA Playground
+--
+----------------------------------------------------------
 
 library ieee;
   use ieee.std_logic_1164.all;
@@ -89,6 +91,7 @@ begin
       end case;
 
     end if;
+
   end process p_7seg_decoder;
 
 end architecture behavioral;
