@@ -18,10 +18,10 @@ library ieee;
   use ieee.std_logic_1164.all;
 
 ----------------------------------------------------------
--- Entity declaration D type flip-flop with a sync reset
+-- Entity declaration for D-type flip-flop
 ----------------------------------------------------------
 
-entity d_ff_rst is
+entity d_ff is
   port (
     clk   : in    std_logic; --! Main clock
     rst   : in    std_logic; --! High-active synchronous reset
@@ -29,23 +29,23 @@ entity d_ff_rst is
     q     : out   std_logic; --! Main output
     q_bar : out   std_logic  --! Complementary output
   );
-end entity d_ff_rst;
+end entity d_ff;
 
 ----------------------------------------------------------
--- Architecture body for flip-flop
+-- Architecture body for D-type flip-flop
 ----------------------------------------------------------
 
-architecture behavioral of d_ff_rst is
+architecture behavioral of d_ff is
 
 begin
 
   --------------------------------------------------------
-  -- p_d_ff_rst:
-  -- D type flip-flop with a high-active synchro reset and
-  -- rising-edge clk.
+  -- p_d_ff:
+  -- D type flip-flop with a high-active synchronous reset
+  -- and rising-edge clk.
   -- q(n+1) = d
   --------------------------------------------------------
-  p_d_ff_rst : process (clk) is
+  p_d_ff : process (clk) is
   begin
 
     if rising_edge(clk) then      -- Synchronous process
@@ -58,6 +58,6 @@ begin
       end if;
     end if;
 
-  end process p_d_ff_rst;
+  end process p_d_ff;
 
 end architecture behavioral;

@@ -17,15 +17,15 @@ library ieee;
 -- Entity declaration for testbench
 ------------------------------------------------------------
 
-entity tb_d_ff_rst is
+entity tb_d_ff is
   -- Entity of testbench is always empty
-end entity tb_d_ff_rst;
+end entity tb_d_ff;
 
 ------------------------------------------------------------
 -- Architecture body for testbench
 ------------------------------------------------------------
 
-architecture testbench of tb_d_ff_rst is
+architecture testbench of tb_d_ff is
 
   constant c_CLK_100MHZ_PERIOD : time := 10 ns;
 
@@ -38,9 +38,9 @@ architecture testbench of tb_d_ff_rst is
 
 begin
 
-  -- Connecting testbench signals with d_ff_rst entity
+  -- Connecting testbench signals with d_ff entity
   -- (Unit Under Test)
-  uut_d_ff_rst : entity work.d_ff_rst
+  uut_d_ff_rst : entity work.d_ff
     port map (
       clk   => sig_clk_100mhz,
       rst   => sig_rst,
@@ -63,7 +63,6 @@ begin
       wait for c_CLK_100MHZ_PERIOD / 2;
 
     end loop;
-
     wait;                               -- Process is suspended forever
 
   end process p_clk_gen;
@@ -98,25 +97,25 @@ begin
 
     sig_data <= '0';
     wait for 47 ns;
-      
+
     sig_data <= '1';
     wait for 23 ns;
-      
+
     sig_data <= '0';
     wait for 34 ns;
-      
+
     sig_data <= '1';
     wait for 69 ns;
-      
+
     sig_data <= '0';
     wait for 47 ns;
-      
+
     sig_data <= '1';
     wait for 23 ns;
-      
+
     sig_data <= '0';
     wait for 47 ns;
-      
+
     sig_data <= '1';
     wait for 23 ns;
 
