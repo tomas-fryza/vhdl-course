@@ -32,7 +32,7 @@ architecture testbench of tb_d_ff_rst is
   -- Local signals
   signal sig_clk_100mhz : std_logic;
   signal sig_rst        : std_logic;
-  signal sig_d          : std_logic;
+  signal sig_data       : std_logic;
   signal sig_q          : std_logic;
   signal sig_q_bar      : std_logic;
 
@@ -44,7 +44,7 @@ begin
     port map (
       clk   => sig_clk_100mhz,
       rst   => sig_rst,
-      d     => sig_d,
+      d     => sig_data,
       q     => sig_q,
       q_bar => sig_q_bar
     );
@@ -55,7 +55,7 @@ begin
   p_clk_gen : process is
   begin
 
-    while now < 400 ns loop             -- 40 periods of 100MHz clock
+    while now < 300 ns loop             -- 30 periods of 100MHz clock
 
       sig_clk_100mhz <= '0';
       wait for c_CLK_100MHZ_PERIOD / 2;
@@ -96,26 +96,32 @@ begin
 
     report "Stimulus process started";
 
-    sig_d <= '0';
+    sig_data <= '0';
     wait for 47 ns;
-    sig_d <= '1';
+      
+    sig_data <= '1';
     wait for 23 ns;
-    sig_d <= '0';
+      
+    sig_data <= '0';
     wait for 34 ns;
-    sig_d <= '1';
+      
+    sig_data <= '1';
     wait for 69 ns;
-    sig_d <= '0';
+      
+    sig_data <= '0';
     wait for 47 ns;
-    sig_d <= '1';
+      
+    sig_data <= '1';
     wait for 23 ns;
-    sig_d <= '0';
+      
+    sig_data <= '0';
     wait for 47 ns;
-    sig_d <= '1';
+      
+    sig_data <= '1';
     wait for 23 ns;
 
     report "Stimulus process finished";
     wait;
 
   end process p_stimulus;
-
 end architecture testbench;
