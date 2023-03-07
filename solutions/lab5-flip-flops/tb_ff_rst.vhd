@@ -33,8 +33,8 @@ architecture testbench of tb_d_ff_rst is
   signal sig_clk_100mhz : std_logic;
   signal sig_rst        : std_logic;
   signal sig_data       : std_logic;
-  signal sig_q          : std_logic;
-  signal sig_q_bar      : std_logic;
+  signal sig_dq         : std_logic;
+  signal sig_dq_bar     : std_logic;
 
 begin
 
@@ -45,8 +45,8 @@ begin
       clk   => sig_clk_100mhz,
       rst   => sig_rst,
       d     => sig_data,
-      q     => sig_q,
-      q_bar => sig_q_bar
+      q     => sig_dq,
+      q_bar => sig_dq_bar
     );
 
   --------------------------------------------------------
