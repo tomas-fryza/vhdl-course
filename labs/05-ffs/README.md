@@ -224,8 +224,8 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
           signal sig_clk_100MHz : std_logic;
           signal sig_rst        : std_logic;
           signal sig_data       : std_logic;
-          signal sig_d_q        : std_logic;
-          signal sig_d_q_bar    : std_logic;
+          signal sig_dq         : std_logic;
+          signal sig_dq_bar     : std_logic;
 
       begin
           -- Connecting testbench signals with d_ff_rst entity
@@ -235,8 +235,8 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
                   clk   => sig_clk_100MHz,
                   rst   => sig_rst,
                   d     => sig_data,
-                  q     => sig_d_q,
-                  q_bar => sig_d_q_bar
+                  q     => sig_dq,
+                  q_bar => sig_dq_bar
               );
 
           --------------------------------------------------------
