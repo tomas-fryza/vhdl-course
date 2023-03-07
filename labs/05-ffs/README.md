@@ -302,9 +302,9 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
        -- p_t_ff_rst:
        -- T type flip-flop with a high-active synchro reset and
        -- rising-edge clk.
-       -- q(n+1) = t./q(n) + /t.q(n)
-       -- q(n+1) =  q(n) if t = 0 (no change)
-       -- q(n+1) = /q(n) if t = 1 (inversion)
+       -- sig_q = t./sig_q + /t.sig_q
+       -- sig_q =  sig_q if t = 0 (no change)
+       -- sig_q = /sig_q if t = 1 (inversion)
        --------------------------------------------------------
        p_t_ff_rst : process (clk)
        begin
