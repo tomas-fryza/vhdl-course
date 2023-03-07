@@ -296,7 +296,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
    architecture behavioral of t_ff_rst is
        -- It must use this local signal instead of output ports
        -- because "out" ports cannot be read within the architecture
-       signal s_q : std_logic;
+       signal sig_q : std_logic;
    begin
        --------------------------------------------------------
        -- p_t_ff_rst:
@@ -316,8 +316,8 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
        end process p_t_ff_rst;
 
        -- Output ports are permanently connected to local signal
-       q     <= s_q;
-       q_bar <= not s_q;
+       q     <= sig_q;
+       q_bar <= not sig_q;
    end architecture behavioral;
    ```
 
