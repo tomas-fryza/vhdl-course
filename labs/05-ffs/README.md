@@ -306,7 +306,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
        -- sig_q =  sig_q if t = 0 (no change)
        -- sig_q = /sig_q if t = 1 (inversion)
        --------------------------------------------------------
-       p_t_ff_rst : process (clk)
+       p_t_ff_rst : process (clk) is
        begin
            if rising_edge(clk) then
 
