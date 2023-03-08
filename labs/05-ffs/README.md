@@ -187,7 +187,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
           -- rising-edge clk.
           -- q(n+1) = d
           --------------------------------------------------------
-          p_d_ff_rst : process (clk)
+          p_d_ff_rst : process (clk) is
           begin
               if rising_edge(clk) then  -- Synchronous process
 
@@ -242,7 +242,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
           --------------------------------------------------------
           -- Clock generation process
           --------------------------------------------------------
-          p_clk_gen : process
+          p_clk_gen : process is
           begin
               while now < 300 ns loop -- 30 periods of 100MHz clock
                   sig_clk_100MHz <= '0';
@@ -256,7 +256,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
           --------------------------------------------------------
           -- Reset generation process
           --------------------------------------------------------
-          p_reset_gen : process
+          p_reset_gen : process is
           begin
               sig_rst <= '0';
 
@@ -272,7 +272,7 @@ The basic difference between a latch and a flip-flop is a gating or clocking mec
           --------------------------------------------------------
           -- Data generation process
           --------------------------------------------------------
-          p_stimulus : process
+          p_stimulus : process is
           begin
               report "Stimulus process started";
               sig_data <='0'; wait for 13 ns;
