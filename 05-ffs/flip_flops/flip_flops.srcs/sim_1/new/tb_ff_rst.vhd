@@ -1,27 +1,40 @@
-------------------------------------------------------------
---
--- Testbench for D and T flip-flop.
--- Nexys A7-50T, Vivado v2020.1.1, EDA Playground
---
--- Copyright (c) 2021 Tomas Fryza
--- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-------------------------------------------------------------
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date: 03/08/2023 11:32:04 AM
+-- Design Name: 
+-- Module Name: tb_ff_rst - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
 
-library ieee;
-use ieee.std_logic_1164.all;
 
-------------------------------------------------------------
--- Entity declaration for testbench
-------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
 entity tb_ff_rst is
-    -- Entity of testbench is always empty
-end entity tb_ff_rst;
+--  Port ( );
+end tb_ff_rst;
 
-------------------------------------------------------------
--- Architecture body for testbench
-------------------------------------------------------------
 architecture testbench of tb_ff_rst is
 
     constant c_CLK_100MHZ_PERIOD : time := 10 ns;
@@ -39,7 +52,7 @@ begin
     -- Connecting testbench signals with d_ff_rst entity
     -- (Unit Under Test)
     uut_d_ff_rst : entity work.d_ff_rst
-        port map(
+        port map (
             clk   => sig_clk_100MHz,
             rst   => sig_rst,
             d     => sig_data,
@@ -50,7 +63,7 @@ begin
     -- Connecting testbench signals with t_ff_rst entity
     -- (Unit Under Test)
     uut_t_ff_rst : entity work.t_ff_rst
-        port map(
+        port map (
             clk   => sig_clk_100MHz,
             rst   => sig_rst,
             t     => sig_data,
@@ -61,53 +74,71 @@ begin
     --------------------------------------------------------
     -- Clock generation process
     --------------------------------------------------------
-    p_clk_gen : process
+    p_clk_gen : process is
     begin
-        while now < 200 ns loop -- 20 periods of 100MHz clock
+        while now < 300 ns loop -- 30 periods of 100MHz clock
             sig_clk_100MHz <= '0';
             wait for c_CLK_100MHZ_PERIOD / 2;
             sig_clk_100MHz <= '1';
             wait for c_CLK_100MHZ_PERIOD / 2;
         end loop;
-        wait;                   -- Process is suspended forever
+        wait;                -- Process is suspended forever
     end process p_clk_gen;
 
-    --------------------------------------------------------
-    -- Reset generation process
-    --------------------------------------------------------
-    p_reset_gen : process
-    begin
-        sig_rst <= '0';
-        wait for 18 ns;
-        
-        -- Reset activated
-        sig_rst <= '1';
-        wait for 43 ns;
+  --------------------------------------------------------
+  -- Reset generation process
+  --------------------------------------------------------
+  p_reset_gen : process is
+  begin
 
-        -- Reset deactivated
-        sig_rst <= '0';
+    sig_rst <= '0';
+    wait for 28 ns;
 
-        wait;
-    end process p_reset_gen;
+    -- Reset activated
+    sig_rst <= '1';
+    wait for 83 ns;
 
-    --------------------------------------------------------
-    -- Data generation process
-    --------------------------------------------------------
-    p_stimulus : process
-    begin
-        report "Stimulus process started";
-        sig_data <='0'; wait for 13 ns;
+    -- Reset deactivated
+    sig_rst <= '0';
 
-        sig_data <='1'; wait for 26 ns;
-        sig_data <='0'; wait for 14 ns;
-        
-        sig_data <='1'; wait for 29 ns;
-        sig_data <='0'; wait for 47 ns;
-        
-        sig_data <='1'; wait for 13 ns;
+    wait;
 
-        report "Stimulus process finished";
-        wait;
-    end process p_stimulus;
+  end process p_reset_gen;
 
+  --------------------------------------------------------
+  -- Data generation process
+  --------------------------------------------------------
+  p_stimulus : process is
+  begin
+
+    report "Stimulus process started";
+
+    sig_data <= '0';
+    wait for 47 ns;
+
+    sig_data <= '1';
+    wait for 23 ns;
+
+    sig_data <= '0';
+    wait for 34 ns;
+
+    sig_data <= '1';
+    wait for 69 ns;
+
+    sig_data <= '0';
+    wait for 47 ns;
+
+    sig_data <= '1';
+    wait for 23 ns;
+
+    sig_data <= '0';
+    wait for 47 ns;
+
+    sig_data <= '1';
+    wait for 23 ns;
+
+    report "Stimulus process finished";
+    wait;
+
+  end process p_stimulus;
 end architecture testbench;

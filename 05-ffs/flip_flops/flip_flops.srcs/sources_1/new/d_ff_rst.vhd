@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 03/07/2023 11:11:53 AM
+-- Create Date: 03/08/2023 11:23:44 AM
 -- Design Name: 
 -- Module Name: d_ff_rst - Behavioral
 -- Project Name: 
@@ -47,13 +47,13 @@ begin
     -- rising-edge clk.
     -- q(n+1) = d
     --------------------------------------------------------
-    p_d_ff_rst : process (clk)
+    p_d_ff_rst : process (clk) is
     begin
         if rising_edge(clk) then  -- Synchronous process
             -- USE HIGH-ACTIVE RESET HERE
             if (rst = '1') then
                 q     <= '0';
-                q_bar <= '1';            
+                q_bar <= '1';
             else
                 q     <= d;
                 q_bar <= not d;
