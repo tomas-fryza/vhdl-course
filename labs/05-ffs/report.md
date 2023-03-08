@@ -13,7 +13,7 @@
 ```vhdl
 architecture Behavioral of jk_ff_rst is
 
-    -- WRITE YOUR CODE HERE
+    -- WRITE A SYNCHRONOUS PROCESS HERE
 
     -- Output ports are permanently connected to local signal
     q     <= sig_q;
