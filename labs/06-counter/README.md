@@ -66,12 +66,16 @@ T_{clk}=\frac{1}{f_{clk}}=
 
 1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
 
-   > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
-   >
+   > **Help:** Useful bash and git commands are `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
 
-2. Create a new working folder `labs/06-counter` for this laboratory exercise.
+   ```bash
+   ## Windows Git Bash or Linux:
+   $ git pull
+   ```
 
-3. Create a new file `labs/06-counter/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/06-counter/report.md) into it.
+2. Create a new working folder `06-counter` for this laboratory exercise.
+
+3. Create a new file `06-counter/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/06-counter/report.md) into it.
 
 <a name="part2"></a>
 
