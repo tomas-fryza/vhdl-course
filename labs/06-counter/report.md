@@ -10,20 +10,18 @@
     -- Clocked process with synchronous reset which implements
     -- n-bit up/down counter.
     --------------------------------------------------------
-    p_cnt_up_down : process(clk)
+    p_cnt_up_down : process (clk) is
     begin
-        if rising_edge(clk) then
-        
-            if (reset = '1') then   -- Synchronous reset
-                s_cnt_local <= (others => '0'); -- Clear all bits
+      if rising_edge(clk) then
+        if (rst = '1') then           -- Synchronous reset
+          sig_cnt <= (others => '0'); -- Clear all bits
+        elsif (en = '1') then         -- Test if counter is enabled
 
-            elsif (en_i = '1') then -- Test if counter is enabled
+          -- TEST COUNTER DIRECTION HERE
 
-                -- TEST COUNTER DIRECTION HERE
-
-                    s_cnt_local <= s_cnt_local + 1;
-            end if;
+            sig_cnt <= sig_cnt + 1;
         end if;
+      end if;
     end process p_cnt_up_down;
 ```
 
@@ -33,6 +31,6 @@
 
 ### Two counters
 
-1. Image of the top layer structure including both counters, ie a 4-bit bidirectional counter from *Part 4* and a 10-bit counter with a 10 ms time base from *Experiments on your own*. The image can be drawn on a computer or by hand. Always name all inputs, outputs, components and internal signals!
+1. Image of the top layer structure including both counters, ie a 4-bit bidirectional counter from *Part 4* and a 12-bit counter with a 10 ms time base from *Experiments on your own*. The image can be drawn on a computer or by hand. Always name all inputs, outputs, components and internal signals!
 
    ![your figure]()

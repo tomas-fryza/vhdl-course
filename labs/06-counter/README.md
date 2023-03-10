@@ -73,9 +73,9 @@ T_{clk}=\frac{1}{f_{clk}}=
    $ git pull
    ```
 
-2. Create a new working folder `06-counter` for this laboratory exercise.
+2. Create a new working folder `06-counter` for this exercise.
 
-3. Create a new file `06-counter/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/06-counter/report.md) into it.
+3. Use your favorite text editor, such as VS Code, Notepad++, etc. and create a new file `README.md` in your `06-counter/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/06-counter/report.md) to your `06-counter/README.md` file.
 
 <a name="part2"></a>
 
@@ -90,11 +90,11 @@ To drive another logic in the design (with slower clock), it is better to genera
 ```javascript
 {
   signal: [
-    {name: "clk",   wave: 'P...............'},
-    {name: "reset", wave: 'lnh.pl..........'},
-    {name: "s_cnt", wave: 'x.3..33333333333', data: ["0","1","2","3","4","0","1","2","3","4","0","1"]},
+    {name: "clk",     wave: 'P...............'},
+    {name: "reset",   wave: 'lnh.pl..........'},
+    {name: "sig_cnt", wave: 'x.3..33333333333', data: ["0","1","2","3","4","0","1","2","3","4","0","1"]},
     {},
-    {name: "ce_o",  wave: 'l........hl...hl'},
+    {name: "ce",      wave: 'l........hl...hl'},
   ],
   head: {
   },
@@ -106,7 +106,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 1. Perform the following steps to model clock enable circuit in Vivado.
 
-   1. Create a new Vivado RTL project `counter` in your `labs/06-counter` working folder.
+   1. Create a new Vivado RTL project `counter` in your `06-counter` working folder.
    2. Create a VHDL source file `clock_enable` for the clock enable circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Clock enable circuit example](https://www.edaplayground.com/x/5LiJ) and copy/paste the `design.vhd` code to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as package for arithmetic operations, `generic` part, internal signal, and [synchronous process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes). **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
@@ -125,7 +125,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 1. Perform the following steps to simulate the bidirectional N-bit counter.
 
    1. Create a new VHDL [design source](https://www.edaplayground.com/x/5bgq) `cnt_up_down` in your project.
-   2. Take a look at the new parts of the VHDL source code. Note that an internal `s_cnt_local` signal is used to implement the counter. This is because the **output** port `cnt_o` cannot be read and therefore the operation `cnt_o + 1` cannot be performed. Also note that local value must be retyped to the output port.
+   2. Take a look at the new parts of the VHDL source code. Note that an internal `sig_cnt` signal is used to implement the counter. This is because the **output** port `cnt` cannot be read and therefore the operation `cnt + 1` cannot be performed. Also note that local value must be retyped to the output port.
    3. Create a VHDL [simulation source](https://www.edaplayground.com/x/5bgq) `tb_cnt_up_down`.
    4. Change the testbench you want to simulate, right click to file name and select `Set as Top`. Run the simulation. Verify the meaning of the constant `c_CNT_WIDTH` and reset generation process.
 
@@ -133,7 +133,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
    5. Complete architecture of the counter, make it bidirectional, and simulate again.
 
-   Note that for any vector, it is possible to change the numeric system in the simulation which represents the current value. To do so, right-click the vector name (here `s_cnt[4:0]`) and select **Radix > Unsigned Decimal** from the context menu. You can change the vector color by **Signal Color** as well.
+   Note that for any vector, it is possible to change the numeric system in the simulation which represents the current value. To do so, right-click the vector name (here `sig_cnt[4:0]`) and select **Radix > Unsigned Decimal** from the context menu. You can change the vector color by **Signal Color** as well.
 
      ![Change radix](images/screenshot_vivado_radix.png)
 
@@ -163,32 +163,34 @@ To drive another logic in the design (with slower clock), it is better to genera
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level: complete instantiation (copy) of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratories to the `counter/counter.srcs/sources_1/new/` source folder and add it to the project.
 
       ```vhdl
-      ------------------------------------------------------------------------
+      ----------------------------------------------------------
       -- Architecture body for top level
-      ------------------------------------------------------------------------
-      architecture Behavioral of top is
-
-        -- Internal clock enable
-        signal s_en_250ms : std_logic;
-        -- Internal counter
-        signal s_cnt_4bit : std_logic_vector(4 - 1 downto 0);
+      ----------------------------------------------------------
+      
+      architecture behavioral of top is
+      
+        -- 4-bit counter @ 250 ms
+        signal sig_en_250ms : std_logic;                    --! Clock enable signal for Counter0
+        signal sig_cnt_4bit : std_logic_vector(3 downto 0); --! Counter0
 
       begin
 
-        --------------------------------------------------------------------
+        --------------------------------------------------------
         -- Instance (copy) of clock_enable entity
+        --------------------------------------------------------
         clk_en0 : entity work.clock_enable
             generic map(
                 g_MAX => 25000000
             )
             port map(
-                clk   => -- WRITE YOUR CODE HERE
-                reset => -- WRITE YOUR CODE HERE
-                ce_o  => s_en_250ms
+                clk => -- WRITE YOUR CODE HERE
+                rst => -- WRITE YOUR CODE HERE
+                ce  => sig_en_250ms
             );
 
-        --------------------------------------------------------------------
+        --------------------------------------------------------
         -- Instance (copy) of cnt_up_down entity
+        --------------------------------------------------------
         bin_cnt0 : entity work.cnt_up_down
            generic map(
                 -- WRITE YOUR CODE HERE
@@ -197,25 +199,29 @@ To drive another logic in the design (with slower clock), it is better to genera
                 -- WRITE YOUR CODE HERE
             );
 
-        --------------------------------------------------------------------
+        --------------------------------------------------------
         -- Instance (copy) of hex_7seg entity
+        --------------------------------------------------------
         hex2seg : entity work.hex_7seg
             port map(
-                blank_i  => BTNC,
-                hex_i    => s_cnt_4bit,
-                seg_o(6) => CA,
-                seg_o(5) => CB,
-                seg_o(4) => CC,
-                seg_o(3) => CD,
-                seg_o(2) => CE,
-                seg_o(1) => CF,
-                seg_o(0) => CG
+                blank  => BTNC,
+                hex    => s_cnt_4bit,
+                seg(6) => CA,
+                seg(5) => CB,
+                seg(4) => CC,
+                seg(3) => CD,
+                seg(2) => CE,
+                seg(1) => CF,
+                seg(0) => CG
             );
 
+        --------------------------------------------------------
+        -- Other settings
+        --------------------------------------------------------
         -- Connect one common anode to 3.3V
         AN <= b"1111_1110";
 
-      end architecture Behavioral;
+      end architecture behavioral;
       ```
   
       ![Top level](images/top_schema_4bit_cnt.png)
@@ -225,37 +231,36 @@ To drive another logic in the design (with slower clock), it is better to genera
       IMPORTANT: Because we defined `SW` as a single signal and not a bus, make sure you rename the selected port name in XDC file, for example `SW[0]` to `SW`.
 
    5. Compile the project and download the generated bitstream `counter/counter.runs/impl_1/top.bit` into the FPGA chip.
+
    6. Test the functionality of the 4-bit counter by toggling the switch, pressing the button and observing the display and LEDs.
 
       ![Nexys A7 board](images/nexys_a7_counter.jpg)
 
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
+
    8. Optional: Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
       ![Pmod port](images/pmod.png)
 
       ![Binary counter verification](images/logic_analyser.jpg)
 
-## Synchronize repositories
+   9. When you finish, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes. To do that, use git commands to add, commit, and push all local changes to your remote repository. Check GitHub web page for changes.
 
-When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
-
-   > Useful git commands are: `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
-   >
+      > **Help:** Useful git commands are `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
 
 <a name="experiments"></a>
 
 ## Experiments on your own
 
-1. Add a second instantiation (copy) of the counter and clock enable entities and make a 10-bit counter with a 10 ms time base. Therefore, the application will contain two independent binary counters (4-bit and 10-bit), each with a different counting speed. Display the second counter value on LEDs.
+1. Add a second instantiation (copy) of the counter and clock enable entities and make a 12-bit counter with a 10 ms time base. Therefore, the application will contain two independent binary counters (4-bit and 12-bit), each with a different counting speed. Display the second counter value on LEDs.
 
 <a name="report"></a>
 
 ## Post-Lab report
 
-*Copy the [report template](report.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
+*Complete all parts of `06-counter/README.md` file (see Part 1.3) in Czech, Slovak, or English, push it to your GitHub repository, and submit a link to this file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next lab, i.e. in one week.*
 
-*Vložte [šablonu úkolu](report.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
+*Vypracujte všechny části ze souboru `06-counter/README.md` (viz Část 1.3) v českém, slovenském, nebo anglickém jazyce, uložte je na váš GitHub repozitář a odevzdejte link na tento soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším laboratorním cvičením, tj. za jeden týden.*
 
 <a name="references"></a>
 
