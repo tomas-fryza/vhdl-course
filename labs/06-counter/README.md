@@ -205,7 +205,7 @@ To drive another logic in the design (with slower clock), it is better to genera
         hex2seg : entity work.hex_7seg
             port map(
                 blank  => BTNC,
-                hex    => s_cnt_4bit,
+                hex    => sig_cnt_4bit,
                 seg(6) => CA,
                 seg(5) => CB,
                 seg(4) => CC,
