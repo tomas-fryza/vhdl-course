@@ -23,7 +23,7 @@ entity top is
   port (
     CLK100MHZ : in    std_logic;                     --! Main clock
     SW        : in    std_logic_vector(1 downto 0);  --! Counter(s) direction
-    LED       : out   std_logic_vector(15 downto 0); --! Counter1 value
+    LED       : out   std_logic_vector(11 downto 0); --! Counter1 value
     CA        : out   std_logic;                     --! Cathod A
     CB        : out   std_logic;                     --! Cathod B
     CC        : out   std_logic;                     --! Cathod C
@@ -48,7 +48,7 @@ architecture behavioral of top is
 
   -- 16-bit counter @ 10 ms
   signal sig_en_10ms   : std_logic;                     --! Clock enable signal for Counter1
-  signal sig_cnt_16bit : std_logic_vector(15 downto 0); --! Counter1
+  signal sig_cnt_16bit : std_logic_vector(11 downto 0); --! Counter1
 
 begin
 
@@ -92,7 +92,7 @@ begin
 
   bin_cnt1 : entity work.cnt_up_down
     generic map (
-      g_CNT_WIDTH => 16
+      g_CNT_WIDTH => 12
     )
     port map (
       clk    => CLK100MHZ,
