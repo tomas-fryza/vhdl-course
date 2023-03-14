@@ -91,7 +91,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 {
   signal: [
     {name: "clk",     wave: 'P...............'},
-    {name: "reset",   wave: 'lnh.pl..........'},
+    {name: "rst",     wave: 'lnh.pl..........'},
     {name: "sig_cnt", wave: 'x.3..33333333333', data: ["0","1","2","3","4","0","1","2","3","4","0","1"]},
     {},
     {name: "ce",      wave: 'l........hl...hl'},
