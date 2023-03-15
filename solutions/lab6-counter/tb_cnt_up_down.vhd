@@ -83,7 +83,7 @@ begin
 
     -- Reset activated
     sig_rst <= '1';
-    wait for 73 ns;
+    wait for 70 ns;
 
     -- Reset deactivated
     sig_rst <= '0';
@@ -111,6 +111,9 @@ begin
 
     -- Disable counting
     sig_en <= '0';
+    wait for 86 ns;
+    -- Enable counting again
+    sig_en <= '1';
 
     report "Stimulus process finished";
     wait;
