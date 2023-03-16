@@ -42,13 +42,12 @@ end entity top;
 
 architecture behavioral of top is
 
-  -- 4-bit counter @ 250 ms
+  -- First counter: 4-bit @ 250 ms
   signal sig_en_250ms : std_logic;                    --! Clock enable signal for Counter0
   signal sig_cnt_4bit : std_logic_vector(3 downto 0); --! Counter0
 
-  -- 16-bit counter @ 10 ms
-  signal sig_en_10ms   : std_logic;                     --! Clock enable signal for Counter1
-  signal sig_cnt_16bit : std_logic_vector(11 downto 0); --! Counter1
+  -- Second counter: n-bit @ 10 ms
+  signal sig_en_10ms : std_logic;                     --! Clock enable signal for Counter1
 
 begin
 
@@ -99,7 +98,7 @@ begin
       rst    => BTNC,
       en     => sig_en_10ms,
       cnt_up => SW(1),
-      cnt    => sig_cnt_16bit
+      cnt    => LED
     );
 
   --------------------------------------------------------
@@ -123,8 +122,5 @@ begin
   --------------------------------------------------------
   -- Connect one common anode to 3.3V
   AN <= b"1111_1110";
-
-  -- Display 16-bit counter value on LEDs
-  LED <= sig_cnt_16bit;
 
 end architecture behavioral;
