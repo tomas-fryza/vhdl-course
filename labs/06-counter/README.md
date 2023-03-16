@@ -232,7 +232,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
    5. Compile the project and download the generated bitstream `counter/counter.runs/impl_1/top.bit` into the FPGA chip.
 
-   6. Test the functionality of the 4-bit counter by toggling the switch, pressing the button and observing the display and LEDs.
+   6. Test the functionality of the 4-bit counter by toggling the switch, pressing the button and observing the display.
 
       ![Nexys A7 board](images/nexys_a7_counter.jpg)
 
