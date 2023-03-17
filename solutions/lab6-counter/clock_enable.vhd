@@ -53,7 +53,7 @@ begin
   p_clk_enable : process (clk) is
   begin
 
-    if rising_edge(clk) then              -- Synchronous process
+    if (rising_edge(clk)) then            -- Synchronous process
       if (rst = '1') then                 -- High-active reset
         sig_cnt <= 0;                     -- Clear local counter
         ce      <= '0';                   -- Set output to low

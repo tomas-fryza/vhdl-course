@@ -48,7 +48,7 @@ begin
   p_d_ff : process (clk) is
   begin
 
-    if rising_edge(clk) then      -- Synchronous process
+    if (rising_edge(clk)) then    -- Synchronous process
       if (rst = '1') then         -- High-active reset
         q     <= '0';
         q_bar <= '1';

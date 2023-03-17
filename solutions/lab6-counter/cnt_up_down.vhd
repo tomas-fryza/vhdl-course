@@ -55,7 +55,7 @@ begin
   p_cnt_up_down : process (clk) is
   begin
 
-    if rising_edge(clk) then
+    if (rising_edge(clk)) then
       if (rst = '1') then           -- Synchronous reset
         sig_cnt <= (others => '0'); -- Clear all bits
       elsif (en = '1') then         -- Test if counter is enabled
