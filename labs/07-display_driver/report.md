@@ -8,40 +8,36 @@
     --------------------------------------------------------
     -- p_mux:
     -- A sequential process that implements a multiplexer for
-    -- selecting data for a single digit, a decimal point 
-    -- signal, and switches the common anodes of each display.
+    -- selecting data for a single digit, a decimal point,
+    -- and switches the common anodes of each display.
     --------------------------------------------------------
-    p_mux : process(clk)
+    p_mux : process(clk) is
     begin
-        if rising_edge(clk) then
-            if (reset = '1') then
-                s_hex <= data0_i;
-                dp_o  <= dp_i(0);
-                dig_o <= "1110";
+        if (rising_edge(clk)) then
+            if (rst = '1') then
+                sig_hex <= data0;
+                dp      <= dp_vect(0);
+                dig     <= "1110";
             else
-                case s_cnt is
+                case sig_cnt is
                     when "11" =>
-                        s_hex <= data3_i;
-                        dp_o  <= dp_i(3);
-                        dig_o <= "0111";
+                        sig_hex <= data3;
+                        dp      <= dp_vect(3);
+                        dig     <= "0111";
 
                     when "10" =>
-                        -- WRITE YOUR CODE HERE
+                        -- DEFINE ALL OUTPUTS FOR "10" HERE
 
                     when "01" =>
-                        -- WRITE YOUR CODE HERE
+                        -- DEFINE ALL OUTPUTS FOR "01" HERE
 
                     when others =>
-                        -- WRITE YOUR CODE HERE
+                        -- DEFINE ALL OUTPUTS FOR "00" HERE
                 end case;
             end if;
         end if;
     end process p_mux;
 ```
-
-2. Screenshot with simulated time waveforms. Test reset as well. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
-
-   ![your figure]()
 
 ### Eight-digit driver
 

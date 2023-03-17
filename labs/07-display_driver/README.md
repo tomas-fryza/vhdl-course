@@ -1,13 +1,5 @@
 # Lab 7: Driver for multiple seven-segment displays
 
-<!--
-![Logo](../../logolink_eng.jpg)
-<p align="center">
-  The Study of Modern and Developing Engineering BUT<br>
-  CZ.02.2.69/0.0/0.0/18_056/0013325
-</p>
--->
-
 ### Learning objectives
 
 After completing this lab you will be able to:
@@ -38,40 +30,40 @@ Due to the physiological properties of human vision, it is necessary that the ti
 
 1. See [schematic](https://github.com/tomas-fryza/Digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board, find out the connection of 7-segment displays, and complete the signal timing to display four-digit value `3.142`.
 
-  ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](../04-segment/images/7-Segment-Display-Number-Formation-Segment-Contol.png)
+   ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](../04-segment/images/7-Segment-Display-Number-Formation-Segment-Contol.png)
 
-  ![Timing of seven-segment display](images/wavedrom_7-segment.png)
+   ![Timing of seven-segment display](images/wavedrom_7-segment.png)
 
-  > The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows:
-  >
-  ```javascript
-  {
-    signal:
-    [
-      ['Digit position',
-        {name: 'Common anode: AN(3)', wave: 'xx01..01..01'},
-        {name: 'AN(2)', wave: 'xx101'},
-        {name: 'AN(1)', wave: 'xx1.'},
-        {name: 'AN(0)', wave: 'xx1.'},
-      ],
-      ['Seven-segment data',
-        {name: '4-digit value to display', wave: 'xx3333555599', data: ['3','1','4','2','3','1','4','2','3','1']},
-        {name: 'Cathod A: CA', wave: 'xx01.0.1.0.1'},
-        {name: 'Cathod B: CB', wave: 'xx0.'},
-        {name: 'CC', wave: 'xx0.'},
-        {name: 'CD', wave: 'xx01'},
-        {name: 'CE', wave: 'xx1.'},
-        {name: 'CF', wave: 'xx1.'},
-        {name: 'Cathod G: CG', wave: 'xx01'},
-      ],
-      {name: 'Decimal point: DP', wave: 'xx01..01..01'},
-    ],
-    head:
-    {
-      text: '                    4ms   4ms   4ms   4ms   4ms   4ms   4ms   4ms   4ms   4ms',
-    },
-  }
-  ```
+   > The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows:
+   >
+   ```javascript
+   {
+     signal:
+     [
+       ['Digit position',
+         {name: 'Common anode: AN(3)', wave: 'xx01..01..01'},
+         {name: 'AN(2)', wave: 'xx101'},
+         {name: 'AN(1)', wave: 'xx1.'},
+         {name: 'AN(0)', wave: 'xx1.'},
+       ],
+       ['Seven-segment data',
+         {name: '4-digit value to display', wave: 'xx3333555599', data: ['3','1','4','2','3','1','4','2','3','1']},
+         {name: 'Cathod A: CA', wave: 'xx01.0.1.0.1'},
+         {name: 'Cathod B: CB', wave: 'xx0.'},
+         {name: 'CC', wave: 'xx0.'},
+         {name: 'CD', wave: 'xx01'},
+         {name: 'CE', wave: 'xx1.'},
+         {name: 'CF', wave: 'xx1.'},
+         {name: 'Cathod G: CG', wave: 'xx01'},
+       ],
+       {name: 'Decimal point: DP', wave: 'xx01..01..01'},
+     ],
+     head:
+     {
+       text: '                    4ms   4ms   4ms   4ms   4ms   4ms   4ms   4ms   4ms   4ms',
+     },
+   }
+   ```
 
 <a name="part1"></a>
 
@@ -79,12 +71,16 @@ Due to the physiological properties of human vision, it is necessary that the ti
 
 1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
 
-   > Useful bash and git commands are: `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
-   >
+   > **Help:** Useful bash and git commands are `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
 
-2. Create a new working folder `labs/07-display_driver` for this laboratory exercise.
+   ```bash
+   ## Windows Git Bash or Linux:
+   $ git pull
+   ```
 
-3. Create a new file `labs/07-display_driver/report.md` and copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/07-display_driver/report.md) into it.
+2. Create a new working folder `07-display_driver` for this exercise.
+
+3. Use your favorite text editor, such as VS Code, Notepad++, etc. and create a new file `README.md` in your `07-display_driver/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/07-display_driver/report.md) to your `07-display_driver/README.md` file.
 
 <a name="part2"></a>
 
@@ -94,7 +90,7 @@ A display drive is able to control several 7-segment displays. Using the multipl
 
 1. Perform the following steps to model the driver for group of four displays in Vivado.
 
-   1. Create a new Vivado RTL project `display_driver` in your `labs/07-display_driver` working folder.
+   1. Create a new Vivado RTL project `display_driver` in your `07-display_driver` working folder.
    2. Create a VHDL source file `driver_7seg_4digits` for the driver circuit.
    3. Choose default board: `Nexys A7-50T`.
    4. Open the [Driver for 7-segment display example](https://www.edaplayground.com/x/3f_A) and copy/paste the `design.vhd` code to your `driver_7seg_4digits.vhd` file.
@@ -105,7 +101,7 @@ A display drive is able to control several 7-segment displays. Using the multipl
 
    7. Create a VHDL [simulation source](https://www.edaplayground.com/x/3f_A) `tb_driver_7seg_4digits`, complete the code, set conditions to display value `3.142` and run the simulation. Compare simulated timing diagram with yours in Preparation tasks. Verify reset as well.
 
-      **Important note:** Change the `g_MAX` parameter of `clock_enable` entity in the driver architecture to **4**! Then each clock period will be equivalent to 1 ms and not 10 ns. For implementation, do sure to change back the correct value to 400,000.
+      **Important note:** Change the `g_MAX` parameter of `clock_enable` entity in the driver architecture to **4**! Then each clock period will be equivalent to 1 ms and not 10 ns. For implementation, be sure to put the correct value back to 400,000.
 
    8. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
@@ -136,41 +132,52 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
 
       ```vhdl
-      ------------------------------------------------------------
+      ----------------------------------------------------------
       -- Architecture body for top level
-      ------------------------------------------------------------
-      architecture Behavioral of top is
+      ----------------------------------------------------------
+      architecture behavioral of top is
         -- No internal signals are needed today:)
       begin
 
         --------------------------------------------------------
         -- Instance (copy) of driver_7seg_4digits entity
+        --------------------------------------------------------
         driver_seg_4 : entity work.driver_7seg_4digits
-            port map(
-                clk        => CLK100MHZ,
-                reset      => BTNC,
-                data0_i(3) => SW(3),
-                data0_i(2) => SW(2),
-                data0_i(1) => SW(1),
-                data0_i(0) => SW(0),
+            port map (
+                clk      => CLK100MHZ,
+                rst      => BTNC,
+                data3(3) => SW(15),
+                data3(2) => SW(14),
+                data3(1) => SW(13),
+                data3(0) => SW(12),
 
-                -- MAP DATA INPUTS TO ON-BOARD SWITCHES
+                -- MAP DATA INPUTS TO OTHER ON-BOARD SWITCHES HERE
 
-                data3_i(3) => SW(15),
-                data3_i(2) => SW(14),
-                data3_i(1) => SW(13),
-                data3_i(0) => SW(12),
-                dp_i       => "0111",
 
-                -- MAP DECIMAL POINT AND DISPLAY SEGMENTS
+                data0(3) => SW(3),
+                data0(2) => SW(2),
+                data0(1) => SW(1),
+                data0(0) => SW(0),
 
-                dig_o(3 downto 0) => AN(3 downto 0)
+                -- DECIMAL POINT
+                dp_vect => "0111",
+                dp      => DP,
+
+                seg(6) => CA,
+                -- MAP OTHER DISPLAY SEGMENTS HERE
+
+
+                -- DIGITS
+                dig(3 downto 0) => AN(3 downto 0)
             );
 
+        --------------------------------------------------------
+        -- Other settings
+        --------------------------------------------------------
         -- Disconnect the top four digits of the 7-segment display
         AN(7 downto 4) <= b"1111";
 
-      end architecture Behavioral;
+      end architecture behavioral;
       ```
 
    4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to top entity.
@@ -181,28 +188,27 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
 
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
-## Synchronize repositories
+   8. When you finish, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes. To do that, use git commands to add, commit, and push all local changes to your remote repository. Check GitHub web page for changes.
 
-When you finish working, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes.
-
-   > Useful git commands are: `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
-   >
+      > **Help:** Useful git commands are `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
 
 <a name="experiments"></a>
 
 ## Experiments on your own
 
 1. If you have the option, set slow motion video recording on your smartphone and watch the behavior of the seven-segment display:)
+
 2. Extend the duration of one symbol on the 7-segment display ie. generic `g_MAX` in `driver_7seg_4digit.vhd` file and experimentally determine the maximum value at which switching by the human eye is not yet observable.
+
 3. Design the structure of `driver_7seg_8digits` module, which controls all eight 7-segment displays.
 
 <a name="report"></a>
 
 ## Post-Lab report
 
-*Copy the [report template](report.md) to your GitHub repository. Complete all parts of this file in Czech, Slovak, or English and submit a link to it via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next computer exercise.*
+*Complete all parts of `07-display_driver/README.md` file (see Part 1.3) in Czech, Slovak, or English, push it to your GitHub repository, and submit a link to this file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next lab, i.e. in one week.*
 
-*Vložte [šablonu úkolu](report.md) do vašeho GitHub repozitáře. Vypracujte všechny části z tohoto souboru v českém, slovenském, nebo anglickém jazyce a odevzdejte link na něj prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením.*
+*Vypracujte všechny části ze souboru `07-display_driver/README.md` (viz Část 1.3) v českém, slovenském, nebo anglickém jazyce, uložte je na váš GitHub repozitář a odevzdejte link na tento soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším laboratorním cvičením, tj. za jeden týden.*
 
 <a name="references"></a>
 
