@@ -2,6 +2,9 @@
   "rule" : {
     "instantiation_034": {
       "method": "entity"
+    },
+    "process_029": {
+      "clock": "edge"
     }
-}
+  }
 }
