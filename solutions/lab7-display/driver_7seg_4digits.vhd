@@ -84,7 +84,7 @@ begin
     generic map (
       -- FOR SIMULATION, KEEP THIS VALUE TO 4
       -- FOR IMPLEMENTATION, CHANGE THIS VALUE TO 400,000
-      -- 4      @ 4 ns
+      -- 4      @ 40 ns
       -- 400000 @ 4 ms
       g_MAX => 4
     )
