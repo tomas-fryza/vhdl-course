@@ -69,7 +69,6 @@ begin
       data1(1) => SW(5),
       data1(0) => SW(4),
 
-
       data0(3) => SW(3),
       data0(2) => SW(2),
       data0(1) => SW(1),
