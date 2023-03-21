@@ -67,8 +67,10 @@ architecture behavioral of driver_7seg_4digits is
 
   -- Internal clock enable
   signal sig_en_4ms : std_logic;
+
   -- Internal 2-bit counter for multiplexing 4 digits
   signal sig_cnt_2bit : std_logic_vector(1 downto 0);
+
   -- Internal 4-bit value for 7-segment decoder
   signal sig_hex : std_logic_vector(3 downto 0);
 
@@ -84,7 +86,7 @@ begin
       -- FOR IMPLEMENTATION, CHANGE THIS VALUE TO 400,000
       -- 4      @ 4 ns
       -- 400000 @ 4 ms
-      g_max => 4
+      g_MAX => 4
     )
     port map (
       clk => clk, -- WRITE YOUR CODE HERE

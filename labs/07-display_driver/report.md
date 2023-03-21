@@ -11,7 +11,7 @@
     -- selecting data for a single digit, a decimal point,
     -- and switches the common anodes of each display.
     --------------------------------------------------------
-    p_mux : process(clk) is
+    p_mux : process (clk) is
     begin
         if (rising_edge(clk)) then
             if (rst = '1') then
