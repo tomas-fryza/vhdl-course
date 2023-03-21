@@ -171,10 +171,10 @@ To drive another logic in the design (with slower clock), it is better to genera
         -- Instance (copy) of clock_enable entity
         --------------------------------------------------------
         clk_en0 : entity work.clock_enable
-            generic map(
+            generic map (
                 g_MAX => 25000000
             )
-            port map(
+            port map (
                 clk => -- WRITE YOUR CODE HERE
                 rst => -- WRITE YOUR CODE HERE
                 ce  => sig_en_250ms
@@ -184,10 +184,10 @@ To drive another logic in the design (with slower clock), it is better to genera
         -- Instance (copy) of cnt_up_down entity
         --------------------------------------------------------
         bin_cnt0 : entity work.cnt_up_down
-           generic map(
+           generic map (
                 -- WRITE YOUR CODE HERE
             )
-            port map(
+            port map (
                 -- WRITE YOUR CODE HERE
             );
 
@@ -195,7 +195,7 @@ To drive another logic in the design (with slower clock), it is better to genera
         -- Instance (copy) of hex_7seg entity
         --------------------------------------------------------
         hex2seg : entity work.hex_7seg
-            port map(
+            port map (
                 blank  => BTNC,
                 hex    => sig_cnt_4bit,
                 seg(6) => CA,
