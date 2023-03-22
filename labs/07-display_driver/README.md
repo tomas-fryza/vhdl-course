@@ -151,7 +151,7 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
                 data3(1) => SW(13),
                 data3(0) => SW(12),
 
-                -- MAP DATA INPUTS TO OTHER ON-BOARD SWITCHES HERE
+                -- MAP OTHER DATA INPUTS TO ON-BOARD SWITCHES 11:4 HERE
 
 
                 data0(3) => SW(3),
@@ -159,13 +159,13 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
                 data0(1) => SW(1),
                 data0(0) => SW(0),
 
+                seg(6) => CA,
+                -- MAP DISPLAY SEGMENTS B:G HERE
+
+
                 -- DECIMAL POINT
                 dp_vect => "0111",
                 dp      => DP,
-
-                seg(6) => CA,
-                -- MAP OTHER DISPLAY SEGMENTS HERE
-
 
                 -- DIGITS
                 dig(3 downto 0) => AN(3 downto 0)
