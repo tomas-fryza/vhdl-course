@@ -16,9 +16,9 @@
 --! {name: 'b[3:0]', wave: 'x333333', data: ['0','3','8','9','a','7']},
 --! {name: 'a[3:0]', wave: 'x333333', data: ['0','c','9','3','a','6']},
 --! {},
---! {name: 'B_greater_A', wave: 'xl..hlh'},
---! {name: 'B_equals_A',  wave: 'xhl..hl'},
---! {name: 'B_less_A',    wave: 'xlh.l..'},
+--! {name: 'b_greater', wave: 'xl..hlh'},
+--! {name: 'b_a_equal', wave: 'xhl..hl'},
+--! {name: 'a_greater', wave: 'xlh.l..'},
 --! ]}
 --
 -- Hardware: Nexys A7-50T, xc7a50ticsg324-1L
@@ -35,11 +35,11 @@ library ieee;
 
 entity comparator_4bit is
   port (
-    b           : in    std_logic_vector(3 downto 0); --! Input data B[3:0]
-    a           : in    std_logic_vector(3 downto 0); --! Input data A[3:0]
-    b_greater_a : out   std_logic;                    --! Output is `1` if B>A
-    b_equals_a  : out   std_logic;                    --! Output is `1` if B=A
-    b_less_a    : out   std_logic                     --! Output is `1` if B<A
+    b         : in    std_logic_vector(3 downto 0); --! Input data b[3:0]
+    a         : in    std_logic_vector(3 downto 0); --! Input data a[3:0]
+    b_greater : out   std_logic;                    --! Output is `1` if b > a
+    b_a_equal : out   std_logic;                    --! Output is `1` if b = a
+    a_greater : out   std_logic                     --! Output is `1` if b < a
   );
 end entity comparator_4bit;
 
@@ -51,11 +51,11 @@ architecture behavioral of comparator_4bit is
 
 begin
 
-  b_greater_a <= '1' when (b > a) else
-                 '0';
-  b_equals_a  <= '1' when (b = a) else
-                 '0';
-  b_less_a    <= '1' when (b < a) else
-                 '0';
+  b_greater <= '1' when (b > a) else
+               '0';
+  b_a_equal <= '1' when (b = a) else
+               '0';
+  a_greater <= '1' when (b < a) else
+               '0';
 
 end architecture behavioral;
