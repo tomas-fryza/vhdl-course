@@ -1,15 +1,5 @@
 # Lab 2: Combinational logic
 
-<!--
-![Logo](../../logolink_eng.jpg)
-<p align="center">
-  The Study of Modern and Developing Engineering BUT<br>
-  CZ.02.2.69/0.0/0.0/18_056/0013325
-</p>
-
-![Screenshot od EDA Playground](images/screenshot_eda.png)
--->
-
 ### Learning objectives
 
 After completing this lab you will be able to:
@@ -40,7 +30,7 @@ The purpose of this laboratory exercise is to learn to use different ways of wri
 
 1. Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, B is less than A). Note that, such a digital device has four inputs and three outputs/functions.
 
-   | **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B is greater than A** | **B equals A** | **B is less than A** |
+   | **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B is greater than A** | **B equals A** | **A is greater than B** |
    | :-: | :-: | :-: | :-: | :-: | :-: |
    |  0 | 0 0 | 0 0 | 0 | 1 | 0 |
    |  1 | 0 0 | 0 1 | 0 | 0 | 1 |
@@ -98,9 +88,11 @@ The K-map for the "equals" function is as follows:
    ![Empty Karnaugh map 4x4](images/kmap_empty.png) &nbsp;  &nbsp;  &nbsp;  &nbsp;
    ![Empty Karnaugh map 4x4](images/kmap_empty.png)
 
-2. Use K-maps to create a simplified SoP form of the "greater than" function and a simplified PoS form of the "less than" function.
+2. Use K-maps to create simplified SoP and PoS forms of both "greater than" functions.
 
+<!--
    ![Binary comparator simplified functions](images/comparator_min.png)
+-->
 
 <a name="part3"></a>
 
@@ -112,16 +104,17 @@ The K-map for the "equals" function is as follows:
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
-   | `b_i`       | input  | [`std_logic_vector(2 - 1 downto 0)`](https://github.com/tomas-fryza/digital-electronics-1/wiki/Data-types) | Data B |
-   | `a_i`       | input  | `std_logic_vector(2 - 1 downto 0)` | Data A |
-   | `B_greater_A_o` | output | `std_logic` | B is greater than A |
-   | `B_equals_A_o`  | output | `std_logic` | B equals A |
-   | `B_less_A_o`    | output | `std_logic` | B is less than A |
+   | `b`       | input  | [`std_logic_vector(1 downto 0)`](https://github.com/tomas-fryza/digital-electronics-1/wiki/Data-types) | Input data b[1:0] |
+   | `a`       | input  | `std_logic_vector(1 downto 0)` | Input data a[1:0] |
+   | `b_greater` | output | `std_logic` | Output is `1` if b > a |
+   | `b_a_equal` | output | `std_logic` | Output is `1` if b = a |
+   | `a_greater` | output | `std_logic` | Output is `1` if b < a |
 
 3. In VHDL, define an [architecture](https://github.com/tomas-fryza/digital-electronics-1/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [signal assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments). Use the **conditional signal assignment** `when`,`else` (outside process) to describe the three output functions, such as:
 
    ```vhdl
-      B_less_A_o    <= '1' when (b_i < a_i) else '0';
+      a_greater <= '1' when (b < a) else
+                   '0';
    ```
 
    Write all three functions in signal-assignments style and one function also with low-level operators.
@@ -153,32 +146,38 @@ An assertion statement checks that a specified condition is true and reports an 
 The message is displayed to the console when the condition is NOT met, therefore the message should be an opposite to the condition.
 
    ```vhdl
-    --------------------------------------------------------------------
-    -- Data generation process
-    --------------------------------------------------------------------
-    p_stimulus : process
-    begin
-        -- Report a note at the beginning of stimulus process
-        report "Stimulus process started";
+   --------------------------------------------------------
+   -- Data generation process
+   --------------------------------------------------------
+   p_stimulus : process is
+   begin
 
-        -- First test case ...
-        s_b <= "00"; s_a <= "00"; wait for 100 ns;
-        -- ... and its expected outputs
-        assert ((s_B_greater_A = '0') and
-                (s_B_equals_A  = '1') and
-                (s_B_less_A    = '0'))
-        -- If false, then report an error
-        -- If true, then do not report anything
-        report "Input combination b=0, a=0 FAILED" severity error;
+     -- Report a note at the beginning of stimulus process
+     report "Stimulus process started";
+
+     -- First test case ...
+     sig_b <= "00";
+     sig_a <= "00";
+     wait for 100 ns;
+     -- ... and its expected outputs
+     assert (
+         (sig_b_greater = '0') and
+         (sig_b_a_equal = '1') and
+         (sig_a_greater = '0')
+       )
+       -- If false, then report an error
+       -- If true, then do not report anything
+       report "Input combination b=0, a=0 FAILED"
+       severity error;
+
+       -- WRITE OTHER TEST CASES AND ASSERTS HERE
 
 
-        -- WRITE OTHER TEST CASES HERE
+     -- Report a note at the end of stimulus process
+     report "Stimulus process finished";
+     wait; -- Data generation process is suspended forever
 
-
-        -- Report a note at the end of stimulus process
-        report "Stimulus process finished";
-        wait; -- Data generation process is suspended forever
-    end process p_stimulus;
+   end process p_stimulus;
    ```
 
 1. In VHDL, write a testbench and verify the correct functionality of the comparator for all input combinations.
@@ -195,11 +194,11 @@ The message is displayed to the console when the condition is NOT met, therefore
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
-   | `b_i`       | input  | `std_logic_vector(4 - 1 downto 0)` | Data B |
-   | `a_i`       | input  | `std_logic_vector(4 - 1 downto 0)` | Data A |
-   | `B_greater_A_o` | output | `std_logic` | B is greater than A |
-   | `B_equals_A_o`  | output | `std_logic` | B equals A |
-   | `B_less_A_o`    | output | `std_logic` | B is less than A |
+   | `b`       | input  | `std_logic_vector(3 downto 0)` | Input data b[3:0] |
+   | `a`       | input  | `std_logic_vector(3 downto 0)` | Input data a[3:0] |
+   | `b_greater` | output | `std_logic` | Output is `1` if b > a |
+   | `b_a_equal` | output | `std_logic` | Output is `1` if b = a |
+   | `a_greater` | output | `std_logic` | Output is `1` if b < a |
 
 2. In VHDL, define a testbench for a 4-bit binary comparator and verify several input combinations. Make one intentional mistake when automatically verifying expected values using the `assert` command.
 
