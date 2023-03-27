@@ -112,6 +112,7 @@ A display drive is able to control several 7-segment displays. Using the multipl
 Perform the following steps to implement the 4-digit 7-segment display driver on the Nexys A7 board.
 
    1. Create a new VHDL design source `top` in your project.
+
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
       | **Port name** | **Direction** | **Type** | **Description** |
@@ -181,7 +182,9 @@ Perform the following steps to implement the 4-digit 7-segment display driver on
       ```
 
    4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to top entity.
+
    5. Compile the project and download the generated bitstream `display_driver/display_driver.runs/impl_1/top.bit` into the FPGA chip.
+
    6. Test the functionality of the driver by toggling the switches and observing the display.
 
       ![Nexys A7 board](images/nexys_a7_driver.jpg)
