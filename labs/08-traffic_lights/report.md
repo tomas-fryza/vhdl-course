@@ -7,13 +7,13 @@
 ```vhdl
     --------------------------------------------------------
     -- p_traffic_fsm:
-    -- The sequential process with synchronous reset and 
-    -- clock_enable entirely controls the s_state signal by 
+    -- A sequential process with synchronous reset and
+    -- clock_enable entirely controls the s_state signal by
     -- CASE statement.
     --------------------------------------------------------
-    p_traffic_fsm : process(clk)
+    p_traffic_fsm : process(clk) is
     begin
-        if rising_edge(clk) then
+        if (rising_edge(clk)) then
 
             -- WRITE YOR CODE HERE
 
