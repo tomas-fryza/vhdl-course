@@ -254,18 +254,18 @@ Let an intersection contains two one-way streets with a fixed time control syste
    3. Use direct instantiation and define an architecture of the top level.
 
       ```vhdl
-      ------------------------------------------------------------
+      ----------------------------------------------------------
       -- Architecture body for top level
-      ------------------------------------------------------------
+      ----------------------------------------------------------
       architecture behavioral of top is
 
       begin
-          --------------------------------------------------------
+          ------------------------------------------------------
           -- Instance (copy) of tlc entity
           tlc : entity work.tlc
               port map(
-                  clk   => CLK100MHZ,
-                  reset => BTNC,
+                  clk => CLK100MHZ,
+                  rst => BTNC,
                   -- MAP TWO RGB LEDS HERE
 
               );
