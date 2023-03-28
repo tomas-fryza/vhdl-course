@@ -129,7 +129,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
            SOUTH_WAIT
        );
        -- Define the signal that uses different states
-       signal s_state : t_state;
+       signal sig_state : t_state;
    ```
 
    The FSM function is divided into two processes, where the first is sequential and it entirely controls state changes by CASE statement. The second is a combinatorial process, it is sensitive to state changes, and sets the output signals accordingly. This is an example of a Moore state machine because the output is set based on the active state. FSM behavior can be written in one to three processes. The differences between these approaches are described in [detail here](https://vhdlwhiz.com/n-process-state-machine/).
@@ -147,25 +147,25 @@ Let an intersection contains two one-way streets with a fixed time control syste
         --------------------------------------------------------
         p_traffic_fsm : process (clk) is
         begin
-            if rising_edge(clk) then
-                if (reset = '1') then      -- Synchronous reset
-                    s_state <= WEST_STOP;  -- Init state
-                    s_cnt   <= c_ZERO;     -- Clear delay counter
+            if (rising_edge(clk)) then
+                if (rst = '1') then          -- Synchronous reset
+                    sig_state <= WEST_STOP;  -- Init state
+                    sig_cnt   <= c_ZERO;     -- Clear delay counter
 
-                elsif (s_en = '1') then
-                    -- Every 250 ms, CASE checks the value of the s_state 
+                elsif (sig_en = '1') then
+                    -- Every 250 ms, CASE checks the value of the sig_state 
                     -- variable and changes to the next state according 
                     -- to the delay value.
-                    case s_state is
+                    case sig_state is
                         when WEST_STOP =>
                             -- Count up to c_DELAY_2SEC
-                            if (s_cnt < c_DELAY_2SEC) then
-                                s_cnt <= s_cnt + 1;
+                            if (sig_cnt < c_DELAY_2SEC) then
+                                sig_cnt <= sig_cnt + 1;
                             else
                                 -- Move to the next state
-                                s_state <= WEST_GO;
+                                sig_state <= WEST_GO;
                                 -- Reset local counter value
-                                s_cnt <= c_ZERO;
+                                sig_cnt <= c_ZERO;
                             end if;
 
                         when WEST_GO =>
@@ -176,8 +176,8 @@ Let an intersection contains two one-way streets with a fixed time control syste
                         -- OTHERS clause, even if all CASE choices have 
                         -- been made.
                         when others =>
-                            s_state <= WEST_STOP;
-                            s_cnt   <= c_ZERO;
+                            sig_state <= WEST_STOP;
+                            sig_cnt   <= c_ZERO;
                     end case;
                 end if; -- Synchronous reset
             end if; -- Rising edge
@@ -194,19 +194,19 @@ Let an intersection contains two one-way streets with a fixed time control syste
         -- This is an example of a Moore state machine and
         -- therefore the output is set based on the active state.
         --------------------------------------------------------
-        p_output_fsm : process (s_state) is
+        p_output_fsm : process (sig_state) is
         begin
-            case s_state is
+            case sig_state is
                 when WEST_STOP =>
-                    south_o <= c_RED;
-                    west_o  <= c_RED;
+                    south <= c_RED;
+                    west  <= c_RED;
                 when WEST_GO =>
                     -- WRITE OTHER STATES HERE
 
 
                 when others =>
-                    south_o <= c_RED;
-                    west_o  <= c_RED;
+                    south <= c_RED;
+                    west  <= c_RED;
             end case;
         end process p_output_fsm;
     ```
