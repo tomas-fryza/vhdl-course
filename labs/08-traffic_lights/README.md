@@ -243,12 +243,12 @@ Let an intersection contains two one-way streets with a fixed time control syste
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
       | `CLK100MHZ` | in | `std_logic` | Main clock |
-      | `LED16_R` | out | `std_logic` | Red1 |
-      | `LED16_G` | out | `std_logic` | Green1 |
-      | `LED16_B` | out | `std_logic` | Blue1 |
-      | `LED17_R` | out | `std_logic` | Red2 |
-      | `LED17_G` | out | `std_logic` | Green2 |
-      | `LED17_B` | out | `std_logic` | Blue2 |
+      | `LED16_R` | out | `std_logic` | South: Red |
+      | `LED16_G` | out | `std_logic` | South: Green |
+      | `LED16_B` | out | `std_logic` | South: Blue |
+      | `LED17_R` | out | `std_logic` | West: Red |
+      | `LED17_G` | out | `std_logic` | West: Green |
+      | `LED17_B` | out | `std_logic` | West: Blue |
       | `BTNC` | in | `std_logic` | Synchronous reset |
 
    3. Use direct instantiation and define an architecture of the top level.
