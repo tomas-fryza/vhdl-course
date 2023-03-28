@@ -266,8 +266,11 @@ Let an intersection contains two one-way streets with a fixed time control syste
               port map(
                   clk => CLK100MHZ,
                   rst => BTNC,
-                  -- MAP TWO RGB LEDS HERE
+                  south(2) => LED16_R,
+                  -- MAP OTHER RGB LEDS (SOUTH and WEST) HERE
 
+
+                  west(0) => LED17_B
               );
 
       end architecture behavioral;
