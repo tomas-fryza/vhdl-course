@@ -153,9 +153,9 @@ Let an intersection contains two one-way streets with a fixed time control syste
                     sig_cnt   <= c_ZERO;     -- Clear delay counter
 
                 elsif (sig_en = '1') then
-                    -- Every 250 ms, CASE checks the value of the sig_state 
-                    -- variable and changes to the next state according 
-                    -- to the delay value.
+                    -- Every 250 ms, CASE checks the value of sig_state
+                    -- local signal and changes to the next state 
+                    -- according to the delay value.
                     case sig_state is
                         when WEST_STOP =>
                             -- Count up to c_DELAY_2SEC
