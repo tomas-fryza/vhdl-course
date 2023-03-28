@@ -158,7 +158,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
                     -- according to the delay value.
                     case sig_state is
                         when WEST_STOP =>
-                            -- Count up to c_DELAY_2SEC
+                            -- Count to 2 secs
                             if (sig_cnt < c_DELAY_2SEC) then
                                 sig_cnt <= sig_cnt + 1;
                             else
