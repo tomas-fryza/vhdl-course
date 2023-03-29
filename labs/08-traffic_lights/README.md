@@ -170,7 +170,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
                 -- Move to the next state
                 sig_state <= WEST_GO;
                 -- Reset local counter value
-                sig_cnt <= c_ZERO;
+                sig_cnt   <= c_ZERO;
               end if;
 
             when WEST_GO =>
@@ -271,13 +271,13 @@ Let an intersection contains two one-way streets with a fixed time control syste
           -- Instance (copy) of tlc entity
           tlc : entity work.tlc
               port map(
-                  clk => CLK100MHZ,
-                  rst => BTNC,
+                  clk      => CLK100MHZ,
+                  rst      => BTNC,
                   south(2) => LED16_R,
                   -- MAP OTHER RGB LEDS (SOUTH and WEST) HERE
 
 
-                  west(0) => LED17_B
+                  west(0)  => LED17_B
               );
 
       end architecture behavioral;
