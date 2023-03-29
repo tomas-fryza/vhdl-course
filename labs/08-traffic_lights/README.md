@@ -119,17 +119,21 @@ Let an intersection contains two one-way streets with a fixed time control syste
 3. In VHDL it is possible to define a new data type, which contains the names of our states.
 
    ```vhdl
-       -- Define the states
-       type t_state is (
-           WEST_STOP,
-           WEST_GO,
-           WEST_WAIT,
-           SOUTH_STOP,
-           SOUTH_GO,
-           SOUTH_WAIT
-       );
-       -- Define the signal that uses different states
-       signal sig_state : t_state;
+   architecture behavioral of tlc is
+
+     -- Define the FSM states
+     type t_state is (
+       WEST_STOP,
+       WEST_GO,
+       WEST_WAIT,
+       SOUTH_STOP,
+       SOUTH_GO,
+       SOUTH_WAIT
+     );
+
+     -- Define the signal that uses different states
+     signal sig_state : t_state;
+   ...
    ```
 
    The FSM function is divided into two processes, where the first is sequential and it entirely controls state changes by CASE statement. The second is a combinatorial process, it is sensitive to state changes, and sets the output signals accordingly. This is an example of a Moore state machine because the output is set based on the active state. FSM behavior can be written in one to three processes. The differences between these approaches are described in [detail here](https://vhdlwhiz.com/n-process-state-machine/).
