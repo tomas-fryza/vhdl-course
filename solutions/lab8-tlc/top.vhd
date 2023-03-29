@@ -43,16 +43,16 @@ begin
   -- Instance (copy) of tlc entity
   --------------------------------------------------------
   tlc : entity work.tlc
-    port map(
+    port map (
       clk      => CLK100MHZ,
-      rst      => BTNC,
       south(2) => LED16_R,
       -- MAP OTHER RGB LEDS (SOUTH and WEST) HERE
       south(1) => LED16_G,
       south(0) => LED16_B,
       west(2)  => LED17_R,
       west(1)  => LED17_G,
-      west(0)  => LED17_B
+      west(0)  => LED17_B,
+      rst      => BTNC
     );
 
 end architecture behavioral;

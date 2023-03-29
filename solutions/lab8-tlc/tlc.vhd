@@ -66,7 +66,6 @@ architecture behavioral of tlc is
   constant c_DELAY_4SEC : unsigned(4 downto 0) := b"1_0000"; --! 4-second delay
   constant c_DELAY_2SEC : unsigned(4 downto 0) := b"0_1000"; --! 2-second delay
   constant c_DELAY_1SEC : unsigned(4 downto 0) := b"0_0100"; --! 1-second delay
-  constant c_ZERO       : unsigned(4 downto 0) := b"0_0000"; --! Just zero
 
   -- Output traffic lights' values
   constant c_RED    : std_logic_vector(2 downto 0) := b"100"; --! RGB settings for red color
@@ -96,8 +95,8 @@ begin
   --------------------------------------------------------
   -- p_traffic_fsm:
   -- A sequential process with synchronous reset and
-  -- clock_enable entirely controls the s_state signal by
-  -- CASE statement.
+  -- clock_enable entirely controls the sig_state signal
+  -- by CASE statement.
   --------------------------------------------------------
   p_traffic_fsm : process (clk) is
   begin
@@ -105,7 +104,7 @@ begin
     if (rising_edge(clk)) then
       if (rst = '1') then                    -- Synchronous reset
         sig_state <= WEST_STOP;              -- Init state
-        sig_cnt   <= c_ZERO;                 -- Clear delay counter
+        sig_cnt   <= (others => '0');        -- Clear delay counter
       elsif (sig_en = '1') then
         -- Every 250 ms, CASE checks the value of sig_state
         -- local signal and changes to the next state 
@@ -119,8 +118,8 @@ begin
             else
               -- Move to the next state
               sig_state <= WEST_GO;
-              -- Reset local counter value
-              sig_cnt <= c_ZERO;
+              -- Reset delay counter value
+              sig_cnt   <= (others => '0');
             end if;
 
           when WEST_GO =>
@@ -132,7 +131,7 @@ begin
               -- Move to the next state
               sig_state <= WEST_WAIT;
               -- Reset local counter value
-              sig_cnt <= c_ZERO;
+              sig_cnt   <= (others => '0');
             end if;
 
             when WEST_WAIT =>
@@ -143,7 +142,7 @@ begin
               -- Move to the next state
               sig_state <= SOUTH_STOP;
               -- Reset local counter value
-              sig_cnt <= c_ZERO;
+              sig_cnt   <= (others => '0');
             end if;
 
             when SOUTH_STOP =>
@@ -154,7 +153,7 @@ begin
               -- Move to the next state
               sig_state <= SOUTH_GO;
               -- Reset local counter value
-              sig_cnt <= c_ZERO;
+              sig_cnt   <= (others => '0');
             end if;
 
             when SOUTH_GO =>
@@ -165,7 +164,7 @@ begin
               -- Move to the next state
               sig_state <= SOUTH_WAIT;
               -- Reset local counter value
-              sig_cnt <= c_ZERO;
+              sig_cnt   <= (others => '0');
             end if;
 
             when SOUTH_WAIT =>
@@ -176,7 +175,7 @@ begin
               -- Move to the next state
               sig_state <= WEST_STOP;
               -- Reset local counter value
-              sig_cnt <= c_ZERO;
+              sig_cnt   <= (others => '0');
             end if;
 
           when others =>
@@ -184,7 +183,7 @@ begin
             -- OTHERS clause, even if all CASE choices have
             -- been made.
             sig_state <= WEST_STOP;
-            sig_cnt   <= c_ZERO;
+            sig_cnt   <= (others => '0');
 
         end case;
 
