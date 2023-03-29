@@ -155,7 +155,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
       if (rising_edge(clk)) then
         if (rst = '1') then                    -- Synchronous reset
           sig_state <= WEST_STOP;              -- Init state
-          sig_cnt   <= c_ZERO;                 -- Clear delay counter
+          sig_cnt   <= (others => '0');        -- Clear delay counter
         elsif (sig_en = '1') then
           -- Every 250 ms, CASE checks the value of sig_state
           -- local signal and changes to the next state 
@@ -170,7 +170,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
                 -- Move to the next state
                 sig_state <= WEST_GO;
                 -- Reset delay counter value
-                sig_cnt   <= c_ZERO;
+                sig_cnt   <= (others => '0');
               end if;
 
             when WEST_GO =>
@@ -182,7 +182,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
               -- OTHERS clause, even if all CASE choices have
               -- been made.
               sig_state <= WEST_STOP;
-              sig_cnt   <= c_ZERO;
+              sig_cnt   <= (others => '0');
 
           end case;
 
