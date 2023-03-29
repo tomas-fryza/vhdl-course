@@ -46,8 +46,9 @@ The following hardware and software components are mainly used in the lab.
   * Oscilloscope Keysight Technologies [DSOX3034T](https://www.keysight.com/en/pdx-x202175-pn-DSOX3034T/oscilloscope-350-mhz-4-analog-channels?&cc=CZ&lc=eng) (350 MHz, 4 analog channels), including 16 logic timing channels [DSOXT3MSO](https://www.keysight.com/en/pdx-x205238-pn-DSOXT3MSO/3000t-x-series-oscilloscope-mso-upgrade?cc=CZ&lc=eng) and serial protocol triggering and decode options [D3000BDLA](https://www.keysight.com/en/pd-2990560-pn-D3000BDLA/ultimate-software-bundle-for-the-3000a-t-x-series?&cc=CZ&lc=eng)
 
 * Development tools:
-  * [EDA Playground](https://www.edaplayground.com/) is a cloud-based service that runs in your browser :+1:
   * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.2: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
+  * [EDA Playground](https://www.edaplayground.com/) is a cloud-based service that runs in your browser
+  * [TerosHDL](https://terostechnology.github.io/terosHDLdoc/) is an open-source IDE for FPGA: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1:
 
 * Other tools:
   * [git](https://git-scm.com/)
