@@ -216,7 +216,7 @@ EDA Playground is a cloud-based service that runs in your browser.
 
 *Complete all parts of `01-gates/README.md` file (see Part 2.4) in Czech, Slovak, or English, push it to your GitHub repository, and submit a link to this file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next lab, i.e. in one week.*
 
-*Vypracujte všechny části ze souboru `01-gates/README.md` (viz Část 2.4) v českém, slovenském, nebo anglickém jazyce, uložte je na váš GitHub repozitář a odevzdejte link na tento soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším laboratorním cvičením, tj. za jeden týden.*
+*Vypracujte všechny části ze souboru `01-gates/README.md` (viz Část 2.4) v českém, slovenském, nebo anglickém jazyce, uložte je na váš GitHub repozitář a odevzdejte link na tento soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením, tj. za jeden týden.*
 
 <a name="references"></a>
 
