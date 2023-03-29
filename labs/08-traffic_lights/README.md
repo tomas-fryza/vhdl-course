@@ -294,13 +294,15 @@ Let an intersection contains two one-way streets with a fixed time control syste
 
 ## Experiments on your own
 
-1. Add a *speed button* to your design to ensure a synchronous transition to the `WEST_GO` state.
+1. Add a *speed button* to your design to ensure a synchronous (but safe:) transition to the `WEST_GO` state.
 
-2. Follow the [exercise inspired by prof. Jon Valvano](https://arduining.com/2015/09/18/traffic-light-states-machine-with-arduino/) from University of Texas and desing an enhanced traffic light controller for the intersection of two equally busy one-way streets. The controller using two sensors and two traffic lights in three colors. Two sensors detects the presence of cars in each direction and the goal is to maximize traffic flow, minimize waiting time at a red light, and avoid accidents.
+2. Use the onboard LEDs to display the countdown of the delay counter value.
+
+3. Follow the [exercise inspired by prof. Jon Valvano](https://arduining.com/2015/09/18/traffic-light-states-machine-with-arduino/) from University of Texas and desing an enhanced traffic light controller for the intersection of two equally busy one-way streets. The controller using two sensors and two traffic lights in three colors. Two sensors detects the presence of cars in each direction and the goal is to maximize traffic flow, minimize waiting time at a red light, and avoid accidents.
 
    ![Enhanced traffic light controller for the intersection](images/lab8_traffic_light_intersection.png)
 
-3. Propose your own state table and draw a state diagram of this smart controller including delays. Use on-board slide switches to emulate two sensors and implement the traffic light controller on the Nexys A7 board.
+4. Propose your own state table and draw a state diagram of this smart controller including delays. Use on-board slide switches to emulate two sensors and implement the traffic light controller on the Nexys A7 board.
 
 <a name="report"></a>
 
