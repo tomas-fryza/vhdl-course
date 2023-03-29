@@ -194,28 +194,34 @@ Let an intersection contains two one-way streets with a fixed time control syste
    **Combinatorial process:**
 
     ```vhdl
-        --------------------------------------------------------
-        -- p_output_fsm:
-        -- A combinatorial process is sensitive to state
-        -- changes and sets the output signals accordingly.
-        -- This is an example of a Moore state machine and
-        -- therefore the output is set based on the active state.
-        --------------------------------------------------------
-        p_output_fsm : process (sig_state) is
-        begin
-            case sig_state is
-                when WEST_STOP =>
-                    south <= c_RED;
-                    west  <= c_RED;
-                when WEST_GO =>
-                    -- WRITE OTHER STATES HERE
+    --------------------------------------------------------
+    -- p_output_fsm:
+    -- A combinatorial process is sensitive to state
+    -- changes and sets the output signals accordingly.
+    -- This is an example of a Moore state machine and
+    -- therefore the output is set based on the active
+    -- state only.
+    --------------------------------------------------------
+    p_output_fsm : process (sig_state) is
+    begin
+
+      case sig_state is
+        when WEST_STOP =>
+          south <= c_RED;
+          west  <= c_RED;
+
+        when WEST_GO =>
+          -- WRITE OTHER STATES HERE
 
 
-                when others =>
-                    south <= c_RED;
-                    west  <= c_RED;
-            end case;
-        end process p_output_fsm;
+        when others =>
+          south <= c_RED;
+          west  <= c_RED;
+        end case;
+
+      end process p_output_fsm;
+
+    end architecture behavioral;
     ```
 
 <a name="part4"></a>
@@ -264,21 +270,23 @@ Let an intersection contains two one-way streets with a fixed time control syste
       ----------------------------------------------------------
       -- Architecture body for top level
       ----------------------------------------------------------
+
       architecture behavioral of top is
 
       begin
-          ------------------------------------------------------
-          -- Instance (copy) of tlc entity
-          tlc : entity work.tlc
-              port map(
-                  clk      => CLK100MHZ,
-                  rst      => BTNC,
-                  south(2) => LED16_R,
-                  -- MAP OTHER RGB LEDS (SOUTH and WEST) HERE
+        --------------------------------------------------------
+        -- Instance (copy) of tlc entity
+        --------------------------------------------------------
+        tlc : entity work.tlc
+          port map (
+            clk      => CLK100MHZ,
+            rst      => BTNC,
+            south(2) => LED16_R,
+            -- MAP OTHER RGB LEDS (SOUTH and WEST) HERE
 
 
-                  west(0)  => LED17_B
-              );
+            west(0)  => LED17_B
+          );
 
       end architecture behavioral;
       ```
