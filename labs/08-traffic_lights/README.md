@@ -169,7 +169,7 @@ Let an intersection contains two one-way streets with a fixed time control syste
               else
                 -- Move to the next state
                 sig_state <= WEST_GO;
-                -- Reset local counter value
+                -- Reset delay counter value
                 sig_cnt   <= c_ZERO;
               end if;
 
