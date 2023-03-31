@@ -12,7 +12,7 @@ The goal of the project is cooperation in small teams, further study of the topi
 
 * Students work on a project in the labs during weeks 9 to 13 of the semester. The practical demonstration will take place as part of the last lab.
 
-* Through the BUT e-learning, students submit a link to the GitHub repository, which contains the complete project in Vivado and a descriptive README file. The submission deadline is the day before the demonstration.
+* Through the BUT e-learning, students submit a link to the GitHub repository, which contains the project in Vivado, needed images, documents, and a descriptive README file. **The submission deadline is the day before the demonstration.**
 
 * Source codes for the FPGA must be written in VHDL and must be implementable on the Nexys A7-50T board in the development tools used in the laboratory during the semester.
 
