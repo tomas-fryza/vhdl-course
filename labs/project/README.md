@@ -1,11 +1,9 @@
 # VHDL project
 
-**Topics:**
+### Topics
 
 * Úterní skupiny: UART (Universal Asynchronous Receiver/Transmitter) vysílač a přijímač. 
-
 * Středa: Vysílač a přijímač Morseova kódu. 
-
 * Čtvrtek: Časovač na intervalový (kruhový) trénink s možností nastavit počet kol, dobu kola a pauzy mezi nimi za běhu aplikace.
 
 ## Instructions
