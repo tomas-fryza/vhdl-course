@@ -1,6 +1,6 @@
 #
 # Windows:
-#   1. Download and install GTKWave:
+#   1. Download and install GtkWave:
 #        https://sourceforge.net/projects/gtkwave/
 #   2. Download and install ghdl-0.29.1
 #        http://ghdl.free.fr/ghdl-installer-0.29.1.exe
@@ -23,18 +23,23 @@
 #        sh RUN.sh
 #
 
+
+##############################################################
+## Change top entity you want to simulate and GtkWave path
+##############################################################
+
 TOP_ENTITY=tb_gates
 
-## Windows
-GTK=c:/APPZ/gtkwave/bin
+# For Windows
+# GTK=c:/APPZ/gtkwave/bin
 
-## Linux
-#GTK=/usr/bin
+# For Linux
+GTK=/usr/bin
 
 
-
-##
-## You should not have to change anything below here
+##############################################################
+## You should not change anything below here
+##############################################################
 ##
 ## Script inspired by EDA Playground
 ##   - VHDL-2002 standard selected
