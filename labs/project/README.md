@@ -42,14 +42,9 @@ Insert descriptive text and schematic(s) of your implementation.
 
 Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders.
 
-## Component(s) simulation
+### Component(s) simulation
 
 Write descriptive text and simulation screenshots of your components.
-
-
-## Video presentation
-
-Insert a link to a short video (up to 3 minutes, e.g. on YouTube) presenting the problem and demo application.
 
 ## References
 
