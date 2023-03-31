@@ -52,7 +52,7 @@ The following hardware and software components are mainly used in the lab.
 
   * [TerosHDL](https://terostechnology.github.io/terosHDLdoc/) is an open-source IDE for FPGA: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1:
 
-  * [`ghdl` compiler and `GtkWave` waveform viewer](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+  * [ghdl + GtkWave](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux)
 
 * Other tool(s):
   * [git](https://git-scm.com/)
@@ -63,18 +63,20 @@ The following hardware and software components are mainly used in the lab.
 
 2. [How to install TerosHDL on Windows and Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
 
-3. [How to install Vivado on Windows and Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
+3. [How to install ghdl on Windows and Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux)
 
-4. [ES 4 VHDL reference sheet](docs/vhdl_cheatsheet.pdf)
+4. [How to install Vivado on Windows and Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
 
-5. Jeremiah C. Leary. [Welcome to vhdl-style-guide’s documentation!](https://vhdl-style-guide.readthedocs.io/en/latest/)
+5. [ES 4 VHDL reference sheet](docs/vhdl_cheatsheet.pdf)
 
-6. ASHENDEN, Peter J. *The designer's guide to VHDL.* 3rd ed. Boston: Morgan Kaufmann Publishers, c2008. ISBN 978-0-12-088785-9.
+6. Jeremiah C. Leary. [Welcome to vhdl-style-guide's documentation!](https://vhdl-style-guide.readthedocs.io/en/latest/)
 
-7. CHU, Pong P. *FPGA prototyping by VHDL examples.* Hoboken, N.J.: Wiley-Interscience, c2008. ISBN 978-0-470-18531-5.
+7. ASHENDEN, Peter J. *The designer's guide to VHDL.* 3rd ed. Boston: Morgan Kaufmann Publishers, c2008. ISBN 978-0-12-088785-9.
 
-8. MANO, M. Morris. Digital Design: With an Introduction to the Verilog, HDL, VHDL, and System Verilog. Pearson, 6th edition, 2018. ISBN-13: 978-1292231167.
+8. CHU, Pong P. *FPGA prototyping by VHDL examples.* Hoboken, N.J.: Wiley-Interscience, c2008. ISBN 978-0-470-18531-5.
 
-9. KALLSTROM, P. [A Fairly Small VHDL Guide](docs/VHDL_guide.pdf). Version 2.1.
+9. MANO, M. Morris. Digital Design: With an Introduction to the Verilog, HDL, VHDL, and System Verilog. Pearson, 6th edition, 2018. ISBN-13: 978-1292231167.
 
-10. [GitHub GIT CHEAT SHEET](docs/git_cheatsheet.pdf)
+10. KALLSTROM, P. [A Fairly Small VHDL Guide](docs/VHDL_guide.pdf). Version 2.1.
+
+11. [GitHub GIT CHEAT SHEET](docs/git_cheatsheet.pdf)
