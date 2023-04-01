@@ -31,10 +31,10 @@
 TOP_ENTITY=tb_gates
 
 # For Windows
-# GTK=C:\APPZ\VHDL\gtkwave\bin
+GTK=C:\APPZ\VHDL\gtkwave\bin
 
 # For Linux
-GTK=/usr/bin
+# GTK=/usr/bin
 
 
 ##############################################################
