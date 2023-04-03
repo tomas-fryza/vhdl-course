@@ -20,7 +20,7 @@ The aim of the project is to cooperate in small teams, to study the subject, to 
 
 * Physical implementation on FPGA is necessary, computer simulation is not sufficient.
 
-## Recommended README.md file structure
+# Recommended README.md file structure
 
 ### Team members
 
