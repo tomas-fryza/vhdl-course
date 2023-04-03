@@ -8,13 +8,13 @@
 
 ## Instructions
 
-The goal of the project is cooperation in small teams, further study of the topic, design of own solutions, simulation, implementation, creation of project documentation and demonstare the results. The division of roles and tasks within the team is up to their members.
+The aim of the project is to cooperate in small teams, to study the subject, to design own solutions, to simulate, to implement, to create project documentation and to demonstrate the results. The distribution of roles and tasks within the team belongs to its members.
 
-* Students work on a project in the labs during weeks 9 to 13 of the semester. The practical demonstration will take place as part of the last lab.
+* Students work on a project in the labs during the 9th to 13th week of the semester. The practical demonstration will take place last week.
 
-* Through the BUT e-learning, students submit a link to the GitHub repository, which contains the project in Vivado, needed images, documents, and a descriptive README file. **The submission deadline is the day before the demonstration.**
+* Using BUT e-learning, students submit a link to the GitHub repository, which contains the project in Vivado, the necessary images, documents and a descriptive README file. **The submission deadline is the day before the demonstration.**
 
-* Source codes for the FPGA must be written in VHDL and must be implementable on the Nexys A7-50T board in the development tools used in the laboratory during the semester.
+* The FPGA source codes must be written in VHDL and implementable on the Nexys A7-50T board in the development tools used in the laboratory during the semester.
 
 * Make testbenches for all your new components.
 
@@ -24,9 +24,9 @@ The goal of the project is cooperation in small teams, further study of the topi
 
 ### Team members
 
-* Member 1 (responsible for xxx)
-* Member 2 (responsible for xxx)
-* Member 3 (responsible for xxx)
+* Member 1 (responsible for ...)
+* Member 2 (responsible for ...)
+* Member 3 (responsible for ...)
 
 ## Theoretical description and explanation
 
@@ -38,11 +38,15 @@ Insert descriptive text and schematic(s) of your implementation.
 
 ## Software description
 
-Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders.
+Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders. 
 
 ### Component(s) simulation
 
 Write descriptive text and simulation screenshots of your components.
+
+## Instructions
+
+Write an instruction manual for your application, including photos or a link to a video.
 
 ## References
 
