@@ -20,13 +20,13 @@ The aim of the project is to cooperate in small teams, to study the subject, to 
 
 * Physical implementation on FPGA is necessary, computer simulation is not sufficient.
 
-# Recommended README.md file structure
-
 ## Help:
 
 **Never, ever** use `rising_edge` or `falling_edge` to test edges of non-clock signals under any circumstances!
 
 In a synchronous process, the first thing to do is test the clock edge, then synchronous reset. The only exception is asynchronous operations.
+
+# Recommended README.md file structure
 
 ### Team members
 
