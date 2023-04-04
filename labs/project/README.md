@@ -22,6 +22,12 @@ The aim of the project is to cooperate in small teams, to study the subject, to 
 
 # Recommended README.md file structure
 
+## Help:
+
+**Never, ever** use `rising_edge` or `falling_edge` to test edges of non-clock signals under any circumstances!
+
+In a synchronous process, the first thing to do is test the clock edge, then synchronous reset. The only exception is asynchronous operations.
+
 ### Team members
 
 * Member 1 (responsible for ...)
