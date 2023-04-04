@@ -28,8 +28,7 @@ The aim of the project is to cooperate in small teams, to study the subject, to 
 
 * Use hierarchical design, ie. instances, top-level, several files, etc.
 
-* To simulate your design, you can use:
-  * Vivado
+* Except Vivado, you can use the following tools to simulate your VHDL design:
   * [EDA Playground](https://www.edaplayground.com/)
   * [TerosHDL](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
   * [ghdl + GtkWave](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux)
