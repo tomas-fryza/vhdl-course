@@ -4,7 +4,7 @@
 
 * Úterní skupiny: UART (Universal Asynchronous Receiver/Transmitter) vysílač a přijímač/dekodér.
 * Středa: Vysílač a přijímač/dekodér Morseova kódu.
-  * Morse code transmitter and receiver/decoder.
+  * Wednesday: Morse code transmitter and receiver/decoder.
 * Čtvrtek: Časovač na intervalový (kruhový) trénink s možností nastavit počet kol, dobu kola a pauzy mezi nimi za běhu aplikace.
 
 ## Instructions
