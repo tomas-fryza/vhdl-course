@@ -29,7 +29,9 @@ The aim of the project is to cooperate in small teams, to study the subject, to 
 
 * Use hierarchical design, ie. instances, top-level, several files, etc.
 
-* Use only input (`in`) or output (`out`) ports and not ~~inout~~.
+* Use only input `in` or output `out` ports and not ~~inout~~.
+
+* Use `wait` statements [only in simulations](https://www.vhdl-online.de/courses/system_design/vhdl_language_and_syntax/sequential_statements/wait_statement).
 
 * Except Vivado, you can use the following tools to simulate your VHDL design(s):
   * [EDA Playground](https://www.edaplayground.com/)
