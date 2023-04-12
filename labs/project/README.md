@@ -11,7 +11,7 @@
 
 The aim of the project is to cooperate in small teams, to study the subject, to design own solutions, to simulate, to implement, to create project documentation and to demonstrate the results. The distribution of roles and tasks within the team belongs to its members.
 
-* Students work on a project in the labs during the 9th to 13th week of the semester. The practical demonstration will take place last week.
+* Students work on a project **in the labs** during the 9th to 13th week of the semester. The practical demonstration will take place last week.
 
 * Using BUT e-learning, students submit a link to the GitHub repository, which contains the project in Vivado, the necessary images, documents and a descriptive README file. **The submission deadline is the day before the demonstration.**
 
