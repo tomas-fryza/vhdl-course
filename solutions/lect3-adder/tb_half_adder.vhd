@@ -1,14 +1,12 @@
-----------------------------------------------------------
---
--- Testbench for half adder.
--- Nexys A7-50T, xc7a50ticsg324-1L
--- TerosHDL, Vivado v2020.2, EDA Playground
---
--- Copyright (c) 2019 Tomas Fryza
--- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-----------------------------------------------------------
+--! @title Testbench for half adder
+--! @author Tomas Fryza
+--! Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
+--! @version 0.2
+--! @date 2023-04-30
+--!
+--! @copyright Copyright (c) 2019 by Tomas Fryza
+--! This work is licensed under the terms of the MIT license.
+--!
 
 library ieee;
   use ieee.std_logic_1164.all;
@@ -27,16 +25,17 @@ end entity tb_half_adder;
 
 architecture testbench of tb_half_adder is
 
-  -- Local signals for half adder
+  --! Local signals for half adder !!! DOES NOT WORK IN DOC !!!
   signal sig_a     : std_logic;
-  signal sig_b     : std_logic;
-  signal sig_sum   : std_logic;
-  signal sig_carry : std_logic;
+  signal sig_b     : std_logic; --! B input
+  signal sig_sum   : std_logic; --! LSB of result
+  signal sig_carry : std_logic; --! Output carry !!! DOES NOT WORK IN DOC !!!
 
 begin
 
-  -- Connecting testbench signals with half_adder
-  -- entity (Unit Under Test)
+  --------------------------------------------------------
+  --! Connect testbench signals declared above to
+  --! half_adder entity as Unit Under Test
   uut_half : entity work.half_adder
     port map (
       a     => sig_a,
@@ -46,7 +45,7 @@ begin
     );
 
   --------------------------------------------------------
-  -- Data generation process
+  --! Input data generation process
   --------------------------------------------------------
   p_stimulus : process is
   begin

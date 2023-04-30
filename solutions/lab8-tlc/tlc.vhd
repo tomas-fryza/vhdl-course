@@ -1,24 +1,24 @@
-----------------------------------------------------------
---
 --! @title Traffic light controller using a FSM
 --! @author Tomas Fryza
 --! Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
+--! @version 0.2
+--! @date 2023-04-30
 --!
---! @copyright (c) 2020 Tomas Fryza
---! This work is licensed under the terms of the MIT license
---
--- This code is inspired by:
--- [1] LBEbooks, Lesson 92 - Example 62: Traffic Light Controller
---     https://www.youtube.com/watch?v=6_Rotnw1hFM
--- [2] David Williams, Implementing a Finite State Machine in VHDL
---     https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/
--- [3] VHDLwhiz, One-process vs two-process vs three-process state machine
---     https://vhdlwhiz.com/n-process-state-machine/
---
--- Hardware: Nexys A7-50T, xc7a50ticsg324-1L
--- Software: TerosHDL, Vivado 2020.2, EDA Playground
---
-----------------------------------------------------------
+--! @copyright Copyright (c) 2020 by Tomas Fryza
+--! This work is licensed under the terms of the MIT license.
+--!
+--! This code is inspired by:
+--!   * LBEbooks, Lesson 92 - Example 62: Traffic Light Controller
+--!     https://www.youtube.com/watch?v=6_Rotnw1hFM
+--!   * David Williams, Implementing a Finite State Machine in VHDL
+--!     https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/
+--!   * VHDLwhiz, One-process vs two-process vs three-process state machine
+--!     https://vhdlwhiz.com/n-process-state-machine/
+--!
+--! @details
+--! Tested on Nexys A7-50T board, xc7a50ticsg324-1L FPGA
+--! Software: TerosHDL, Vivado 2020.2, EDA Playground
+--!
 
 library ieee;
   use ieee.std_logic_1164.all;
@@ -43,7 +43,7 @@ end entity tlc;
 
 architecture behavioral of tlc is
 
-  -- Define the FSM states
+  --! Define the FSM states
   type t_state is (
     WEST_STOP,
     WEST_GO,
@@ -53,13 +53,13 @@ architecture behavioral of tlc is
     SOUTH_WAIT
   );
 
-  -- Define the signal that uses different states
+  --! Define the signal that uses different states
   signal sig_state : t_state;
 
-  -- Internal clock enable
+  --! Internal clock enable
   signal sig_en : std_logic;
 
-  -- Local delay counter
+  --! Local delay counter
   signal sig_cnt : unsigned(4 downto 0);
 
   -- Specific values for local counter
@@ -93,10 +93,9 @@ begin
     );
 
   --------------------------------------------------------
-  -- p_traffic_fsm:
-  -- A sequential process with synchronous reset and
-  -- clock_enable entirely controls the sig_state signal
-  -- by CASE statement.
+  --! A sequential process with synchronous reset and
+  --! clock_enable entirely controls the sig_state signal
+  --! by CASE statement.
   --------------------------------------------------------
   p_traffic_fsm : process (clk) is
   begin
@@ -107,7 +106,7 @@ begin
         sig_cnt   <= (others => '0');        -- Clear delay counter
       elsif (sig_en = '1') then
         -- Every 250 ms, CASE checks the value of sig_state
-        -- local signal and changes to the next state 
+        -- local signal and changes to the next state
         -- according to the delay value.
         case sig_state is
 
@@ -192,12 +191,11 @@ begin
   end process p_traffic_fsm;
 
   --------------------------------------------------------
-  -- p_output_fsm:
-  -- A combinatorial process is sensitive to state
-  -- changes and sets the output signals accordingly.
-  -- This is an example of a Moore state machine and
-  -- therefore the output is set based on the active
-  -- state only.
+  --! A combinatorial process is sensitive to state
+  --! changes and sets the output signals accordingly.
+  --! This is an example of a Moore state machine and
+  --! therefore the output is set based on the active
+  --! state only.
   --------------------------------------------------------
   p_output_fsm : process (sig_state) is
   begin

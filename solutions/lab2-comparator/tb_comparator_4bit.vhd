@@ -1,14 +1,12 @@
-----------------------------------------------------------
---
--- Testbench for 4-bit binary comparator.
--- Nexys A7-50T, xc7a50ticsg324-1L
--- TerosHDL, Vivado 2020.2, EDA Playground
---
--- Copyright (c) 2020 Tomas Fryza
--- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-----------------------------------------------------------
+--! @title Testbench for 4-bit binary comparator
+--! @author Tomas Fryza
+--! Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
+--! @version 0.2
+--! @date 2023-04-30
+--!
+--! @copyright Copyright (c) 2020 by Tomas Fryza
+--! This work is licensed under the terms of the MIT license.
+--!
 
 library ieee;
   use ieee.std_logic_1164.all;
@@ -28,16 +26,17 @@ end entity tb_comparator_4bit;
 architecture testbench of tb_comparator_4bit is
 
   -- Testbench local signals
-  signal sig_b         : std_logic_vector(3 downto 0);
-  signal sig_a         : std_logic_vector(3 downto 0);
-  signal sig_b_greater : std_logic;
-  signal sig_b_a_equal : std_logic;
-  signal sig_a_greater : std_logic;
+  signal sig_b         : std_logic_vector(3 downto 0); --! Input data b[3:0]
+  signal sig_a         : std_logic_vector(3 downto 0); --! Input data a[3:0]
+  signal sig_b_greater : std_logic;                    --! Output is `1` if b > a
+  signal sig_b_a_equal : std_logic;                    --! Output is `1` if b = a
+  signal sig_a_greater : std_logic;                    --! Output is `1` if b < a
 
 begin
 
-  -- Connecting testbench signals with comparator_4bit
-  -- entity (Unit Under Test)
+  --------------------------------------------------------
+  --! Connecte testbench signals declared above to
+  --! comparator_4bit entity as Unit Under Test
   uut_comparator_4bit : entity work.comparator_4bit
     port map (
       b         => sig_b,
@@ -48,7 +47,7 @@ begin
     );
 
   --------------------------------------------------------
-  -- Data generation process
+  --! Input data generation process
   --------------------------------------------------------
   p_stimulus : process is
   begin
