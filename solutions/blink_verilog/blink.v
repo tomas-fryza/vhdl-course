@@ -1,4 +1,5 @@
 // http://www.fabienm.eu/flf/tag/yosys/
+// https://github.com/YosysHQ/oss-cad-suite-build
 // https://github.com/ghdl/ghdl-yosys-plugin
 
 module blink (
@@ -31,4 +32,3 @@ begin
 end
 
 endmodule
-
