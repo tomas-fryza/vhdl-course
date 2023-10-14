@@ -27,7 +27,7 @@ The aim of the project is to cooperate in small teams, to study the subject, to 
 
 * Use hierarchical design, ie. instances, top-level, several files, etc.
 
-* Use synchronous entities with clk.
+* Use synchronous entities with `clk`.
 
 * In a synchronous process, the first thing to do is test the clock edge, then synchronous reset. The only exception is asynchronous operations.
 
