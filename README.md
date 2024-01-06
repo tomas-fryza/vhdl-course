@@ -1,4 +1,4 @@
-# Digital electronics
+# VHDL course
 
 <!--
 ![Logo](logolink_eng.jpg)
