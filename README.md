@@ -10,6 +10,14 @@
 
 The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/258369) at Brno University of Technology, Czechia. [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA board is used the course.
 
+## Installlation
+
+* [Vivado Design Suite 2020.2](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
+
+* [TerosHDL](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1:
+
+* [ghdl + GtkWave](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+
 ## Exercises
 
 1. [Introduction to Git and VHDL](labs/01-gates)
@@ -48,7 +56,7 @@ The following hardware and software components are mainly used in the lab.
 * Development tools:
   * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.2: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
 
-  * [EDA Playground](https://www.edaplayground.com/) is a cloud-based service that runs in your browser
+  * [EDA Playground](https://www.edaplayground.com/playgrounds?searchString=Brno&_showAllResults=on&language=VHDL) is a cloud-based service that runs in your browser
 
   * [TerosHDL](https://terostechnology.github.io/terosHDLdoc/) is an open-source IDE for FPGA: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1:
 
