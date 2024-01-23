@@ -8,6 +8,11 @@
 </p>
 -->
 
+* [Installlation](#installlation)
+* [Exercises](#exercises)
+* [List of VHDL examples](#list-of-vhdl-examples)
+* [Components](#components)
+
 The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/258369) at Brno University of Technology, Czechia. [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA board is used the course.
 
 ## Installlation
