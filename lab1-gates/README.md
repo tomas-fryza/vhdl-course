@@ -31,7 +31,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
 1. Remind yourself the AND, OR, XOR gates.
 
-2. Optional: If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/login).
+2. Optional: If you don't have Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/home).
 
 <a name="part1"></a>
 
