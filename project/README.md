@@ -2,12 +2,11 @@
 
 ### Topics
 
-* Úterní skupiny: UART (Universal Asynchronous Receiver/Transmitter) vysílač a přijímač/dekodér.
-* Středa: Vysílač a přijímač/dekodér Morseova kódu.
-* Wednesday: Morse code transmitter and receiver/decoder.
-* Čtvrtek: Časovač na intervalový (kruhový) trénink s možností nastavit počet kol, dobu kola a pauzy mezi nimi za běhu aplikace.
+* TBD
 
 ## Instructions
+
+TBD
 
 The aim of the project is to cooperate in small teams, to study the subject, to design own solutions, to simulate, to implement, to create project documentation and to demonstrate the results. The distribution of roles and tasks within the team belongs to its members.
 
@@ -21,7 +20,7 @@ The aim of the project is to cooperate in small teams, to study the subject, to 
 
 * Physical implementation on FPGA is necessary, computer simulation is not sufficient.
 
-## Help:
+## Help
 
 * **Never, ever** use `rising_edge` or `falling_edge` to test edges of non-clock signals under any circumstances!
 

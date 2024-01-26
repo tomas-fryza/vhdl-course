@@ -27,15 +27,14 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 
 ## Exercises
 
-1. [Introduction to Git and VHDL](labs/01-gates)
-2. [Combinational logic](labs/02-logic)
-3. [Introduction to Vivado](labs/03-vivado)
-4. [Seven-segment display decoder](labs/04-segment)
-5. [Latches and Flip-flops](labs/05-ffs)
-6. [Binary counter](labs/06-counter)
-7. [Driver for multiple seven-segment displays](labs/07-display_driver)
-8. [Traffic light controller](labs/08-traffic_lights)
-9. [Project](labs/project)
+1. [Introduction to VHDL and basic gates](lab1-gates)
+2. Combinational logic circuits
+3. Seven-segment display decoder
+4. Arithmetic circuits
+5. Latches and Flip-flops
+6. Counters
+7. Traffic light controller
+8. [Project](project)
 
 ## List of VHDL examples
 
