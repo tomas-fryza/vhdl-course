@@ -119,8 +119,8 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
                OR_Out  : out std_logic;
                XOR_Out : out std_logic
          );
-      end component gates;
-   
+      end component;
+
       signal sig_A, sig_B : STD_LOGIC;
       signal sig_AND_Out, sig_OR_Out, sig_XOR_Out : STD_LOGIC;
 
