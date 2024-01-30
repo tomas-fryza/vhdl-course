@@ -19,11 +19,13 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 
 ## Installation
 
-* [Vivado Design Suite 2020.2](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
+* [Vivado Design Suite 2020.2](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions) (tens of GBs)
 
-* [TerosHDL](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1:
+* [TerosHDL](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1: (tens of MBs)
 
-* [ghdl + GtkWave](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+* [ghdl + GtkWave](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux) (several MBs)
+
+* [EDA Playground](https://edaplayground.com/) online tool (0 Bytes)
 
 ## Exercises
 
