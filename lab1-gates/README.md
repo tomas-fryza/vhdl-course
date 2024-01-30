@@ -31,7 +31,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
 1. Remind yourself the AND, OR, XOR gates.
 
-2. Optional: If you don't have/want to use Google or Facebook account, register your account on [EDA Playground](https://www.edaplayground.com/home).
+2. Optional: If you want to use online [EDA Playground](https://www.edaplayground.com) tool, you will need Google account, Facebook account, or register your account on EDA Playground.
 
 <a name="part1"></a>
 
@@ -48,9 +48,14 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
    * Do not add any constraints now
    * Choose a default board: `Nexys A7-50T` (will be used later in the lab)
    * Click **Finish** to create the project
-   * Click **OK** to define an empty module
+   * Define I/O ports of new module:
+      * Port name: `A`, Direction: `in`
+      * `B`, `in`
+      * `AND_Out`, `out`
+      * `OR_Out`, `out`
+      * `XOR_Out`, `out`
 
-2. Open generated `gates.vhd` file in **Design Sources** and copy/paste the following code to it.
+2. Open generated `gates.vhd` file in **Design Sources** and complete the `architecture` part as follows.
 
    ```vhdl
    library IEEE;
@@ -58,8 +63,8 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
    entity gates is
       Port (
-         A, B, C : in  STD_LOGIC;
-         AND_Out, OR_Out, NOT_Out : out  STD_LOGIC
+         A, B : in  STD_LOGIC;
+         AND_Out, OR_Out, XOR_Out : out  STD_LOGIC
       );
    end gates;
 
@@ -72,7 +77,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
       OR_Out <= A or B;
 
       -- NOT gate
-      NOT_Out <= not C;
+      XOR_Out <= A xor B;
 
    end Behavioral;
    ```
@@ -95,6 +100,8 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
 4. Use **File** > **Add Sources... Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_gates` (same filename as tested entity with prefix `tb_`). Again, click **OK** to define an empty module. You will find the new simulation file in **Simulation Sources > sim_1**. Copy/pase the following testbench to `tb_gates.vhd` file. **Important:** Make sure you are modifying `tb_*.vhd` file!
 
+   You can generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) or use the folllowing text.
+
    ```vhdl
    library IEEE;
    use IEEE.STD_LOGIC_1164.ALL;
@@ -104,26 +111,33 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
    end tb_gates;
 
    architecture testbench of tb_gates is
-      signal sig_A, sig_B, sig_C : STD_LOGIC;
-      signal sig_AND_Out, sig_OR_Out, sig_NOT_Out : STD_LOGIC;
+
+      component gates
+         port (A       : in std_logic;
+               B       : in std_logic;
+               AND_Out : out std_logic;
+               OR_Out  : out std_logic;
+               XOR_Out : out std_logic);
+      end component;
+   
+      signal sig_A, sig_B : STD_LOGIC;
+      signal sig_AND_Out, sig_OR_Out, sig_XOR_Out : STD_LOGIC;
 
    begin
       -- Instantiate the design under test (DUT)
-      DUT : entity work.gates
+      DUT : gates
          port map (
-            sig_A, sig_B, sig_C,
-            sig_AND_Out, sig_OR_Out, sig_NOT_Out
+            sig_A, sig_B
+            sig_AND_Out, sig_OR_Out, sig_XOR_Out
          );
 
       -- Test stimulus
       stimulus_process: process
       begin
-         sig_C <= '0'; sig_B <= '0'; sig_A <= '0'; wait for 100 ns;
-         sig_C <= '0'; sig_B <= '0'; sig_A <= '1'; wait for 100 ns;
-         sig_C <= '0'; sig_B <= '1'; sig_A <= '0'; wait for 100 ns;
-         sig_C <= '0'; sig_B <= '1'; sig_A <= '1'; wait for 100 ns;
-
-         -- WRITE OTHER TEST CASES HERE
+         sig_B <= '0'; sig_A <= '0'; wait for 100 ns;
+         sig_B <= '0'; sig_A <= '1'; wait for 100 ns;
+         sig_B <= '1'; sig_A <= '0'; wait for 100 ns;
+         sig_B <= '1'; sig_A <= '1'; wait for 100 ns;
 
          wait;
       end process stimulus_process;
@@ -226,3 +240,5 @@ TerosHDL is a high-performance VHDL simulator that is designed for FPGA and ASIC
 6. Bastian Born. [simulatorIO - Build and simulate logic circuits](https://simulator.io/)
 
 7. Lode Vandevenne. [LogicEmu: Online Logic Simulator](https://lodev.org/logicemu/)
+
+8. [Online VHDL Testbbench Template Generator](https://vhdl.lapinoo.net/testbench/)
