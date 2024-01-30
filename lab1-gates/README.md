@@ -128,7 +128,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
       -- Instantiate the design under test (DUT)
       DUT : gates
          port map (
-            sig_A, sig_B
+            sig_A, sig_B,
             sig_AND_Out, sig_OR_Out, sig_XOR_Out
          );
 
