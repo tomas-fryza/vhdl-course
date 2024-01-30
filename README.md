@@ -19,11 +19,11 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 
 ## Installation
 
-* [Vivado Design Suite 2020.2](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions) (tens of GBs)
+* [Vivado Design Suite 2020.2](https://github.com/tomas-fryza/vhdl-course/wiki/List-of-versions) (tens of GBs)
 
-* [TerosHDL](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1: (tens of MBs)
+* [TerosHDL](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1: (tens of MBs)
 
-* [ghdl + GtkWave](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux) (several MBs)
+* [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux) (several MBs)
 
 * [EDA Playground](https://edaplayground.com/) online tool (0 Bytes)
 
@@ -62,26 +62,26 @@ The following hardware and software components are mainly used in the lab.
   * Oscilloscope Keysight Technologies [DSOX3034T](https://www.keysight.com/en/pdx-x202175-pn-DSOX3034T/oscilloscope-350-mhz-4-analog-channels?&cc=CZ&lc=eng) (350 MHz, 4 analog channels), including 16 logic timing channels [DSOXT3MSO](https://www.keysight.com/en/pdx-x205238-pn-DSOXT3MSO/3000t-x-series-oscilloscope-mso-upgrade?cc=CZ&lc=eng) and serial protocol triggering and decode options [D3000BDLA](https://www.keysight.com/en/pd-2990560-pn-D3000BDLA/ultimate-software-bundle-for-the-3000a-t-x-series?&cc=CZ&lc=eng)
 
 * Development tools:
-  * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.2: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
+  * [Vivado](https://www.xilinx.com/products/design-tools/vivado.html) Design Suite 2020.2: [installation](https://github.com/tomas-fryza/vhdl-course/wiki/List-of-versions)
 
   * [EDA Playground](https://www.edaplayground.com/playgrounds?searchString=Brno&_showAllResults=on&language=VHDL) is a cloud-based service that runs in your browser
 
-  * [TerosHDL](https://terostechnology.github.io/terosHDLdoc/) is an open-source IDE for FPGA: [installation](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1:
+  * [TerosHDL](https://terostechnology.github.io/terosHDLdoc/) is an open-source IDE for FPGA: [installation](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1:
 
-  * [ghdl + GtkWave](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+  * [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux)
 
 * Other tool(s):
   * [git](https://git-scm.com/)
 
 ## References
 
-1. [Digital electronics wiki](https://github.com/tomas-fryza/digital-electronics-1/wiki)
+1. [Digital electronics wiki](https://github.com/tomas-fryza/vhdl-course/wiki)
 
-2. [How to install TerosHDL on Windows and Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
+2. [How to install TerosHDL on Windows and Linux](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
 
-3. [How to install ghdl on Windows and Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+3. [How to install ghdl on Windows and Linux](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux)
 
-4. [How to install Vivado on Windows and Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions)
+4. [How to install Vivado on Windows and Linux](https://github.com/tomas-fryza/vhdl-course/wiki/List-of-versions)
 
 5. [ES 4 VHDL reference sheet](docs/vhdl_cheatsheet.pdf)
 
@@ -96,3 +96,5 @@ The following hardware and software components are mainly used in the lab.
 10. KALLSTROM, P. [A Fairly Small VHDL Guide](docs/VHDL_guide.pdf). Version 2.1.
 
 11. [GitHub GIT CHEAT SHEET](docs/git_cheatsheet.pdf)
+
+12. [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/testbench/)
