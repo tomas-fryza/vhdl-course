@@ -112,7 +112,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
    architecture testbench of tb_gates is
 
-      component gates
+      component gates is
          port (A       : in std_logic;
                B       : in std_logic;
                AND_Out : out std_logic;
