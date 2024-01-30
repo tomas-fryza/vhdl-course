@@ -199,13 +199,13 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
 1. In Vivado, verify the Distributive laws:
 
-  First Distributive law:
+   First Distributive law:
 
-  ![Distributive law1](images/distributive1.png)
+   ![Distributive law1](images/distributive1.png)
 
-  Second Distributive law:
+   Second Distributive law:
 
-  ![Distributive law2](images/distributive2.png)
+   ![Distributive law2](images/distributive2.png)
 
 <!--
 \begin{align*}
