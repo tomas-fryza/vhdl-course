@@ -100,7 +100,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
 4. Use **File** > **Add Sources... Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_gates` (same filename as tested entity with prefix `tb_`). This time, click **OK** to define an empty module. You will find the new simulation file in **Simulation Sources > sim_1**.
 
-   You can generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) or copy/paste the following testbench to `tb_gates.vhd` file. **Important:** Make sure you are modifying `tb_*.vhd` file!
+   You can generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) and complete the test cases or copy/paste the following testbench to `tb_gates.vhd` file. **Important:** Make sure you are modifying `tb_*.vhd` file!
 
    ```vhdl
    library IEEE;
@@ -148,11 +148,17 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
 4. Use **Flow** > **Run Simulation** > **Run Behavioral Simulation** and run Vivado simulator. To see the whole simulated signals, it is recommended to select **View > Zoom Fit**.
 
+   ![Vivado-simulation](images/vivado_simulation.png)
+
    > To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation**.
    >
    > ![Reset simulation](images/screenshot_vivado_reset_simul.png)
 
 5. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
+
+   ![Vivado-rtl](images/vivado_rtl.png)
+
+   ![Vivado-commands](images/vivado_basic-commands_labels.png)
 
 <a name="part2"></a>
 
