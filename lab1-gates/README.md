@@ -203,23 +203,22 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
   ![Distributive law1](images/distributive1.png)
 
-   <!--
-   \begin{align*}
-      \textup{left}(c,b,a)  =&~a\cdot b + a\cdot c\\
-      \textup{right}(c,b,a) =&~a\cdot (b+c)\\
-   \end{align*}
-   -->
-
   Second Distributive law:
 
   ![Distributive law2](images/distributive2.png)
 
-   <!--
-   \begin{align*}
-       \textup{left}(c,b,a)  =&~(a+b)\cdot (a+c)\\
-       \textup{right}(c,b,a) =&~a+ (b\cdot c)\\
-   \end{align*}
-   -->
+<!--
+\begin{align*}
+   \textup{left}(c,b,a)  =&~a\cdot b + a\cdot c\\
+   \textup{right}(c,b,a) =&~a\cdot (b+c)\\
+\end{align*}
+-->
+<!--
+\begin{align*}
+    \textup{left}(c,b,a)  =&~(a+b)\cdot (a+c)\\
+    \textup{right}(c,b,a) =&~a+ (b\cdot c)\\
+\end{align*}
+-->
 
 2. Apart from the professional Vivado tool that takes up a significant amount of local disk storage, there are other simulation tools available, such as TerosHDL and ghdl.
 
