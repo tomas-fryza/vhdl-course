@@ -93,14 +93,14 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
    | `nand` | Logical AND with negated output |
    | `or` | Logical OR |
    | `nor` | Logical OR with negated output |
-   | `not` | Nagation |
+   | `not` | Negation |
    | `xor` | Exclusive OR |
    | `xnor` | Exclusive OR with negated output |
    | `-- comment` | Comments |
 
-4. Use **File** > **Add Sources... Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_gates` (same filename as tested entity with prefix `tb_`). Again, click **OK** to define an empty module. You will find the new simulation file in **Simulation Sources > sim_1**. Copy/pase the following testbench to `tb_gates.vhd` file. **Important:** Make sure you are modifying `tb_*.vhd` file!
+4. Use **File** > **Add Sources... Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_gates` (same filename as tested entity with prefix `tb_`). This time, click **OK** to define an empty module. You will find the new simulation file in **Simulation Sources > sim_1**.
 
-   You can generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) or use the folllowing text.
+   You can generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) or copy/paste the following testbench to `tb_gates.vhd` file. **Important:** Make sure you are modifying `tb_*.vhd` file!
 
    ```vhdl
    library IEEE;
@@ -241,4 +241,4 @@ TerosHDL is a high-performance VHDL simulator that is designed for FPGA and ASIC
 
 7. Lode Vandevenne. [LogicEmu: Online Logic Simulator](https://lodev.org/logicemu/)
 
-8. [Online VHDL Testbbench Template Generator](https://vhdl.lapinoo.net/testbench/)
+8. [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/testbench/)
