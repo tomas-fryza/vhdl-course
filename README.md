@@ -25,7 +25,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 
 * [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux) (several MBs)
 
-* [EDA Playground](https://edaplayground.com/) online tool (0 Bytes)
+* [EDA Playground](https://edaplayground.com/) (online tool, 0 Bytes)
 
 ## Exercises
 
