@@ -1,11 +1,13 @@
 --------------------------------------------------
 --
 -- Testbench for basic gates circuit.
--- TerosHDL, EDA Playground
+-- TerosHDL, EDA Playground, Vivado
 --
 -- Copyright (c) 2020 Tomas Fryza
--- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
+-- Dept. of Radio Electronics
+-- Brno Univ. of Technology, Czechia
+--
+-- MIT license
 --
 --------------------------------------------------
 
@@ -17,7 +19,7 @@ library ieee;
 --------------------------------------------------
 
 entity tb_gates is
-  -- Entity of testbench is always empty
+-- Entity of testbench is always empty
 end entity tb_gates;
 
 --------------------------------------------------
@@ -25,6 +27,17 @@ end entity tb_gates;
 --------------------------------------------------
 
 architecture testbench of tb_gates is
+
+  component gates is
+    port (
+      a      : in    std_logic;
+      b      : in    std_logic;
+      c      : in    std_logic;
+      f_orig : out   std_logic;
+      f_nand : out   std_logic;
+      f_nor  : out   std_logic
+    );
+  end component;
 
   -- Testbench local signals
   signal sig_c      : std_logic;
@@ -36,9 +49,10 @@ architecture testbench of tb_gates is
 
 begin
 
-  -- Connecting testbench signals with gates entity
-  -- (Unit Under Test)
-  uut_gates : entity work.gates
+  -- Connecting local testbench signals to `gates`
+  -- component (Design Under Test)
+  dut_gates : component gates
+
     port map (
       c      => sig_c,
       b      => sig_b,
@@ -48,9 +62,9 @@ begin
       f_nor  => sig_f_nor
     );
 
-  --------------------------------------------------
+  ------------------------------------------------
   -- Testing data generation process
-  --------------------------------------------------
+  ------------------------------------------------
 
   p_stimulus : process is
   begin
@@ -91,6 +105,7 @@ begin
     wait for 100 ns;
 
     wait; -- Generation process is suspended forever
+
   end process p_stimulus;
 
 end architecture testbench;

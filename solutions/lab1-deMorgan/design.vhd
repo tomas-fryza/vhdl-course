@@ -1,11 +1,13 @@
 --------------------------------------------------
 --
 -- Example of basic gates in VHDL.
--- TerosHDL, EDA Playground
+-- TerosHDL, EDA Playground, Vivado
 --
 -- Copyright (c) 2019 Tomas Fryza
--- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
+-- Dept. of Radio Electronics
+-- Brno Univ. of Technology, Czechia
+--
+-- MIT license
 --
 --------------------------------------------------
 
@@ -25,18 +27,20 @@ entity gates is
     f_orig : out   std_logic; -- Original function
     f_nand : out   std_logic; -- NAND version
     f_nor  : out   std_logic  -- NOR version
-  );
+  );                          -- Note: No `;` after the last port
 end entity gates;
 
 --------------------------------------------------
 -- Architecture body for basic gates
 --------------------------------------------------
 
-architecture dataflow of gates is
+architecture behavioral of gates is
+
 begin
 
-  f_orig <= (not(c and b)) or (not(b) and a);
-  f_nand <= b nand a; -- MODIFY THIS FUNCTION
-  f_nor  <= b nor a;  -- MODIFY THIS FUNCTION
+  f_orig <= (c nand b) or (not(b) and a);
+  -- Use DeMorgans laws and modify the functions
+  f_nand <= c and a; -- MODIFY THIS FUNCTION
+  f_nor  <= c or a;  -- MODIFY THIS FUNCTION
 
-end architecture dataflow;
+end architecture behavioral;
