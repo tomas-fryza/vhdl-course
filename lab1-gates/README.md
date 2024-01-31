@@ -48,7 +48,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
    * Do not add any constraints now
    * Choose a default board: `Nexys A7-50T` (will be used later in the lab)
    * Click **Finish** to create the project
-   * Define I/O ports of new module:
+   * Define I/O ports of new module `gates`:
       * Port name: `A`, Direction: `in`
       * `B`, `in`
       * `AND_Out`, `out`
