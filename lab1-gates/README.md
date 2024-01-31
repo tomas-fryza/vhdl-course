@@ -76,7 +76,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
       -- 2-input OR gate
       OR_Out <= A or B;
 
-      -- NOT gate
+      -- XOR gate
       XOR_Out <= A xor B;
 
    end Behavioral;
