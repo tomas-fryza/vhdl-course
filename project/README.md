@@ -2,23 +2,23 @@
 
 ### Topics
 
-* TBD
+*Topics will be presented one week before the project starts.*
 
 ## Instructions
 
-TBD
+The objective of this group project is to collaborate within small teams (3-4 students), explore a chosen topic, use labs's components, develop innovative solutions, simulate and execute these solutions, generate project documentation, and present the final outcomes. Team members are responsible for organizing and assigning roles and tasks among themselves.
 
-The aim of the project is to cooperate in small teams, to study the subject, to design own solutions, to simulate, to implement, to create project documentation and to demonstrate the results. The distribution of roles and tasks within the team belongs to its members.
+* Students will work on a project **in the labs** during the 9th to 13th weeks of the semester, with the practical demonstration scheduled for the last week.
 
-* Students work on a project **in the labs** during the 9th to 13th week of the semester. The practical demonstration will take place last week.
+* Using BUT e-learning, students should submit a link to the GitHub repository containing the VHDL project, required images, documents, and a descriptive README file. **The submission deadline is the day before the demonstration.**
 
-* Using BUT e-learning, students submit a link to the GitHub repository, which contains the project in Vivado, the necessary images, documents and a descriptive README file. **The submission deadline is the day before the demonstration.**
+* The FPGA codes must be written in VHDL and must be implementable on the Nexys A7-50T board using the development tools provided during the semester, specificallly Vivado.
 
-* The FPGA source codes must be written in VHDL and implementable on the Nexys A7-50T board in the development tools used in the laboratory during the semester.
+* Create testbenches for all your new components.
 
-* Make testbenches for all your new components.
+* Physical implementation on FPGA is necessary, not just computer simulation.
 
-* Physical implementation on FPGA is necessary, computer simulation is not sufficient.
+* Make a short video of your app demo. (The video can then be used to promote the course at LinkedIn.)
 
 ## Help
 
@@ -36,8 +36,8 @@ The aim of the project is to cooperate in small teams, to study the subject, to 
 
 * Except Vivado, you can use the following tools to simulate your VHDL design(s):
   * [EDA Playground](https://www.edaplayground.com/)
-  * [TerosHDL](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
-  * [ghdl + GtkWave](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+  * [TerosHDL](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
+  * [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux)
 
 # Recommended README.md file structure
 
@@ -61,13 +61,13 @@ Put flowchats/state diagrams of your algorithm(s) and direct links to source/tes
 
 ### Component(s) simulation
 
-Write descriptive text and simulation screenshots of your components.
+Write descriptive text and put simulation screenshots of your components.
 
 ## Instructions
 
-Write an instruction manual for your application, including photos or a link to a video.
+Write an instruction manual for your application, including photos and a link to a short app video.
 
 ## References
 
-1. Put here the literature references you used.
+1. Put here the references you used.
 2. ...
