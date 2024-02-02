@@ -37,7 +37,16 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
 ## Part 1: Vivado
 
-[Vivado Design Suite](https://www.xilinx.com/products/design-tools/vivado.html) is a comprehensive design environment developed by Xilinx (AMD) for the design, analysis, and implementation of programmable logic devices, such as FPGAs (Field-Programmable Gate Arrays) and SoCs (System on Chips). It provides a set of tools and features for digital design, synthesis, simulation, and implementation of electronic systems.
+*[VHDL (VHSIC Hardware Description Language)](https://ieeexplore.ieee.org/document/8938196) is a programming language used to describe the behavior and structure of digital circuits. The acronym VHSIC (Very High Speed Integrated Circuits) in the language's name comes from the U.S. government program that funded early work on the standard. VHDL is a formal notation intended for use in all phases of the creation of electronic systems. Since it is both machine and human readable, it supports the design, development, verification, synthesis, and testing of hardware designs; the communication of hardware design data; and the maintenance, modification, and procurement of hardware.*
+
+   > IEEE standards for VHDL language:
+   > * IEEE Std 1076-1987
+   > * IEEE Std 1076-1993
+   > * IEEE Std 1076-2002
+   > * IEEE Std 1076-2008
+   > * IEEE Std 1076-2019
+
+*[Vivado Design Suite](https://www.xilinx.com/products/design-tools/vivado.html) is a comprehensive design environment developed by Xilinx (AMD) for the design, analysis, and implementation of programmable logic devices, such as FPGAs (Field-Programmable Gate Arrays) and SoCs (System on Chips). It provides a set of tools and features for digital design, synthesis, simulation, and implementation of electronic systems.*
 
 1. Run Vivado and create a new project:
 
@@ -82,7 +91,24 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
    end Behavioral;
    ```
 
+   > **Help:** The `std_logic` type provides several values.
+   > 
+   > ```vhdl
+   >     TYPE std_logic IS ( 'U',  -- Uninitialized state used as a default value
+   >                         'X',  -- Forcing unknown
+   >                         '0',  -- Forcing zero. Transistor driven to GND
+   >                         '1',  -- Forcing one. Transistor driven to VCC
+   >                         'Z',  -- High impedance. 3-state buffer outputs
+   >                         'W',  -- Weak unknown. Bus terminators
+   >                         'L',  -- Weak zero. Pull down resistors
+   >                         'H',  -- Weak one. Pulll up resistors
+   >                         '-'   -- Don't care state used for synthesis and advanced modeling
+   >                       );
+   > ```
+
 3. Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/vhdl-course/wiki/Entity), [architecture](https://github.com/tomas-fryza/vhdl-course/wiki/Architecture), and testbench.
+
+   ![entity_architecture_pair](images/entity-architecture_and2.jpg)
 
    The usefull VHDL operators are shown in the table.
 
