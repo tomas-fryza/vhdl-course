@@ -27,11 +27,11 @@ begin
   -- Instantiate the design under test (DUT)
   dut : component gates
     port map (
-         sig_a,
-         sig_b,
-         sig_and_out,
-         sig_or_out,
-         sig_xor_out
+      sig_a,
+      sig_b,
+      sig_and_out,
+      sig_or_out,
+      sig_xor_out
     );
 
   -- Test stimulus

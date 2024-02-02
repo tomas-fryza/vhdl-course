@@ -16,12 +16,12 @@ architecture behavioral of gates is
 begin
 
   -- 2-input AND gate
-  and_out <= a and b;
+  and_out <= a and b after 8 ns;
 
   -- 2-input OR gate
-  or_out <= a or b;
+  or_out <= a or b after 6 ns;
 
   -- XOR gate
-  xor_out <= a xor b;
+  xor_out <= a xor b after 11 ns;
 
 end architecture behavioral;
