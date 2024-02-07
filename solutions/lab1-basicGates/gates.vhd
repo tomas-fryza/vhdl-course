@@ -6,7 +6,7 @@ entity gates is
     a       : in    std_logic; --! First input
     b       : in    std_logic; --! Second input
     and_out : out   std_logic; --! Logic AND
-    or_out  : out   std_logic;
+    or_out  : out   std_logic; --! Logic OR
     xor_out : out   std_logic  --! Logic XOR
   );
 end entity gates;

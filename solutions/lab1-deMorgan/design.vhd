@@ -27,7 +27,7 @@ entity gates is
     f_orig : out   std_logic; -- Original function
     f_nand : out   std_logic; -- NAND version
     f_nor  : out   std_logic  -- NOR version
-  );                          -- Note: No `;` after the last port
+  );
 end entity gates;
 
 --------------------------------------------------
@@ -38,9 +38,10 @@ architecture behavioral of gates is
 
 begin
 
-  f_orig <= (c nand b) or (not(b) and a);
+  f_orig <= not(c and b) or (not(b) and a);
+
   -- Use DeMorgans laws and modify the functions
-  f_nand <= c and a; -- MODIFY THIS FUNCTION
-  f_nor  <= c or a;  -- MODIFY THIS FUNCTION
+  f_nand <= not((c and b) and not(not(b) and a));
+  f_nor  <= (not(c) or not(b)) or not(b or not(a));
 
 end architecture behavioral;
