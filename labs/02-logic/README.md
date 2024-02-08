@@ -1,5 +1,13 @@
 # Lab 2: Combinational logic
 
+* [Pre-Lab preparation](#preparation)
+* [Part 1: Logic function minimization](#part1)
+* [Part 2: Binary comparator in VHDL language](#part2)
+* [Part 4: Assertion statements in VHDL testbench](#part4)
+* [Experiments on your own](#experiments)
+* [Post-Lab report](#report)
+* [References](#references)
+
 ### Learning objectives
 
 After completing this lab you will be able to:
@@ -11,24 +19,13 @@ After completing this lab you will be able to:
 
 The purpose of this laboratory exercise is to learn to use different ways of writing combination functions (truth table, K-map, SoP/PoS forms), their minimization, the use of signal assignments in VHDL, and assertion statements in VHDL testbench.
 
-### Table of contents
-
-* [Pre-Lab preparation](#preparation)
-* [Part 1: Synchronize repositories and create a new folder](#part1)
-* [Part 2: Logic function minimization](#part2)
-* [Part 3: Binary comparator in VHDL language](#part3)
-* [Part 4: Assertion statements in VHDL testbench](#part4)
-* [Experiments on your own](#experiments)
-* [Post-Lab report](#report)
-* [References](#references)
-
 <a name="preparation"></a>
 
 ## Pre-Lab preparation
 
 *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs.
 
-1. Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, B is less than A). Note that, such a digital device has four inputs and three outputs/functions.
+1. Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, A is greater than A). Note that, such a digital device has four inputs and three outputs/functions.
 
    | **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B is greater than A** | **B equals A** | **A is greater than B** |
    | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -51,33 +48,9 @@ The purpose of this laboratory exercise is to learn to use different ways of wri
 
 <a name="part1"></a>
 
-## Part 1: Synchronize repositories and create a new folder
+## Part 1: Logic function minimization
 
-When you start working, always synchronize the contents of your working folder and local repository with remote version at GitHub. This way you are sure that you will not lose any of your changes.
-
-1. Run Git Bash (Windows) of Terminal (Linux) in your working directory, and update local repository.
-
-   > **Help:** Useful bash and git commands are `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
-
-   ```bash
-   ## Windows Git Bash or Linux:
-   $ git pull
-   ```
-
-2. Create a new working folder `02-logic` for this exercise.
-
-   ```bash
-   ## Windows Git Bash or Linux:
-   $ mkdir 02-logic
-   ```
-
-3. Use your favorite text editor, such as VS Code, Notepad++, etc. and create a new file `README.md` in your `02-logic/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/02-logic/report.md) to your `02-logic/README.md` file.
-
-<a name="part2"></a>
-
-## Part 2: Logic function minimization
-
-*[Karnaugh Maps](https://learnabout-electronics.org/Digital/dig24.php) (or K-maps) offer a graphical method of reducing a digital circuit to its minimum number of gates. The map is a simple table containing 1s and 0s that can express a truth table or complex Boolean expression describing the operation of a digital circuit.*
+*[Karnaugh Maps](https://learnabout-electronics.org/Digital/dig24.php) (or K-maps) offer a graphical method of reducing a digital circuit to its minimum number of gates. The map is a simple table containing `1`s and `0`s that can express a truth table or complex Boolean expression describing the operation of a digital circuit.*
 
 The K-map for the "equals" function is as follows:
 
@@ -94,9 +67,30 @@ The K-map for the "equals" function is as follows:
    ![Binary comparator simplified functions](images/comparator_min.png)
 -->
 
-<a name="part3"></a>
+<a name="part2"></a>
 
-## Part 3: Binary comparator in VHDL language
+## Part 2: Binary comparator in VHDL language
+
+1. Run Vivado and create a new project:
+
+   * Project name: `comparator`
+   * Project location: your working folder, such as `Documents`
+   * Project type: **RTL Project**
+   * Create a new VHDL source file: `comparator_2it`
+   * Do not add any constraints now
+   * Choose a default board: `Nexys A7-50T` (will be used later in the lab)
+   * Click **Finish** to create the project
+   * Define I/O ports of new module:
+      * Port name: `a`, Direction: `in`, Bus: `check`, MSB: `1`, LSB: `0`
+      * `b`, `in`, Bus: `check`, MSB: `1`, LSB: `0`
+      * `b_greater_`, `out`
+      * `b_a_equal`, `out`
+      * `a_greater`, `out`
+
+TBD
+
+
+
 
 1. Log in to your [EDA Playground](https://www.edaplayground.com/login) account, open [template](https://www.edaplayground.com/x/5uu3) project, use **Copy** button, and **Save** the project under a different name.
 
