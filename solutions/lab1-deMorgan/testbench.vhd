@@ -35,7 +35,6 @@ begin
   -- Connecting local testbench signals to `morgan`
   -- component (Design Under Test)
   dut : component morgan
-
     port map (
       c      => sig_c,
       b      => sig_b,

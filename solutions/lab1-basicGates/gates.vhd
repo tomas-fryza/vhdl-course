@@ -1,5 +1,6 @@
 -------------------------------------------------
 --! @brief VHDL example for basic logic gates.
+--! @version 1.1
 --! @copyright (c) 2019 Tomas Fryza, MIT license
 --!
 --! The entity 'gates' defines an interface for

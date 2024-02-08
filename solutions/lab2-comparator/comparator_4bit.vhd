@@ -1,39 +1,35 @@
---! @title Binary comparator
---! @author Tomas Fryza
---! Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
---! @version 0.2
---! @date 2023-04-30
+-------------------------------------------------
+--! @brief Binary comparator.
+--! @version 1.2
+--! @copyright (c) 2020 Tomas Fryza, MIT license
 --!
---! @copyright Copyright (c) 2020 by Tomas Fryza
---! This work is licensed under the terms of the MIT license.
---!
---! A digital or **binary comparator** compares the digital
---! signals A, B presented at input terminal and produce
---! outputs depending upon the condition of those inputs.
---! Four-bit binary comparator use `when/else` assignments to
---! distinguish three states between two 4-bit inputs: greater
---! than, equal, and less than.
+--! A digital or **binary comparator** compares
+--! digital signals A, B presented at input terminal
+--! and produce outputs depending upon the condition
+--! of those inputs. Four-bit binary comparator use
+--! `when/else` assignments to distinguish three
+--! states: greater than, equal, and less than.
 --!
 --! Wavedrom example, see <https://wavedrom.com/>:
 --! {signal: [
---!  {name: 'b[3:0]', wave: 'x333333', data: ['0','3','8','9','a','7']},
---!  {name: 'a[3:0]', wave: 'x333333', data: ['0','c','9','3','a','6']},
+--!  {name: 'b[3:0]', wave: '333333', data: ['0','1','3','8','9','a']},
+--!  {name: 'a[3:0]', wave: '333333', data: ['0','1','c','9','3','a']},
 --!  {},
---!  {name: 'b_greater', wave: 'xl..hlh'},
---!  {name: 'b_a_equal', wave: 'xhl..hl'},
---!  {name: 'a_greater', wave: 'xlh.l..'},
+--!  {name: 'b_greater', wave: 'l...hl'},
+--!  {name: 'b_a_equal', wave: 'h.l..h'},
+--!  {name: 'a_greater', wave: 'l.h.l.'},
 --! ]}
 --!
---! @details
---! Tested on Nexys A7-50T board, xc7a50ticsg324-1L FPGA
---! Software: TerosHDL, Vivado 2020.2, EDA Playground
+--! Tested on Nexys A7-50T board, xc7a50ticsg324-1L FPGA.
+--! Software: TerosHDL, Vivado 2020.2, EDA Playground.
+-------------------------------------------------
 
 library ieee;
   use ieee.std_logic_1164.all;
 
-----------------------------------------------------------
+-------------------------------------------------
 -- Entity declaration for 4-bit binary comparator
-----------------------------------------------------------
+-------------------------------------------------
 
 entity comparator_4bit is
   port (
@@ -45,9 +41,9 @@ entity comparator_4bit is
   );
 end entity comparator_4bit;
 
-----------------------------------------------------------
+-------------------------------------------------
 -- Architecture body for 4-bit binary comparator
-----------------------------------------------------------
+-------------------------------------------------
 
 architecture behavioral of comparator_4bit is
 

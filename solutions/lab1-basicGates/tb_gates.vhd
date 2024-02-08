@@ -21,6 +21,7 @@ architecture testbench of tb_gates is
     );
   end component;
 
+  -- Testbench local signals
   signal sig_a, sig_b : std_logic;
   signal sig_and_out  : std_logic;
   signal sig_or_out   : std_logic;
@@ -31,11 +32,11 @@ begin
   -- Instantiate the design under test (DUT)
   dut : component gates
     port map (
-      sig_a,
-      sig_b,
-      sig_and_out,
-      sig_or_out,
-      sig_xor_out
+      a       => sig_a,
+      b       => sig_b,
+      and_out => sig_and_out,
+      or_out  => sig_or_out,
+      xor_out => sig_xor_out
     );
 
   -- Test stimulus

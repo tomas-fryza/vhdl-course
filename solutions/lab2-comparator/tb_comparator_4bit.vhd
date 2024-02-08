@@ -1,29 +1,25 @@
---! @title Testbench for 4-bit binary comparator
---! @author Tomas Fryza
---! Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
---! @version 0.2
---! @date 2023-04-30
---!
---! @copyright Copyright (c) 2020 by Tomas Fryza
---! This work is licensed under the terms of the MIT license.
---!
-
 library ieee;
   use ieee.std_logic_1164.all;
 
-----------------------------------------------------------
--- Entity declaration for testbench
-----------------------------------------------------------
+-------------------------------------------------
 
 entity tb_comparator_4bit is
-  -- Entity of testbench is always empty
+-- Entity of testbench is always empty
 end entity tb_comparator_4bit;
 
-----------------------------------------------------------
--- Architecture body for testbench
-----------------------------------------------------------
+-------------------------------------------------
 
 architecture testbench of tb_comparator_4bit is
+
+  component comparator_4bit is
+    port (
+      b         : in    std_logic_vector(3 downto 0);
+      a         : in    std_logic_vector(3 downto 0);
+      b_greater : out   std_logic;
+      b_a_equal : out   std_logic;
+      a_greater : out   std_logic
+    );
+  end component;
 
   -- Testbench local signals
   signal sig_b         : std_logic_vector(3 downto 0); --! Input data b[3:0]
@@ -34,10 +30,7 @@ architecture testbench of tb_comparator_4bit is
 
 begin
 
-  --------------------------------------------------------
-  --! Connecte testbench signals declared above to
-  --! comparator_4bit entity as Unit Under Test
-  uut_comparator_4bit : entity work.comparator_4bit
+  dut : component comparator_4bit
     port map (
       b         => sig_b,
       a         => sig_a,
@@ -46,9 +39,7 @@ begin
       a_greater => sig_a_greater
     );
 
-  --------------------------------------------------------
-  --! Input data generation process
-  --------------------------------------------------------
+  -----------------------------------------------
   p_stimulus : process is
   begin
 
