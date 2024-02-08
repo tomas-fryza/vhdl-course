@@ -28,7 +28,7 @@
 ## Change top entity you want to simulate and GtkWave path
 ##############################################################
 
-TOP_ENTITY=tb_gates
+TOP_ENTITY=tb_morgan
 
 # For Windows
 GTK=C:/APPZ/VHDL/gtkwave/bin

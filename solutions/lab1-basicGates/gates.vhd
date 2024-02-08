@@ -1,5 +1,17 @@
+-------------------------------------------------
+--! @brief VHDL example for basic logic gates.
+--! @copyright (c) 2019 Tomas Fryza, MIT license
+--!
+--! The entity 'gates' defines an interface for
+--! implementing 2-input AND, OR, and XOR gates.
+--! The architecture 'behavioral' implements the
+--! behavior of these gates with specified delays.
+-------------------------------------------------
+
 library ieee;
   use ieee.std_logic_1164.all;
+
+-------------------------------------------------
 
 entity gates is
   port (
@@ -11,17 +23,19 @@ entity gates is
   );
 end entity gates;
 
+-------------------------------------------------
+
 architecture behavioral of gates is
 
 begin
 
   -- 2-input AND gate
-  and_out <= a and b after 8 ns;
+  and_out <= a and b after 3 ns;
 
   -- 2-input OR gate
-  or_out <= a or b after 6 ns;
+  or_out <= a or b after 2 ns;
 
   -- XOR gate
-  xor_out <= a xor b after 11 ns;
+  xor_out <= a xor b after 6 ns;
 
 end architecture behavioral;

@@ -1,34 +1,17 @@
---------------------------------------------------
---
--- Testbench for basic gates circuit.
--- TerosHDL, EDA Playground, Vivado
---
--- Copyright (c) 2020 Tomas Fryza
--- Dept. of Radio Electronics
--- Brno Univ. of Technology, Czechia
---
--- MIT license
---
---------------------------------------------------
-
 library ieee;
   use ieee.std_logic_1164.all;
 
 --------------------------------------------------
--- Entity declaration for testbench
---------------------------------------------------
 
-entity tb_gates is
+entity tb_morgan is
 -- Entity of testbench is always empty
-end entity tb_gates;
+end entity tb_morgan;
 
 --------------------------------------------------
--- Architecture body for testbench
---------------------------------------------------
 
-architecture testbench of tb_gates is
+architecture testbench of tb_morgan is
 
-  component gates is
+  component morgan is
     port (
       a      : in    std_logic;
       b      : in    std_logic;
@@ -49,9 +32,9 @@ architecture testbench of tb_gates is
 
 begin
 
-  -- Connecting local testbench signals to `gates`
+  -- Connecting local testbench signals to `morgan`
   -- component (Design Under Test)
-  dut_gates : component gates
+  dut : component morgan
 
     port map (
       c      => sig_c,

@@ -192,7 +192,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
 De Morgan's laws are two fundamental rules in Boolean algebra that are used to simplify Boolean expressions. There are two versions of De Morgan's laws. De Morgan's law for AND: The complement of the product of two operands is equal to the sum of the complements of the operands. De Morgan's law for OR: The complement of the sum of two operands is equal to the product of the complements of the operands.
 
-1. Create a new Vivado project or modify both files `gates.vhd` and `tb_gates.vhd` from the previous example according to [Example of basic gates](https://www.edaplayground.com/x/5L92) from EDA Playground.
+1. Create a new Vivado project `deMorgan` or modify both files `gates.vhd` and `tb_gates.vhd` from the previous example according to [Example of basic gates](https://www.edaplayground.com/x/5L92) from EDA Playground.
 
 2. Use De Morgan's laws and modify the original function to the form with NAND and NOR gates only. Verify all three functions in Vivado.
 
