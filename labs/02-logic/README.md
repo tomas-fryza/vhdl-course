@@ -76,7 +76,7 @@ The K-map for the "equals" function is as follows:
    * Project name: `comparator`
    * Project location: your working folder, such as `Documents`
    * Project type: **RTL Project**
-   * Create a new VHDL source file: `comparator_2it`
+   * Create a new VHDL source file: `compare_2bit`
    * Do not add any constraints now
    * Choose a default board: `Nexys A7-50T` (will be used later in the lab)
    * Click **Finish** to create the project
@@ -87,35 +87,61 @@ The K-map for the "equals" function is as follows:
       * `b_a_equal`, `out`
       * `a_greater`, `out`
 
-TBD
+   > **Note:** The [entity](https://github.com/tomas-fryza/vhdl-course/wiki/Entity) for a 2-bit binary comparator in `compare_2bit.vhd` therefore coresponds to the following table.
+   >
+   > | **Port name** | **Direction** | **Type** | **Description** |
+   > | :-: | :-: | :-- | :-- |
+   > | `b`       | input  | [`std_logic_vector(1 downto 0)`](https://github.com/tomas-fryza/vhdl-course/wiki/Data-types) | Input data b[1:0] |
+   > | `a`       | input  | `std_logic_vector(1 downto 0)` | Input data a[1:0] |
+   > | `b_greater` | output | `std_logic` | Output is `1` if b > a |
+   > | `b_a_equal` | output | `std_logic` | Output is `1` if b = a |
+   > | `a_greater` | output | `std_logic` | Output is `1` if b < a |
 
-
-
-
-1. Log in to your [EDA Playground](https://www.edaplayground.com/login) account, open [template](https://www.edaplayground.com/x/5uu3) project, use **Copy** button, and **Save** the project under a different name.
-
-2. In VHDL, define an [entity](https://github.com/tomas-fryza/digital-electronics-1/wiki/Entity) for a 2-bit binary comparator (`comparator_2bit`) according to the following table.
-
-   | **Port name** | **Direction** | **Type** | **Description** |
-   | :-: | :-: | :-- | :-- |
-   | `b`       | input  | [`std_logic_vector(1 downto 0)`](https://github.com/tomas-fryza/digital-electronics-1/wiki/Data-types) | Input data b[1:0] |
-   | `a`       | input  | `std_logic_vector(1 downto 0)` | Input data a[1:0] |
-   | `b_greater` | output | `std_logic` | Output is `1` if b > a |
-   | `b_a_equal` | output | `std_logic` | Output is `1` if b = a |
-   | `a_greater` | output | `std_logic` | Output is `1` if b < a |
-
-3. In VHDL, define an [architecture](https://github.com/tomas-fryza/digital-electronics-1/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [signal assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments). Use the **conditional signal assignment** `when`,`else` (outside process) to describe the three output functions, such as:
+2. In VHDL, define an [architecture](https://github.com/tomas-fryza/vhdl-course/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [conditional signal assignments](https://github.com/tomas-fryza/vhdl-course/wiki/Signal-assignments).
 
    ```vhdl
-      a_greater <= '1' when (b < a) else
-                   '0';
+   architecture behavioral of compare_2bit is
+   begin
+
+     -- MODIFY LOGIC FUNCTION FOR "B GREATER"
+     b_greater <= b(1) and a(1);
+
+     b_a_equal <= '1' when (b = a) else
+                  '0';
+
+     -- MODIFY LOGIC FUNCTION FOR "A GREATER"
+     a_greater <= b(0) or a(0);
+
+   end architecture behavioral;
    ```
 
-   Write all three functions in signal-assignments style and one function also with low-level operators.
+   Write one function in signal-assignments style and one function in simplified SoP or PoS form with low-level operators.
 
-<a name="part4"></a>
+3. Use **File** > **Add Sources... Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_compare_2bit` (same filename as tested entity with prefix `tb_`). Generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) or copy/paste it from the [EDA Playground template](https://www.edaplayground.com/x/5uu3). Complete the stimuli process by several test cases.
 
-## Part 4: Assertion statements in VHDL testbench
+   ```vhdl
+   stimuli : process
+   begin
+     -- EDIT Adapt initialization as needed
+     b <= "00";
+     a <= "00";
+     wait for 100 ns;
+
+     -- EDIT Add stimuli here
+
+     wait;
+   end process;
+   ```
+
+
+
+
+
+
+
+<a name="part3"></a>
+
+## Part 3: Assertion statements in VHDL testbench
 
 You can write any information to the console using the report statement. The basic syntax in VHDL is:
 
@@ -176,33 +202,29 @@ The message is displayed to the console when the condition is NOT met, therefore
 
 1. In VHDL, write a testbench and verify the correct functionality of the comparator for all input combinations.
 
-2. When you finish, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes. To do that, use git commands to add, commit, and push all local changes to your remote repository. Check GitHub web page for changes.
 
-   > **Help:** Useful git commands are `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
+
+
+
+TBD: Implementation ???
+
+
 
 <a name="experiments"></a>
 
 ## Experiments on your own
 
-1. In EDA Playground, define entity and architecture for a 4-bit binary comparator (`comparator_4bit`).
+1. Define entity and architecture for a 4-bit binary comparator (`compare_4bit`).
 
    | **Port name** | **Direction** | **Type** | **Description** |
    | :-: | :-: | :-- | :-- |
-   | `b`       | input  | `std_logic_vector(3 downto 0)` | Input data b[3:0] |
-   | `a`       | input  | `std_logic_vector(3 downto 0)` | Input data a[3:0] |
+   | `b`       | input  | `std_logic_vector(3 downto 0)` | Input bus b[3:0] |
+   | `a`       | input  | `std_logic_vector(3 downto 0)` | Input bus a[3:0] |
    | `b_greater` | output | `std_logic` | Output is `1` if b > a |
    | `b_a_equal` | output | `std_logic` | Output is `1` if b = a |
    | `a_greater` | output | `std_logic` | Output is `1` if b < a |
 
-2. In VHDL, define a testbench for a 4-bit binary comparator and verify several input combinations. Make one intentional mistake when automatically verifying expected values using the `assert` command.
-
-<a name="report"></a>
-
-## Post-Lab report
-
-*Complete all parts of `02-logic/README.md` file (see Part 1.3) in Czech, Slovak, or English, push it to your GitHub repository, and submit a link to this file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next lab, i.e. in one week.*
-
-*Vypracujte všechny části ze souboru `02-logic/README.md` (viz Část 1.3) v českém, slovenském, nebo anglickém jazyce, uložte je na váš GitHub repozitář a odevzdejte link na tento soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením, tj. za jeden týden.*
+2. In VHDL, define a testbench for a 4-bit binary comparator and verify several input combinations using the `assert` commands.
 
 <a name="references"></a>
 
