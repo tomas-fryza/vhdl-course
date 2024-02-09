@@ -18,12 +18,12 @@ library ieee; -- Standard library
 
 entity morgan is
   port (
-    c      : in    std_logic;
-    b      : in    std_logic;
-    a      : in    std_logic;
-    f_orig : out   std_logic; --! Original function
-    f_nand : out   std_logic; --! (N)AND version
-    f_nor  : out   std_logic  --! (N)OR version
+    c     : in    std_logic;
+    b     : in    std_logic;
+    a     : in    std_logic;
+    f_org : out   std_logic; --! Original function
+    f_and : out   std_logic; --! (N)AND version
+    f_or  : out   std_logic  --! (N)OR version
   );
 end entity morgan;
 
@@ -34,11 +34,11 @@ architecture behavioral of morgan is
 begin
 
   -- Original logic function
-  f_orig <= not(c and b) or (not(b) and a);
+  f_org <= not(c and b) or (not(b) and a);
 
   -- Use DeMorgans laws and modify the function
 
-  f_nand <= not((c and b) and not(not(b) and a));
-  f_nor  <= (not(c) or not(b)) or not(b or not(a));
+  f_and <= not((c and b) and not(not(b) and a));
+  f_or  <= (not(c) or not(b)) or not(b or not(a));
 
 end architecture behavioral;

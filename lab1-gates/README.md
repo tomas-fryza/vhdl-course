@@ -194,7 +194,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
 De Morgan's laws are two fundamental rules in Boolean algebra that are used to simplify Boolean expressions. There are two versions of De Morgan's laws. De Morgan's law for AND: The complement of the product of two operands is equal to the sum of the complements of the operands. De Morgan's law for OR: The complement of the sum of two operands is equal to the product of the complements of the operands.
 
-1. Use De Morgan's laws and modify the original function to the form with NAND and NOR gates only.
+1. Use De Morgan's laws and modify the original function into a form with AND, OR, or NAND, NOR gates.
 
 <!--
    > **Help:** De Morgan's laws are defined as follows:
@@ -215,9 +215,9 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
    >
    > ```LaTeX
    > \begin{align*}
-   >    f_{\textup{ORIG}}(c,b,a) =&~ (\overline{c\cdot b}) + (\overline{b}\cdot a)\\
-   >    f_{\textup{(N)AND}}(c,b,a) =&\\
-   >    f_{\textup{(N)OR}}(c,b,a) =&\\
+   >    f_{\textup{ORG}}(c,b,a) =&~ (\overline{c\cdot b}) + (\overline{b}\cdot a)\\
+   >    f_{\textup{AND}}(c,b,a) =&\\
+   >    f_{\textup{OR}}(c,b,a) =&\\
    > \end{align*}
    > ```
 
@@ -226,9 +226,9 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
    * Port name: `a`, Direction: `in`
    * `b`, `in`
    * `c`, `in`
-   * `f_orig`, `out`
-   * `f_nand`, `out`
-   * `f_nor`, `out`
+   * `f_org`, `out`
+   * `f_and`, `out`
+   * `f_or`, `out`
 
    Get inspired by [Example of basic gates](https://www.edaplayground.com/x/5L92) from EDA Playground, complete the `architecture`, add new simulation source file `tb_demorgan.vhd`, and verify all three functions in Vivado simulator.
 

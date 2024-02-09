@@ -13,22 +13,22 @@ architecture testbench of tb_morgan is
 
   component morgan is
     port (
-      a      : in    std_logic;
-      b      : in    std_logic;
-      c      : in    std_logic;
-      f_orig : out   std_logic;
-      f_nand : out   std_logic;
-      f_nor  : out   std_logic
+      a     : in    std_logic;
+      b     : in    std_logic;
+      c     : in    std_logic;
+      f_org : out   std_logic;
+      f_and : out   std_logic;
+      f_or  : out   std_logic
     );
   end component;
 
   -- Testbench local signals
-  signal sig_c      : std_logic;
-  signal sig_b      : std_logic;
-  signal sig_a      : std_logic;
-  signal sig_f_orig : std_logic;
-  signal sig_f_nand : std_logic;
-  signal sig_f_nor  : std_logic;
+  signal sig_c     : std_logic;
+  signal sig_b     : std_logic;
+  signal sig_a     : std_logic;
+  signal sig_f_org : std_logic;
+  signal sig_f_and : std_logic;
+  signal sig_f_or  : std_logic;
 
 begin
 
@@ -36,12 +36,12 @@ begin
   -- component (Design Under Test)
   dut : component morgan
     port map (
-      c      => sig_c,
-      b      => sig_b,
-      a      => sig_a,
-      f_orig => sig_f_orig,
-      f_nand => sig_f_nand,
-      f_nor  => sig_f_nor
+      c     => sig_c,
+      b     => sig_b,
+      a     => sig_a,
+      f_org => sig_f_org,
+      f_and => sig_f_and,
+      f_or  => sig_f_or
     );
 
   ------------------------------------------------
