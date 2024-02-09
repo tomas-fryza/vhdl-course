@@ -232,6 +232,8 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
    Get inspired by [Example of basic gates](https://www.edaplayground.com/x/5L92) from EDA Playground, complete the `architecture`, add new simulation source file `tb_demorgan.vhd`, and verify all three functions in Vivado simulator.
 
+3. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
+
 <a name="experiments"></a>
 
 ## Experiments on your own

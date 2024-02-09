@@ -37,7 +37,6 @@ begin
   f_org <= not(c and b) or (not(b) and a);
 
   -- Use DeMorgans laws and modify the function
-
   f_and <= not((c and b) and not(not(b) and a));
   f_or  <= (not(c) or not(b)) or not(b or not(a));
 
