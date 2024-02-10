@@ -78,7 +78,7 @@ The K-map for the "equals" function is as follows:
    * Project type: **RTL Project**
    * Create a new VHDL source file: `compare_2bit`
    * Do not add any constraints now
-   * Choose a default board: `Nexys A7-50T` (will be used later in the lab)
+   * Choose a default board: `Nexys A7-50T`
    * Click **Finish** to create the project
    * Define I/O ports of new module:
       * Port name: `a`, Direction: `in`, Bus: `check`, MSB: `1`, LSB: `0`
