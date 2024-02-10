@@ -83,7 +83,7 @@ The K-map for the "equals" function is as follows:
    8. Define I/O ports of new module:
       * Port name: `a`, Direction: `in`, Bus: `check`, MSB: `1`, LSB: `0`
       * `b`, `in`, Bus: `check`, MSB: `1`, LSB: `0`
-      * `b_greater_`, `out`
+      * `b_greater`, `out`
       * `b_a_equal`, `out`
       * `a_greater`, `out`
 
