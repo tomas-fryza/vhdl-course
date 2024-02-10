@@ -50,14 +50,14 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
 1. Run Vivado and create a new project:
 
-   * Project name: `BasicGates`
-   * Project location: your working folder, such as `Documents`
-   * Project type: **RTL Project**
-   * Create a new VHDL source file: `gates`
-   * Do not add any constraints now
-   * Choose a default board: `Nexys A7-50T` (will be used later in the lab)
-   * Click **Finish** to create the project
-   * Define I/O ports of new module `gates`:
+   1. Project name: `BasicGates`
+   2. Project location: your working folder, such as `Documents`
+   3. Project type: **RTL Project**
+   4. Create a new VHDL source file: `gates`
+   5. Do not add any constraints now
+   6. Choose a default board: `Nexys A7-50T` (will be used later in the lab)
+   7. Click **Finish** to create the project
+   8. Define I/O ports of new module `gates`:
       * Port name: `A`, Direction: `in`
       * `B`, `in`
       * `AND_Out`, `out`
@@ -274,18 +274,14 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
 ## References
 
-1. Tomas Fryza. [Example of basic OR, AND, XOR gates](https://www.edaplayground.com/x/5L92)
+1. Real Digital. [Creating Your First Project in Vivado](https://www.realdigital.org/doc/4ddc6ee53d1a2d71b25eaccc29cdec4b)
 
-2. CodeCogs. [Online LaTeX Equation Editor](https://www.codecogs.com/latex/eqneditor.php)
+2. Tomas Fryza. [Example of basic OR, AND, XOR gates](https://www.edaplayground.com/x/5L92)
 
-3. CircuitVerse. [Online Digital Logic Circuit Simulator](https://circuitverse.org/)
+3. CodeCogs. [Online LaTeX Equation Editor](https://www.codecogs.com/latex/eqneditor.php)
 
-4. Bowler Hat LLC. [Logicly - A logic circuit simulator for Windows and macOS](https://logic.ly/)
+4. CircuitVerse. [Online Digital Logic Circuit Simulator](https://circuitverse.org/)
 
-5. CircuitLab, Inc. [Online circuit simulation & schematic editor](https://www.circuitlab.com/)
+5. [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/testbench/)
 
-6. Bastian Born. [simulatorIO - Build and simulate logic circuits](https://simulator.io/)
-
-7. Lode Vandevenne. [LogicEmu: Online Logic Simulator](https://lodev.org/logicemu/)
-
-8. [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/testbench/)
+6. Xilinx University Program. [Vivado FPGA Design Flow on Zynq](https://github.com/xupgit/FPGA-Design-Flow-using-Vivado)
