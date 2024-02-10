@@ -91,8 +91,8 @@ The K-map for the "equals" function is as follows:
    >
    > | **Port name** | **Direction** | **Type** | **Description** |
    > | :-: | :-: | :-- | :-- |
-   > | `b`       | input  | [`std_logic_vector(1 downto 0)`](https://github.com/tomas-fryza/vhdl-course/wiki/Data-types) | Input data b[1:0] |
-   > | `a`       | input  | `std_logic_vector(1 downto 0)` | Input data a[1:0] |
+   > | `b`       | input  | [`std_logic_vector(1 downto 0)`](https://github.com/tomas-fryza/vhdl-course/wiki/Data-types) | Input bus b[1:0] |
+   > | `a`       | input  | `std_logic_vector(1 downto 0)` | Input bus a[1:0] |
    > | `b_greater` | output | `std_logic` | Output is `1` if b > a |
    > | `b_a_equal` | output | `std_logic` | Output is `1` if b = a |
    > | `a_greater` | output | `std_logic` | Output is `1` if b < a |
@@ -137,7 +137,7 @@ The K-map for the "equals" function is as follows:
 
 ## Part 3: Assertion statements in VHDL testbench
 
-You can write any information to the console using the report statement. The basic syntax in VHDL is:
+You can write any information to the console using the **report statement**. The basic syntax in VHDL is:
 
    ```vhdl
    report <message_string> [severity <severity_level>];
@@ -150,7 +150,7 @@ where possible values for `severity_level` are: `note`, `warning`, `error`, `fai
    report "Stimulus process started";
    ```
 
-An assertion statement checks that a specified condition is true and reports an error if it is not. It is combined with a report statement as follows:
+An **assertion statement** checks that a specified condition is true and reports an error if it is not. It can be combined with a report statement as follows:
 
    ```vhdl
    assert (<condition>)
@@ -170,14 +170,14 @@ The message is displayed to the console when the condition is NOT met, therefore
      report "Stimulus process started";
 
      -- First test case ...
-     sig_b <= "00";
-     sig_a <= "00";
+     b <= "00";
+     a <= "00";
      wait for 100 ns;
      -- ... and its expected outputs
      assert (
-         (sig_b_greater = '0') and
-         (sig_b_a_equal = '1') and
-         (sig_a_greater = '0')
+         (b_greater = '0') and
+         (b_a_equal = '1') and
+         (a_greater = '0')
        )
        -- If false, then report an error
        -- If true, then do not report anything
@@ -194,25 +194,29 @@ The message is displayed to the console when the condition is NOT met, therefore
    end process p_stimulus;
    ```
 
-1. In VHDL, write a testbench and verify the correct functionality of the comparator for all input combinations.
+1. In VHDL, write a testbench and verify the correct functionality of the comparator for all/selected input combinations.
 
 <a name="part4"></a>
 
 ## Part 4: Implementing to FPGA
 
-1. The Nexys A7 board have hardwired connections between FPGA chip and the switches and LEDs. To use these devices it is necessary to include in your project the correct pin assignments.
+The Nexys A7 board provides sixteen switches and LEDs. The switches can be used to provide inputs, and the LEDs can be used as output devices.
+
+1. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of slide switches and LEDs, ie to which FPGA pins are connected and how.
+
+2. The Nexys A7 board have hardwired connections between FPGA chip and the switches and LEDs. To use these devices it is necessary to include in your project the correct pin assignments:
 
    * Create a new constraints source `nexys-a7-50t` (XDC file)
    * Copy/paste default constraints from [Nexys-A7-50T-Master.xdc](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) to `nexys-a7-50t.xdc` file.
    * The pin assignments in the file are useful only if the pin names that appear in this file are exactly the same as the port names used in your VHDL entity. Uncomment any 2 switches for inputs `a[0]`, `a[1]`, other 2 switches for `b[0]`, `b[1]`, and 3 LEDs for logic functions `b_greater`, `b_a_equal`, and `a_greater`.
 
-2. Implement your design to Nexys A7 board:
+3. Implement your design to Nexys A7 board:
 
-   * Use **Flow > Generate Bitstream** (the process is time consuming and can take tens of seconds)
-   * Select **Open Hardware Manager**
-   * Click on **Open Target > Auto Connect** (make sure Nexys A7 board is connected and switched on)
-   * Click on **Program device** and select generated bitstream `YOUR-PROJECT-FOLDER/comparator.runs/impl_1/comparator.bit`
-   * Test the functionality by toggling the switches and observing LEDs
+   1. Use **Flow > Generate Bitstream** (the process is time consuming and can take tens of seconds)
+   2. Select **Open Hardware Manager**
+   3. Click on **Open Target > Auto Connect** (make sure Nexys A7 board is connected and switched on)
+   4. Click on **Program device** and select generated bitstream `YOUR-PROJECT-FOLDER/comparator.runs/impl_1/comparator.bit`
+   5. Test the functionality by toggling the switches and observing LEDs
 
 <a name="experiments"></a>
 
