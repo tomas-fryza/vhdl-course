@@ -6,7 +6,6 @@
 * [Part 3: Assertion statements in VHDL testbench](#part3)
 * [Part 4: Implementing to FPGA](#part4)
 * [Experiments on your own](#experiments)
-* [Post-Lab report](#report)
 * [References](#references)
 
 ### Learning objectives
