@@ -3,7 +3,8 @@
 * [Pre-Lab preparation](#preparation)
 * [Part 1: Logic function minimization](#part1)
 * [Part 2: Binary comparator in VHDL language](#part2)
-* [Part 4: Assertion statements in VHDL testbench](#part4)
+* [Part 3: Assertion statements in VHDL testbench](#part3)
+* [Part 4: Implementing to FPGA](#part4)
 * [Experiments on your own](#experiments)
 * [Post-Lab report](#report)
 * [References](#references)
@@ -133,12 +134,6 @@ The K-map for the "equals" function is as follows:
    end process;
    ```
 
-
-
-
-
-
-
 <a name="part3"></a>
 
 ## Part 3: Assertion statements in VHDL testbench
@@ -202,29 +197,29 @@ The message is displayed to the console when the condition is NOT met, therefore
 
 1. In VHDL, write a testbench and verify the correct functionality of the comparator for all input combinations.
 
+<a name="part4"></a>
 
+## Part 4: Implementing to FPGA
 
+1. The Nexys A7 board have hardwired connections between FPGA chip and the switches and LEDs. To use these devices it is necessary to include in your project the correct pin assignments.
 
+   * Create a new constraints source `nexys-a7-50t` (XDC file)
+   * Copy/paste default constraints from [Nexys-A7-50T-Master.xdc](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) to `nexys-a7-50t.xdc` file.
+   * The pin assignments in the file are useful only if the pin names that appear in this file are exactly the same as the port names used in your VHDL entity. Uncomment any 2 switches for inputs `a[0]`, `a[1]`, other 2 switches for `b[0]`, `b[1]`, and 3 LEDs for logic functions `b_greater`, `b_a_equal`, and `a_greater`.
 
-TBD: Implementation ???
+2. Implement your design to Nexys A7 board:
 
-
+   * Use **Flow > Generate Bitstream** (the process is time consuming and can take tens of seconds)
+   * Select **Open Hardware Manager**
+   * Click on **Open Target > Auto Connect** (make sure Nexys A7 board is connected and switched on)
+   * Click on **Program device** and select generated bitstream `YOUR-PROJECT-FOLDER/comparator.runs/impl_1/comparator.bit`
+   * Test the functionality by toggling the switches and observing LEDs
 
 <a name="experiments"></a>
 
 ## Experiments on your own
 
-1. Define entity and architecture for a 4-bit binary comparator (`compare_4bit`).
-
-   | **Port name** | **Direction** | **Type** | **Description** |
-   | :-: | :-: | :-- | :-- |
-   | `b`       | input  | `std_logic_vector(3 downto 0)` | Input bus b[3:0] |
-   | `a`       | input  | `std_logic_vector(3 downto 0)` | Input bus a[3:0] |
-   | `b_greater` | output | `std_logic` | Output is `1` if b > a |
-   | `b_a_equal` | output | `std_logic` | Output is `1` if b = a |
-   | `a_greater` | output | `std_logic` | Output is `1` if b < a |
-
-2. In VHDL, define a testbench for a 4-bit binary comparator and verify several input combinations using the `assert` commands.
+1. Extend your design to 4-bit comparator.
 
 <a name="references"></a>
 

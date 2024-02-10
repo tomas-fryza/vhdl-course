@@ -25,12 +25,14 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 
 * [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux) (several MBs)
 
-* [EDA Playground](https://edaplayground.com/) (online tool, 0 Bytes)
+* [EDA Playground](https://edaplayground.com/) (online simulator, 0 Bytes)
+
+* [ModelSim](https://www.intel.com/content/www/us/en/software-kit/750666/modelsim-intel-fpgas-standard-edition-software-version-20-1-1.html) (several GBs)
 
 ## Exercises
 
 1. [Introduction to VHDL and basic gates](lab1-gates)
-2. Combinational logic circuits
+2. [Combinational logic circuits](lab2-logic)
 3. Seven-segment display decoder
 4. Arithmetic circuits
 5. Latches and Flip-flops
@@ -83,18 +85,20 @@ The following hardware and software components are mainly used in the lab.
 
 4. [How to install Vivado on Windows and Linux](https://github.com/tomas-fryza/vhdl-course/wiki/List-of-versions)
 
-5. [ES 4 VHDL reference sheet](docs/vhdl_cheatsheet.pdf)
+5. [ModelSim Installation on Ubuntu](https://gist.github.com/Razer6/cafc172b5cffae189b4ecda06cf6c64f)
 
-6. Jeremiah C. Leary. [Welcome to vhdl-style-guide's documentation!](https://vhdl-style-guide.readthedocs.io/en/latest/)
+6. [ES 4 VHDL reference sheet](docs/vhdl_cheatsheet.pdf)
 
-7. ASHENDEN, Peter J. *The designer's guide to VHDL.* 3rd ed. Boston: Morgan Kaufmann Publishers, c2008. ISBN 978-0-12-088785-9.
+7. Jeremiah C. Leary. [Welcome to vhdl-style-guide's documentation!](https://vhdl-style-guide.readthedocs.io/en/latest/)
 
-8. CHU, Pong P. *FPGA prototyping by VHDL examples.* Hoboken, N.J.: Wiley-Interscience, c2008. ISBN 978-0-470-18531-5.
+8. ASHENDEN, Peter J. *The designer's guide to VHDL.* 3rd ed. Boston: Morgan Kaufmann Publishers, c2008. ISBN 978-0-12-088785-9.
 
-9. MANO, M. Morris. Digital Design: With an Introduction to the Verilog, HDL, VHDL, and System Verilog. Pearson, 6th edition, 2018. ISBN-13: 978-1292231167.
+9. CHU, Pong P. *FPGA prototyping by VHDL examples.* Hoboken, N.J.: Wiley-Interscience, c2008. ISBN 978-0-470-18531-5.
 
-10. KALLSTROM, P. [A Fairly Small VHDL Guide](docs/VHDL_guide.pdf). Version 2.1.
+10. MANO, M. Morris. Digital Design: With an Introduction to the Verilog, HDL, VHDL, and System Verilog. Pearson, 6th edition, 2018. ISBN-13: 978-1292231167.
 
-11. [GitHub GIT CHEAT SHEET](docs/git_cheatsheet.pdf)
+11. KALLSTROM, P. [A Fairly Small VHDL Guide](docs/VHDL_guide.pdf). Version 2.1.
 
-12. [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/testbench/)
+12. [GitHub GIT CHEAT SHEET](docs/git_cheatsheet.pdf)
+
+13. [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/testbench/)
