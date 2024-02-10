@@ -73,14 +73,14 @@ The K-map for the "equals" function is as follows:
 
 1. Run Vivado and create a new project:
 
-   * Project name: `comparator`
-   * Project location: your working folder, such as `Documents`
-   * Project type: **RTL Project**
-   * Create a new VHDL source file: `compare_2bit`
-   * Do not add any constraints now
-   * Choose a default board: `Nexys A7-50T`
-   * Click **Finish** to create the project
-   * Define I/O ports of new module:
+   1. Project name: `comparator`
+   2. Project location: your working folder, such as `Documents`
+   3. Project type: **RTL Project**
+   4. Create a new VHDL source file: `compare_2bit`
+   5. Do not add any constraints now
+   6. Choose a default board: `Nexys A7-50T`
+   7. Click **Finish** to create the project
+   8. Define I/O ports of new module:
       * Port name: `a`, Direction: `in`, Bus: `check`, MSB: `1`, LSB: `0`
       * `b`, `in`, Bus: `check`, MSB: `1`, LSB: `0`
       * `b_greater_`, `out`
