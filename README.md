@@ -102,3 +102,5 @@ The following hardware and software components are mainly used in the lab.
 12. [GitHub GIT CHEAT SHEET](docs/git_cheatsheet.pdf)
 
 13. [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/testbench/)
+
+14. [VHDL Style Guide. Rules](https://vhdl-style-guide.readthedocs.io/en/latest/rules.html)
