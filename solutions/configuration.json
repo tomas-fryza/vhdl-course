@@ -1,10 +1,25 @@
 {
   "rule" : {
+    "global": {
+      "case": "upper_or_lower"
+    },
     "instantiation_034": {
-      "method": "entity"
+      "method": "component"
     },
     "process_029": {
       "clock": "edge"
+    },
+    "architecture_015": {
+      "style": "no_blank_line"
+    },
+    "architecture_016": {
+      "style": "no_blank_line"
+    },
+    "case_200": {
+      "style": "no_blank_line"
+    },
+    "component_003": {
+      "style": "no_blank_line"
     }
   }
 }
