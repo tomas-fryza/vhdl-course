@@ -11,7 +11,6 @@ end entity tb_bin2seg;
 -------------------------------------------------
 
 architecture testbench of tb_bin2seg is
-
   component bin2seg is
     port (
       clear : in    std_logic;
@@ -24,7 +23,6 @@ architecture testbench of tb_bin2seg is
   signal sig_clear : std_logic;
   signal sig_bin   : std_logic_vector(3 downto 0);
   signal sig_seg   : std_logic_vector(6 downto 0);
-
 begin
 
   dut : component bin2seg

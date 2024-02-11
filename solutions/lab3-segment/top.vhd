@@ -1,55 +1,70 @@
-----------------------------------------------------------
---
---! @title Top level of one-digit 7-segment display decoder
---! @author Tomas Fryza
---! Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
+-------------------------------------------------
+--! @brief Top level of 7-segment display decoder
+--! @version 1.2
+--! @copyright (c) 2020 Tomas Fryza, MIT license
 --!
---! @copyright (c) 2020 Tomas Fryza
---! This work is licensed under the terms of the MIT license
---
--- Hardware: Nexys A7-50T, xc7a50ticsg324-1L
--- Software: TerosHDL, Vivado 2020.2, EDA Playground
---
-----------------------------------------------------------
+--! This VHDL file implements the top-level module
+--! for a binary-to-seven-segment decoder, controlling
+--! two displays. The entity 'top' defines the inputs
+--! for binary values (SW1 and SW0), buttons (BTNC and
+--! BTND), and outputs for display cathodes (CA to CG)
+--! and common anodes (AN). The module instantiates the
+--! 'bin2seg' component to decode binary inputs into
+--! seven-segment display signals. The selected display
+--! position is controlled by BTND button, and the input
+--! binary values are displayed on LEDs (LED1 and LED0).
+--!
+--! Developed using TerosHDL, Vivado 2020.2, and
+--! EDA Playground. Tested on the Nexys A7-50T
+--! board featuring the xc7a50ticsg324-1L FPGA.
+-------------------------------------------------
 
 library ieee;
   use ieee.std_logic_1164.all;
 
-----------------------------------------------------------
--- Entity declaration for top level
-----------------------------------------------------------
+-------------------------------------------------
 
 entity top is
   port (
-    SW   : in    std_logic_vector(3 downto 0);
-    LED  : out   std_logic_vector(7 downto 0);
-    CA   : out   std_logic;
-    CB   : out   std_logic;
-    CC   : out   std_logic;
-    CD   : out   std_logic;
-    CE   : out   std_logic;
-    CF   : out   std_logic;
-    CG   : out   std_logic;
-    AN   : out   std_logic_vector(7 downto 0);
-    BTNC : in    std_logic
+    SW1  : in    std_logic_vector(3 downto 0); --! Binary value for left display
+    LED1 : out   std_logic_vector(3 downto 0); --! To display input binary value
+    SW0  : in    std_logic_vector(3 downto 0); --! Binary value for right display
+    LED0 : out   std_logic_vector(3 downto 0); --! To display input binary value
+    CA   : out   std_logic;                    --! Cathode of segment A
+    CB   : out   std_logic;                    --! Cathode of segment B
+    CC   : out   std_logic;                    --! Cathode of segment C
+    CD   : out   std_logic;                    --! Cathode of segment D
+    CE   : out   std_logic;                    --! Cathode of segment E
+    CF   : out   std_logic;                    --! Cathode of segment F
+    CG   : out   std_logic;                    --! Cathode of segment G
+    AN   : out   std_logic_vector(7 downto 0); --! Common anodes of all on-board displays
+    BTNC : in    std_logic;                    --! Clear the display
+    BTND : in    std_logic                     --! Switch between displays
   );
 end entity top;
 
-----------------------------------------------------------
--- Architecture body for top level
-----------------------------------------------------------
+-------------------------------------------------
 
 architecture behavioral of top is
+  component bin2seg is
+    port (
+      clear : in    std_logic;
+      bin   : in    std_logic_vector(3 downto 0);
+      seg   : out   std_logic_vector(6 downto 0)
+    );
+  end component;
 
+  --! Local signal for 7-segment decoder
+  signal s_tmp : std_logic_vector(3 downto 0);
 begin
 
-  --------------------------------------------------------
-  -- Instance (copy) of hex_7seg entity
-  --------------------------------------------------------
-  hex2seg : entity work.hex_7seg
+  --! Instantiate (make a copy of) `bin2seg`
+  --! component to decode binary input into
+  --! seven-segment display signals.
+  display : component bin2seg
     port map (
-      blank  => BTNC,
-      hex    => SW,
+      clear  => BTNC,
+      bin    => s_tmp,
       seg(6) => CA,
       seg(5) => CB,
       seg(4) => CC,
@@ -59,33 +74,17 @@ begin
       seg(0) => CG
     );
 
-  --------------------------------------------------------
-  -- Other settings
-  --------------------------------------------------------
-  -- Connect one common anode to 3.3V
-  AN <= b"1111_0111";
+  -----------------------------------------------
+  -- Connect local signal to input switches
+  s_tmp <= SW1 when (BTND = '1') else
+           SW0;
 
-  -- Display input value on LEDs
-  LED(3 downto 0) <= SW;
+  -- Select one display position
+  AN <= b"1111_0111" when (BTND = '1') else
+        b"1111_1011";
 
-  --------------------------------------------------------
-  -- Experiments on your own: LED(7:4) indicators
-  --------------------------------------------------------
-
-  -- Turn LED(4) on if input value is equal to 0,
-  -- ie "0000"
-  LED(4) <= '0'; -- WRITE YOUR CODE HERE
-
-  -- Turn LED(5) on if input value is greater than "1001",
-  -- ie 10, 11, 12, ...
-  LED(5) <= '0'; -- WRITE YOUR CODE HERE
-
-  -- Turn LED(6) on if input value is odd,
-  -- ie 1, 3, 5, 7, ...
-  LED(6) <= '0'; -- WRITE YOUR CODE HERE
-
-  -- Turn LED(7) on if input value is a power of two,
-  -- ie 1, 2, 4, or 8
-  LED(7) <= '0'; -- WRITE YOUR CODE HERE
+  -- Display input value(s) on LEDs
+  LED1 <= SW1;
+  LED0 <= SW0;
 
 end architecture behavioral;
