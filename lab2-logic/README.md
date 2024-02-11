@@ -5,7 +5,7 @@
 * [Part 2: Binary comparator in VHDL language](#part2)
 * [Part 3: Assertion statements in VHDL testbench](#part3)
 * [Part 4: Implementing to FPGA](#part4)
-* [Experiments on your own](#experiments)
+* [Challenges](#challenges)
 * [References](#references)
 
 ### Learning objectives
@@ -97,7 +97,7 @@ The K-map for the "equals" function is as follows:
    > | `b_a_equal` | output | `std_logic` | Output is `1` if b = a |
    > | `a_greater` | output | `std_logic` | Output is `1` if b < a |
 
-2. In VHDL, define an [architecture](https://github.com/tomas-fryza/vhdl-course/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as in the previous laboratory exercise. However, it is more efficient to use a higher notation with [conditional signal assignments](https://github.com/tomas-fryza/vhdl-course/wiki/Signal-assignments).
+2. In VHDL, define an [architecture](https://github.com/tomas-fryza/vhdl-course/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as assignment statements using SoP or PoS logic. However, it is more efficient to use a higher notation with [conditional signal assignments](https://github.com/tomas-fryza/vhdl-course/wiki/Signal-assignments).
 
    ```vhdl
    architecture behavioral of compare_2bit is
@@ -115,7 +115,7 @@ The K-map for the "equals" function is as follows:
    end architecture behavioral;
    ```
 
-   Write one function in signal-assignments style and one function in simplified SoP or PoS form with low-level operators.
+   One function is provided, but you must complete the other two: write one as a VHDL assignment statement using SoP or Pos logic, and the second as a conditional signal assignment.
 
 3. Use **File** > **Add Sources... Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_compare_2bit` (same filename as tested entity with prefix `tb_`). Generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) or copy/paste it from the [EDA Playground template](https://www.edaplayground.com/x/5uu3). Complete the stimuli process by several test cases.
 
@@ -154,42 +154,41 @@ An **assertion statement** checks that a specified condition is true and reports
 
    ```vhdl
    assert (<condition>)
-   report <message_string> [severity <severity_level>];
+     report <message_string> [severity <severity_level>];
    ```
 
 The message is displayed to the console when the condition is NOT met, therefore the message should be an opposite to the condition.
 
    ```vhdl
-   --------------------------------------------------------
-   -- Data generation process
-   --------------------------------------------------------
+   -------------------------------------------------
    p_stimulus : process is
    begin
 
      -- Report a note at the beginning of stimulus process
      report "Stimulus process started";
 
-     -- First test case ...
+     -- Test case is followed by the expected output
+     -- value(s). If assert condition is false, then
+     -- an error is reported to the console.
      b <= "00";
      a <= "00";
      wait for 100 ns;
-     -- ... and its expected outputs
      assert (
          (b_greater = '0') and
          (b_a_equal = '1') and
          (a_greater = '0')
        )
-       -- If false, then report an error
-       -- If true, then do not report anything
        report "Input combination b=0, a=0 FAILED"
        severity error;
 
-       -- WRITE OTHER TEST CASES AND ASSERTS HERE
+
+     -- WRITE OTHER TEST CASES AND ASSERTS HERE
 
 
-     -- Report a note at the end of stimulus process
      report "Stimulus process finished";
-     wait; -- Data generation process is suspended forever
+
+     -- Data generation process is suspended forever
+     wait;
 
    end process p_stimulus;
    ```
@@ -218,11 +217,13 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
    4. Click on **Program device** and select generated bitstream `YOUR-PROJECT-FOLDER/comparator.runs/impl_1/comparator.bit`
    5. Test the functionality by toggling the switches and observing LEDs
 
-<a name="experiments"></a>
+<a name="challenges"></a>
 
-## Experiments on your own
+## Challenges
 
-1. Extend your design to 4-bit comparator.
+1. Extend your design to 4-bit comparator. (Hint: Use conditional signal assignments `when/else`.)
+
+2. Use onboard RGB LED and eight switches. Turn the green LED on only when exactly two of the first four switches are set to `1` and turn the red LED on when exactly three of the next four switches are set to `0`.
 
 <a name="references"></a>
 

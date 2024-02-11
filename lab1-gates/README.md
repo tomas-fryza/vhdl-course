@@ -13,7 +13,7 @@
 * [Pre-Lab preparation](#preparation)
 * [Part 1: Vivado](#part1)
 * [Part 2: DeMorgans laws](#part2)
-* [Experiments on your own](#experiments)
+* [Challenges](#challenges)
 * [References](#references)
 
 ### Learning objectives
@@ -234,11 +234,11 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
 3. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
 
-<a name="experiments"></a>
+<a name="challenges"></a>
 
-## Experiments on your own
+## Challenges
 
-1. In Vivado, verify the Distributive laws:
+1. Choose one of the distributive laws and verify, using VHDL, that both sides of the equation represent the same logic function.
 
    First Distributive law:
 
@@ -261,14 +261,14 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 \end{align*}
 -->
 
-2. Apart from the professional Vivado tool that takes up a significant amount of local disk storage, there are other simulation tools available, such as TerosHDL and ghdl.
+2. You can also try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/) to simulate logic circuits.
 
-   TerosHDL is a high-performance VHDL simulator that is designed for FPGA and ASIC design. It is known for its speed and accuracy, and it is often used for large-scale designs. GHDL is a free and open-source VHDL simulator that is a popular choice for hobbyists and students. It is a good option for learning VHDL and for simulating small-scale designs.
+3. In addition to the professional Vivado tool, which requires significant local disk storage, other simulation tools are available, including TerosHDL and ghdl.
 
-   * [How to install TerosHDL on Windows and Linux](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
-   * [How to install ghdl on Windows and Linux](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+   TerosHDL is an open-source tool designed to streamline FPGA development by providing a unified workflow for simulation and synthesis using VHDL. GHDL is a free and open-source VHDL simulator that is a popular choice for hobbyists and students. It is a good option for learning VHDL and for simulating small-scale designs.
 
-3. You can also try several online graphics simulators, such as [CircuitVerse](https://circuitverse.org/), [Logicly](https://logic.ly/), [CircuitLab](https://www.circuitlab.com/), [simulatorIO](https://simulator.io/), [LogicEmu](https://lodev.org/logicemu/), and compare their options.
+   * Try to [install TerosHDL](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) on Windows or Linux
+   * Try to [install ghdl](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux) on Windows or Linux
 
 <a name="references"></a>
 
