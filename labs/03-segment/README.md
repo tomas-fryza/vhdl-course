@@ -1,4 +1,4 @@
-# Lab 4: Seven-segment display decoder
+# Lab 3: Seven-segment display decoder
 
 <!--
 ![Logo](../../logolink_eng.jpg)
@@ -7,6 +7,12 @@
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
 -->
+
+* [Pre-Lab preparation](#preparation)
+* [Part 1: VHDL code for seven-segment display decoder](#part1)
+* [Part 3: Top level VHDL code](#part3)
+* [Challenges](#challenges)
+* [References](#references)
 
 ### Learning objectives
 
@@ -18,23 +24,13 @@ After completing this lab you will be able to:
 
 The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
 
-### Table of contents
-
-* [Pre-Lab preparation](#preparation)
-* [Part 1: Synchronize Git and create a new folder](#part1)
-* [Part 2: VHDL code for seven-segment display decoder](#part2)
-* [Part 3: Top level VHDL code](#part3)
-* [Experiments on your own](#experiments)
-* [Post-Lab report](#report)
-* [References](#references)
-
 <a name="preparation"></a>
 
 ## Pre-Lab preparation
 
 The Nexys A7 board provides two four-digit common anode seven-segment LED displays (configured to behave like a single eight-digit display).
 
-1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how.
+1. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how.
 
 2. Complete the decoder truth table for **common anode** 7-segment display.
 
@@ -64,45 +60,36 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 <a name="part1"></a>
 
-## Part 1: Synchronize repositories and create a new folder
+## Part 1: VHDL code for seven-segment display decoder
 
-1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
+The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signal which can be displayed on 7-segment display. A display consist of 7 LED segments to display the decimal digits `0` to `9` and letters `A` to `F`.
 
-   > **Help:** Useful bash and git commands are `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
 
-   ```bash
-   ## Windows Git Bash or Linux:
-   $ git pull
-   ```
 
-2. Create a new working folder `04-segment` for this exercise.
 
-3. Use your favorite text editor, such as VS Code, Notepad++, etc. and create a new file `README.md` in your `04-segment/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/04-segment/report.md) to your `04-segment/README.md` file.
 
-<a name="part2"></a>
 
-## Part 2: VHDL code for seven-segment display decoder
-
-The Hex to 7-Segment Decoder converts 4-bit binary data to 7-bit control signal which can be displayed on 7-segment display. A display consist of 7 LED segments to display 0 to 9 and A to F.
 
 1. Perform the following steps to simulate the seven-segment display decoder in Vivado.
 
-   1. Create a new Vivado RTL project `display` in your `04-segment` working folder.
-   2. Create a VHDL source file `hex_7seg` for the decoder.
+   1. Create a new Vivado RTL project `display`.
+   2. Create a VHDL source file `bin2seg` for the decoder.
    3. Choose default board: `Nexys A7-50T`.
-   4. Use **Define Module** dialog and define I/O ports of entity `hex_7seg` as follows.
+   4. Use **Define Module** dialog and define I/O ports as follows.
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
       | `blank` | input | `std_logic` | Display is clear if blank = 1 |
-      | `hex` | input   | `std_logic_vector(3 downto 0)` | Binary representation of one hexadecimal symbol |
+      | `bin` | input   | `std_logic_vector(3 downto 0)` | Binary representation of one hexadecimal symbol |
       | `seg` | output  | `std_logic_vector(6 downto 0)` | Seven active-low segments in the order: a, b, ..., g |
 
+<!--
       ![Vivado Port definition](images/vivado_io_ports.png)
+-->
 
-   5. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu). Use [combinational process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `hex` or `blank` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/digital-electronics-1/wiki/Signal-assignments) can be used.
+   5. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu). Use [combinational process](https://github.com/tomas-fryza/vhdl-course/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `bin` or `blank` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/vhdl-course/wiki/Signal-assignments) can be used.
 
-   6. Create a VHDL simulation source `tb_hex_7seg`, copy/paste the [template](https://www.edaplayground.com/x/Vdpu), complete all test cases, and verify the functionality of your decoder.
+   6. Create a VHDL simulation source `tb_bin2seg`, copy/paste the [template](https://www.edaplayground.com/x/Vdpu), complete all test cases, and verify the functionality of your decoder.
 
    7. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
@@ -133,7 +120,7 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
       | `AN` | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
       | `BTNC` | in | `std_logic` | Blank (clear) display |
 
-   3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level.
+   3. Use [direct instantiation](https://github.com/tomas-fryza/vhdl-course/wiki/Direct-instantiation) and define an architecture of the top level.
 
 ```vhdl
 ------------------------------------------------------------
@@ -199,13 +186,9 @@ end architecture behavioral;
 
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
-2. When you finish, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes. To do that, use git commands to add, commit, and push all local changes to your remote repository. Check GitHub web page for changes.
+<a name="challenges"></a>
 
-   > **Help:** Useful git commands are `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
-
-<a name="experiments"></a>
-
-## Experiments on your own
+## Challenges
 
 1. Complete the truth table for LEDs according to comments in source code above.
 
@@ -229,14 +212,6 @@ end architecture behavioral;
    | F | 1111 |  |  |  |  |
 
 2. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not` and write logic functions for LED(7:4) indicators in the simplest way possible.
-
-<a name="report"></a>
-
-## Post-Lab report
-
-*Complete all parts of `04-segment/README.md` file (see Part 1.3) in Czech, Slovak, or English, push it to your GitHub repository, and submit a link to this file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next lab, i.e. in one week.*
-
-*Vypracujte všechny části ze souboru `04-segment/README.md` (viz Část 1.3) v českém, slovenském, nebo anglickém jazyce, uložte je na váš GitHub repozitář a odevzdejte link na tento soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením, tj. za jeden týden.*
 
 <a name="references"></a>
 
