@@ -21,7 +21,8 @@
 --! ]}
 --!
 --! Developed using TerosHDL, Vivado 2020.2, and
---! EDA Playground.
+--! EDA Playground. Tested on the Nexys A7-50T
+--! board featuring the xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 
 library ieee;

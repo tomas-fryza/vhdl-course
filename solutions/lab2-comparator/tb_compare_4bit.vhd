@@ -46,18 +46,17 @@ begin
     -- Report a note at the beginning of stimulus process
     report "Stimulus process started";
 
-    -- First test case ...
+    -- Test case is followed by the expected output
+    -- value(s). If assert condition is false, then
+    -- an error is reported to the console.
     sig_b <= "0000";
     sig_a <= "0000";
     wait for 100 ns;
-    -- ... and its expected outputs
     assert (
         (sig_b_greater = '0') and
         (sig_b_a_equal = '1') and
         (sig_a_greater = '0')
       )
-      -- If false, then report an error
-      -- If true, then do not report anything
       report "Input combination b=0, a=0 FAILED"
       severity error;
 
@@ -110,7 +109,6 @@ begin
       report "Input combination b=9, a=8 FAILED"
       severity error;
 
-    -- Report a note at the end of stimulus process
     report "Stimulus process finished";
 
     -- Data generation process is suspended forever
