@@ -25,6 +25,8 @@ The purpose of this laboratory exercise is to learn to use different ways of wri
 
 *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs.
 
+![Binary comparator](images/two-bit-comparator.jpg)
+
 1. Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, A is greater than B). Note that, such a digital device has four inputs and three outputs/functions.
 
    | **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B is greater than A** | **B equals A** | **A is greater than B** |
@@ -62,10 +64,6 @@ The K-map for the "equals" function is as follows:
    ![Empty Karnaugh map 4x4](images/kmap_empty.png)
 
 2. Use K-maps to create simplified SoP and PoS forms of both "greater than" functions.
-
-<!--
-   ![Binary comparator simplified functions](images/comparator_min.png)
--->
 
 <a name="part2"></a>
 
