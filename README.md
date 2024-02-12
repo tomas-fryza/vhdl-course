@@ -11,7 +11,7 @@
 * [Installation](#installation)
 * [Exercises](#exercises)
 * [List of VHDL examples](#list-of-vhdl-examples)
-* [Lab components](#lab-components)
+* [Components and tools](#components-and-tools)
 * [References](#references)
 
 The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/268610) at Brno University of Technology, Czechia. [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA board is used in the course.
@@ -53,7 +53,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 * [One-minute stopwatch](https://www.edaplayground.com/x/2uKg)
 * [Traffic light controller](https://www.edaplayground.com/x/5HBi)
 
-## Lab components
+## Components and tools
 
 The following hardware and software components are mainly used in the lab.
 
