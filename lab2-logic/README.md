@@ -223,11 +223,11 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 1. Extend your design to 4-bit comparator. (Hint: Use conditional signal assignments `when/else`.)
 
-2. Use onboard RGB LED and eight switches. Turn the green LED on only when exactly two of the first four switches are set to `1` and turn the red LED on when exactly three of the next four switches are set to `0`.
-
-3. Design a [*Prime number detector*](https://link.springer.com/chapter/10.1007/978-3-030-10552-5_1) that takes in values from 0 to 15.
+2. Design a [*Prime number detector*](https://link.springer.com/chapter/10.1007/978-3-030-10552-5_1) that takes in values from 0 to 15.
 
    ![prime detector](images/digital-design-flow_prime.png)
+
+3. Use onboard RGB LED and eight switches. Turn the green LED on only when exactly two of the first four switches are set to `1` and turn the red LED on when exactly three of the next four switches are set to `0`.
 
 
 <a name="references"></a>
