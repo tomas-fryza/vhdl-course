@@ -1,4 +1,4 @@
-# Lab 2: Combinational logic
+# Lab 2: Combinational logic circuits
 
 * [Pre-Lab preparation](#preparation)
 * [Part 1: Logic function minimization](#part1)
