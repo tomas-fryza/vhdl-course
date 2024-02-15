@@ -1,16 +1,8 @@
 # Lab 3: Seven-segment display decoder
 
-<!--
-![Logo](../../logolink_eng.jpg)
-<p align="center">
-  The Study of Modern and Developing Engineering BUT<br>
-  CZ.02.2.69/0.0/0.0/18_056/0013325
-</p>
--->
-
 * [Pre-Lab preparation](#preparation)
 * [Part 1: VHDL code for seven-segment display decoder](#part1)
-* [Part 3: Top level VHDL code](#part3)
+* [Part 2: Top level VHDL code](#part2)
 * [Challenges](#challenges)
 * [References](#references)
 
@@ -32,7 +24,7 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 1. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how.
 
-2. Complete the decoder truth table for **common anode** 7-segment display.
+2. Complete the decoder truth table for **common anode** (active low) 7-segment display.
 
    | **Symbol** | **Inputs** | **a** | **b** | **c** | **d** | **e** | **f** | **g** |
    | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -43,7 +35,7 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
    | 4 |      |   |   |   |   |   |   |   |
    | 5 |      |   |   |   |   |   |   |   |
    | 6 |      |   |   |   |   |   |   |   |
-   | 7 |      |   |   |   |   |   |   |   |
+   | 7 | 0111 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
    | 8 | 1000 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
    | 9 |      |   |   |   |   |   |   |   |
    | A |      |   |   |   |   |   |   |   |
@@ -56,46 +48,104 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
    > ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](images/7-Segment-Display-Number-Formation-Segment-Contol.png)
    >
    > The image above was used from website: [How Seven Segment Display Works & Interface it with Arduino](https://lastminuteengineers.com/seven-segment-arduino-tutorial/).
+
+   > Note that, there are other types of segment displays, [such as 14- or 16-segment](http://avtanski.net/projects/lcd/).
    >
+   > ![other disaplys](images/7-14-segment-display.jpg) &nbsp; &nbsp; &nbsp; &nbsp;
+   > ![other disaplys](images/16-segment-display.png)
 
 <a name="part1"></a>
 
 ## Part 1: VHDL code for seven-segment display decoder
 
-The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signal which can be displayed on 7-segment display. A display consist of 7 LED segments to display the decimal digits `0` to `9` and letters `A` to `F`.
+The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals which can be displayed on 7-segment display. A display consist of 7 LED segments to display the decimal digits `0` to `9` and letters `A` to `F`.
 
+1. Run Vivado and create a new project:
 
-
-
-
-
-
-1. Perform the following steps to simulate the seven-segment display decoder in Vivado.
-
-   1. Create a new Vivado RTL project `display`.
-   2. Create a VHDL source file `bin2seg` for the decoder.
-   3. Choose default board: `Nexys A7-50T`.
-   4. Use **Define Module** dialog and define I/O ports as follows.
+   1. Project name: `display`
+   2. Project location: your working folder, such as `Documents`
+   3. Project type: **RTL Project**
+   4. Create a new VHDL source file: `bin2seg`
+   5. Do not add any constraints now
+   6. Choose a default board: `Nexys A7-50T`
+   7. Click **Finish** to create the project
+   8. Define I/O ports of new module:
+      * `clear`, `in`
+      * `bin`, `in`, Bus: `check`, MSB: `3`, LSB: `0`
+      * `seg`, `out`, Bus: `check`, MSB: `6`, LSB: `0`
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
-      | `blank` | input | `std_logic` | Display is clear if blank = 1 |
+      | `clear` | input | `std_logic` | Clear the display |
       | `bin` | input   | `std_logic_vector(3 downto 0)` | Binary representation of one hexadecimal symbol |
-      | `seg` | output  | `std_logic_vector(6 downto 0)` | Seven active-low segments in the order: a, b, ..., g |
+      | `seg` | output  | `std_logic_vector(6 downto 0)` | Seven active-low segments from A to G |
 
-<!--
-      ![Vivado Port definition](images/vivado_io_ports.png)
--->
+2. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu).
 
-   5. Copy/paste the archtitecture [template](https://www.edaplayground.com/x/Vdpu). Use [combinational process](https://github.com/tomas-fryza/vhdl-course/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `bin` or `blank` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/vhdl-course/wiki/Signal-assignments) can be used.
+3. Use [combinational process](https://github.com/tomas-fryza/vhdl-course/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `bin` or `clear` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/vhdl-course/wiki/Signal-assignments) can be used.
 
-   6. Create a VHDL simulation source `tb_bin2seg`, copy/paste the [template](https://www.edaplayground.com/x/Vdpu), complete all test cases, and verify the functionality of your decoder.
+   ```vhdl
+   -- This combinational process decodes binary
+   -- input (`bin`) into 7-segment display output
+   -- (`seg`) for a Common Anode configuration.
+   -- When either `bin` or `clear` changes, the
+   -- process is triggered. Each bit in `seg`
+   -- represents a segment from A to G. The display
+   -- is cleared if input `clear` is set to 1.
+   p_7seg_decoder : process (bin, clear) is
+   begin
 
-   7. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
+     if (clear = '1') then
+       seg <= "1111111";     -- Clear the display
+     else
 
-<a name="part3"></a>
+       case bin is
+         when "0000" =>
+           seg <= "0000001"; -- 0
+         when "0001" =>
+           seg <= "1001111"; -- 1
 
-## Part 3: Top level VHDL code
+
+         -- WRITE YOUR CODE HERE
+         -- 2, 3, 4, 5, 6
+
+
+         when "0111" =>
+           seg <= "0001111"; -- 7
+         when "1000" =>
+           seg <= "0000000"; -- 8
+
+
+         -- WRITE YOUR CODE HERE
+         -- 9, A, b, C, d
+
+
+         when "1110" =>
+           seg <= "0110000"; -- E
+         when others =>
+           seg <= "0111000"; -- F
+       end case;
+
+     end if;
+   end process p_7seg_decoder;
+   ```
+
+4. Create a VHDL simulation source `tb_bin2seg`, copy/paste the [testbench template](https://www.edaplayground.com/x/Vdpu) or [generate it](https://vhdl.lapinoo.net/testbench/), complete all test cases, and verify the functionality of your decoder.
+
+5. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
+
+
+
+
+
+
+
+
+
+
+<a name="part2"></a>
+
+## Part 2: Top level VHDL code
 
 VHDL provides a mechanism how to build a larger system from simpler or predesigned components. It is called an instantiation. Each instantiation statement creates an instance (copy) of a design entity.
 
@@ -190,28 +240,7 @@ end architecture behavioral;
 
 ## Challenges
 
-1. Complete the truth table for LEDs according to comments in source code above.
-
-   | **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
-   | :-: | :-: | :-: | :-: | :-: | :-: |
-   | 0 | 0000 |  |  |  |  |
-   | 1 | 0001 |  |  |  |  |
-   | 2 |      |  |  |  |  |
-   | 3 |      |  |  |  |  |
-   | 4 |      |  |  |  |  |
-   | 5 |      |  |  |  |  |
-   | 6 |      |  |  |  |  |
-   | 7 |      |  |  |  |  |
-   | 8 | 1000 |  |  |  |  |
-   | 9 |      |  |  |  |  |
-   | A |      |  |  |  |  |
-   | b |      |  |  |  |  |
-   | C |      |  |  |  |  |
-   | d |      |  |  |  |  |
-   | E | 1110 |  |  |  |  |
-   | F | 1111 |  |  |  |  |
-
-2. Use VHDL construction `when`-`else` or low-level gates `and`, `or`, and `not` and write logic functions for LED(7:4) indicators in the simplest way possible.
+1. TBD: Two-digit 7-segment dispay controllled by a push button.
 
 <a name="references"></a>
 
