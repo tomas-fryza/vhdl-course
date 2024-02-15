@@ -205,7 +205,18 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
    1. Create a new constraints source `nexys-a7-50t` (XDC file).
    2. Copy/paste default constraints from [Nexys-A7-50T-Master.xdc](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) to `nexys-a7-50t.xdc` file.
-   3. The pin assignments in the file are useful only if the pin names that appear in this file are exactly the same as the port names used in your VHDL entity. Uncomment any 2 switches for inputs `a[0]`, `a[1]`, other 2 switches for `b[0]`, `b[1]`, and 3 LEDs for logic functions `b_greater`, `b_a_equal`, and `a_greater`.
+   3. The pin assignments in the file are useful only if the pin names that appear in this file are exactly the same as the port names used in your VHDL entity. Uncomment any 2 switches for inputs `a[0]`, `a[1]`, other 2 switches for `b[0]`, `b[1]`, and 3 LEDs for logic functions `b_greater`, `b_a_equal`, and `a_greater`. Part of XDC file can be as follows:
+
+      ```xdc
+      ## Switches
+      set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { a[0] }];  # Sch=sw[0]
+      set_property -dict { PACKAGE_PIN L16   IOSTANDARD LVCMOS33 } [get_ports { a[1] }];  # Sch=sw[1]
+      ...
+
+      ## LEDs
+      set_property -dict { PACKAGE_PIN H17   IOSTANDARD LVCMOS33 } [get_ports { a_greater }];  # Sch=led[0]
+      ...
+      ```
 
 3. Implement your design to Nexys A7 board:
 
@@ -215,7 +226,7 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
    4. Click on **Program device** and select generated bitstream `YOUR-PROJECT-FOLDER/comparator.runs/impl_1/comparator.bit`.
    5. Test the functionality by toggling the switches and observing LEDs.
 
-   ![design flow](images/FPGA-design-flow.png)
+      ![design flow](images/FPGA-design-flow.png)
 
 <a name="challenges"></a>
 
