@@ -151,7 +151,7 @@ where possible values for `severity_level` are: `note`, `warning`, `error`, `fai
 An **assertion statement** checks that a specified condition is true and reports an error if it is not. It can be combined with a report statement as follows:
 
    ```vhdl
-   assert (<condition>)
+   assert <condition>
      report <message_string> [severity <severity_level>];
    ```
 
@@ -171,11 +171,9 @@ The message is displayed to the console when the condition is NOT met, therefore
      b <= "00";
      a <= "00";
      wait for 100 ns;
-     assert (
-         (b_greater = '0') and
-         (b_a_equal = '1') and
-         (a_greater = '0')
-       )
+     assert (b_greater = '0') and
+            (b_a_equal = '1') and
+            (a_greater = '0')
        report "Input combination b=0, a=0 FAILED"
        severity error;
 

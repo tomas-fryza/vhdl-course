@@ -10,7 +10,6 @@ end entity tb_compare_2bit;
 -------------------------------------------------
 
 architecture testbench of tb_compare_2bit is
-
   component compare_2bit is
     port (
       b         : in    std_logic_vector(1 downto 0);
@@ -27,7 +26,6 @@ architecture testbench of tb_compare_2bit is
   signal sig_b_greater : std_logic;
   signal sig_b_a_equal : std_logic;
   signal sig_a_greater : std_logic;
-
 begin
 
   dut : component compare_2bit
@@ -52,11 +50,9 @@ begin
     sig_b <= "00";
     sig_a <= "00";
     wait for 100 ns;
-    assert (
-        (sig_b_greater = '0') and
-        (sig_b_a_equal = '1') and
-        (sig_a_greater = '0')
-      )
+    assert (sig_b_greater = '0') and
+           (sig_b_a_equal = '1') and
+           (sig_a_greater = '0')
       report "Input combination b=0, a=0 FAILED"
       severity error;
 
@@ -65,11 +61,9 @@ begin
     sig_b <= "01";
     sig_a <= "01";
     wait for 100 ns;
-    assert (
-        (sig_b_greater = '0') and
-        (sig_b_a_equal = '1') and
-        (sig_a_greater = '0')
-      )
+    assert (sig_b_greater = '0') and
+           (sig_b_a_equal = '1') and
+           (sig_a_greater = '0')
       report "Input combination b=1, a=1 FAILED"
       severity error;
 
@@ -77,11 +71,9 @@ begin
     sig_b <= "10";
     sig_a <= "11";
     wait for 100 ns;
-    assert (
-        (sig_b_greater = '0') and
-        (sig_b_a_equal = '0') and
-        (sig_a_greater = '1')
-      )
+    assert (sig_b_greater = '0') and
+           (sig_b_a_equal = '0') and
+           (sig_a_greater = '1')
       report "Input combination b=2, a=3 FAILED"
       severity error;
 
@@ -89,11 +81,9 @@ begin
     sig_b <= "01";
     sig_a <= "10";
     wait for 100 ns;
-    assert (
-        (sig_b_greater = '0') and
-        (sig_b_a_equal = '0') and
-        (sig_a_greater = '1')
-      )
+    assert (sig_b_greater = '0') and
+           (sig_b_a_equal = '0') and
+           (sig_a_greater = '1')
       report "Input combination b=1, a=2 FAILED"
       severity error;
 
@@ -101,11 +91,9 @@ begin
     sig_b <= "10";
     sig_a <= "01";
     wait for 100 ns;
-    assert (
-        (sig_b_greater = '1') and
-        (sig_b_a_equal = '0') and
-        (sig_a_greater = '0')
-      )
+    assert (sig_b_greater = '1') and
+           (sig_b_a_equal = '0') and
+           (sig_a_greater = '0')
       report "Input combination b=2, a=1 FAILED"
       severity error;
 
