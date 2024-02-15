@@ -10,7 +10,6 @@ end entity tb_morgan;
 --------------------------------------------------
 
 architecture testbench of tb_morgan is
-
   component morgan is
     port (
       a     : in    std_logic;
@@ -29,7 +28,6 @@ architecture testbench of tb_morgan is
   signal sig_f_org : std_logic;
   signal sig_f_and : std_logic;
   signal sig_f_or  : std_logic;
-
 begin
 
   -- Connecting local testbench signals to `morgan`
@@ -56,31 +54,38 @@ begin
     sig_b <= '0';
     sig_a <= '0';
     wait for 100 ns;
+
     -- ... and then continue with other test cases
     sig_c <= '0';
     sig_b <= '0';
     sig_a <= '1';
     wait for 100 ns;
+
     sig_c <= '0';
     sig_b <= '1';
     sig_a <= '0';
+
     wait for 100 ns;
     sig_c <= '0';
     sig_b <= '1';
     sig_a <= '1';
     wait for 100 ns;
+
     sig_c <= '1';
     sig_b <= '0';
     sig_a <= '0';
     wait for 100 ns;
+
     sig_c <= '1';
     sig_b <= '0';
     sig_a <= '1';
     wait for 100 ns;
+
     sig_c <= '1';
     sig_b <= '1';
     sig_a <= '0';
     wait for 100 ns;
+
     sig_c <= '1';
     sig_b <= '1';
     sig_a <= '1';

@@ -30,7 +30,6 @@ end entity morgan;
 -------------------------------------------------
 
 architecture behavioral of morgan is
-
 begin
 
   -- Original logic function

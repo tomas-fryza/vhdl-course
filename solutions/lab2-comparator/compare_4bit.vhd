@@ -43,13 +43,14 @@ end entity compare_4bit;
 -------------------------------------------------
 
 architecture behavioral of compare_4bit is
-
 begin
 
   b_greater <= '1' when (b > a) else
                '0';
+
   b_a_equal <= '1' when (b = a) else
                '0';
+
   a_greater <= '1' when (b < a) else
                '0';
 
