@@ -203,9 +203,9 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 2. The Nexys A7 board have hardwired connections between FPGA chip and the switches and LEDs. To use these devices it is necessary to include in your project the correct pin assignments:
 
-   * Create a new constraints source `nexys-a7-50t` (XDC file)
-   * Copy/paste default constraints from [Nexys-A7-50T-Master.xdc](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) to `nexys-a7-50t.xdc` file.
-   * The pin assignments in the file are useful only if the pin names that appear in this file are exactly the same as the port names used in your VHDL entity. Uncomment any 2 switches for inputs `a[0]`, `a[1]`, other 2 switches for `b[0]`, `b[1]`, and 3 LEDs for logic functions `b_greater`, `b_a_equal`, and `a_greater`.
+   1. Create a new constraints source `nexys-a7-50t` (XDC file).
+   2. Copy/paste default constraints from [Nexys-A7-50T-Master.xdc](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) to `nexys-a7-50t.xdc` file.
+   3. The pin assignments in the file are useful only if the pin names that appear in this file are exactly the same as the port names used in your VHDL entity. Uncomment any 2 switches for inputs `a[0]`, `a[1]`, other 2 switches for `b[0]`, `b[1]`, and 3 LEDs for logic functions `b_greater`, `b_a_equal`, and `a_greater`.
 
 3. Implement your design to Nexys A7 board:
 
