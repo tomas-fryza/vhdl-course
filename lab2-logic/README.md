@@ -209,11 +209,11 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 3. Implement your design to Nexys A7 board:
 
-   1. Use **Flow > Generate Bitstream** (the process is time consuming and can take tens of seconds)
-   2. Select **Open Hardware Manager**
-   3. Click on **Open Target > Auto Connect** (make sure Nexys A7 board is connected and switched on)
-   4. Click on **Program device** and select generated bitstream `YOUR-PROJECT-FOLDER/comparator.runs/impl_1/comparator.bit`
-   5. Test the functionality by toggling the switches and observing LEDs
+   1. Use **Flow > Generate Bitstream** (the process is time consuming and can take tens of seconds).
+   2. Select **Open Hardware Manager**.
+   3. Click on **Open Target > Auto Connect** (make sure Nexys A7 board is connected and switched on).
+   4. Click on **Program device** and select generated bitstream `YOUR-PROJECT-FOLDER/comparator.runs/impl_1/comparator.bit`.
+   5. Test the functionality by toggling the switches and observing LEDs.
 
    ![design flow](images/FPGA-design-flow.png)
 
