@@ -43,12 +43,12 @@ end entity compare_2bit;
 -------------------------------------------------
 
 architecture behavioral of compare_2bit is
-
 begin
 
   -- MODIFY LOGIC FUNCTION FOR "B GREATER"
-  b_greater <= '1' when (b > a) else
-               '0';
+  b_greater <= (b(1) and not(a(1))) or
+               (b(0) and not(a(1)) and not (a(0))) or
+               (b(1) and b(0) and not(a(0)));
 
   b_a_equal <= '1' when (b = a) else
                '0';
@@ -58,3 +58,15 @@ begin
                '0';
 
 end architecture behavioral;
+
+-- b_greater:      a1 a0
+--            00  01  11  10
+--           +---+---+---+---+
+--        00 |   |   |   |   |
+--           +---+---+---+---+
+--        01 | 1 |   |   |   |
+-- b1 b0     +---+---+---+---+
+--        11 | 1 | 1 |   | 1 |
+--           +---+---+---+---+
+--        10 | 1 | 1 |   |   |
+--           +---+---+---+---+
