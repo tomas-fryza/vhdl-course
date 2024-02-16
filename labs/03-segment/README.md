@@ -80,7 +80,19 @@ The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals
       | `bin` | input   | `std_logic_vector(3 downto 0)` | Binary representation of one hexadecimal symbol |
       | `seg` | output  | `std_logic_vector(6 downto 0)` | Seven active-low segments from A to G |
 
-2. Use [combinational process](https://github.com/tomas-fryza/vhdl-course/wiki/Processes) and complete an architecture of the decoder. Note that, the process `p_7seg_decoder` is "executed" only when `bin` or `clear` value is changed. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/vhdl-course/wiki/Signal-assignments) can be used.
+2. Use [combinational process](https://github.com/tomas-fryza/vhdl-course/wiki/Processes) and complete an architecture of the decoder.
+
+   The process statement is very similar to the classical programming language. The code inside the process statement is executed sequentially. The process statement is declared in the concurrent section of the architecture, so two different processes are executed concurrently.
+
+   ```vhdl
+   process_label : process(sensitivity_list)
+   -- declarative part (can be empty)
+   begin
+     -- sequential statement
+   end process process_label;
+   ```
+
+   In the process sensitivity list are declared all the signal which the process is sensitive to. In the following exampe, the process is evaluated any time a transaction is scheduled on the signal `bin` or `clear`. Inside a process, `case`-`when` [assignments](https://github.com/tomas-fryza/vhdl-course/wiki/Signal-assignments) can be used.
 
    ```vhdl
    -- This combinational process decodes binary
@@ -135,10 +147,10 @@ The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals
    clear <= '0';
 
    -- Test case 1: Input binary value 0000
-   bin <= "0000";
+   bin <= x"0";
    wait for 50 ns;
    assert seg = "0000001"
-     report "Error: 0000 does not map to 0000001"
+     report "0 does not map to 0000001"
      severity error;
    ```
 
@@ -154,9 +166,9 @@ The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals
    >
    >     -- Expected segment values
    >     case bin is
-   >       when "0000" =>
+   >       when x"0" =>
    >         assert sig_seg = "0000001"
-   >           report "0000 does not map to 0000001"
+   >           report "0 does not map to 0000001"
    >           severity error;
    >       ...
    >       when others =>
@@ -175,88 +187,99 @@ VHDL provides a mechanism how to build a larger structural system from simpler o
 
 VHDL-93 and later offers two methods of instantiation: **direct instantiation** and **component instantiation**. In direct instantiation, the entity itself is directly instantiated within the architecture of the parent entity. In component instantiation, the component needs to be defined within the parental architecture. In both, the ports are connected using the port map.
 
+```vhdl
+-- Component declaration
+component identifier [ is ]
+  [ local_generic_clause ]
+  [ local_port_clause ]
+end component [ identifier ];
 
+-- Component instantiation
+instance_name : component_name
+  port map (
+    port_name => expression,
+    port_name => expression
+  );
+ ```
 
-
-
-
-
-Let the top-level design `top.vhd` implements an instance of the module defined in `bin2seg.vhd`.
-
-1. Perform the following steps to implement the seven-segment display decoder on the Nexys A7 board.
+Let the top-level design `top.vhd` implements an instance of `bin2seg` component. Perform the following steps to implement the seven-segment display decoder on the Nexys A7 board.
 
    1. Create a new VHDL design source `top` in your project.
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
-      | `SW` | in  | `std_logic_vector(3 downto 0)` | Input binary data |
-      | `LED` | out | `std_logic_vector(7 downto 0)` | LED indicators |
-      | `CA` | out | `std_logic` | Cathod A |
-      | `CB` | out | `std_logic` | Cathod B |
-      | `CC` | out | `std_logic` | Cathod C |
-      | `CD` | out | `std_logic` | Cathod D |
-      | `CE` | out | `std_logic` | Cathod E |
-      | `CF` | out | `std_logic` | Cathod F |
-      | `CG` | out | `std_logic` | Cathod G |
-      | `AN` | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
-      | `BTNC` | in | `std_logic` | Blank (clear) display |
+      | `SW` | in  | `std_logic_vector(3 downto 0)` | Binary value for a display |
+      | `LED` | out | `std_logic_vector(3 downto 0)` | To display input binary value |
+      | `CA` | out | `std_logic` | Cathode of segment A |
+      | `CB` | out | `std_logic` | Cathode of segment B |
+      | `CC` | out | `std_logic` | Cathode of segment C |
+      | `CD` | out | `std_logic` | Cathode of segment D |
+      | `CE` | out | `std_logic` | Cathode of segment E |
+      | `CF` | out | `std_logic` | Cathode of segment F |
+      | `CG` | out | `std_logic` | Cathode of segment G |
+      | `AN` | out | `std_logic_vector(7 downto 0)` | Common anodes of all on-board displays |
+      | `BTNC` | in | `std_logic` | Clear the display |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/vhdl-course/wiki/Direct-instantiation) and define an architecture of the top level.
 
-```vhdl
-------------------------------------------------------------
--- Architecture body for top level
-------------------------------------------------------------
+      ```vhdl
+      architecture behavioral of top is
+        component bin2seg is
+          port (
+            clear : in    std_logic;
+            bin   : in    std_logic_vector(3 downto 0);
+            seg   : out   std_logic_vector(6 downto 0)
+          );
+        end component;
 
-architecture behavioral of top is
+        -- Local signal for 7-segment decoder
+        signal s_tmp : std_logic_vector(3 downto 0);
+      begin
 
-begin
+        -- Instantiate (make a copy of) `bin2seg`
+        -- component to decode binary input into
+        -- seven-segment display signals.
+        display : component bin2seg
+          port map (
+            clear  => BTNC,
+            bin    => s_tmp,
+            seg(6) => CA,
+            seg(5) => CB,
+            seg(4) => CC,
+            seg(3) => CD,
+            seg(2) => CE,
+            seg(1) => CF,
+            seg(0) => CG
+          );
 
-  ----------------------------------------------------------
-  -- Instance (copy) of hex_7seg entity
-  ----------------------------------------------------------
-  hex2seg : entity work.hex_7seg
-    port map (
-      blank  => BTNC,
-      hex    => SW,
-      seg(6) => CA,
-      seg(5) => CB,
-      seg(4) => CC,
-      seg(3) => CD,
-      seg(2) => CE,
-      seg(1) => CF,
-      seg(0) => CG
-    );
+        -----------------------------------------------
+        -- Connect local signal to input switches
+        s_tmp <= SW;
 
-  -- Connect one common anode to 3.3V
-  AN <= b"1111_0111";
+        -- Select one display position
+        AN <= b"1111_0111";
 
-  -- Display input value on LEDs
-  LED(3 downto 0) <= SW;
+        -- Display input value(s) on LEDs
+        LED <= SW;
 
-  ----------------------------------------------------------
-  -- Experiments on your own: LED(7:4) indicators
-  ----------------------------------------------------------
+      end architecture behavioral;
+      ```
 
-  -- Turn LED(4) on if input value is equal to 0,
-  -- ie "0000"
-  LED(4) <= '0'; -- WRITE YOUR CODE HERE
 
-  -- Turn LED(5) on if input value is greater than "1001",
-  -- ie 10, 11, 12, ...
-  LED(5) <= '0'; -- WRITE YOUR CODE HERE
 
-  -- Turn LED(6) on if input value is odd,
-  -- ie 1, 3, 5, 7, ...
-  LED(6) <= '0'; -- WRITE YOUR CODE HERE
 
-  -- Turn LED(7) on if input value is a power of two,
-  -- ie 1, 2, 4, or 8
-  LED(7) <= '0'; -- WRITE YOUR CODE HERE
 
-end architecture behavioral;
-```
+
+
+
+
+
+
+
+
+
+
 
    ![Top level](images/top_hex_7seg.png)
 
