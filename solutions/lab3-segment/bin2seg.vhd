@@ -46,64 +46,64 @@ begin
   begin
 
     if (clear = '1') then
-      seg <= "1111111";     -- Clear the display
+      seg <= "1111111";  -- Clear the display
     else
 
       case bin is
 
-        when "0000" =>
-          seg <= "0000001"; -- 0
+        when x"0" =>
+          seg <= "0000001";
 
-        when "0001" =>
-          seg <= "1001111"; -- 1
+        when x"1" =>
+          seg <= "1001111";
 
         -- WRITE YOUR CODE HERE
         -- 2, 3, 4, 5, 6
 
-        when "0010" =>
-          seg <= "0010010"; -- 2
+        when x"2" =>
+          seg <= "0010010";
 
-        when "0011" =>
-          seg <= "0000110"; -- 3
+        when x"3" =>
+          seg <= "0000110";
 
-        when "0100" =>
-          seg <= "1001100"; -- 4
+        when x"4" =>
+          seg <= "1001100";
 
-        when "0101" =>
-          seg <= "0100100"; -- 5
+        when x"5" =>
+          seg <= "0100100";
 
-        when "0110" =>
-          seg <= "0100000"; -- 6
+        when x"6" =>
+          seg <= "0100000";
 
-        when "0111" =>
-          seg <= "0001111"; -- 7
+        when x"7" =>
+          seg <= "0001111";
 
-        when "1000" =>
-          seg <= "0000000"; -- 8
+        when x"8" =>
+          seg <= "0000000";
 
         -- WRITE YOUR CODE HERE
         -- 9, A, b, C, d
 
-        when "1001" =>
-          seg <= "0000100"; -- 9
+        when x"9" =>
+          seg <= "0000100";
 
-        when "1010" =>
-          seg <= "0001000"; -- A (10)
+        when x"A" =>
+          seg <= "0001000";
 
-        when "1011" =>
-          seg <= "1100000"; -- b (11)
+        when x"b" =>
+          seg <= "1100000";
 
-        when "1100" =>
-          seg <= "0110001"; -- C (12)
+        when x"C" =>
+          seg <= "0110001";
 
-        when "1101" =>
-          seg <= "1000010"; -- d (13)
+        when x"d" =>
+          seg <= "1000010";
 
-        when "1110" =>
-          seg <= "0110000"; -- E
+        when x"E" =>
+          seg <= "0110000";
 
         when others =>
-          seg <= "0111000"; -- F
+          seg <= "0111000";
 
       end case;
 

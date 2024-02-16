@@ -62,54 +62,54 @@ begin
       -- Expected segment values
       case sig_bin is
 
-        when "0000" =>
+        when x"0" =>
           assert sig_seg = "0000001"
-            report "Error: Segments do not match expected value for BCD input 0"
+            report "0 does not map to 0000001"
             severity error;
 
-        when "0001" =>
+        when x"1" =>
           assert sig_seg = "1001111"
-            report "Error: Segments do not match expected value for BCD input 1"
+            report "1 does not map to 1001111"
             severity error;
 
-        when "0010" =>
+        when x"2" =>
           assert sig_seg = "0010010"
-            report "Error: Segments do not match expected value for BCD input 2"
+            report "2 does not map to 0010010"
             severity error;
 
-        when "0011" =>
+        when x"3" =>
           assert sig_seg = "0000110"
-            report "Error: Segments do not match expected value for BCD input 3"
+            report "3 does not map to 0000110"
             severity error;
 
-        when "0100" =>
+        when x"4" =>
           assert sig_seg = "1001100"
-            report "Error: Segments do not match expected value for BCD input 4"
+            report "4 does not map to 1001100"
             severity error;
 
-        when "0101" =>
+        when x"5" =>
           assert sig_seg = "0100100"
-            report "Error: Segments do not match expected value for BCD input 5"
+            report "5 does not map to 0100100"
             severity error;
 
-        when "0110" =>
+        when x"6" =>
           assert sig_seg = "0100000"
-            report "Error: Segments do not match expected value for BCD input 6"
+            report "6 does not map to 0100000"
             severity error;
 
-        when "0111" =>
+        when x"7" =>
           assert sig_seg = "0001111"
-            report "Error: Segments do not match expected value for BCD input 7"
+            report "7 does not map to 0001111"
             severity error;
 
-        when "1000" =>
+        when x"8" =>
           assert sig_seg = "0000000"
-            report "Error: Segments do not match expected value for BCD input 8"
+            report "8 does not map to 0000000"
             severity error;
 
-        when "1001" =>
+        when x"9" =>
           assert sig_seg = "0000100"
-            report "Error: Segments do not match expected value for BCD input 9"
+            report "9 does not map to 0000100"
             severity error;
 
         when others =>
