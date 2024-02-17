@@ -27,6 +27,8 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 2. Complete the decoder truth table for **common anode** (active low) 7-segment display.
 
+   ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](images/7-Segment-Display-Number-Formation-Segment-Contol.png)
+
    | **Symbol** | **Inputs** | **a** | **b** | **c** | **d** | **e** | **f** | **g** |
    | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
    | 0 | 0000 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -45,10 +47,6 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
    | d |      |   |   |   |   |   |   |   |
    | E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
    | F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
-
-   > ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](images/7-Segment-Display-Number-Formation-Segment-Contol.png)
-   >
-   > The image above was used from website: [How Seven Segment Display Works & Interface it with Arduino](https://lastminuteengineers.com/seven-segment-arduino-tutorial/).
 
    > Note that, there are other types of segment displays, [such as 14- or 16-segment](http://avtanski.net/projects/lcd/).
    >
@@ -107,37 +105,33 @@ The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals
    begin
 
      if (clear = '1') then
-       seg <= "1111111";     -- Clear the display
+       seg <= "1111111";  -- Clear the display
      else
 
        case bin is
-         when "0000" =>
-           seg <= "0000001"; -- 0
-         when "0001" =>
-           seg <= "1001111"; -- 1
-
+         when x"0" =>
+           seg <= "0000001";
+         when x"1" =>
+           seg <= "1001111";
 
          -- WRITE YOUR CODE HERE
          -- 2, 3, 4, 5, 6
 
-
-         when "0111" =>
-           seg <= "0001111"; -- 7
-         when "1000" =>
-           seg <= "0000000"; -- 8
-
+         when x"7" =>
+           seg <= "0001111";
+         when x"8" =>
+           seg <= "0000000";
 
          -- WRITE YOUR CODE HERE
          -- 9, A, b, C, d
 
-
-         when "1110" =>
-           seg <= "0110000"; -- E
+         when x"E" =>
+           seg <= "0110000";
          when others =>
-           seg <= "0111000"; -- F
+           seg <= "0111000";
        end case;
 
-     end if;
+     end if;    
    end process p_7seg_decoder;
    ```
 
@@ -168,7 +162,7 @@ The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals
    >     -- Expected segment values
    >     case bin is
    >       when x"0" =>
-   >         assert sig_seg = "0000001"
+   >         assert seg = "0000001"
    >           report "0 does not map to 0000001"
    >           severity error;
    >       ...
@@ -268,6 +262,8 @@ Utilize the top-level design `top_level.vhd` to instantiate a `bin2seg` componen
 
    3. Use component instantiation of `bin2seg` and define the top-level architecture.
 
+      ![Top level, 1-digit](images/top-level_1-digit.png)
+
       ```vhdl
       architecture behavioral of top_level is
         component bin2seg is
@@ -297,22 +293,20 @@ Utilize the top-level design `top_level.vhd` to instantiate a `bin2seg` componen
           );
 
         -- Turn off decimal point
-        DP <= '1';
+
 
         -- Display input value(s) on LEDs
-        LED <= SW;
+
 
         -- Set display position
-        AN <= b"1111_1110";
+
 
       end architecture behavioral;
       ```
 
-      ![Top level, 1-digit](images/top-level_1-digit.png)
-
    4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t` and uncomment used pins according to the `top_level` entity.
 
-   5. Compile the project and download the generated bitstream `YOUR_FOLDER/display/display.runs/impl_1/top_level.bit` into the FPGA chip.
+   5. Compile the project and download the generated bitstream `YOUR_PROJECT-FOLDER/display.runs/impl_1/top_level.bit` into the FPGA chip.
 
    6. Test the functionality of the seven-segment display decoder by toggling the switches and observing the display and LEDs.
 
@@ -324,20 +318,23 @@ Utilize the top-level design `top_level.vhd` to instantiate a `bin2seg` componen
 
 1. Extend the functionality of a one-digit 7-segment decoder to drive a two-digit display. Upon pressing a button, the display will switch between the two digits.
 
+   ![Top level, 2-digit](images/top-level_2-digit.png)
+
    ```vhdl
    architecture behavioral of top_level is
      ...
+
      -- Local signal for 7-segment decoder
      signal sig_tmp : std_logic_vector(3 downto 0);
 
    begin
      ...
-     AN(7 downto 2) <= b"11_1111";
 
+     -- Set display position
+     AN(7 downto 2) <= b"11_1111";
+     ...
    end architecture behavioral;
    ```
-
-   ![Top level, 2-digit](images/top-level_2-digit.png)
 
 <a name="references"></a>
 

@@ -86,7 +86,7 @@ begin
   LED_R <= SW_R;
   LED_L <= SW_L;
 
-  -- Select one display position
+  -- Set display position
   AN(7 downto 2) <= b"11_1111";
   AN(1)          <= not(BTND);
   AN(0)          <= BTND;
