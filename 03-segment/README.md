@@ -2,7 +2,8 @@
 
 * [Pre-Lab preparation](#preparation)
 * [Part 1: VHDL code for seven-segment display decoder](#part1)
-* [Part 2: Top level VHDL code](#part2)
+* [Part 2: Structural modeling, instantiation](#part2)
+* [Part 3: Top level VHDL code](#part3)
 * [Challenges](#challenges)
 * [References](#references)
 
@@ -181,11 +182,11 @@ The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals
 
 <a name="part2"></a>
 
-## Part 2: Top level VHDL code
+## Part 2: Structural modeling, instantiation
 
-VHDL provides a mechanism how to build a larger structural system from simpler or predesigned components. It is called an instantiation. Each instantiation statement creates an instance (copy) of a design entity.
+VHDL provides a mechanism how to build a larger [structural systems](https://surf-vhdl.com/vhdl-syntax-web-course-surf-vhdl/vhdl-structural-modeling-style/) from simpler or predesigned components. It is called an **instantiation**. Each instantiation statement creates an instance (copy) of a design entity.
 
-VHDL-93 and later offers two methods of instantiation: **direct instantiation** and **component instantiation**. In direct instantiation, the entity itself is directly instantiated within the architecture of the parent entity. In component instantiation, the component needs to be defined within the parental architecture. In both, the ports are connected using the port map.
+VHDL-93 and later offers two methods of instantiation: **direct instantiation** and **component instantiation**. In direct instantiation, the entity itself is directly instantiated within the architecture of the parent entity. In component instantiation, the component needs to be defined within the parental architecture first. In both, the ports are connected using the port map.
 
 ```vhdl
 -- Component declaration
@@ -202,15 +203,58 @@ instance_name : component_name
   );
  ```
 
-Let the top-level design `top.vhd` implements an instance of `bin2seg` component. Perform the following steps to implement the seven-segment display decoder on the Nexys A7 board.
+[Example](https://www.electronics-tutorial.net/VHDL/Concurrent-Statements/Component-Instantiation/) shows the component instantiation statement defining a simple netlist. Here, the three instances (copies) U1, U2, and U3 are instantiations of the 2-input XOR gate component:
 
-   1. Create a new VHDL design source `top` in your project.
-   2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
+![component instance](images/component-instantiation--xor.png)
+
+```vhdl
+...
+architecture behavioral of top is
+  -- Component declaration
+  component xor2 is
+    port (
+      in1, in2 : in  std_logic;
+      value    : out std_logic);
+    end component;
+
+  -- Local signals
+  signal Temp_1, Temp_2: std-logic;
+
+begin
+  -- Component instantiations
+  U1 : xor2
+    port map (
+      in1   => A,
+      in2   => B,
+      value => Temp_1);
+
+  U2 : xor2
+    port map (
+      in1   => C,
+      in2   => D,
+      value => Temp_2);
+
+  U3 : xor2
+    port map (
+      in1   => Temp_1,
+      in2   => Temp_2,
+      value => Z);
+end architecture;
+```
+
+<a name="part3"></a>
+
+## Part 3: Top level VHDL code
+
+Utilize the top-level design `top_level.vhd` to instantiate a `bin2seg` component and implement the seven-segment display decoder on the Nexys A7 board. Input for the decoder is obtained from four slide switches, and the output is directed to a single 7-segment display. LEDs display the input combinations, and a push-button serves as the reset signal.
+
+   1. Create a new VHDL design source `top_level` in your project.
+   2. Define I/O ports as follows.
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
-      | `SW` | in  | `std_logic_vector(3 downto 0)` | Binary value for a display |
-      | `LED` | out | `std_logic_vector(3 downto 0)` | To display input binary value |
+      | `SW` | in  | `std_logic_vector(3 downto 0)` | Binary value for display |
+      | `LED` | out | `std_logic_vector(3 downto 0)` | Show binary value |
       | `CA` | out | `std_logic` | Cathode of segment A |
       | `CB` | out | `std_logic` | Cathode of segment B |
       | `CC` | out | `std_logic` | Cathode of segment C |
@@ -218,13 +262,14 @@ Let the top-level design `top.vhd` implements an instance of `bin2seg` component
       | `CE` | out | `std_logic` | Cathode of segment E |
       | `CF` | out | `std_logic` | Cathode of segment F |
       | `CG` | out | `std_logic` | Cathode of segment G |
+      | `DP` | out | `std_logic` | Decimal point |
       | `AN` | out | `std_logic_vector(7 downto 0)` | Common anodes of all on-board displays |
       | `BTNC` | in | `std_logic` | Clear the display |
 
-   3. Use [direct instantiation](https://github.com/tomas-fryza/vhdl-course/wiki/Direct-instantiation) and define an architecture of the top level.
+   3. Use component instantiation of `bin2seg` and define the top-level architecture.
 
       ```vhdl
-      architecture behavioral of top is
+      architecture behavioral of top_level is
         component bin2seg is
           port (
             clear : in    std_logic;
@@ -233,8 +278,6 @@ Let the top-level design `top.vhd` implements an instance of `bin2seg` component
           );
         end component;
 
-        -- Local signal for 7-segment decoder
-        signal s_tmp : std_logic_vector(3 downto 0);
       begin
 
         -- Instantiate (make a copy of) `bin2seg`
@@ -243,7 +286,7 @@ Let the top-level design `top.vhd` implements an instance of `bin2seg` component
         display : component bin2seg
           port map (
             clear  => BTNC,
-            bin    => s_tmp,
+            bin    => SW,
             seg(6) => CA,
             seg(5) => CB,
             seg(4) => CC,
@@ -253,41 +296,25 @@ Let the top-level design `top.vhd` implements an instance of `bin2seg` component
             seg(0) => CG
           );
 
-        -----------------------------------------------
-        -- Connect local signal to input switches
-        s_tmp <= SW;
-
-        -- Select one display position
-        AN <= b"1111_0111";
+        -- Turn off decimal point
+        DP <= '1';
 
         -- Display input value(s) on LEDs
         LED <= SW;
 
+        -- Set display position
+        AN <= b"1111_1110";
+
       end architecture behavioral;
       ```
 
+      ![Top level, 1-digit](images/top-level_1-digit.png)
 
+   4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t` and uncomment used pins according to the `top_level` entity.
 
+   5. Compile the project and download the generated bitstream `YOUR_FOLDER/display/display.runs/impl_1/top_level.bit` into the FPGA chip.
 
-
-
-
-
-
-
-
-
-
-
-
-
-   ![Top level](images/top_hex_7seg.png)
-
-   4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
-   5. Compile the project and download the generated bitstream `YOUR_FOLDER/display/display.runs/impl_1/top.bit` into the FPGA chip.
-   6. Test the functionality of the seven-segment display decoder by toggling the switches and observing the display and LEDs. Change the binary value `AN <= b"0111_1111"` and observe its effect on the display selection.
-
-      ![Nexys A7 board](images/nexys_a7_segment.jpg)
+   6. Test the functionality of the seven-segment display decoder by toggling the switches and observing the display and LEDs.
 
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
@@ -295,7 +322,22 @@ Let the top-level design `top.vhd` implements an instance of `bin2seg` component
 
 ## Challenges
 
-1. TBD: Two-digit 7-segment dispay controllled by a push button.
+1. Extend the functionality of a one-digit 7-segment decoder to drive a two-digit display. Upon pressing a button, the display will switch between the two digits.
+
+   ```vhdl
+   architecture behavioral of top_level is
+     ...
+     -- Local signal for 7-segment decoder
+     signal sig_tmp : std_logic_vector(3 downto 0);
+
+   begin
+     ...
+     AN(7 downto 2) <= b"11_1111";
+
+   end architecture behavioral;
+   ```
+
+   ![Top level, 2-digit](images/top-level_2-digit.png)
 
 <a name="references"></a>
 

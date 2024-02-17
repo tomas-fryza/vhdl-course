@@ -34,7 +34,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 
 1. [Introduction to VHDL and basic gates](lab1-gates)
 2. [Combinational logic circuits](lab2-logic)
-3. Seven-segment display decoder
+3. [Seven-segment display decoder](lab3-segment)
 4. Arithmetic circuits
 5. Latches and Flip-flops
 6. Counters
