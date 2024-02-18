@@ -85,15 +85,15 @@ The K-map for the "equals" function is as follows:
       * `b_a_equal`, `out`
       * `a_greater`, `out`
 
-   > **Note:** The [entity](https://github.com/tomas-fryza/vhdl-course/wiki/Entity) for a 2-bit binary comparator in `compare_2bit.vhd` therefore coresponds to the following table.
-   >
-   > | **Port name** | **Direction** | **Type** | **Description** |
-   > | :-: | :-: | :-- | :-- |
-   > | `b`       | input  | [`std_logic_vector(1 downto 0)`](https://github.com/tomas-fryza/vhdl-course/wiki/Data-types) | Input bus b[1:0] |
-   > | `a`       | input  | `std_logic_vector(1 downto 0)` | Input bus a[1:0] |
-   > | `b_greater` | output | `std_logic` | Output is `1` if b > a |
-   > | `b_a_equal` | output | `std_logic` | Output is `1` if b = a |
-   > | `a_greater` | output | `std_logic` | Output is `1` if b < a |
+      > **Note:** The [entity](https://github.com/tomas-fryza/vhdl-course/wiki/Entity) for a 2-bit binary comparator in `compare_2bit.vhd` therefore coresponds to the following table.
+      >
+      > | **Port name** | **Direction** | **Type** | **Description** |
+      > | :-: | :-: | :-- | :-- |
+      > | `b`       | input  | [`std_logic_vector(1 downto 0)`](https://github.com/tomas-fryza/vhdl-course/wiki/Data-types) | Input bus b[1:0] |
+      > | `a`       | input  | `std_logic_vector(1 downto 0)` | Input bus a[1:0] |
+      > | `b_greater` | output | `std_logic` | Output is `1` if b > a |
+      > | `b_a_equal` | output | `std_logic` | Output is `1` if b = a |
+      > | `a_greater` | output | `std_logic` | Output is `1` if b < a |
 
 2. In VHDL, define an [architecture](https://github.com/tomas-fryza/vhdl-course/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as assignment statements using SoP or PoS logic. However, it is more efficient to use a higher notation with [conditional signal assignments](https://github.com/tomas-fryza/vhdl-course/wiki/Signal-assignments).
 
@@ -203,7 +203,9 @@ The message is displayed to the console when the condition is NOT met, therefore
 
 The Nexys A7 board provides sixteen switches and LEDs. The switches can be used to provide inputs, and the LEDs can be used as output devices.
 
-1. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of slide switches and LEDs, ie to which FPGA pins are connected and how.
+1. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of slide switches, LEDs, and RGB LEDs.
+
+   ![nexys A7 switches and leds](images/nexys-a7_leds-display.png)
 
 2. The Nexys A7 board have hardwired connections between FPGA chip and the switches and LEDs. To use these devices it is necessary to include in your project the correct pin assignments:
 
@@ -252,3 +254,7 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 1. Eric Coates. [Karnaugh Maps](https://learnabout-electronics.org/Digital/dig24.php)
 
 2. Tomas Fryza. [Example of 2-bit binary comparator using the when/else assignments](https://www.edaplayground.com/x/5uu3)
+
+3. Digilent Reference. [Nexys A7 Reference Manual](https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual)
+
+4. Brock J. LaMeres. [The Modern Digital Design Flow](https://link.springer.com/chapter/10.1007/978-3-030-10552-5_1)

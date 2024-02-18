@@ -23,7 +23,9 @@ The purpose of this laboratory exercise is to design a 7-segment display decoder
 
 The Nexys A7 board provides two four-digit common anode seven-segment LED displays (configured to behave like a single eight-digit display).
 
-1. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how.
+1. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays and push-buttons. What is the difference between NPN and PNP type of BJT (Bipolar Junction Transistor).
+
+   ![nexys A7 led and segment](../lab2-logic/images/nexys-a7_leds-display.png)
 
 2. Complete the decoder truth table for **common anode** (active low) 7-segment display.
 
@@ -87,7 +89,7 @@ The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals
    process_label : process(sensitivity_list)
    -- declarative part (can be empty)
    begin
-     -- sequential statement
+     -- sequential statements
    end process process_label;
    ```
 
@@ -109,7 +111,7 @@ The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals
      else
 
        case bin is
-         when x"0" =>
+         when x"0" =>     -- x"0" means "0000" in hexadec.
            seg <= "0000001";
          when x"1" =>
            seg <= "1001111";
@@ -184,18 +186,28 @@ VHDL-93 and later offers two methods of instantiation: **direct instantiation** 
 
 ```vhdl
 -- Component declaration
-component identifier [ is ]
-  [ local_generic_clause ]
-  [ local_port_clause ]
-end component [ identifier ];
+component <component_name>
+generic (
+   <generic_name> : <type> := <value>;
+   <other generics>...
+);
+port (
+   <port_name> : <mode> <type>;
+   <other ports>...
+);
+end component;
 
 -- Component instantiation
-instance_name : component_name
-  port map (
-    port_name => expression,
-    port_name => expression
-  );
- ```
+<instance_name> : <component_name>
+generic map (
+   <generic_name> => <value>,
+   <other generics>...
+)
+port map (
+   <port_name> => <signal_name>,
+   <other ports>...
+);
+```
 
 [Example](https://www.electronics-tutorial.net/VHDL/Concurrent-Statements/Component-Instantiation/) shows the component instantiation statement defining a simple netlist. Here, the three instances (copies) U1, U2, and U3 are instantiations of the 2-input XOR gate component:
 
@@ -263,6 +275,8 @@ Utilize the top-level design `top_level.vhd` to instantiate a `bin2seg` componen
    3. Use component instantiation of `bin2seg` and define the top-level architecture.
 
       ![Top level, 1-digit](images/top-level_1-digit.png)
+
+      > **Note:** Individual templates can be found in **Flow Navigator** or in the menu **Tools > Language Templates**. Search for `component declaration` and `component instantiation`.
 
       ```vhdl
       architecture behavioral of top_level is
@@ -340,10 +354,12 @@ Utilize the top-level design `top_level.vhd` to instantiate a `bin2seg` componen
 
 ## References
 
-1. Digilent blog. [Nexys A7 Reference Manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual)
+˚. Digilent Reference. [Nexys A7 Reference Manual](https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual)
 
 2. LastMinuteEngineers. [How Seven Segment Display Works & Interface it with Arduino](https://lastminuteengineers.com/seven-segment-arduino-tutorial/)
 
 3. Tomas Fryza. [Template for 7-segment display decoder](https://www.edaplayground.com/x/Vdpu)
 
 4. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
+
+5. [LCD/LED Screenshot generator](http://avtanski.net/projects/lcd/)
