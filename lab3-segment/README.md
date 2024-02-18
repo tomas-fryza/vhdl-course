@@ -224,7 +224,7 @@ architecture behavioral of top is
     end component;
 
   -- Local signals
-  signal Temp_1, Temp_2: std-logic;
+  signal Temp_1, Temp_2: std_logic;
 
 begin
   -- Component instantiations
