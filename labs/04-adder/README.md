@@ -1,395 +1,192 @@
-# Lab 4: Binary adder
-
-#### Objectives
-
-The purpose of this laboratory exercise is to design an adder. It is a type of digital circuit that performs the operation of additions of two numbers.
-
-#### Materials
-
-You will use slide switches on the CPLD expansion board ([schematic](../../docs/cpld_expansion.pdf)) as inputs and 7-segment display on the CoolRunner-II CPLD starter board ([XC2C256-TQ144](../../docs/xc2c256_cpld.pdf), [manual](../../docs/coolrunner-ii_rm.pdf), [schematic](../../docs/coolrunner-ii_sch.pdf)) as output device.
-
-![CoolRunner-II CPLD starter board](images/coolrunner_expansion_board.jpg)
-
-## 1 Preparation tasks (done before the lab at home)
-
-1. A half adder has two inputs A and B and two outputs Carry and Sum. Complete the half adder truth table. Draw a logic diagram of both output functions.
-
-    | **B** | **A** | **Carry** | **Sum** |
-    | :-: | :-: | :-: | :-: |
-    | 0 | 0 |  |  |
-    | 0 | 1 |  |  |
-    | 1 | 0 |  |  |
-    | 1 | 1 |  |  |
-
-2. A full adder has three inputs and two outputs. The two inputs are A, B, and Carry input. The outputs are Carry output and Sum. Complete the full adder truth table and draw a logic diagram of both output functions.
-
-    | **Cin** | **B** | **A** | **Cout** | **Sum** |
-    | :-: | :-: | :-: | :-: | :-: |
-    | 0 | 0 | 0 |  |  |
-    | 0 | 0 | 1 |  |  |
-    | 0 | 1 | 0 |  |  |
-    | 0 | 1 | 1 |  |  |
-    | 1 | 0 | 0 |  |  |
-    | 1 | 0 | 1 |  |  |
-    | 1 | 1 | 0 |  |  |
-    | 1 | 1 | 1 |  |  |
-
-3. Find the relationship between half adder and full adder logic diagrams.
-
-4. See schematic of the [CPLD expansion board](../../docs/cpld_expansion.pdf) and find out the connection of LEDs, push buttons, and slide switches.
-
-## 2 Synchronize Git and create a new folder
-
-1. Open a Linux terminal, use `cd` commands to change path to your Digital-electronics-1 working directory, and [synchronize the contents](https://github.com/joshnh/Git-Commands) with GitHub.
-
-    ```bash
-    $ pwd
-    /home/lab661
-    $ cd Documents/your-name/digital-electronics-1/
-    $ pwd
-    /home/lab661/Documents/your-name/digital-electronics-1
-    $ git pull
-    ```
-
-2. Create a new folder `labs/04-adder`
-
-    ```bash
-    $ cd labs/
-    $ mkdir 04-adder
-    $ cd 04-adder/
-    $ touch README.md
-    $ ls
-    README.md
-    ```
-
-## 3 VHDL code for half adder
-
-1. Follow instructions from wiki, [create a new project in ISE](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-create-a-new-project-in-ISE) titled `binary_adder` for XC2C256-TQ144 CPLD device. Make sure the project location is `/home/lab661/Documents/your-name/digital-electronics-1/Labs/04-adder`, ie in **your** local folder.
-
-2. Create a new source file **Project > New Source... > VHDL Module**, name it `half_adder` and copy/paste the following code template.
-
-```vhdl
-------------------------------------------------------------------------
---
--- Half adder.
--- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
---
--- Copyright (c) 2019-2020 Tomas Fryza
--- Dept. of Radio Electronics, Brno University of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-------------------------------------------------------------------------
-
-library ieee;
-use ieee.std_logic_1164.all;
-
-------------------------------------------------------------------------
--- Entity declaration for half adder
-------------------------------------------------------------------------
-entity half_adder is
-port (
-    b_i     : in  std_logic;
-    a_i     : in  std_logic;
-    carry_o : out std_logic;
-    sum_o   : out std_logic
-);
-end entity half_adder;
-
-------------------------------------------------------------------------
--- Architecture declaration for half adder
-------------------------------------------------------------------------
-architecture Behavioral of half_adder is
-begin
-    -- Logic functions for carry and sum outputs
-    -- WRITE YOUR CODE HERE
-end architecture Behavioral;
-```
-
-3. Use low-level gates `and`, `or`, `not`, etc. and write logic functions for Carry and Sum. Save all files in menu **File > Save All**.
-
-## 4 VHDL code for full adder
-
-1. Create a new source file **Project > New Source... > VHDL Module**, name it `full_adder` and copy/paste the following code.
-
-```vhdl
-------------------------------------------------------------------------
---
--- Full adder.
--- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
---
--- Copyright (c) 2019-2020 Tomas Fryza
--- Dept. of Radio Electronics, Brno University of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-------------------------------------------------------------------------
-
-library ieee;
-use ieee.std_logic_1164.all;
-
-------------------------------------------------------------------------
--- Entity declaration for full adder
-------------------------------------------------------------------------
-entity full_adder is
-port (
-    carry_i : in  std_logic;
-    b_i     : in  std_logic;
-    a_i     : in  std_logic;
-    carry_o : out std_logic;
-    sum_o   : out std_logic
-);
-end entity full_adder;
-
-------------------------------------------------------------------------
--- Architecture declaration for full adder
-------------------------------------------------------------------------
-architecture Behavioral of full_adder is
-    -- Internal signals between two half adders
-    signal s_carry0, s_carry1, s_sum0 : std_logic;
-begin
-
-    --------------------------------------------------------------------
-    -- Sub-blocks of two half_adder entities
-    HALF_ADDER_0 : entity work.half_adder
-    port map (
-        -- <component_signal> => <actual_signal>,
-        -- <component_signal> => <actual_signal>,
-        -- <other signals>...
-        -- WRITE YOUR CODE HERE
-    );
-
-    HALF_ADDER_1 : entity work.half_adder
-    port map (
-        -- WRITE YOUR CODE HERE
-    );
-
-    -- Output carry
-    -- WRITE YOUR CODE HERE
-
-end architecture Behavioral;
-```
-
-2. A full adder can be implemented by two half adders and one OR gate. Follow the logic diagram of [Satvik Ramaprasad](https://circuitverse.org/users/3/projects/247) and design a full adder.
-
-    > If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **full_adder - Behavioral (full_adder.vhd)** line and select **Set as Top Module**.
-    >
-
-3. Simulate design `full_adder` and test all input combinations according to the [tutorial](https://github.com/tomas-fryza/digital-electronics-1/wiki/How-to-Simulate-Your-Design-in-ISE).
-
-4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
-
-## 5 Top level implementation of 4-bit adder
-
-1. Create a new source file **Project > New Source... > VHDL Module**, name it `top` and copy/paste the following code template.
-
-    > If top level module in Xilinx ISE has not changed automatically, do it manually: right click to **top - Behavioral (top.vhd)** line and select **Set as Top Module**.
-    >
-
-```vhdl
-------------------------------------------------------------------------
---
--- Implementation of 4-bit adder.
--- Xilinx XC2C256-TQ144 CPLD, ISE Design Suite 14.7
---
--- Copyright (c) 2019-2020 Tomas Fryza
--- Dept. of Radio Electronics, Brno University of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-------------------------------------------------------------------------
-
-library ieee;
-use ieee.std_logic_1164.all;
-
-------------------------------------------------------------------------
--- Entity declaration for top level
-------------------------------------------------------------------------
-entity top is
-port (
-    SW0_CPLD   : in  std_logic;       -- Input A
-    SW1_CPLD   : in  std_logic;
-    SW2_CPLD   : in  std_logic;
-    SW3_CPLD   : in  std_logic;
-    SW8_CPLD   : in  std_logic;       -- Input B
-    SW9_CPLD   : in  std_logic;
-    SW10_CPLD  : in  std_logic;
-    SW11_CPLD  : in  std_logic;
-    disp_seg_o : out std_logic_vector(7-1 downto 0);
-    disp_dig_o : out std_logic_vector(4-1 downto 0)
-);
-end entity top;
-
-------------------------------------------------------------------------
--- Architecture declaration for top level
-------------------------------------------------------------------------
-architecture Behavioral of top is
-    signal s_dataA, s_dataB : std_logic_vector(4-1 downto 0);
-    signal s_carry0, s_carry1, s_carry2 : std_logic;
-    signal s_result : std_logic_vector(4-1 downto 0);
-    signal s_carryOut : std_logic;
-begin
-
-    -- Combine two 4-bit inputs to internal signals s_dataA and s_dataB
-    -- WRITE YOUR CODE HERE
-
-
-    --------------------------------------------------------------------
-    -- Sub-blocks of four full_adders
-    FULL_ADDER_0 : entity work.full_adder
-    port map (
-        -- <component_signal> => <actual_signal>,
-        -- <component_signal> => <actual_signal>,
-        -- <other signals>...
-        -- WRITE YOUR CODE HERE
-    );
-
-    FULL_ADDER_1 : entity work.full_adder
-    port map (
-        -- WRITE YOUR CODE HERE
-    );
-
-    FULL_ADDER_2 : entity work.full_adder
-    port map (
-        -- WRITE YOUR CODE HERE
-    );
-
-    FULL_ADDER_3 : entity work.full_adder
-    port map (
-        -- WRITE YOUR CODE HERE
-    );
-
-
-    --------------------------------------------------------------------
-    -- Sub-block of hex_to_7seg entity
-    HEX2SSEG : entity work.hex_to_7seg
-    port map (
-        -- WRITE YOUR CODE HERE
-    );
-
-    -- Select display position
-    disp_dig_o <= "1110";
-
-
-    -- Show carry output bit on Coolrunner-II LED
-    -- WRITE YOUR CODE HERE
-
-    -- Show two 4-bit inputs on CPLD expansion LEDs
-    -- WRITE YOUR CODE HERE
-
-end architecture Behavioral;
-```
-
-2. Copy `hex_to_7seg.vhd` and `coolrunner.ucf` files from previous lab to current working folder and add them to the project: **Project > Add Source...**. In constraints file comment/uncomment all inputs/outputs you need in this top level design.
-
-    Create a new constraints file with file name `cpld_board` and copy/paste the following code. The file contains pin assignments of input/output devices on CPLD expansion board. Again, comment/uncomment all inputs/outputs you need in this top level design.
-
-```bash
-#-----------------------------------------------------------------------
-#
-# Constraints file with pin assignments.
-# CPLD expansion board, ISE Design Suite 14.7
-#
-# Copyright (c) 2019-2020 Tomas Fryza
-# Dept. of Radio Electronics, Brno University of Technology, Czechia
-# This work is licensed under the terms of the MIT license.
-#
-#-----------------------------------------------------------------------
-
-#-----------------------------------------------------------------------
-# Buttons & switches
-# 16 shared push buttons and slide switches
-#-----------------------------------------------------------------------
-#
-# 15  ...  8       7  ...  0
-# +-+     +-+     +-+     +-+
-# | | ... | |     | | ... | | H
-# |.|     |.|     |.|     |.| L
-# +-+     +-+     +-+     +-+
-#
-#  15  11  7   3
-#  o   o   o   o   H: pressed
-#  o   o   o   o   L: released
-#  o   o   o   o
-#  o   o   o   o
-#  12  8   4   0
-#
-#NET SW15_CPLD           LOC = P9;
-#NET SW14_CPLD           LOC = P10;
-#NET SW13_CPLD           LOC = P6;
-#NET SW12_CPLD           LOC = P7;
-#NET SW11_CPLD           LOC = P4;
-#NET SW10_CPLD           LOC = P5;
-#NET SW9_CPLD            LOC = P2;
-#NET SW8_CPLD            LOC = P3;
-#NET SW7_CPLD            LOC = P140;
-#NET SW6_CPLD            LOC = P142;
-#NET SW5_CPLD            LOC = P138;
-#NET SW4_CPLD            LOC = P139;
-#NET SW3_CPLD            LOC = P135;
-#NET SW2_CPLD            LOC = P136;
-#NET SW1_CPLD            LOC = P133;
-#NET SW0_CPLD            LOC = P134;
-
-#-----------------------------------------------------------------------
-# 16 discrete LEDs
-#-----------------------------------------------------------------------
-#
-# 15 ... 12 11 ... 8
-#  * * * *   * * * *   H: turn LED on
-#  * * * *   * * * *   L: turn LED off
-#  7 ... 4   3 ... 0
-#
-#NET LD15_CPLD           LOC = P118;
-#NET LD14_CPLD           LOC = P119;
-#NET LD13_CPLD           LOC = P116;
-#NET LD12_CPLD           LOC = P117;
-#NET LD11_CPLD           LOC = P114;
-#NET LD10_CPLD           LOC = P115;
-#NET LD9_CPLD            LOC = P112;
-#NET LD8_CPLD            LOC = P113;
-#NET LD7_CPLD            LOC = P103;
-#NET LD6_CPLD            LOC = P104;
-#NET LD5_CPLD            LOC = P101;
-#NET LD4_CPLD            LOC = P102;
-#NET LD3_CPLD            LOC = P98;
-#NET LD2_CPLD            LOC = P100;
-#NET LD1_CPLD            LOC = P96;
-#NET LD0_CPLD            LOC = P97;
-```
-
-3. Use sub-blocks of hexadecimal to seven segment decoder, [four sub-blocks of 1-bit full adders](https://circuitverse.org/users/15916/projects/55095), interconnect all blocks, use slide switches/LEDs on CPLD expansion boards, seven-segment display on CoolRunner board, and implement 4-bit adder.
+# Lab 4: Arithmetic circuits
+
+* [Pre-Lab preparation](#preparation)
+* [Part 1: VHDL code for full adder](#part1)
+* [Part 2: VHDL code for 4-bit adder](#part2)
+* [Part 3: Top level VHDL code](#part3)
+* [Challenges](#challenges)
+* [References](#references)
+
+### Learning bjectives
+
+After completing this lab you will be able to:
+
+* Understand half- and full-adders
+* Practice instantiating VHDL sub-components
+* Construct a ripple carry adder
+
+The purpose of this laboratory exercise is to design a binary adder and subtractor and practise the instantiations in VHDL.
+
+<a name="preparation"></a>
+
+## Pre-Lab preparation
+
+A **half adder** has two one-bit inputs A and B and consists of two outputs Carry and Sum. Complete the half adder truth table. Draw a logic diagram of both output functions. A **full adder** extend inputs to three signal: A, B, and input Carry and also has two outputs: output Carry and Sum. Basicaly, carry and sum represent 2-bit result of addition operation.
+
+1. Complete the full adder truth table.
+
+   | **C_in** | **B** | **A** | **C_out** | **Sum** | **Dec. equivalent** |
+   | :-: | :-: | :-: | :-: | :-: | :-: |
+   | 0 | 0 | 0 | 0 | 0 | 0 |
+   | 0 | 0 | 1 |  |  |  |
+   | 0 | 1 | 0 |  |  |  |
+   | 0 | 1 | 1 |  |  |  |
+   | 1 | 0 | 0 |  |  |  |
+   | 1 | 0 | 1 |  |  |  |
+   | 1 | 1 | 0 |  |  |  |
+   | 1 | 1 | 1 | 1 | 1 | 3 |
+
+2. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of RGB LEDs and how to turn them on and off using BJTs (Bipolar Junction Transistor).
+
+   ![nexys A7 led and segment](../lab2-logic/images/nexys-a7_leds-display.png)
+
+<a name="part1"></a>
+
+## Part 1: VHDL code for full adder
+
+Full adder is the adder which adds three inputs and produces two outputs. The first two inputs are A and B and the third input is an input carry as C_IN. The output carry is designated as C_OUT and the normal output is designated as SUM.
+
+1. Run Vivado and create a new project:
+
+   1. Project name: `adder`
+   2. Project location: your working folder, such as `Documents`
+   3. Project type: **RTL Project**
+   4. Create a new VHDL source file: `full_adder`
+   5. Do not add any constraints now
+   6. Choose a default board: `Nexys A7-50T`
+   7. Click **Finish** to create the project
+   8. Define I/O ports of new module:
+
+      | **Port name** | **Direction** | **Type** | **Description** |
+      | :-: | :-: | :-- | :-- |
+      | `c_in` | input | `std_logic` | Input carry |
+      | `b` | input   | `std_logic` | Input b |
+      | `a` | input   | `std_logic` | Input a |
+      | `c_out` | output | `std_logic` | Output carry |
+      | `sum` | output  | `std_logic` | Output sum |
+
+2. Complete the architecture and define output signals `c_out` and `sum`. Note that, you can also use two instances of [half adder](https://www.edaplayground.com/x/2Jcz) and one OR gate. (For explanation, see logic diagram of [Satvik Ramaprasad](https://circuitverse.org/users/3/projects/247).)
+
+   ![full adder structures](images/full-adder_structure.png)
+
+3. Create a VHDL simulation source `tb_full_adder`, [generate testbench](https://vhdl.lapinoo.net/testbench/), complete all test cases, and verify the functionality of the adder.
+
+   ```vhdl
+   -- Test case 1: Input binary value 0,0,0
+    c_in <= '0';
+    b    <= '0';
+    a    <= '0';
+    wait for 100 ns;
+    assert (c_out = '0' and sum = '0')
+      report "Input combination c_in=0, b=0, a=0 FAILED"
+      severity error;
+   ```
+
+4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
+
+<a name="part2"></a>
+
+## Part 2: VHDL code for 4-bit adder
+
+**Ripple carry** adder is designed by connecting full-adder circuits in a cascade fasion in such a way that, two n-bit binary inputs are applied parallelly to the circuit and the output carry of previous full adder is applied to the input carry of the next full adder. For two n-bit binary addition, n number of full adder circuit is required.
+
+   ![ripple carry adder](images/RCA.jpg)
+
+1. Create a new VHDL design source `adder_4bit` in your project.
+2. Define I/O ports as follows.
+
+   | **Port name** | **Direction** | **Type** | **Description** |
+   | :-: | :-: | :-- | :-- |
+   | `c_in` | in  | `std_logic` | Input carry |
+   | `b` | input   | `std_logic_vector (3 downto 0)` | Input bus b[3:0] |
+   | `a` | input   | `std_logic_vector (3 downto 0)` | Input bus a[3:0] |
+   | `c_out` | output | `std_logic` | Output carry |
+   | `result` | output  | `std_logic_vector (3 downto 0)` | Output bus sum[3:0] |
+
+3. Use 4 component instantiations of `full_adder` and define the 4-bit binary adder.
+
+4. Create a VHDL simulation source `tb_adder_4bit`, generate testbench, complete several test cases, and verify the functionality of the adder.
+
+5. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
+
+<a name="part3"></a>
+
+## Part 3: Top level VHDL code
+
+1. Create a new VHDL design source `top_level` in your project.
+2. Define I/O ports as follows.
+
+   | **Port name** | **Direction** | **Type** | **Description** |
+   | :-: | :-: | :-- | :-- |
+   | `SW_C` | in  | `std_logic` | Input carry |
+   | `SW_B` | in  | `std_logic_vector(3 downto 0)` | First operand b[3:0] |
+   | `SW_A` | in  | `std_logic_vector(3 downto 0)` | Second operand a[3:0] |
+   | `LED_B` | out | `std_logic_vector(3 downto 0)` | Show binary value b[3:0] |
+   | `LED_A` | out | `std_logic_vector(3 downto 0)` | Show binary value a[3:0] |
+   | `LED_RED` | out | `std_logic` | Show output carry |
+   | `CA` | out | `std_logic` | Cathode of segment A |
+   | `CB` | out | `std_logic` | Cathode of segment B |
+   | `CC` | out | `std_logic` | Cathode of segment C |
+   | `CD` | out | `std_logic` | Cathode of segment D |
+   | `CE` | out | `std_logic` | Cathode of segment E |
+   | `CF` | out | `std_logic` | Cathode of segment F |
+   | `CG` | out | `std_logic` | Cathode of segment G |
+   | `DP` | out | `std_logic` | Decimal point |
+   | `AN` | out | `std_logic_vector(7 downto 0)` | Common anodes of all on-board displays |
+   | `BTNC` | in | `std_logic` | Clear the display |
+
+2. Copy source file `bin2seg.vhd` from the previous lab to the `YOUR-PROJECT-FOLDER/adder.srcs/sources_1/new/` source folder and add it to the project.
+
+3. Use component instantiation of `adder_4bit` and `bin2seg`, and define the top-level architecture.
+
+   !FIGURE TBD
+
+
+
+
+
+
+
+
+
+
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
 5. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
 
-## 6 Clean project and synchronize git
 
-1. In Xilinx ISE, clean up all generated files in menu **Project > Cleanup Project Files...** and close the project using **File > Close Project**.
 
-    > **Warning:** In any file manager, make sure the project folder does not contain any **large** (gigabyte) files. These can be caused by incorrect simulation in ISim. Delete such files.
-    >
 
-2. Use `cd ..` command in Linux terminal and change working directory to `digital-electronics-1`. Then use [git commands](https://github.com/joshnh/Git-Commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
-    ```bash
-    $ pwd
-    /home/lab661/Documents/your-name/digital-electronics-1/Labs/04-adder
 
-    $ cd ..
-    $ cd ..
-    $ pwd
-    /home/lab661/Documents/your-name/digital-electronics-1
 
-    $ git status
-    $ git add <your-modified-files>
-    $ git status
-    $ git commit -m "[LAB] Adding 04-adder lab"
-    $ git status
-    $ git push
-    $ git status
-    ```
+> **Fun fact:** In the next labs we are not going to use these low level gates to perform arithmetical operations but operators defined in numeric package :sweat_smile:
+>
+>    ```vhdl
+>    library ieee;
+>      use ieee.std_logic_1164.all;
+>      use ieee.numeric_std.all; -- Package for arithmetic operations
+>
+>    ...
+>      sig_cnt <= sig_cnt + 1;
+>    ...
+>    ```
 
-## Experiments on your own
+<a name="challenges"></a>
 
-1. Add one control line `Subtract` and create a combined [4-bit adder-subtractor](https://circuitverse.org/users/15916/projects/55119). The control line `Subtract` holds a binary value of either 0 or 1 which determines that the operation being carried out is addition or subtraction. Note, two's complement form is used to create an opposite number.
+## Challenges
 
-2. Complete your `README.md` file with notes and screenshots from simulation and implementation.
+1. Extend the functionality of 4-bit adder to perform combined adder and subtractor circuit.
+
+## References
+
+1. Digilent Reference. [Nexys A7 Reference Manual](https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual)
+
+2. Satvik Ramaprasad. [Full adder from 2 half adders](https://circuitverse.org/users/3/projects/247)
+
+3. Tomas Fryza. [Template for binary adder](https://www.edaplayground.com/x/Vdpu)
+
+4. Ishaan. [Ripple Carry Adder](https://circuitfever.com/ripple-carry-adder)
+
+5. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)

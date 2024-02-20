@@ -17,31 +17,30 @@ library ieee;
 
 entity full_adder_v2 is
   port (
-    carry_in  : in    std_logic; --! Input carry
-    b         : in    std_logic; --! Input b
-    a         : in    std_logic; --! Input a
-    carry_out : out   std_logic; --! Output carry
-    sum       : out   std_logic  --! Output sum
+    c_in  : in    std_logic; --! Input carry
+    b     : in    std_logic; --! Input b
+    a     : in    std_logic; --! Input a
+    c_out : out   std_logic; --! Output carry
+    sum   : out   std_logic  --! Output sum
   );
 end entity full_adder_v2;
 
 -------------------------------------------------
 
 architecture behavioral of full_adder_v2 is
-  component half_adder
+  component half_adder is
     port (
       b     : in    std_logic;
       a     : in    std_logic;
       carry : out   std_logic;
       sum   : out   std_logic
     );
-    end component;
+  end component;
 
   -- Internal signals between two half adders
   signal sig_carry0 : std_logic;
   signal sig_carry1 : std_logic;
   signal sig_sum0   : std_logic;
-
 begin
 
   --! Instantiate (make a copy of) two `half_adder`
@@ -56,13 +55,13 @@ begin
 
   U2 : component half_adder
     port map (
-      b     => carry_in,
+      b     => c_in,
       a     => sig_sum0,
       carry => sig_carry1,
       sum   => sum
     );
 
   -- Output carry
-  carry_out <= sig_carry0 or sig_carry1;
+  c_out <= sig_carry0 or sig_carry1;
 
 end architecture behavioral;

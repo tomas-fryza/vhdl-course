@@ -27,7 +27,6 @@ end entity half_adder;
 -------------------------------------------------
 
 architecture behavioral of half_adder is
-
 begin
 
   -- Logic functions for carry and sum outputs
