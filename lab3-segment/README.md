@@ -13,7 +13,7 @@ After completing this lab you will be able to:
 
 * Use 7-segment display
 * Use VHDL processes
-* Understand the structural VHDL description
+* Understand the structural modeling and instantiation in VHDL
 
 The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
 
@@ -59,7 +59,7 @@ The Nexys A7 board provides two four-digit common anode seven-segment LED displa
 
 ## Part 1: VHDL code for seven-segment display decoder
 
-The Bin to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals which can be displayed on 7-segment display. A display consist of 7 LED segments to display the decimal digits `0` to `9` and letters `A` to `F`.
+The Binary to 7-Segment Decoder converts 4-bit binary data to 7-bit control signals which can be displayed on 7-segment display. A display consist of 7 LED segments to display the decimal digits `0` to `9` and letters `A` to `F`.
 
 1. Run Vivado and create a new project:
 
@@ -254,83 +254,83 @@ end architecture;
 
 Utilize the top-level design `top_level.vhd` to instantiate a `bin2seg` component and implement the seven-segment display decoder on the Nexys A7 board. Input for the decoder is obtained from four slide switches, and the output is directed to a single 7-segment display. LEDs display the input combinations, and a push-button serves as the reset signal.
 
-   1. Create a new VHDL design source `top_level` in your project.
-   2. Define I/O ports as follows.
+1. Create a new VHDL design source `top_level` in your project.
+2. Define I/O ports as follows.
 
-      | **Port name** | **Direction** | **Type** | **Description** |
-      | :-: | :-: | :-- | :-- |
-      | `SW` | in  | `std_logic_vector(3 downto 0)` | Binary value for display |
-      | `LED` | out | `std_logic_vector(3 downto 0)` | Show binary value |
-      | `CA` | out | `std_logic` | Cathode of segment A |
-      | `CB` | out | `std_logic` | Cathode of segment B |
-      | `CC` | out | `std_logic` | Cathode of segment C |
-      | `CD` | out | `std_logic` | Cathode of segment D |
-      | `CE` | out | `std_logic` | Cathode of segment E |
-      | `CF` | out | `std_logic` | Cathode of segment F |
-      | `CG` | out | `std_logic` | Cathode of segment G |
-      | `DP` | out | `std_logic` | Decimal point |
-      | `AN` | out | `std_logic_vector(7 downto 0)` | Common anodes of all on-board displays |
-      | `BTNC` | in | `std_logic` | Clear the display |
+   | **Port name** | **Direction** | **Type** | **Description** |
+   | :-: | :-: | :-- | :-- |
+   | `SW` | in  | `std_logic_vector(3 downto 0)` | Binary value for display |
+   | `LED` | out | `std_logic_vector(3 downto 0)` | Show binary value |
+   | `CA` | out | `std_logic` | Cathode of segment A |
+   | `CB` | out | `std_logic` | Cathode of segment B |
+   | `CC` | out | `std_logic` | Cathode of segment C |
+   | `CD` | out | `std_logic` | Cathode of segment D |
+   | `CE` | out | `std_logic` | Cathode of segment E |
+   | `CF` | out | `std_logic` | Cathode of segment F |
+   | `CG` | out | `std_logic` | Cathode of segment G |
+   | `DP` | out | `std_logic` | Decimal point |
+   | `AN` | out | `std_logic_vector(7 downto 0)` | Common anodes of all on-board displays |
+   | `BTNC` | in | `std_logic` | Clear the display |
 
-   3. Use component instantiation of `bin2seg` and define the top-level architecture.
+3. Use component instantiation of `bin2seg` and define the top-level architecture.
 
-      ![Top level, 1-digit](images/top-level_1-digit.png)
+   ![Top level, 1-digit](images/top-level_1-digit.png)
 
-      > **Note:** Individual templates can be found in **Flow Navigator** or in the menu **Tools > Language Templates**. Search for `component declaration` and `component instantiation`.
+   > **Note:** Individual templates can be found in **Flow Navigator** or in the menu **Tools > Language Templates**. Search for `component declaration` and `component instantiation`.
 
-      ```vhdl
-      architecture behavioral of top_level is
-        component bin2seg is
-          port (
-            clear : in    std_logic;
-            bin   : in    std_logic_vector(3 downto 0);
-            seg   : out   std_logic_vector(6 downto 0)
-          );
-        end component;
+   ```vhdl
+   architecture behavioral of top_level is
+     component bin2seg is
+       port (
+         clear : in    std_logic;
+         bin   : in    std_logic_vector(3 downto 0);
+         seg   : out   std_logic_vector(6 downto 0)
+       );
+     end component;
 
-      begin
+   begin
 
-        -- Instantiate (make a copy of) `bin2seg`
-        -- component to decode binary input into
-        -- seven-segment display signals.
-        display : component bin2seg
-          port map (
-            clear  => BTNC,
-            bin    => SW,
-            seg(6) => CA,
-            seg(5) => CB,
-            seg(4) => CC,
-            seg(3) => CD,
-            seg(2) => CE,
-            seg(1) => CF,
-            seg(0) => CG
-          );
+     -- Instantiate (make a copy of) `bin2seg`
+     -- component to decode binary input into
+     -- seven-segment display signals.
+     display : component bin2seg
+       port map (
+         clear  => BTNC,
+         bin    => SW,
+         seg(6) => CA,
+         seg(5) => CB,
+         seg(4) => CC,
+         seg(3) => CD,
+         seg(2) => CE,
+         seg(1) => CF,
+         seg(0) => CG
+       );
 
-        -- Turn off decimal point
-
-
-        -- Display input value(s) on LEDs
+     -- Turn off decimal point
 
 
-        -- Set display position
+     -- Display input value(s) on LEDs
 
 
-      end architecture behavioral;
-      ```
+     -- Set display position
 
-   4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t` and uncomment used pins according to the `top_level` entity.
 
-   5. Compile the project and download the generated bitstream `YOUR-PROJECT-FOLDER/display.runs/impl_1/top_level.bit` into the FPGA chip.
+   end architecture behavioral;
+   ```
 
-   6. Test the functionality of the seven-segment display decoder by toggling the switches and observing the display and LEDs.
+4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t` and uncomment used pins according to the `top_level` entity.
 
-   7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
+5. Compile the project and download the generated bitstream `YOUR-PROJECT-FOLDER/display.runs/impl_1/top_level.bit` into the FPGA chip.
+
+6. Test the functionality of the seven-segment display decoder by toggling the switches and observing the display and LEDs.
+
+7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
 <a name="challenges"></a>
 
 ## Challenges
 
-1. Extend the functionality of a one-digit 7-segment decoder to drive a two-digit display. Upon pressing a button, the display will switch between the two digits.
+1. Extend the functionality of one-digit 7-segment decoder to drive a two-digit display. Upon pressing a button, the display will switch between the two digits.
 
    ![Top level, 2-digit](images/top-level_2-digit.png)
 
