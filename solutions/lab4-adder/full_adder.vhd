@@ -1,0 +1,46 @@
+-------------------------------------------------
+--! @brief Full adder
+--! @version 1.0
+--! @copyright (c) 2024 Tomas Fryza, MIT license
+--!
+--! <detail>
+--!
+--! Developed using TerosHDL, Vivado 2020.2, and
+--! EDA Playground. Tested on the Nexys A7-50T
+--! board featuring the xc7a50ticsg324-1L FPGA.
+-------------------------------------------------
+
+library ieee;
+  use ieee.std_logic_1164.all;
+
+-------------------------------------------------
+
+entity full_adder is
+  port (
+    carry_in  : in    std_logic; --! Input carry
+    b         : in    std_logic; --! Input b
+    a         : in    std_logic; --! Input a
+    carry_out : out   std_logic; --! Output carry
+    sum       : out   std_logic  --! Output sum
+  );
+end entity full_adder;
+
+-------------------------------------------------
+
+architecture behavioral of full_adder is
+
+  -- Internal signals between gates
+  signal sig_tmp_0 : std_logic;
+  signal sig_tmp_1 : std_logic;
+
+begin
+
+  -- Output sum
+  sig_tmp_0 <= b xor a;
+  sum       <= carry_in xor sig_tmp_0;
+
+  -- Output carry
+  sig_tmp_1 <= carry_in and sig_tmp_0;
+  carry_out <= sig_tmp_1 or (b and a);
+
+end architecture behavioral;
