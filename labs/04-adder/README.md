@@ -161,7 +161,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 
 
-> **Fun fact:** In the next labs we are not going to use these low level gates to perform arithmetical operations but operators defined in numeric package :sweat_smile:
+> **Fun fact:** In the next labs we are not going to use those low level gates to perform arithmetical operations but operators defined in numeric package :sweat_smile:
 >
 >    ```vhdl
 >    library ieee;
