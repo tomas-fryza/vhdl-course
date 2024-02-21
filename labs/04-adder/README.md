@@ -179,6 +179,8 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 1. Extend the functionality of 4-bit adder to perform combined adder and subtractor circuit.
 
+2. Use two 4-bit adders and create an 8-bit adder circuit.
+
 ## References
 
 1. Digilent Reference. [Nexys A7 Reference Manual](https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual)
