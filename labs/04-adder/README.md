@@ -7,7 +7,7 @@
 * [Challenges](#challenges)
 * [References](#references)
 
-### Learning bjectives
+### Learning objectives
 
 After completing this lab you will be able to:
 
