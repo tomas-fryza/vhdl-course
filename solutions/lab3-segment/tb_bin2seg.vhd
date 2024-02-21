@@ -42,7 +42,7 @@ begin
 
     -- Normal operation
     sig_clear <= '0';
-    sig_bin   <= "0011";
+    sig_bin   <= "0111";
     wait for 50 ns;
 
     -- Clear display
