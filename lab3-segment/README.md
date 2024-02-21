@@ -86,7 +86,7 @@ The Binary to 7-Segment Decoder converts 4-bit binary data to 7-bit control sign
    The process statement is very similar to the classical programming language. The code inside the process statement is executed sequentially. The process statement is declared in the concurrent section of the architecture, so two different processes are executed concurrently.
 
    ```vhdl
-   process_label : process(sensitivity_list)
+   process_label : process (sensitivity_list) is
    -- declarative part (can be empty)
    begin
      -- sequential statements
