@@ -298,7 +298,7 @@ Utilize the top-level design `top_level.vhd` to instantiate a `bin2seg` componen
      -- Instantiate (make a copy of) `bin2seg`
      -- component to decode binary input into
      -- seven-segment display signals.
-     display : component bin2seg
+     display : bin2seg
        port map (
          clear  => BTNC,
          bin    => SW,
