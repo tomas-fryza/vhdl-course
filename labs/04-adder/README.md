@@ -65,9 +65,11 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
       | `c_out` | output | `std_logic` | Output carry |
       | `sum` | output  | `std_logic` | Output sum |
 
-2. Complete the architecture and define output signals `c_out` and `sum`. Note that, you can also use two instances of [half adder](https://www.edaplayground.com/x/2Jcz) and one OR gate. (For explanation, see logic diagram of [Satvik Ramaprasad](https://circuitverse.org/users/3/projects/247).)
+2. Complete the architecture and define output signals `c_out` and `sum`. You can use simple VHDL assignment statements or two instances of [half adders](https://www.edaplayground.com/x/2Jcz) and one OR gate, according to the figure below. (For explanation, see logic diagram of [Satvik Ramaprasad](https://circuitverse.org/users/3/projects/247).)
 
-   ![full adder structures](images/full-adder_structure.png)
+   ![full adder structures, gates](images/full-adder_structure1.png)
+
+   ![full adder structures, instance](images/full-adder_structure2.png)
 
 3. Create a VHDL simulation source `tb_full_adder`, [generate testbench](https://vhdl.lapinoo.net/testbench/), complete all test cases, and verify the functionality of the adder.
 
@@ -103,11 +105,44 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
    | `c_out` | output | `std_logic` | Output carry |
    | `result` | output  | `std_logic_vector (3 downto 0)` | Output bus sum[3:0] |
 
-3. Use 4 component instantiations of `full_adder` and define the 4-bit binary adder.
+3. Use component declaration ans four instantiations of `full_adder` and define the 4-bit binary adder.
 
+   ```vhdl
+   architecture behavioral of adder_4bit is
+     -- Component declaration
+     component full_adder is
+       port (
+         c_in  : in    std_logic;
+         b     : in    std_logic;
+         a     : in    std_logic;
+         c_out : out   std_logic;
+         sum   : out   std_logic
+       );
+     end component;
+
+     -- Local signals
+     signal sig_c0 : std_logic;
+     signal sig_c1 : std_logic;
+     signal sig_c2 : std_logic;
+   begin
+
+     -- Component instantiations
+     FA0 : component full_adder
+       port map (
+         c_in  => c_in,
+         b     => b(0),
+         a     => a(0),
+         c_out => sig_c0,
+         sum   => result(0)
+       );
+     ...
+   ```
+
+<!--
 4. Create a VHDL simulation source `tb_adder_4bit`, generate testbench, complete several test cases, and verify the functionality of the adder.
+-->
 
-5. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
+4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
 
 <a name="part3"></a>
 
@@ -137,7 +172,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 2. Copy source file `bin2seg.vhd` from the previous lab to the `YOUR-PROJECT-FOLDER/adder.srcs/sources_1/new/` source folder and add it to the project.
 
-3. Use component instantiation of `adder_4bit` and `bin2seg`, and define the top-level architecture.
+3. Use component declaration and instantiation of `adder_4bit` and `bin2seg`, and define the top-level architecture.
 
    !FIGURE TBD
 
@@ -145,18 +180,24 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 
 
-
-
+4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t`, uncomment and modify names of used pins according to the `top_level` entity.
 
 
 
 
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
 
+
+
+
+5. Compile the project and download the generated bitstream `YOUR-PROJECT-FOLDER/display.runs/impl_1/top_level.bit` into the FPGA chip.
+
+6. Test the functionality of the adder by toggling the switches and observing the display and LEDs.
+
+
+
+
 5. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
-
-
-
 
 
 
@@ -177,7 +218,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 ## Challenges
 
-1. Extend the functionality of 4-bit adder to perform combined adder and subtractor circuit.
+1. Extend the functionality of 4-bit adder and design a combined adder and subtractor circuit.
 
 2. Use two 4-bit adders and create an 8-bit adder circuit.
 

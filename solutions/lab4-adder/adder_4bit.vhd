@@ -38,9 +38,9 @@ architecture behavioral of adder_4bit is
     );
   end component;
 
-  signal sig_carry_0 : std_logic;
-  signal sig_carry_1 : std_logic;
-  signal sig_carry_2 : std_logic;
+  signal sig_c0 : std_logic;
+  signal sig_c1 : std_logic;
+  signal sig_c2 : std_logic;
 begin
 
   -----------------------------------------------
@@ -50,31 +50,31 @@ begin
       c_in  => c_in,
       b     => b(0),
       a     => a(0),
-      c_out => sig_carry_0,
+      c_out => sig_c0,
       sum   => result(0)
     );
 
   u1 : component full_adder
     port map (
-      c_in  => sig_carry_0,
+      c_in  => sig_c0,
       b     => b(1),
       a     => a(1),
-      c_out => sig_carry_1,
+      c_out => sig_c1,
       sum   => result(1)
     );
 
   u2 : component full_adder
     port map (
-      c_in  => sig_carry_1,
+      c_in  => sig_c1,
       b     => b(2),
       a     => a(2),
-      c_out => sig_carry_2,
+      c_out => sig_c2,
       sum   => result(2)
     );
 
   u3 : component full_adder
     port map (
-      c_in  => sig_carry_2,
+      c_in  => sig_c2,
       b     => b(3),
       a     => a(3),
       c_out => c_out,

@@ -38,9 +38,9 @@ architecture behavioral of full_adder_v2 is
   end component;
 
   -- Internal signals between two half adders
-  signal sig_carry0 : std_logic;
-  signal sig_carry1 : std_logic;
-  signal sig_sum0   : std_logic;
+  signal sig_c0   : std_logic;
+  signal sig_c1   : std_logic;
+  signal sig_sum0 : std_logic;
 begin
 
   --! Instantiate (make a copy of) two `half_adder`
@@ -49,7 +49,7 @@ begin
     port map (
       b     => b,
       a     => a,
-      carry => sig_carry0,
+      carry => sig_c0,
       sum   => sig_sum0
     );
 
@@ -57,11 +57,11 @@ begin
     port map (
       b     => c_in,
       a     => sig_sum0,
-      carry => sig_carry1,
+      carry => sig_c1,
       sum   => sum
     );
 
   -- Output carry
-  c_out <= sig_carry0 or sig_carry1;
+  c_out <= sig_c0 or sig_c1;
 
 end architecture behavioral;
