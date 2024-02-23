@@ -96,7 +96,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 **Ripple carry** adder is designed by connecting full-adder circuits in a cascade fasion in such a way that, two n-bit binary inputs are applied parallelly to the circuit and the output carry of previous full adder is applied to the input carry of the next full adder. For two n-bit binary addition, n number of full adder circuit is required.
 
-   ![ripple carry adder](images/RCA.jpg)
+   ![ripple carry adder](images/adder_4bit_structure.png)
 
 1. Create a new VHDL design source `adder_4bit` in your project.
 2. Define I/O ports as follows.
@@ -130,7 +130,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
      signal sig_c2 : std_logic;
    begin
 
-     -- Component instantiations
+     -- 1st Component instantiation
      FA0 : component full_adder
        port map (
          c_in  => c_in,
@@ -139,7 +139,15 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
          c_out => sig_c0,
          sum   => result(0)
        );
-     ...
+
+     -- 2nd Component instantiation
+     
+
+     -- 3rd Component instantiation
+
+
+     -- 4th Component instantiation
+
    ```
 
 <!--
@@ -178,20 +186,16 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 3. Use component declaration and instantiation of `adder_4bit` and `bin2seg`, and define the top-level architecture.
 
+
    !FIGURE TBD
-
-
-
 
 
 4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t`, uncomment and modify names of used pins according to the `top_level` entity.
 
 
-
-
+<!--
 4. In menu **Tools > Schematic Viewer > RTL...** select **Start with a schematic of top-level block** and check the hierarchical structure of the module.
-
-
+-->
 
 
 5. Compile the project and download the generated bitstream `YOUR-PROJECT-FOLDER/display.runs/impl_1/top_level.bit` into the FPGA chip.
@@ -199,11 +203,9 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 6. Test the functionality of the adder by toggling the switches and observing the display and LEDs.
 
 
-
-
+<!--
 5. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
-
-
+-->
 
 
 > **Fun fact:** In the next labs we are not going to use those low level gates to perform arithmetical operations but operators defined in the numeric package :sweat_smile:
