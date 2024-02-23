@@ -1,9 +1,14 @@
 -------------------------------------------------
 --! @brief Implementation of 4-bit adder
 --! @version 1.1
---! @copyright (c) 2019 Tomas Fryza, MIT license
+--! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
---! <detail>
+--! This VHDL module defines the structure of a 4-bit adder.
+--! It instantiates four full adders to perform the addition
+--! operation. Each full adder adds one bit of the input
+--! vectors 'a' and 'b', along with the carry-in signal
+--! 'c_in'. The carry-out signal from each full adder is
+--! propagated to the carry-in of the next full adder.
 --!
 --! Developed using TerosHDL, Vivado 2020.2, and
 --! EDA Playground. Tested on the Nexys A7-50T
@@ -17,17 +22,18 @@ library ieee;
 
 entity adder_4bit is
   port (
-    c_in   : in    std_logic;
-    b      : in    std_logic_vector(3 downto 0);
-    a      : in    std_logic_vector(3 downto 0);
-    c_out  : out   std_logic;
-    result : out   std_logic_vector(3 downto 0)
+    c_in   : in    std_logic;                    --! Carry-in signal
+    b      : in    std_logic_vector(3 downto 0); --! 4-bit input vector 'b'
+    a      : in    std_logic_vector(3 downto 0); --! 4-bit input vector 'a'
+    c_out  : out   std_logic;                    --! Carry-out signal
+    result : out   std_logic_vector(3 downto 0)  --! 4-bit sum output
   );
 end entity adder_4bit;
 
 -------------------------------------------------
 
 architecture behavioral of adder_4bit is
+  -- Component declaration for full adder
   component full_adder is
     port (
       c_in  : in    std_logic;
@@ -38,14 +44,15 @@ architecture behavioral of adder_4bit is
     );
   end component;
 
+  -- Local signals for carry propagation
   signal sig_c0 : std_logic;
   signal sig_c1 : std_logic;
   signal sig_c2 : std_logic;
 begin
 
-  -----------------------------------------------
-  -- Sub-blocks of four full_adders
-  u0 : component full_adder
+  -- Component instantiations for each bit position
+  -- 1st full adder
+  FA0 : component full_adder
     port map (
       c_in  => c_in,
       b     => b(0),
@@ -54,7 +61,8 @@ begin
       sum   => result(0)
     );
 
-  u1 : component full_adder
+  -- 2nd full adder
+  FA1 : component full_adder
     port map (
       c_in  => sig_c0,
       b     => b(1),
@@ -63,7 +71,8 @@ begin
       sum   => result(1)
     );
 
-  u2 : component full_adder
+  -- 3rd full adder
+  FA2 : component full_adder
     port map (
       c_in  => sig_c1,
       b     => b(2),
@@ -72,7 +81,8 @@ begin
       sum   => result(2)
     );
 
-  u3 : component full_adder
+  -- 4th full adder
+  FA3 : component full_adder
     port map (
       c_in  => sig_c2,
       b     => b(3),
