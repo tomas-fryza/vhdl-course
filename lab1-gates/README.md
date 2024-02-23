@@ -108,10 +108,6 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
 
 3. Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/vhdl-course/wiki/Entity), [architecture](https://github.com/tomas-fryza/vhdl-course/wiki/Architecture), and testbench.
 
-<!--
-   ![entity_architecture_pair](images/entity-architecture_and2.jpg)
--->
-
    The usefull VHDL operators are shown in the table.
 
    | **Operator** | **Description** |
