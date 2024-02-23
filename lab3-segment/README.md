@@ -178,42 +178,39 @@ VHDL provides a mechanism how to build a larger [structural systems](https://sur
 
 VHDL-93 and later offers two methods of instantiation: **direct instantiation** and **component instantiation**. In direct instantiation, the entity itself is directly instantiated within the architecture of the parent entity. In component instantiation, the component needs to be defined within the parental architecture first. In both, the ports are connected using the port map.
 
-[Example](https://www.electronics-tutorial.net/VHDL/Concurrent-Statements/Component-Instantiation/) shows the component instantiation statement defining a simple netlist. Here, the three instances (copies) U1, U2, and U3 are instantiations of the 2-input XOR gate component:
+Example shows the component instantiation statement defining a simple netlist. Here, the two instances (copies) U1 and U2 are instantiations of the 2-input XOR gate component:
 
-![component instance](images/component-instantiation--xor.png)
+![component instance](images/component_example.png)
 
 ```vhdl
 ...
-architecture behavioral of top is
+architecture behavioral of top_level is
   -- Component declaration
   component xor2 is
     port (
-      in1, in2 : in  std_logic;
-      value    : out std_logic);
+      in1, in2 : in    std_logic;
+      value    : out   std_logic);
     end component;
 
-  -- Local signals
-  signal Temp_1, Temp_2: std_logic;
+  -- Local signal
+  signal sig_tmp : std_logic;
 
 begin
   -- Component instantiations
   U1 : xor2
     port map (
-      in1   => A,
-      in2   => B,
-      value => Temp_1);
+      in1   => ctrl,
+      in2   => a,
+      value => sig_tmp
+    );
 
   U2 : xor2
     port map (
-      in1   => C,
-      in2   => D,
-      value => Temp_2);
+      in1   => sig_tmp,
+      in2   => b,
+      value => y
+    );
 
-  U3 : xor2
-    port map (
-      in1   => Temp_1,
-      in2   => Temp_2,
-      value => Z);
 end architecture;
 ```
 
