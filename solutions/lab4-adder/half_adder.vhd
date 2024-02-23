@@ -1,9 +1,11 @@
 -------------------------------------------------
 --! @brief Half adder
 --! @version 1.1
---! @copyright (c) 2019 Tomas Fryza, MIT license
+--! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
---! <detail>
+--! This VHDL module implements a half adder, which adds
+--! two binary inputs 'a' and 'b' and produces sum and
+--! carry outputs.
 --!
 --! Developed using TerosHDL, Vivado 2020.2, and
 --! EDA Playground. Tested on the Nexys A7-50T
@@ -29,7 +31,6 @@ end entity half_adder;
 architecture behavioral of half_adder is
 begin
 
-  -- Logic functions for carry and sum outputs
   carry <= b and a;
   sum   <= b xor a;
 

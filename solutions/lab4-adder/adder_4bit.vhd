@@ -5,9 +5,7 @@
 --!
 --! This VHDL module defines the structure of a 4-bit adder.
 --! It instantiates four full adders to perform the addition
---! operation. Each full adder adds one bit of the input
---! vectors 'a' and 'b', along with the carry-in signal
---! 'c_in'. The carry-out signal from each full adder is
+--! operation. The carry-out signal from each full adder is
 --! propagated to the carry-in of the next full adder.
 --!
 --! Developed using TerosHDL, Vivado 2020.2, and

@@ -3,7 +3,11 @@
 --! @version 1.0
 --! @copyright (c) 2024 Tomas Fryza, MIT license
 --!
---! <detail>
+--! This VHDL module implements a full adder, which adds
+--! three binary inputs 'a', 'b', and 'c_in', and produces
+--! a sum output 'sum' and a carry output 'c_out'.
+--! The outputs are computed by simple VHDL assignment
+--! statements.
 --!
 --! Developed using TerosHDL, Vivado 2020.2, and
 --! EDA Playground. Tested on the Nexys A7-50T

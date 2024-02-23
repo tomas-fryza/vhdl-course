@@ -1,9 +1,11 @@
 -------------------------------------------------
 --! @brief Full adder
 --! @version 1.1
---! @copyright (c) 2019 Tomas Fryza, MIT license
+--! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
---! <detail>
+--! This VHDL module implements a full adder, which
+--! utilizes two instances of the half adder component
+--! to perform the addition operation.
 --!
 --! Developed using TerosHDL, Vivado 2020.2, and
 --! EDA Playground. Tested on the Nexys A7-50T
@@ -28,6 +30,7 @@ end entity full_adder_v2;
 -------------------------------------------------
 
 architecture behavioral of full_adder_v2 is
+  -- Component declaration for half added
   component half_adder is
     port (
       b     : in    std_logic;
@@ -37,15 +40,14 @@ architecture behavioral of full_adder_v2 is
     );
   end component;
 
-  -- Internal signals between two half adders
+  -- Internal signals for intermediate carry and sum
   signal sig_c0   : std_logic;
   signal sig_c1   : std_logic;
   signal sig_sum0 : std_logic;
 begin
 
-  --! Instantiate (make a copy of) two `half_adder`
-  --! components.
-  U1 : component half_adder
+  -- Component instantiations
+  HA0 : component half_adder
     port map (
       b     => b,
       a     => a,
@@ -53,7 +55,7 @@ begin
       sum   => sig_sum0
     );
 
-  U2 : component half_adder
+  HA1 : component half_adder
     port map (
       b     => c_in,
       a     => sig_sum0,
