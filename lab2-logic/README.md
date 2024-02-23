@@ -25,7 +25,7 @@ The purpose of this laboratory exercise is to learn to use different ways of wri
 
 *Digital* or *Binary comparator* compares the digital signals A, B presented at input terminal and produce outputs depending upon the condition of those inputs.
 
-![Binary comparator](images/two-bit-comparator.jpg)
+![Binary comparator](images/two-bit-comparator.png)
 
 1. Complete the truth table for 2-bit *Identity comparator* (B equals A), and two *Magnitude comparators* (B is greater than A, A is greater than B). Note that, such a digital device has four inputs and three outputs/functions.
 
