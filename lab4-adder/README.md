@@ -252,9 +252,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 1. Extend the functionality of 4-bit adder and design a combined adder and subtractor circuit.
 
-<!--
-TODO: Top-level of adder/subtractor
--->
+   ![top level](images/top-level_add-sub_structure.png)
 
 2. Use two 4-bit adders and create an 8-bit adder circuit.
 
