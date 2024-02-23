@@ -165,8 +165,7 @@ The message is displayed to the console when the condition is NOT met, therefore
      -- Report a note at the beginning of stimulus process
      report "Stimulus process started";
 
-     -- Test case is followed by the expected output
-     -- value(s). If assert condition is false, then
+     -- Test case is followed by the expected output value(s). If assert condition is false, then
      -- an error is reported to the console.
      b <= "00";
      a <= "00";
