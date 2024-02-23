@@ -148,6 +148,8 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
      -- 4th Component instantiation
 
+
+   end architecture behavioral;
    ```
 
 <!--
