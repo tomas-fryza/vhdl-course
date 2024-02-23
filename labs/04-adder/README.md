@@ -65,13 +65,17 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
       | `c_out` | output | `std_logic` | Output carry |
       | `sum` | output  | `std_logic` | Output sum |
 
-2. Complete the architecture and define output signals `c_out` and `sum`. You can use simple VHDL assignment statements or two instances of [half adders](https://www.edaplayground.com/x/2Jcz) and one OR gate, according to the figure below. (For explanation, see logic diagram of [Satvik Ramaprasad](https://circuitverse.org/users/3/projects/247).)
+2. Complete the architecture and define output signals `c_out` and `sum`. You can use simple VHDL assignment statements or two instances of [half adders](https://www.edaplayground.com/x/2Jcz) and one OR gate. (For explanation, see logic diagram of [Satvik Ramaprasad](https://circuitverse.org/users/3/projects/247).)
+
+   **VHDL assignment statements**
 
    ![full adder structures, gates](images/full-adder_structure1.png)
 
+   **Component instantiation**
+
    ![full adder structures, instance](images/full-adder_structure2.png)
 
-3. Create a VHDL simulation source `tb_full_adder`, [generate testbench](https://vhdl.lapinoo.net/testbench/), complete all test cases, and verify the functionality of the adder.
+4. Create a VHDL simulation source `tb_full_adder`, [generate testbench](https://vhdl.lapinoo.net/testbench/), complete all test cases, and verify the functionality of the adder.
 
    ```vhdl
    -- Test case 1: Input binary value 0,0,0
@@ -84,7 +88,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
       severity error;
    ```
 
-4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
+5. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
 <a name="part2"></a>
 
