@@ -132,7 +132,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
      -- Component instantiations for each bit position
      -- 1st full adder
-     FA0 : component full_adder
+     FA0 : full_adder
        port map (
          c_in  => c_in,
          b     => b(0),
