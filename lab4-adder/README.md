@@ -122,7 +122,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
          c_out : out   std_logic;
          sum   : out   std_logic
        );
-     end component;
+     end component full_adder;
 
      -- Local signals for carry propagation
      signal sig_c0 : std_logic;
