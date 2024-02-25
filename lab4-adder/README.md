@@ -107,7 +107,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
    | `c_out` | output | `std_logic` | Output carry |
    | `result` | output  | `std_logic_vector (3 downto 0)` | Output bus sum[3:0] |
 
-3. Use component declaration and four instantiations of `full_adder` and define the architecture of 4-bit binary adder.
+3. Use component declaration and four instantiations of `full_adder` and define the architecture of 4-bit binary adder. (Hint: In Vivado, you can use VHDL templates in menu **Tools > Language Templates**.)
 
    ![ripple carry adder](images/adder_4bit_structure.png)
 
@@ -153,10 +153,6 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
    end architecture behavioral;
    ```
 
-<!--
-4. Create a VHDL simulation source `tb_adder_4bit`, generate testbench, complete several test cases, and verify the functionality of the adder.
--->
-
 4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
 
 <a name="part3"></a>
@@ -184,7 +180,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
    | `AN` | out | `std_logic_vector(7 downto 0)` | Common anodes of all on-board displays |
    | `BTNC` | in | `std_logic` | Clear the display |
 
-2. Copy source file `bin2seg.vhd` from the previous lab to `YOUR-PROJECT-FOLDER/adder.srcs/sources_1/new/` source folder and add it to the project.
+2. Copy design source file `bin2seg.vhd` from the previous lab to `YOUR-PROJECT-FOLDER/adder.srcs/sources_1/new/` folder and add it to the project.
 
 3. Use component declaration and instantiation of `adder_4bit` and `bin2seg`, and define the top-level architecture as follows.
 
@@ -224,7 +220,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 5. Compile the project (ie. transform the high-level VHDL code into a binary configuration file) and download the generated bitstream `YOUR-PROJECT-FOLDER/display.runs/impl_1/top_level.bit` into the FPGA chip.
 
-6. Test the functionality of the adder by toggling the switches and observing the display and LEDs.
+6. Test the functionality of the adder by toggling the switches and observing display and LEDs.
 
 7. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
 
