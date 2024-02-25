@@ -188,8 +188,9 @@ architecture behavioral of top_level is
   -- Component declaration
   component xor2 is
     port (
-      in1, in2 : in    std_logic;
-      value    : out   std_logic
+      in1   : in    std_logic;
+      in2   : in    std_logic;
+      value : out   std_logic
     );
   end component;
 
