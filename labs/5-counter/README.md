@@ -1,4 +1,11 @@
-# Lab 6: Binary counter
+# Lab 5: Binary counter
+
+* [Pre-Lab preparation](#preparation)
+* [Part 1: VHDL code for clock enable](#part1)
+* [Part 2: VHDL code for bidirectional binary counter](#part2)
+* [Part 3: Top level VHDL code](#part3)
+* [Challenges](#challenges)
+* [References](#references)
 
 ### Learning objectives
 
@@ -10,24 +17,13 @@ After completing this lab you will be able to:
 
 The purpose of this laboratory exercise is to become familiar with the creation of sequential processes in VHDL, next to implement a clock enable signal to drive another logic with slower clock, and to design a binary counter.
 
-### Table of contents
-
-* [Pre-Lab preparation](#preparation)
-* [Part 1: Synchronize Git and create a new folder](#part1)
-* [Part 2: VHDL code for clock enable](#part2)
-* [Part 3: VHDL code for bidirectional binary counter](#part3)
-* [Part 4: Top level VHDL code](#part4)
-* [Experiments on your own](#experiments)
-* [Post-Lab report](#report)
-* [References](#references)
-
 <a name="preparation"></a>
 
 ## Pre-Lab preparation
 
 The Nexys A7 board provides five push buttons for user applications.
 
-1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of these push buttons, ie to which FPGA pins are connected and how. What logic/voltage value do the buttons generate when not pressed and what value when the buttons are pressed? Draw the schematic with push buttons.
+1. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of these push buttons, ie to which FPGA pins are connected and how. What logic/voltage value do the buttons generate when not pressed and what value when the buttons are pressed?
 
 2. Calculate how many periods of clock signal with frequency of 100&nbsp;MHz contain time intervals 2&nbsp;ms, 4&nbsp;ms, 10&nbsp;ms, 250&nbsp;ms, 500&nbsp;ms, and 1&nbsp;s. Write values in decimal, binary, and hexadecimal forms.
 
@@ -37,6 +33,7 @@ The Nexys A7 board provides five push buttons for user applications.
 
    ![number of periods](images/periods.png)
    &nbsp;
+
 <!--
 https://editor.codecogs.com/
 T_{clk}=\frac{1}{f_{clk}}=
@@ -54,24 +51,7 @@ T_{clk}=\frac{1}{f_{clk}}=
 
 <a name="part1"></a>
 
-## Part 1: Synchronize repositories and create a new folder
-
-1. Run Git Bash (Windows) of Terminal (Linux), navigate to your working directory, and update local repository.
-
-   > **Help:** Useful bash and git commands are `cd` - Change working directory. `mkdir` - Create directory. `ls` - List information about files in the current directory. `pwd` - Print the name of the current working directory. `git status` - Get state of working directory and staging area. `git pull` - Update local repository and working folder.
-
-   ```bash
-   ## Windows Git Bash or Linux:
-   $ git pull
-   ```
-
-2. Create a new working folder `06-counter` for this exercise.
-
-3. Use your favorite text editor, such as VS Code, Notepad++, etc. and create a new file `README.md` in your `06-counter/` folder. Copy/paste [report template](https://raw.githubusercontent.com/tomas-fryza/digital-electronics-1/master/labs/06-counter/report.md) to your `06-counter/README.md` file.
-
-<a name="part2"></a>
-
-## Part 2: VHDL code for clock enable
+## Part 1: VHDL code for clock enable
 
 To drive another logic in the design (with slower clock), it is better to generate a **clock enable signal** (see figure bellow) instead of creating another clock domain (using clock dividers) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.
 
@@ -96,21 +76,39 @@ To drive another logic in the design (with slower clock), it is better to genera
 }
 ```
 
-1. Perform the following steps to model clock enable circuit in Vivado.
+1. Run Vivado and create a new project:
 
-   1. Create a new Vivado RTL project `counter` in your `06-counter` working folder.
-   2. Create a VHDL source file `clock_enable` for the clock enable circuit.
-   3. Choose default board: `Nexys A7-50T`.
-   4. Open the [Clock enable circuit example](https://www.edaplayground.com/x/5LiJ) and copy/paste the `design.vhd` code to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as package for arithmetic operations, `generic` part, internal signal, and [synchronous process](https://github.com/tomas-fryza/digital-electronics-1/wiki/Processes). **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
+   1. Project name: `counter`
+   2. Project location: your working folder, such as `Documents`
+   3. Project type: **RTL Project**
+   4. Create a VHDL source file: `clock_enable`
+   5. Do not add any constraints now
+   6. Choose a default board: `Nexys A7-50T`
+   7. Click **Finish** to create the project
+   8. Define I/O ports of new module:
+
+      | **Port name** | **Direction** | **Type** | **Description** |
+      | :-: | :-: | :-- | :-- |
+      | `clk` | input | `std_logic` | Main clock |
+      | `rst` | input   | `std_logic` | Synchronous reset |
+      | `pulse` | output | `std_logic` | Clock enable pulse |
+
+
+
+
+
+
+   4. Open the [Clock enable circuit example](https://www.edaplayground.com/x/5LiJ) and copy/paste the `design.vhd` code to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as package for arithmetic operations, `generic` part, internal signal, and [synchronous process](https://github.com/tomas-fryza/vhdl-course/wiki/Processes). **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
+
    5. Create a VHDL [simulation source](https://www.edaplayground.com/x/5LiJ) `tb_clock_enable` and run the simulation. Verify the meaning of the constant `c_MAX` and reset generation process.
 
    The default simulation run time is set to 1000&nbsp;ns in Vivado. Note that, you can change it in the menu **Tools > Settings...**
 
       ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
 
-<a name="part3"></a>
+<a name="part2"></a>
 
-## Part 3: VHDL code for bidirectional binary counter
+## Part 2: VHDL code for bidirectional binary counter
 
 [Bidirectional counters](https://www.electronics-tutorials.ws/counter/count_4.html), also known as Up/Down counters, are capable of counting in either direction through any given count sequence and they can be reversed at any point within their count sequence by using an additional control input as shown below.
 
@@ -129,9 +127,9 @@ To drive another logic in the design (with slower clock), it is better to genera
 
      ![Change radix](images/screenshot_vivado_radix.png)
 
-<a name="part4"></a>
+<a name="part3"></a>
 
-## Part 4: Top level VHDL code
+## Part 3: Top level VHDL code
 
 1. Perform the following steps to implement the 4-bit bidirectional counter on the Nexys A7 board.
 
@@ -152,7 +150,7 @@ To drive another logic in the design (with slower clock), it is better to genera
       | `AN`        | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
       | `BTNC`      | in  | `std_logic` | Synchronous reset |
 
-   3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level: complete instantiation (copy) of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratories to the `counter/counter.srcs/sources_1/new/` source folder and add it to the project.
+   3. Use [direct instantiation](https://github.com/tomas-fryza/vhdl-course/wiki/Direct-instantiation) and define an architecture of the top level: complete instantiation (copy) of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratories to the `counter/counter.srcs/sources_1/new/` source folder and add it to the project.
 
       ```vhdl
       ----------------------------------------------------------
@@ -230,29 +228,17 @@ To drive another logic in the design (with slower clock), it is better to genera
 
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
 
-   8. Optional: Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
+   8. Optional: Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
       ![Pmod port](images/pmod.png)
 
       ![Binary counter verification](images/logic_analyser.jpg)
 
-   9. When you finish, always synchronize the contents of your working folder with the local and remote versions of your repository. This way you are sure that you will not lose any of your changes. To do that, use git commands to add, commit, and push all local changes to your remote repository. Check GitHub web page for changes.
+<a name="challenges"></a>
 
-      > **Help:** Useful git commands are `git status` - Get state of working directory and staging area. `git add` - Add new and modified files to the staging area. `git commit` - Record changes to the local repository. `git push` - Push changes to remote repository. `git pull` - Update local repository and working folder. Note that, a brief description of useful git commands can be found [here](https://github.com/tomas-fryza/digital-electronics-1/wiki/Useful-Git-commands) and detailed description of all commands is [here](https://github.com/joshnh/Git-Commands).
-
-<a name="experiments"></a>
-
-## Experiments on your own
+## Challenges
 
 1. Add a second instantiation (copy) of the counter and clock enable entities and make a 12-bit counter with a 10 ms time base. Therefore, the application will contain two independent binary counters (4-bit and 12-bit), each with a different counting speed. Display the second counter value on LEDs.
-
-<a name="report"></a>
-
-## Post-Lab report
-
-*Complete all parts of `06-counter/README.md` file (see Part 1.3) in Czech, Slovak, or English, push it to your GitHub repository, and submit a link to this file via [BUT e-learning](https://moodle.vutbr.cz/). The deadline for submitting the task is the day before the next lab, i.e. in one week.*
-
-*Vypracujte všechny části ze souboru `06-counter/README.md` (viz Část 1.3) v českém, slovenském, nebo anglickém jazyce, uložte je na váš GitHub repozitář a odevzdejte link na tento soubor prostřednictvím [e-learningu VUT](https://moodle.vutbr.cz/). Termín odevzdání úkolu je den před dalším počítačovým cvičením, tj. za jeden týden.*
 
 <a name="references"></a>
 
