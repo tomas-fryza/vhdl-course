@@ -1,13 +1,12 @@
 -------------------------------------------------
 --! @brief 4-bit binary comparator.
 --! @version 1.3
---! @copyright (c) 2020 Tomas Fryza, MIT license
+--! @copyright (c) 2020-2024 Tomas Fryza, MIT license
 --!
---! A digital or **binary comparator** compares
---! digital signals A, B presented at input terminal
---! and produce outputs depending upon the condition
---! of those inputs. Four-bit binary comparator use
---! `when/else` assignments to distinguish three
+--! A digital or **binary comparator** compares digital
+--! signals A, B and produce outputs depending upon the
+--! condition of those inputs. Four-bit binary comparator
+--! use `when/else` assignments to distinguish three
 --! states: greater than, equal, and less than.
 --!
 --! Wavedrom example, see <https://wavedrom.com/>:
@@ -20,9 +19,8 @@
 --!  {name: 'a_greater', wave: 'l.h.l.'},
 --! ]}
 --!
---! Tested on the Nexys A7-50T board featuring the
---! xc7a50ticsg324-1L FPGA. Developed using TerosHDL,
---! Vivado 2020.2, and EDA Playground.
+--! Developed using TerosHDL, Vivado 2020.2, and Playground.
+--! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 
 library ieee;

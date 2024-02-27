@@ -10,11 +10,10 @@
 --! Implementation of bidirectional N-bit counter. Number
 --! of bits is set by `g_CNT_WIDTH` and counting direction
 --! by `cnt_up` input.
---
--- Hardware: Nexys A7-50T, xc7a50ticsg324-1L
--- Software: TerosHDL, Vivado 2020.2, EDA Playground
---
-----------------------------------------------------------
+--!
+--! Developed using TerosHDL, Vivado 2020.2, and Playground.
+--! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
+-------------------------------------------------
 
 library ieee;
   use ieee.std_logic_1164.all;

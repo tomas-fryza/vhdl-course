@@ -8,9 +8,8 @@
 --! operation. The carry-out signal from each full adder is
 --! propagated to the carry-in of the next full adder.
 --!
---! Developed using TerosHDL, Vivado 2020.2, and
---! EDA Playground. Tested on the Nexys A7-50T
---! board featuring the xc7a50ticsg324-1L FPGA.
+--! Developed using TerosHDL, Vivado 2020.2, and Playground.
+--! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 
 library ieee;

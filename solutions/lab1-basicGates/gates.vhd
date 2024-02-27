@@ -1,12 +1,13 @@
 -------------------------------------------------
 --! @brief VHDL example for basic logic gates.
 --! @version 1.1
---! @copyright (c) 2019 Tomas Fryza, MIT license
+--! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
---! The entity 'gates' defines an interface for
---! implementing 2-input AND, OR, and XOR gates.
---! The architecture 'behavioral' implements the
---! behavior of these gates with specified delays.
+--! The entity 'gates' defines an interface for implementing
+--! 2-input AND, OR, and XOR gates. The architecture
+--! implements the behavior of these gates with specified delays.
+--!
+--! Developed using TerosHDL, Vivado 2020.2, and Playground.
 -------------------------------------------------
 
 library ieee;

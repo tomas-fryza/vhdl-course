@@ -1,20 +1,17 @@
 -------------------------------------------------
 --! @brief One-digit 7-segment display decoder
 --! @version 1.3
---! @copyright (c) 2018 Tomas Fryza, MIT license
+--! @copyright (c) 2018-24 Tomas Fryza, MIT license
 --!
---! This VHDL file represents a binary-to-seven-
---! segment decoder for a one-digit display with
---! Common Anode configuration (active-low). The
---! decoder defines 16 hexadecimal symbols: `0, 1,
---! ..., 9, A, b, C, d, E, F`. All segments are
---! turned off when `clear` signal is high.
---! Note: Decimal Point functionality is not
---! implemented.
+--! This VHDL file represents a binary-to-seven-segment
+--! decoder for a one-digit display with Common Anode
+--! configuration (active-low). The decoder defines 16
+--! hexadecimal symbols: `0, 1, ..., 9, A, b, C, d, E, F`.
+--! All segments are turned off when `clear` signal is high.
+--! Note that Decimal Point functionality is not implemented.
 --!
---! Developed using TerosHDL, Vivado 2020.2, and
---! EDA Playground. Tested on the Nexys A7-50T
---! board featuring the xc7a50ticsg324-1L FPGA.
+--! Developed using TerosHDL, Vivado 2020.2, and Playground.
+--! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 
 library ieee;
@@ -35,13 +32,12 @@ end entity bin2seg;
 architecture behavioral of bin2seg is
 begin
 
-  --! This combinational process decodes binary
-  --! input (`bin`) into 7-segment display output
-  --! (`seg`) for a Common Anode configuration.
-  --! When either `bin` or `clear` changes, the
-  --! process is triggered. Each bit in `seg`
-  --! represents a segment from A to G. The display
-  --! is cleared if input `clear` is set to 1.
+  --! This combinational process decodes binary input
+  --! `bin` into 7-segment display output `seg` for a
+  --! Common Anode configuration. When either `bin` or
+  --! `clear` changes, the process is triggered. Each
+  --! bit in `seg` represents a segment from A to G.
+  --! The display is cleared if `clear` is set to 1.
   p_7seg_decoder : process (bin, clear) is
   begin
 

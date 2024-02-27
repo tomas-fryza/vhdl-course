@@ -1,13 +1,15 @@
 -------------------------------------------------
 --! @brief Example to demonstrate De Morgan's Laws.
 --! @version 1.3
---! @copyright (c) 2019 Tomas Fryza, MIT license
+--! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
 --! This example implements the original logic
 --! function and its modified versions using De
 --! Morgan's Laws. By comparing the output signals
 --! for the expressions, the verification of the
 --! laws is confirmed.
+--!
+--! Developed using TerosHDL, Vivado 2020.2, and Playground.
 -------------------------------------------------
 
 library ieee; -- Standard library
