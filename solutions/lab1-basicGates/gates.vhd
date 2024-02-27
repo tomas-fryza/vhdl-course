@@ -28,7 +28,6 @@ end entity gates;
 -------------------------------------------------
 
 architecture behavioral of gates is
-
 begin
 
   -- 2-input AND gate

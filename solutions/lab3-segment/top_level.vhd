@@ -1,22 +1,17 @@
 -------------------------------------------------
 --! @brief Top level of 7-segment display decoder
 --! @version 1.3
---! @copyright (c) 2020 Tomas Fryza, MIT license
+--! @copyright (c) 2020-2024 Tomas Fryza, MIT license
 --!
---! This VHDL file implements the top-level module
---! for a binary-to-seven-segment decoder, controlling
---! two displays. The entity 'top_level' defines
---! data inputs (SW_R and SW_L), buttons (BTNC and
---! BTND), and outputs for display cathodes (CA to
---! CG) and common anodes (AN). The module instantiates
---! the 'bin2seg' component to decode binary inputs
---! into seven-segment display signals. Display
---! position is selected by BTND button, and the input
---! data is displayed on LEDs (LED_R and LED_L).
+--! This VHDL file implements the top-level module for
+--! a binary-to-seven-segment decoder, controlling two displays.
+--! The module instantiates the 'bin2seg' component to decode
+--! binary inputs into seven-segment display signals. Display
+--! position is selected by BTND button, and the input data is
+--! displayed on LEDs (LED_R and LED_L).
 --!
---! Developed using TerosHDL, Vivado 2020.2, and
---! EDA Playground. Tested on the Nexys A7-50T
---! board featuring the xc7a50ticsg324-1L FPGA.
+--! Developed using TerosHDL, Vivado 2023.2, and Playground.
+--! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 
 library ieee;
@@ -59,9 +54,8 @@ architecture behavioral of top_level is
   signal sig_tmp : std_logic_vector(3 downto 0);
 begin
 
-  --! Instantiate (make a copy of) `bin2seg`
-  --! component to decode binary input into
-  --! seven-segment display signals.
+  --! Instantiate (make a copy of) `bin2seg` component to
+  --! decode binary input into seven-segment display signals.
   display : component bin2seg
     port map (
       clear  => BTNC,

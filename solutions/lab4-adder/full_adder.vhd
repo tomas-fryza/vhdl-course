@@ -9,7 +9,7 @@
 --! The outputs are computed by simple VHDL assignment
 --! statements.
 --!
---! Developed using TerosHDL, Vivado 2020.2, and Playground.
+--! Developed using TerosHDL, Vivado 2023.2, and Playground.
 --! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 
