@@ -64,14 +64,15 @@ To drive another logic in the design (with slower clock), it is better to genera
   signal: [
     {name: "clk",     wave: 'P...............'},
     {name: "rst",     wave: 'lnh.pl..........'},
+    {},
     {name: "sig_cnt", wave: 'x.3..33333333333', data: ["0","1","2","3","4","0","1","2","3","4","0","1"]},
     {},
-    {name: "ce",      wave: 'l........hl...hl'},
+    {name: "pulse",   wave: 'l........hl...hl'},
   ],
   head: {
   },
   foot: {
-    text:'g_MAX = 5',
+    text:'g_PERIOD = 5',
   },
 }
 ```
@@ -93,18 +94,91 @@ To drive another logic in the design (with slower clock), it is better to genera
       | `rst` | input   | `std_logic` | Synchronous reset |
       | `pulse` | output | `std_logic` | Clock enable pulse |
 
+2. Add **Generic** to `entity` declaration. It allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
 
+   ```vhdl
+   entity clock_enable is
+     generic (
+       g_PERIOD : integer := 5 --! Number of clk periods to generate ouput pulse
+     );                        -- Note that THERE IS a semicolon between generic
+                               -- and port sections
+     port (
+       clk : in    std_logic;  --! Main clock
+       rst : in    std_logic;  --! High-active synchronous reset
+       ce  : out   std_logic   --! Clock enable pulse signal
+     );
+   end entity clock_enable;
+   ```
 
+3. Add package for arithmetic operations to the beginning of VHDL file.
 
+   ```vhdl
+   library ieee;
+     use ieee.std_logic_1164.all;
+     use ieee.numeric_std.all; -- Package for arithmetic operations
+   ```
 
+4. Copy/paste the [clock enable architecture](https://www.edaplayground.com/x/5LiJ) to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as internal signal declaration and [synchronous process](https://github.com/tomas-fryza/vhdl-course/wiki/Processes).
 
-   4. Open the [Clock enable circuit example](https://www.edaplayground.com/x/5LiJ) and copy/paste the `design.vhd` code to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as package for arithmetic operations, `generic` part, internal signal, and [synchronous process](https://github.com/tomas-fryza/vhdl-course/wiki/Processes). **Generic** allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
+   ```vhdl
+   architecture behavioral of clock_enable is
 
-   5. Create a VHDL [simulation source](https://www.edaplayground.com/x/5LiJ) `tb_clock_enable` and run the simulation. Verify the meaning of the constant `c_MAX` and reset generation process.
+     -- Local counter
+     signal sig_cnt : natural;
+
+   begin
+
+     --------------------------------------------------------
+     -- p_clk_enable:
+     -- Generate clock enable signal. By default, enable signal
+     -- is low and generated pulse is always one clock long.
+     --------------------------------------------------------
+     p_clk_enable : process (clk) is
+     begin
+
+       if (rising_edge(clk)) then            -- Synchronous process
+         if (rst = '1') then                 -- High-active reset
+           sig_cnt <= 0;                     -- Clear local counter
+           pulse   <= '0';                   -- Set output to low
+
+         -- Test number of clock periods
+         elsif (sig_cnt >= (g_PERIOD-1)) then
+           sig_cnt <= 0;                     -- Clear local counter
+           pulse   <= '1';                   -- Generate clock enable pulse
+         else
+           sig_cnt <= sig_cnt + 1;
+           pulse   <= '0';
+         end if;
+       end if;
+
+     end process p_clk_enable;
+
+   end architecture behavioral;
+   ```
+
+5. [Generate](https://vhdl.lapinoo.net/testbench/) or copy/paste the VHDL [simulation source](https://www.edaplayground.com/x/5LiJ) `tb_clock_enable` and run the simulation. Verify the meaning of `g_PERIOD` and reset generation process.
 
    The default simulation run time is set to 1000&nbsp;ns in Vivado. Note that, you can change it in the menu **Tools > Settings...**
 
       ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <a name="part2"></a>
 
