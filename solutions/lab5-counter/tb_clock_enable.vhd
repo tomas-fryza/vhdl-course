@@ -18,7 +18,7 @@ library ieee;
 ----------------------------------------------------------
 
 entity tb_clock_enable is
-  -- Entity of testbench is always empty
+-- Entity of testbench is always empty
 end entity tb_clock_enable;
 
 ----------------------------------------------------------
@@ -26,28 +26,25 @@ end entity tb_clock_enable;
 ----------------------------------------------------------
 
 architecture testbench of tb_clock_enable is
-
-  constant c_MAX               : natural := 10;
-  constant c_CLK_100MHZ_PERIOD : time    := 10 ns;
+  constant c_CLK_100MHZ_PERIOD : time := 10 ns;
 
   -- Local signals
   signal sig_clk_100mhz : std_logic;
   signal sig_rst        : std_logic;
-  signal sig_ce         : std_logic;
-
+  signal sig_pulse      : std_logic;
 begin
 
   -- Connecting testbench signals with clock_enable entity
   -- (Unit Under Test)
   uut_ce : entity work.clock_enable
     generic map (
-      g_MAX => c_MAX
-    ) -- Note that there is NO comma or semicolon between
-      -- generic map section and port map section
+      g_PERIOD => 8
+    )
+    -- generic map section and port map section
     port map (
-      clk => sig_clk_100mhz,
-      rst => sig_rst,
-      ce  => sig_ce
+      clk   => sig_clk_100mhz,
+      rst   => sig_rst,
+      pulse => sig_pulse
     );
 
   --------------------------------------------------------
@@ -64,6 +61,7 @@ begin
       wait for c_CLK_100MHZ_PERIOD / 2;
 
     end loop;
+
     wait;                               -- Process is suspended forever
 
   end process p_clk_gen;
