@@ -98,6 +98,6 @@ begin
   LED_A <= SW_A;
 
   -- Set display position
-  AN(7 downto 0) <= b"1111_1110";
+  AN <= b"1111_1110";
 
 end architecture behavioral;
