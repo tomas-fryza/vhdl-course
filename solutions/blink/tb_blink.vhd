@@ -19,21 +19,20 @@ library ieee;
 -- Entity declaration for testbench
 -------------------------------------------------
 
-entity tb_led_on_off is
+entity tb_blink is
 -- Entity of testbench is always empty
-end entity tb_led_on_off;
+end entity tb_blink;
 
 -------------------------------------------------
 -- Architecture body for testbench
 -------------------------------------------------
 
-architecture testbench of tb_led_on_off is
-
-  component led_on_off is
+architecture testbench of tb_blink is
+  component blink is
     port (
-      clk  : in    std_logic;
-      arst : in    std_logic;
-      led  : out   std_logic
+      clk : in    std_logic;
+      rst : in    std_logic;
+      led : out   std_logic
     );
   end component;
 
@@ -41,16 +40,15 @@ architecture testbench of tb_led_on_off is
 
   -- Local signals
   signal sig_clk_100mhz : std_logic;
-  signal sig_arst       : std_logic;
+  signal sig_rst        : std_logic;
   signal sig_led        : std_logic;
-
 begin
 
-  dut : component led_on_off
+  dut : component blink
     port map (
-      clk  => sig_clk_100mhz,
-      arst => sig_arst,
-      led  => sig_led
+      clk => sig_clk_100mhz,
+      rst => sig_rst,
+      led => sig_led
     );
 
   -----------------------------------------------
@@ -80,15 +78,15 @@ begin
   p_reset_gen : process is
   begin
 
-    sig_arst <= '0';
+    sig_rst <= '0';
     wait for 13 ns;
 
     -- Reset activated
-    sig_arst <= '1';
+    sig_rst <= '1';
     wait for 20 ns;
 
     -- Reset deactivated
-    sig_arst <= '0';
+    sig_rst <= '0';
 
     wait;
 
