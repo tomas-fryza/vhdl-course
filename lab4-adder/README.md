@@ -88,7 +88,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
      severity error;
    ```
 
-5. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
+5. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
 <a name="part2"></a>
 
@@ -153,7 +153,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
    end architecture behavioral;
    ```
 
-4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
+4. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
 
 5. (Optional: Create a VHDL simulation source `tb_adder_4bit` and simulate several test cases.)
 
@@ -224,7 +224,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 6. Test the functionality of the adder by toggling the switches and observing display and LEDs.
 
-7. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
+7. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
 
 <!--
 5. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.

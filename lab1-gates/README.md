@@ -122,7 +122,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
    | `xnor` | Exclusive OR with negated output |
    | `-- comment` | Comments |
 
-4. Use **File** > **Add Sources... Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_gates` (same filename as tested entity with prefix `tb_`). This time, click **OK** to define an empty module. You will find the new simulation file in **Simulation Sources > sim_1**.
+4. Use **File > Add Sources... Alt+A > Add or create simulation sources** and create a new VHDL file `tb_gates` (same filename as tested entity with prefix `tb_`). This time, click **OK** to define an empty module. You will find the new simulation file in **Simulation Sources > sim_1**.
 
    You can generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) and complete the test cases or copy/paste the following testbench to `tb_gates.vhd` file. **Important:** Make sure you are modifying `tb_*.vhd` file!
 
@@ -170,7 +170,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
    end testbench;
    ```
 
-4. Use **Flow** > **Run Simulation** > **Run Behavioral Simulation** and run Vivado simulator. To see the whole simulated signals, it is recommended to select **View > Zoom Fit**.
+4. Use **Flow > Run Simulation > Run Behavioral Simulation** and run Vivado simulator. To see the whole simulated signals, it is recommended to select **View > Zoom Fit**.
 
    ![Vivado-simulation](images/vivado_simulation.png)
 
@@ -178,7 +178,7 @@ In this laboratory exercise, you will learn how to compose a basic VHDL code usi
    >
    > ![Reset simulation](images/screenshot_vivado_reset_simul.png)
 
-5. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
+5. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
    ![Vivado-rtl](images/vivado_rtl.png)
 
@@ -228,7 +228,7 @@ De Morgan's laws are two fundamental rules in Boolean algebra that are used to s
 
    Get inspired by [Example of basic gates](https://www.edaplayground.com/x/5L92) from EDA Playground, complete the `architecture`, add new simulation source file `tb_demorgan.vhd`, and verify all three functions in Vivado simulator.
 
-3. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
+3. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
 
 <a name="challenges"></a>
 

@@ -168,7 +168,7 @@ The Binary to 7-Segment Decoder converts 4-bit binary data to 7-bit control sign
    >   end loop;
    > ```
 
-4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
+4. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
 <a name="part2"></a>
 

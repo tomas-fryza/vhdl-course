@@ -115,7 +115,7 @@ The K-map for the "equals" function is as follows:
 
    One function is provided, but you must complete the other two: write one as a VHDL assignment statement using SoP or Pos logic, and the second as a conditional signal assignment.
 
-3. Use **File** > **Add Sources... Alt+A** > **Add or create simulation sources** and create a new VHDL file `tb_compare_2bit` (same filename as tested entity with prefix `tb_`). Generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) or copy/paste it from the [EDA Playground template](https://www.edaplayground.com/x/5uu3). Complete the stimuli process by several test cases.
+3. Use **File > Add Sources... Alt+A > Add or create simulation sources** and create a new VHDL file `tb_compare_2bit` (same filename as tested entity with prefix `tb_`). Generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) or copy/paste it from the [EDA Playground template](https://www.edaplayground.com/x/5uu3). Complete the stimuli process by several test cases.
 
    ```vhdl
    stimuli : process
