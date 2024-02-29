@@ -155,6 +155,8 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
 
+5. (Optional: Create a VHDL simulation source `tb_adder_4bit` and simulate several test cases.)
+
 <a name="part3"></a>
 
 ## Part 3: Top level VHDL code
