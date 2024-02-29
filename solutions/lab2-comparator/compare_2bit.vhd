@@ -24,18 +24,18 @@
 -------------------------------------------------
 
 library ieee;
-  use ieee.std_logic_1164.all;
+    use ieee.std_logic_1164.all;
 
 -------------------------------------------------
 
 entity compare_2bit is
-  port (
-    b         : in    std_logic_vector(1 downto 0); --! Input bus b[1:0]
-    a         : in    std_logic_vector(1 downto 0); --! Input bus a[1:0]
-    b_greater : out   std_logic;                    --! Output is `1` if b > a
-    b_a_equal : out   std_logic;                    --! Output is `1` if b = a
-    a_greater : out   std_logic                     --! Output is `1` if b < a
-  );
+    port (
+        b         : in    std_logic_vector(1 downto 0); --! Input bus b[1:0]
+        a         : in    std_logic_vector(1 downto 0); --! Input bus a[1:0]
+        b_greater : out   std_logic;                    --! Output is `1` if b > a
+        b_a_equal : out   std_logic;                    --! Output is `1` if b = a
+        a_greater : out   std_logic                     --! Output is `1` if b < a
+    );
 end entity compare_2bit;
 
 -------------------------------------------------
@@ -43,17 +43,17 @@ end entity compare_2bit;
 architecture behavioral of compare_2bit is
 begin
 
-  -- MODIFY LOGIC FUNCTION FOR "B GREATER"
-  b_greater <= (b(1) and not(a(1))) or
+    -- MODIFY LOGIC FUNCTION FOR "B GREATER"
+    b_greater <= (b(1) and not(a(1))) or
                (b(0) and not(a(1)) and not (a(0))) or
                (b(1) and b(0) and not(a(0)));
 
-  b_a_equal <= '1' when (b = a) else
-               '0';
+    b_a_equal <= '1' when (b = a) else
+                 '0';
 
-  -- MODIFY LOGIC FUNCTION FOR "A GREATER"
-  a_greater <= '1' when (b < a) else
-               '0';
+    -- MODIFY LOGIC FUNCTION FOR "A GREATER"
+    a_greater <= '1' when (b < a) else
+                 '0';
 
 end architecture behavioral;
 

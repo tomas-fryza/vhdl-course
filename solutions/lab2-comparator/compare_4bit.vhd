@@ -24,18 +24,18 @@
 -------------------------------------------------
 
 library ieee;
-  use ieee.std_logic_1164.all;
+    use ieee.std_logic_1164.all;
 
 -------------------------------------------------
 
 entity compare_4bit is
-  port (
-    b         : in    std_logic_vector(3 downto 0); --! Input bus b[3:0]
-    a         : in    std_logic_vector(3 downto 0); --! Input bus a[3:0]
-    b_greater : out   std_logic;                    --! Output is `1` if b > a
-    b_a_equal : out   std_logic;                    --! Output is `1` if b = a
-    a_greater : out   std_logic                     --! Output is `1` if b < a
-  );
+    port (
+        b         : in    std_logic_vector(3 downto 0); --! Input bus b[3:0]
+        a         : in    std_logic_vector(3 downto 0); --! Input bus a[3:0]
+        b_greater : out   std_logic;                    --! Output is `1` if b > a
+        b_a_equal : out   std_logic;                    --! Output is `1` if b = a
+        a_greater : out   std_logic                     --! Output is `1` if b < a
+    );
 end entity compare_4bit;
 
 -------------------------------------------------
@@ -43,13 +43,13 @@ end entity compare_4bit;
 architecture behavioral of compare_4bit is
 begin
 
-  b_greater <= '1' when (b > a) else
-               '0';
+    b_greater <= '1' when (b > a) else
+                 '0';
 
-  b_a_equal <= '1' when (b = a) else
-               '0';
+    b_a_equal <= '1' when (b = a) else
+                 '0';
 
-  a_greater <= '1' when (b < a) else
-               '0';
+    a_greater <= '1' when (b < a) else
+                 '0';
 
 end architecture behavioral;

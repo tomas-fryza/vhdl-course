@@ -12,17 +12,17 @@
 -------------------------------------------------
 
 library ieee;
-  use ieee.std_logic_1164.all;
+    use ieee.std_logic_1164.all;
 
 -------------------------------------------------
 
 entity half_adder is
-  port (
-    b     : in    std_logic; --! Input b
-    a     : in    std_logic; --! Input a
-    carry : out   std_logic; --! Output carry
-    sum   : out   std_logic  --! Output sum
-  );
+    port (
+        b     : in    std_logic; --! Input b
+        a     : in    std_logic; --! Input a
+        carry : out   std_logic; --! Output carry
+        sum   : out   std_logic  --! Output sum
+    );
 end entity half_adder;
 
 -------------------------------------------------
@@ -30,7 +30,7 @@ end entity half_adder;
 architecture behavioral of half_adder is
 begin
 
-  carry <= b and a;
-  sum   <= b xor a;
+    carry <= b and a;
+    sum   <= b xor a;
 
 end architecture behavioral;

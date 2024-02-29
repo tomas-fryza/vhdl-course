@@ -13,79 +13,116 @@
 -------------------------------------------------
 
 library ieee;
-  use ieee.std_logic_1164.all;
+    use ieee.std_logic_1164.all;
 
 -------------------------------------------------
 
 entity adder_4bit is
-  port (
-    c_in   : in    std_logic;                    --! Carry-in signal
-    b      : in    std_logic_vector(3 downto 0); --! 4-bit input vector 'b'
-    a      : in    std_logic_vector(3 downto 0); --! 4-bit input vector 'a'
-    c_out  : out   std_logic;                    --! Carry-out signal
-    result : out   std_logic_vector(3 downto 0)  --! 4-bit sum output
-  );
+    port (
+        c_in   : in    std_logic;                    --! Carry-in signal
+        b      : in    std_logic_vector(3 downto 0); --! 4-bit input vector 'b'
+        a      : in    std_logic_vector(3 downto 0); --! 4-bit input vector 'a'
+        c_out  : out   std_logic;                    --! Carry-out signal
+        result : out   std_logic_vector(3 downto 0)  --! 4-bit sum output
+    );
 end entity adder_4bit;
 
 -------------------------------------------------
 
 architecture behavioral of adder_4bit is
-  -- Component declaration for full adder
-  component full_adder is
-    port (
-      c_in  : in    std_logic;
-      b     : in    std_logic;
-      a     : in    std_logic;
-      c_out : out   std_logic;
-      sum   : out   std_logic
-    );
-  end component;
+    -- Component declaration for full adder
+    component full_adder is
+        port (
+            c_in  : in    std_logic;
+            b     : in    std_logic;
+            a     : in    std_logic;
+            c_out : out   std_logic;
+            sum   : out   std_logic
+        );
+    end component;
 
-  -- Local signals for carry propagation
-  signal sig_c0 : std_logic;
-  signal sig_c1 : std_logic;
-  signal sig_c2 : std_logic;
+    -- Local signals for carry propagation
+    signal sig_c0 : std_logic;
+    signal sig_c1 : std_logic;
+    signal sig_c2 : std_logic;
 begin
 
-  -- Component instantiations for each bit position
-  -- 1st full adder
-  FA0 : component full_adder
-    port map (
-      c_in  => c_in,
-      b     => b(0),
-      a     => a(0),
-      c_out => sig_c0,
-      sum   => result(0)
-    );
+    -- Component instantiations for each bit position
+    -- 1st full adder
+    FA0 : component full_adder
+        port map (
+            c_in  => c_in,
+            b     => b(0),
+            a     => a(0),
+            c_out => sig_c0,
+            sum   => result(0)
+        );
 
-  -- 2nd full adder
-  FA1 : component full_adder
-    port map (
-      c_in  => sig_c0,
-      b     => b(1),
-      a     => a(1),
-      c_out => sig_c1,
-      sum   => result(1)
-    );
+    -- 2nd full adder
+    FA1 : component full_adder
+        port map (
+            c_in  => sig_c0,
+            b     => b(1),
+            a     => a(1),
+            c_out => sig_c1,
+            sum   => result(1)
+        );
 
-  -- 3rd full adder
-  FA2 : component full_adder
-    port map (
-      c_in  => sig_c1,
-      b     => b(2),
-      a     => a(2),
-      c_out => sig_c2,
-      sum   => result(2)
-    );
+    -- 3rd full adder
+    FA2 : component full_adder
+        port map (
+            c_in  => sig_c1,
+            b     => b(2),
+            a     => a(2),
+            c_out => sig_c2,
+            sum   => result(2)
+        );
 
-  -- 4th full adder
-  FA3 : component full_adder
-    port map (
-      c_in  => sig_c2,
-      b     => b(3),
-      a     => a(3),
-      c_out => c_out,
-      sum   => result(3)
+    -- 4th full adder
+    FA3 : component full_adder
+        port map (
+            c_in  => sig_c2,
+            b     => b(3),
+            a     => a(3),
+            c_out => c_out,
+            sum   => result(3)
+        );
+
+end architecture behavioral;
+
+-------------------------------------------------
+-- See file full_adder.vhd
+-------------------------------------------------
+
+library ieee;
+    use ieee.std_logic_1164.all;
+
+-------------------------------------------------
+
+entity full_adder is
+    port (
+        c_in  : in    std_logic; --! Input carry
+        b     : in    std_logic; --! Input b
+        a     : in    std_logic; --! Input a
+        c_out : out   std_logic; --! Output carry
+        sum   : out   std_logic  --! Output sum
     );
+end entity full_adder;
+
+-------------------------------------------------
+
+architecture behavioral of full_adder is
+    -- Internal signals between gates
+    signal sig_tmp_0 : std_logic;
+    signal sig_tmp_1 : std_logic;
+begin
+
+    -- Output sum
+    sig_tmp_0 <= b xor a;
+    sum       <= c_in xor sig_tmp_0;
+
+    -- Output carry
+    sig_tmp_1 <= c_in and sig_tmp_0;
+    c_out     <= sig_tmp_1 or (b and a);
 
 end architecture behavioral;
