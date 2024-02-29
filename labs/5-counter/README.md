@@ -46,13 +46,35 @@ T_{clk}=\frac{1}{f_{clk}}=
    | 500&nbsp;ms |  |  |  |
    | 1&nbsp;sec | 100_000_000 | `x"5F5_E100"` | `b"0101_1111_0101_1110_0001_0000_0000"` |
 
-2. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of Pmod connectors, ie to which FPGA pins are connected and how. How to use these connectors?
+2. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of Pmod ports, ie to which FPGA pins are connected. What is the usage of such connectors?
+
+   ![pmods](images/pmod_table.png)
 
 <a name="part1"></a>
 
 ## Part 1: VHDL code for simple counter
 
-A simple **N-bit counter** is a digital circuit and has N output bits representing the count value. It counts up sequentially from 0 to 2^N-1, where N is the number of bits and then wraps around back to 0. When the reset signal is asserted, the counter is reset to 0. Many digital circuits have a **clock enable** input. This signal is used to enable or disable the counting operation of the counter. When the clock enable signal is active (typically high), the counter counts normally with the clock input. When the clock enable signal is inactive (typically low), the counter holds its current value and does not count.
+A simple **N-bit counter** is a digital circuit and has N output bits representing the count value. It counts up sequentially from `0` to `2^N-1`, where `N` is the number of bits and then wraps around back to 0. When the reset signal is asserted, the counter is reset to 0. Many digital circuits have a **clock enable** input. This signal is used to enable or disable the counting operation of the counter. When the clock enable signal is active (typically high), the counter counts normally with the clock input. When the clock enable signal is inactive (typically low), the counter holds its current value and does not count.
+
+![simple counter](images/wavedrom_simple_counter.png)
+
+> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows:
+>
+```javascript
+{
+  signal: [
+    {name: "clk", wave: 'P.................'},
+    {name: "rst", wave: 'lnhpl.............'},
+    {name: "en",  wave: 'h.............pl..'},
+    {},
+    {name: "count[2:0]", wave: 'x.3.33333333333...', data: ["0","1","2","3","4","5","6","7","0","1","2","3"]},
+  ],
+  head: {
+  },
+  foot: {
+  },
+}
+```
 
 1. Run Vivado and create a new project:
 
@@ -67,16 +89,16 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
-      | `clk` | input | `std_logic` | Main clock |
-      | `rst` | input   | `std_logic` | Synchronous reset |
-      | `en` | input   | `std_logic` | Clock enable input |
+      | `clk`   | input  | `std_logic` | Main clock |
+      | `rst`   | input  | `std_logic` | Synchronous reset |
+      | `en`    | input  | `std_logic` | Clock enable input |
       | `count` | output | `std_logic_vector (3 downto 0)` | Counter value |
 
 2. Use VHDL templates in menu **Tools > Language Templates**, search for `up counters`, and select the one using clock enable (CE) and synchronous active-high reset. Copy/paste this template to the architecture and modify the code according to your I/O port names.
 
     ```vhdl
     architecture behavioral of simple_counter is
-    
+        ...
     begin
 
         process (<clock>)
@@ -93,17 +115,21 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
     end behavioral;
     ```
 
-   Hint: Use the following parts:
+   Hints:
+      * `rising_edge(clk)` instead of `clk='1' and clk'event` to test clock edge
       * `others => '0'` initializes all elements of the array to binary zero
-      * `rising_edge(clk)` to test clock edge
-      * internal signal of data type `std_logic_vector (3 downto 0)`
+      * declare an internal signal `sig_count` of data type `std_logic_vector (3 downto 0)`
         > Note that an internal signal is used to implement the counter. This is because the **output** port `count` cannot be read and therefore the operation `count + 1` cannot be performed.
-      * add `use ieee.std_logic_unsigned.all;` package to use arithmetic operations with `std_logic_vector`
-      * connect internal signals to counter outputs
-`
-3. Create a testbench file `tb_simple_counter`, run the simulation, and test the functionality or `rst` and `en`.
+      * add `use ieee.std_logic_unsigned.all;` package to use arithmetic operations with `std_logic_vector` data type
+      * connect internal signal to counter output
 
-4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
+3. Create testbench file `tb_simple_counter`, run the simulation, and test the functionality or `rst` and `en` signals.
+
+   > Note that for any vector, it is possible to change the numeric system in the simulation which represents the current value. To do so, right-click the vector name and select **Radix > Unsigned Decimal** from the context menu. You can change the vector color by **Signal Color** as well.
+   > 
+   > ![Change radix](images/screenshot_vivado_radix.png)
+
+4. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
 
 5. Use **Flow > Synthesis > Run Synthesis** and then see the schematic at the gate level.
 
@@ -111,7 +137,61 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
 
 ## Part 2: VHDL generics
 
-TBD
+A VHDL **generic** allows the designer to parametrize the entity during the component instantiation and it is a great way to create modular code that can be quickly changed to accomodate a wide variety of designs. Since a generic cannot be modified inside the architecture, it is like a constant.
+
+Instead of writing:
+
+   ```vhdl
+   entity some_entity is
+       port (
+           clk     : in    std_logic;
+           counter : out   std_logic_vector(3 downto 0) -- Hard coded to be 4 bits long
+       );
+   end entity some_entity;
+   ```
+
+We can write:
+
+   ```vhdl
+   entity some_entity is
+       generic (
+           N : integer := some_defaul_value
+       );
+       port (
+           clk     : in    std_logic;
+           counter : out   std_logic_vector(N-1 downto 0) -- Can be any width
+           -- (the desired width will be passed during instantiation in the generic map)
+       );
+   end entity some_entity;
+   ```
+
+1. Extend the code from the previous part and use generics in both, design and testbench sources.
+
+   In design source, use generic `N` to define number of bits for the counter.
+
+   In testbench, define a constant, prior to declaring the component:
+
+   ```vhdl
+   constant COUNTER_WIDTH : integer := 6;
+   ```
+
+   and use it to declare your counter signal:
+
+   ```vhdl
+   signal count : std_logic_vector(COUNTER_WIDTH-1 downto 0);
+   ```
+
+   When you instantiate your counter, you then also bind the `N` generic to this constant:
+
+   ```vhdl
+   dut : component simple_counter
+       generic map (
+           N => COUNTER_WIDTH
+       )
+       ...
+   ```
+
+2. Simulate your design with several `COUNTER_WIDTH` values.
 
 <a name="part3"></a>
 
@@ -131,20 +211,12 @@ TBD
 
 
 
-1. Perform the following steps to simulate the bidirectional N-bit counter.
+4. Change the testbench you want to simulate, right click to file name and select `Set as Top`.
 
-   1. Create a new VHDL [design source](https://www.edaplayground.com/x/5bgq) `cnt_up_down` in your project.
-   2. Take a look at the new parts of the VHDL source code. Note that an internal `sig_cnt` signal is used to implement the counter. This is because the **output** port `cnt` cannot be read and therefore the operation `cnt + 1` cannot be performed. Also note that local value must be retyped to the output port.
-   3. Create a VHDL [simulation source](https://www.edaplayground.com/x/5bgq) `tb_cnt_up_down`.
-   4. Change the testbench you want to simulate, right click to file name and select `Set as Top`. Run the simulation. Verify the meaning of the constant `c_CNT_WIDTH` and reset generation process.
+    ![Set as Top](images/screenshot_vivado_set_top.png)
 
-     ![Set as Top](images/screenshot_vivado_set_top.png)
+5. Complete architecture of the counter, make it bidirectional, and simulate again.
 
-   5. Complete architecture of the counter, make it bidirectional, and simulate again.
-
-   Note that for any vector, it is possible to change the numeric system in the simulation which represents the current value. To do so, right-click the vector name (here `sig_cnt[4:0]`) and select **Radix > Unsigned Decimal** from the context menu. You can change the vector color by **Signal Color** as well.
-
-     ![Change radix](images/screenshot_vivado_radix.png)
 
 
 
@@ -178,41 +250,6 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-2. Add **Generic** to `entity` declaration. It allows us to pass information into an entity and component. Since a generic cannot be modified inside the architecture, it is like a constant.
-
-   ```vhdl
-   entity clock_enable is
-     generic (
-       g_PERIOD : integer := 5 --! Number of clk periods to generate ouput pulse
-     );                        -- Note that THERE IS a semicolon between generic
-                               -- and port sections
-     port (
-       clk : in    std_logic;  --! Main clock
-       rst : in    std_logic;  --! High-active synchronous reset
-       ce  : out   std_logic   --! Clock enable pulse signal
-     );
-   end entity clock_enable;
-   ```
-
-3. Add package for arithmetic operations to the beginning of VHDL file.
-
-   ```vhdl
-   library ieee;
-     use ieee.std_logic_1164.all;
-     use ieee.numeric_std.all; -- Package for arithmetic operations
-   ```
 
 4. Copy/paste the [clock enable architecture](https://www.edaplayground.com/x/5LiJ) to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as internal signal declaration and [synchronous process](https://github.com/tomas-fryza/vhdl-course/wiki/Processes).
 
