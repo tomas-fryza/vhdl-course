@@ -84,7 +84,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
    a    <= '0';
    wait for 100 ns;
    assert (c_out = '0' and sum = '0')
-     report "Input combination c_in=0, b=0, a=0 FAILED"
+     report "Combination c_in=0, b=0, a=0 FAILED"
      severity error;
    ```
 
@@ -155,6 +155,8 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 4. Use **Flow** > **Open Elaborated design** and see the schematic after RTL analysis.
 
+5. (Optional: Create a VHDL simulation source `tb_adder_4bit` and simulate several test cases.)
+
 <a name="part3"></a>
 
 ## Part 3: Top level VHDL code
@@ -218,7 +220,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t`, uncomment and modify names of used pins according to the `top_level` entity.
 
-5. Compile the project (ie. transform the high-level VHDL code into a binary configuration file) and download the generated bitstream `YOUR-PROJECT-FOLDER/display.runs/impl_1/top_level.bit` into the FPGA chip.
+5. Compile the project (ie. transform the high-level VHDL code into a binary configuration file) and download the generated bitstream `YOUR-PROJECT-FOLDER/adder.runs/impl_1/top_level.bit` into the FPGA chip.
 
 6. Test the functionality of the adder by toggling the switches and observing display and LEDs.
 
