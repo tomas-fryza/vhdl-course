@@ -13,7 +13,11 @@
 
 library ieee;
   use ieee.std_logic_1164.all;
-  use ieee.numeric_std.all;
+  -- The STD_LOGIC_VECTOR data type can be used in addition
+  -- and subtraction operations (+ and -) if the STD_LOGIC_SIGNED
+  -- or the STD_LOGIC_UNSIGNED package of the IEEE library is used.
+  use IEEE.std_logic_unsigned.all;
+  -- use ieee.numeric_std.all;
 
 -------------------------------------------------
 
@@ -33,7 +37,7 @@ end entity simple_counter;
 
 architecture behavioral of simple_counter is
   --! Local counter
-  signal sig_cnt : unsigned(g_NBIT - 1 downto 0);
+  signal sig_cnt : std_logic_vector(g_NBIT - 1 downto 0);
 begin
 
   --! Clocked process with synchronous reset which implements
@@ -51,7 +55,7 @@ begin
 
   end process p_simple_counter;
 
-  -- Output must be retyped from "unsigned" to "std_logic_vector"
-  count <= std_logic_vector(sig_cnt);
+  -- Connect output to local counter
+  count <= sig_cnt;
 
 end architecture behavioral;
