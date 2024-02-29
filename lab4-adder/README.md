@@ -218,7 +218,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 4. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t`, uncomment and modify names of used pins according to the `top_level` entity.
 
-5. Compile the project (ie. transform the high-level VHDL code into a binary configuration file) and download the generated bitstream `YOUR-PROJECT-FOLDER/display.runs/impl_1/top_level.bit` into the FPGA chip.
+5. Compile the project (ie. transform the high-level VHDL code into a binary configuration file) and download the generated bitstream `YOUR-PROJECT-FOLDER/adder.runs/impl_1/top_level.bit` into the FPGA chip.
 
 6. Test the functionality of the adder by toggling the switches and observing display and LEDs.
 
