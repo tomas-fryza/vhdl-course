@@ -1,102 +1,77 @@
-----------------------------------------------------------
---
--- Testbench for clock enable circuit.
--- Nexys A7-50T, xc7a50ticsg324-1L
--- TerosHDL, Vivado v2020.2, EDA Playground
---
--- Copyright (c) 2020 Tomas Fryza
--- Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
--- This work is licensed under the terms of the MIT license.
---
-----------------------------------------------------------
+-- Testbench automatically generated online
+-- at https://vhdl.lapinoo.net
+-- Generation date : 29.2.2024 08:01:35 UTC
 
 library ieee;
   use ieee.std_logic_1164.all;
 
-----------------------------------------------------------
--- Entity declaration for testbench
-----------------------------------------------------------
-
 entity tb_clock_enable is
--- Entity of testbench is always empty
 end entity tb_clock_enable;
 
-----------------------------------------------------------
--- Architecture body for testbench
-----------------------------------------------------------
+architecture tb of tb_clock_enable is
+  component clock_enable is
+    generic (
+      PERIOD : integer
+    );
+    port (
+      clk   : in    std_logic;
+      rst   : in    std_logic;
+      pulse : out   std_logic
+    );
+  end component;
 
-architecture testbench of tb_clock_enable is
-  constant c_CLK_100MHZ_PERIOD : time := 10 ns;
+  signal clk   : std_logic;
+  signal rst   : std_logic;
+  signal pulse : std_logic;
 
-  -- Local signals
-  signal sig_clk_100mhz : std_logic;
-  signal sig_rst        : std_logic;
-  signal sig_pulse      : std_logic;
+  constant TbPeriod   : time      := 10 ns; -- EDIT Put right period here
+  signal   TbClock    : std_logic := '0';
+  signal   TbSimEnded : std_logic := '0';
 begin
 
-  -- Connecting testbench signals with clock_enable entity
-  -- (Unit Under Test)
-  uut_ce : entity work.clock_enable
+  dut : component clock_enable
     generic map (
-      g_PERIOD => 8
+      PERIOD => 3
     )
-    -- generic map section and port map section
     port map (
-      clk   => sig_clk_100mhz,
-      rst   => sig_rst,
-      pulse => sig_pulse
+      clk   => clk,
+      rst   => rst,
+      pulse => pulse
     );
 
-  --------------------------------------------------------
-  -- Clock generation process
-  --------------------------------------------------------
-  p_clk_gen : process is
+  -- Clock generation
+  TbClock <= not TbClock after TbPeriod / 2 when TbSimEnded /= '1' else
+             '0';
+
+  -- EDIT: Check that clk is really your main clock signal
+  clk <= TbClock;
+
+  stimuli : process is
   begin
 
-    while now < 750 ns loop             -- 75 periods of 100MHz clock
+    -- EDIT Adapt initialization as needed
 
-      sig_clk_100mhz <= '0';
-      wait for c_CLK_100MHZ_PERIOD / 2;
-      sig_clk_100mhz <= '1';
-      wait for c_CLK_100MHZ_PERIOD / 2;
+    -- Reset generation
+    -- EDIT: Check that rst is really your reset signal
+    rst <= '1';
+    wait for 100 ns;
+    rst <= '0';
+    wait for 100 ns;
 
-    end loop;
+    -- EDIT Add stimuli here
+    wait for 100 * TbPeriod;
 
-    wait;                               -- Process is suspended forever
-
-  end process p_clk_gen;
-
-  --------------------------------------------------------
-  -- Reset generation process
-  --------------------------------------------------------
-  p_reset_gen : process is
-  begin
-
-    sig_rst <= '0';
-    wait for 28 ns;
-
-    -- Reset activated
-    sig_rst <= '1';
-    wait for 153 ns;
-
-    -- Reset deactivated
-    sig_rst <= '0';
-
+    -- Stop the clock and hence terminate the simulation
+    TbSimEnded <= '1';
     wait;
 
-  end process p_reset_gen;
+  end process stimuli;
 
-  --------------------------------------------------------
-  -- Data generation process
-  --------------------------------------------------------
-  p_stimulus : process is
-  begin
+end architecture tb;
 
-    report "Stimulus process started";
-    -- No other input data is needed
-    report "Stimulus process finished";
-    wait;
+-- Configuration block below is required by some simulators. Usually no need to edit.
 
-  end process p_stimulus;
-
-end architecture testbench;
+configuration cfg_tb_clock_enable of tb_clock_enable is
+    for tb
+    end for;
+end cfg_tb_clock_enable;
