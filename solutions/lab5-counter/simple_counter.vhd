@@ -4,7 +4,7 @@
 --! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
 --! Implementation of N-bit up counter. Number of bits is
---! set by `g_NBIT` generic and counting is enabled by
+--! set by `NBIT` generic and counting is enabled by
 --! `en` input.
 --!
 --! Developed using TerosHDL, Vivado 2023.2, and Playground.
@@ -22,13 +22,13 @@ library ieee;
 
 entity simple_counter is
     generic (
-        g_NBIT : integer := 8 --! Default number of bits
+        N : integer := 8 --! Default number of bits
     );
     port (
-        clk   : in    std_logic;                            --! Main clock
-        rst   : in    std_logic;                            --! Synchronous reset
-        en    : in    std_logic;                            --! Clock enable input
-        count : out   std_logic_vector(g_NBIT - 1 downto 0) --! Counter value
+        clk   : in    std_logic;                       --! Main clock
+        rst   : in    std_logic;                       --! Synchronous reset
+        en    : in    std_logic;                       --! Clock enable input
+        count : out   std_logic_vector(N - 1 downto 0) --! Counter value
     );
 end entity simple_counter;
 
@@ -36,7 +36,7 @@ end entity simple_counter;
 
 architecture behavioral of simple_counter is
     --! Local counter
-    signal sig_count : std_logic_vector(g_NBIT - 1 downto 0);
+    signal sig_count : std_logic_vector(N - 1 downto 0);
 begin
 
     --! Clocked process with synchronous reset which implements
