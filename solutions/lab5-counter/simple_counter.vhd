@@ -12,50 +12,49 @@
 -------------------------------------------------
 
 library ieee;
-  use ieee.std_logic_1164.all;
-  -- The STD_LOGIC_VECTOR data type can be used in addition
-  -- and subtraction operations (+ and -) if the STD_LOGIC_SIGNED
-  -- or the STD_LOGIC_UNSIGNED package of the IEEE library is used.
-  use IEEE.std_logic_unsigned.all;
-  -- use ieee.numeric_std.all;
+    use ieee.std_logic_1164.all;
+    -- The STD_LOGIC_VECTOR data type can be used in addition
+    -- and subtraction operations (+ and -) if the STD_LOGIC_SIGNED
+    -- or the STD_LOGIC_UNSIGNED package of the IEEE library is used.
+    use IEEE.std_logic_unsigned.all;
 
 -------------------------------------------------
 
 entity simple_counter is
-  generic (
-    g_NBIT : integer := 8 --! Default number of bits
-  );
-  port (
-    clk   : in    std_logic;                            --! Main clock
-    rst   : in    std_logic;                            --! Synchronous reset
-    en    : in    std_logic;                            --! Enable input
-    count : out   std_logic_vector(g_NBIT - 1 downto 0) --! Counter value
-  );
+    generic (
+        g_NBIT : integer := 8 --! Default number of bits
+    );
+    port (
+        clk   : in    std_logic;                            --! Main clock
+        rst   : in    std_logic;                            --! Synchronous reset
+        en    : in    std_logic;                            --! Clock enable input
+        count : out   std_logic_vector(g_NBIT - 1 downto 0) --! Counter value
+    );
 end entity simple_counter;
 
 -------------------------------------------------
 
 architecture behavioral of simple_counter is
-  --! Local counter
-  signal sig_cnt : std_logic_vector(g_NBIT - 1 downto 0);
+    --! Local counter
+    signal sig_count : std_logic_vector(g_NBIT - 1 downto 0);
 begin
 
-  --! Clocked process with synchronous reset which implements
-  --! n-bit up counter.
-  p_simple_counter : process (clk) is
-  begin
+    --! Clocked process with synchronous reset which implements
+    --! n-bit up counter.
+    p_simple_counter : process (clk) is
+    begin
 
-    if (rising_edge(clk)) then
-      if (rst = '1') then           -- Synchronous reset
-        sig_cnt <= (others => '0'); -- Clear all bits
-      elsif (en = '1') then         -- Test if counter is enabled
-        sig_cnt <= sig_cnt + 1;
-      end if;
-    end if;
+        if (rising_edge(clk)) then
+            if (rst = '1') then               -- Synchronous reset
+                sig_count <= (others => '0'); -- Clear all bits
+            elsif (en = '1') then             -- Test if counter is enabled
+                sig_count <= sig_count + 1;
+            end if;
+        end if;
 
-  end process p_simple_counter;
+    end process p_simple_counter;
 
-  -- Connect output to local counter
-  count <= sig_cnt;
+    -- Connect output to local counter
+    count <= sig_count;
 
 end architecture behavioral;
