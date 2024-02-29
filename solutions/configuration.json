@@ -1,7 +1,9 @@
 {
   "rule" : {
     "global": {
-      "case": "upper_or_lower"
+      "case": "upper_or_lower",
+      "indent style": "spaces",
+      "indent size": "4"
     },
     "instantiation_034": {
       "method": "component"
