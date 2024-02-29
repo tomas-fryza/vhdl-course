@@ -84,7 +84,7 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
    a    <= '0';
    wait for 100 ns;
    assert (c_out = '0' and sum = '0')
-     report "Input combination c_in=0, b=0, a=0 FAILED"
+     report "Combination c_in=0, b=0, a=0 FAILED"
      severity error;
    ```
 
