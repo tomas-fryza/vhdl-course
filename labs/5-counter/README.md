@@ -59,22 +59,18 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
 ![simple counter](images/wavedrom_simple_counter.png)
 
 > The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows:
->
-```javascript
-{
-  signal: [
-    {name: "clk", wave: 'P.................'},
-    {name: "rst", wave: 'lnhpl.............'},
-    {name: "en",  wave: 'h.............pl..'},
-    {},
-    {name: "count[2:0]", wave: 'x.3.33333333333...', data: ["0","1","2","3","4","5","6","7","0","1","2","3"]},
-  ],
-  head: {
-  },
-  foot: {
-  },
-}
-```
+> 
+> ```javascript
+> {
+>   signal: [
+>     {name: "clk", wave: 'P.................'},
+>     {name: "rst", wave: 'lnhpl.............'},
+>     {name: "en",  wave: 'h.............pl..'},
+>     {},
+>     {name: "count[2:0]", wave: 'x.3.33333333333...', data: ["0","1","2","3","4","5","6","7","0","1","2","3"]},
+>   ],
+> }
+> ```
 
 1. Run Vivado and create a new project:
 
@@ -90,38 +86,40 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
       | `clk`   | input  | `std_logic` | Main clock |
-      | `rst`   | input  | `std_logic` | Synchronous reset |
+      | `rst`   | input  | `std_logic` | High-active synchronous reset |
       | `en`    | input  | `std_logic` | Clock enable input |
       | `count` | output | `std_logic_vector (3 downto 0)` | Counter value |
 
 2. Use VHDL templates in menu **Tools > Language Templates**, search for `up counters`, and select the one using clock enable (CE) and synchronous active-high reset. Copy/paste this template to the architecture and modify the code according to your I/O port names.
 
-    ```vhdl
-    architecture behavioral of simple_counter is
-        ...
-    begin
+   ```vhdl
+   architecture behavioral of simple_counter is
+       ...
+   begin
 
-        process (<clock>)
-        begin
-        if <clock>='1' and <clock>'event then
-            if <reset>='1' then
-                <count> <= (others => '0');
-            elsif <clock_enable>='1' then
-                <count> <= <count> + 1;
-            end if;
-        end if;
-        end process;
+       process (<clock>)
+       begin
+       if <clock>='1' and <clock>'event then
+           if <reset>='1' then
+               <count> <= (others => '0');
+           elsif <clock_enable>='1' then
+               <count> <= <count> + 1;
+           end if;
+       end if;
+       end process;
 
-    end behavioral;
-    ```
+   end behavioral;
+   ```
 
    Hints:
-      * `rising_edge(clk)` instead of `clk='1' and clk'event` to test clock edge
-      * `others => '0'` initializes all elements of the array to binary zero
-      * declare an internal signal `sig_count` of data type `std_logic_vector (3 downto 0)`
-        > Note that an internal signal is used to implement the counter. This is because the **output** port `count` cannot be read and therefore the operation `count + 1` cannot be performed.
-      * add `use ieee.std_logic_unsigned.all;` package to use arithmetic operations with `std_logic_vector` data type
-      * connect internal signal to counter output
+      * Use `rising_edge(clk)` instead of `clk='1' and clk'event` to test clock edge
+      * Statement `others => '0'` initializes all elements of the array to binary zero
+      * Declare an internal signal `sig_count` of data type `std_logic_vector(3 downto 0)` to implement the counter
+        > This is because the **output** port `count` cannot be read and therefore the operation `count + 1` cannot be performed.
+      * Add `use ieee.std_logic_unsigned.all;` package to use arithmetic operations with `std_logic_vector` data type
+      * Outside the process, connect internal signal to counter output
+
+   ![simple counter rtl](images/teros_simple-counter_rtl.png)
 
 3. Create testbench file `tb_simple_counter`, run the simulation, and test the functionality or `rst` and `en` signals.
 
@@ -197,120 +195,109 @@ We can write:
 
 ## Part 3: VHDL code for clock enable
 
-TBD
+To drive another logic in the design (with slower clock), it is better to generate a **clock enable signal** (see figure bellow) instead of creating another clock domain (using clock dividers) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.
+
+![Clock enable](images/wavedrom_clock_enable.png)
+
+> ```javascript
+> {
+>   signal: [
+>     {name: "clk", wave: 'P.................'},
+>     {name: "rst", wave: 'lnhpl.............'},
+>     {name: "sig_count[3:0]", wave: 'x.3.33333333333333', data: ["0","1","2","3","4","5","0","1","2","3","4","5","0","1","2",]},
+>     {},
+>     {name: "pulse", wave: 'l........hl....hl.'},
+>   ],
+>   head: {
+>   },
+>   foot: {
+>     text:'PERIOD = 6',
+>   },
+> }
+> ```
+
+1. Create a VHDL source file: `clock_enable` and define I/O ports of new module:
+
+   | **Port name** | **Direction** | **Type** | **Description**
+   | :-: | :-: | :-- | :--
+   | `clk`   | input  | `std_logic` | Main clock
+   | `rst`   | input  | `std_logic` | High-active synchronous reset
+   | `pulse` | output | `std_logic` | Clock enable pulse signal
+
+2. Add generic `PERIOD` to the entity defining the default number of clk periodes to generate one pulse.
+
+   ```vhdl
+   entity clock_enable is
+       generic (
+           PERIOD : integer := 6
+       );
+       port (
+           ...
+   ```
+
+3. In architecture declaration part, define a local counter with a width calculated from the of bits needed for `PERIOD`.
+
+   ```vhdl
+   architecture behavioral of clock_enable is
+       --! Get number for needed bits for PERIOD value
+       constant bits_needed : integer := integer(ceil(log2(real(PERIOD + 1))));
+
+       --! Local counter with needed number of bits
+       signal sig_count : std_logic_vector(bits_needed - 1 downto 0);
+   begin
+   ```
+
+4. Complete the architecture to define the `clock_enable` according to the following structure.
+
+   ![clock enable rtl](images/teros_clock-enable_rtl.png)
+
+   ```vhdl
+   begin
+       --! Generate clock enable signal. By default, enable signal
+       --! is low and generated pulse is always one clock long.
+       p_clk_enable : process (clk) is
+       begin
+
+           -- Synchronous proces
+           if (rising_edge(clk)) then
+               -- if high-active reset then
+
+                   -- Clear all bits
+                   -- Set output `pulse` to low
+
+               -- elsif sig_count is PERIOD - 1 then
+                   -- Clear all bits
+                   -- Set output `pulse` to high
+
+               -- else
+                   -- Increment local counter
+                   -- Set output `pulse` to low
+
+               -- Each `if` must end by `end if`
+           end if;
+
+       end process p_clk_enable;
+
+   end architecture behavioral;
+   ```
+
+5. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
+
+6. Create a VHDL simulation source `tb_clock_enable`, simulate reset functionality and 100 clock periodes of circuit functionality. Test several `PERIOD` values.
+
+   > **Note:** To change the testbench you want to simulate, right click to testbench file name and select `Set as Top`.
+   >
+   > ![Set as Top](images/screenshot_vivado_set_top.png)
+
+   > **Note:** The default simulation run time in Vivado is set to 1000&nbsp;ns You can change it in the menu **Tools > Settings...**
+   >
+   > ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
 
 <a name="part4"></a>
 
 ## Part 4: Top level VHDL code
 
 TBD
-
-
-
-
-
-
-
-4. Change the testbench you want to simulate, right click to file name and select `Set as Top`.
-
-    ![Set as Top](images/screenshot_vivado_set_top.png)
-
-5. Complete architecture of the counter, make it bidirectional, and simulate again.
-
-
-
-
-
-
-
-
-To drive another logic in the design (with slower clock), it is better to generate a **clock enable signal** (see figure bellow) instead of creating another clock domain (using clock dividers) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.
-
-![Clock enable](images/wavedrom_clock_enable.png)
-
-> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows:
->
-```javascript
-{
-  signal: [
-    {name: "clk",     wave: 'P...............'},
-    {name: "rst",     wave: 'lnh.pl..........'},
-    {},
-    {name: "sig_cnt", wave: 'x.3..33333333333', data: ["0","1","2","3","4","0","1","2","3","4","0","1"]},
-    {},
-    {name: "pulse",   wave: 'l........hl...hl'},
-  ],
-  head: {
-  },
-  foot: {
-    text:'g_PERIOD = 5',
-  },
-}
-```
-
-
-
-
-4. Copy/paste the [clock enable architecture](https://www.edaplayground.com/x/5LiJ) to your `clock_enable.vhd` file. Take a look at the new parts of the VHDL source code, such as internal signal declaration and [synchronous process](https://github.com/tomas-fryza/vhdl-course/wiki/Processes).
-
-   ```vhdl
-   architecture behavioral of clock_enable is
-
-     -- Local counter
-     signal sig_cnt : natural;
-
-   begin
-
-     --------------------------------------------------------
-     -- p_clk_enable:
-     -- Generate clock enable signal. By default, enable signal
-     -- is low and generated pulse is always one clock long.
-     --------------------------------------------------------
-     p_clk_enable : process (clk) is
-     begin
-
-       if (rising_edge(clk)) then            -- Synchronous process
-         if (rst = '1') then                 -- High-active reset
-           sig_cnt <= 0;                     -- Clear local counter
-           pulse   <= '0';                   -- Set output to low
-
-         -- Test number of clock periods
-         elsif (sig_cnt >= (g_PERIOD-1)) then
-           sig_cnt <= 0;                     -- Clear local counter
-           pulse   <= '1';                   -- Generate clock enable pulse
-         else
-           sig_cnt <= sig_cnt + 1;
-           pulse   <= '0';
-         end if;
-       end if;
-
-     end process p_clk_enable;
-
-   end architecture behavioral;
-   ```
-
-5. [Generate](https://vhdl.lapinoo.net/testbench/) or copy/paste the VHDL [simulation source](https://www.edaplayground.com/x/5LiJ) `tb_clock_enable` and run the simulation. Verify the meaning of `g_PERIOD` and reset generation process.
-
-   The default simulation run time is set to 1000&nbsp;ns in Vivado. Note that, you can change it in the menu **Tools > Settings...**
-
-      ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

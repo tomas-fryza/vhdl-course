@@ -31,7 +31,7 @@ begin
 
     dut : component clock_enable
         generic map (
-            PERIOD => 3
+            PERIOD => 6
         )
         port map (
             clk   => clk,

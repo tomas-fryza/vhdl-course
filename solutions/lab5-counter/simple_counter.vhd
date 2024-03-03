@@ -22,11 +22,11 @@ library ieee;
 
 entity simple_counter is
     generic (
-        N : integer := 8 --! Default number of bits
+        N : integer := 4 --! Default number of bits
     );
     port (
         clk   : in    std_logic;                       --! Main clock
-        rst   : in    std_logic;                       --! Synchronous reset
+        rst   : in    std_logic;                       --! High-active synchronous reset
         en    : in    std_logic;                       --! Clock enable input
         count : out   std_logic_vector(N - 1 downto 0) --! Counter value
     );

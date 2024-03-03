@@ -19,7 +19,7 @@ library ieee;
 
 entity clock_enable is
     generic (
-        PERIOD : integer := 8 --! Default number of clk periodes to generate one pulse
+        PERIOD : integer := 6 --! Default number of clk periodes to generate one pulse
     );
     port (
         clk   : in    std_logic; --! Main clock
@@ -34,7 +34,7 @@ architecture behavioral of clock_enable is
     --! Get number for needed bits for PERIOD value
     constant bits_needed : integer := integer(ceil(log2(real(PERIOD + 1))));
     --! Local counter with needed number of bits
-    signal sig_cnt : std_logic_vector(bits_needed - 1 downto 0);
+    signal sig_count : std_logic_vector(bits_needed - 1 downto 0);
 begin
 
     --! Generate clock enable signal. By default, enable signal
@@ -42,19 +42,19 @@ begin
     p_clk_enable : process (clk) is
     begin
 
-        if (rising_edge(clk)) then                   -- Synchronous process
-            if (rst = '1') then                      -- High-active reset
-                sig_cnt <= (others => '0');          -- Clear all bits
-                pulse   <= '0';                      -- Set output to low
+        if (rising_edge(clk)) then                 -- Synchronous process
+            if (rst = '1') then                    -- High-active reset
+                sig_count <= (others => '0');      -- Clear all bits
+                pulse     <= '0';                  -- Set output to low
 
             -- Test number of clock periods
-            elsif (sig_cnt >= (PERIOD - 1)) then
-                sig_cnt <= (others => '0');          -- Clear all bits
-                pulse   <= '1';                      -- Generate clock enable pulse
+            elsif (sig_count = (PERIOD - 1)) then
+                sig_count <= (others => '0');      -- Clear all bits
+                pulse     <= '1';                  -- Generate clock enable pulse
             else
-                sig_cnt <= sig_cnt + 1;              -- Increment local counter
-                pulse   <= '0';
-            end if;                                  -- Each `if` must end by `end if`
+                sig_count <= sig_count + 1;        -- Increment local counter
+                pulse     <= '0';
+            end if;                                -- Each `if` must end by `end if`
         end if;
 
     end process p_clk_enable;
