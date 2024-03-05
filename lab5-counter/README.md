@@ -63,9 +63,11 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
 > ```javascript
 > {
 >   signal: [
->     {name: "clk", wave: 'P.................'},
->     {name: "rst", wave: 'lnhpl.............'},
->     {name: "en",  wave: 'h.............pl..'},
+>     ["inputs",
+>       {name: "clk", wave: 'P.................'},
+>       {name: "rst", wave: 'lnhpl.............'},
+>       {name: "en",  wave: 'h.............pl..'},
+>     ],
 >     {},
 >     {name: "count[2:0]", wave: 'x.3.33333333333...', data: ["0","1","2","3","4","5","6","7","0","1","2","3"]},
 >   ],
@@ -201,11 +203,18 @@ To drive another logic in the design (with slower clock), it is better to genera
 > ```javascript
 > {
 >   signal: [
->     {name: "clk", wave: 'P.................'},
->     {name: "rst", wave: 'lnhpl.............'},
->     {name: "sig_count[3:0]", wave: 'x.3.33333333333333', data: ["0","1","2","3","4","5","0","1","2","3","4","5","0","1","2",]},
+>     ["inputs",
+>       {name: "clk", wave: 'P.................'},
+>       {name: "rst", wave: 'lnhpl.............'},
+>     ],
 >     {},
->     {name: "pulse", wave: 'l........hl....hl.'},
+>     ["internal",
+>       {name: "sig_count[3:0]", wave: 'x.3.33333333333333', data: ["0","1","2","3","4","5","0","1","2","3","4","5","0","1","2",]},
+>     ],
+>     {},
+>     ["output",
+>       {name: "pulse", wave: 'l........hl....hl.'},
+>     ],
 >   ],
 >   head: {
 >   },
@@ -324,7 +333,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 4. Use component declaration and instantiation of `simple_counter`, `clock_enable`, and `bin2seg`, and define the top-level architecture as follows.
 
-   ![top level](images/top-level_structure.png)
+   ![top level](images/top-level_1-counter_structure.png)
 
    ```vhdl
    architecture behavioral of top_level is
@@ -337,7 +346,7 @@ To drive another logic in the design (with slower clock), it is better to genera
        -- Component declaration for bin2seg
 
 
-       -- Local signals for first counter: 4-bit @ 250 ms
+       -- Local signals for a counter: 4-bit @ 250 ms
 
 
    begin
@@ -374,7 +383,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 1. Add a second instantiation (copy) of the counter and clock enable entities and make a 16-bit counter with a 2 ms time base. Display the counter values on LEDs.
 
-   ![top level](images/top-level_two-counters_structure.png)
+   ![top level](images/top-level_2-counter_structure.png)
 
 2. Create a new component `up_down_counter` implementing bi-directional (up/down) binary counter.
 
