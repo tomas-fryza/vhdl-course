@@ -209,7 +209,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 >     ],
 >     {},
 >     ["internal",
->       {name: "sig_count[3:0]", wave: 'x.3.33333333333333', data: ["0","1","2","3","4","5","0","1","2","3","4","5","0","1","2",]},
+>       {name: "sig_count[2:0]", wave: 'x.3.33333333333333', data: ["0","1","2","3","4","5","0","1","2","3","4","5","0","1","2",]},
 >     ],
 >     {},
 >     ["output",
