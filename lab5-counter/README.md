@@ -407,8 +407,6 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 2. [WaveDrom - Digital Timing Diagram everywhere](https://wavedrom.com/)
 
-3. Tomas Fryza. [Template for clock enable module](https://www.edaplayground.com/x/Vdpu)
+3. Tomas Fryza. [Template for clock enable module](https://www.edaplayground.com/x/5LiJ)
 
-4. Tomas Fryza. [Template for bi-directional counter](https://www.edaplayground.com/x/5bgq)
-
-5. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
+4. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
