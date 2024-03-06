@@ -3,14 +3,14 @@
 --! @version 1.3
 --! @copyright (c) 2018-2024 Tomas Fryza, MIT license
 --!
---! This VHDL file represents a binary-to-seven-segment
---! decoder for a one-digit display with Common Anode
---! configuration (active-low). The decoder defines 16
---! hexadecimal symbols: `0, 1, ..., 9, A, b, C, d, E, F`.
---! All segments are turned off when `clear` signal is high.
---! Note that Decimal Point functionality is not implemented.
+--! This VHDL file represents a binary-to-seven-segment decoder
+--! for a one-digit display with Common Anode configuration
+--! (active-low). The decoder defines 16 hexadecimal symbols:
+--! `0, 1, ..., 9, A, b, C, d, E, F`. All segments are turned
+--! off when `clear` signal is high. Note that Decimal Point
+--! functionality is not implemented.
 --!
---! Developed using TerosHDL, Vivado 2023.2, and Playground.
+--! Developed using TerosHDL, Vivado 2020.2, and EDA Playground.
 --! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 

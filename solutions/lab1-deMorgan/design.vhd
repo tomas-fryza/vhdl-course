@@ -8,7 +8,7 @@
 --! By comparing the output signals for the expressions,
 --! the verification of the laws is confirmed.
 --!
---! Developed using TerosHDL, Vivado 2020.2, and Playground.
+--! Developed using TerosHDL, Vivado 2020.2, and EDA Playground.
 -------------------------------------------------
 
 library ieee; -- Standard library

@@ -7,7 +7,7 @@
 --! 2-input AND, OR, and XOR gates. The architecture
 --! implements the behavior of these gates with specified delays.
 --!
---! Developed using TerosHDL, Vivado 2020.2, and Playground.
+--! Developed using TerosHDL, Vivado 2020.2, and EDA Playground.
 -------------------------------------------------
 
 library ieee;

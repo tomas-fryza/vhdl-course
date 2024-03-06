@@ -127,7 +127,7 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
    > Note that for any vector, it is possible to change the numeric system in the simulation which represents the current value. To do so, right-click the vector name and select **Radix > Unsigned Decimal** from the context menu. You can change the vector color by **Signal Color** as well.
 
 <!--
-   > ![Change radix](images/screenshot_vivado_radix.png)
+   > ![Change radix](images/vivado_radix.png)
 -->
 
 4. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis. Note that RTL (Register Transfer Level) represents digital circuit at the abstract level.
@@ -241,6 +241,8 @@ To drive another logic in the design (with slower clock), it is better to genera
        );
        port (
            ...
+       );
+   end entity clock_enable;
    ```
 
 3. In architecture declaration part, define a local counter with a width calculated from the number of needed bits for `PERIOD`. To use math functions, add a new package to your VHDL file.
@@ -249,7 +251,7 @@ To drive another logic in the design (with slower clock), it is better to genera
    library ieee;
        use ieee.std_logic_1164.all;
        use ieee.std_logic_unsigned.all; -- Package for arithmetic operations with std_logic_vector
-       use ieee.math_real.all; -- To calculate the number of bits needed to represent a number
+       use ieee.math_real.all; -- To calculate the number of bits needed to represent an integer
 
    ...
    architecture behavioral of clock_enable is
@@ -276,11 +278,11 @@ To drive another logic in the design (with slower clock), it is better to genera
            if (rising_edge(clk)) then
                -- if high-active reset then
 
-                   -- Clear all bits
+                   -- Clear all bits of local counter
                    -- Set output `pulse` to low
 
                -- elsif sig_count is PERIOD-1 then
-                   -- Clear all bits
+                   -- Clear all bits of local counter
                    -- Set output `pulse` to high
 
                -- else
@@ -297,15 +299,17 @@ To drive another logic in the design (with slower clock), it is better to genera
 
 5. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
 
-6. Create a VHDL simulation source `tb_clock_enable`, simulate reset functionality and 100 clock periodes. Test several `PERIOD` values.
+6. Create a VHDL simulation source `tb_clock_enable`, simulate reset functionality and 100 clock periodes. Test several `PERIOD` values within your testbench.
+
+   > **Solution:** [https://www.edaplayground.com/x/5LiJ](https://www.edaplayground.com/x/5LiJ)
 
    > **Note:** To change the testbench you want to simulate, right click to testbench file name and select `Set as Top`.
    >
-   > ![Set as Top](images/screenshot_vivado_set_top.png)
+   > ![Set as Top](images/vivado_set_top.png)
 
    > **Note:** The default simulation run time in Vivado is set to 1000&nbsp;ns You can change it in the menu **Tools > Settings...**
    >
-   > ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
+   > ![Specify simulation run time in Vivado](images/vivado_run_time.png)
 
 <a name="part4"></a>
 

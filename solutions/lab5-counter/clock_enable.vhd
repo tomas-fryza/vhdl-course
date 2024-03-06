@@ -6,14 +6,14 @@
 --! Generates clock enable signal according to the number
 --! of clock pulses `PERIOD`.
 --!
---! Developed using TerosHDL, Vivado 2020.2, and Playground.
+--! Developed using TerosHDL, Vivado 2020.2, and EDA Playground.
 --! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 
 library ieee;
     use ieee.std_logic_1164.all;
     use ieee.std_logic_unsigned.all; -- Package for arithmetic operations with std_logic_vector
-    use ieee.math_real.all; -- To calculate the number of bits needed to represent a number
+    use ieee.math_real.all; -- To calculate the number of bits needed to represent an integer
 
 -------------------------------------------------
 

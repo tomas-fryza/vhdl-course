@@ -4,10 +4,9 @@
 --! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
 --! Implementation of N-bit up counter. Number of bits is
---! set by `NBIT` generic and counting is enabled by
---! `en` input.
+--! set by `N` generic and counting is enabled by `en` input.
 --!
---! Developed using TerosHDL, Vivado 2023.2, and Playground.
+--! Developed using TerosHDL, Vivado 2023.2, and EDA Playground.
 --! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 

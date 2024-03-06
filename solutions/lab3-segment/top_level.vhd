@@ -10,7 +10,7 @@
 --! position is selected by BTND button, and the input data is
 --! displayed on LEDs (LED_R and LED_L).
 --!
---! Developed using TerosHDL, Vivado 2023.2, and Playground.
+--! Developed using TerosHDL, Vivado 2023.2, and EDA Playground.
 --! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 

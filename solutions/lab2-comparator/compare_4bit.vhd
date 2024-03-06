@@ -19,7 +19,7 @@
 --!  {name: 'a_greater', wave: 'l.h.l.'},
 --! ]}
 --!
---! Developed using TerosHDL, Vivado 2020.2, and Playground.
+--! Developed using TerosHDL, Vivado 2020.2, and EDA Playground.
 --! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 
