@@ -38,7 +38,7 @@ T_{clk}=\frac{1}{f_{clk}}=
 -->
 
    | **Time interval** | **Number of clk periods** | **Number of clk periods in hex** | **Number of clk periods in binary** | **Number of bits** |
-   | :-: | :-: | :-: | :-: |
+   | :-: | :-: | :-: | :-: | :-: |
    | 2&nbsp;ms | 200_000 | `x"3_0d40"` | `b"0011_0000_1101_0100_0000"` | 18 |
    | 4&nbsp;ms |  |  |  |  |
    | 10&nbsp;ms |  |  |  |  |
