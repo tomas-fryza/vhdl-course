@@ -37,14 +37,14 @@ T_{clk}=\frac{1}{f_{clk}}=
 \textup{number of clk period} = \frac{\textup{time interval}}{T_{clk}}=
 -->
 
-   | **Time interval** | **Number of clk periods** | **Number of clk periods in hex** | **Number of clk periods in binary** |
+   | **Time interval** | **Number of clk periods** | **Number of clk periods in hex** | **Number of clk periods in binary** | **Number of bits** |
    | :-: | :-: | :-: | :-: |
-   | 2&nbsp;ms | 200_000 | `x"3_0d40"` | `b"0011_0000_1101_0100_0000"` |
-   | 4&nbsp;ms |  |  |  |
-   | 10&nbsp;ms |  |  |  |
-   | 250&nbsp;ms |  |  |  |
+   | 2&nbsp;ms | 200_000 | `x"3_0d40"` | `b"0011_0000_1101_0100_0000"` | 18 |
+   | 4&nbsp;ms |  |  |  |  |
+   | 10&nbsp;ms |  |  |  |  |
+   | 250&nbsp;ms | 25_000_000 | x"17d_7840" | b"0001_0111_1101_0111_1000_0100_0000" | 25 |
    | 500&nbsp;ms |  |  |  |
-   | 1&nbsp;sec | 100_000_000 | `x"5F5_E100"` | `b"0101_1111_0101_1110_0001_0000_0000"` |
+   | 1&nbsp;sec | 100_000_000 | `x"5F5_E100"` | `b"0101_1111_0101_1110_0001_0000_0000"` | 27 |
 
 2. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of Pmod ports, ie to which FPGA pins are connected. What is the usage of such connectors?
 
@@ -122,7 +122,7 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
 
    ![simple counter rtl](images/teros_simple-counter_rtl.png)
 
-3. Create testbench file `tb_simple_counter`, run the simulation, and test the functionality of `rst` and `en` signals.
+3. Create [testbench](https://vhdl.lapinoo.net/testbench/) file `tb_simple_counter`, run the simulation, and test the functionality of `rst` and `en` signals.
 
    > Note that for any vector, it is possible to change the numeric system in the simulation which represents the current value. To do so, right-click the vector name and select **Radix > Unsigned Decimal** from the context menu. You can change the vector color by **Signal Color** as well.
 
@@ -168,15 +168,23 @@ We can write:
 
 1. Extend the code from the previous part and use generics in both, design and testbench sources.
 
-   In design source, use generic `N` to define number of bits for the counter. In **testbench**, define a constant, prior to declaring the component:
+   In **design source**, use generic `N` to define number of bits for the counter. In **testbench**, define a constant, prior to declaring the component and use it to declare your internal counter signal:
 
    ```vhdl
-   constant COUNTER_WIDTH : integer := 6;
+   -- Design source file
+   entity simple_counter is
+       generic (
+           N : integer := 4 --! Default number of bits
+       );
+       port (
+           ...
+       );
+   end entity simple_counter;
    ```
 
-   and use it to declare your internal counter signal:
-
    ```vhdl
+   -- Testbench file
+   constant COUNTER_WIDTH : integer := 6; --! Simulating number of bits
    signal count : std_logic_vector(COUNTER_WIDTH-1 downto 0);
    ```
 
