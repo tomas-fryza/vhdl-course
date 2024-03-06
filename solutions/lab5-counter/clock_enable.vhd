@@ -33,6 +33,7 @@ end entity clock_enable;
 architecture behavioral of clock_enable is
     --! Get number for needed bits for PERIOD value
     constant bits_needed : integer := integer(ceil(log2(real(PERIOD + 1))));
+
     --! Local counter with needed number of bits
     signal sig_count : std_logic_vector(bits_needed - 1 downto 0);
 begin
