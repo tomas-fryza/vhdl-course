@@ -1,9 +1,13 @@
 -------------------------------------------------
---! @brief Top level implementation for inary counter(s)
+--! @brief Top level implementation for binary counter(s)
 --! @version 1.1
 --! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
---! <detail>
+--! This VHDL file implements a top-level design for a counter
+--! display system. It consists of two simple counters: a 4-bit
+--! counter counting at 250 ms and a 16-bit counter counting at
+--! 2 ms. The counts are displayed on a 7-segment display, and
+--! LEDs. Clock enables are used to control the counting frequency.
 --!
 --! Developed using TerosHDL, Vivado 2023.2, and EDA Playground.
 --! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.

@@ -68,9 +68,21 @@ begin
         wait for 100 ns;
 
         -- EDIT Add stimuli here
-        wait for 66 * TbPeriod;
+        wait for 33 * TbPeriod;
         en <= '0';
-        wait for 30 * TbPeriod;
+        wait for 6 * TbPeriod;
+        en <= '1';
+        wait for 1 * TbPeriod;
+        en <= '0';
+        wait for 6 * TbPeriod;
+        en <= '1';
+        wait for 1 * TbPeriod;
+        en <= '0';
+        wait for 6 * TbPeriod;
+        en <= '1';
+        wait for 1 * TbPeriod;
+        en <= '0';
+        wait for 6 * TbPeriod;
 
         -- Stop the clock and hence terminate the simulation
         TbSimEnded <= '1';
