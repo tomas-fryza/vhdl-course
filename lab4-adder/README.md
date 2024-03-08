@@ -230,12 +230,12 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 5. In menu **Project > Design Summary/Reports** check **CPLD Fitter Report (Text)** for implemented functions in section `********** Mapped Logic **********`.
 -->
 
-> **Fun fact:** In the next labs we are not going to use those low level gates to perform arithmetical operations but operators defined in the numeric package :sweat_smile:
+> **Fun fact:** In the next labs we are not going to use those low level gates to perform arithmetical operations but operators defined in VHDL :sweat_smile:
 >
 >    ```vhdl
 >    library ieee;
 >      use ieee.std_logic_1164.all;
->      use ieee.numeric_std.all; -- Package for arithmetic operations
+>      use ieee.numeric_std.all; -- Package for data type conversions
 >
 >    ...
 >      sig_cnt <= sig_cnt + 1;
