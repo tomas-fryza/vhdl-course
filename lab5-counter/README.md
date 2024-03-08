@@ -46,10 +46,6 @@ T_{clk}=\frac{1}{f_{clk}}=
    | 500&nbsp;ms |  |  |  |
    | 1&nbsp;sec | 100_000_000 | `x"5F5_E100"` | `b"0101_1111_0101_1110_0001_0000_0000"` | 27 |
 
-2. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of Pmod ports, ie to which FPGA pins are connected. What is the usage of such connectors?
-
-   ![pmods](images/pmod_table.png)
-
 <a name="part1"></a>
 
 ## Part 1: VHDL code for simple counter

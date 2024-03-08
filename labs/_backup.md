@@ -1,4 +1,14 @@
 
+
+2. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of Pmod ports, ie to which FPGA pins are connected. What is the usage of such connectors?
+
+   ![pmods](images/pmod_table.png)
+
+
+
+
+
+
 # Git
 
 After completing this lab you will be able to:
