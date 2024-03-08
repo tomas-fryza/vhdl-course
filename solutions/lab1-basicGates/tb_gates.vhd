@@ -53,6 +53,9 @@ begin
         sig_b <= '1';
         sig_a <= '1';
         wait for 100 ns;
+        sig_b <= '0';
+        sig_a <= '0';
+        wait for 100 ns;
 
         wait;
 
