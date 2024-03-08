@@ -1,6 +1,6 @@
 -------------------------------------------------
 --! @brief N-bit binary counter
---! @version 1.2
+--! @version 1.3
 --! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
 --! Implementation of N-bit up counter. Number of bits is
@@ -12,16 +12,13 @@
 
 library ieee;
     use ieee.std_logic_1164.all;
-    -- The STD_LOGIC_VECTOR data type can be used in addition
-    -- and subtraction operations (+ and -) if the STD_LOGIC_SIGNED
-    -- or the STD_LOGIC_UNSIGNED package of the IEEE library is used.
-    use IEEE.std_logic_unsigned.all;
+    use ieee.numeric_std.all; -- Package for data types conversion
 
 -------------------------------------------------
 
 entity simple_counter is
     generic (
-        N : integer := 4 --! Default number of bits
+        N : integer := 3 --! Default number of counter bits
     );
     port (
         clk   : in    std_logic;                       --! Main clock
@@ -35,25 +32,32 @@ end entity simple_counter;
 
 architecture behavioral of simple_counter is
     --! Local counter
-    signal sig_count : std_logic_vector(N - 1 downto 0);
+    signal sig_count : integer range 0 to (2 ** N - 1);
 begin
 
     --! Clocked process with synchronous reset which implements
-    --! n-bit up counter.
+    --! N-bit up counter.
     p_simple_counter : process (clk) is
     begin
 
         if (rising_edge(clk)) then
-            if (rst = '1') then               -- Synchronous reset
-                sig_count <= (others => '0'); -- Clear all bits
-            elsif (en = '1') then             -- Test if counter is enabled
-                sig_count <= sig_count + 1;
-            end if;
+            if (rst = '1') then                    -- Synchronous reset
+                sig_count <= 0;
+
+            -- Clock enable activated
+            elsif (en = '1') then
+                if (sig_count < (2 ** N - 1)) then
+                    sig_count <= sig_count + 1;
+                else
+                    sig_count <= 0;
+                end if;
+            end if;                                -- Each `if` must end by `end if`
         end if;
 
     end process p_simple_counter;
 
-    -- Connect output to local counter
-    count <= sig_count;
+    -- Assign internal register to output
+    -- Note: integer--> unsigned--> std_logic vector
+    count <= std_logic_vector(to_unsigned(sig_count, N));
 
 end architecture behavioral;

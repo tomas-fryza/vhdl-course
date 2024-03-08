@@ -3,23 +3,22 @@
 --! @version 1.3
 --! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
---! Generates clock enable signal according to the number
---! of clock pulses `PERIOD`.
---!
+--! This VHDL file generates pulses of the clock enable signal.
+--! Each pulse is one period of the clock signal wide, and its
+--! repetition is determined by the PERIOD generic.
+
 --! Developed using TerosHDL, Vivado 2020.2, and EDA Playground.
 --! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
 -------------------------------------------------
 
 library ieee;
     use ieee.std_logic_1164.all;
-    use ieee.std_logic_unsigned.all; -- Package for arithmetic operations with std_logic_vector
-    use ieee.math_real.all; -- To calculate the number of bits needed to represent an integer
 
 -------------------------------------------------
 
 entity clock_enable is
     generic (
-        PERIOD : integer := 6 --! Default number of clk periodes to generate one pulse
+        PERIOD : integer := 3 --! Default number of clk periodes to generate one pulse
     );
     port (
         clk   : in    std_logic; --! Main clock
@@ -31,11 +30,8 @@ end entity clock_enable;
 -------------------------------------------------
 
 architecture behavioral of clock_enable is
-    --! Get number for needed bits for PERIOD value
-    constant bits_needed : integer := integer(ceil(log2(real(PERIOD + 1))));
-
-    --! Local counter with needed number of bits
-    signal sig_count : std_logic_vector(bits_needed - 1 downto 0);
+    --! Local counter
+    signal sig_count : integer range 0 to PERIOD - 1;
 begin
 
     --! Generate clock enable signal. By default, enable signal
@@ -45,19 +41,22 @@ begin
 
         if (rising_edge(clk)) then                 -- Synchronous process
             if (rst = '1') then                    -- High-active reset
-                sig_count <= (others => '0');      -- Clear all bits
-                pulse     <= '0';                  -- Set output to low
+                sig_count <= 0;
 
-            -- Test number of clock periods
-            elsif (sig_count = (PERIOD - 1)) then
-                sig_count <= (others => '0');      -- Clear all bits
-                pulse     <= '1';                  -- Generate clock enable pulse
-            else
+            -- Counting
+            elsif (sig_count < (PERIOD - 1)) then
                 sig_count <= sig_count + 1;        -- Increment local counter
-                pulse     <= '0';
+
+            -- End of counter reached
+            else
+                sig_count <= 0;
             end if;                                -- Each `if` must end by `end if`
         end if;
 
     end process p_clk_enable;
+
+    -- Generate output pulse
+    pulse <= '1' when (sig_count = PERIOD - 1) else
+             '0';
 
 end architecture behavioral;
