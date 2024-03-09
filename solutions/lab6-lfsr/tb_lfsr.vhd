@@ -16,8 +16,9 @@ architecture tb of tb_lfsr is
         port (
             clk       : in    std_logic;
             en        : in    std_logic;
-            seed_load : in    std_logic;
+            seed_en   : in    std_logic;
             seed_data : in    std_logic_vector(nbit - 1 downto 0);
+            done      : out   std_logic;
             count     : out   std_logic_vector(nbit - 1 downto 0)
         );
     end component;
@@ -25,8 +26,9 @@ architecture tb of tb_lfsr is
     constant C_NBIT    : integer := 4;
     signal   clk       : std_logic;
     signal   en        : std_logic;
-    signal   seed_load : std_logic;
+    signal   seed_en   : std_logic;
     signal   seed_data : std_logic_vector(C_NBIT - 1 downto 0);
+    signal   done      : std_logic;
     signal   count     : std_logic_vector(C_NBIT - 1 downto 0);
 
     constant TbPeriod   : time      := 10 ns; -- EDIT Put right period here
@@ -41,8 +43,9 @@ begin
         port map (
             clk       => clk,
             en        => en,
-            seed_load => seed_load,
+            seed_en   => seed_en,
             seed_data => seed_data,
+            done      => done,
             count     => count
         );
 
@@ -58,10 +61,10 @@ begin
 
         -- EDIT Adapt initialization as needed
         en        <= '1';
-        seed_load <= '1';
+        seed_en   <= '1';
         seed_data <= (others => '0');
         wait for 5 * TbPeriod;
-        seed_load <= '0';
+        seed_en   <= '0';
 
         -- EDIT Add stimuli here
         wait for 100 * TbPeriod;
