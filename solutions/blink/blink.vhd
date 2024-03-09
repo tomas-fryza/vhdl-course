@@ -30,9 +30,9 @@ end entity blink;
 
 architecture behavioral of blink is
     --! Number of bits for internal counter
-    constant c_NBIT : integer := 24;
+    constant NBIT : integer := 24;
     --! Internal counter
-    signal sig_internal_cnt : unsigned(c_NBIT - 1 downto 0);
+    signal sig_internal_cnt : unsigned(NBIT - 1 downto 0);
 begin
 
     --! The process is responsible for counting cycles and
@@ -53,6 +53,6 @@ begin
     end process p_blink;
 
     -- MSB of internal counter connect to LED
-    led <= std_logic(sig_internal_cnt(c_NBIT - 1));
+    led <= std_logic(sig_internal_cnt(NBIT - 1));
 
 end architecture behavioral;
