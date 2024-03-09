@@ -15,21 +15,21 @@ end entity tb_simple_counter;
 architecture tb of tb_simple_counter is
     component simple_counter is
         generic (
-            N : integer
+            NBIT : integer
         );
         port (
             clk   : in    std_logic;
             rst   : in    std_logic;
             en    : in    std_logic;
-            count : out   std_logic_vector(N - 1 downto 0)
+            count : out   std_logic_vector(NBIT - 1 downto 0)
         );
     end component;
 
-    constant COUNTER_WIDTH : integer := 5;
-    signal   clk           : std_logic;
-    signal   rst           : std_logic;
-    signal   en            : std_logic;
-    signal   count         : std_logic_vector(COUNTER_WIDTH - 1 downto 0);
+    constant C_NBIT : integer := 5;
+    signal   clk    : std_logic;
+    signal   rst    : std_logic;
+    signal   en     : std_logic;
+    signal   count  : std_logic_vector(C_NBIT - 1 downto 0);
 
     constant TbPeriod   : time      := 10 ns; -- EDIT Put right period here
     signal   TbClock    : std_logic := '0';
@@ -38,7 +38,7 @@ begin
 
     dut : component simple_counter
         generic map (
-            N => COUNTER_WIDTH
+            NBIT => C_NBIT
         )
         port map (
             clk   => clk,
