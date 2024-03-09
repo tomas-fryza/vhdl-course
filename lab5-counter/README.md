@@ -112,7 +112,7 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
    Hints:
       * Use `rising_edge(clk)` instead of `clk='1' and clk'event` to test clock edge
       * Statement `(others => '0')` initializes all elements of the array to binary zero
-      * Declare an internal signal `sig_count` of data type `std_logic_vector(3 downto 0)` to implement the counter. This is because the **output** port `count` cannot be read and therefore the operation `count + 1` cannot be performed
+      * Define an internal signal `sig_count` of data type `std_logic_vector(3 downto 0)` to implement the counter. This is because the **output** port `count` cannot be read and therefore the operation `count + 1` cannot be performed
       * Add `use ieee.std_logic_unsigned.all;` package to use arithmetic operations with `std_logic_vector` data type
       * Outside the process, connect internal signal to counter output
 
