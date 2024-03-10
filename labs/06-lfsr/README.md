@@ -46,7 +46,7 @@ The structures below implement a simple 4-bit shift register.
 process (clk)
 begin
     if rising_edge(clk) then
-        sig_reg <= sig_reg(4-2 downto 0) & data;
+        sig_reg <= sig_reg(2 downto 0) & data;
         -- "sig_reg(2)  sig_reg(1)  sig_reg(0)  data"
     end if;
 end process;
@@ -70,8 +70,8 @@ count <= sig_reg;
       | :-: | :-: | :-- | :-- |
       | `clk`   | input  | `std_logic` | Main clock |
       | `en`    | input  | `std_logic` | Clock enable input |
-      | `seed_en` | input  | `std_logic` | Enable signal to load seed data |
-      | `seed_data` | input  | `std_logic_vector(3 downto 0)` | Seed data |
+      | `load_enable` | input  | `std_logic` | Enable signal to load default/seed data |
+      | `load_data` | input  | `std_logic_vector(3 downto 0)` | Default/seed data |
       | `count` | output | `std_logic_vector(3 downto 0)` | Register value |
 
 2. Use VHDL templates in menu **Tools > Language Templates**, search for `parallel load`, copy/paste `w/ CE` template to the architecture and modify the code according to your I/O port names.

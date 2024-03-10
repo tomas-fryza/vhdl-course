@@ -9,15 +9,15 @@ library ieee;
 
 entity lfsr is
     generic (
-        NBIT : integer := 4
+        NBIT : integer := 4 --! Default number of bits
     );
     port (
-        clk       : in    std_logic;
-        en        : in    std_logic;
-        seed_en   : in    std_logic;
-        seed_data : in    std_logic_vector(NBIT - 1 downto 0);
-        done      : out   std_logic;
-        count     : out   std_logic_vector(NBIT - 1 downto 0)
+        clk         : in    std_logic;                           --! Main clock
+        en          : in    std_logic;                           --! Clock enable input
+        load_enable : in    std_logic;                           --! Enable signal to load default/seed data
+        load_data   : in    std_logic_vector(NBIT - 1 downto 0); --! Default/seed data
+        done        : out   std_logic;                           --! Sequence completed
+        count       : out   std_logic_vector(NBIT - 1 downto 0)  --! Register value
     );
 end entity lfsr;
 
@@ -36,8 +36,8 @@ begin
 
         if (rising_edge(clk)) then
             -- Load `starting` data
-            if (seed_en = '1') then
-                sig_reg <= seed_data;
+            if (load_enable = '1') then
+                sig_reg <= load_data;
 
             -- Clock enable activated
             elsif (en = '1') then
@@ -55,7 +55,7 @@ begin
     sig_feedback <= sig_reg(3) xnor sig_reg(2);
 
     -- Create a `done` output pulse
-    done <= '1' when (sig_reg = seed_data) else
+    done <= '1' when (sig_reg = load_data) else
             '0';
 
 end architecture behavioral;
