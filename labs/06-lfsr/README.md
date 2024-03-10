@@ -20,7 +20,7 @@ After completing this lab you will be able to:
 ## Pre-Lab preparation
 
 
-1. TBD: pochopení LFSR, tabulka pseudo random
+1. TBD: XNOR, tabulka pseudo random hodnot
 
 
 <a name="part1"></a>
@@ -28,6 +28,32 @@ After completing this lab you will be able to:
 ## Part 1: VHDL code for shift register
 
 A binary **shift register** is a digital circuit that sequentially shifts data bits, either left or right, through a series of flip-flops controlled by a clock signal. It operates in parallel-in, serial-out (PISO) or serial-in, parallel-out (SIPO) modes. Shift registers are commonly used for serial-to-parallel and parallel-to-serial data conversion, data storage, and data transmission.
+
+The structures below implement a simple 4-bit shift register.
+
+**RTL level:**
+
+![shift rtl](images/teros_shift_rtl.png)
+
+**Gate level:**
+
+![shift gate](images/teros_shift_gates.png)
+
+**VHDL code:**
+
+```vhdl
+...
+process (clk)
+begin
+    if rising_edge(clk) then
+        sig_reg <= sig_reg(4-2 downto 0) & data;
+        -- "sig_reg(2)  sig_reg(1)  sig_reg(0)  data"
+    end if;
+end process;
+
+count <= sig_reg;
+...
+```
 
 1. Run Vivado, create a new project and implement a 4-bit shift register with serial input and enable signal:
 
@@ -82,27 +108,6 @@ A binary **shift register** is a digital circuit that sequentially shifts data b
       * For now, use constant `1` instead of `<input>` signal
       * Notation `&` represents vector concatenation used to merge data. Notation `s <= s(2 downto 0) & '1';` creates `"s2 s1 s0 1"`.
       * Assign the whole internal register to the output `count <= sig_reg;` (The template here implements Serial out and not Parallel output.)
-
-   > **Note:** The structure below implements a simplified 4-bit shift register without any enable inputs.
-   >
-   > ```vhdl
-   > process (clk)
-   > begin
-   >     if rising_edge(clk) then
-   >         sig_reg <= sig_reg(4-2 downto 0) & data;
-   >         -- "sig_reg(2)  sig_reg(1)  sig_reg(0)  data"
-   >     end if;
-   > end process;
-   >
-   > count <= sig_reg;
-   > ```
-   >
-   > **RTL level:**
-   > ![shift rtl](images/teros_shift_rtl.png)
-   >
-   >
-   > **Gate level:**
-   > ![shift gate](images/teros_shift_gates.png)
 
 <a name="part2"></a>
 
