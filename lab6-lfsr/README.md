@@ -19,7 +19,7 @@ After completing this lab you will be able to:
 
 ## Pre-Lab preparation
 
-1. Calculate the maximum length and duration of one run (one complete sequence) of the LFSR counter on the Nexys board for various `NBIT` values of 4, 8, 16, 32, and 64. Given a clock frequency of 100 MHz, determine the time it takes for the counter to complete one full sequence.
+1. Calculate the maximum length and duration of one run (one complete sequence) of the LFSR counter on the Nexys board for various `NBIT` values of 4, 8, 16, 32, 40, and 64. Given a clock frequency of 100 MHz, determine the time it takes for the counter to complete one full sequence.
 
    Note that, unlike a binary counter, the full sequence of an LFSR counter contains only `2^(NBIT)-1` values.
 
@@ -29,6 +29,7 @@ After completing this lab you will be able to:
    | 8   |  |  |
    | 16  |  |  |
    | 32  |  |  |
+   | 40  |  |  |
    | 64  |  |  |
 
 <a name="part1"></a>
