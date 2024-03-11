@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-11T15:09:02.826Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="5zT4QUFnNV-NHwUmf65A" version="24.0.4" type="device">
+<mxfile host="app.diagrams.net" modified="2024-03-11T15:38:31.874Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="VnbGEBVgZ9UbgRN5932E" version="24.0.4" type="device">
   <diagram id="j7nF-TVUxBw4xUQn4cIl" name="Page-1">
-    <mxGraphModel dx="1930" dy="1820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3033" dy="2471" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2856,7 +2856,7 @@
           <mxGeometry x="-330.40999999999997" y="1830" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="rYuDcnXUYZ90KfA7L--K-7" value="sig_count(3:0)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=10;fillOpacity=100;spacing=2;spacingLeft=0;connectable=0;" parent="1" vertex="1">
-          <mxGeometry x="189.95" y="1945" width="100.05" height="10" as="geometry" />
+          <mxGeometry x="194.95" y="1915" width="100.05" height="10" as="geometry" />
         </mxCell>
         <mxCell id="rYuDcnXUYZ90KfA7L--K-8" value="" style="endArrow=none;html=1;rounded=0;startArrow=none;startFill=0;endSize=4;startSize=4;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -3176,19 +3176,19 @@
         </mxCell>
         <mxCell id="rYuDcnXUYZ90KfA7L--K-79" value="" style="endArrow=block;html=1;rounded=0;endFill=1;orthogonal=1;endSize=5;startSize=5;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="190" y="1940" as="sourcePoint" />
-            <mxPoint x="440" y="1940" as="targetPoint" />
+            <mxPoint x="190" y="1930" as="sourcePoint" />
+            <mxPoint x="440" y="1930" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="rYuDcnXUYZ90KfA7L--K-80" value="LED(3:0)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=10;fillOpacity=100;spacing=2;spacingLeft=5;connectable=0;" parent="1" vertex="1">
-          <mxGeometry x="440" y="1930" width="70" height="20" as="geometry" />
+          <mxGeometry x="440" y="1920" width="70" height="20" as="geometry" />
         </mxCell>
         <mxCell id="rYuDcnXUYZ90KfA7L--K-81" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;aspect=fixed;connectable=0;fillColor=#00FF00;" parent="1" vertex="1">
-          <mxGeometry x="521" y="1920" width="50" height="35" as="geometry" />
+          <mxGeometry x="521" y="1910" width="50" height="35" as="geometry" />
         </mxCell>
         <mxCell id="rYuDcnXUYZ90KfA7L--K-82" value="" style="endArrow=oval;html=1;rounded=0;startArrow=none;startFill=0;endSize=4;startSize=4;endFill=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="190" y="1940" as="sourcePoint" />
+            <mxPoint x="190" y="1930" as="sourcePoint" />
             <mxPoint x="190" y="1900" as="targetPoint" />
           </mxGeometry>
         </mxCell>
@@ -3660,6 +3660,51 @@
         </mxCell>
         <mxCell id="rYuDcnXUYZ90KfA7L--K-195" value="&quot;0000_0000&quot;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=10;fillOpacity=100;spacing=2;spacingLeft=0;connectable=0;" parent="1" vertex="1">
           <mxGeometry x="990" y="2110" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-1" value="done" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=10;fillOpacity=100;spacing=2;spacingRight=5;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="1950" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-2" value="" style="endArrow=block;html=1;rounded=0;endFill=1;orthogonal=1;endSize=5;startSize=5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="1960" as="sourcePoint" />
+            <mxPoint x="440" y="1960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-3" value="LED16_B" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=10;fillOpacity=100;spacing=2;spacingLeft=5;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1950" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-4" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;aspect=fixed;connectable=0;fillColor=#007FFF;" vertex="1" parent="1">
+          <mxGeometry x="521" y="1940" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-13" value="done" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=10;fillOpacity=100;spacing=2;spacingRight=5;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1960" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-14" value="" style="endArrow=block;html=1;rounded=0;endFill=1;orthogonal=1;endSize=5;startSize=5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1210" y="1970" as="sourcePoint" />
+            <mxPoint x="1480" y="1970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-15" value="LED16_B" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=10;fillOpacity=100;spacing=2;spacingLeft=5;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="1960" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-16" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;aspect=fixed;connectable=0;fillColor=#007FFF;" vertex="1" parent="1">
+          <mxGeometry x="1561" y="1950" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-17" value="done" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=10;fillOpacity=100;spacing=2;spacingRight=5;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="2130" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-18" value="" style="endArrow=block;html=1;rounded=0;endFill=1;orthogonal=1;endSize=5;startSize=5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1210" y="2140" as="sourcePoint" />
+            <mxPoint x="1480" y="2140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-19" value="LED17_B" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=10;fillOpacity=100;spacing=2;spacingLeft=5;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="2130" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2dyDwVu57LYd_SjPFipm-20" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;aspect=fixed;connectable=0;fillColor=#007FFF;" vertex="1" parent="1">
+          <mxGeometry x="1561" y="2120" width="50" height="35" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

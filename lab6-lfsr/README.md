@@ -201,7 +201,7 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
        -- Set display position
 
 
-       -- Set output LEDs
+       -- Set output LEDs (green and blue)
 
 
    end architecture behavioral;
