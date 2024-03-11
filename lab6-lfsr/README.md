@@ -283,7 +283,7 @@ For the second counter, an 8-bit counter, configure it to increment every 100 ms
 
 ## Challenges
 
-1. TBD
+1. Use `for-generate` statement and define an N-bit adder according to [previous lab](https://github.com/tomas-fryza/vhdl-course/tree/master/lab4-adder#part2).
 
 <a name="references"></a>
 
