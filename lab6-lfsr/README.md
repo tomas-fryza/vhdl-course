@@ -25,7 +25,7 @@ After completing this lab you will be able to:
 
    | **NBIT** | **Max. length** | **Duration** |
    | :-: | :-: | :-: |
-   | 4   | 7 | 70 ns |
+   | 4   | 15 | 150 ns |
    | 8   |  |  |
    | 16  |  |  |
    | 32  |  |  |
