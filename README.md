@@ -37,8 +37,8 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 3. [Seven-segment display decoder](lab3-segment)
 4. [Arithmetic circuits](lab4-adder)
 5. [Binary counter](lab5-counter)
-6. TBD
-7. Traffic light controller
+6. [LFSR counter](lab6-lfsr)
+7. TBD
 8. [Project](project)
 
 ## List of VHDL examples

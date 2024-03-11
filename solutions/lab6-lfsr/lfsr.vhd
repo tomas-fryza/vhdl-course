@@ -48,11 +48,29 @@ begin
 
     end process p_lfsr;
 
+    g_3bit : if NBIT = 3 generate
+        -- Create feedback for 3-bit LFSR counter
+        sig_feedback <= sig_reg(2) xnor sig_reg(1);
+    end generate g_3bit;
+
+    g_4bit : if NBIT = 4 generate
+        -- Create feedback for 4-bit LFSR counter
+        -- https://docs.xilinx.com/v/u/en-US/xapp052
+        sig_feedback <= sig_reg(3) xnor sig_reg(2);
+    end generate g_4bit;
+
+    g_5bit : if NBIT = 5 generate
+        -- Create feedback for 5-bit LFSR counter
+        sig_feedback <= sig_reg(4) xnor sig_reg(2);
+    end generate g_5bit;
+
+    g_8bit : if NBIT = 8 generate
+        -- Create feedback for 5-bit LFSR counter
+        sig_feedback <= sig_reg(7) xnor sig_reg(5) xnor sig_reg(4) xnor sig_reg(3);
+    end generate g_8bit;
+
     -- Assign internal register to output
     count <= sig_reg;
-
-    -- Create feedback for 4-bit LFSR counter (tap4, tap3)
-    sig_feedback <= sig_reg(3) xnor sig_reg(2);
 
     -- Create a `done` output pulse
     done <= '1' when (sig_reg = load_data) else

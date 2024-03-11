@@ -19,9 +19,17 @@ After completing this lab you will be able to:
 
 ## Pre-Lab preparation
 
+1. Calculate the maximum length and duration of one run (one complete sequence) of the LFSR counter on the Nexys board for various `NBIT` values of 4, 8, 16, 32, and 64. Given a clock frequency of 100 MHz, determine the time it takes for the counter to complete one full sequence.
 
-1. TBD: XNOR, tabulka pseudo random hodnot
+   Note that, unlike a binary counter, the full sequence of an LFSR counter contains only `2^(NBIT)-1` values.
 
+   | **NBIT** | **Max. length** | **Duration** |
+   | :-: | :-: | :-: |
+   | 4   | 7 | 70 ns |
+   | 8   |  |  |
+   | 16  |  |  |
+   | 32  |  |  |
+   | 64  |  |  |
 
 <a name="part1"></a>
 
@@ -104,7 +112,7 @@ count <= sig_reg;
 
    Hints:
       * Use `rising_edge(clk)` instead of `clk='1' and clk'event` to test clock edge
-      * Define an internal signal `sig_reg` of data type `std_logic_vector(4-1 downto 0)` to implement the shift register
+      * Define an internal signal `sig_reg` of data type `std_logic_vector(3 downto 0)` to implement the shift register
       * For now, use constant `1` instead of `<input>` signal
       * Notation `&` represents vector concatenation used to merge data. Notation `s <= s(2 downto 0) & '1';` creates `"s2 s1 s0 1"`.
       * Assign the whole internal register to the output `count <= sig_reg;` (The template here implements Serial out and not Parallel output.)
@@ -140,12 +148,14 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
            ...
        end process;
 
-       ...
        -- Create feedback for 4-bit LFSR counter
        sig_feedback <= sig_reg(3) xnor sig_reg(2);
 
+       -- Assign internal register to output
+       count <= sig_reg;
+
        -- Create a `done` output pulse
-       done <= '1' when (sig_reg = seed_data) else
+       done <= '1' when (sig_reg = load_data) else
                '0';
 
    end behavioral;
@@ -155,25 +165,132 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
 
 4. Generate a [simulation source](https://vhdl.lapinoo.net/testbench/) named `tb_lfsr`, execute the simulation, and validate the functionality of enable and seed values. Experiment with various tap configurations for XNOR gates and analyze the length of the generated pseudo-random sequence.
 
-5. Optional: Create a VHDL design source named `top_level` and implement a 4-bit LFSR counter on the Nexys A7 board. Configure the counter to increment every 500 ms (component `enable_clock` from the previous lab is needed), displaying the count on the 7-segment display and LEDs. Set the initial seed value using four switches.
+5. Optional: Create a VHDL design source named `top_level` and implement a 4-bit LFSR counter on the Nexys A7 board. Configure the counter to increment every 500 ms (the `enable_clock` component from the previous lab is required), displaying the count on the 7-segment display (also requiring `bin2seg`) and LEDs. Set the initial seed value using four switches and enable loading by pressing `BTND`.
+
+   ![top level](images/top-level_lfsr_4-bit_structure.png)
+
+   ```vhdl
+   architecture behavioral of top_level is
+       -- Component declaration for clock enable
 
 
-TBD: Fig of top level
+       -- Component declaration for LFSR counter
 
+
+       -- Component declaration for bin2seg
+
+
+       -- Local signals for a counter: 4-bit @ 500 ms
+
+
+   begin
+
+       -- Component instantiation of clock enable for 500 ms
+
+
+       -- Component instantiation of 4-bit LFSR counter
+
+
+       -- Component instantiation of bin2seg
+
+
+       -- Turn off decimal point
+
+
+       -- Set display position
+
+
+       -- Set output LEDs
+
+
+   end architecture behavioral;
+   ```
+
+6. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t`, uncomment the used pins according to the `top_level` entity.
+
+7. Compile the project (ie. transform the high-level VHDL code into a binary configuration file) and download the generated bitstream `YOUR-PROJECT-FOLDER/lfsr.runs/impl_1/top_level.bit` into the FPGA chip.
+
+8. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
 
 <a name="part3"></a>
 
 ## Part 3: n-bit LFSR counter
 
+1. Extend the code from the previous part and use generics in both, design and testbench sources.
 
-TBD: Add generic `NBIT = 4` to design and simulation sources.
+   In **design source**, use generic `NBIT` to define number of bits for the counter. In **testbench**, define a constant `C_NBIT`, prior to declaring the component and use it to declare your internal counter signal:
 
+   ```vhdl
+   -- Design source file
+   entity lfsr is
+       generic (
+           NBIT : integer := 4 --! Default number of bits
+       );
+       port (
+           ...
+       );
+   end entity lfsr;
+   ```
 
-TBD: generovat zpětnou vazbbu podle `NBIT`
+   ```vhdl
+   -- Testbench file
+   constant C_NBIT : integer := 4; --! Simulating number of bits
+   signal count : std_logic_vector(C_NBIT-1 downto 0);
+   ```
 
+   When you instantiate your counter, you then also bind the `NBIT` generic to this constant:
 
-TBD: simulace odlišných `NBIT`
+   ```vhdl
+   dut : component lfsr
+       generic map (
+           NBIT => C_NBIT
+       )
+       ...
+   ```
 
+2. In VHDL, there is a way for iteratively or conditionally elaborating a part of a description. Typically, it is used to define a group of identical components using a single component specification and then repeating it using the `generate` mechanism.
 
-TBD: implementace na Nexys
+   ```vhdl
+   -- Conditional
+   label : if condition generate
+       { concurrent_statements }
+   end generate label;
 
+   -- Iterative
+   label : for parameter in range generate
+       { concurrent_statements }
+   end generate label;
+   ```
+
+   Use conditional `generate` statements and define `sig_feedback` for several `NBIT` values. See [AMD LFSR Counters](https://docs.xilinx.com/v/u/en-US/xapp052) to get the taps for maximum-length LFSR counters. Note that, the taps here are indexed from 1 and not from 0, ie. 4-bit counter use taps 4 and 3.
+
+   ```vhdl
+   g_4bit : if NBIT = 4 generate
+       -- Create feedback for 4-bit LFSR counter
+       sig_feedback <= sig_reg(3) xnor sig_reg(2);
+   end generate g_4bit;
+   ```
+
+3. Simulate your design and try several `C_NBIT` values.
+
+4. Create a VHDL design source named `top_level` and implement two n-bit LFSR counters on the Nexys A7 board. Configure the first, a 4-bit counter, to increment every 500 ms (requires the `enable_clock` component from the previous lab), displaying the count on the 7-segment display (also requires `bin2seg`). Set the initial seed value using four switches and enable loading by `BTND`.
+
+For the second counter, an 8-bit counter, configure it to increment every 100 ms, display its value using LEDs, and disable the initial setting.
+
+   ![top level](images/top-level_lfsr_n-bit_structure.png)
+
+<a name="challenges"></a>
+
+## Challenges
+
+1. TBD
+
+<a name="references"></a>
+
+## References
+
+1. NandLand. [LFSR in an FPGA – VHDL & Verilog Code](https://nandland.com/lfsr-linear-feedback-shift-register/)
+
+2. AMD. [Efficient Shift Registers, LFSR Counters, and Long Pseudo-Random Sequence Generators (XAPP052)](https://docs.xilinx.com/v/u/en-US/xapp052)
+
+3. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
