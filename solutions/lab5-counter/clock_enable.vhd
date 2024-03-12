@@ -34,8 +34,7 @@ architecture behavioral of clock_enable is
     signal sig_count : integer range 0 to PERIOD - 1;
 begin
 
-    --! Generate clock enable signal. By default, enable signal
-    --! is low and generated pulse is always one clock long.
+    --! Count the number of clock pulses from zero to PERIOD-1.
     p_clk_enable : process (clk) is
     begin
 
@@ -55,7 +54,7 @@ begin
 
     end process p_clk_enable;
 
-    -- Generate output pulse
+    -- Generated pulse is always one clock long
     pulse <= '1' when (sig_count = PERIOD - 1) else
              '0';
 

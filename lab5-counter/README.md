@@ -16,8 +16,6 @@ After completing this lab you will be able to:
 * Use VHDL generics and synchronous processes
 * Use clock enable signal to drive another logic in the design (with slower clock)
 
-The purpose of this laboratory exercise is to become familiar with the creation of sequential processes in VHDL, next to implement a clock enable signal to drive another logic with slower clock, and to design a binary counter.
-
 <a name="preparation"></a>
 
 ## Pre-Lab preparation
@@ -152,11 +150,11 @@ We can write:
    ```vhdl
    entity some_entity is
        generic (
-           N : integer := some_defaul_value
+           NBIT : integer := some_defaul_value
        );
        port (
            clk     : in    std_logic;
-           counter : out   std_logic_vector(N-1 downto 0) -- Can be any width
+           counter : out   std_logic_vector(NBIT-1 downto 0) -- Can be any width
            -- (the desired width will be passed during instantiation in the generic map)
        );
    end entity some_entity;
@@ -164,13 +162,13 @@ We can write:
 
 1. Extend the code from the previous part and use generics in both, design and testbench sources.
 
-   In **design source**, use generic `N` to define number of bits for the counter. In **testbench**, define a constant, prior to declaring the component and use it to declare your internal counter signal:
+   In **design source**, use generic `NBIT` to define number of bits for the counter. In **testbench**, define a constant `C_NBIT`, prior to declaring the component and use it to declare your internal counter signal:
 
    ```vhdl
    -- Design source file
    entity simple_counter is
        generic (
-           N : integer := 4 --! Default number of bits
+           NBIT : integer := 4 --! Default number of bits
        );
        port (
            ...
@@ -180,21 +178,21 @@ We can write:
 
    ```vhdl
    -- Testbench file
-   constant COUNTER_WIDTH : integer := 6; --! Simulating number of bits
-   signal count : std_logic_vector(COUNTER_WIDTH-1 downto 0);
+   constant C_NBIT : integer := 6; --! Simulating number of bits
+   signal count : std_logic_vector(C_NBIT-1 downto 0);
    ```
 
-   When you instantiate your counter, you then also bind the `N` generic to this constant:
+   When you instantiate your counter, you then also bind the `NBIT` generic to this constant:
 
    ```vhdl
    dut : component simple_counter
        generic map (
-           N => COUNTER_WIDTH
+           NBIT => C_NBIT
        )
        ...
    ```
 
-2. Simulate your design and try several `COUNTER_WIDTH` values.
+2. Simulate your design and try several `C_NBIT` values.
 
 <a name="part3"></a>
 
@@ -213,17 +211,17 @@ To drive another logic in the design (with slower clock), it is better to genera
 >     ],
 >     {},
 >     ["internal",
->       {name: "sig_count[2:0]", wave: 'x.3.33333333333333', data: ["0","1","2","3","4","5","0","1","2","3","4","5","0","1","2",]},
+>       {name: "sig_count", wave: 'x.3.33333333333333', data: ["0","1","2","3","4","5","0","1","2","3","4","5","0","1","2",]},
 >     ],
 >     {},
 >     ["output",
->       {name: "pulse", wave: 'l........hl....hl.'},
+>       {name: "pulse", wave: 'l.......hl....hl..'},
 >     ],
 >   ],
 >   head: {
 >   },
 >   foot: {
->     text:'PERIOD = 6',
+>     text: 'PERIOD = 6',
 >   },
 > }
 > ```
@@ -249,54 +247,45 @@ To drive another logic in the design (with slower clock), it is better to genera
    end entity clock_enable;
    ```
 
-3. In architecture declaration part, define a local counter with a width calculated from the number of needed bits for `PERIOD`. To use math functions, add a new package to your VHDL file.
+3. Another way how to create a counter is the usage of `integer` data type. In architecture declaration part, define a local counter using the range of integers needed for `PERIOD` values. Because all incrementations will be performed with integers and not `std_logic_vector`, no extra package is used.
 
    ```vhdl
    library ieee;
        use ieee.std_logic_1164.all;
-       use ieee.std_logic_unsigned.all; -- Package for arithmetic operations with std_logic_vector
-       use ieee.math_real.all; -- To calculate the number of bits needed to represent an integer
 
    ...
    architecture behavioral of clock_enable is
-       --! Get number for needed bits for PERIOD value
-       constant bits_needed : integer := integer(ceil(log2(real(PERIOD + 1))));
-
-       --! Local counter with needed number of bits
-       signal sig_count : std_logic_vector(bits_needed - 1 downto 0);
+       --! Local counter
+       signal sig_count : integer range 0 to PERIOD-1;
    begin
    ```
 
 4. Complete the architecture to define the `clock_enable` according to the following structure.
 
-   ![clock enable rtl](images/teros_clock-enable_rtl.png)
-
    ```vhdl
    begin
-       --! Generate clock enable signal. By default, enable signal
-       --! is low and generated pulse is always one clock long.
+       --! Count the number of clock pulses from zero to PERIOD-1.
        p_clk_enable : process (clk) is
        begin
 
            -- Synchronous proces
            if (rising_edge(clk)) then
                -- if high-active reset then
+                   -- Clear integer counter
 
-                   -- Clear all bits of local counter
-                   -- Set output `pulse` to low
+               -- elsif sig_count is less than PERIOD-1 then
+                   -- Counting
 
-               -- elsif sig_count is PERIOD-1 then
-                   -- Clear all bits of local counter
-                   -- Set output `pulse` to high
-
-               -- else
-                   -- Increment local counter
-                   -- Set output `pulse` to low
+               -- else reached the end of counter
+                   -- Clear integer counter
 
                -- Each `if` must end by `end if`
            end if;
 
        end process p_clk_enable;
+
+       -- Generated pulse is always one clock long
+       -- when sig_count = PERIOD-1
 
    end architecture behavioral;
    ```
@@ -382,8 +371,6 @@ To drive another logic in the design (with slower clock), it is better to genera
 6. Compile the project (ie. transform the high-level VHDL code into a binary configuration file) and download the generated bitstream `YOUR-PROJECT-FOLDER/counter.runs/impl_1/top_level.bit` into the FPGA chip.
 
 7. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
-
-8. Optional: Use digital oscilloscope or logic analyser and display counter values via Pmod ports of the Nexys A7 board.
 
 <a name="challenges"></a>
 
