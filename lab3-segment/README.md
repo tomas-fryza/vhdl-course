@@ -15,8 +15,6 @@ After completing this lab you will be able to:
 * Use VHDL processes
 * Understand the structural modeling and instantiation in VHDL
 
-The purpose of this laboratory exercise is to design a 7-segment display decoder and to become familiar with the VHDL structural description that allows you to build a larger system from simpler or predesigned components.
-
 <a name="preparation"></a>
 
 ## Pre-Lab preparation

@@ -23,8 +23,6 @@ After completing this lab you will be able to:
 * Understand basic structure of VHDL files
 * Use Vivado development tool
 
-In this laboratory exercise, you will learn how to compose a basic VHDL code using Vivado development tool.
-
 <a name="preparation"></a>
 
 ## Pre-Lab preparation

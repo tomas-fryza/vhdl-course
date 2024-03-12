@@ -15,8 +15,6 @@ After completing this lab you will be able to:
 * Practice instantiating VHDL sub-components
 * Construct a ripple carry adder
 
-The purpose of this laboratory exercise is to design a binary adder and subtractor and practise the instantiations in VHDL.
-
 <a name="preparation"></a>
 
 ## Pre-Lab preparation

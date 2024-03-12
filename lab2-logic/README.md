@@ -1,4 +1,4 @@
-# Lab 2: Combinational logic circuits
+# Lab 2: Combinatorial logic circuits
 
 * [Pre-Lab preparation](#preparation)
 * [Part 1: Logic function minimization](#part1)
@@ -16,8 +16,6 @@ After completing this lab you will be able to:
 * Minimize logic functions
 * Understand signal assignments in VHDL
 * Use VHDL assertion statements for testing
-
-The purpose of this laboratory exercise is to learn to use different ways of writing combination functions (truth table, K-map, SoP/PoS forms), their minimization, the use of signal assignments in VHDL, and assertion statements in VHDL testbench.
 
 <a name="preparation"></a>
 
