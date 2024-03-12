@@ -23,7 +23,7 @@ architecture tb of tb_lfsr is
         );
     end component;
 
-    constant C_NBIT      : integer := 8;
+    constant C_NBIT      : integer := 4;
     signal   clk         : std_logic;
     signal   en          : std_logic;
     signal   load_enable : std_logic;

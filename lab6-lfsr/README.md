@@ -64,6 +64,8 @@ count <= sig_reg;
 ...
 ```
 
+*The VHDL **concatenate operator** is ampersand (&). It can be used to combine two or more items together. Since VHDL is strongly typed, it requires that all inputs to the concatenation be of the same type. Additionally, the result of the concatenation needs to exactly fit the width of the concatenated input signals.*
+
 1. Run Vivado, create a new project and implement a 4-bit shift register with serial input and enable signal:
 
    1. Project name: `lfsr`
@@ -85,14 +87,15 @@ count <= sig_reg;
 
 2. Use VHDL templates in menu **Tools > Language Templates**, search for `parallel load`, copy/paste `w/ CE` template to the architecture and modify the code according to your I/O port names.
 
-   > **Note:** The template is located in:
+   > **Note:** The shift register template is located in:
    > ```bash
+   > Language Templates:
    > VHDL
-   > └── Synthesis Constructs
-   >     └── Coding Examples
-   >         └── Shift Registers
-   >             └── Parallel Load, Serial In, Serial Out
-   >                 └── w/ CE
+   >   Synthesis Constructs
+   >     Coding Examples
+   >       Shift Registers
+   >         Parallel Load, Serial In, Serial Out
+   >           w/ CE
    > ```
 
    ```vhdl
@@ -115,7 +118,7 @@ count <= sig_reg;
       * Use `rising_edge(clk)` instead of `clk='1' and clk'event` to test clock edge
       * Define an internal signal `sig_reg` of data type `std_logic_vector(3 downto 0)` to implement the shift register
       * For now, use constant `1` instead of `<input>` signal
-      * Notation `&` represents vector concatenation used to merge data. Notation `s <= s(2 downto 0) & '1';` creates `"s2 s1 s0 1"`.
+      * Notation `&` represents vector concatenation used to merge data. For example `s <= s(2 downto 0) & '1';` creates `"s2 s1 s0 1"`.
       * Assign the whole internal register to the output `count <= sig_reg;` (The template here implements Serial out and not Parallel output.)
 
 <a name="part2"></a>
@@ -133,7 +136,7 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
        port (
            ...
            done      : out std_logic;
-           count     : out std_logic_vector(3 downto 0)
+           count     : out std_logic_vector(4-1 downto 0)
        );
    end lfsr;
 
@@ -166,9 +169,22 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
 
 4. Generate a [simulation source](https://vhdl.lapinoo.net/testbench/) named `tb_lfsr`, execute the simulation, and validate the functionality of enable and seed values. Experiment with various tap configurations for XNOR gates and analyze the length of the generated pseudo-random sequence.
 
-5. Optional: Create a VHDL design source named `top_level` and implement a 4-bit LFSR counter on the Nexys A7 board. Configure the counter to increment every 500 ms (the `enable_clock` component from the previous lab is required), displaying the count on the 7-segment display (also requiring `bin2seg`) and LEDs. Set the initial seed value using four switches and enable loading by pressing `BTND`.
+   | **Taps** | **Length** | **Values** |
+   | :-: | :-: | :-- |
+   | 3, 2 | 15 | 0, 1, 3, 7, 14, 13, 11, 6, 12, 9, 2, 5, 10, 4, 8 |
+   | 3, 1 |  |  |
+   | 3, 0 |  |  |
+   | 2, 1 |  |  |
+   | 2, 0 |  |  |
+   | 1, 0 |  |  |
+
+5. Optional: Create a VHDL design source named `top_level` and implement a 4-bit LFSR counter on the Nexys A7 board. Configure the counter to increment every 500 ms, displaying the count on the 7-segment display and LEDs. Set the initial seed value using four switches `SW(3:0)` and enable loading by pressing `BTND`.
+
+   Use component declaration and instantiation of `lfsr`, `clock_enable`, and `bin2seg`, and define the top-level architecture as follows.
 
    ![top level](images/top-level_lfsr_4-bit_structure.png)
+
+   **Note:** The `enable_clock` and `bin2seg` components from the previous lab is required. Do not forget to copy both files to `YOUR-PROJECT-FOLDER/lfsr.srcs/sources_1/new/` folder and add them to the project.
 
    ```vhdl
    architecture behavioral of top_level is
@@ -210,8 +226,6 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
 6. Create a new [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t`, uncomment the used pins according to the `top_level` entity.
 
 7. Compile the project (ie. transform the high-level VHDL code into a binary configuration file) and download the generated bitstream `YOUR-PROJECT-FOLDER/lfsr.runs/impl_1/top_level.bit` into the FPGA chip.
-
-8. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
 
 <a name="part3"></a>
 
@@ -276,7 +290,7 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
 
 4. Create a VHDL design source named `top_level` and implement two n-bit LFSR counters on the Nexys A7 board. Configure the first, a 4-bit counter, to increment every 500 ms (requires the `enable_clock` component from the previous lab), displaying the count on the 7-segment display (also requires `bin2seg`). Set the initial seed value using four switches and enable loading by `BTND`.
 
-For the second counter, an 8-bit counter, configure it to increment every 100 ms, display its value using LEDs, and disable the initial setting.
+   For the second counter, an 8-bit counter, configure it to increment every 100 ms, display its value using LEDs, and disable the initial setting.
 
    ![top level](images/top-level_lfsr_n-bit_structure.png)
 
@@ -290,8 +304,10 @@ For the second counter, an 8-bit counter, configure it to increment every 100 ms
 
 ## References
 
-1. NandLand. [LFSR in an FPGA – VHDL & Verilog Code](https://nandland.com/lfsr-linear-feedback-shift-register/)
+1. NandLand. [Concatenation Operator – VHDL Example](https://nandland.com/concatenation-operator/)
 
-2. AMD. [Efficient Shift Registers, LFSR Counters, and Long Pseudo-Random Sequence Generators (XAPP052)](https://docs.xilinx.com/v/u/en-US/xapp052)
+2. NandLand. [LFSR in an FPGA – VHDL & Verilog Code](https://nandland.com/lfsr-linear-feedback-shift-register/)
 
-3. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
+3. AMD. [Efficient Shift Registers, LFSR Counters, and Long Pseudo-Random Sequence Generators (XAPP052)](https://docs.xilinx.com/v/u/en-US/xapp052)
+
+4. Digilent. [General .xdc file for the Nexys A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
