@@ -21,6 +21,12 @@
     },
     "component_003": {
       "style": "no_blank_line"
+    },
+    "type_010": {
+      "style": "no_blank_line"
+    },
+    "type_011": {
+      "style": "no_blank_line"
     }
   }
 }
