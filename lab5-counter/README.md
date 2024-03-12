@@ -88,6 +88,18 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
 
 2. Use VHDL templates in menu **Tools > Language Templates**, search for `up counters`, and select the one using clock enable (CE) and synchronous active-high reset. Copy/paste this template to the architecture and modify the code according to your I/O port names.
 
+   > **Note:** The up counter template is located in:
+   > ```bash
+   > Language Templates:
+   > VHDL
+   >   Synthesis Constructs
+   >     Coding Examples
+   >       Counters
+   >         Binary
+   >           Up Counters
+   >             /w CE and Sync Active High Reset
+   > ```
+
    ```vhdl
    architecture behavioral of simple_counter is
        ...

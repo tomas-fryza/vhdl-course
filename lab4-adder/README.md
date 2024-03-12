@@ -107,6 +107,20 @@ Full adder is the adder which adds three inputs and produces two outputs. The fi
 
 3. Use component declaration and four instantiations of `full_adder` and define the architecture of 4-bit binary adder. (Hint: In Vivado, you can use VHDL templates in menu **Tools > Language Templates**.)
 
+   > **Note:** The component declaration and instantiation templates are located in:
+   > ```bash
+   > Language Templates:
+   > VHDL
+   >   Common Constructs
+   >     Architecture, Component & Entity
+   >       Component Declaration
+   >
+   > VHDL
+   >   Common Constructs
+   >     Architecture, Component & Entity
+   >       Component Instantiation
+   > ```
+
    ![ripple carry adder](images/adder_4bit_structure.png)
 
    ```vhdl
