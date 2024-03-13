@@ -38,7 +38,7 @@ After completing this lab you will be able to:
 
 A binary **shift register** is a digital circuit that sequentially shifts data bits, either left or right, through a series of flip-flops controlled by a clock signal. It operates in parallel-in, serial-out (PISO) or serial-in, parallel-out (SIPO) modes. Shift registers are commonly used for serial-to-parallel and parallel-to-serial data conversion, data storage, and data transmission.
 
-The structures below implement a simple 4-bit shift register.
+**FYI:** The structures below decsribe a simple 4-bit shift register in RTL (higher) and gate (lower) levels.
 
 **RTL level:**
 
@@ -296,7 +296,7 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
 
 1. Implement two n-bit LFSR counters on the Nexys A7 board. Configure the first, a 4-bit counter, to increment every 500 ms (requires the `enable_clock` component from the previous lab), displaying the count on the 7-segment display (also requires `bin2seg`). Set the initial seed value using four switches and enable loading by `BTND`.
 
-   For the second counter, an 8-bit counter, configure it to increment every 100 ms, display its value using LEDs, and disable the initial setting.
+   For the second counter, an 8-bit counter, configure it to increment every 100 ms, display its value using LEDs, and disable the initial settings.
 
    ![top level](images/top-level_lfsr_n-bit_structure.png)
 
