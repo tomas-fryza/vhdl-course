@@ -67,7 +67,9 @@ begin
         load_enable <= '0';
 
         -- EDIT Add stimuli here
-        wait for 100 * TbPeriod;
+        wait for 77 * TbPeriod;
+        en <= '0';
+        wait for 24 * TbPeriod;
 
         -- Stop the clock and hence terminate the simulation
         TbSimEnded <= '1';

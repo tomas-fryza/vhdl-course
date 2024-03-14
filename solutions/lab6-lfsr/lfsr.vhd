@@ -1,6 +1,24 @@
--- Inspired by:
---   https://nandland.com/lfsr-linear-feedback-shift-register/
---   https://docs.xilinx.com/v/u/en-US/xapp052
+-------------------------------------------------
+--! @brief LFSR (Linear Feedback Shift Register)
+--! @version 1.0
+--! @copyright (c) 2024 Tomas Fryza, MIT license
+--!
+--! Implements an N-bit LFSR counter with clock enable and loading
+--! functionality. The design shifts the register content on rising
+--! edges of the clock when the enable signal is active. The counter
+--! can be loaded with a default value controlled by the load_enable
+--! input. The counter completes one sequence when the register
+--! value matches the loaded data. The width of the counter is
+--! controlled by the generic parameter NBIT defined in the entity
+--! declaration.
+--!
+--! Developed using TerosHDL, Vivado 2023.2, and EDA Playground.
+--! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
+--!
+--! Inspired by:
+--!   * https://nandland.com/lfsr-linear-feedback-shift-register/
+--!   * https://docs.xilinx.com/v/u/en-US/xapp052
+-------------------------------------------------
 
 library ieee;
     use ieee.std_logic_1164.all;
@@ -9,7 +27,7 @@ library ieee;
 
 entity lfsr is
     generic (
-        NBIT : integer := 4 --! Default number of bits
+        NBIT : integer := 4 --! Number of bits
     );
     port (
         clk         : in    std_logic;                           --! Main clock
@@ -31,6 +49,9 @@ architecture behavioral of lfsr is
     signal sig_feedback : std_logic;
 begin
 
+    --! The synchronous process controls the loading of starting
+    --! data and the shifting of the internal register based on
+    --! the clock (clk) and the enable (en) signals.
     p_lfsr : process (clk) is
     begin
 

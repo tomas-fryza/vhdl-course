@@ -8,10 +8,13 @@ end entity tb_debouncer;
 architecture behavior of tb_debouncer is
     -- Component Declaration for the Unit Under Test (UUT)
     component debouncer is
+        generic (
+            CLK_PERIOD : integer;
+            DEB_PERIOD : integer
+        );
         port (
             clk     : in    std_logic;
             rst     : in    std_logic;
-            ce      : in    std_logic;
             btn_in  : in    std_logic;
             btn_out : out   std_logic
         );
@@ -20,20 +23,24 @@ architecture behavior of tb_debouncer is
     -- Inputs
     signal clock     : std_logic;
     signal reset     : std_logic;
-    signal clock_en  : std_logic;
     signal button_in : std_logic;
     signal pulse_out : std_logic;
 
     -- Clock period definitions
-    constant clock_period : time := 10 ns;
+    constant clock_period : time    := 10 ns;
+    constant C_CLK_PERIOD : integer := 2;
+    constant C_DEB_PERIOD : integer := 6;
 begin
 
     -- Instantiate the Unit Under Test (UUT)
     uut : component debouncer
+        generic map (
+            CLK_PERIOD => C_CLK_PERIOD,
+            DEB_PERIOD => C_DEB_PERIOD
+        )
         port map (
             clk     => clock,
             rst     => reset,
-            ce      => clock_en,
             btn_in  => button_in,
             btn_out => pulse_out
         );
@@ -53,7 +60,6 @@ begin
     stim_proc : process is
     begin
 
-        clock_en  <= '1';
         button_in <= '0';
         reset     <= '1';
         -- hold reset state for 100 ns.
