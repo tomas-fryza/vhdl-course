@@ -71,7 +71,7 @@ count <= sig_reg;
 ...
 ```
 
-1. Run Vivado, create a new project and implement a 4-bit shift register with serial input and enable signal:
+1. Run Vivado, create a new project and implement a 4-bit shift register with clock enable and load signals:
 
    1. Project name: `lfsr`
    2. Project location: your working folder, such as `Documents`
