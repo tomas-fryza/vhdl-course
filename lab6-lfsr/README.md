@@ -55,16 +55,21 @@ A binary **shift register** is a digital circuit that sequentially shifts data b
 process (clk)
 begin
     if rising_edge(clk) then
-        sig_reg <= sig_reg(2 downto 0) & data;
+        -- The VHDL **concatenate operator** is ampersand (&). It
+        -- can be used to combine two or more items together. Since
+        -- VHDL is strongly typed, it requires that all inputs to the
+        -- concatenation be of the same type. Additionally, the result
+        -- of the concatenation needs to exactly fit the width of the
+        -- concatenated input signals.
+
         -- "sig_reg(2)  sig_reg(1)  sig_reg(0)  data"
+        sig_reg <= sig_reg(2 downto 0) & data;
     end if;
 end process;
 
 count <= sig_reg;
 ...
 ```
-
-*The VHDL **concatenate operator** is ampersand (&). It can be used to combine two or more items together. Since VHDL is strongly typed, it requires that all inputs to the concatenation be of the same type. Additionally, the result of the concatenation needs to exactly fit the width of the concatenated input signals.*
 
 1. Run Vivado, create a new project and implement a 4-bit shift register with serial input and enable signal:
 
@@ -196,6 +201,7 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
        );
        port (
            ...
+           count : out std_logic_vector(NBIT-1 downto 0)
        );
    end entity lfsr;
    ```

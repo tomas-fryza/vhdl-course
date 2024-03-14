@@ -126,6 +126,8 @@ A simple **N-bit counter** is a digital circuit and has N output bits representi
       * Add `use ieee.std_logic_unsigned.all;` package to use arithmetic operations with `std_logic_vector` data type
       * Outside the process, connect internal signal to counter output
 
+   **FYI:** The structure below decsribes a 4-bit counter in RTL (higher) level.
+
    ![simple counter rtl](images/teros_simple-counter_rtl.png)
 
 3. Create [testbench](https://vhdl.lapinoo.net/testbench/) file `tb_simple_counter`, run the simulation, and test the functionality of `rst` and `en` signals.
