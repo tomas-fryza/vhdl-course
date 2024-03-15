@@ -63,11 +63,11 @@ begin
         button_in <= '0';
         reset     <= '1';
         -- hold reset state for 100 ns.
-        wait for 100 ns;
+        wait for clock_period * 3;
         reset <= '0';
-        wait for clock_period * 10;
 
         -- first activity
+        wait for clock_period * 10;
         button_in <= '1';
         wait for clock_period * 2;
         button_in <= '0';
