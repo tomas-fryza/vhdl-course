@@ -53,13 +53,13 @@ architecture behavioral of top_level is
     -- Component declaration for simple counter
     component simple_counter is
         generic (
-            N : integer
+            NBIT : integer
         );
         port (
             clk   : in    std_logic;
             rst   : in    std_logic;
             en    : in    std_logic;
-            count : out   std_logic_vector(N - 1 downto 0)
+            count : out   std_logic_vector(NBIT - 1 downto 0)
         );
     end component;
 
@@ -94,7 +94,7 @@ begin
     -- Component instantiation of 4-bit simple counter
     counter0 : component simple_counter
         generic map (
-            N => 4
+            NBIT => 4
         )
         port map (
             clk   => CLK100MHZ,
@@ -137,7 +137,7 @@ begin
     -- Component instantiation of 16-bit simple counter
     counter1 : component simple_counter
         generic map (
-            N => 16
+            NBIT => 16
         )
         port map (
             clk   => CLK100MHZ,
