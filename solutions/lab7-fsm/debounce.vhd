@@ -37,15 +37,15 @@ architecture behavioral of debounce is
     signal state : state_type; --! FSM state
 
     --! Define number of periods for debounce counter
-    constant DEB_COUNT : integer := 5;
+    constant DEB_COUNT : integer := 4;
 
     --! Define signals for debounce counter
     signal sig_count : integer range 0 to DEB_COUNT;
 
     -- Edge detector signals
     signal sig_clean : std_logic; --! Debounced signal
-    --! Remember previous deounced signal value
-    signal sig_previous : std_logic;
+    --! Remember previous debounced signal value
+    signal sig_delayed : std_logic;
 begin
 
     --! Process implementing a finite state machine (FSM) for
@@ -70,10 +70,12 @@ begin
     begin
 
         if rising_edge(clk) then
+            -- Active-high reset
             if (rst = '1') then
                 state <= RELEASED;
+            -- Clock enable
             elsif (en = '1') then
-
+                -- Define transitions between states
                 case state is
 
                     when RELEASED =>
@@ -113,6 +115,7 @@ begin
                             state     <= PRESSED;
                         end if;
 
+                    -- Prevent unhandled cases
                     when others =>
                         null;
 
@@ -137,16 +140,16 @@ begin
 
         if rising_edge(clk) then
             if (rst = '1') then
-                sig_previous <= '0';
+                sig_delayed <= '0';
             else
-                sig_previous <= sig_clean;
+                sig_delayed <= sig_clean;
             end if;
         end if;
 
     end process p_edge_detector;
 
     -- Assign output signals for edge detector
-    pos_edge <= sig_clean and not(sig_previous);
-    neg_edge <= not(sig_clean) and sig_previous;
+    pos_edge <= sig_clean and not(sig_delayed);
+    neg_edge <= not(sig_clean) and sig_delayed;
 
 end architecture behavioral;

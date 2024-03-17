@@ -38,7 +38,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 4. [Arithmetic circuits](lab4-adder)
 5. [Binary counter](lab5-counter)
 6. [LFSR counter](lab6-lfsr)
-7. TBD
+7. [FSM debouncer](lab7-fsm)
 8. [Project](project)
 
 ## List of VHDL examples
