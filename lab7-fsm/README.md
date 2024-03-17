@@ -26,6 +26,8 @@ After completing this lab you will be able to:
 
    ![nexys A7 led and segment](../lab2-logic/images/nexys-a7_leds-display.png)
 
+2. Optional: See video tutorial [Implementing the candy-lock FSM in VHDL](https://www.youtube.com/watch?v=5kC1XEWhIFQ)
+
 <a name="part1"></a>
 
 ## Part 1: Finite State Machine (FSM)

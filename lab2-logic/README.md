@@ -255,3 +255,5 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 3. Digilent Reference. [Nexys A7 Reference Manual](https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual)
 
 4. Brock J. LaMeres. [The Modern Digital Design Flow](https://link.springer.com/chapter/10.1007/978-3-030-10552-5_1)
+
+5. DesignSpark. [Implement a simple digital circuit through FPGA trainer board and in Xilinx Vivado IDE (VHDL)](https://www.rs-online.com/designspark/lab1-vhdl)
