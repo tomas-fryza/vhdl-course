@@ -253,7 +253,7 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
 
    ![top level](images/top-level_lfsr_4-bit_structure.png)
 
-   **Note:** The `enable_clock` and `bin2seg` components from the previous lab is required. Do not forget to copy both files to `YOUR-PROJECT-FOLDER/lfsr.srcs/sources_1/new/` folder and add them to the project.
+   **Note:** The `enable_clock` and `bin2seg` components from the previous lab are required. Do not forget to copy both files to `YOUR-PROJECT-FOLDER/lfsr.srcs/sources_1/new/` folder and add them to the project.
 
    ```vhdl
    architecture behavioral of top_level is
