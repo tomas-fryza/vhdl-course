@@ -14,11 +14,15 @@ The objective of this group project is to collaborate within small teams of 3-4 
 
 * All FPGA code must be written in VHDL and must be implementable on the Nexys A7-50T board using the development tools provided during the semester, specifically Vivado.
 
-* Detailed simulation testbenches for all new components must be created.
+* Use components designed and tested during the semester.
+
+* Follow ethical rules regarding plagiarism, licensing, and policies for the use of [generative artificial intelligence](https://www.vut.cz/vut/aktuality-f19528/vut-vydalo-zasady-a-doporuceni-k-vyuzivani-generativni-umele-inteligence-d247152).
+
+* Provide detailed simulation testbenches for all your new components.
 
 * Physical implementation on FPGA is necessary, not just computer simulation.
 
-* Teams should create a short video demonstrating their application. This video can be used to promote the course on LinkedIn.
+* Teams should create a short video (<1 min.) demonstrating their application. This video can be used to promote the course on LinkedIn.
 
 ## Help
 
@@ -35,9 +39,10 @@ The objective of this group project is to collaborate within small teams of 3-4 
 * Use `wait` statements [only in simulations](https://www.vhdl-online.de/courses/system_design/vhdl_language_and_syntax/sequential_statements/wait_statement).
 
 * Except Vivado, you can use the following tools to simulate your VHDL design(s):
-  * [EDA Playground](https://www.edaplayground.com/)
-  * [TerosHDL](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
-  * [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+   * [EDA Playground](https://www.edaplayground.com/)
+   * [TerosHDL](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
+   * [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux)
+   * [ModelSim](https://www.intel.com/content/www/us/en/software-kit/750666/modelsim-intel-fpgas-standard-edition-software-version-20-1-1.html)
 
 # Recommended README.md file structure
 
@@ -70,5 +75,5 @@ Write an instruction manual for your application, including photos and a link to
 
 ## References
 
-1. Put here the references you used.
+1. Put here all references to sources and tools you used.
 2. ...
