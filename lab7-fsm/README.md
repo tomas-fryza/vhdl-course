@@ -187,7 +187,7 @@ The main methods to debounce a bouncy button are:
 
    > **Note:** To display internal signal values, follow these steps:
    > 1. Select 'dut' in the **Scope** folder.
-   > 2. Right-click on the `state` (and `sig_count`) signal name in the **Objects** folder.
+   > 2. Right-click on the `state` signal name in the **Objects** folder.
    > 3. Add this signal by selecting the **Add to Wave Window** command.
    > 4. Click on the **Relaunch Simulation** icon.
    >
