@@ -6,19 +6,19 @@
 
 ## Instructions
 
-The objective of this group project is to collaborate within small teams (3-4 students), explore a chosen topic, use labs's components, develop innovative solutions, simulate and execute these solutions, generate project documentation, and present the final outcomes. Team members are responsible for organizing and assigning roles and tasks among themselves.
+The objective of this group project is to collaborate within small teams of 3-4 students, explore a chosen topic, utilize lab components, develop innovative solutions, simulate and execute these solutions, generate project documentation, and present the final outcomes. Team members are responsible for organizing and assigning roles and tasks among themselves.
 
-* Students will work on a project **in the labs** during the 9th to 13th weeks of the semester, with the practical demonstration scheduled for the last week.
+* Students will work on the project in the lab during Weeks 8 to 12 (or 13) of the semester, culminating in a practical demonstration.
 
-* Using BUT e-learning, students should submit a link to the GitHub repository containing the VHDL project, required images, documents, and a descriptive README file. **The submission deadline is the day before the demonstration.**
+* Students must submit a link to their GitHub repository containing the VHDL project, required images, documents, and a descriptive README file. The submission deadline is the day before the practical demonstration.
 
-* The FPGA codes must be written in VHDL and must be implementable on the Nexys A7-50T board using the development tools provided during the semester, specificallly Vivado.
+* All FPGA code must be written in VHDL and must be implementable on the Nexys A7-50T board using the development tools provided during the semester, specifically Vivado.
 
-* Create testbenches for all your new components.
+* Detailed simulation testbenches for all new components must be created.
 
 * Physical implementation on FPGA is necessary, not just computer simulation.
 
-* Make a short video of your app demo. (The video can then be used to promote the course at LinkedIn.)
+* Teams should create a short video demonstrating their application. This video can be used to promote the course on LinkedIn.
 
 ## Help
 
@@ -26,9 +26,9 @@ The objective of this group project is to collaborate within small teams (3-4 st
 
 * Use hierarchical design, ie. instances, top-level, several files, etc.
 
-* Use synchronous entities with `clk`.
+* Use synchronous entities with rising `clk`.
 
-* In a synchronous process, the first thing to do is test the clock edge, then synchronous reset. The only exception is asynchronous operations.
+* In a synchronous process, the first thing to do is the test of clock edge, then synchronous reset. The only exception is asynchronous operations (try to avoid them).
 
 * Use only input `in` or output `out` ports and not ~~inout~~.
 
@@ -46,6 +46,7 @@ The objective of this group project is to collaborate within small teams (3-4 st
 * Member 1 (responsible for ...)
 * Member 2 (responsible for ...)
 * Member 3 (responsible for ...)
+* Member 4 (responsible for ...)
 
 ## Theoretical description and explanation
 
