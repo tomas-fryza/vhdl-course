@@ -93,11 +93,11 @@ The main methods to debounce a bouncy button are:
 
       | **Port name** | **Direction** | **Type** | **Description** |
       | :-: | :-: | :-- | :-- |
-      | `clk`   | input  | `std_logic` | Main clock |
-      | `rst`   | input  | `std_logic` | High-active synchronous reset |
-      | `en`    | input  | `std_logic` | Clock enable input |
-      | `bouncey` | input  | `std_logic` | Button input |
-      | `clean` | output | `std_logic` | Debounced button output |
+      | `clk`     | input  | `std_logic` | Main clock |
+      | `rst`     | input  | `std_logic` | High-active synchronous reset |
+      | `en`      | input  | `std_logic` | Clock enable input |
+      | `bouncey` | input  | `std_logic` | Bouncey button input |
+      | `clean`   | output | `std_logic` | Debounced button output |
 
 2. The inactive level of the on-board push buttons is low. Periodically read the button signal, and if the value is high, start counting a sequence of consecutive high values. If there is an uninterrupted sequence of `DEB_COUNT = 4` high values, consider the button pressed. The counter resets to zero upon receiving a low sample. When releasing the button, the FSM counts the same number of low-value samples before considering the button released.
 
@@ -149,7 +149,7 @@ The main methods to debounce a bouncy button are:
                        when PRE_PRESSED =>
                            -- If button = 1 increment counter
 
-                               -- if counter = DEB_PERIODS-1 change to PRESSED
+                               -- if counter = DEB_COUNT-1 change to PRESSED
 
                            -- else change to RELEASED
 
@@ -159,7 +159,7 @@ The main methods to debounce a bouncy button are:
                        when PRE_RELEASED =>
                            -- If button = 0 then increment counter
 
-                               -- if counter = DEB_PERIODS-1 change to RELEASED;
+                               -- if counter = DEB_COUNT-1 change to RELEASED;
 
                            -- else clear counter and change to PRESSED;
 
@@ -193,11 +193,9 @@ The main methods to debounce a bouncy button are:
    >
    >    ![Internal signals simulation](images/vivado_signals.png)
 
+   Your simulation should be similar to the following figure.
 
-
-   TODO: Figure of possible simulation output
-
-
+   ![vivado simulation debounce](images/vivado_simulation_debounce.png)
 
 <a name="part4"></a>
 
@@ -245,13 +243,9 @@ A positive **edge detector** generates a single clock pulse when the input signa
       end architecture behavioral;
       ```
 
-2. Add new edge detector outputs to simulation source `tb_debounce` and relaunch the simulation.
+2. Add new edge detector outputs to the simulation source `tb_debounce` and relaunch the simulation. Ensure that your simulations resemble the figure below:
 
-
-
-   TODO: Figure of possible simulation output
-
-
+   ![vivado simulation edge-detector](images/vivado_simulation_edge-detect.png)
 
 <a name="challenges"></a>
 

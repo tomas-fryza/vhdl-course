@@ -3,7 +3,11 @@
 --! @version 1.0
 --! @copyright (c) 2024 Tomas Fryza, MIT license
 --!
---! <detail>
+--! This VHDL module implements a button debouncer using
+--! a Finite State Machine (FSM) and an edge detector. The FSM
+--! ensures stable button transitions and the edge detector
+--! generates single-clock pulses for positive and negative
+--! edges of the debounced signal.
 --!
 --! Developed using TerosHDL, Vivado 2023.2, and EDA Playground.
 --! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
@@ -22,7 +26,7 @@ entity debounce is
         clk      : in    std_logic; --! Main clock
         rst      : in    std_logic; --! High-active synchronous reset
         en       : in    std_logic; --! Clock enable input
-        bouncey  : in    std_logic; --! Button input
+        bouncey  : in    std_logic; --! Bouncey button input
         clean    : out   std_logic; --! Debounced button output
         pos_edge : out   std_logic; --! Positive-edge (rising) impulse
         neg_edge : out   std_logic  --! Negative-edge (falling) impulse

@@ -1,9 +1,17 @@
 -------------------------------------------------
---! @brief Top level implementation for button debouncer
+--! @brief Top level design with debouncer and counter
 --! @version 1.0
 --! @copyright (c) 2024 Tomas Fryza, MIT license
 --!
---! This VHDL file implements a top-level design for a <TBD>
+--! This VHDL module implements a top-level design that integrates
+--! a debouncer and a simple counter. The debouncer is used to debounce
+--! a button input, and the counter increments based on the debounced
+--! signal.
+--!
+--! Dependencies:
+--!  debounce.vhdl
+--!  simple_counter.vhdl
+--!  clock_enable.vhdl
 --!
 --! Developed using TerosHDL, Vivado 2023.2, and EDA Playground.
 --! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
@@ -66,8 +74,10 @@ architecture behavioral of top_level is
     end component;
 
     -- Local signals
-    signal sig_en_2ms : std_logic; --! Clock enable signal for debouncer
-    signal sig_event  : std_logic; --! Edge-driven signal that lasts for only one clock cycle
+    --! Clock enable signal for debouncer
+    signal sig_en_2ms : std_logic;
+    --! Edge-driven signal that lasts for only one clock cycle
+    signal sig_event : std_logic;
 begin
 
     -- Component instantiation of clock enable for 2 ms
