@@ -161,7 +161,7 @@ The main methods to debounce a bouncy button are:
 
                                -- if counter = DEB_COUNT-1 change to RELEASED;
 
-                           -- else clear counter and change to PRESSED;
+                           -- else change to PRESSED;
 
                        -- Prevent unhandled cases
                        when others =>
