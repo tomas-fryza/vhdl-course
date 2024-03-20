@@ -1,5 +1,6 @@
 library ieee;
     use ieee.std_logic_1164.all;
+    use ieee.math_real.all;
 
 -----------------------------------------------------------
 
@@ -28,6 +29,11 @@ architecture behavioral of serial_tx is
         );
     end component;
 
+    -- Baudrate
+    -- constant BAUDRATE : integer := 25_000_000; -- For simulation, PERIOD=4
+    -- constant BAUDRATE : integer := 115_200;
+    constant BAUDRATE : integer := 9_600;
+
     -- Internal signals
     signal sig_en    : std_logic;
     signal sig_start : std_logic;
@@ -35,14 +41,9 @@ architecture behavioral of serial_tx is
     signal sig_count : integer;
 begin
 
-    baudrate : component clock_enable
+    baudrate_gen : component clock_enable
         generic map (
-            -- For simulation
-            -- PERIOD => 3
-            -- (1 / 115.200 Bd) / (1/100_000_000)
-            -- PERIOD => 868
-            -- (1 / 9.600 Bd) / (1/100_000_000)
-            PERIOD => 10_417
+            PERIOD => integer(round((1.0 / real(BAUDRATE)) / (1.0 / 100_000_000.0)))
         )
         port map (
             clk   => clk,
