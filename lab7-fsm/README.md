@@ -257,15 +257,17 @@ A positive **edge detector** generates a single clock pulse when the input signa
 
    ![top level](images/top-level_debounce_structure.png)
 
-   > **Note:** The `enable_clock` and `simple_counter` components from the previous labs are required. Do not forget to copy both files to `YOUR-PROJECT-FOLDER/debounce.srcs/sources_1/new/` folder and add them to the project.
+   > **Note:** The `clock_enable` and `simple_counter` components from the previous labs are required. Do not forget to copy both files to `YOUR-PROJECT-FOLDER/debounce.srcs/sources_1/new/` folder and add them to the project.
    >
    > **Note:** Use online template for your [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t` and uncomment the used pins according to the top_level entity.
 
-2. Instead of LEDs, use a Pmod port of the Nexys A7 board and display counter values on oscilloscope or logic analyser.
+2. Move `clock_enable` instance inside the `debounce` component.
+
+3. Instead of LEDs, use a Pmod port of the Nexys A7 board and display counter values on oscilloscope or logic analyser.
 
    ![pmods](images/pmod_table.png)
 
-3. Use iterative `generate` statement from the [previous lab](https://github.com/tomas-fryza/vhdl-course/tree/master/lab6-lfsr#part3) and extend the instantiation of `debounce` component to several buttons.
+4. Use iterative `generate` statement from the [previous lab](https://github.com/tomas-fryza/vhdl-course/tree/master/lab6-lfsr#part3) and extend the instantiation of `debounce` component to several buttons.
 
 <a name="references"></a>
 
