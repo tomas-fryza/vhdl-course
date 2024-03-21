@@ -135,33 +135,31 @@ The main methods to debounce a bouncy button are:
        begin
 
            if rising_edge(clk) then
-               -- Active-high reset
-               if (rst = '1') then
+               if (rst = '1') then   -- Active-high reset
                    state <= RELEASED;
-               -- Clock enable
-               elsif (en = '1') then
-                   -- Define transitions between states
-                   case state is
+               elsif (en = '1') then -- Clock enable
+
+                   case state is     -- Define transitions between states
 
                        when RELEASED =>
-                           -- If bouncey button = 1 then clear counter and change to PRE_PRESSED;
+                           -- If bouncey = 1 then clear counter and go to PRE_PRESSED;
 
                        when PRE_PRESSED =>
-                           -- If button = 1 increment counter
+                           -- If bouncey = 1 increment counter
 
-                               -- if counter = DEB_COUNT-1 change to PRESSED
+                               -- if counter = DEB_COUNT-1 go to PRESSED
 
-                           -- else change to RELEASED
+                           -- else go to RELEASED
 
                        when PRESSED =>
-                           -- If button = 0 then clear counter and change to PRE_RELEASED;
+                           -- If bouncey = 0 then clear counter and go to PRE_RELEASED;
 
                        when PRE_RELEASED =>
-                           -- If button = 0 then increment counter
+                           -- If bouncey = 0 then increment counter
 
-                               -- if counter = DEB_COUNT-1 change to RELEASED;
+                               -- if counter = DEB_COUNT-1 go to RELEASED;
 
-                           -- else change to PRESSED;
+                           -- else clear counter and go to PRESSED;
 
                        -- Prevent unhandled cases
                        when others =>
@@ -172,7 +170,7 @@ The main methods to debounce a bouncy button are:
 
        end process p_fsm;
 
-       -- Set clean signal value = 1 when states PRESSED or PRE_RELEASED
+       -- Set clean signal to 1 when states PRESSED or PRE_RELEASED
 
 
        -- Assign output debounced signal
@@ -183,7 +181,7 @@ The main methods to debounce a bouncy button are:
 
 4. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
 
-5. Generate a [simulation source](https://vhdl.lapinoo.net/testbench/) named `tb_debounce`, execute the simulation, and validate the functionality of enable, reset, and debouncing.
+5. Generate a [simulation source](https://vhdl.lapinoo.net/testbench/) named `tb_debounce`, create bouncey signal, execute the simulation, and validate the functionality of enable, reset, and debouncing.
 
    > **Note:** To display internal signal values, follow these steps:
    > 1. Select `dut` in the **Scope** folder.
@@ -205,23 +203,24 @@ A positive **edge detector** generates a single clock pulse when the input signa
 
 ![edge detector](images/wavedrom_edge-detector.png)
 
-```javascript
-{
-  signal: [
-    {name: "clk",     wave: 'P.................'},
-    {name: "clean",   wave: 'l...h.......l.....'},
-    {name: "delayed", wave: 'l....h.......l....'},
-    {},
-    {name: "pos_edge", wave: 'l...hl............'},
-    {name: "neg_edge", wave: 'l...........hl....'},
-  ],
-}
-```
+> **Note:** Listing of [Wavedrom](https://wavedrom.com/) code for the figure above:
+> ```javascript
+> {
+>   signal: [
+>     {name: "clk",     wave: 'P.................'},
+>     {name: "clean",   wave: 'l...h.......l.....'},
+>     {name: "delayed", wave: 'l....h.......l....'},
+>     {},
+>     {name: "pos_edge", wave: 'l...hl............'},
+>     {name: "neg_edge", wave: 'l...........hl....'},
+>   ],
+> }
+> ```
 
 1. Add both edge detectors to `debounce` component:
    1. Define new entity outputs `pos_edge` and `neg_edge` as `std_logic`
-   2. Define `sig_delayed` signal as `std_logic`
-   3. Add new `p_edge_detector` process to the architecture body and define `pos_edge` and `neg_edge` output values
+   2. In architecture declaration part, define `sig_delayed` signal as `std_logic`
+   3. In architecture body, add new `p_edge_detector` process and define `pos_edge` and `neg_edge` output values using `and` and `not` gates
 
       ```vhdl
           -- Remember the previous value of a signal and generates single
@@ -261,7 +260,7 @@ A positive **edge detector** generates a single clock pulse when the input signa
    >
    > **Note:** Use online template for your [constraints XDC](https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Nexys-A7-50T-Master.xdc) file `nexys-a7-50t` and uncomment the used pins according to the top_level entity.
 
-2. Move `clock_enable` instance inside the `debounce` component.
+2. Move `clock_enable` instanciation to the `debounce` component.
 
 3. Instead of LEDs, use a Pmod port of the Nexys A7 board and display counter values on oscilloscope or logic analyser.
 
