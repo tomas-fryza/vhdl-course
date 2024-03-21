@@ -16,12 +16,11 @@
 * [Challenges](#challenges)
 * [References](#references)
 
-### Learning objectives
+**After completing this lab, you will be able to:**
 
-After completing this lab you will be able to:
-
-* Understand basic structure of VHDL files
+* Understand the basic structure of VHDL files
 * Use Vivado development tool
+* Create simulation testenches
 
 <a name="preparation"></a>
 
@@ -56,35 +55,43 @@ After completing this lab you will be able to:
    6. Choose a default board: `Nexys A7-50T` (will be used later in the lab)
    7. Click **Finish** to create the project
    8. Define I/O ports of new module `gates`:
-      * Port name: `A`, Direction: `in`
-      * `B`, `in`
-      * `AND_Out`, `out`
-      * `OR_Out`, `out`
-      * `XOR_Out`, `out`
+      * Port name: `a`, Direction: `in`
+      * `b`, `in`
+      * `and_out`, `out`
+      * `or_out`, `out`
+      * `xor_out`, `out`
 
 2. Open generated `gates.vhd` file in **Design Sources** and complete the `architecture` part as follows.
 
    ```vhdl
-   library IEEE;
-   use IEEE.STD_LOGIC_1164.ALL;
+   library ieee;
+   use ieee.std_logic_1164.all;
 
    entity gates is
-      Port (
-         A, B : in  STD_LOGIC;
-         AND_Out, OR_Out, XOR_Out : out  STD_LOGIC
-      );
+       port (
+           a       : in  std_logic;
+           b       : in  std_logic;
+           and_out : out std_logic;
+           or_out  : out std_logic;
+           xor_out : out std_logic
+       );
    end gates;
 
    architecture Behavioral of gates is
+
+       -- Declaration part, can be empty
+
    begin
-      -- 2-input AND gate
-      AND_Out <= A and B;
+       -- Architecture body
 
-      -- 2-input OR gate
-      OR_Out <= A or B;
+       -- 2-input AND gate
+       and_out_ <= a and b;
 
-      -- XOR gate
-      XOR_Out <= A xor B;
+       -- 2-input OR gate
+       or_out_ <= a or b;
+
+       -- XOR gate
+       xor_out_ <= a xor b;
 
    end Behavioral;
    ```
@@ -92,16 +99,17 @@ After completing this lab you will be able to:
    > **Help:** The `std_logic` type provides several values.
    > 
    > ```vhdl
-   >     TYPE std_logic IS ( 'U',  -- Uninitialized state used as a default value
-   >                         'X',  -- Forcing unknown
-   >                         '0',  -- Forcing zero. Transistor driven to GND
-   >                         '1',  -- Forcing one. Transistor driven to VCC
-   >                         'Z',  -- High impedance. 3-state buffer outputs
-   >                         'W',  -- Weak unknown. Bus terminators
-   >                         'L',  -- Weak zero. Pull down resistors
-   >                         'H',  -- Weak one. Pulll up resistors
-   >                         '-'   -- Don't care state used for synthesis and advanced modeling
-   >                       );
+   > TYPE std_logic IS (
+   >     'U',  -- Uninitialized state used as a default value
+   >     'X',  -- Forcing unknown
+   >     '0',  -- Forcing zero. Transistor driven to GND
+   >     '1',  -- Forcing one. Transistor driven to VCC
+   >     'Z',  -- High impedance. 3-state buffer outputs
+   >     'W',  -- Weak unknown. Bus terminators
+   >     'L',  -- Weak zero. Pull down resistors
+   >     'H',  -- Weak one. Pulll up resistors
+   >     '-'   -- Don't care state used for synthesis and advanced modeling
+   > );
    > ```
 
 3. Take a look at the basic parts of the VHDL source code, such as [entity](https://github.com/tomas-fryza/vhdl-course/wiki/Entity), [architecture](https://github.com/tomas-fryza/vhdl-course/wiki/Architecture), and testbench.
@@ -120,59 +128,37 @@ After completing this lab you will be able to:
    | `xnor` | Exclusive OR with negated output |
    | `-- comment` | Comments |
 
-4. Use **File > Add Sources... Alt+A > Add or create simulation sources** and create a new VHDL file `tb_gates` (same filename as tested entity with prefix `tb_`). This time, click **OK** to define an empty module. You will find the new simulation file in **Simulation Sources > sim_1**.
+4. The primary approach to testing VHDL designs involves creating a **testbench**. A testbench is essentially a separate VHDL file that stimulates the design under test (DUT) with various input values and monitors its outputs to verify correct functionality. The testbench typically includes DUT component instantiation and stimulus generation.
 
-   You can generate the testbench file by [online generator](https://vhdl.lapinoo.net/testbench/) and complete the test cases or copy/paste the following testbench to `tb_gates.vhd` file. **Important:** Make sure you are modifying `tb_*.vhd` file!
+   ![testench idea](images/testbench.png)
+
+   Navigate to **File > Add Sources... Alt+A > Add or create simulation sources** and proceed to create a new VHDL file named `tb_gates` (ensuring it has the same filename as the tested entity but prefixed with `tb_`). This time, click **OK** to define an empty module. Subsequently, locate the newly created simulation file under **Simulation Sources > sim_1**.
+
+   Generate the testbench file using the [online generator](https://vhdl.lapinoo.net/testbench/), then copy and paste its contents into your `tb_gates.vhd` file. Afterwards, fill in the test cases within the `stimuli` process.
 
    ```vhdl
-   library IEEE;
-   use IEEE.STD_LOGIC_1164.ALL;
+       ...
+       stimuli : process
+       begin
+           -- EDIT Adapt initialization as needed
+           b <= '0';
+           a <= '0';
+           wait for 100 ns;
 
-   entity tb_gates is
-     -- Entity of testbench is always empty
-   end tb_gates;
+           -- EDIT Add stimuli here
 
-   architecture testbench of tb_gates is
 
-      component gates is
-         port (A       : in std_logic;
-               B       : in std_logic;
-               AND_Out : out std_logic;
-               OR_Out  : out std_logic;
-               XOR_Out : out std_logic
-         );
-      end component;
+           wait;
+       end process;
 
-      signal sig_A, sig_B : STD_LOGIC;
-      signal sig_AND_Out, sig_OR_Out, sig_XOR_Out : STD_LOGIC;
-
-   begin
-      -- Instantiate the design under test (DUT)
-      DUT : gates
-         port map (
-            sig_A, sig_B,
-            sig_AND_Out, sig_OR_Out, sig_XOR_Out
-         );
-
-      -- Test stimulus
-      stimulus_process: process
-      begin
-         sig_B <= '0'; sig_A <= '0'; wait for 100 ns;
-         sig_B <= '0'; sig_A <= '1'; wait for 100 ns;
-         sig_B <= '1'; sig_A <= '0'; wait for 100 ns;
-         sig_B <= '1'; sig_A <= '1'; wait for 100 ns;
-
-         wait;
-      end process stimulus_process;
-
-   end testbench;
+   end tb;
    ```
 
 4. Use **Flow > Run Simulation > Run Behavioral Simulation** and run Vivado simulator. To see the whole simulated signals, it is recommended to select **View > Zoom Fit**.
 
    ![Vivado-simulation](images/vivado_simulation.png)
 
-   > To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation**.
+   > **Note:** To cleanup generated files, close simulation window, right click to SIMULATION or Run Simulation option, and select **Reset Behavioral Simulation**.
    >
    > ![Reset simulation](images/screenshot_vivado_reset_simul.png)
 
