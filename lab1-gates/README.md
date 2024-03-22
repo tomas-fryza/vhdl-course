@@ -10,13 +10,13 @@
 ![Screenshot od EDA Playground](images/screenshot_eda.png)
 -->
 
-### Table of contents
-
 * [Pre-Lab preparation](#preparation)
 * [Part 1: Vivado](#part1)
 * [Part 2: DeMorgans laws](#part2)
 * [Challenges](#challenges)
 * [References](#references)
+
+### Learning ojectives
 
 After completing this lab, you will be able to:
 
