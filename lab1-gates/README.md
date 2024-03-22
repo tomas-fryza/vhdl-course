@@ -10,17 +10,19 @@
 ![Screenshot od EDA Playground](images/screenshot_eda.png)
 -->
 
+### Contents
+
 * [Pre-Lab preparation](#preparation)
 * [Part 1: Vivado](#part1)
 * [Part 2: DeMorgans laws](#part2)
 * [Challenges](#challenges)
 * [References](#references)
 
-**After completing this lab, you will be able to:**
+### After completing this lab, you will be able to:
 
 * Understand the basic structure of VHDL files
 * Use Vivado development tool
-* Create simulation testenches
+* Create simulation testbenches
 
 <a name="preparation"></a>
 
