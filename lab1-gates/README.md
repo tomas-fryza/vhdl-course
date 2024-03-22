@@ -1,4 +1,4 @@
-# Lab 1: Introduction to VHDL and basic gates
+# Lab 1: Introduction to VHDL and Vivado
 
 <!--
 ![Logo](../../logolink_eng.jpg)
@@ -10,19 +10,21 @@
 ![Screenshot od EDA Playground](images/screenshot_eda.png)
 -->
 
-### Contents
+### Learning ojectives
+
+After completing this lab, you will be able to:
+
+* Understand the basic structure of VHDL files
+* Use Vivado development tool
+* Create simulation testbenches
+
+### Table of contents
 
 * [Pre-Lab preparation](#preparation)
 * [Part 1: Vivado](#part1)
 * [Part 2: DeMorgans laws](#part2)
 * [Challenges](#challenges)
 * [References](#references)
-
-### After completing this lab, you will be able to:
-
-* Understand the basic structure of VHDL files
-* Use Vivado development tool
-* Create simulation testbenches
 
 <a name="preparation"></a>
 
