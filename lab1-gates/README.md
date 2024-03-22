@@ -10,14 +10,6 @@
 ![Screenshot od EDA Playground](images/screenshot_eda.png)
 -->
 
-### Learning ojectives
-
-After completing this lab, you will be able to:
-
-* Understand the basic structure of VHDL files
-* Use Vivado development tool
-* Create simulation testbenches
-
 ### Table of contents
 
 * [Pre-Lab preparation](#preparation)
@@ -25,6 +17,14 @@ After completing this lab, you will be able to:
 * [Part 2: DeMorgans laws](#part2)
 * [Challenges](#challenges)
 * [References](#references)
+
+### Learning ojectives
+
+After completing this lab, you will be able to:
+
+* Understand the basic structure of VHDL files
+* Use Vivado development tool
+* Create simulation testbenches
 
 <a name="preparation"></a>
 
