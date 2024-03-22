@@ -18,8 +18,6 @@
 * [Challenges](#challenges)
 * [References](#references)
 
-### Learning ojectives
-
 After completing this lab, you will be able to:
 
 * Understand the basic structure of VHDL files
