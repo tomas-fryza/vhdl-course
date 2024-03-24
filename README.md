@@ -16,7 +16,7 @@
 
 The repository contains VHDL lab exercises for bachelor course [*Digital Electronics*](https://www.vut.cz/en/students/courses/detail/268610) at Brno University of Technology, Czechia. [Nexys A7 Artix-7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/) FPGA board is used in the course.
 
-![vhdl_course](labs/07-display_driver/images/nexys-lab.jpg)
+![vhdl_course](docs/old_labs/_07-display_driver/images/nexys-lab.jpg)
 
 ## Installation
 
