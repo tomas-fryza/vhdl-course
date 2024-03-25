@@ -21,6 +21,7 @@
 * Describe the main parts of a VHDL file
 * Use Vivado development tool
 * Be able to create a simulation testbenche and run the simulation
+* Use De Morgan's laws
 
 <a name="preparation"></a>
 
