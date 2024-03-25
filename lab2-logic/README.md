@@ -10,8 +10,6 @@
 
 ### Learning objectives
 
-After completing this lab you will be able to:
-
 * Use truth table, K-map, SoP/PoS forms of logic functions
 * Minimize logic functions
 * Understand signal assignments in VHDL
@@ -96,6 +94,9 @@ The K-map for the "equals" function is as follows:
 2. In VHDL, define an [architecture](https://github.com/tomas-fryza/vhdl-course/wiki/Architecture) for a 2-bit binary comparator. The combination logic can be written using low-level operators (`and`, `or`, etc.) as assignment statements using SoP or PoS logic. However, it is more efficient to use a higher notation with [conditional signal assignments](https://github.com/tomas-fryza/vhdl-course/wiki/Signal-assignments).
 
    ```vhdl
+   -------------------------------------------------
+   -- Architecture definition, Implementation design
+   -------------------------------------------------
    architecture behavioral of compare_2bit is
    begin
 
@@ -242,7 +243,6 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
    ![prime detector](images/digital-design-flow_prime.png)
 
 3. Use onboard RGB LED and eight switches. Turn the green LED on only when exactly two of the first four switches are set to `1` and turn the red LED on when exactly three of the next four switches are set to `0`.
-
 
 <a name="references"></a>
 

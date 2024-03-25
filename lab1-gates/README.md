@@ -65,9 +65,15 @@
 2. Open generated `gates.vhd` file in **Design Sources** and complete the `architecture` part as follows.
 
    ```vhdl
+   -------------------------------------------------
+   -- Included libraries
+   -------------------------------------------------
    library ieee;
    use ieee.std_logic_1164.all;
 
+   -------------------------------------------------
+   -- Entity declaration, I/O ports
+   -------------------------------------------------
    entity gates is
        port (
            a       : in  std_logic;
@@ -78,21 +84,22 @@
        );
    end gates;
 
+   -------------------------------------------------
+   -- Architecture definition, Implementation design
+   -------------------------------------------------
    architecture Behavioral of gates is
-
        -- Declaration part, can be empty
-
    begin
-       -- Architecture body
+       -- Body part
 
        -- 2-input AND gate
-       and_out_ <= a and b;
+       and_out <= a and b;
 
        -- 2-input OR gate
-       or_out_ <= a or b;
+       or_out <= a or b;
 
        -- XOR gate
-       xor_out_ <= a xor b;
+       xor_out <= a xor b;
 
    end Behavioral;
    ```
@@ -100,7 +107,7 @@
    > **Help:** The `std_logic` type provides several values.
    > 
    > ```vhdl
-   > TYPE std_logic IS (
+   > type std_logic is (
    >     'U',  -- Uninitialized state used as a default value
    >     'X',  -- Forcing unknown
    >     '0',  -- Forcing zero. Transistor driven to GND
