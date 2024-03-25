@@ -18,11 +18,9 @@
 
 ### Learning ojectives
 
-After completing this lab, you will be able to:
-
-* Understand the basic structure of VHDL files
+* Describe the main parts of a VHDL file
 * Use Vivado development tool
-* Create simulation testbenches
+* Be able to create a simulation testbenche and run the simulation
 
 <a name="preparation"></a>
 
