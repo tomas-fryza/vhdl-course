@@ -13,8 +13,8 @@
 ----------------------------------------------------------
 
 library ieee;
-  use ieee.std_logic_1164.all;
-  use ieee.numeric_std.all;
+    use ieee.std_logic_1164.all;
+    use ieee.numeric_std.all;
 
 ----------------------------------------------------------
 -- Entity declaration for display driver
@@ -45,18 +45,18 @@ library ieee;
 ----------------------------------------------------------
 
 entity driver_7seg_4digits is
-  port (
-    clk     : in    std_logic;
-    rst     : in    std_logic;
-    data0   : in    std_logic_vector(3 downto 0);
-    data1   : in    std_logic_vector(3 downto 0);
-    data2   : in    std_logic_vector(3 downto 0);
-    data3   : in    std_logic_vector(3 downto 0);
-    dp_vect : in    std_logic_vector(3 downto 0);
-    dp      : out   std_logic;
-    seg     : out   std_logic_vector(6 downto 0);
-    dig     : out   std_logic_vector(3 downto 0)
-  );
+    port (
+        clk     : in    std_logic;
+        rst     : in    std_logic;
+        data0   : in    std_logic_vector(3 downto 0);
+        data1   : in    std_logic_vector(3 downto 0);
+        data2   : in    std_logic_vector(3 downto 0);
+        data3   : in    std_logic_vector(3 downto 0);
+        dp_vect : in    std_logic_vector(3 downto 0);
+        dp      : out   std_logic;
+        seg     : out   std_logic_vector(6 downto 0);
+        dig     : out   std_logic_vector(3 downto 0)
+    );
 end entity driver_7seg_4digits;
 
 ----------------------------------------------------------
@@ -64,111 +64,135 @@ end entity driver_7seg_4digits;
 ----------------------------------------------------------
 
 architecture behavioral of driver_7seg_4digits is
+    component simple_counter is
+        generic (
+            NBIT : integer
+        );
+        port (
+            clk   : in    std_logic;
+            rst   : in    std_logic;
+            en    : in    std_logic;
+            count : out   std_logic_vector(NBIT - 1 downto 0)
+        );
+    end component;
 
-  -- Internal clock enable
-  signal sig_en_4ms : std_logic;
+    component clock_enable is
+        generic (
+            PERIOD : integer
+        );
+        port (
+            clk   : in    std_logic;
+            rst   : in    std_logic;
+            pulse : out   std_logic
+        );
+    end component;
 
-  -- Internal 2-bit counter for multiplexing 4 digits
-  signal sig_cnt_2bit : std_logic_vector(1 downto 0);
+    component bin2seg is
+        port (
+            clear : in    std_logic;
+            bin   : in    std_logic_vector(3 downto 0);
+            seg   : out   std_logic_vector(6 downto 0)
+        );
+    end component;
 
-  -- Internal 4-bit value for 7-segment decoder
-  signal sig_hex : std_logic_vector(3 downto 0);
+    -- Internal clock enable
+    signal sig_en_4ms : std_logic;
 
+    -- Internal 2-bit counter for multiplexing 4 digits
+    signal sig_cnt_2bit : std_logic_vector(1 downto 0);
+
+    -- Internal 4-bit value for 7-segment decoder
+    signal sig_hex : std_logic_vector(3 downto 0);
 begin
 
-  --------------------------------------------------------
-  -- Instance (copy) of clock_enable entity generates
-  -- an enable pulse every 4 ms
-  --------------------------------------------------------
-  clk_en0 : entity work.clock_enable
-    generic map (
-      -- FOR SIMULATION, KEEP THIS VALUE TO 4
-      -- FOR IMPLEMENTATION, CHANGE THIS VALUE TO 400,000
-      -- 4      @ 40 ns
-      -- 400000 @ 4 ms
-      g_MAX => 4
-    )
-    port map (
-      clk => clk, -- WRITE YOUR CODE HERE
-      rst => rst, -- WRITE YOUR CODE HERE
-      ce  => sig_en_4ms
-    );
+    --------------------------------------------------------
+    -- Instance (copy) of clock_enable entity generates
+    -- an enable pulse every 4 ms
+    --------------------------------------------------------
+    clk_en0 : component clock_enable
+        generic map (
+            -- 4       @ 40 ns for simulation
+            -- 400_000 @ 4 ms
+            PERIOD => 400_000
+        )
+        port map (
+            clk   => clk,
+            rst   => rst,
+            pulse => sig_en_4ms
+        );
 
-  --------------------------------------------------------
-  -- Instance (copy) of cnt_up_down entity performs
-  -- a 2-bit down counter
-  --------------------------------------------------------
-  bin_cnt0 : entity work.cnt_up_down
-    generic map (
-      -- WRITE YOUR CODE HERE
-      g_CNT_WIDTH => 2
-    )
-    port map (
-      -- WRITE YOUR CODE HERE
-      clk    => clk,
-      rst    => rst,
-      en     => sig_en_4ms,
-      cnt_up => '0',
-      cnt    => sig_cnt_2bit
-    );
+    --------------------------------------------------------
+    -- Instance (copy) of cnt_up_down entity performs
+    -- a 2-bit down counter
+    --------------------------------------------------------
+    bin_cnt0 : component simple_counter
+        generic map (
+            NBIT => 2
+        )
+        port map (
+            clk   => clk,
+            rst   => rst,
+            en    => sig_en_4ms,
+            count => sig_cnt_2bit
+        );
 
-  --------------------------------------------------------
-  -- Instance (copy) of hex_7seg entity performs
-  -- a 7-segment display decoder
-  --------------------------------------------------------
-  hex2seg : entity work.hex_7seg
-    port map (
-      blank => rst,
-      hex   => sig_hex,
-      seg   => seg
-    );
+    --------------------------------------------------------
+    -- Instance (copy) of hex_7seg entity performs
+    -- a 7-segment display decoder
+    --------------------------------------------------------
+    hex2seg : component bin2seg
+        port map (
+            clear => rst,
+            bin   => sig_hex,
+            seg   => seg
+        );
 
-  --------------------------------------------------------
-  -- p_mux:
-  -- A sequential process that implements a multiplexer for
-  -- selecting data for a single digit, a decimal point,
-  -- and switches the common anodes of each display.
-  --------------------------------------------------------
-  p_mux : process (clk) is
-  begin
+    --------------------------------------------------------
+    -- p_mux:
+    -- A sequential process that implements a multiplexer for
+    -- selecting data for a single digit, a decimal point,
+    -- and switches the common anodes of each display.
+    --------------------------------------------------------
+    p_mux : process (clk) is
+    begin
 
-    if (rising_edge(clk)) then
-      if (rst = '1') then
-        sig_hex <= data0;
-        dp      <= dp_vect(0);
-        dig     <= "1110";
-      else
+        if rising_edge(clk) then
+            if (rst = '1') then
+                sig_hex <= data0;
+                dp      <= dp_vect(0);
+                dig     <= "1110";
+            else
 
-        case sig_cnt_2bit is
+                case sig_cnt_2bit is
 
-          when "11" =>
-            sig_hex <= data3;
-            dp      <= dp_vect(3);
-            dig     <= "0111";
+                    when "11" =>
+                        sig_hex <= data3;
+                        dp      <= dp_vect(3);
+                        dig     <= "0111";
 
-          when "10" =>
-            -- DEFINE ALL OUTPUTS FOR "10" HERE
-            sig_hex <= data2;
-            dp      <= dp_vect(2);
-            dig     <= "1011";
+                    when "10" =>
+                        -- DEFINE ALL OUTPUTS FOR "10" HERE
+                        sig_hex <= data2;
+                        dp      <= dp_vect(2);
+                        dig     <= "1011";
 
-          when "01" =>
-            -- DEFINE ALL OUTPUTS FOR "01" HERE
-            sig_hex <= data1;
-            dp      <= dp_vect(1);
-            dig     <= "1101";
+                    when "01" =>
+                        -- DEFINE ALL OUTPUTS FOR "01" HERE
+                        sig_hex <= data1;
+                        dp      <= dp_vect(1);
+                        dig     <= "1101";
 
-          when others =>
-            -- DEFINE ALL OUTPUTS FOR "00" HERE
-            sig_hex <= data0;
-            dp      <= dp_vect(0);
-            dig     <= "1110";
+                    when others =>
+                        -- DEFINE ALL OUTPUTS FOR "00" HERE
+                        sig_hex <= data0;
+                        dp      <= dp_vect(0);
+                        dig     <= "1110";
 
-        end case;
+                end case;
 
-      end if;
-    end if;
+            end if;
+        end if;
 
-  end process p_mux;
+    end process p_mux;
 
 end architecture behavioral;

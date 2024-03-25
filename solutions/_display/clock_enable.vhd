@@ -1,73 +1,61 @@
-----------------------------------------------------------
---
---! @title Clock enable
---! @author Tomas Fryza
---! Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
+-------------------------------------------------
+--! @brief Clock enable
+--! @version 1.3
+--! @copyright (c) 2019-2024 Tomas Fryza, MIT license
 --!
---! @copyright (c) 2019 Tomas Fryza
---! This work is licensed under the terms of the MIT license
---!
---! Generates clock enable signal according to the number
---! of clock pulses `g_MAX`.
---
--- Hardware: Nexys A7-50T, xc7a50ticsg324-1L
--- Software: TerosHDL, Vivado 2020.2, EDA Playground
---
-----------------------------------------------------------
+--! This VHDL file generates pulses of the clock enable signal.
+--! Each pulse is one period of the clock signal wide, and its
+--! repetition is determined by the PERIOD generic.
+
+--! Developed using TerosHDL, Vivado 2020.2, and EDA Playground.
+--! Tested on Nexys A7-50T board and xc7a50ticsg324-1L FPGA.
+-------------------------------------------------
 
 library ieee;
-  use ieee.std_logic_1164.all;
-  use ieee.numeric_std.all; -- Package for arithmetic operations
+    use ieee.std_logic_1164.all;
 
-----------------------------------------------------------
--- Entity declaration for clock enable
-----------------------------------------------------------
+-------------------------------------------------
 
 entity clock_enable is
-  generic (
-    g_MAX : natural := 5 --! Number of clk pulses to generate one enable signal period
-  );                       -- Note that there IS a semicolon between generic and port sections
-  port (
-    clk : in    std_logic; --! Main clock
-    rst : in    std_logic; --! High-active synchronous reset
-    ce  : out   std_logic  --! Clock enable pulse signal
-  );
+    generic (
+        PERIOD : integer := 3 --! Default number of clk periodes to generate one pulse
+    );
+    port (
+        clk   : in    std_logic; --! Main clock
+        rst   : in    std_logic; --! High-active synchronous reset
+        pulse : out   std_logic  --! Clock enable pulse signal
+    );
 end entity clock_enable;
 
-------------------------------------------------------------
--- Architecture body for clock enable
-------------------------------------------------------------
+-------------------------------------------------
 
 architecture behavioral of clock_enable is
-
-  -- Local counter
-  signal sig_cnt : natural;
-
+    --! Local counter
+    signal sig_count : integer range 0 to PERIOD - 1;
 begin
 
-  --------------------------------------------------------
-  -- p_clk_enable:
-  -- Generate clock enable signal. By default, enable signal
-  -- is low and generated pulse is always one clock long.
-  --------------------------------------------------------
-  p_clk_enable : process (clk) is
-  begin
+    --! Count the number of clock pulses from zero to PERIOD-1.
+    p_clk_enable : process (clk) is
+    begin
 
-    if (rising_edge(clk)) then            -- Synchronous process
-      if (rst = '1') then                 -- High-active reset
-        sig_cnt <= 0;                     -- Clear local counter
-        ce      <= '0';                   -- Set output to low
+        if (rising_edge(clk)) then                 -- Synchronous process
+            if (rst = '1') then                    -- High-active reset
+                sig_count <= 0;
 
-      -- Test number of clock periods
-      elsif (sig_cnt >= (g_MAX - 1)) then
-        sig_cnt <= 0;                     -- Clear local counter
-        ce      <= '1';                   -- Generate clock enable pulse
-      else
-        sig_cnt <= sig_cnt + 1;
-        ce      <= '0';
-      end if;
-    end if;
+            -- Counting
+            elsif (sig_count < (PERIOD - 1)) then
+                sig_count <= sig_count + 1;        -- Increment local counter
 
-  end process p_clk_enable;
+            -- End of counter reached
+            else
+                sig_count <= 0;
+            end if;                                -- Each `if` must end by `end if`
+        end if;
+
+    end process p_clk_enable;
+
+    -- Generated pulse is always one clock long
+    pulse <= '1' when (sig_count = PERIOD - 1) else
+             '0';
 
 end architecture behavioral;
