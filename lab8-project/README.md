@@ -8,13 +8,21 @@
 
 Description: Design and implement a smart parking system using VHDL on the Nexys A7 FPGA board. The system will utilize multiple ultrasonic sensors (HS-SR04) connected to the Pmod connectors for detecting the presence and distance of vehicles within parking spaces. Develop algorithms to analyze sensor data and determine parking space availability. Visualize parking space occupancy status using LEDs, while displaying distance measurements on the 7-segment display.
 
+![ultrasonic-resistors](images/ultrasonic_resistors.jpg)
+![ultrasonic-shifters](images/ultrasonic_level-shifters.jpg)
+
 **Topic 2: Relay-Controlled Sound Synthesizer**
 
 Description: Develop and implement a sound synthesizer utilizing relays on the Nexys A7 FPGA board. Rather than generating audio signals directly, the system employs relays connected to Pmod connectors to produce audible sounds by managing the activation and deactivation of relay switches. Users can compose and play basic melodies by programming the relay sequences. Push buttons will serve as controls for play, stop, and song navigation, while LEDs and a 7-segment display will provide visualization of the melody and information about the songs.
 
+![relay-foto](images/2-channel-relay_description.jpg)
+![relay-schematic](images/2-channel-relay_schematic.jpg)
+
 **Topic 3: PWM-Based Servo Motor Controller**
 
 Description: Develop a PWM-based servo motor controller using VHDL on the Nexys A7 FPGA board. Utilize the FPGA's PWM output capability to generate signals for controlling multiple independent servo motors connected to the Pmod connectors. Implement algorithms to adjust the angle of the servo motors based on user input received from buttons or switches. LEDs will offer visual feedback on the servo position or controller status.
+
+![servo](images/servo_power.png)
 
 **Topic 4: PWM-Based Tone Generator**
 
