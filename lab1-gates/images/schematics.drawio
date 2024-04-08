@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-04-08T07:02:22.015Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="yZqABtDRhQoiywdQ2F_0" version="24.2.2" type="device">
+<mxfile host="app.diagrams.net" modified="2024-04-08T08:59:12.125Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="CHZmlsaJDNMq1_OO2Ys6" version="24.2.2" type="device">
   <diagram id="j7nF-TVUxBw4xUQn4cIl" name="Page-1">
-    <mxGraphModel dx="2620" dy="2227" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2876" dy="2378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4188,6 +4188,12 @@
         </mxCell>
         <mxCell id="s1jRAF81cqM6bnpBIuOe-34" value="Physical device" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=10;fillOpacity=100;spacing=2;spacingLeft=5;connectable=0;" parent="1" vertex="1">
           <mxGeometry x="678.95" y="-80" width="71.05" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-mY_9G8kdQTI2b4QCIge-1" value="" style="endArrow=block;html=1;rounded=0;endFill=1;orthogonal=1;endSize=5;startSize=5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="-270" as="sourcePoint" />
+            <mxPoint x="340" y="-270" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
