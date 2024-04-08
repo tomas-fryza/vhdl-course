@@ -10,8 +10,6 @@
 
 ### Learning objectives
 
-After completing this lab you will be able to:
-
 * Understand the philosophy and use of finite state machines
 * Use state diagrams
 * Understand the difference between Mealy and Moore type of FSM in VHDL

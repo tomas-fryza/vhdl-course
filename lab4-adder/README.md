@@ -9,8 +9,6 @@
 
 ### Learning objectives
 
-After completing this lab you will be able to:
-
 * Understand half- and full-adders
 * Practice instantiating VHDL sub-components
 * Construct a ripple carry adder

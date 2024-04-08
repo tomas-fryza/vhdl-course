@@ -10,8 +10,6 @@
 
 ### Learning objectives
 
-After completing this lab you will be able to:
-
 * Understand binary counters
 * Use VHDL generics and synchronous processes
 * Use clock enable signal to drive another logic in the design (with slower clock)

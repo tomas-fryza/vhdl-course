@@ -74,11 +74,13 @@ The objective of this group project is to collaborate within small teams of 3-4 
 
 * Use `wait` statements [only in simulations](https://www.vhdl-online.de/courses/system_design/vhdl_language_and_syntax/sequential_statements/wait_statement).
 
-* Except Vivado, you can use the following tools to simulate your VHDL design(s):
+* Except Vivado, we encourage the use of other tools as well:
    * [EDA Playground](https://www.edaplayground.com/)
    * [TerosHDL](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux)
    * [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux)
    * [ModelSim](https://www.intel.com/content/www/us/en/software-kit/750666/modelsim-intel-fpgas-standard-edition-software-version-20-1-1.html)
+   * [Live Share](https://code.visualstudio.com/learn/collaboration/live-share), a Visual Studio Code plugin for a real-time collaborative development
+   * [other tools](https://github.com/tomas-fryza/vhdl-course/wiki)
 
 # Recommended README.md file structure
 

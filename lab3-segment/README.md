@@ -9,8 +9,6 @@
 
 ### Learning objectives
 
-After completing this lab you will be able to:
-
 * Use 7-segment display
 * Use VHDL processes
 * Understand the structural modeling and instantiation in VHDL

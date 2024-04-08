@@ -9,8 +9,6 @@
 
 ### Learning objectives
 
-After completing this lab you will be able to:
-
 * Understand shift registers
 * Understand the pseudo-random generator using LFSR (Linear Feedback Shift Register)
 * Use generate statements to replicate logic in VHDL or turning on/off blocks of logic
