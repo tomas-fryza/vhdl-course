@@ -9,7 +9,7 @@
 --! can be loaded with a default value controlled by the load_enable
 --! input. The counter completes one sequence when the register
 --! value matches the loaded data. The width of the counter is
---! controlled by the generic parameter NBIT defined in the entity
+--! controlled by the generic parameter N_BITS defined in the entity
 --! declaration.
 --!
 --! Developed using TerosHDL, Vivado 2023.2, and EDA Playground.
@@ -27,15 +27,15 @@ library ieee;
 
 entity lfsr is
     generic (
-        NBIT : integer := 4 --! Number of bits
+        N_BITS : integer := 4 --! Number of bits
     );
     port (
-        clk         : in    std_logic;                           --! Main clock
-        en          : in    std_logic;                           --! Clock enable input
-        load_enable : in    std_logic;                           --! Enable signal to load default/seed data
-        load_data   : in    std_logic_vector(NBIT - 1 downto 0); --! Default/seed data
-        done        : out   std_logic;                           --! Sequence completed
-        count       : out   std_logic_vector(NBIT - 1 downto 0)  --! Register value
+        clk         : in    std_logic;                             --! Main clock
+        en          : in    std_logic;                             --! Clock enable input
+        load_enable : in    std_logic;                             --! Enable signal to load default/seed data
+        load_data   : in    std_logic_vector(N_BITS - 1 downto 0); --! Default/seed data
+        done        : out   std_logic;                             --! Sequence completed
+        count       : out   std_logic_vector(N_BITS - 1 downto 0)  --! Register value
     );
 end entity lfsr;
 
@@ -43,7 +43,7 @@ end entity lfsr;
 
 architecture behavioral of lfsr is
     --! Internal register
-    signal sig_reg : std_logic_vector(NBIT - 1 downto 0);
+    signal sig_reg : std_logic_vector(N_BITS - 1 downto 0);
 
     --! Internal feedback with xnor gate(s)
     signal sig_feedback : std_logic;
@@ -63,29 +63,29 @@ begin
             -- Clock enable activated
             elsif (en = '1') then
                 -- Shift internal register
-                sig_reg <= sig_reg(NBIT - 2 downto 0) & sig_feedback;
+                sig_reg <= sig_reg(N_BITS - 2 downto 0) & sig_feedback;
             end if;
         end if;
 
     end process p_lfsr;
 
-    g_3bit : if NBIT = 3 generate
+    g_3bit : if N_BITS = 3 generate
         -- Create feedback for 3-bit LFSR counter
         sig_feedback <= sig_reg(2) xnor sig_reg(1);
     end generate g_3bit;
 
-    g_4bit : if NBIT = 4 generate
+    g_4bit : if N_BITS = 4 generate
         -- Create feedback for 4-bit LFSR counter
         -- https://docs.xilinx.com/v/u/en-US/xapp052
         sig_feedback <= sig_reg(3) xnor sig_reg(2);
     end generate g_4bit;
 
-    g_5bit : if NBIT = 5 generate
+    g_5bit : if N_BITS = 5 generate
         -- Create feedback for 5-bit LFSR counter
         sig_feedback <= sig_reg(4) xnor sig_reg(2);
     end generate g_5bit;
 
-    g_8bit : if NBIT = 8 generate
+    g_8bit : if N_BITS = 8 generate
         -- Create feedback for 5-bit LFSR counter
         sig_feedback <= sig_reg(7) xnor sig_reg(5) xnor sig_reg(4) xnor sig_reg(3);
     end generate g_8bit;

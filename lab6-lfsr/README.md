@@ -19,9 +19,9 @@ After completing this lab you will be able to:
 
 ## Pre-Lab preparation
 
-1. Calculate the maximum length and duration of one run (one complete sequence) of the LFSR counter on the Nexys board for various `NBIT` values of 4, 8, 16, 32, 40, and 64. Given a clock frequency of 100 MHz, determine the time it takes for the counter to complete one full sequence.
+1. Calculate the maximum length and duration of one run (one complete sequence) of the LFSR counter on the Nexys board for various `N_BITS` values of 4, 8, 16, 32, 40, and 64. Given a clock frequency of 100 MHz, determine the time it takes for the counter to complete one full sequence.
 
-   Note that, unlike a binary counter, the full sequence of an LFSR counter contains only `2^(NBIT)-1` values.
+   Note that, unlike a binary counter, the full sequence of an LFSR counter contains only `2^(N_BITS)-1` values.
 
    | **NBIT** | **Max. length** | **Duration** |
    | :-: | :-: | :-: |
@@ -191,33 +191,33 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
 
 1. Extend the code from the previous part and use generics in both, design and testbench sources.
 
-   In **design source**, use generic `NBIT` to define number of bits for the counter. In **testbench**, define a constant `C_NBIT`, prior to declaring the component and use it to declare your internal counter signal:
+   In **design source**, use generic `N_BITS` to define number of bits for the counter. In **testbench**, define a constant `C_NBITS`, prior to declaring the component and use it to declare your internal counter signal:
 
    ```vhdl
    -- Design source file
    entity lfsr is
        generic (
-           NBIT : integer := 4 --! Default number of bits
+           N_BITS : integer := 4 --! Default number of bits
        );
        port (
            ...
-           count : out std_logic_vector(NBIT-1 downto 0)
+           count : out std_logic_vector(N_BITS-1 downto 0)
        );
    end entity lfsr;
    ```
 
    ```vhdl
    -- Testbench file
-   constant C_NBIT : integer := 4; --! Simulating number of bits
-   signal count : std_logic_vector(C_NBIT-1 downto 0);
+   constant C_NBITS : integer := 4; --! Simulating number of bits
+   signal count : std_logic_vector(C_NBITS-1 downto 0);
    ```
 
-   When you instantiate your counter, you then also bind the `NBIT` generic to this constant:
+   When you instantiate your counter, you then also bind the `N_BITS` generic to this constant:
 
    ```vhdl
    dut : component lfsr
        generic map (
-           NBIT => C_NBIT
+           N_BITS => C_NBITS
        )
        ...
    ```
@@ -236,16 +236,16 @@ A **Linear Feedback Shift Register (LFSR)** is a shift register whose input bit 
    end generate label;
    ```
 
-   Use conditional `generate` statements and define `sig_feedback` for several `NBIT` values. See [AMD LFSR Counters](https://docs.xilinx.com/v/u/en-US/xapp052) to get the taps for maximum-length LFSR counters. Note that, the taps here are indexed from 1 and not from 0, ie. 4-bit counter use taps 4 and 3.
+   Use conditional `generate` statements and define `sig_feedback` for several `N_BITS` values. See [AMD LFSR Counters](https://docs.xilinx.com/v/u/en-US/xapp052) to get the taps for maximum-length LFSR counters. Note that, the taps here are indexed from 1 and not from 0, ie. 4-bit counter use taps 4 and 3.
 
    ```vhdl
-   g_4bit : if NBIT = 4 generate
+   g_4bit : if N_BITS = 4 generate
        -- Create feedback for 4-bit LFSR counter
        sig_feedback <= sig_reg(3) xnor sig_reg(2);
    end generate g_4bit;
    ```
 
-3. Simulate your design and try several `C_NBIT` values.
+3. Simulate your design and try several `C_NBITS` values.
 
 4. Create a VHDL design source named `top_level` and implement a 4-bit LFSR counter on the Nexys A7 board. Configure the counter to increment every 500 ms, displaying the count on the 7-segment display and LEDs. Set the initial seed value using four switches `SW(3:0)` and enable loading by pressing `BTND`.
 

@@ -37,14 +37,14 @@ end entity debounce;
 
 architecture behavioral of debounce is
     --! Define states for the FSM
-    type   state_type is (RELEASED, PRE_PRESSED, PRESSED, PRE_RELEASED);
+    type   state_type is (IDLE, COUNT_1, PRESSED, COUNT_0);
     signal state : state_type; --! FSM state
 
-    --! Define number of periods for debounce counter
-    constant DEB_COUNT : integer := 4;
+    --! Define number of values for debounce counter
+    constant N_VALUES : integer := 4;
 
     --! Define signals for debounce counter
-    signal sig_count : integer range 0 to DEB_COUNT;
+    signal sig_count : integer range 0 to N_VALUES;
 
     -- Edge detector signals
     signal sig_clean : std_logic; --! Debounced signal
@@ -56,10 +56,10 @@ begin
     --! button debouncing. Handles transitions between different
     --! states based on clock signal and bouncey button input.
     --!
-    --! **RELEASED**: The initial state when the button is not pressed.
+    --! **IDLE**: The initial state when the button is not pressed.
     --!     It waits for the button signal to become active (high).
     --!
-    --! **PRE_PRESSED**: Upon detecting an active button signal,
+    --! **COUNT_1**: Upon detecting an active button signal,
     --!     it starts counting a sequence of high values to confirm
     --!     the button press.
     --!
@@ -67,7 +67,7 @@ begin
     --!     stable for the debounce duration. It waits for the button
     --!     signal to become inactive (low).
     --!
-    --! **PRE_RELEASED**: Upon detecting an inactive button signal,
+    --! **COUNT_0**: Upon detecting an inactive button signal,
     --!     it starts counting a sequence of low values to confirm
     --!     the button release.
     p_fsm : process (clk) is
@@ -76,43 +76,43 @@ begin
         if rising_edge(clk) then
             -- Active-high reset
             if (rst = '1') then
-                state <= RELEASED;
+                state <= IDLE;
             -- Clock enable
             elsif (en = '1') then
                 -- Define transitions between states
                 case state is
 
-                    when RELEASED =>
+                    when IDLE =>
                         if (bouncey = '1') then
                             sig_count <= 0;
-                            state     <= PRE_PRESSED;
+                            state     <= COUNT_1;
                         end if;
 
-                    when PRE_PRESSED =>
+                    when COUNT_1 =>
                         if (bouncey = '1') then
                             sig_count <= sig_count + 1;
-                            if (sig_count = DEB_COUNT - 1) then
+                            if (sig_count = N_VALUES - 1) then
                                 state <= PRESSED;
                             else
-                                state <= PRE_PRESSED;
+                                state <= COUNT_1;
                             end if;
                         else
-                            state <= RELEASED;
+                            state <= IDLE;
                         end if;
 
                     when PRESSED =>
                         if (bouncey = '0') then
                             sig_count <= 0;
-                            state     <= PRE_RELEASED;
+                            state     <= COUNT_0;
                         end if;
 
-                    when PRE_RELEASED =>
+                    when COUNT_0 =>
                         if (bouncey = '0') then
                             sig_count <= sig_count + 1;
-                            if (sig_count = DEB_COUNT - 1) then
-                                state <= RELEASED;
+                            if (sig_count = N_VALUES - 1) then
+                                state <= IDLE;
                             else
-                                state <= PRE_RELEASED;
+                                state <= COUNT_0;
                             end if;
                         else
                             sig_count <= 0;
@@ -131,7 +131,7 @@ begin
     end process p_fsm;
 
     -- Output debounced button value
-    sig_clean <= '1' when state = PRESSED or state = PRE_RELEASED else
+    sig_clean <= '1' when state = PRESSED or state = COUNT_0 else
                  '0';
     -- Assign output debounced signal
     clean <= sig_clean;

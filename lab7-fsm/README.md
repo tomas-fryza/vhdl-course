@@ -22,7 +22,7 @@ After completing this lab you will be able to:
 
 ## Pre-Lab preparation
 
-1. The Nexys A7 board provides five push buttons. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of these push-buttons and the active level.
+1. The Nexys A7 board provides five push buttons. See [schematic](https://github.com/tomas-fryza/vhdl-course/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of these push-buttons and their active level.
 
    ![nexys A7 led and segment](../lab2-logic/images/nexys-a7_leds-display.png)
 
@@ -99,7 +99,7 @@ The main methods to debounce a bouncy button are:
       | `bouncey` | input  | `std_logic` | Bouncey button input |
       | `clean`   | output | `std_logic` | Debounced button output |
 
-2. The inactive level of the on-board push buttons is low. Periodically read the button signal, and if the value is high, start counting a sequence of consecutive high values. If there is an uninterrupted sequence of `DEB_COUNT = 4` high values, consider the button pressed. The counter resets to zero upon receiving a low sample. When releasing the button, the FSM counts the same number of low-value samples before considering the button released.
+2. The inactive level of the on-board push buttons is low. Periodically read the button signal, and if the value is high, start counting a sequence of consecutive high values. If there is an uninterrupted sequence of `N_VALUES = 4` high values, consider the button pressed. The counter resets to zero upon receiving a low sample. When releasing the button, the FSM counts the same number of low-value samples before considering the button released.
 
    ![FSM debouncer](images/my_fsm.png)
 
@@ -108,14 +108,14 @@ The main methods to debounce a bouncy button are:
       ```vhdl
       architecture behavioral of debounce is
           -- Define states for the FSM
-          type   state_type is (RELEASED, PRE_PRESSED, PRESSED, PRE_RELEASED);
+          type   state_type is (IDLE, COUNT_1, PRESSED, COUNT_0);
           signal state : state_type;
 
-          -- Define number of periods for debounce counter
-          constant DEB_COUNT : integer := 4;
+          -- Define number of values for debounce counter
+          constant N_VALUES : integer := 4;
 
           -- Define signals for debounce counter
-          signal sig_count : integer range 0 to DEB_COUNT;
+          signal sig_count : integer range 0 to N_VALUES;
 
           -- Debounced signal
           signal sig_clean : std_logic;
@@ -136,28 +136,28 @@ The main methods to debounce a bouncy button are:
 
            if rising_edge(clk) then
                if (rst = '1') then   -- Active-high reset
-                   state <= RELEASED;
+                   state <= IDLE;
                elsif (en = '1') then -- Clock enable
 
                    case state is     -- Define transitions between states
 
-                       when RELEASED =>
-                           -- If bouncey = 1 then clear counter and go to PRE_PRESSED;
+                       when IDLE =>
+                           -- If bouncey = 1 then clear counter and go to COUNT_1;
 
-                       when PRE_PRESSED =>
+                       when COUNT_1 =>
                            -- If bouncey = 1 increment counter
 
-                               -- if counter = DEB_COUNT-1 go to PRESSED
+                               -- if counter = N_VALUES-1 go to PRESSED
 
-                           -- else go to RELEASED
+                           -- else go to IDLE
 
                        when PRESSED =>
-                           -- If bouncey = 0 then clear counter and go to PRE_RELEASED;
+                           -- If bouncey = 0 then clear counter and go to COUNT_0;
 
-                       when PRE_RELEASED =>
+                       when COUNT_0 =>
                            -- If bouncey = 0 then increment counter
 
-                               -- if counter = DEB_COUNT-1 go to RELEASED;
+                               -- if counter = N_VALUES-1 go to IDLE;
 
                            -- else clear counter and go to PRESSED;
 
@@ -170,7 +170,7 @@ The main methods to debounce a bouncy button are:
 
        end process p_fsm;
 
-       -- Set clean signal to 1 when states PRESSED or PRE_RELEASED
+       -- Set clean signal to 1 when states PRESSED or COUNT_0
 
 
        -- Assign output debounced signal

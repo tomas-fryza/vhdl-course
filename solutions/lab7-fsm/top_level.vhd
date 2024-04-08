@@ -38,7 +38,7 @@ architecture behavioral of top_level is
     -- Component declaration for clock enable
     component clock_enable is
         generic (
-            PERIOD : integer
+            N_PERIODS : integer
         );
         port (
             clk   : in    std_logic;
@@ -63,13 +63,13 @@ architecture behavioral of top_level is
     -- Component declaration for simple counter
     component simple_counter is
         generic (
-            NBIT : integer
+            N_BITS : integer
         );
         port (
             clk   : in    std_logic;
             rst   : in    std_logic;
             en    : in    std_logic;
-            count : out   std_logic_vector(NBIT - 1 downto 0)
+            count : out   std_logic_vector(N_BITS - 1 downto 0)
         );
     end component;
 
@@ -83,7 +83,7 @@ begin
     -- Component instantiation of clock enable for 2 ms
     clk_en : component clock_enable
         generic map (
-            PERIOD => 200_000
+            N_PERIODS => 200_000
         )
         port map (
             clk   => CLK100MHZ,
@@ -106,7 +106,7 @@ begin
     -- Component instantiation of 4-bit simple counter
     counter : component simple_counter
         generic map (
-            NBIT => 4
+            N_BITS => 4
         )
         port map (
             clk   => CLK100MHZ,

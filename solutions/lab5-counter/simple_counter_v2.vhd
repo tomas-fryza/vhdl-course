@@ -5,7 +5,7 @@
 --!
 --! Implementation of N-bit up counter with enable input and
 --! high level reset. The width of the counter (number of bits)
---! is set generically using `NBIT`. The data type of the
+--! is set generically using `N_BITS`. The data type of the
 --! internal counter is `std_logic_vector`.
 --!
 --! Developed using TerosHDL, Vivado 2023.2, and EDA Playground.
@@ -20,13 +20,13 @@ library ieee;
 
 entity simple_counter is
     generic (
-        NBIT : integer := 3 --! Default number of counter bits
+        N_BITS : integer := 3 --! Default number of counter bits
     );
     port (
-        clk   : in    std_logic;                          --! Main clock
-        rst   : in    std_logic;                          --! High-active synchronous reset
-        en    : in    std_logic;                          --! Clock enable input
-        count : out   std_logic_vector(NBIT - 1 downto 0) --! Counter value
+        clk   : in    std_logic;                            --! Main clock
+        rst   : in    std_logic;                            --! High-active synchronous reset
+        en    : in    std_logic;                            --! Clock enable input
+        count : out   std_logic_vector(N_BITS - 1 downto 0) --! Counter value
     );
 end entity simple_counter;
 
@@ -34,7 +34,7 @@ end entity simple_counter;
 
 architecture behavioral of simple_counter is
     --! Local counter
-    signal sig_count : std_logic_vector(NBIT - 1 downto 0);
+    signal sig_count : std_logic_vector(N_BITS - 1 downto 0);
 begin
 
     --! Clocked process with synchronous reset which implements

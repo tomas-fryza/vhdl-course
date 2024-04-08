@@ -11,25 +11,25 @@ end entity tb_lfsr;
 architecture tb of tb_lfsr is
     component lfsr is
         generic (
-            NBIT : integer
+            N_BITS : integer
         );
         port (
             clk         : in    std_logic;
             en          : in    std_logic;
             load_enable : in    std_logic;
-            load_data   : in    std_logic_vector(NBIT - 1 downto 0);
+            load_data   : in    std_logic_vector(N_BITS - 1 downto 0);
             done        : out   std_logic;
-            count       : out   std_logic_vector(NBIT - 1 downto 0)
+            count       : out   std_logic_vector(N_BITS - 1 downto 0)
         );
     end component;
 
-    constant C_NBIT      : integer := 4;
+    constant C_NBITS     : integer := 4;
     signal   clk         : std_logic;
     signal   en          : std_logic;
     signal   load_enable : std_logic;
-    signal   load_data   : std_logic_vector(C_NBIT - 1 downto 0);
+    signal   load_data   : std_logic_vector(C_NBITS - 1 downto 0);
     signal   done        : std_logic;
-    signal   count       : std_logic_vector(C_NBIT - 1 downto 0);
+    signal   count       : std_logic_vector(C_NBITS - 1 downto 0);
 
     constant TbPeriod   : time      := 10 ns; -- EDIT Put right period here
     signal   TbClock    : std_logic := '0';
@@ -38,7 +38,7 @@ begin
 
     dut : component lfsr
         generic map (
-            NBIT => C_NBIT
+            N_BITS => C_NBITS
         )
         port map (
             clk         => clk,

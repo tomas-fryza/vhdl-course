@@ -164,11 +164,11 @@ We can write:
    ```vhdl
    entity some_entity is
        generic (
-           NBIT : integer := some_defaul_value
+           N_BITS : integer := some_defaul_value
        );
        port (
            clk     : in    std_logic;
-           counter : out   std_logic_vector(NBIT-1 downto 0) -- Can be any width
+           counter : out   std_logic_vector(N_BITS-1 downto 0) -- Can be any width
            -- (the desired width will be passed during instantiation in the generic map)
        );
    end entity some_entity;
@@ -176,13 +176,13 @@ We can write:
 
 1. Extend the code from the previous part and use generics in both, design and testbench sources.
 
-   In **design source**, use generic `NBIT` to define number of bits for the counter. In **testbench**, define a constant `C_NBIT`, prior to declaring the component and use it to declare your internal counter signal:
+   In **design source**, use generic `N_BITS` to define number of bits for the counter. In **testbench**, define a constant `C_NBITS`, prior to declaring the component and use it to declare your internal counter signal:
 
    ```vhdl
    -- Design source file
    entity simple_counter is
        generic (
-           NBIT : integer := 4 --! Default number of bits
+           N_BITS : integer := 4 --! Default number of bits
        );
        port (
            ...
@@ -192,21 +192,21 @@ We can write:
 
    ```vhdl
    -- Testbench file
-   constant C_NBIT : integer := 6; --! Simulating number of bits
+   constant C_NBITS : integer := 6; --! Simulating number of bits
    signal count : std_logic_vector(C_NBIT-1 downto 0);
    ```
 
-   When you instantiate your counter, you then also bind the `NBIT` generic to this constant:
+   When you instantiate your counter, you then also bind the `N_BITS` generic to this constant:
 
    ```vhdl
    dut : component simple_counter
        generic map (
-           NBIT => C_NBIT
+           N_BITS => C_NBITS
        )
        ...
    ```
 
-2. Simulate your design and try several `C_NBIT` values.
+2. Simulate your design and try several `C_NBITS` values.
 
 <a name="part3"></a>
 
@@ -235,7 +235,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 >   head: {
 >   },
 >   foot: {
->     text: 'PERIOD = 6',
+>     text: 'N_PERIODS = 6',
 >   },
 > }
 > ```
@@ -248,12 +248,12 @@ To drive another logic in the design (with slower clock), it is better to genera
    | `rst`   | input  | `std_logic` | High-active synchronous reset
    | `pulse` | output | `std_logic` | Clock enable pulse signal
 
-2. Add generic `PERIOD` to the entity defining the default number of clk periodes to generate one pulse.
+2. Add generic `N_PERIODS` to the entity defining the default number of clk periodes to generate one pulse.
 
    ```vhdl
    entity clock_enable is
        generic (
-           PERIOD : integer := 6
+           N_PERIODS : integer := 6
        );
        port (
            ...
@@ -261,7 +261,7 @@ To drive another logic in the design (with slower clock), it is better to genera
    end entity clock_enable;
    ```
 
-3. Another way how to create a counter is the usage of `integer` data type. In architecture declaration part, define a local counter using the range of integers needed for `PERIOD` values. Because all incrementations will be performed with integers and not `std_logic_vector`, no extra package is used.
+3. Another way how to create a counter is the usage of `integer` data type. In architecture declaration part, define a local counter using the range of integers needed for `N_PERIODS` values. Because all incrementations will be performed with integers and not `std_logic_vector`, no extra package is used.
 
    ```vhdl
    library ieee;
@@ -270,7 +270,7 @@ To drive another logic in the design (with slower clock), it is better to genera
    ...
    architecture behavioral of clock_enable is
        --! Local counter
-       signal sig_count : integer range 0 to PERIOD-1;
+       signal sig_count : integer range 0 to N_PERIODS-1;
    begin
    ```
 
@@ -278,7 +278,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
    ```vhdl
    begin
-       --! Count the number of clock pulses from zero to PERIOD-1.
+       --! Count the number of clock pulses from zero to N_PERIODS-1.
        p_clk_enable : process (clk) is
        begin
 
@@ -287,7 +287,7 @@ To drive another logic in the design (with slower clock), it is better to genera
                -- if high-active reset then
                    -- Clear integer counter
 
-               -- elsif sig_count is less than PERIOD-1 then
+               -- elsif sig_count is less than N_PERIODS-1 then
                    -- Counting
 
                -- else reached the end of counter
@@ -299,14 +299,15 @@ To drive another logic in the design (with slower clock), it is better to genera
        end process p_clk_enable;
 
        -- Generated pulse is always one clock long
-       -- when sig_count = PERIOD-1
+       -- when sig_count = N_PERIODS-1
+
 
    end architecture behavioral;
    ```
 
 5. Use **Flow > Open Elaborated design** and see the schematic after RTL analysis.
 
-6. Create a VHDL simulation source `tb_clock_enable`, simulate reset functionality and 100 clock periodes. Test several `PERIOD` values within your testbench.
+6. Create a VHDL simulation source `tb_clock_enable`, simulate reset functionality and 100 clock periodes. Test several `N_PERIODS` values within your testbench.
 
    > **Solution:** [https://www.edaplayground.com/x/5LiJ](https://www.edaplayground.com/x/5LiJ)
 
