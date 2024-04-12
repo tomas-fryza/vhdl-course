@@ -50,7 +50,7 @@ The objective of this group project is to collaborate within small teams of 3-4 
 
 * All FPGA code must be written in VHDL and must be implementable on the [Nexys A7-50T board](https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual) using the development tools provided during the semester, specifically Vivado.
 
-![nexys_a7](images/)
+   ![nexys_a7](images/nexys-a7.png)
 
 * Use components designed and tested during the semester.
 
