@@ -68,7 +68,7 @@ The objective of this group project is to collaborate within small teams of 3-4 
 
 * Physical implementation on FPGA is necessary, not just computer simulation.
 
-* Teams create a short video (<1 min.) demonstrating their application to play at the beginning of the presentation. This video can be used to promote the course on LinkedIn.
+* Students create a short video (<1 min.) about their application, including explanatory captions, and upload it to YouTube as part of the project. (Video can be used to promote the course on LinkedIn.)
 
 ## Help
 
