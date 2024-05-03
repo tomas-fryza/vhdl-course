@@ -44,9 +44,9 @@ Description: This project involves the development of generating images using VG
 
 The objective of this group project is to collaborate within small teams of 3-4 students, explore a chosen topic, utilize lab components, develop innovative solutions, simulate and execute these solutions, generate project documentation, and present the final outcomes. Team members are responsible for organizing and assigning roles and tasks among themselves.
 
-* Students will work on the project in the lab during Weeks 8 to 12 (or 13) of the semester, culminating in a practical demonstration.
+* Students will work on the project in the lab during Weeks 8 to 12 (or 13) of the semester, culminating in a joint presentation.
 
-* Students must submit a link to their GitHub repository containing the VHDL project, required images, documents, and a descriptive README file. The submission deadline is the day before the practical demonstration.
+* Students must submit a link to their GitHub repository containing the VHDL project, required images, documents, and a descriptive README file. Students use the README file for the presentation.
 
 * All FPGA code must be written in VHDL and must be implementable on the [Nexys A7-50T board](https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual) using the development tools provided during the semester, specifically Vivado.
 
@@ -60,7 +60,7 @@ The objective of this group project is to collaborate within small teams of 3-4 
 
 * Physical implementation on FPGA is necessary, not just computer simulation.
 
-* Teams should create a short video (<1 min.) demonstrating their application. This video can be used to promote the course on LinkedIn.
+* Teams create a short video (<1 min.) demonstrating their application to play at the beginning of the presentation. This video can be used to promote the course on LinkedIn.
 
 ## Help
 
@@ -103,7 +103,7 @@ Insert descriptive text and schematic(s) of your implementation.
 
 ## Software description
 
-Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders. 
+Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders. Put a descriptive top-level schematic of your application.
 
 ### Component(s) simulation
 
