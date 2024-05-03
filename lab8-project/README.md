@@ -4,6 +4,11 @@
 
 *Topics will be presented one week before the project starts.*
 
+[Tone generator](https://github.com/VojtaKudela/BPC-DE1-topic_4/blob/main/README.md)
+[PWM servo](https://github.com/Th0rgrlm/Topic3-PWM-Based-Servo-Motor-Controller/blob/main/README.md)
+[Ultrasonic parking spot detection](https://github.com/247828/BPC-DE1-Project/blob/main/README.md)
+[VGA](https://github.com/deved9/DE1-project)
+
 **Topic 1: Smart Parking System with Ultrasonic Sensors**
 
 Description: Design and implement a smart parking system using VHDL on the Nexys A7 FPGA board. The system will utilize multiple ultrasonic sensors (HS-SR04) connected to the Pmod connectors for detecting the presence and distance of vehicles within parking spaces. Develop algorithms to analyze sensor data and determine parking space availability. Visualize parking space occupancy status using LEDs, while displaying distance measurements on the 7-segment display.
