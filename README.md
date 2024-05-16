@@ -9,7 +9,7 @@
 -->
 
 * [Installation](#installation)
-* [Exercises](#exercises)
+* [Labs](#labs)
 * [List of VHDL examples](#list-of-vhdl-examples)
 * [Components and tools](#components-and-tools)
 * [References](#references)
@@ -26,7 +26,7 @@ The repository contains VHDL lab exercises for bachelor course [*Digital Electro
 * [EDA Playground](https://edaplayground.com/) (online simulator, 0 Bytes)
 * [ModelSim](https://www.intel.com/content/www/us/en/software-kit/750666/modelsim-intel-fpgas-standard-edition-software-version-20-1-1.html) (several GBs)
 
-## Exercises
+## Labs
 
 1. [Introduction to VHDL and Vivado](lab1-gates)
 2. [Combinational logic circuits](lab2-logic)
@@ -68,9 +68,6 @@ The following hardware and software components are mainly used in the lab.
   * [TerosHDL](https://terostechnology.github.io/terosHDLdoc/) is an open-source IDE for FPGA: [installation](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-TerosHDL-on-Windows-and-Linux) :+1:
 
   * [ghdl + GtkWave](https://github.com/tomas-fryza/vhdl-course/wiki/How-to-install-ghdl-on-Windows-and-Linux)
-
-* Other tool(s):
-  * [git](https://git-scm.com/)
 
 ## References
 
