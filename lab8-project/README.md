@@ -67,7 +67,7 @@ The objective of this group project is to collaborate within small teams of 3-4 
 
 * Physical implementation on FPGA is necessary, not just computer simulation.
 
-* Students create a short video (<1 min.) about their application, including explanatory captions, and upload it to YouTube as part of the project. (Video can be used to promote the course on LinkedIn.)
+* Students create an illuatrative video (<1 min.) about their application with explanatory captions and possibly background music. Upload it to YouTube as part of the project. Video is played at the beginning of the presentation. (Video can be used to promote the course on LinkedIn.)
 
 ## Help
 
@@ -100,6 +100,12 @@ The objective of this group project is to collaborate within small teams of 3-4 
 * Member 3 (responsible for ...)
 * Member 4 (responsible for ...)
 
+### Abstract
+
+An abstract is a short summary of your project, usually about a paragraph (6-7 sentences, 150-250 words) long. A well-written abstract serves multiple purposes: (a) an abstract lets readers get the gist or essence of your project quickly; (b) an abstract prepares readers to follow the detailed information, description, and results in your report; (c) and, later, an abstract helps readers remember key points from your project.
+
+Photo of your application with labels of individual parts.
+
 ## Theoretical description and explanation
 
 Enter a description of the problem and how to solve it.
@@ -112,13 +118,13 @@ Insert descriptive text and schematic(s) of your implementation.
 
 Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders. Put a descriptive top-level schematic of your application.
 
-### Component(s) simulation
+### Component(s) simulations
 
 Write descriptive text and put simulation screenshots of your components.
 
 ## Instructions
 
-Write an instruction manual for your application, including photos and a link to a short app video.
+Write an instruction manual for your application, including link to a short app video.
 
 ## References
 
