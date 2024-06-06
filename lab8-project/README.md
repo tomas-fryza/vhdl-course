@@ -104,7 +104,15 @@ The objective of this group project is to collaborate within small teams of 3-4 
 
 An abstract is a short summary of your project, usually about a paragraph (6-7 sentences, 150-250 words) long. A well-written abstract serves multiple purposes: (a) an abstract lets readers get the gist or essence of your project quickly; (b) an abstract prepares readers to follow the detailed information, description, and results in your report; (c) and, later, an abstract helps readers remember key points from your project.
 
-Photo of your application with labels of individual parts.
+The main contributions of the project are:
+
+* ...
+* ...
+* ...
+
+[Photo of your application with labels of individual parts.]
+
+[Link to your short video presentation.]
 
 ## Theoretical description and explanation
 
@@ -121,10 +129,6 @@ Put flowchats/state diagrams of your algorithm(s) and direct links to source/tes
 ### Component(s) simulations
 
 Write descriptive text and put simulation screenshots of your components.
-
-## Instructions
-
-Write an instruction manual for your application, including link to a short app video.
 
 ## References
 
