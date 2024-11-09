@@ -7,9 +7,7 @@
 * [Ultrasonic parking spot detection](https://github.com/247828/BPC-DE1-Project/blob/main/README.md)
 * [VGA](https://github.com/deved9/DE1-project)
 
-### Topics
-
-*Topics will be presented one week before the project starts.*
+### Topics 2023/24
 
 **Topic 1: Smart Parking System with Ultrasonic Sensors**
 
